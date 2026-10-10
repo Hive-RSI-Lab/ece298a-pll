@@ -759,8 +759,8 @@
   "bench_order": [
    "pll_analog_presc_tb.cir",
    "pll_analog_cp_tb.cir",
-   "pll_analog_pwr_tb.cir",
    "pll_analog_ol_tb.cir",
+   "pll_analog_pwr_tb.cir",
    "pll_analog_overlap_tb.cir",
    "pll_analog_vco_tb.cir",
    "pll_analog_startup_tb.cir"
@@ -832,6 +832,7 @@
      "icp_up_code11_ua": 0.000197,
      "ol_fc_pn16_nopad_khz": 0.008288,
      "ol_pm_pn16_nopad_deg": 0.00268,
+     "ol_pm_pn16_nopad_pvt_deg": 0.00268,
      "ol_pm_pn16_pad5p_deg": 0.001923,
      "ol_pm_pn40_nopad_deg": 0.004358,
      "ol_pm_pn8_nopad_deg": 0.000456,
@@ -1002,6 +1003,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.005942,
      "ol_pm_pn16_nopad_deg": 0.001911,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001911,
      "ol_pm_pn16_pad5p_deg": 0.001381,
      "ol_pm_pn40_nopad_deg": 0.003114,
      "ol_pm_pn8_nopad_deg": 0.000309,
@@ -1226,6 +1228,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.008446,
      "ol_pm_pn16_nopad_deg": 0.002733,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002733,
      "ol_pm_pn16_pad5p_deg": 0.001959,
      "ol_pm_pn40_nopad_deg": 0.004441,
      "ol_pm_pn8_nopad_deg": 0.000465,
@@ -1269,6 +1272,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.010774,
      "ol_pm_pn16_nopad_deg": 0.003484,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003484,
      "ol_pm_pn16_pad5p_deg": 0.00249,
      "ol_pm_pn40_nopad_deg": 0.005665,
      "ol_pm_pn8_nopad_deg": 0.000593,
@@ -1306,6 +1310,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.008807,
      "ol_pm_pn16_nopad_deg": 0.002848,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002848,
      "ol_pm_pn16_pad5p_deg": 0.002041,
      "ol_pm_pn40_nopad_deg": 0.00463,
      "ol_pm_pn8_nopad_deg": 0.000485,
@@ -1355,6 +1360,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.009638,
      "ol_pm_pn16_nopad_deg": 0.003116,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003116,
      "ol_pm_pn16_pad5p_deg": 0.00223,
      "ol_pm_pn40_nopad_deg": 0.005067,
      "ol_pm_pn8_nopad_deg": 0.00053,
@@ -1398,6 +1404,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.003742,
      "ol_pm_pn16_nopad_deg": 0.00121,
+     "ol_pm_pn16_nopad_pvt_deg": 0.00121,
      "ol_pm_pn16_pad5p_deg": 0.000882,
      "ol_pm_pn40_nopad_deg": 0.001967,
      "ol_pm_pn8_nopad_deg": 0.000206,
@@ -1435,6 +1442,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.012584,
      "ol_pm_pn16_nopad_deg": 0.00407,
+     "ol_pm_pn16_nopad_pvt_deg": 0.00407,
      "ol_pm_pn16_pad5p_deg": 0.002903,
      "ol_pm_pn40_nopad_deg": 0.006617,
      "ol_pm_pn8_nopad_deg": 0.000693,
@@ -1478,6 +1486,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": -0.003154,
      "ol_pm_pn16_nopad_deg": -0.001034,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001034,
      "ol_pm_pn16_pad5p_deg": -0.000755,
      "ol_pm_pn40_nopad_deg": -0.001684,
      "ol_pm_pn8_nopad_deg": -0.000175,
@@ -1515,6 +1524,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.005842,
      "ol_pm_pn16_nopad_deg": 0.00189,
+     "ol_pm_pn16_nopad_pvt_deg": 0.00189,
      "ol_pm_pn16_pad5p_deg": 0.001366,
      "ol_pm_pn40_nopad_deg": 0.003075,
      "ol_pm_pn8_nopad_deg": 0.000324,
@@ -1540,7 +1550,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMN_ENS: nfet_03v3 -> pfet_03v3",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_ENV_connection_removed": {
     "kind": "connection_removed",
@@ -1558,6 +1568,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.003146,
      "ol_pm_pn16_nopad_deg": 0.001018,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001018,
      "ol_pm_pn16_pad5p_deg": 0.00074,
      "ol_pm_pn40_nopad_deg": 0.001653,
      "ol_pm_pn8_nopad_deg": 0.000174,
@@ -1595,6 +1606,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.010363,
      "ol_pm_pn16_nopad_deg": 0.003353,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003353,
      "ol_pm_pn16_pad5p_deg": 0.002395,
      "ol_pm_pn40_nopad_deg": 0.005448,
      "ol_pm_pn8_nopad_deg": 0.00057,
@@ -1677,7 +1689,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMN_G1: nfet_03v3 -> pfet_03v3",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_G2_connection_removed": {
     "kind": "connection_removed",
@@ -1858,7 +1870,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_S1: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_S1_size_doubled_w": {
     "kind": "size_doubled",
@@ -1922,7 +1934,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_S3: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_S3_size_doubled_w": {
     "kind": "size_doubled",
@@ -1954,7 +1966,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_S4: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_S4_size_doubled_w": {
     "kind": "size_doubled",
@@ -1986,7 +1998,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_S5: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_S5_size_doubled_w": {
     "kind": "size_doubled",
@@ -2036,6 +2048,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.006044,
      "ol_pm_pn16_nopad_deg": 0.001955,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001955,
      "ol_pm_pn16_pad5p_deg": 0.001413,
      "ol_pm_pn40_nopad_deg": 0.003178,
      "ol_pm_pn8_nopad_deg": 0.000333,
@@ -2085,6 +2098,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.008746,
      "ol_pm_pn16_nopad_deg": 0.002829,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002829,
      "ol_pm_pn16_pad5p_deg": 0.002027,
      "ol_pm_pn40_nopad_deg": 0.004597,
      "ol_pm_pn8_nopad_deg": 0.000481,
@@ -2134,6 +2148,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.008484,
      "ol_pm_pn16_nopad_deg": 0.002743,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002743,
      "ol_pm_pn16_pad5p_deg": 0.001968,
      "ol_pm_pn40_nopad_deg": 0.004458,
      "ol_pm_pn8_nopad_deg": 0.000467,
@@ -2177,6 +2192,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.0068,
      "ol_pm_pn16_nopad_deg": 0.002199,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002199,
      "ol_pm_pn16_pad5p_deg": 0.001584,
      "ol_pm_pn40_nopad_deg": 0.003576,
      "ol_pm_pn8_nopad_deg": 0.000374,
@@ -2214,6 +2230,7 @@
      "icp_up_code11_ua": 3e-06,
      "ol_fc_pn16_nopad_khz": 0.005446,
      "ol_pm_pn16_nopad_deg": 0.001761,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001761,
      "ol_pm_pn16_pad5p_deg": 0.001274,
      "ol_pm_pn40_nopad_deg": 0.002863,
      "ol_pm_pn8_nopad_deg": 0.0003,
@@ -2257,6 +2274,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.010542,
      "ol_pm_pn16_nopad_deg": 0.003409,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003409,
      "ol_pm_pn16_pad5p_deg": 0.002437,
      "ol_pm_pn40_nopad_deg": 0.005543,
      "ol_pm_pn8_nopad_deg": 0.000581,
@@ -2294,6 +2312,7 @@
      "icp_up_code11_ua": 3e-06,
      "ol_fc_pn16_nopad_khz": 0.006157,
      "ol_pm_pn16_nopad_deg": 0.001991,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001991,
      "ol_pm_pn16_pad5p_deg": 0.001437,
      "ol_pm_pn40_nopad_deg": 0.003236,
      "ol_pm_pn8_nopad_deg": 0.000338,
@@ -2337,6 +2356,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.003906,
      "ol_pm_pn16_nopad_deg": 0.001262,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001262,
      "ol_pm_pn16_pad5p_deg": 0.00092,
      "ol_pm_pn40_nopad_deg": 0.002054,
      "ol_pm_pn8_nopad_deg": 0.000215,
@@ -2374,6 +2394,7 @@
      "icp_up_code11_ua": 3e-06,
      "ol_fc_pn16_nopad_khz": -0.001823,
      "ol_pm_pn16_nopad_deg": -0.00059,
+     "ol_pm_pn16_nopad_pvt_deg": -0.00059,
      "ol_pm_pn16_pad5p_deg": -0.000431,
      "ol_pm_pn40_nopad_deg": -0.000957,
      "ol_pm_pn8_nopad_deg": -0.000101,
@@ -2417,6 +2438,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.010192,
      "ol_pm_pn16_nopad_deg": 0.003296,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003296,
      "ol_pm_pn16_pad5p_deg": 0.002357,
      "ol_pm_pn40_nopad_deg": 0.005357,
      "ol_pm_pn8_nopad_deg": 0.000561,
@@ -2454,6 +2476,7 @@
      "icp_up_code11_ua": 5e-06,
      "ol_fc_pn16_nopad_khz": 0.001686,
      "ol_pm_pn16_nopad_deg": 0.000545,
+     "ol_pm_pn16_nopad_pvt_deg": 0.000545,
      "ol_pm_pn16_pad5p_deg": 0.000395,
      "ol_pm_pn40_nopad_deg": 0.000888,
      "ol_pm_pn8_nopad_deg": 9.2e-05,
@@ -2503,6 +2526,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.00384,
      "ol_pm_pn16_nopad_deg": 0.001242,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001242,
      "ol_pm_pn16_pad5p_deg": 0.000906,
      "ol_pm_pn40_nopad_deg": 0.002017,
      "ol_pm_pn8_nopad_deg": 0.000212,
@@ -2814,6 +2838,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.00663,
      "ol_pm_pn16_nopad_deg": 0.002145,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002145,
      "ol_pm_pn16_pad5p_deg": 0.001546,
      "ol_pm_pn40_nopad_deg": 0.003487,
      "ol_pm_pn8_nopad_deg": 0.000365,
@@ -2851,6 +2876,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.008171,
      "ol_pm_pn16_nopad_deg": 0.002642,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002642,
      "ol_pm_pn16_pad5p_deg": 0.001897,
      "ol_pm_pn40_nopad_deg": 0.004296,
      "ol_pm_pn8_nopad_deg": 0.00045,
@@ -2900,6 +2926,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.003636,
      "ol_pm_pn16_nopad_deg": 0.001175,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001175,
      "ol_pm_pn16_pad5p_deg": 0.000855,
      "ol_pm_pn40_nopad_deg": 0.001912,
      "ol_pm_pn8_nopad_deg": 0.000201,
@@ -2943,6 +2970,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.009828,
      "ol_pm_pn16_nopad_deg": 0.003179,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003179,
      "ol_pm_pn16_pad5p_deg": 0.002274,
      "ol_pm_pn40_nopad_deg": 0.005167,
      "ol_pm_pn8_nopad_deg": 0.000541,
@@ -2980,6 +3008,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.004948,
      "ol_pm_pn16_nopad_deg": 0.0016,
+     "ol_pm_pn16_nopad_pvt_deg": 0.0016,
      "ol_pm_pn16_pad5p_deg": 0.001162,
      "ol_pm_pn40_nopad_deg": 0.002602,
      "ol_pm_pn8_nopad_deg": 0.000273,
@@ -3023,6 +3052,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.00704,
      "ol_pm_pn16_nopad_deg": 0.002276,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002276,
      "ol_pm_pn16_pad5p_deg": 0.00164,
      "ol_pm_pn40_nopad_deg": 0.003701,
      "ol_pm_pn8_nopad_deg": 0.000387,
@@ -3060,6 +3090,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.003267,
      "ol_pm_pn16_nopad_deg": 0.001056,
+     "ol_pm_pn16_nopad_pvt_deg": 0.001056,
      "ol_pm_pn16_pad5p_deg": 0.00077,
      "ol_pm_pn40_nopad_deg": 0.001717,
      "ol_pm_pn8_nopad_deg": 0.000179,
@@ -3128,6 +3159,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": -0.001419,
      "ol_pm_pn16_nopad_deg": -0.00046,
+     "ol_pm_pn16_nopad_pvt_deg": -0.00046,
      "ol_pm_pn16_pad5p_deg": -0.000336,
      "ol_pm_pn40_nopad_deg": -0.000746,
      "ol_pm_pn8_nopad_deg": -7.8e-05,
@@ -3165,6 +3197,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.002163,
      "ol_pm_pn16_nopad_deg": 0.000699,
+     "ol_pm_pn16_nopad_pvt_deg": 0.000699,
      "ol_pm_pn16_pad5p_deg": 0.00051,
      "ol_pm_pn40_nopad_deg": 0.001138,
      "ol_pm_pn8_nopad_deg": 0.000119,
@@ -3375,7 +3408,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMP_O: pfet_03v3 -> nfet_03v3",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMP_S1_connection_removed": {
     "kind": "connection_removed",
@@ -3559,6 +3592,7 @@
      "icp_up_code11_ua": 0.0,
      "ol_fc_pn16_nopad_khz": 0.006688,
      "ol_pm_pn16_nopad_deg": 0.002163,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002163,
      "ol_pm_pn16_pad5p_deg": 0.001558,
      "ol_pm_pn40_nopad_deg": 0.003517,
      "ol_pm_pn8_nopad_deg": 0.000367,
@@ -3774,7 +3808,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMP_V2IB: pfet_03v3 -> nfet_03v3",
-    "killed_by": "pll_analog_pwr_tb.cir"
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMP_V2I_connection_removed": {
     "kind": "connection_removed",
@@ -3853,11 +3887,11 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-  "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+  "tb": "dir_text:75f9cbb01e815e85fc1694b031991dadbb4b68958220779ebd031d7d9ba9b037",
   "mutant_rulings": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
-  "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+  "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
   "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
  },
- "recorded_ts": "2026-10-07T09:00:53",
- "attempts": 3
+ "recorded_ts": "2026-10-10T15:03:37",
+ "attempts": 4
 }

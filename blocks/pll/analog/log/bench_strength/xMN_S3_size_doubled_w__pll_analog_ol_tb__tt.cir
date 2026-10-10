@@ -1,10 +1,15 @@
 * pll_analog_ol_tb.cir - open-loop gain bench, pump + filter + VCO with an
 * ideal 1/(P*N) divider (spec.yaml: ol_pm_pn16_nopad_deg,
-* ol_pm_pn16_pad5p_deg, ol_fc_pn16_nopad_khz, ol_pm_pn8_nopad_deg,
-* ol_pm_pn40_nopad_deg). Written from spec/ only. All five are scored at
-* tt_27c only, so the bench computes and prints them only at that corner
-* (process typical, 27 C, vdd = spec supply 3.3 V) and prints nothing
-* elsewhere - no placeholder values.
+* ol_pm_pn16_nopad_pvt_deg, ol_pm_pn16_pad5p_deg, ol_fc_pn16_nopad_khz,
+* ol_pm_pn8_nopad_deg, ol_pm_pn40_nopad_deg). Written from spec/ only.
+* CORNERS: ol_pm_pn16_nopad_pvt_deg (spec rev 2026-10-10 H1, >= 30 deg at
+* every corner) is computed and printed at EVERY corner; it has the same
+* definition as ol_pm_pn16_nopad_deg (P*N = 16, no pad). The other five are
+* scored at tt_27c only (process typical, 27 C, vdd = spec supply 3.3 V), so
+* they are printed only there - no placeholder values elsewhere. Icp, Kvco
+* and the no-pad ac run happen at every corner (the per-corner cost is the
+* tt run's: the same two Kvco transient points); the P*N = 8/40 crossings
+* and the 5 pF pad ac run are skipped off tt_27c (tt-only measures).
 *
 * H(s) = (Icp/2pi) * Z(s) * (2pi Kvco) / (s P N) = Icp Kvco Z(j2pi f) / (j2pi f P N)
 * with every factor taken from the DUT itself, cp_trim = 00, pll_en = 1:
@@ -65,101 +70,107 @@ if (procn eq 1) and (tempc eq 27) and (abs(vddp - 3.3) lt 0.01)
   set istt = "1"
 end
 set okall = "0"
-if $istt eq 1
-  * --- Icp at vdd/2, code 00
-  alter vup dc = $&vddp
-  op
-  let x = i(vvc)
-  set iup = "$&x"
-  alter vup dc = 0
-  alter vdn dc = $&vddp
-  op
-  let x = (-i(vvc) + $iup)/2
-  set icp = "$&x"
-  alter vdn dc = 0
-  * --- Kvco (mean slope over the tuning range), same frequency ladder as
-  * pll_analog_vco_tb.cir. lfeed is dropped to 1 nH for the transients (a
-  * 1 GH series inductor makes every tran step ill-conditioned: wo-2 saw a
-  * run stall at 15 time points) and restored to 1 GH before the ac runs.
-  alter lfeed = 1e-9
-  set fl = "0"
-  set fh = "0"
-  set first = "1"
-  foreach vc 0.3 $&vhi
-    alter vvc dc = $vc
-    set gotf = "0"
-    set fks = "0"
-    foreach st 0 1
-      if $gotf eq 0
-        if $st eq 0
-          set tsx = "20p"
-          set tex = "25n"
-          set tdx = "4n"
-        end
-        if $st eq 1
-          set tsx = "250p"
-          set tex = "400n"
-          set tdx = "20n"
-        end
-        tran $tsx $tex 0 $tsx
-        let nx = length(time)
-        let nx1 = nx - 1
-        let nx2 = nx - 2
-        let hv = (v(vco_out) gt vmid)
-        let late = time[1,$&nx1] gt $tdx
-        let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
-        if (nrise ge 6) or ($st eq 1)
-          set gotf = "1"
-          let np = nrise - 1
-          if np gt 5
-            let np = 5
-          end
-          if np ge 1
-            let nr = np + 1
-            meas tran ta when v(vco_out)=$&vmid rise=1 td=$tdx
-            meas tran tb when v(vco_out)=$&vmid rise=$&nr td=$tdx
-            let x = np/(tb - ta)
-            set fks = "$&x"
-          end
-        end
-        destroy $curplot
+* every corner: Icp, Kvco and the no-pad ac run (ol_pm_pn16_nopad_pvt_deg)
+* --- Icp at vdd/2, code 00
+alter vup dc = $&vddp
+op
+let x = i(vvc)
+set iup = "$&x"
+alter vup dc = 0
+alter vdn dc = $&vddp
+op
+let x = (-i(vvc) + $iup)/2
+set icp = "$&x"
+alter vdn dc = 0
+* --- Kvco (mean slope over the tuning range), same frequency ladder as
+* pll_analog_vco_tb.cir. lfeed is dropped to 1 nH for the transients (a
+* 1 GH series inductor makes every tran step ill-conditioned: wo-2 saw a
+* run stall at 15 time points) and restored to 1 GH before the ac runs.
+alter lfeed = 1e-9
+set fl = "0"
+set fh = "0"
+set first = "1"
+foreach vc 0.3 $&vhi
+  alter vvc dc = $vc
+  set gotf = "0"
+  set fks = "0"
+  foreach st 0 1
+    if $gotf eq 0
+      if $st eq 0
+        set tsx = "20p"
+        set tex = "25n"
+        set tdx = "4n"
       end
-    end
-    if $first eq 1
-      set fl = "$fks"
-      set first = "0"
-    else
-      set fh = "$fks"
+      if $st eq 1
+        set tsx = "250p"
+        set tex = "400n"
+        set tdx = "20n"
+      end
+      tran $tsx $tex 0 $tsx
+      let nx = length(time)
+      let nx1 = nx - 1
+      let nx2 = nx - 2
+      let hv = (v(vco_out) gt vmid)
+      let late = time[1,$&nx1] gt $tdx
+      let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
+      if (nrise ge 6) or ($st eq 1)
+        set gotf = "1"
+        let np = nrise - 1
+        if np gt 5
+          let np = 5
+        end
+        if np ge 1
+          let nr = np + 1
+          meas tran ta when v(vco_out)=$&vmid rise=1 td=$tdx
+          meas tran tb when v(vco_out)=$&vmid rise=$&nr td=$tdx
+          let x = np/(tb - ta)
+          set fks = "$&x"
+        end
+      end
+      destroy $curplot
     end
   end
-  alter lfeed = 1e9
-  let x = ($fh - $fl)/(vhi - 0.3)
-  set kv = "$&x"
-  if x gt 0
-    alter vvc dc = $&vmid
-    * --- Z(s) at vctrl, no pad
-    ac dec 50 1k 100meg
-    let zp = 180/pi*ph(v(vctrl))
-    let fr = real(frequency)
-    let g = $icp * $kv * mag(v(vctrl)) / (2*pi*fr)
-    let h16 = g/16
-    let h8 = g/8
-    let h40 = g/40
-    meas ac fc16 when h16=1 fall=1
-    meas ac fc8 when h8=1 fall=1
-    meas ac fc40 when h40=1 fall=1
+  if $first eq 1
+    set fl = "$fks"
+    set first = "0"
+  else
+    set fh = "$fks"
+  end
+end
+alter lfeed = 1e9
+let x = ($fh - $fl)/(vhi - 0.3)
+set kv = "$&x"
+if x gt 0
+  alter vvc dc = $&vmid
+  * --- Z(s) at vctrl, no pad
+  ac dec 50 1k 100meg
+  let zp = 180/pi*ph(v(vctrl))
+  let fr = real(frequency)
+  let g = $icp * $kv * mag(v(vctrl)) / (2*pi*fr)
+  let h16 = g/16
+  * fc16 stays 0 if |H| never crosses 1 (a failed meas leaves it): no print
+  let fc16 = 0
+  meas ac fc16 when h16=1 fall=1
+  if fc16 gt 0
     meas ac pz16 find zp at=$&fc16
-    meas ac pz8 find zp at=$&fc8
-    meas ac pz40 find zp at=$&fc40
     let x = 90 + pz16
     set pm16 = "$&x"
+    set okall = "1"
+  end
+  * --- tt_27c only: P*N = 8 / 40 crossings, fc, and the 5 pF pad case
+  if ($okall eq 1) and ($istt eq 1)
+    let h8 = g/8
+    let h40 = g/40
+    meas ac fc8 when h8=1 fall=1
+    meas ac fc40 when h40=1 fall=1
+    meas ac pz8 find zp at=$&fc8
+    meas ac pz40 find zp at=$&fc40
     let x = 90 + pz8
     set pm8 = "$&x"
     let x = 90 + pz40
     set pm40 = "$&x"
     let x = fc16/1e3
     set fc16k = "$&x"
-    * --- same with 5 pF of pad on vctrl
     alter cpad = 5e-12
     ac dec 50 1k 100meg
     let zp = 180/pi*ph(v(vctrl))
@@ -169,12 +180,14 @@ if $istt eq 1
     meas ac pz16p find zp at=$&fc16p
     let x = 90 + pz16p
     set pm16p = "$&x"
-    set okall = "1"
   end
 end
 echo
 echo "  Measurements for AC Analysis (pll_analog_ol_tb, computed in .control)"
 if $okall eq 1
+  echo "ol_pm_pn16_nopad_pvt_deg = $pm16"
+end
+if ($okall eq 1) and ($istt eq 1)
   echo "ol_pm_pn16_nopad_deg = $pm16"
   echo "ol_pm_pn16_pad5p_deg = $pm16p"
   echo "ol_fc_pn16_nopad_khz = $fc16k"
