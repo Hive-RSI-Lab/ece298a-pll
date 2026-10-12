@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-10T15:03:37",
+ "updated": "2026-10-12T03:50:46",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -938,9 +938,9 @@
  "human": {
   "H1": {
    "status": "presented",
-   "challenge": "H1-101694",
-   "digest": "6cd9a644f08d24947e4593ef41a468c3f5e2a1925b41f2ad863d8865d93d8425",
-   "presented": "2026-10-08T09:42:43",
+   "challenge": "H1-ada9eb",
+   "digest": "57f44dea5b23943fa774009f57df5e4cf4bbb27fc64116f4e858a181d83d941d",
+   "presented": "2026-10-12T03:50:46",
    "phase": "P4"
   }
  },
@@ -2398,6 +2398,13 @@
    "status": "pass",
    "attempt": 4,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-12T03:50:46",
+   "event": "human_presented",
+   "checkpoint": "H1",
+   "challenge": "H1-ada9eb",
+   "digest": "57f44dea5b23943fa774009f57df5e4cf4bbb27fc64116f4e858a181d83d941d"
   }
  ]
 }
