@@ -4,8 +4,10 @@
 #
 #   bash tests/check.sh
 #
-# It needs python3 with PyYAML, and Icarus Verilog (iverilog) on PATH for the
-# lint. It runs:
+# It needs python3 with PyYAML, and for the lint Icarus Verilog: the iverilog
+# on PATH when there is one (CI installs it), or else chip-flow's eda wrapper,
+# which runs iverilog from the EDA toolchain ($CHIP_FLOW_HOME/bin/eda, then
+# /opt/chip-flow/bin/eda). It runs:
 #   1. tests/check_info.py: info.yaml has what the Tiny Tapeout flow reads, and
 #      its source list matches src/, test/Makefile and test/tb.v.
 #   2. tests/check_netlists.py: the analog netlist, testbenches, bounds and
@@ -23,13 +25,26 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 
-need() {
-  if ! command -v "$1" >/dev/null; then
-    echo "check: $1 is not on PATH; see the top of tests/check.sh" >&2
+if ! command -v python3 >/dev/null; then
+  echo "check: python3 is not on PATH; see the top of tests/check.sh" >&2
+  exit 2
+fi
+# Found only at the lint step, so the Python steps run even without iverilog.
+find_iverilog() {
+  if command -v iverilog >/dev/null; then
+    iverilog=(iverilog)
+    return
+  fi
+  iverilog=()
+  for eda in ${CHIP_FLOW_HOME:+"$CHIP_FLOW_HOME/bin/eda"} /opt/chip-flow/bin/eda; do
+    if [ -x "$eda" ]; then iverilog=("$eda" iverilog); break; fi
+  done
+  if [ ${#iverilog[@]} -eq 0 ]; then
+    echo "check: iverilog is not on PATH and no chip-flow eda wrapper was found; see the top of tests/check.sh" >&2
     exit 2
   fi
+  echo "check: no iverilog on PATH, so running it through ${iverilog[0]}"
 }
-need python3
 
 echo "== 1/4 info.yaml"
 python3 tests/check_info.py
@@ -41,11 +56,11 @@ echo "== 3/4 linear loop model"
 python3 blocks/pll/system/linear_loop.py
 
 echo "== 4/4 lint (iverilog -Wall)"
-need iverilog
+find_iverilog
 lint() {
   local name=$1; shift
   local out
-  out=$(iverilog -g2012 -Wall -t null "$@" 2>&1) || { echo "$out"; echo "lint: iverilog failed on $name"; exit 1; }
+  out=$("${iverilog[@]}" -g2012 -Wall -t null "$@" 2>&1) || { echo "$out"; echo "lint: iverilog failed on $name"; exit 1; }
   if [ -n "$out" ]; then
     echo "$out"
     echo "lint: iverilog printed warnings on $name, and a warning fails the check"
