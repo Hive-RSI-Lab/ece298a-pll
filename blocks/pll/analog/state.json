@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-12T03:50:46",
+ "updated": "2026-10-14T00:00:00",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -937,10 +937,13 @@
  "optimise": null,
  "human": {
   "H1": {
-   "status": "presented",
+   "status": "approved",
    "challenge": "H1-ada9eb",
    "digest": "57f44dea5b23943fa774009f57df5e4cf4bbb27fc64116f4e858a181d83d941d",
    "presented": "2026-10-12T03:50:46",
+   "answered": "2026-10-14T00:00:00",
+   "answer": "approve H1-ada9eb",
+   "answer_source": "slack:C0C984ULHL4/1791992318.072609 via ihsan-sa/ece298a-pll#4",
    "phase": "P4"
   }
  },
@@ -2405,6 +2408,15 @@
    "checkpoint": "H1",
    "challenge": "H1-ada9eb",
    "digest": "57f44dea5b23943fa774009f57df5e4cf4bbb27fc64116f4e858a181d83d941d"
+  },
+  {
+   "ts": "2026-10-14T00:00:00",
+   "event": "human_approved",
+   "checkpoint": "H1",
+   "challenge": "H1-ada9eb",
+   "digest": "57f44dea5b23943fa774009f57df5e4cf4bbb27fc64116f4e858a181d83d941d",
+   "answer": "approve H1-ada9eb",
+   "source": "slack:C0C984ULHL4/1791992318.072609"
   }
  ]
 }
