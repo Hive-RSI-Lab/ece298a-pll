@@ -17,6 +17,8 @@ Filed by runs. Each says what done looks like as something a run can check, and 
 - **Status:** open
 - **What:** The course grades a system verification of the term project. The proposal (`blocks/pll/brief/proposal-classic-pll.md`) tests the loop as a whole in three layers: a linear model of the loop, the real digital RTL in cocotb with Python models of the pump, filter and VCO calibrated from the analog benches, and a mixed-signal co-simulation of the digital RTL with the analog netlist. Build those benches under `blocks/pll` and run them. This reads the analog half but does not change it, so it can go ahead while the sign-off above is pending.
 - **Done when:** the three layers run from one command in this repository, the co-simulation shows the loop locking at the 100 MHz nominal point with the lock detector asserting, and the result is written up next to the benches.
+- **Progress:** layer 1, the linear model, is in `blocks/pll/loop/linear_model.py` and runs as step 3 of `bash tests/check.sh`. It agrees with ngspice's open-loop margin within 0.6° at every typical-passive corner (write-up in `blocks/pll/loop/README.md`). Next is layer 2: the cocotb loop bench, with the pump, filter and VCO models taking the same per-corner values.
+- **Pull requests:** the dispatch/2 PR (layer 1)
 
 ## Later
 
