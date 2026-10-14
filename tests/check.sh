@@ -4,7 +4,10 @@
 #
 #   bash tests/check.sh
 #
-# It needs Icarus Verilog (iverilog) on PATH and python3 with PyYAML. It runs:
+# It needs python3 with PyYAML, and Icarus Verilog: the iverilog on PATH when
+# there is one (CI installs it), or else chip-flow's eda wrapper, which runs
+# iverilog from the EDA toolchain ($CHIP_FLOW_HOME/bin/eda, then
+# /opt/chip-flow/bin/eda). It runs:
 #   1. tests/check_info.py: info.yaml has what the Tiny Tapeout flow reads, and
 #      its source list matches src/, test/Makefile and test/tb.v.
 #   2. A lint of the Verilog: the Tiny Tapeout wrapper in src/, and the PLL's
@@ -18,12 +21,23 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 
-for tool in python3 iverilog; do
-  if ! command -v "$tool" >/dev/null; then
-    echo "check: $tool is not on PATH; see the top of tests/check.sh" >&2
+if ! command -v python3 >/dev/null; then
+  echo "check: python3 is not on PATH; see the top of tests/check.sh" >&2
+  exit 2
+fi
+if command -v iverilog >/dev/null; then
+  iverilog=(iverilog)
+else
+  iverilog=()
+  for eda in ${CHIP_FLOW_HOME:+"$CHIP_FLOW_HOME/bin/eda"} /opt/chip-flow/bin/eda; do
+    if [ -x "$eda" ]; then iverilog=("$eda" iverilog); break; fi
+  done
+  if [ ${#iverilog[@]} -eq 0 ]; then
+    echo "check: iverilog is not on PATH and no chip-flow eda wrapper was found; see the top of tests/check.sh" >&2
     exit 2
   fi
-done
+  echo "check: no iverilog on PATH, so running it through ${iverilog[0]}"
+fi
 
 echo "== 1/3 info.yaml"
 python3 tests/check_info.py
@@ -32,7 +46,7 @@ echo "== 2/3 lint (iverilog -Wall)"
 lint() {
   local name=$1; shift
   local out
-  out=$(iverilog -g2012 -Wall -t null "$@" 2>&1) || { echo "$out"; echo "lint: iverilog failed on $name"; exit 1; }
+  out=$("${iverilog[@]}" -g2012 -Wall -t null "$@" 2>&1) || { echo "$out"; echo "lint: iverilog failed on $name"; exit 1; }
   if [ -n "$out" ]; then
     echo "$out"
     echo "lint: iverilog printed warnings on $name, and a warning fails the check"
