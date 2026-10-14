@@ -17,6 +17,8 @@ Filed by runs. Each says what done looks like as something a run can check, and 
 - **Status:** open
 - **What:** The course grades a system verification of the term project. The proposal (`blocks/pll/brief/proposal-classic-pll.md`) tests the loop as a whole in three layers: a linear model of the loop, the real digital RTL in cocotb with Python models of the pump, filter and VCO calibrated from the analog benches, and a mixed-signal co-simulation of the digital RTL with the analog netlist. Build those benches under `blocks/pll` and run them. This reads the analog half but does not change it, so it can go ahead while the sign-off above is pending.
 - **Done when:** the three layers run from one command in this repository, the co-simulation shows the loop locking at the 100 MHz nominal point with the lock detector asserting, and the result is written up next to the benches.
+- **Progress:** layer 1 (the linear model, `blocks/pll/system/linear_loop.py`) runs in `bash tests/check.sh` and is written up in `blocks/pll/system/README.md`. Layers 2 and 3 are next.
+- **Pull requests:** dispatch/7 (layer 1)
 
 ## Later
 
