@@ -2,6 +2,24 @@
 
 This repository is the term project of ECE 298A (Integrated Circuit Design and Tapeout) at the University of Waterloo: a charge-pump PLL for one Tiny Tapeout tile on GF180, with a divide-by-8 prescaler and a programmable feedback divider. Its analog half (the bias, the charge pump, the loop filter and the ring VCO) lives in `blocks/pll/analog`, its digital half (the phase-frequency detector, the dividers, the lock detector and the control registers) in `blocks/pll/digital`, and the two meet in `blocks/pll/interface.yaml`. `bash tests/check.sh` is the fast check every pull request has to pass. This is coursework, so runs never submit anything to a course system.
 
+## Commands a run may use
+
+Besides `bash tests/check.sh` and git, a run here may run the chip flow's own scripts. Type each one as its own command, with no `cd`, `&&`, pipe, redirect or variable in front, starting with exactly the words shown, because the engine allows these and nothing else:
+
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/task_router.py` matches a task to its verb and plans the steps.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py resume` says where a workspace stands.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py edit` records a declared edit to a spec or interface file.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py set-phase` moves a workspace to its next phase once that phase's gates pass, and never with `--force`.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py issue` updates an open issue's status or attempts.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py budget` reads or spends one of a workspace's fix-loop budgets.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py snapshot` saves a workspace before a fix.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/state.py restore` puts a snapshot back after a fix made things worse.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/gate.py` runs and records a gate.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/jobs.py` runs a long gate, such as the harden, as a detached job.
+- `/opt/chip-flow/bin/eda python /opt/chip-flow/engine/scripts/fix_dispatch.py` turns a failed gate into fix work orders.
+
+`CHIP_FLOW_HOME` and `EDA_TOOLCHAIN` are already set for the run, and one command may run for up to 45 minutes. A run never records a sign-off. Recording one (`state.py human`) is a person's step, taken from the owner's own words in the thread.
+
 ## Proposed goals
 
 Filed by runs. Each says what done looks like as something a run can check, and keeps its status (open, done, failed, dropped) with the pull requests that moved it. At most three are open at once.
