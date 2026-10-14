@@ -4,31 +4,44 @@
 #
 #   bash tests/check.sh
 #
-# It needs Icarus Verilog (iverilog) on PATH and python3 with PyYAML. It runs:
+# It needs python3 with PyYAML, and Icarus Verilog (iverilog) on PATH for the
+# lint. It runs:
 #   1. tests/check_info.py: info.yaml has what the Tiny Tapeout flow reads, and
 #      its source list matches src/, test/Makefile and test/tb.v.
-#   2. A lint of the Verilog: the Tiny Tapeout wrapper in src/, and the PLL's
-#      digital RTL with its hardening top, each compile under iverilog -Wall,
-#      and any warning fails the check.
-#   3. tests/check_netlists.py: the analog netlist, testbenches, bounds and
+#   2. tests/check_netlists.py: the analog netlist, testbenches, bounds and
 #      spec files are well formed (no PDK or simulator needed).
+#   3. blocks/pll/system/linear_loop.py: the linear model of the whole loop,
+#      from the netlist's filter and the recorded per-corner Icp and Kvco, has
+#      phase margin, Gardner margin and settling time at every lock-table point.
+#   4. A lint of the Verilog: the Tiny Tapeout wrapper in src/, and the PLL's
+#      digital RTL with its hardening top, each compile under iverilog -Wall,
+#      and any warning fails the check. Without iverilog the check fails here,
+#      after the Python steps have run.
 # The SPICE corners, formal proof, hardening and the Tiny Tapeout workflows
 # (gds, docs, test, fpga) still run on their own.
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 
-for tool in python3 iverilog; do
-  if ! command -v "$tool" >/dev/null; then
-    echo "check: $tool is not on PATH; see the top of tests/check.sh" >&2
+need() {
+  if ! command -v "$1" >/dev/null; then
+    echo "check: $1 is not on PATH; see the top of tests/check.sh" >&2
     exit 2
   fi
-done
+}
+need python3
 
-echo "== 1/3 info.yaml"
+echo "== 1/4 info.yaml"
 python3 tests/check_info.py
 
-echo "== 2/3 lint (iverilog -Wall)"
+echo "== 2/4 analog netlists and specs"
+python3 tests/check_netlists.py
+
+echo "== 3/4 linear loop model"
+python3 blocks/pll/system/linear_loop.py
+
+echo "== 4/4 lint (iverilog -Wall)"
+need iverilog
 lint() {
   local name=$1; shift
   local out
@@ -49,7 +62,4 @@ if [ ${#rtl[@]} -eq 0 ]; then
   exit 1
 fi
 lint "the PLL digital RTL" "${rtl[@]}" blocks/pll/digital/harden/tt_um_ihsan_sa_pll.v
-
-echo "== 3/3 analog netlists and specs"
-python3 tests/check_netlists.py
 echo "check: ok"
