@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-28T19:23:09",
+ "updated": "2026-10-28T19:26:34",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -1419,6 +1419,13 @@
    "ts": "2026-10-14T11:42:43",
    "answer": "`approve H1-ada9eb`",
    "note": "The owner, top-level in #ece298a-pll-asks, slack:C0C984ULHL4/1791992318.072609 (2026-10-14)."
+  },
+  "H2": {
+   "status": "presented",
+   "challenge": "H2-a9fad5",
+   "digest": "f772435ae9f98750c34fa3edaf38b307afdef643a01a1052dcf9a633faef9406",
+   "presented": "2026-10-28T19:26:34",
+   "phase": "P5"
   }
  },
  "artifacts": {
@@ -3393,6 +3400,13 @@
    "status": "pass",
    "attempt": 7,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-28T19:26:34",
+   "event": "human_presented",
+   "checkpoint": "H2",
+   "challenge": "H2-a9fad5",
+   "digest": "f772435ae9f98750c34fa3edaf38b307afdef643a01a1052dcf9a633faef9406"
   }
  ]
 }
