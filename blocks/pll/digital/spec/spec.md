@@ -23,8 +23,8 @@ standalone TT pins); nothing here renames, widens or adds one.
    side / msde cosim) measures its width. (REQ-PFD-*)
 2. **/8 prescaler.** Three ripple toggle flops (`dffq_1` with an `inv_1`
    from Q to D) clocked by `vco_out`, the only logic above 50 MHz; the first
-   stage sees up to 333 MHz (3.0 ns) at the fast corner. Output `clk_pre`
-   = `vco_out`/8 exactly (at most 42 MHz) clocks everything after it.
+   stage sees up to 370 MHz (2.7 ns), the VCO's ceiling at every corner. Output
+   `clk_pre` = `vco_out`/8 exactly (at most 46 MHz) clocks everything after it.
    (REQ-PRE-DIV8)
 3. **Programmable /N divider.** N = 1..5 from `n_sel` = `ui_in[2:0]`.
    Codes 0, 6, 7 are unsupported and **decode as N = 1** (chosen here: no
@@ -55,7 +55,7 @@ standalone TT pins); nothing here renames, widens or adds one.
 ### Closed loop under `ifdef SIM` (bench only)
 
 A real-number Verilog model of pump, filter and VCO (Icp 20 uA, C1 20 pF,
-R 22 kOhm, C2 2 pF, Kvco about 100 MHz/V, 50-200 MHz typical, up to 333 MHz
+R 22 kOhm, C2 2 pF, Kvco about 100 MHz/V, 50-200 MHz typical, up to 370 MHz
 fast) closes the loop in CocoTB. At every (f_ref, N) point of the lock table
 - (5 MHz: N 2,3,4,5), (6.25 MHz: N 1,2,3,4), (10 MHz: N 1,2), (12.5 MHz:
 N 1,2) - lock rises within 50 us, the mean feedback period equals the
@@ -101,7 +101,7 @@ Signals crossing between instances:
 
 Clock plan for synthesis and STA (also in `spec.yaml` `timing_notes`):
 `clk` is the harden's CLOCK_PORT at 80 ns; `vco_out` is a second port clock
-at 3.0 ns whose only paths are the three prescaler toggle loops (min period
+at 2.7 ns whose only paths are the three prescaler toggle loops (min period
 and min pulse width, no setup paths); `clk_pre` is a generated clock
 (divide-by-8 of `vco_out`) at 20 ns covering `u_div`, `obs_q3` and the
 `fb_en` half-cycle path; `clk_fb` is a generated clock (divide-by-8N) for
@@ -121,7 +121,7 @@ standard cells only (REQ-LOOP-MODEL-BENCH-ONLY).
 | `clk` | input | 1 | `clk` | reference clock, 5-12.5 MHz (constrained 12.5 MHz) |
 | `rst_n` | input | 1 | `rst_n` | asynchronous active-low reset |
 | `n_sel` | input | 3 | `ui_in[2:0]` | divider ratio N = 1..5; 0, 6, 7 act as N = 1 |
-| `vco_out` | input | 1 | `ui_in[3]` | crossing (a2d): VCO clock, up to 333 MHz, clocks the prescaler only |
+| `vco_out` | input | 1 | `ui_in[3]` | crossing (a2d): VCO clock, up to 370 MHz, clocks the prescaler only |
 | `pll_en_in` | input | 1 | `ui_in[6]` | PLL enable request |
 | `obs_sel` | input | 1 | `ui_in[7]` | 0 = VCO/8, 1 = VCO/16 on `obs_out` |
 | `cp_trim_in` | input | 2 | `uio_in[1:0]` | charge pump trim request bits |
@@ -144,9 +144,9 @@ low in the final tile.
 | Domain | Period | Constraint |
 |---|---|---|
 | `clk` (clk_ref) | 80 ns | reference at 12.5 MHz: PFD reference flop, lock detector, control registers |
-| `vco_out` (clk_vco) | 3.0 ns | prescaler flops only; Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width |
+| `vco_out` (clk_vco) | 2.7 ns | prescaler flops only; Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width |
 | `clk_pre` | 20 ns | generated clock `vco_out`/8 at 50 MHz: divider, PFD feedback flop, /16 flop |
-| `clk_fb` | <= 42 MHz | `clk_pre`/N, PFD feedback flop clock |
+| `clk_fb` | <= 46 MHz | `clk_pre`/N, PFD feedback flop clock |
 
 Keep attributes on the PFD delay chain must survive synthesis (checked in
 the synthesised netlist). (REQ-TIM-*, REQ-PFD-DELAY-KEEP)

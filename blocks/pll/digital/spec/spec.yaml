@@ -7,7 +7,7 @@ top: ihsan_sa_pll
 requirements:
   # --- prescaler / divider / observation -----------------------------------
   - id: REQ-PRE-DIV8
-    text: clk_pre rises exactly once per 8 rising edges of vco_out (three ripple toggle flops, /8 exactly, at any vco_out period down to 3.0 ns).
+    text: clk_pre rises exactly once per 8 rising edges of vco_out (three ripple toggle flops, /8 exactly, at any vco_out period down to 2.7 ns).
     check: both
     property: prescaler_div8
   - id: REQ-OBS-SEL
@@ -106,9 +106,9 @@ requirements:
     check: measure
     bounds: {clk_wns_ns: {min: 0}}
   - id: REQ-TIM-VCO
-    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width at a 3.0 ns vco_out period - each flop's toggle loop is under the 3.0 ns period at both corners.
+    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width at a 2.7 ns vco_out period (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling at every corner) - each flop's toggle loop is under the 2.7 ns period at both corners.
     check: measure
-    bounds: {vco_out_period_ns: {min: 3.0}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
+    bounds: {vco_out_period_ns: {min: 2.7}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
   - id: REQ-HARDEN-STANDALONE
     text: The digital side hardens alone as tt_um_ihsan_sa_pll on the TT GF180 analog-tile footprint with the pin map in tt_pins, with zero DRC errors and zero LVS mismatches; the analog macro area is reserved later by the msde integrator, not by this run.
     check: measure
@@ -165,10 +165,10 @@ clock:
 
 timing_notes:
   clk:     {period_ns: 80,  note: "reference, 5-12.5 MHz, constrained at 12.5 MHz"}
-  vco_out: {period_ns: 3.0, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths"}
+  vco_out: {period_ns: 2.7, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths"}
   clk_pre: {period_ns: 20,  note: "generated clock vco_out/8, constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
-  clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 42 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
-  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock 3.0 ns on the port), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
+  clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 46 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
+  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock 2.7 ns on the port), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
 
 design_choices:
   illegal_n_codes: "codes 0, 6, 7 decode as N = 1 (no hidden state, divider never stalls)"

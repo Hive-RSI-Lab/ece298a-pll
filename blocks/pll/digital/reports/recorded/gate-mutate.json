@@ -26,17 +26,17 @@
   {
    "check": "mutate",
    "severity": "info",
-   "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+   "file": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
    "module": null,
    "line": null,
    "kind": "equivalent_stuck_other",
    "refs": [],
-   "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+   "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
-     "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+     "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+     "file": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
      "line": null
     }
    ]
@@ -44,17 +44,17 @@
   {
    "check": "mutate",
    "severity": "info",
-   "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+   "file": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
    "module": null,
    "line": null,
    "kind": "equivalent_stuck_other",
    "refs": [],
-   "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+   "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
-     "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+     "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+     "file": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
      "line": null
     }
    ]
@@ -78,8 +78,14 @@
    "10": "accepted by owner ruling: perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling"
   },
   "unproven_survivors": {},
-  "wall_s": 106.44
+  "wall_s": 92.31
  },
- "recorded_ts": "2026-10-05T13:36:11",
- "attempts": 6
+ "inputs_at_start": {
+  "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
+  "tb": "dir_text:1c410da71ba05588f5bbbd4708b1a145250d08dee17f707dfcc45f581df75abd",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285",
+  "mutant_rulings": "json_canonical:b9ba3afa6269e5df718fbfbf5f8edc924beec39c8f502086c1039fec751f3aa0"
+ },
+ "recorded_ts": "2026-10-28T15:36:02",
+ "attempts": 7
 }

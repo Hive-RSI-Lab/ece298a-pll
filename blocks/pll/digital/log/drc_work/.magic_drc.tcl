@@ -1,5 +1,5 @@
 gds maskhints yes
-gds read /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds
+gds read /work/blocks/pll/digital/harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds
 load tt_um_ihsan_sa_pll
 select top cell
 expand
@@ -11,7 +11,7 @@ set count 0
 foreach {errtype coordlist} $drc_result {
   foreach coord $coordlist { incr count }
 }
-set fout [open /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/drc_work/.magic_drc.rpt w]
+set fout [open /work/blocks/pll/digital/log/drc_work/.magic_drc.rpt w]
 puts $fout "\[INFO\]: COUNT: $count"
 close $fout
 puts stdout "\[INFO\]: COUNT: $count"

@@ -617,26 +617,6 @@ VSS                                        |VSS
 Cell pin lists are equivalent.
 Device classes gf180mcu_fd_sc_mcu7t5v0__oai21_1 and gf180mcu_fd_sc_mcu7t5v0__oai21_1 are equivalent.
 
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: I
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: Z
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: VDD
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: VNW
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: VPW
-Cell gf180mcu_fd_sc_mcu7t5v0__buf_12 (0) disconnected node: VSS
-
-Subcircuit pins:
-Circuit 1: gf180mcu_fd_sc_mcu7t5v0__buf_12 |Circuit 2: gf180mcu_fd_sc_mcu7t5v0__buf_12 
--------------------------------------------|-------------------------------------------
-I                                          |I                                          
-Z                                          |Z                                          
-VDD                                        |VDD                                        
-VNW                                        |VNW                                        
-VPW                                        |VPW                                        
-VSS                                        |VSS                                        
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes gf180mcu_fd_sc_mcu7t5v0__buf_12 and gf180mcu_fd_sc_mcu7t5v0__buf_12 are equivalent.
-
 Cell gf180mcu_fd_sc_mcu7t5v0__oai211_1 (0) disconnected node: A1
 Cell gf180mcu_fd_sc_mcu7t5v0__oai211_1 (0) disconnected node: A2
 Cell gf180mcu_fd_sc_mcu7t5v0__oai211_1 (0) disconnected node: B
@@ -791,8 +771,8 @@ Cell tt_um_ihsan_sa_pll (1) disconnected node: uio_in[5]
 Cell tt_um_ihsan_sa_pll (1) disconnected node: uio_in[4]
 Cell tt_um_ihsan_sa_pll (1) disconnected node: uio_in[3]
 Cell tt_um_ihsan_sa_pll (1) disconnected node: uio_in[2]
-Class tt_um_ihsan_sa_pll (0):  Merged 1251 parallel devices.
-Class tt_um_ihsan_sa_pll (1):  Merged 1251 parallel devices.
+Class tt_um_ihsan_sa_pll (0):  Merged 1247 parallel devices.
+Class tt_um_ihsan_sa_pll (1):  Merged 1247 parallel devices.
 Cell tt_um_ihsan_sa_pll (0) disconnected node: ena
 Cell tt_um_ihsan_sa_pll (0) disconnected node: ui_in[4]
 Cell tt_um_ihsan_sa_pll (0) disconnected node: ui_in[5]
@@ -815,18 +795,18 @@ Subcircuit summary:
 Circuit 1: tt_um_ihsan_sa_pll              |Circuit 2: tt_um_ihsan_sa_pll              
 -------------------------------------------|-------------------------------------------
 gf180mcu_fd_sc_mcu7t5v0__filltie (348->1)  |gf180mcu_fd_sc_mcu7t5v0__filltie (348->1)  
-gf180mcu_fd_sc_mcu7t5v0__fillcap_64 (257-> |gf180mcu_fd_sc_mcu7t5v0__fillcap_64 (257-> 
-gf180mcu_fd_sc_mcu7t5v0__fillcap_8 (64->1) |gf180mcu_fd_sc_mcu7t5v0__fillcap_8 (64->1) 
-gf180mcu_fd_sc_mcu7t5v0__fill_2 (66->1)    |gf180mcu_fd_sc_mcu7t5v0__fill_2 (66->1)    
-gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (296->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (296->1 
-gf180mcu_fd_sc_mcu7t5v0__fill_1 (71->1)    |gf180mcu_fd_sc_mcu7t5v0__fill_1 (71->1)    
+gf180mcu_fd_sc_mcu7t5v0__fillcap_64 (258-> |gf180mcu_fd_sc_mcu7t5v0__fillcap_64 (258-> 
+gf180mcu_fd_sc_mcu7t5v0__fillcap_8 (66->1) |gf180mcu_fd_sc_mcu7t5v0__fillcap_8 (66->1) 
+gf180mcu_fd_sc_mcu7t5v0__fill_2 (67->1)    |gf180mcu_fd_sc_mcu7t5v0__fill_2 (67->1)    
+gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (293->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_4 (293->1 
+gf180mcu_fd_sc_mcu7t5v0__fill_1 (67->1)    |gf180mcu_fd_sc_mcu7t5v0__fill_1 (67->1)    
 gf180mcu_fd_sc_mcu7t5v0__nor3_1 (3)        |gf180mcu_fd_sc_mcu7t5v0__nor3_1 (3)        
 gf180mcu_fd_sc_mcu7t5v0__endcap (78->1)    |gf180mcu_fd_sc_mcu7t5v0__endcap (78->1)    
-gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 (36)     |gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 (36)     
+gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 (35)     |gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 (35)     
 gf180mcu_fd_sc_mcu7t5v0__nor2_1 (8)        |gf180mcu_fd_sc_mcu7t5v0__nor2_1 (8)        
-gf180mcu_fd_sc_mcu7t5v0__fillcap_32 (61->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_32 (61->1 
+gf180mcu_fd_sc_mcu7t5v0__fillcap_32 (62->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_32 (62->1 
 gf180mcu_fd_sc_mcu7t5v0__tiel (16)         |gf180mcu_fd_sc_mcu7t5v0__tiel (16)         
-gf180mcu_fd_sc_mcu7t5v0__fillcap_16 (19->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_16 (19->1 
+gf180mcu_fd_sc_mcu7t5v0__fillcap_16 (17->1 |gf180mcu_fd_sc_mcu7t5v0__fillcap_16 (17->1 
 gf180mcu_fd_sc_mcu7t5v0__and2_1 (3)        |gf180mcu_fd_sc_mcu7t5v0__and2_1 (3)        
 gf180mcu_fd_sc_mcu7t5v0__and4_1 (1)        |gf180mcu_fd_sc_mcu7t5v0__and4_1 (1)        
 gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 (2)      |gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 (2)      
@@ -834,25 +814,24 @@ gf180mcu_fd_sc_mcu7t5v0__buf_2 (2)         |gf180mcu_fd_sc_mcu7t5v0__buf_2 (2)
 gf180mcu_fd_sc_mcu7t5v0__and3_1 (1)        |gf180mcu_fd_sc_mcu7t5v0__and3_1 (1)        
 gf180mcu_fd_sc_mcu7t5v0__clkbuf_2 (3)      |gf180mcu_fd_sc_mcu7t5v0__clkbuf_2 (3)      
 gf180mcu_fd_sc_mcu7t5v0__dlya_1 (2)        |gf180mcu_fd_sc_mcu7t5v0__dlya_1 (2)        
-gf180mcu_fd_sc_mcu7t5v0__inv_2 (2)         |gf180mcu_fd_sc_mcu7t5v0__inv_2 (2)         
+gf180mcu_fd_sc_mcu7t5v0__inv_2 (1)         |gf180mcu_fd_sc_mcu7t5v0__inv_2 (1)         
 gf180mcu_fd_sc_mcu7t5v0__inv_1 (1)         |gf180mcu_fd_sc_mcu7t5v0__inv_1 (1)         
 gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 (18)     |gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 (18)     
 gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 (1)     |gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 (1)     
 gf180mcu_fd_sc_mcu7t5v0__aoi21_1 (2)       |gf180mcu_fd_sc_mcu7t5v0__aoi21_1 (2)       
 gf180mcu_fd_sc_mcu7t5v0__xnor2_1 (2)       |gf180mcu_fd_sc_mcu7t5v0__xnor2_1 (2)       
-gf180mcu_fd_sc_mcu7t5v0__clkinv_1 (9)      |gf180mcu_fd_sc_mcu7t5v0__clkinv_1 (9)      
+gf180mcu_fd_sc_mcu7t5v0__clkinv_1 (10)     |gf180mcu_fd_sc_mcu7t5v0__clkinv_1 (10)     
 gf180mcu_fd_sc_mcu7t5v0__nor4_1 (2)        |gf180mcu_fd_sc_mcu7t5v0__nor4_1 (2)        
 gf180mcu_fd_sc_mcu7t5v0__nand3_1 (1)       |gf180mcu_fd_sc_mcu7t5v0__nand3_1 (1)       
 gf180mcu_fd_sc_mcu7t5v0__oai21_1 (2)       |gf180mcu_fd_sc_mcu7t5v0__oai21_1 (2)       
-gf180mcu_fd_sc_mcu7t5v0__buf_12 (1)        |gf180mcu_fd_sc_mcu7t5v0__buf_12 (1)        
 gf180mcu_fd_sc_mcu7t5v0__oai211_1 (1)      |gf180mcu_fd_sc_mcu7t5v0__oai211_1 (1)      
 gf180mcu_fd_sc_mcu7t5v0__tieh (2)          |gf180mcu_fd_sc_mcu7t5v0__tieh (2)          
 gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 (1)     |gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 (1)     
 gf180mcu_fd_sc_mcu7t5v0__nand2_1 (2)       |gf180mcu_fd_sc_mcu7t5v0__nand2_1 (2)       
 gf180mcu_fd_sc_mcu7t5v0__or2_1 (1)         |gf180mcu_fd_sc_mcu7t5v0__or2_1 (1)         
 gf180mcu_fd_sc_mcu7t5v0__or3_1 (1)         |gf180mcu_fd_sc_mcu7t5v0__or3_1 (1)         
-Number of devices: 135                     |Number of devices: 135                     
-Number of nets: 140                        |Number of nets: 140                        
+Number of devices: 133                     |Number of devices: 133                     
+Number of nets: 138                        |Number of nets: 138                        
 ---------------------------------------------------------------------------------------
 Resolving symmetries by property value.
 Resolving symmetries by pin name.

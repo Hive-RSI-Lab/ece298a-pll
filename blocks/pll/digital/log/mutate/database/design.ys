@@ -1,9 +1,9 @@
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
-read_verilog -sv -nosynthesis /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/ihsan_sa_pll.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_ctrl_regs.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_divider.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_lock_det.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_pfd.v
+read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_prescaler.v
 hierarchy -top ihsan_sa_pll
 proc
 

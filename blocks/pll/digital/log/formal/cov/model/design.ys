@@ -1,5 +1,5 @@
-# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/src/
-read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cut.il
+# running in /work/blocks/pll/digital/log/formal/cov/src/
+read_rtlil /work/blocks/pll/digital/log/formal/cut.il
 chformal -assert2cover
 
 hierarchy -smtcheck
