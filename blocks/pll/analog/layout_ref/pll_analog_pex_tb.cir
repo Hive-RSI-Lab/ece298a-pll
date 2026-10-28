@@ -52,8 +52,10 @@
 *   slow end (vctrl = 0.3 V, ~9.2 MHz pre-layout): 250 ps max step,
 *     650 ns, rises after 200 ns (80 ns after the ramp ends), up to 3
 *     periods.
-* vco_f_lo_mhz / vco_f_hi_mhz are printed for the layout-fixer; they have
-* no bound here (vco_fmin_tt_mhz / vco_fmax_tt_mhz are pre-layout measures).
+* vco_fmax_tt_mhz is f at vctrl = vdd - 0.3 V (= vco_f_hi_mhz), the
+* pre-layout measure of the same name, bounded post-layout too: wire
+* capacitance on the ring slows the top of the range, and the 200 MHz lock
+* point lives there. vco_f_lo_mhz is printed for the layout-fixer, unbounded.
 .include '{pdk}/libs.tech/ngspice/design.spice'
 .lib '{pdk}/libs.tech/ngspice/sm141064.spice' typical
 .lib '{pdk}/libs.tech/ngspice/sm141064.spice' res_typical
@@ -146,6 +148,7 @@ echo "icp_up_code00_ua = $iup"
 echo "icp_dn_code00_ua = $idn"
 echo "vco_kvco_mhz_per_v = $kvs"
 echo "vco_f_hi_mhz = $fhs"
+echo "vco_fmax_tt_mhz = $fhs"
 echo "vco_f_lo_mhz = $fls"
 echo
 .endc

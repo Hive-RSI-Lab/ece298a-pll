@@ -58,7 +58,7 @@
    "lock_rises": 1,
    "duration_ns": 30000.0,
    "max_sync_interval_ns": 1.0,
-   "wall_time_s": 87.58605479200014,
+   "wall_time_s": 91.70342966899989,
    "bridge_error": null,
    "digital_toggles": 183,
    "edge_times_ns": [
@@ -1458,11 +1458,11 @@
  },
  "inputs_at_start": {
   "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554",
-  "tb": "dir_text:e76601f457dd71a7c28810b6b27918c162d06d71c71d549eb23d45226ff2958b",
+  "tb": "dir_text:b4415f3d9f6233270ebfbb5c09577c25784ed41fcb8cc424fd541fc17a180045",
   "digital_rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
   "analog_netlist": "dir_text:c20767143e29ce734d55b7e2a8cacb836b60b62cefe973cc06edc21007841f07",
   "analog_sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
  },
- "recorded_ts": "2026-10-28T17:41:41",
- "attempts": 1
+ "recorded_ts": "2026-10-28T19:25:27",
+ "attempts": 2
 }

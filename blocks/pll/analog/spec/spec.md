@@ -130,8 +130,9 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 | `startup_time_us` | <= 5 | all | `pll_en` rise to a running, full-swing `vco_out`, with 5 pF on `vctrl` and on `bias_ref` |
 
 Post-layout (`post_layout_bounds`): `icp_up_code00_ua`, `icp_dn_code00_ua`
-(12..30) and `vco_kvco_mhz_per_v` re-simulated from the extracted netlist
-hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
+(12..30), `vco_kvco_mhz_per_v` and `vco_fmax_tt_mhz` (>= 200, added
+2026-10-28 after the first extraction read 154.8 MHz) re-simulated from the
+extracted netlist at typical hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
 poly models have no per-instance mismatch to draw from anyway.
 
 ### Revision 2026-10-10 (H1)

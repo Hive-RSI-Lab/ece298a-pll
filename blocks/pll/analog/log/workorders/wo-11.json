@@ -1,0 +1,62 @@
+{
+ "id": 11,
+ "created": "2026-10-28T18:29:45",
+ "gate": "pex_sim",
+ "phase": "P5",
+ "workspace": "blocks/pll/analog",
+ "fixer": "layout",
+ "role_prompt": "skills/ade/agents/layout-fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/layout_gen.py",
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit the layout GENERATOR code (layout/gen_<block>.py), never the GDS by hand - there is no analog autorouter here.",
+  "drc/lvs/pex_sim each regenerate the GDS from the generator on every run; an LVS mismatch is fixed in the generator to match netlist/ and sizing/, never the other way round."
+ ],
+ "remediations": [
+  "/opt/.chip-flow@85aa1743444a65f303819158ddb6bdde457ac0c6/skills/ade/reference/remediations/measure_out_of_bounds.md"
+ ],
+ "cluster": {
+  "file": "layout_ref/pll_analog_pex_tb.bounds.json",
+  "module": "pll_analog",
+  "kinds": [
+   "measure_out_of_bounds"
+  ],
+  "checks": [
+   "ngspice"
+  ],
+  "severity": "error",
+  "count": 1,
+  "violations": [
+   {
+    "check": "pex_sim",
+    "severity": "error",
+    "file": "layout_ref/pll_analog_pex_tb.bounds.json",
+    "module": "pll_analog",
+    "line": null,
+    "kind": "measure_out_of_bounds",
+    "refs": [
+     "vco_fmax_tt_mhz"
+    ],
+    "msg": "vco_fmax_tt_mhz = 154.794, outside bound [200.0, None]",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "vco_fmax_tt_mhz = 154.794, outside bound [200.0, None]",
+      "file": "layout_ref/pll_analog_pex_tb.bounds.json",
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/analog",
+  "spec": "blocks/pll/analog/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}
