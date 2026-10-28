@@ -1,0 +1,8 @@
+* NGSPICE file created from t1.ext - technology: gf180mcuD
+
+.subckt t1 a b vss
+X0 a a_n200_n132# vss ppolyf_u r_width=1u r_length=10u
+X1 b a_n200_n132# vss ppolyf_u r_width=1u r_length=10u
+X2 m4_2000_0# m4_1880_n120# cap_mim_2f0_m4m5_noshield c_width=10u c_length=10u
+.ends
+

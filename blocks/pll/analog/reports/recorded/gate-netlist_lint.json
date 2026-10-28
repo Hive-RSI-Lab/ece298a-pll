@@ -25,8 +25,8 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-  "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
+  "spec_yaml": "json_canonical:c71ae593f741ae8e248d23d5843e069df691f4b98c2bb37eb98b5457571f92e5"
  },
- "recorded_ts": "2026-10-10T11:53:04",
- "attempts": 7
+ "recorded_ts": "2026-10-28T15:33:10",
+ "attempts": 8
 }

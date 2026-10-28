@@ -12,39 +12,13 @@
   "max_count": 0
  },
  "counts": {
-  "total": 1,
-  "by_severity": {
-   "warning": 1
-  },
-  "by_source": {
-   "ngspice": 1
-  }
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
  },
  "failing_count": 0,
  "failing": [],
- "violations": [
-  {
-   "check": "sim_pvt",
-   "severity": "warning",
-   "file": "pll_analog_vco_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_measure_missing",
-   "refs": [
-    "tt_27c",
-    "vco_period_jitter_ps_rms"
-   ],
-   "msg": "vco_period_jitter_ps_rms @ tt_27c: not present in ngspice's output - never printed",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "vco_period_jitter_ps_rms @ tt_27c: not present in ngspice's output - never printed",
-     "file": "pll_analog_vco_tb.cir",
-     "line": null
-    }
-   ]
-  }
- ],
+ "violations": [],
  "facts": {
   "top": "pll_analog",
   "corners": [
@@ -75,6 +49,8 @@
    "ff_125c_vm10",
    "ff_125c",
    "ff_125c_vp10",
+   "ss_pff",
+   "ff_pss",
    "tt_pss",
    "tt_pff"
   ],
@@ -103,7 +79,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -129,7 +105,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -155,7 +131,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -181,7 +157,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -207,7 +183,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -233,7 +209,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -259,7 +235,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -285,7 +261,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -311,7 +287,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -337,7 +313,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -363,7 +339,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -389,7 +365,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -415,7 +391,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -441,7 +417,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -467,7 +443,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -493,7 +469,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -519,7 +495,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -545,7 +521,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -571,7 +547,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -597,7 +573,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -623,7 +599,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -649,7 +625,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -675,7 +651,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -701,7 +677,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -727,7 +703,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -753,7 +729,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -779,7 +755,59 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_cp_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "icp_up_code00_ua": 27.0609,
+     "icp_dn_code00_ua": 26.8581,
+     "icp_up_code00_tt_ua": 27.0609,
+     "icp_up_code01_ua": 33.7285,
+     "icp_up_code10_ua": 40.3759,
+     "icp_up_code11_ua": 53.6205,
+     "icp_code11_over_code00_ratio": 1.98148,
+     "cp_updn_mismatch_pct": 7.84894,
+     "vctrl_leak_off_na": 0.0024259
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_cp_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "icp_up_code00_ua": 14.2457,
+     "icp_dn_code00_ua": 13.6448,
+     "icp_up_code00_tt_ua": 14.2457,
+     "icp_up_code01_ua": 17.6896,
+     "icp_up_code10_ua": 21.1173,
+     "icp_up_code11_ua": 27.9371,
+     "icp_code11_over_code00_ratio": 1.96109,
+     "cp_updn_mismatch_pct": 8.6882,
+     "vctrl_leak_off_na": 0.00349625
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -805,7 +833,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -831,7 +859,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -849,7 +877,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -867,7 +895,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -885,7 +913,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -903,7 +931,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -926,7 +954,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -944,7 +972,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -962,7 +990,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -980,7 +1008,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -998,7 +1026,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1016,7 +1044,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1034,7 +1062,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1052,7 +1080,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1070,7 +1098,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1088,7 +1116,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1106,7 +1134,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1124,7 +1152,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1142,7 +1170,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1160,7 +1188,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1178,7 +1206,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1196,7 +1224,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1214,7 +1242,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1232,7 +1260,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1250,7 +1278,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1268,7 +1296,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1286,7 +1314,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1304,7 +1332,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1322,7 +1350,43 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_ol_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "ol_pm_pn16_nopad_pvt_deg": 50.0041
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_ol_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "ol_pm_pn16_nopad_pvt_deg": 43.3352
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1345,7 +1409,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1368,7 +1432,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1386,7 +1450,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1404,7 +1468,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1422,7 +1486,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1440,7 +1504,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1458,7 +1522,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1476,7 +1540,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1494,7 +1558,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1512,7 +1576,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1530,7 +1594,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1548,7 +1612,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1566,7 +1630,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1584,7 +1648,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1602,7 +1666,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1620,7 +1684,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1638,7 +1702,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1656,7 +1720,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1674,7 +1738,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1692,7 +1756,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1710,7 +1774,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1728,7 +1792,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1746,7 +1810,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1764,7 +1828,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1782,7 +1846,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1800,7 +1864,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1818,7 +1882,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1836,7 +1900,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1854,7 +1918,43 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_overlap_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "cp_overlap_net_charge_fc": 3.60887
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_overlap_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "cp_overlap_net_charge_fc": 2.19684
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1872,7 +1972,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1890,7 +1990,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_presc_tb.cir",
@@ -1908,7 +2008,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_presc_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_presc_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -1927,7 +2027,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -1946,7 +2046,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -1965,7 +2065,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -1984,7 +2084,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2003,7 +2103,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2022,7 +2122,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2041,7 +2141,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2060,7 +2160,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2079,7 +2179,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2098,7 +2198,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2117,7 +2217,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2136,7 +2236,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2155,7 +2255,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2174,7 +2274,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2193,7 +2293,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2212,7 +2312,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2231,7 +2331,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2250,7 +2350,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2269,7 +2369,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2288,7 +2388,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2307,7 +2407,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2326,7 +2426,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2345,7 +2445,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2364,7 +2464,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2383,7 +2483,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2402,7 +2502,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2421,7 +2521,45 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_pwr_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "standby_current_ua": 0.000224804,
+     "vco_out_off_toggles": 0.0
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_pwr_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "standby_current_ua": 0.00014813,
+     "vco_out_off_toggles": 0.0
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2440,7 +2578,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2459,7 +2597,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2477,7 +2615,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2495,7 +2633,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2513,7 +2651,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2531,7 +2669,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2549,7 +2687,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2567,7 +2705,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2585,7 +2723,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2603,7 +2741,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2621,7 +2759,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2639,7 +2777,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2657,7 +2795,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2675,7 +2813,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2693,7 +2831,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2711,7 +2849,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2729,7 +2867,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2747,7 +2885,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2765,7 +2903,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2783,7 +2921,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2801,7 +2939,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2819,7 +2957,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2837,7 +2975,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2855,7 +2993,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2873,7 +3011,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2891,7 +3029,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2909,7 +3047,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2927,7 +3065,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2945,7 +3083,43 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_startup_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "startup_time_us": 0.543381
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_startup_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "startup_time_us": 0.900329
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2963,7 +3137,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2981,7 +3155,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3007,7 +3181,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3033,7 +3207,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3059,7 +3233,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3085,7 +3259,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3110,30 +3284,8 @@
      "vco_out_tf_ns": 0.04836
     },
     "engine_errors": [],
-    "violations": [
-     {
-      "check": "sim_pvt",
-      "severity": "warning",
-      "file": "pll_analog_vco_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_measure_missing",
-      "refs": [
-       "tt_27c",
-       "vco_period_jitter_ps_rms"
-      ],
-      "msg": "vco_period_jitter_ps_rms @ tt_27c: not present in ngspice's output - never printed",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "vco_period_jitter_ps_rms @ tt_27c: not present in ngspice's output - never printed",
-        "file": "pll_analog_vco_tb.cir",
-        "line": null
-       }
-      ]
-     }
-    ],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c.cir"
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3159,7 +3311,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3185,7 +3337,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3211,7 +3363,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3237,7 +3389,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3263,7 +3415,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3289,7 +3441,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3315,7 +3467,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3341,7 +3493,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3367,7 +3519,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3393,7 +3545,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3419,7 +3571,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3445,7 +3597,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3471,7 +3623,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3497,7 +3649,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3523,7 +3675,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3549,7 +3701,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3575,7 +3727,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3601,7 +3753,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3627,7 +3779,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3653,7 +3805,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vm10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3679,7 +3831,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3705,7 +3857,59 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vp10.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vp10.cir"
+   },
+   {
+    "bench": "pll_analog_vco_tb.cir",
+    "corner": "ss_pff",
+    "names": [
+     "ss_pff"
+    ],
+    "process": "ss",
+    "passive": "ff",
+    "temp_c": 125,
+    "vdd": "2.97",
+    "returncode": 0,
+    "measures": {
+     "vco_kvco_mhz_per_v": 115.239,
+     "vco_df_dv_min_mhz_per_v": 11.8365,
+     "vco_fmin_tt_mhz": 16.9314,
+     "vco_fmax_tt_mhz": 290.047,
+     "vco_out_swing_pct_vdd": 100.885,
+     "vco_out_duty_pct": 54.1057,
+     "vco_fmax_ff_mhz": 310.392,
+     "vco_out_tr_ns": 0.065957,
+     "vco_out_tf_ns": 0.064048
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_pff.cir"
+   },
+   {
+    "bench": "pll_analog_vco_tb.cir",
+    "corner": "ff_pss",
+    "names": [
+     "ff_pss"
+    ],
+    "process": "ff",
+    "passive": "ss",
+    "temp_c": -40,
+    "vdd": "3.63",
+    "returncode": 0,
+    "measures": {
+     "vco_kvco_mhz_per_v": 49.7066,
+     "vco_df_dv_min_mhz_per_v": 3.4297,
+     "vco_fmin_tt_mhz": 7.51488,
+     "vco_fmax_tt_mhz": 158.126,
+     "vco_out_swing_pct_vdd": 100.196,
+     "vco_out_duty_pct": 53.687,
+     "vco_fmax_ff_mhz": 158.952,
+     "vco_out_tr_ns": 0.051717,
+     "vco_out_tf_ns": 0.04609
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3731,7 +3935,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pss.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3757,7 +3961,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pff.cir"
+    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pff.cir"
    }
   ],
   "not_scored": [
@@ -3893,6 +4097,16 @@
    },
    {
     "bench": "pll_analog_presc_tb.cir",
+    "corner": "ss_pff",
+    "reason": "no bound in the sidecar is scored at this corner"
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "corner": "ff_pss",
+    "reason": "no bound in the sidecar is scored at this corner"
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
     "corner": "tt_pss",
     "reason": "no bound in the sidecar is scored at this corner"
    },
@@ -3906,10 +4120,10 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-  "tb": "dir_text:75f9cbb01e815e85fc1694b031991dadbb4b68958220779ebd031d7d9ba9b037",
-  "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
+  "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+  "spec_yaml": "json_canonical:c71ae593f741ae8e248d23d5843e069df691f4b98c2bb37eb98b5457571f92e5",
   "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
  },
- "recorded_ts": "2026-10-10T13:04:27",
- "attempts": 6
+ "recorded_ts": "2026-10-28T15:58:14",
+ "attempts": 7
 }

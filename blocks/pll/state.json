@@ -4,21 +4,21 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-09-27T00:42:24",
+ "updated": "2026-10-28T15:35:06",
  "phase": "P2",
  "toolchain": null,
  "gates": {
   "split": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-27T00:42:24",
+    "ts": "2026-10-28T15:33:45",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
+     "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
     },
     "job": null
    },
@@ -62,6 +62,16 @@
       "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-28T15:33:45",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
+     },
+     "job": null
     }
    ]
   }
@@ -74,8 +84,8 @@
   "interface": {
    "path": "interface.yaml",
    "kind": "interface",
-   "sha256": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b",
-   "hashed": "2026-09-27T00:42:24"
+   "sha256": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554",
+   "hashed": "2026-10-28T15:33:45"
   }
  },
  "open_issues": [],
@@ -85,13 +95,45 @@
   "fix_loops": {}
  },
  "decisions": [],
- "edits": [],
+ "edits": [
+  {
+   "ts": "2026-10-28T15:33:38",
+   "class": "interface_edit",
+   "refs": [
+    "interface.yaml",
+    "analog_spec.yaml",
+    "digital_spec.yaml"
+   ],
+   "note": "vco_out load: up to 370 MHz (the analog VCO ceiling at every corner); clk_fb <= 46 MHz",
+   "human_hold": 2,
+   "gates": [
+    "split",
+    "cosim",
+    "top_harden",
+    "top_drc",
+    "top_lvs",
+    "precheck",
+    "release"
+   ],
+   "gates_marked": [
+    "split"
+   ],
+   "stale_artifacts": []
+  }
+ ],
  "spawns": [
   {
    "ts": "2026-09-27T00:27:24",
    "role": "splitter",
    "model": "fable",
    "phase": "P1"
+  },
+  {
+   "ts": "2026-10-28T15:35:06",
+   "role": "integrator",
+   "model": "opus",
+   "effort": "high",
+   "phase": "P3"
   }
  ],
  "history": [
@@ -151,6 +193,31 @@
    "status": "pass",
    "attempt": 4,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-28T15:33:38",
+   "event": "edit",
+   "edit_class": "interface_edit",
+   "refs": [
+    "interface.yaml",
+    "analog_spec.yaml",
+    "digital_spec.yaml"
+   ],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-10-28T15:33:45",
+   "event": "gate",
+   "gate": "split",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-28T15:35:06",
+   "event": "spawn",
+   "role": "integrator",
+   "model": "opus"
   }
  ]
 }
