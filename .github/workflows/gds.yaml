@@ -38,6 +38,9 @@ jobs:
         uses: TinyTapeout/tt-gds-action/gl_test@ttgf26c
 
   viewer:
+    # Pages deploys only from main: on a branch it finds more than one
+    # github-pages artifact in the run and fails.
+    if: github.ref == 'refs/heads/main'
     needs: gds
     runs-on: ubuntu-24.04
     permissions:
