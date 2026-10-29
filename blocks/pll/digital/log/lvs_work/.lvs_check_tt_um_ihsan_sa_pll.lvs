@@ -1,7 +1,7 @@
-set circuit1 [readnet spice /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/harden/runs/run/final/spice/tt_um_ihsan_sa_pll.spice]
+set circuit1 [readnet spice /work/blocks/pll/digital/harden/runs/run/final/spice/tt_um_ihsan_sa_pll.spice]
 set circuit2 [readnet verilog /dev/null]
-readnet spice /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
-readnet spice /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_fd_io.spice $circuit2
-readnet spice /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ef_io.spice $circuit2
-readnet verilog /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v $circuit2
-lvs "$circuit1 tt_um_ihsan_sa_pll" "$circuit2 tt_um_ihsan_sa_pll" /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/librelane/scripts/netgen/setup.tcl /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/lvs_work/.lvs_check_tt_um_ihsan_sa_pll.rpt -blackbox -json
+readnet spice /opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
+readnet spice /opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_fd_io.spice $circuit2
+readnet spice /opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ef_io.spice $circuit2
+readnet verilog /work/blocks/pll/digital/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v $circuit2
+lvs "$circuit1 tt_um_ihsan_sa_pll" "$circuit2 tt_um_ihsan_sa_pll" /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/librelane/scripts/netgen/setup.tcl /work/blocks/pll/digital/log/lvs_work/.lvs_check_tt_um_ihsan_sa_pll.rpt -blackbox -json

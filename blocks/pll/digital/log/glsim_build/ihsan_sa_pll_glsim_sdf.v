@@ -40,6 +40,6 @@ module ihsan_sa_pll (
       .uio_out(tt_uio_out), .uio_oe(tt_uio_oe), .ena(tt_ena),
       .clk(tt_clk), .rst_n(tt_rst_n)
   );
-  initial $sdf_annotate("/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf", dut);
+  initial $sdf_annotate("/work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf", dut);
 endmodule
 `default_nettype wire

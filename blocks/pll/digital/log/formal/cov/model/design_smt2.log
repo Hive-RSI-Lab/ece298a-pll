@@ -67,6 +67,6 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 6.2. Executing DEMUXMAP pass.
 Creating SMT-LIBv2 representation of module ihsan_sa_pll_formal.
 
-End of script. Logfile hash: c145f113c3, time: 0.08s, user: 0.02s, system: 0.01s, MEM: 28.66 MB peak
+End of script. Logfile hash: c145f113c3, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 27.89 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 56% 2x write_smt2 (0 sec), 30% 2x read_rtlil (0 sec), ...
+Time spent: 57% 2x write_smt2 (0 sec), 30% 2x read_rtlil (0 sec), ...

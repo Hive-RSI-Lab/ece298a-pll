@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <report-database>
- <description>pin_label_purposes_overlapping_drawing.rb.drc, input=/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/precheck_run/design/tt_um_ihsan_sa_pll.gds, topcell=</description>
+ <description>pin_label_purposes_overlapping_drawing.rb.drc, input=/work/blocks/pll/digital/log/precheck_run/design/tt_um_ihsan_sa_pll.gds, topcell=</description>
  <original-file/>
  <generator>drc: script='tech-files/pin_label_purposes_overlapping_drawing.rb.drc'</generator>
  <top-cell>tt_um_ihsan_sa_pll</top-cell>

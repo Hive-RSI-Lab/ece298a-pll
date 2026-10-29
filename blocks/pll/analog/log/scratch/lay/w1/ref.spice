@@ -1,0 +1,4 @@
+.subckt t1 a b vss
+X1 a b vss ppolyf_u r_width=1e-6 r_length=20e-6
+XC1 ct cb cap_mim_2f0_m4m5_noshield c_width=10e-6 c_length=10e-6
+.ends

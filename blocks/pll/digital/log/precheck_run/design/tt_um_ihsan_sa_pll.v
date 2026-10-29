@@ -117,12 +117,10 @@ module tt_um_ihsan_sa_pll (clk,
  wire clknet_0_clk;
  wire clknet_1_0__leaf_clk;
  wire clknet_1_1__leaf_clk;
- wire net33;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ;
- wire net32;
- wire \clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ;
+ wire net33;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ;
- wire \clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ;
+ wire net32;
  wire \clknet_0_u_ihsan_sa_pll.clk_pre ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre ;
  wire \clknet_0_u_ihsan_sa_pll.clk_pre_regs ;
@@ -1822,23 +1820,11 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_492 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_29_492 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_496 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_29_523 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_555 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_559 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_556 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2030,31 +2016,15 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_457 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_457 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_473 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_489 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_477 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_479 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_518 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_522 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_524 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_523 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2678,7 +2648,19 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_588 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_504 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_37_562 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_594 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_602 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -4376,7 +4358,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__inv_2 _041__29 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _041__29 (.I(\u_ihsan_sa_pll.u_pre.pre_q1 ),
     .ZN(net29),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4864,12 +4846,6 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_12 \clkbuf_0_u_ihsan_sa_pll.u_pre.pre_q1  (.I(\u_ihsan_sa_pll.u_pre.pre_q1 ),
-    .Z(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ),
-    .VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 clkbuf_1_0__f_clk (.I(clknet_0_clk),
     .Z(clknet_1_0__leaf_clk),
     .VDD(VPWR),
@@ -4906,7 +4882,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q1  (.I(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q1  (.I(\u_ihsan_sa_pll.u_pre.pre_q1 ),
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4920,12 +4896,6 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.clk_pre_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_pre_regs ),
     .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
-    .VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q1  (.I(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ),
-    .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),

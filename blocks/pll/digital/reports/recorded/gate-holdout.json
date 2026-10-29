@@ -32,6 +32,11 @@
   ],
   "tests_passed": 7
  },
- "recorded_ts": "2026-10-05T13:34:09",
- "attempts": 6
+ "inputs_at_start": {
+  "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
+  "holdout": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+ },
+ "recorded_ts": "2026-10-28T15:34:29",
+ "attempts": 7
 }

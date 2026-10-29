@@ -1,5 +1,5 @@
 TN:verilator_coverage
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
+SF:/work/blocks/pll/digital/rtl/ihsan_sa_pll.v
 DA:12,286
 BRDA:12,0,clk:0->1,286
 BRDA:12,0,clk:1->0,286
@@ -71,7 +71,7 @@ BRDA:53,0,cond_else,24824
 BRF:48
 BRH:26
 end_of_record
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
+SF:/work/blocks/pll/digital/rtl/pll_ctrl_regs.v
 DA:4,286
 BRDA:4,0,clk:0->1,286
 BRDA:4,0,clk:1->0,286
@@ -111,7 +111,7 @@ DA:20,284
 BRF:20
 BRH:8
 end_of_record
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
+SF:/work/blocks/pll/digital/rtl/pll_divider.v
 DA:8,716
 BRDA:8,0,clk_pre:0->1,716
 BRDA:8,0,clk_pre:1->0,716
@@ -181,7 +181,7 @@ BRDA:31,0,(fb_en==0) => 0,6854
 BRF:49
 BRH:35
 end_of_record
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
+SF:/work/blocks/pll/digital/rtl/pll_lock_det.v
 DA:11,286
 BRDA:11,0,clk:0->1,286
 BRDA:11,0,clk:1->0,286
@@ -254,7 +254,7 @@ DA:34,284
 BRF:50
 BRH:43
 end_of_record
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
+SF:/work/blocks/pll/digital/rtl/pll_pfd.v
 DA:9,286
 BRDA:9,0,clk:0->1,286
 BRDA:9,0,clk:1->0,286
@@ -306,7 +306,7 @@ DA:35,552
 BRF:32
 BRH:32
 end_of_record
-SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
+SF:/work/blocks/pll/digital/rtl/pll_prescaler.v
 DA:6,5894
 BRDA:6,0,vco_out:0->1,5894
 BRDA:6,0,vco_out:1->0,5894

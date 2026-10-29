@@ -3,7 +3,7 @@
  "gate": "timing",
  "phase": "P6",
  "tool": "timing",
- "input_digest": "dir_text:646ccf220680e77306c44b72bfd63a46b39eb84dc9264e5654f92af69d9392d7",
+ "input_digest": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
  "status": "fail",
  "criteria": {
   "fail_severities": [
@@ -30,11 +30,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
      "file": null,
      "line": null
     }
@@ -49,11 +49,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -1.1900ns",
+   "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -1.1900ns",
+     "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
      "file": null,
      "line": null
     }
@@ -68,11 +68,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
      "file": null,
      "line": null
     }
@@ -89,11 +89,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
      "file": null,
      "line": null
     }
@@ -108,11 +108,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -1.1900ns",
+   "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -1.1900ns",
+     "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
      "file": null,
      "line": null
     }
@@ -127,11 +127,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
      "file": null,
      "line": null
     }
@@ -143,43 +143,47 @@
   "top": "tt_um_ihsan_sa_pll",
   "corners": {
    "max_ff_n40C_3v60": {
-    "setup_ws": 1.67,
+    "setup_ws": 1.37,
     "hold_ws": 0.52
    },
    "max_ss_125C_3v00": {
-    "setup_ws": -1.2,
-    "hold_ws": 2.55
+    "setup_ws": -1.5,
+    "hold_ws": 2.54
    },
    "max_tt_025C_3v30": {
-    "setup_ws": 0.83,
+    "setup_ws": 0.53,
     "hold_ws": 1.14
    },
    "min_ff_n40C_3v60": {
-    "setup_ws": 1.68,
-    "hold_ws": 0.52
+    "setup_ws": 1.38,
+    "hold_ws": 0.51
    },
    "min_ss_125C_3v00": {
-    "setup_ws": -1.19,
+    "setup_ws": -1.49,
     "hold_ws": 2.53
    },
    "min_tt_025C_3v30": {
-    "setup_ws": 0.84,
+    "setup_ws": 0.54,
     "hold_ws": 1.14
    },
    "nom_ff_n40C_3v60": {
-    "setup_ws": 1.67,
+    "setup_ws": 1.38,
     "hold_ws": 0.52
    },
    "nom_ss_125C_3v00": {
-    "setup_ws": -1.2,
+    "setup_ws": -1.49,
     "hold_ws": 2.54
    },
    "nom_tt_025C_3v30": {
-    "setup_ws": 0.83,
+    "setup_ws": 0.54,
     "hold_ws": 1.14
    }
   }
  },
- "recorded_ts": "2026-10-05T13:41:05",
- "attempts": 5
+ "inputs_at_start": {
+  "harden": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+ },
+ "recorded_ts": "2026-10-28T17:21:24",
+ "attempts": 7
 }
