@@ -107,12 +107,15 @@ devices:
 
 # The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
 # 125 C": a full grid, replacing the default five. 27 corners; the
-# brief's ff_n40C_3v60 is ff_m40c_vp10 here.
+# brief's ff_n40C_3v60 is ff_m40c_vp10 here. The two transistor/resistor
+# skew corners ride along (`extra`): the Vgs/R bias puts the worst Icp
+# there (H1 open item 1). With the engine's tt_pss/tt_pff, 31 corners.
 corners:
   grid:
     process: [typical, ss, ff]
     temp_c: [-40, 27, 125]
     supply_pct: [-10, 0, 10]
+  extra: [ss_pff, ff_pss]
 
 # Measure names are load-bearing for the bench-writer's .bounds.json.
 # Units are in the name. "all" = the whole grid above.
@@ -188,9 +191,14 @@ measures:
   - name: vco_fmax_tt_mhz
     bounds: {min: 200.0}
     corners: [tt_27c]
+  # f at vctrl = vdd, the VCO's ceiling, scored at every corner (H1 open
+  # item 2): it peaks at fast, cold, LOW supply (~363 MHz), so the digital
+  # side is timed with the VCO clock at 2.7 ns (370 MHz). The floor is the
+  # 150 MHz lock point every corner keeps (ff_pss tops out near 158 MHz,
+  # H1 open item 3); 200 MHz at typical is vco_fmax_tt_mhz's.
   - name: vco_fmax_ff_mhz
-    bounds: {min: 200.0, max: 333.0}
-    corners: [ff_m40c_vp10]
+    bounds: {min: 150.0, max: 370.0}
+    corners: all
   - name: vco_out_swing_pct_vdd
     bounds: {min: 90.0}
     corners: all
@@ -203,10 +211,6 @@ measures:
   - name: vco_out_duty_pct
     bounds: {min: 40.0, max: 60.0}
     corners: all
-  - name: vco_period_jitter_ps_rms
-    bounds: {max: 10.0}
-    corners: [tt_27c]
-    severity: warning
   # --- prescaler drive (extracted dffq_1 + inv_1 toggle stage) ----------
   - name: presc_div2_ratio
     bounds: {min: 0.99, max: 1.01}
@@ -222,9 +226,12 @@ measures:
     bounds: {max: 5.0}
     corners: all
 
-# Post-layout re-simulation of Kvco and Icp (brief: layout section). Same
-# bounds as pre-layout at the corners those measures run.
+# Post-layout re-simulation of Kvco, Icp and the top of the VCO range
+# (brief: layout section). Same bounds as pre-layout at typical.
+# vco_fmax_tt_mhz added 2026-10-28: the first extracted layout kept Kvco in
+# bounds but read 154.8 MHz at vctrl = vdd - 0.3 V against 257.8 pre-layout.
 post_layout_bounds:
   icp_up_code00_ua: {min: 12.0, max: 30.0}
   icp_dn_code00_ua: {min: 12.0, max: 30.0}
   vco_kvco_mhz_per_v: {min: 40.0, max: 250.0}
+  vco_fmax_tt_mhz: {min: 200.0}

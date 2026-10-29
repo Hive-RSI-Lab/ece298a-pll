@@ -40,6 +40,11 @@
   ],
   "tests_passed": 15
  },
- "recorded_ts": "2026-10-05T13:34:00",
- "attempts": 11
+ "inputs_at_start": {
+  "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
+  "tb": "dir_text:1c410da71ba05588f5bbbd4708b1a145250d08dee17f707dfcc45f581df75abd",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+ },
+ "recorded_ts": "2026-10-28T15:34:27",
+ "attempts": 12
 }

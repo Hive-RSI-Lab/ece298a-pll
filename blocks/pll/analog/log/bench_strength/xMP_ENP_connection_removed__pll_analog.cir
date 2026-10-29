@@ -1,7 +1,7 @@
 * pll_analog.cir - analog half of the charge-pump PLL (P4 netlist).
 * GF180MCU 3.3 V, gf180mcu_fd_pr models only: nfet_03v3 / pfet_03v3
 * (subckt wrappers, so every MOS is an X instance), ppolyf_u (350 ohm/sq
-* typical, 280 ff, 420 ss) and cap_mim_2f0_m2m3_noshield (2 fF/um2; the
+* typical, 280 ff, 420 ss) and cap_mim_2f0_m4m5_noshield (2 fF/um2, MIM-B between metal4 and metal5, the only MIM gf180mcuD draws; the
 * PDK has no cap_mim_2f0ff in the mimcap_<corner> sections the benches load).
 * Topology and refdes: spec/topology.md. Pins in topology.md's order.
 * Sizing: every W/L/length below is a global .param; sizing/sizing.yaml
@@ -109,8 +109,8 @@ XMP_BUFL2 vdump vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
 
 * (4) loop filter: R1-C1 series, C2 shunt
 XR1 vctrl vfilt vss ppolyf_u r_width=2e-6 r_length=r1_l
-XC1 vfilt vss cap_mim_2f0_m2m3_noshield c_width=c1_w c_length=c1_w
-XC2 vctrl vss cap_mim_2f0_m2m3_noshield c_width=c2_w c_length=c2_w
+XC1 vfilt vss cap_mim_2f0_m4m5_noshield c_width=c1_w c_length=c1_w
+XC2 vctrl vss cap_mim_2f0_m4m5_noshield c_width=c2_w c_length=c2_w
 
 * (5) VCO control: degenerated V2I + floor current -> vbp_vco / vbn_vco
 * MN_CL (gate vref, a (W/L)cl/(W/L)b1 copy of Ib) sits under R_V2I: in

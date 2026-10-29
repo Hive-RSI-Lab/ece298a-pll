@@ -3,7 +3,7 @@
  "gate": "split",
  "phase": "P1",
  "tool": "split",
- "input_digest": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b",
+ "input_digest": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -29,6 +29,9 @@
    "vco_out"
   ]
  },
- "recorded_ts": "2026-09-27T00:42:24",
- "attempts": 4
+ "inputs_at_start": {
+  "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
+ },
+ "recorded_ts": "2026-10-28T15:33:45",
+ "attempts": 5
 }

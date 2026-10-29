@@ -1,4 +1,4 @@
-# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/pdr/model/
+# running in /work/blocks/pll/digital/log/formal/pdr/model/
 read_rtlil design_prep.il
 delete */t:$print
 hierarchy -simcheck

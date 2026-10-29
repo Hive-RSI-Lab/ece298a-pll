@@ -7,14 +7,14 @@ multiclock on
 smtbmc yices
 
 [script]
-read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cut.il
+read_rtlil /work/blocks/pll/digital/log/formal/cut.il
 
 
 [files]
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
-/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
+/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
+/work/blocks/pll/digital/rtl/ihsan_sa_pll.v
+/work/blocks/pll/digital/rtl/pll_ctrl_regs.v
+/work/blocks/pll/digital/rtl/pll_divider.v
+/work/blocks/pll/digital/rtl/pll_lock_det.v
+/work/blocks/pll/digital/rtl/pll_pfd.v
+/work/blocks/pll/digital/rtl/pll_prescaler.v

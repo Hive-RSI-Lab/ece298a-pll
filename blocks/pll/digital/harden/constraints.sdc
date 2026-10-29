@@ -17,8 +17,10 @@ proc pll_driver_pin {aliases} {
     error "constraints.sdc: no net matches any of {$aliases}"
 }
 
-# vco_out: the VCO's buffered output on ui_in[3]; spec timing_notes 3.0 ns.
-create_clock -name vco_out -period 3.0 [get_ports {ui_in[3]}]
+# vco_out: the VCO's buffered output on ui_in[3]; spec timing_notes 2.7 ns
+# (370 MHz: the analog VCO's ceiling at every corner, ~363 MHz at ff, -40 C,
+# 2.97 V with vctrl at the rail).
+create_clock -name vco_out -period 2.7 [get_ports {ui_in[3]}]
 
 # The /8 ripple prescaler: each stage clocks the next.
 set pll_pre_q0 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_q0}]
@@ -26,7 +28,7 @@ set pll_pre_q1 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_q1}]
 set pll_pre_q2 [pll_driver_pin {u_ihsan_sa_pll.clk_pre u_ihsan_sa_pll.u_pre.pre_q2}]
 create_generated_clock -name pre_q0 -source [get_ports {ui_in[3]}] -divide_by 2 $pll_pre_q0
 create_generated_clock -name pre_q1 -source $pll_pre_q0 -divide_by 2 $pll_pre_q1
-# clk_pre = vco_out/8 (24 ns at the 3.0 ns vco_out period). It has to be a
+# clk_pre = vco_out/8 (21.6 ns at the 2.7 ns vco_out period). It has to be a
 # generated clock: a create_clock on the stage-2 Q pin gives that flop's
 # own toggle loop zero launch latency against a propagated capture clock,
 # a false hold violation. REQ-TIM-PRE's 20 ns is tighter; harden run 2

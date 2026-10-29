@@ -1,4 +1,4 @@
-# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/model/
+# running in /work/blocks/pll/digital/log/formal/cov/model/
 read_rtlil design_prep.il
 hierarchy -smtcheck
 delete */t:$print

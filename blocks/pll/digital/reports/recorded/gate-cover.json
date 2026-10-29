@@ -28,6 +28,11 @@
   "toggle_covered": 160,
   "toggle_total": 160
  },
- "recorded_ts": "2026-10-05T13:34:17",
- "attempts": 7
+ "inputs_at_start": {
+  "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
+  "tb": "dir_text:1c410da71ba05588f5bbbd4708b1a145250d08dee17f707dfcc45f581df75abd",
+  "spec_yaml": "json_canonical:ac784df5c9763c127bc11d87d4e16df3a2be5411104eefe53561c839120127c1"
+ },
+ "recorded_ts": "2026-10-28T16:00:31",
+ "attempts": 8
 }

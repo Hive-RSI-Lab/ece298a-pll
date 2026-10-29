@@ -39,8 +39,9 @@ control decoding are digital and outside this cell.
 3. **VCO.** Current-starved inverter ring, odd stage count from the ngspice
    sweep; `vctrl` sets the starving current. Positive Kvco (higher `vctrl`,
    higher frequency - the digital PFD polarity assumes this), monotonic at
-   every corner, about 50-200 MHz at typical, up to about 333 MHz at the
-   fast/cold/high-supply corner, Kvco about 100 MHz/V (estimate). Output
+   every corner, about 50-200 MHz at typical, up to about 363 MHz at the
+   fast/cold/low-supply corner with `vctrl` at the rail (370 MHz ceiling,
+   the 2.7 ns the digital side is timed at), Kvco about 100 MHz/V (estimate). Output
    buffered to a full-swing 3.3 V CMOS clock `vco_out` driving one `dffq_1`
    clock pin plus one buffer (about 15 fF) with rise/fall <= 0.15 ns at
    333 MHz (the Liberty condition the prescaler was checked at).
@@ -61,7 +62,7 @@ adding one goes back through the msde `split` step.
 
 | Pin | Dir | Level | Domain | Meaning |
 |---|---|---|---|---|
-| `vco_out` | a2d out | cmos_3v3 | clk_free | buffered VCO clock to the /8 prescaler, up to 333 MHz |
+| `vco_out` | a2d out | cmos_3v3 | clk_free | buffered VCO clock to the /8 prescaler, up to 370 MHz |
 | `pfd_up` | d2a in | cmos_3v3 | clk_ref | UP pulse, active high, source Icp into `vctrl` |
 | `pfd_dn` | d2a in | cmos_3v3 | clk_fb | DN pulse, active high, sink Icp from `vctrl` |
 | `pll_en` | d2a in | cmos_3v3 | clk_ref | 1 = run, 0 = pump, bias, VCO off |
@@ -81,7 +82,11 @@ side. No split (standard-cell) devices live in this macro.
 
 The brief asks for typ/fast/slow process, supply +-10 %, -40 to 125 C:
 `spec.yaml` declares the grid {typical, ss, ff} x {-40, 27, 125} C x
-{-10, 0, +10} % = 27 corners. Names follow `corners.py`: `tt_27c`,
+{-10, 0, +10} % = 27 corners, plus the transistor/resistor skew corners
+`ss_pff` (ss, 125 C, -10 %, fast R and C) and `ff_pss` (ff, -40 C, +10 %,
+slow R and C) through the grid's `extra`. The engine appends `tt_pss` and
+`tt_pff` (typical transistors at each RC extreme) because the netlist uses
+poly resistors and MIM caps: 31 corners. Names follow `corners.py`: `tt_27c`,
 `ss_125c_vm10`, `ff_m40c_vp10` (the brief's ff_n40C_3v60), etc.
 
 ### Measures (ngspice)
@@ -90,7 +95,7 @@ Conditions unless stated: `pll_en` = 1, `cp_trim` = 00, `bias_ref`
 floating (internal default), `vco_out` loaded with 15 fF. The `vctrl`
 tuning range for the pump measures is 0.3 V to (vdd - 0.3 V): the brief's
 "0.3-3.0 V" cannot be met at vdd - 10 % = 2.97 V, so the upper end tracks
-the rail. Rise/fall are 20 %-80 %. "all" = the 27-corner grid.
+the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 
 | Measure | Bound | Corners | What it is |
 |---|---|---|---|
@@ -114,20 +119,20 @@ the rail. Rise/fall are 20 %-80 %. "all" = the 27-corner grid.
 | `vco_df_dv_min_mhz_per_v` | >= 0 | all | minimum df/dv step of the sweep: monotonic, positive Kvco |
 | `vco_fmin_tt_mhz` | <= 50 | tt_27c | frequency at the low end of the range |
 | `vco_fmax_tt_mhz` | >= 200 | tt_27c | frequency at the high end of the range |
-| `vco_fmax_ff_mhz` | 200..333 | ff_m40c_vp10 | frequency at `vctrl` = vdd: the prescaler's 333 MHz bound |
+| `vco_fmax_ff_mhz` | 150..370 | all | frequency at `vctrl` = vdd: the VCO's ceiling, held under the 370 MHz (2.7 ns) the digital timing is closed at, and over the 150 MHz lock point every corner keeps |
 | `vco_out_swing_pct_vdd` | >= 90 | all | (Vhigh - Vlow)/vdd on `vco_out` into 15 fF |
 | `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency into 15 fF |
 | `vco_out_tf_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | fall, same |
 | `vco_out_duty_pct` | 40..60 | all | duty at mid-range `vctrl` |
-| `vco_period_jitter_ps_rms` | <= 10 (warn) | tt_27c | period jitter from `trnoise` sized from device models, mid-range `vctrl` |
 | `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10 | `vco_out` driving the extracted `gf180mcu_fd_sc_mcu7t5v0__dffq_1` + `inv_1` toggle stage: f_toggle / (f_vco/2) |
 | `standby_current_ua` | <= 1 | all | vdd current with `pll_en` = 0 |
 | `vco_out_off_toggles` | 0 | all | `vco_out` transitions with `pll_en` = 0 (held static) |
 | `startup_time_us` | <= 5 | all | `pll_en` rise to a running, full-swing `vco_out`, with 5 pF on `vctrl` and on `bias_ref` |
 
 Post-layout (`post_layout_bounds`): `icp_up_code00_ua`, `icp_dn_code00_ua`
-(12..30) and `vco_kvco_mhz_per_v` re-simulated from the extracted netlist
-hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
+(12..30), `vco_kvco_mhz_per_v` and `vco_fmax_tt_mhz` (>= 200, added
+2026-10-28 after the first extraction read 154.8 MHz) re-simulated from the
+extracted netlist at typical hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
 poly models have no per-instance mismatch to draw from anyway.
 
 ### Revision 2026-10-10 (H1)
@@ -142,13 +147,42 @@ already centred on ~20 uA, so re-centring the bias buys nothing; the old
 49.7..115 MHz/V), so the Icp windows were widened to the skew spread plus
 margin and the real requirement, a stable loop, is now
 `ol_pm_pn16_nopad_pvt_deg` >= 30 deg at every corner. `passive_skew_corners`
-(ss_pff, ff_pss) cannot yet be added alongside the 27-point grid (engine
+(ss_pff, ff_pss) could not then be added alongside the 27-point grid (engine
 gap, reported to chip-flow), so the skew numbers above come from a scratch
-run, not a gate. The same run read fmax (`vctrl` = vdd) of
-331.75 MHz at `tt_pff` (1.3 MHz under the prescaler's 333 MHz bound) against
-264.8 MHz at ff_m40c_vp10, but the bound stays scored at ff_m40c_vp10 only:
-spec_lint does not accept the engine-appended passive corner `tt_pff` in a
-measure's corner list (measure_bad_corners).
+run, not a gate. That run's 331.75 MHz at `tt_pff` was mislabelled here as
+fmax at `vctrl` = vdd: it is `vco_fmax_tt_mhz`, the frequency at
+`vctrl` = vdd - 0.3 V. At `vctrl` = vdd, `tt_pff` reads 346.0 MHz, and
+ff_m40c_vm10 (fast, cold, LOW supply) 362.9 MHz, both above the 333 MHz the
+bound held at ff_m40c_vp10 alone (264.8 MHz there).
+
+### Revision 2026-10-28 (after H1, the open items)
+
+The owner approved H1-ada9eb (`log/H1-signoff.md`) and the open items it
+carried are closed in the spec:
+
+1. The skew corners `ss_pff` and `ff_pss` are swept (`corners.extra`), so
+   every "all" measure is scored at them by the gates.
+2. `vco_fmax_ff_mhz` is scored at every corner, against 370 MHz: the VCO
+   peaks at fast, cold, low supply, not high, and the digital timing is
+   rerun with the VCO clock at 2.7 ns to match. Its floor is 150 MHz, the
+   highest lock point every corner keeps: at `ff_pss` the VCO tops out near
+   158 MHz, so the 160 and 200 MHz lock points are lost there and the PLL
+   works over a narrower range (the proposal's lock table leaves a lock
+   point inside every corner's band); 200 MHz at typical stays
+   `vco_fmax_tt_mhz`'s.
+3. The mislabelled frequency above is corrected.
+4. Period jitter is no longer a spec measure (see "Period jitter").
+
+### Period jitter (estimate, not gated)
+
+ngspice has no device transient noise, and the ring nodes are internal to
+the subckt, so no bench here can print a period jitter. A separate estimate
+with `trnoise` sources sized from the device models and added to the ring
+read about 1.2 ps rms at typical and 2.5 ps rms at slow and hot, over 30-36
+periods (+-30 %), leaving out flicker noise and loop-filter noise. The old
+warning bound was 10 ps rms; the digital timing waiver needs far less than
+the margin that leaves. The measure was a warning that never printed at any
+run, so it is replaced by this note rather than kept as a permanent miss.
 
 ### Layout (checked by later gates, not by ngspice)
 

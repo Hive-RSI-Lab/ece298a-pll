@@ -1,9 +1,9 @@
-     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
-     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
-     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/eda-toolchain/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791222165
-     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793222510
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
      0.00ns INFO     cocotb.regression                  running test_pll.test_prescaler_div8 (1/15)
@@ -64,21 +64,21 @@
  57889.71ns INFO     cocotb.regression                  *********************************************************************************************
                                                         ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *********************************************************************************************
-                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.17      26058.31  **
-                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.11      70073.04  **
-                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.35      42487.47  **
-                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.08      39977.31  **
-                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.06      50506.82  **
-                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.08      45905.20  **
-                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.07      55106.49  **
-                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.06      63701.79  **
-                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.04      64213.75  **
-                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.07      60212.11  **
-                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.07      61835.35  **
-                                                        ** test_pll.test_ctrl_regs               PASS         626.00           0.00     177841.21  **
-                                                        ** test_pll.test_async_reset_outputs     PASS        2087.00           0.04      58241.83  **
-                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00      30769.35  **
-                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.25        196.35  **
+                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.02     277721.46  **
+                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.01     666604.77  **
+                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.02     671446.21  **
+                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.01     613911.19  **
+                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.00     714838.98  **
+                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.01     531327.41  **
+                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.01     520857.16  **
+                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.01     626985.99  **
+                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.00     638994.35  **
+                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.01     667912.94  **
+                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.01     657217.28  **
+                                                        ** test_pll.test_ctrl_regs               PASS         626.00           0.00    1643074.81  **
+                                                        ** test_pll.test_async_reset_outputs     PASS        2087.00           0.00     685670.96  **
+                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     561089.48  **
+                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.03       1764.77  **
                                                         *********************************************************************************************
-                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57889.71           1.45      39864.76  **
+                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57889.71           0.27     213693.44  **
                                                         *********************************************************************************************

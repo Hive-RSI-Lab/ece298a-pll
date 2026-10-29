@@ -3,7 +3,7 @@
  "gate": "drc",
  "phase": "P6",
  "tool": "drc",
- "input_digest": "dir_text:646ccf220680e77306c44b72bfd63a46b39eb84dc9264e5654f92af69d9392d7",
+ "input_digest": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -24,6 +24,10 @@
   "magic_count": 0,
   "klayout_count": 0
  },
- "recorded_ts": "2026-10-05T13:42:37",
- "attempts": 4
+ "inputs_at_start": {
+  "harden": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+ },
+ "recorded_ts": "2026-10-28T17:21:41",
+ "attempts": 6
 }

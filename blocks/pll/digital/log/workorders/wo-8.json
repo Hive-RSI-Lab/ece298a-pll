@@ -1,0 +1,97 @@
+{
+ "id": 8,
+ "created": "2026-10-28T17:22:48",
+ "gate": "timing",
+ "phase": "P6",
+ "workspace": "blocks/pll/digital",
+ "fixer": "harden",
+ "role_prompt": "skills/vde/agents/fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/jobs.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "harden/timing/drc/lvs/glsim/precheck findings on the hardened design: set LibreLane keys in harden/config.override.json (never harden/config.json, which harden regenerates) or fix the RTL, then re-run the harden job (jobs.py start --gate harden) - it can take a while, so re-check with jobs.py status rather than blocking."
+ ],
+ "remediations": [
+  "/opt/.chip-flow@85aa1743444a65f303819158ddb6bdde457ac0c6/skills/vde/reference/remediations/setup_violation.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": "tt_um_ihsan_sa_pll",
+  "kinds": [
+   "setup_violation"
+  ],
+  "checks": [
+   "opensta"
+  ],
+  "severity": "error",
+  "count": 3,
+  "violations": [
+   {
+    "check": "timing",
+    "severity": "error",
+    "file": null,
+    "module": "tt_um_ihsan_sa_pll",
+    "line": null,
+    "kind": "setup_violation",
+    "refs": [],
+    "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
+    "source": "opensta",
+    "items": [
+     {
+      "msg": "corner max_ss_125C_3v00: worst setup slack -1.5000ns",
+      "file": null,
+      "line": null
+     }
+    ],
+    "corner": "max_ss_125C_3v00"
+   },
+   {
+    "check": "timing",
+    "severity": "error",
+    "file": null,
+    "module": "tt_um_ihsan_sa_pll",
+    "line": null,
+    "kind": "setup_violation",
+    "refs": [],
+    "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
+    "source": "opensta",
+    "items": [
+     {
+      "msg": "corner min_ss_125C_3v00: worst setup slack -1.4900ns",
+      "file": null,
+      "line": null
+     }
+    ],
+    "corner": "min_ss_125C_3v00"
+   },
+   {
+    "check": "timing",
+    "severity": "error",
+    "file": null,
+    "module": "tt_um_ihsan_sa_pll",
+    "line": null,
+    "kind": "setup_violation",
+    "refs": [],
+    "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
+    "source": "opensta",
+    "items": [
+     {
+      "msg": "corner nom_ss_125C_3v00: worst setup slack -1.4900ns",
+      "file": null,
+      "line": null
+     }
+    ],
+    "corner": "nom_ss_125C_3v00"
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}
