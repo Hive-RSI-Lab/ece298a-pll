@@ -32,31 +32,31 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 
         +----------Local Count, excluding submodules.
         | 
-      358 wires
-      528 wire bits
-      150 public wires
-      228 public wire bits
+      389 wires
+      640 wire bits
+      160 public wires
+      247 public wire bits
        15 ports
        18 port bits
-      316 cells
-        7   $add
-        3   $and
-       30   $anyinit
+      342 cells
+        8   $add
+        4   $and
+       33   $anyinit
         1   $assume
        16   $cover
-        7   $eq
+        8   $eq
        12   $eqx
-       39   $ff
+       41   $ff
         2   $ge
         1   $initstate
         3   $le
-       51   $logic_and
-       24   $logic_not
-        8   $logic_or
-       93   $mux
+       53   $logic_and
+       26   $logic_not
+        9   $logic_or
+      104   $mux
         4   $ne
-        6   $not
-        2   $or
+        7   $not
+        3   $or
         6   $scopeinfo
         1   $sub
 
@@ -67,6 +67,6 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 6.2. Executing DEMUXMAP pass.
 Creating SMT-LIBv2 representation of module ihsan_sa_pll_formal.
 
-End of script. Logfile hash: c145f113c3, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 27.89 MB peak
+End of script. Logfile hash: c2cffc7363, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 28.34 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 57% 2x write_smt2 (0 sec), 30% 2x read_rtlil (0 sec), ...
+Time spent: 59% 2x write_smt2 (0 sec), 29% 2x read_rtlil (0 sec), ...

@@ -1,0 +1,201 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `equiv.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+
+2.1. Analyzing design hierarchy..
+Top module:  \pll_ctrl_regs
+
+2.2. Analyzing design hierarchy..
+Top module:  \pll_ctrl_regs
+Removing unused module `\pll_prescaler'.
+Removing unused module `\pll_pfd'.
+Removing unused module `\pll_lock_det'.
+Removing unused module `\pll_divider'.
+Removing unused module `\ihsan_sa_pll'.
+Removed 5 unused modules.
+
+3. Executing FLATTEN pass (flatten design).
+Renaming module pll_ctrl_regs to ref.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \ref
+
+4.2. Analyzing design hierarchy..
+Top module:  \ref
+Removed 0 unused modules.
+
+5. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing JSON backend.
+
+7. Executing RTLIL backend.
+Output filename: ref.il
+
+8. Executing ASYNC2SYNC pass.
+Replacing ref.$procdff$134 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
+Replacing ref.$procdff$139 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
+Replacing ref.$procdff$144 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
+
+9. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1. Analyzing design hierarchy..
+Top module:  \pll_ctrl_regs
+
+10.2. Analyzing design hierarchy..
+Top module:  \pll_ctrl_regs
+Removing unused module `\pll_prescaler'.
+Removing unused module `\pll_pfd'.
+Removing unused module `\pll_lock_det'.
+Removing unused module `\pll_divider'.
+Removing unused module `\ihsan_sa_pll'.
+Removed 5 unused modules.
+
+11. Executing MUTATE pass.
+Add output constant 1 at pll_ctrl_regs.$auto$proc_dff.cc:220:proc_dff$130.Y[0].
+
+12. Executing FLATTEN pass (flatten design).
+Renaming module pll_ctrl_regs to uut.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \uut
+
+13.2. Analyzing design hierarchy..
+Top module:  \uut
+Removed 0 unused modules.
+
+14. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+15. Executing JSON backend.
+
+16. Executing RTLIL backend.
+Output filename: uut.il
+
+17. Executing ASYNC2SYNC pass.
+Replacing uut.$procdff$134 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
+Replacing uut.$procdff$139 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
+Replacing uut.$procdff$144 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
+
+18. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: cp_trim0_gold (\cp_trim0_gold), cp_trim0_gate (\cp_trim0_gate) -> cp_trim0
+Presumably equivalent wires: cp_trim1_gold (\cp_trim1_gold), cp_trim1_gate (\cp_trim1_gate) -> cp_trim1
+Presumably equivalent wires: cp_trim_in_gold (\cp_trim_in_gold), cp_trim_in_gate (\cp_trim_in_gate) -> cp_trim_in
+Presumably equivalent wires: pll_en_gold (\pll_en_gold), pll_en_gate (\pll_en_gate) -> pll_en
+Presumably equivalent wires: pll_en_in_gold (\pll_en_in_gold), pll_en_in_gate (\pll_en_in_gate) -> pll_en_in
+Presumably equivalent wires: rst_n_gold (\rst_n_gold), rst_n_gate (\rst_n_gate) -> rst_n
+
+19. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: cp_trim0_gold (\cp_trim0_gold), cp_trim0_gate (\cp_trim0_gate) -> cp_trim0
+Presumably equivalent wires: cp_trim1_gold (\cp_trim1_gold), cp_trim1_gate (\cp_trim1_gate) -> cp_trim1
+Presumably equivalent wires: cp_trim_in_gold (\cp_trim_in_gold), cp_trim_in_gate (\cp_trim_in_gate) -> cp_trim_in
+Presumably equivalent wires: pll_en_gold (\pll_en_gold), pll_en_gate (\pll_en_gate) -> pll_en
+Presumably equivalent wires: pll_en_in_gold (\pll_en_in_gold), pll_en_in_gate (\pll_en_in_gate) -> pll_en_in
+Presumably equivalent wires: rst_n_gold (\rst_n_gold), rst_n_gate (\rst_n_gate) -> rst_n
+
+20. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Final init constraint equation: { $auto$async2sync.cc:253:execute$149_gold $auto$async2sync.cc:253:execute$145_gold $auto$async2sync.cc:253:execute$147_gold $auto$async2sync.cc:253:execute$156_gate $auto$async2sync.cc:253:execute$152_gate $auto$async2sync.cc:253:execute$154_gate } = 6'000000
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 26 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+
+Solving problem with 988 variables and 2528 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+21. Executing EQUIV_INDUCT pass.
+Found 3 unproven $equiv cells in module equiv:
+  Proving existence of base case for step 1. (241 clauses over 99 variables)
+  Proving induction step 1. (559 clauses over 224 variables)
+  Proof for induction step holds. Entire workset of 3 cells proven!
+Proved 3 previously unproven $equiv cells.
+
+22. Executing EQUIV_STATUS pass.
+Found 3 $equiv cells in equiv:
+  Of those cells 3 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+End of script. Logfile hash: 150d3bf9b2, time: 0.02s, user: 0.01s, system: 0.01s, MEM: 28.82 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 53% 1x sat (0 sec), 13% 4x read_rtlil (0 sec), ...

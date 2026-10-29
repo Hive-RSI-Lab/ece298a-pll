@@ -22,12 +22,16 @@ module ihsan_sa_pll_formal (
     output wire       cp_trim0,
     output wire       cp_trim1
 );
+  // The core's formal-only view of a recovery (REQ-RECOVER): the one
+  // internal state the port-level properties have to know about.
+  wire recover;
+
   ihsan_sa_pll dut (
       .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_out(vco_out),
       .pll_en_in(pll_en_in), .obs_sel(obs_sel), .cp_trim_in(cp_trim_in),
       .obs_out(obs_out), .clk_fb(clk_fb), .lock(lock), .pfd_up(pfd_up),
       .pfd_dn(pfd_dn), .pll_en(pll_en), .cp_trim0(cp_trim0),
-      .cp_trim1(cp_trim1));
+      .cp_trim1(cp_trim1), .recover_fv(recover));
 
 `ifdef FORMAL
   reg past_valid = 1'b0;
@@ -145,8 +149,9 @@ module ihsan_sa_pll_formal (
       pfd_never_both_high: assert (!(pfd_up && pfd_dn));
 
       // REQ-PFD-RESET: an edge that would set the second flop while the
-      // other is high fires the reset - both are low after it.
-      if (rst_n && $past(rst_n) &&
+      // other is high fires the reset - both are low after it. A recovery
+      // overrides the PFD's outputs (REQ-RECOVER-OUT), so it is excluded.
+      if (rst_n && $past(rst_n) && !recover && !$past(recover) &&
           (($past(pfd_up) && fb_rise) || ($past(pfd_dn) && clk_rise)))
         pfd_reset_on_both: assert (!pfd_up && !pfd_dn);
 

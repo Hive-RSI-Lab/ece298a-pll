@@ -22,8 +22,11 @@ proc pll_driver_pin {aliases} {
 # 2.97 V with vctrl at the rail).
 create_clock -name vco_out -period 2.7 [get_ports {ui_in[3]}]
 
-# The /8 ripple prescaler: each stage clocks the next.
-set pll_pre_q0 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_q0}]
+# The /8 ripple prescaler: each stage clocks the next. Stage 0's divided
+# clock is defined after its own buffer (u_pre_ckbuf0, net pre_c0), not on
+# its Q: the Q net is then the toggle loop's data alone, so CTS neither
+# buffers it nor pulls the loop's inverter into a clock tree.
+set pll_pre_q0 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_c0}]
 set pll_pre_q1 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_q1}]
 set pll_pre_q2 [pll_driver_pin {u_ihsan_sa_pll.clk_pre u_ihsan_sa_pll.u_pre.pre_q2}]
 create_generated_clock -name pre_q0 -source [get_ports {ui_in[3]}] -divide_by 2 $pll_pre_q0

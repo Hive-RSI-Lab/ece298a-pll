@@ -16,11 +16,12 @@ init 14 0 dut.u_pfd.pfd_fb_q$async_q_past
 init 15 0 dut.u_pfd.pfd_fb_q$async_d_past
 init 16 0 dut.u_pfd.pfd_fb_q$async_clk_past
 init 17 0 dut.u_pfd.pfd_fb_q$async_arst_past
-init 20 0 _witness_.anyinit_procdff_394
-init 21 0 _witness_.anyinit_procdff_393
-init 22 0 _witness_.anyinit_procdff_392
-init 23 0 _witness_.anyinit_procdff_391
-init 24 0 _witness_.anyinit_procdff_390
+init 21 0 _witness_.anyinit_procdff_434
+init 22 0 _witness_.anyinit_procdff_433
+init 23 0 _witness_.anyinit_procdff_432
+init 24 0 _witness_.anyinit_procdff_431
+init 25 0 _witness_.anyinit_procdff_430
+init 26 0 _witness_.anyinit_procdff_429
 invlatch 0 0 wide_s
 latch 1 0 wide_q
 latch 2 0 vco_q
@@ -88,10 +89,11 @@ latch 62 0 dut.u_pfd.pfd_fb_q$async_q_past
 latch 63 0 dut.u_pfd.pfd_fb_q$async_d_past
 latch 64 0 dut.u_pfd.pfd_fb_q$async_clk_past
 latch 65 0 dut.u_pfd.pfd_fb_q$async_arst_past
-latch 66 0 clk_q
-latch 74 0 _witness_.anyinit_procdff_394
-latch 75 0 _witness_.anyinit_procdff_393
-latch 76 0 _witness_.anyinit_procdff_392
-latch 77 0 _witness_.anyinit_procdff_391
-latch 78 0 _witness_.anyinit_procdff_390
-ninitff 118
+latch 67 0 clk_q
+latch 73 0 _witness_.anyinit_procdff_434
+latch 74 0 _witness_.anyinit_procdff_433
+latch 75 0 _witness_.anyinit_procdff_432
+latch 76 0 _witness_.anyinit_procdff_431
+latch 77 0 _witness_.anyinit_procdff_430
+latch 78 0 _witness_.anyinit_procdff_429
+ninitff 141

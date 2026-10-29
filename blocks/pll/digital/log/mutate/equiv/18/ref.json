@@ -1,0 +1,3016 @@
+{
+  "creator": "Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)",
+  "modules": {
+    "ref": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:12.1-80.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "n_sel": {
+          "direction": "input",
+          "bits": [ 4, 5, 6 ]
+        },
+        "vco_out": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "pll_en_in": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "obs_sel": {
+          "direction": "input",
+          "bits": [ 9 ]
+        },
+        "cp_trim_in": {
+          "direction": "input",
+          "bits": [ 10, 11 ]
+        },
+        "obs_out": {
+          "direction": "output",
+          "bits": [ 12 ]
+        },
+        "clk_fb": {
+          "direction": "output",
+          "bits": [ 13 ]
+        },
+        "lock": {
+          "direction": "output",
+          "bits": [ 14 ]
+        },
+        "pfd_up": {
+          "direction": "output",
+          "bits": [ 15 ]
+        },
+        "pfd_dn": {
+          "direction": "output",
+          "bits": [ 16 ]
+        },
+        "pll_en": {
+          "direction": "output",
+          "bits": [ 17 ]
+        },
+        "cp_trim0": {
+          "direction": "output",
+          "bits": [ 18 ]
+        },
+        "cp_trim1": {
+          "direction": "output",
+          "bits": [ 19 ]
+        }
+      },
+      "cells": {
+        "$and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.19-52.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 21 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$flatten\\u_ctrl.$auto$proc_dff.cc:220:proc_dff$130": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$flatten\\u_ctrl.$auto$proc_dff.cc:220:proc_dff$135": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$flatten\\u_ctrl.$auto$proc_dff.cc:220:proc_dff$140": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$flatten\\u_ctrl.$logic_not$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 25 ]
+          }
+        },
+        "$flatten\\u_ctrl.$procdff$134": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 8 ],
+            "Q": [ 17 ]
+          }
+        },
+        "$flatten\\u_ctrl.$procdff$139": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 10 ],
+            "Q": [ 18 ]
+          }
+        },
+        "$flatten\\u_ctrl.$procdff$144": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 11 ],
+            "Q": [ 19 ]
+          }
+        },
+        "$flatten\\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$15": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:25.31-25.45"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26, 27, 28 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 29, 30, 31 ]
+          }
+        },
+        "$flatten\\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ 33 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$flatten\\u_div.$auto$proc_dff.cc:220:proc_dff$120": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 34 ]
+          }
+        },
+        "$flatten\\u_div.$auto$proc_dff.cc:220:proc_dff$125": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 35 ]
+          }
+        },
+        "$flatten\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:17$7": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.25-17.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 36 ]
+          }
+        },
+        "$flatten\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12": {
+          "hide_name": 1,
+          "type": "$ge",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:20.25-20.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26, 27, 28 ],
+            "B": [ 37, 38, 39 ],
+            "Y": [ 40 ]
+          }
+        },
+        "$flatten\\u_div.$le$/work/blocks/pll/digital/rtl/pll_divider.v:17$8": {
+          "hide_name": 1,
+          "type": "$le",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.44-17.57"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6 ],
+            "B": [ "1", "0", "1" ],
+            "Y": [ 41 ]
+          }
+        },
+        "$flatten\\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36 ],
+            "B": [ 41 ],
+            "Y": [ 42 ]
+          }
+        },
+        "$flatten\\u_div.$logic_not$/work/blocks/pll/digital/rtl/pll_divider.v:23$14": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:23.9-23.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 43 ]
+          }
+        },
+        "$flatten\\u_div.$logic_not$/work/blocks/pll/digital/rtl/pll_divider.v:28$17": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:28.9-28.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 44 ]
+          }
+        },
+        "$flatten\\u_div.$procdff$124": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "0",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 32 ],
+            "D": [ 40 ],
+            "Q": [ 33 ]
+          }
+        },
+        "$flatten\\u_div.$procdff$129": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 32 ],
+            "D": [ 45, 46, 47 ],
+            "Q": [ 26, 27, 28 ]
+          }
+        },
+        "$flatten\\u_div.$procmux$67": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:24.14-24.18|/work/blocks/pll/digital/rtl/pll_divider.v:24.10-25.46"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 29, 30, 31 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 40 ],
+            "Y": [ 45, 46, 47 ]
+          }
+        },
+        "$flatten\\u_div.$sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$10": {
+          "hide_name": 1,
+          "type": "$sub",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.35-18.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6 ],
+            "B": [ "1", "0", "0" ],
+            "Y": [ 48, 49, 50 ]
+          }
+        },
+        "$flatten\\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ 48, 49, 50 ],
+            "S": [ 42 ],
+            "Y": [ 37, 38, 39 ]
+          }
+        },
+        "$flatten\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$20": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.49-35.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 51, 52, 53, 54, 55 ],
+            "B": [ "1", "0", "0", "0", "0" ],
+            "Y": [ 56, 57, 58, 59, 60 ]
+          }
+        },
+        "$flatten\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$36": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001010",
+            "Y_WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:61.18-61.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 ]
+          }
+        },
+        "$flatten\\u_lock.$auto$proc_dff.cc:220:proc_dff$100": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 81 ]
+          }
+        },
+        "$flatten\\u_lock.$auto$proc_dff.cc:220:proc_dff$105": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 82 ]
+          }
+        },
+        "$flatten\\u_lock.$auto$proc_dff.cc:220:proc_dff$110": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 83 ]
+          }
+        },
+        "$flatten\\u_lock.$auto$proc_dff.cc:220:proc_dff$115": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 84 ]
+          }
+        },
+        "$flatten\\u_lock.$auto$proc_dff.cc:220:proc_dff$95": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 85 ]
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$19": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.25-35.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 51, 52, 53, 54, 55 ],
+            "B": [ "0", "0", "0", "0", "1" ],
+            "Y": [ 86 ]
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:47.20-47.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 87, 88, 89, 90, 91 ],
+            "B": [ "0", "0", "0", "0", "1" ],
+            "Y": [ 92 ]
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$34": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70 ],
+            "B": [ 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
+            "Y": [ 103 ]
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:38$24": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:38.9-38.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 104 ]
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:42$27": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:42.9-42.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 105 ]
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:51$30": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:51.9-51.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 106 ]
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "Y": [ 107 ]
+          }
+        },
+        "$flatten\\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32": {
+          "hide_name": 1,
+          "type": "$logic_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 107 ],
+            "B": [ 14 ],
+            "Y": [ 108 ]
+          }
+        },
+        "$flatten\\u_lock.$not$/work/blocks/pll/digital/rtl/pll_lock_det.v:59$35": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:59.18-59.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 110 ]
+          }
+        },
+        "$flatten\\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:39.27-39.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15 ],
+            "B": [ 16 ],
+            "Y": [ 111 ]
+          }
+        },
+        "$flatten\\u_lock.$procdff$104": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 112, 113, 114, 115, 116, 117, 118, 119, 120, 121 ],
+            "Q": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70 ]
+          }
+        },
+        "$flatten\\u_lock.$procdff$109": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 92 ],
+            "Q": [ 14 ]
+          }
+        },
+        "$flatten\\u_lock.$procdff$114": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 87, 88, 89, 90, 91 ],
+            "Q": [ 51, 52, 53, 54, 55 ]
+          }
+        },
+        "$flatten\\u_lock.$procdff$119": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "1",
+            "CLK_POLARITY": "0",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:37.3-39.43"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 111 ],
+            "Q": [ 122 ]
+          }
+        },
+        "$flatten\\u_lock.$procdff$99": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 123 ],
+            "Q": [ 109 ]
+          }
+        },
+        "$flatten\\u_lock.$procmux$55": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55|/work/blocks/pll/digital/rtl/pll_lock_det.v:57.14-62.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 103 ],
+            "Y": [ 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ]
+          }
+        },
+        "$flatten\\u_lock.$procmux$58": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33|/work/blocks/pll/digital/rtl/pll_lock_det.v:54.14-62.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 108 ],
+            "Y": [ 112, 113, 114, 115, 116, 117, 118, 119, 120, 121 ]
+          }
+        },
+        "$flatten\\u_lock.$procmux$61": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55|/work/blocks/pll/digital/rtl/pll_lock_det.v:57.14-62.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "B": [ 110 ],
+            "S": [ 103 ],
+            "Y": [ 134 ]
+          }
+        },
+        "$flatten\\u_lock.$procmux$64": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33|/work/blocks/pll/digital/rtl/pll_lock_det.v:54.14-62.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 134 ],
+            "B": [ "0" ],
+            "S": [ 108 ],
+            "Y": [ 123 ]
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.24-35.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 135, 136, 137, 138, 139 ],
+            "B": [ "0", "0", "0", "0", "0" ],
+            "S": [ 122 ],
+            "Y": [ 87, 88, 89, 90, 91 ]
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$21": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.24-35.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 56, 57, 58, 59, 60 ],
+            "B": [ "0", "0", "0", "0", "1" ],
+            "S": [ 86 ],
+            "Y": [ 135, 136, 137, 138, 139 ]
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$33": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.29-57.54"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ],
+            "B": [ "1", "1", "1", "1", "1", "1", "1", "0", "0", "0" ],
+            "S": [ 109 ],
+            "Y": [ 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ]
+          }
+        },
+        "$flatten\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 20 ],
+            "B": [ 140 ],
+            "Y": [ 141 ]
+          }
+        },
+        "$flatten\\u_pfd.$not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$38": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 142 ]
+          }
+        },
+        "$flatten\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 142 ],
+            "B": [ 141 ],
+            "Y": [ 143 ]
+          }
+        },
+        "$flatten\\u_pfd.$procdff$91": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 143 ],
+            "CLK": [ 13 ],
+            "D": [ "1" ],
+            "Q": [ 140 ]
+          }
+        },
+        "$flatten\\u_pfd.$procdff$94": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 143 ],
+            "CLK": [ 2 ],
+            "D": [ "1" ],
+            "Q": [ 20 ]
+          }
+        },
+        "$flatten\\u_pre.$auto$proc_dff.cc:220:proc_dff$69": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 144 ]
+          }
+        },
+        "$flatten\\u_pre.$auto$proc_dff.cc:220:proc_dff$74": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 145 ]
+          }
+        },
+        "$flatten\\u_pre.$auto$proc_dff.cc:220:proc_dff$79": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 146 ]
+          }
+        },
+        "$flatten\\u_pre.$auto$proc_dff.cc:220:proc_dff$84": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 147 ]
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:40$43": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:40.9-40.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 148 ]
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:45$46": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:45.9-45.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 149 ]
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:49$49": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:49.9-49.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 150 ]
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:53$52": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:53.9-53.15"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "Y": [ 151 ]
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:41.27-41.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 152 ],
+            "Y": [ 153 ]
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:46.27-46.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 154 ],
+            "Y": [ 155 ]
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:50.27-50.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "Y": [ 156 ]
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:54.23-54.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 157 ],
+            "Y": [ 158 ]
+          }
+        },
+        "$flatten\\u_pre.$procdff$73": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:52.3-54.27"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 32 ],
+            "D": [ 158 ],
+            "Q": [ 157 ]
+          }
+        },
+        "$flatten\\u_pre.$procdff$78": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:48.3-50.35"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 154 ],
+            "D": [ 156 ],
+            "Q": [ 32 ]
+          }
+        },
+        "$flatten\\u_pre.$procdff$83": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:44.3-46.35"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 152 ],
+            "D": [ 155 ],
+            "Q": [ 154 ]
+          }
+        },
+        "$flatten\\u_pre.$procdff$88": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:39.3-41.35"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 7 ],
+            "D": [ 153 ],
+            "Q": [ 152 ]
+          }
+        },
+        "$not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$1": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.30-52.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 109 ],
+            "Y": [ 21 ]
+          }
+        },
+        "$or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.19-53.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 140 ],
+            "B": [ 109 ],
+            "Y": [ 16 ]
+          }
+        },
+        "$ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65.20-65.46"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 32 ],
+            "B": [ 157 ],
+            "S": [ 9 ],
+            "Y": [ 12 ]
+          }
+        },
+        "u_ctrl": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:59.17-62.48",
+            "module": "pll_ctrl_regs",
+            "module_src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:3.1-22.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_div": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:44.15-45.76",
+            "module": "pll_divider",
+            "module_src": "/work/blocks/pll/digital/rtl/pll_divider.v:7.1-32.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_lock": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:55.16-57.55",
+            "module": "pll_lock_det",
+            "module_src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:18.1-63.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_pfd": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.11-49.44",
+            "module": "pll_pfd",
+            "module_src": "/work/blocks/pll/digital/rtl/pll_pfd.v:8.1-39.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_pre": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:41.17-42.76",
+            "module": "pll_prescaler",
+            "module_src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:14.1-58.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y": {
+          "hide_name": 1,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.19-52.38"
+          }
+        },
+        "$flatten\\u_ctrl.$0\\cp_trim0[0:0]": {
+          "hide_name": 1,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          }
+        },
+        "$flatten\\u_ctrl.$0\\cp_trim1[0:0]": {
+          "hide_name": 1,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          }
+        },
+        "$flatten\\u_ctrl.$0\\pll_en[0:0]": {
+          "hide_name": 1,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3251:Not$131": {
+          "hide_name": 1,
+          "bits": [ 22 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3251:Not$136": {
+          "hide_name": 1,
+          "bits": [ 23 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3251:Not$141": {
+          "hide_name": 1,
+          "bits": [ 24 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3255:ReduceOr$133": {
+          "hide_name": 1,
+          "bits": [ 22 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3255:ReduceOr$138": {
+          "hide_name": 1,
+          "bits": [ 23 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$auto$rtlil.cc:3255:ReduceOr$143": {
+          "hide_name": 1,
+          "bits": [ 24 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_ctrl.$logic_not$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6_Y": {
+          "hide_name": 1,
+          "bits": [ 25 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
+          }
+        },
+        "$flatten\\u_div.$0\\div_cnt[2:0]": {
+          "hide_name": 1,
+          "bits": [ 45, 46, 47 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46"
+          }
+        },
+        "$flatten\\u_div.$0\\fb_en[0:0]": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31"
+          }
+        },
+        "$flatten\\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$15_Y": {
+          "hide_name": 1,
+          "bits": [ 29, 30, 31 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:25.31-25.45"
+          }
+        },
+        "$flatten\\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34"
+          }
+        },
+        "$flatten\\u_div.$auto$rtlil.cc:3251:Not$121": {
+          "hide_name": 1,
+          "bits": [ 34 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$auto$rtlil.cc:3251:Not$126": {
+          "hide_name": 1,
+          "bits": [ 35 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$auto$rtlil.cc:3255:ReduceOr$123": {
+          "hide_name": 1,
+          "bits": [ 34 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$auto$rtlil.cc:3255:ReduceOr$128": {
+          "hide_name": 1,
+          "bits": [ 35 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:17$7_Y": {
+          "hide_name": 1,
+          "bits": [ 36 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.25-17.38"
+          }
+        },
+        "$flatten\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:20.25-20.40"
+          }
+        },
+        "$flatten\\u_div.$le$/work/blocks/pll/digital/rtl/pll_divider.v:17$8_Y": {
+          "hide_name": 1,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.44-17.57"
+          }
+        },
+        "$flatten\\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9_Y": {
+          "hide_name": 1,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58"
+          }
+        },
+        "$flatten\\u_div.$logic_not$/work/blocks/pll/digital/rtl/pll_divider.v:23$14_Y": {
+          "hide_name": 1,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:23.9-23.15"
+          }
+        },
+        "$flatten\\u_div.$logic_not$/work/blocks/pll/digital/rtl/pll_divider.v:28$17_Y": {
+          "hide_name": 1,
+          "bits": [ 44 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:28.9-28.15"
+          }
+        },
+        "$flatten\\u_div.$procmux$67_Y": {
+          "hide_name": 1,
+          "bits": [ 45, 46, 47 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$procmux$68_CMP": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_div.$sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$10_Y": {
+          "hide_name": 1,
+          "bits": [ 48, 49, 50 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.35-18.47"
+          }
+        },
+        "$flatten\\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11_Y": {
+          "hide_name": 1,
+          "bits": [ 37, 38, 39 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55"
+          }
+        },
+        "$flatten\\u_lock.$0\\lock[0:0]": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+          }
+        },
+        "$flatten\\u_lock.$0\\lock_cnt[4:0]": {
+          "hide_name": 1,
+          "bits": [ 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+          }
+        },
+        "$flatten\\u_lock.$0\\recover[0:0]": {
+          "hide_name": 1,
+          "bits": [ 123 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+          }
+        },
+        "$flatten\\u_lock.$0\\wd_cnt[9:0]": {
+          "hide_name": 1,
+          "bits": [ 112, 113, 114, 115, 116, 117, 118, 119, 120, 121 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+          }
+        },
+        "$flatten\\u_lock.$0\\wide_q[0:0]": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:37.3-39.43"
+          }
+        },
+        "$flatten\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$20_Y": {
+          "hide_name": 1,
+          "bits": [ 56, 57, 58, 59, 60 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.49-35.64"
+          }
+        },
+        "$flatten\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$36_Y": {
+          "hide_name": 1,
+          "bits": [ 71, 72, 73, 74, 75, 76, 77, 78, 79, 80 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:61.18-61.32"
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3251:Not$101": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3251:Not$106": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3251:Not$111": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3251:Not$116": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3251:Not$96": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3255:ReduceOr$103": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3255:ReduceOr$108": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3255:ReduceOr$113": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3255:ReduceOr$118": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$auto$rtlil.cc:3255:ReduceOr$98": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$19_Y": {
+          "hide_name": 1,
+          "bits": [ 86 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.25-35.38"
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28_Y": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:47.20-47.32"
+          }
+        },
+        "$flatten\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$34_Y": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55"
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:38$24_Y": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:38.9-38.15"
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:42$27_Y": {
+          "hide_name": 1,
+          "bits": [ 105 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:42.9-42.15"
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:51$30_Y": {
+          "hide_name": 1,
+          "bits": [ 106 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:51.9-51.15"
+          }
+        },
+        "$flatten\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31_Y": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.25"
+          }
+        },
+        "$flatten\\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32_Y": {
+          "hide_name": 1,
+          "bits": [ 108 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33"
+          }
+        },
+        "$flatten\\u_lock.$not$/work/blocks/pll/digital/rtl/pll_lock_det.v:59$35_Y": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:59.18-59.26"
+          }
+        },
+        "$flatten\\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_Y": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:39.27-39.42"
+          }
+        },
+        "$flatten\\u_lock.$procmux$55_Y": {
+          "hide_name": 1,
+          "bits": [ 124, 125, 126, 127, 128, 129, 130, 131, 132, 133 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$56_CMP": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$58_Y": {
+          "hide_name": 1,
+          "bits": [ 112, 113, 114, 115, 116, 117, 118, 119, 120, 121 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$59_CMP": {
+          "hide_name": 1,
+          "bits": [ 108 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$61_Y": {
+          "hide_name": 1,
+          "bits": [ 134 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$62_CMP": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$64_Y": {
+          "hide_name": 1,
+          "bits": [ 123 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$procmux$65_CMP": {
+          "hide_name": 1,
+          "bits": [ 108 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y": {
+          "hide_name": 1,
+          "bits": [ 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.24-35.64"
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$21_Y": {
+          "hide_name": 1,
+          "bits": [ 135, 136, 137, 138, 139 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.24-35.64"
+          }
+        },
+        "$flatten\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$33_Y": {
+          "hide_name": 1,
+          "bits": [ 93, 94, 95, 96, 97, 98, 99, 100, 101, 102 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.29-57.54"
+          }
+        },
+        "$flatten\\u_pfd.$0\\pfd_fb_q[0:0]": {
+          "hide_name": 1,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35"
+          }
+        },
+        "$flatten\\u_pfd.$0\\pfd_ref_q[0:0]": {
+          "hide_name": 1,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
+          }
+        },
+        "$flatten\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y": {
+          "hide_name": 1,
+          "bits": [ 141 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39"
+          }
+        },
+        "$flatten\\u_pfd.$auto$rtlil.cc:3255:ReduceOr$90": {
+          "hide_name": 1,
+          "bits": [ 143 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pfd.$auto$rtlil.cc:3255:ReduceOr$93": {
+          "hide_name": 1,
+          "bits": [ 143 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pfd.$not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$38_Y": {
+          "hide_name": 1,
+          "bits": [ 142 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24"
+          }
+        },
+        "$flatten\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39_Y": {
+          "hide_name": 1,
+          "bits": [ 143 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34"
+          }
+        },
+        "$flatten\\u_pre.$0\\pre_q0[0:0]": {
+          "hide_name": 1,
+          "bits": [ 153 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:39.3-41.35"
+          }
+        },
+        "$flatten\\u_pre.$0\\pre_q1[0:0]": {
+          "hide_name": 1,
+          "bits": [ 155 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:44.3-46.35"
+          }
+        },
+        "$flatten\\u_pre.$0\\pre_q2[0:0]": {
+          "hide_name": 1,
+          "bits": [ 156 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:48.3-50.35"
+          }
+        },
+        "$flatten\\u_pre.$0\\q3[0:0]": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:52.3-54.27"
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3251:Not$70": {
+          "hide_name": 1,
+          "bits": [ 144 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3251:Not$75": {
+          "hide_name": 1,
+          "bits": [ 145 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3251:Not$80": {
+          "hide_name": 1,
+          "bits": [ 146 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3251:Not$85": {
+          "hide_name": 1,
+          "bits": [ 147 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3255:ReduceOr$72": {
+          "hide_name": 1,
+          "bits": [ 144 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3255:ReduceOr$77": {
+          "hide_name": 1,
+          "bits": [ 145 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3255:ReduceOr$82": {
+          "hide_name": 1,
+          "bits": [ 146 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$auto$rtlil.cc:3255:ReduceOr$87": {
+          "hide_name": 1,
+          "bits": [ 147 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:40$43_Y": {
+          "hide_name": 1,
+          "bits": [ 148 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:40.9-40.15"
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:45$46_Y": {
+          "hide_name": 1,
+          "bits": [ 149 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:45.9-45.15"
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:49$49_Y": {
+          "hide_name": 1,
+          "bits": [ 150 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:49.9-49.15"
+          }
+        },
+        "$flatten\\u_pre.$logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:53$52_Y": {
+          "hide_name": 1,
+          "bits": [ 151 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:53.9-53.15"
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_Y": {
+          "hide_name": 1,
+          "bits": [ 153 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:41.27-41.34"
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_Y": {
+          "hide_name": 1,
+          "bits": [ 155 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:46.27-46.34"
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_Y": {
+          "hide_name": 1,
+          "bits": [ 156 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:50.27-50.34"
+          }
+        },
+        "$flatten\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_Y": {
+          "hide_name": 1,
+          "bits": [ 158 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:54.23-54.26"
+          }
+        },
+        "$not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$1_Y": {
+          "hide_name": 1,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.30-52.38"
+          }
+        },
+        "$or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y": {
+          "hide_name": 1,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.19-53.37"
+          }
+        },
+        "$ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y": {
+          "hide_name": 1,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65.20-65.46"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:13.23-13.26"
+          }
+        },
+        "clk_fb": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:21.23-21.29"
+          }
+        },
+        "clk_fb_int": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:35.8-35.18"
+          }
+        },
+        "clk_pre": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:33.8-33.15"
+          }
+        },
+        "cp_trim0": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:26.23-26.31"
+          }
+        },
+        "cp_trim1": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:27.23-27.31"
+          }
+        },
+        "cp_trim_in": {
+          "hide_name": 0,
+          "bits": [ 10, 11 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:19.23-19.33"
+          }
+        },
+        "lock": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:22.23-22.27"
+          }
+        },
+        "n_sel": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:15.23-15.28"
+          }
+        },
+        "obs_int": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.8-36.15"
+          }
+        },
+        "obs_out": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:20.23-20.30"
+          }
+        },
+        "obs_q3": {
+          "hide_name": 0,
+          "bits": [ 157 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:34.8-34.14"
+          }
+        },
+        "obs_sel": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:18.23-18.30"
+          }
+        },
+        "pfd_dn": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:24.23-24.29"
+          }
+        },
+        "pfd_dn_q": {
+          "hide_name": 0,
+          "bits": [ 140 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:38.8-38.16"
+          }
+        },
+        "pfd_up": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:23.23-23.29"
+          }
+        },
+        "pfd_up_q": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:37.8-37.16"
+          }
+        },
+        "pll_en": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:25.23-25.29"
+          }
+        },
+        "pll_en_in": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:17.23-17.32"
+          }
+        },
+        "recover": {
+          "hide_name": 0,
+          "bits": [ 109 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:39.8-39.15"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:14.23-14.28"
+          }
+        },
+        "u_ctrl.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_ctrl clk",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:4.23-4.26"
+          }
+        },
+        "u_ctrl.cp_trim0": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "hdlname": "u_ctrl cp_trim0",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:9.23-9.31"
+          }
+        },
+        "u_ctrl.cp_trim1": {
+          "hide_name": 0,
+          "bits": [ 19 ],
+          "attributes": {
+            "hdlname": "u_ctrl cp_trim1",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:10.23-10.31"
+          }
+        },
+        "u_ctrl.cp_trim_in": {
+          "hide_name": 0,
+          "bits": [ 10, 11 ],
+          "attributes": {
+            "hdlname": "u_ctrl cp_trim_in",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:7.23-7.33"
+          }
+        },
+        "u_ctrl.pll_en": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "hdlname": "u_ctrl pll_en",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:8.23-8.29"
+          }
+        },
+        "u_ctrl.pll_en_in": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "u_ctrl pll_en_in",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:6.23-6.32"
+          }
+        },
+        "u_ctrl.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_ctrl rst_n",
+            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:5.23-5.28"
+          }
+        },
+        "u_div.clk_fb": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "hdlname": "u_div clk_fb",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:11.23-11.29"
+          }
+        },
+        "u_div.clk_pre": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "hdlname": "u_div clk_pre",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:8.23-8.30"
+          }
+        },
+        "u_div.div_cnt": {
+          "hide_name": 0,
+          "bits": [ 26, 27, 28 ],
+          "attributes": {
+            "hdlname": "u_div div_cnt",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:13.13-13.20"
+          }
+        },
+        "u_div.fb_en": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "attributes": {
+            "hdlname": "u_div fb_en",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:14.13-14.18"
+          }
+        },
+        "u_div.last": {
+          "hide_name": 0,
+          "bits": [ 40 ],
+          "attributes": {
+            "hdlname": "u_div last",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:20.14-20.18"
+          }
+        },
+        "u_div.n_legal": {
+          "hide_name": 0,
+          "bits": [ 42 ],
+          "attributes": {
+            "hdlname": "u_div n_legal",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.14-17.21"
+          }
+        },
+        "u_div.n_m1": {
+          "hide_name": 0,
+          "bits": [ 37, 38, 39 ],
+          "attributes": {
+            "hdlname": "u_div n_m1",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.14-18.18"
+          }
+        },
+        "u_div.n_sel": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6 ],
+          "attributes": {
+            "hdlname": "u_div n_sel",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:10.23-10.28"
+          }
+        },
+        "u_div.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_div rst_n",
+            "src": "/work/blocks/pll/digital/rtl/pll_divider.v:9.23-9.28"
+          }
+        },
+        "u_lock.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_lock clk",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:19.17-19.20"
+          }
+        },
+        "u_lock.cnt_nxt": {
+          "hide_name": 0,
+          "bits": [ 87, 88, 89, 90, 91 ],
+          "attributes": {
+            "hdlname": "u_lock cnt_nxt",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.14-34.21"
+          }
+        },
+        "u_lock.lock": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "hdlname": "u_lock lock",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:24.17-24.21"
+          }
+        },
+        "u_lock.lock_cnt": {
+          "hide_name": 0,
+          "bits": [ 51, 52, 53, 54, 55 ],
+          "attributes": {
+            "hdlname": "u_lock lock_cnt",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:32.13-32.21"
+          }
+        },
+        "u_lock.pfd_dn": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "hdlname": "u_lock pfd_dn",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:23.17-23.23"
+          }
+        },
+        "u_lock.pfd_up": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "hdlname": "u_lock pfd_up",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.17-22.23"
+          }
+        },
+        "u_lock.pll_en": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "hdlname": "u_lock pll_en",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:21.17-21.23"
+          }
+        },
+        "u_lock.recover": {
+          "hide_name": 0,
+          "bits": [ 109 ],
+          "attributes": {
+            "hdlname": "u_lock recover",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:25.17-25.24"
+          }
+        },
+        "u_lock.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_lock rst_n",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:20.17-20.22"
+          }
+        },
+        "u_lock.wd_cnt": {
+          "hide_name": 0,
+          "bits": [ 61, 62, 63, 64, 65, 66, 67, 68, 69, 70 ],
+          "attributes": {
+            "hdlname": "u_lock wd_cnt",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:33.13-33.19"
+          }
+        },
+        "u_lock.wide_q": {
+          "hide_name": 0,
+          "bits": [ 122 ],
+          "attributes": {
+            "hdlname": "u_lock wide_q",
+            "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:31.13-31.19"
+          }
+        },
+        "u_pfd.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_pfd clk",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:9.17-9.20"
+          }
+        },
+        "u_pfd.clk_fb": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "hdlname": "u_pfd clk_fb",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:10.17-10.23"
+          }
+        },
+        "u_pfd.pfd_both": {
+          "hide_name": 0,
+          "bits": [ 141 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_both",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:16.8-16.16"
+          }
+        },
+        "u_pfd.pfd_clr": {
+          "hide_name": 0,
+          "bits": [ 143 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_clr",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15"
+          }
+        },
+        "u_pfd.pfd_dly_mid": {
+          "hide_name": 0,
+          "bits": [ 141 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_dly_mid",
+            "keep": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:17.19-17.30"
+          }
+        },
+        "u_pfd.pfd_dn": {
+          "hide_name": 0,
+          "bits": [ 140 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_dn",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:13.17-13.23"
+          }
+        },
+        "u_pfd.pfd_fb_q": {
+          "hide_name": 0,
+          "bits": [ 140 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_fb_q",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:15.19-15.27"
+          }
+        },
+        "u_pfd.pfd_ref_q": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_ref_q",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:15.8-15.17"
+          }
+        },
+        "u_pfd.pfd_rst": {
+          "hide_name": 0,
+          "bits": [ 141 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_rst",
+            "keep": "00000000000000000000000000000001",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26"
+          }
+        },
+        "u_pfd.pfd_up": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "hdlname": "u_pfd pfd_up",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:12.17-12.23"
+          }
+        },
+        "u_pfd.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_pfd rst_n",
+            "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:11.17-11.22"
+          }
+        },
+        "u_pre.clk_pre": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "hdlname": "u_pre clk_pre",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:17.17-17.24"
+          }
+        },
+        "u_pre.obs_q3": {
+          "hide_name": 0,
+          "bits": [ 157 ],
+          "attributes": {
+            "hdlname": "u_pre obs_q3",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:18.17-18.23"
+          }
+        },
+        "u_pre.pre_c0": {
+          "hide_name": 0,
+          "bits": [ 152 ],
+          "attributes": {
+            "hdlname": "u_pre pre_c0",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:38.8-38.14"
+          }
+        },
+        "u_pre.pre_q0": {
+          "hide_name": 0,
+          "bits": [ 152 ],
+          "attributes": {
+            "hdlname": "u_pre pre_q0",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:37.7-37.13"
+          }
+        },
+        "u_pre.pre_q1": {
+          "hide_name": 0,
+          "bits": [ 154 ],
+          "attributes": {
+            "hdlname": "u_pre pre_q1",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:20.7-20.13"
+          }
+        },
+        "u_pre.pre_q2": {
+          "hide_name": 0,
+          "bits": [ 32 ],
+          "attributes": {
+            "hdlname": "u_pre pre_q2",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:20.15-20.21"
+          }
+        },
+        "u_pre.q3": {
+          "hide_name": 0,
+          "bits": [ 157 ],
+          "attributes": {
+            "hdlname": "u_pre q3",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:20.23-20.25"
+          }
+        },
+        "u_pre.rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_pre rst_n",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:16.17-16.22"
+          }
+        },
+        "u_pre.vco_out": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "u_pre vco_out",
+            "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:15.17-15.24"
+          }
+        },
+        "vco_out": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:16.23-16.30"
+          }
+        }
+      }
+    }
+  }
+}

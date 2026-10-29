@@ -122,10 +122,10 @@
                   "name": "dut",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:25.16-30.27",
+                    "cell_src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:29.16-34.49",
                     "module": "ihsan_sa_pll",
                     "module_hdlname": "ihsan_sa_pll",
-                    "module_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:11.1-67.10"
+                    "module_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:12.1-80.10"
                   },
                   "parameters": {
                     "TYPE": "module"
@@ -135,7 +135,7 @@
                   "name": "dut.u_ctrl",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.17-50.48",
+                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:59.17-62.48",
                     "hdlname": "dut u_ctrl",
                     "module": "pll_ctrl_regs",
                     "module_hdlname": "pll_ctrl_regs",
@@ -149,7 +149,7 @@
                   "name": "dut.u_div",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.15-37.76",
+                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:44.15-45.76",
                     "hdlname": "dut u_div",
                     "module": "pll_divider",
                     "module_hdlname": "pll_divider",
@@ -163,11 +163,11 @@
                   "name": "dut.u_lock",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:43.16-45.19",
+                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:55.16-57.55",
                     "hdlname": "dut u_lock",
                     "module": "pll_lock_det",
                     "module_hdlname": "pll_lock_det",
-                    "module_src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:10.1-36.10"
+                    "module_src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:18.1-63.10"
                   },
                   "parameters": {
                     "TYPE": "module"
@@ -177,7 +177,7 @@
                   "name": "dut.u_pfd",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:39.11-41.40",
+                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.11-49.44",
                     "hdlname": "dut u_pfd",
                     "module": "pll_pfd",
                     "module_hdlname": "pll_pfd",
@@ -191,11 +191,11 @@
                   "name": "dut.u_pre",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:33.17-34.76",
+                    "cell_src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:41.17-42.76",
                     "hdlname": "dut u_pre",
                     "module": "pll_prescaler",
                     "module_hdlname": "pll_prescaler",
-                    "module_src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:5.1-31.10"
+                    "module_src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:14.1-58.10"
                   },
                   "parameters": {
                     "TYPE": "module"
@@ -232,7 +232,7 @@
                   "name": "COVER_FB_ILLEGAL",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.7-174.77"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -248,7 +248,7 @@
                   "name": "COVER_FB_N5",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.7-173.77"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -264,7 +264,7 @@
                   "name": "COVER_LOCK",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:175.7-175.37"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -280,7 +280,7 @@
                   "name": "COVER_LOCK_DROP",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.7-176.69"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -296,7 +296,7 @@
                   "name": "COVER_PFD_DN",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:164.7-164.39"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.39"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -312,7 +312,7 @@
                   "name": "COVER_PFD_RESET",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.7-165.79"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.79"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -328,7 +328,7 @@
                   "name": "COVER_PFD_UP",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.39"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -344,7 +344,7 @@
                   "name": "COVER_PRE_PERIOD",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.7-167.75"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-172.75"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -357,11 +357,11 @@
                   }
                 },
                 {
-                  "name": "_witness_.check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_37_12",
+                  "name": "_witness_.check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13",
                   "attributes": {
-                    "hdlname": "_witness_ check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_37_12",
+                    "hdlname": "_witness_ check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13",
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.44-37.59"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.44-41.59"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -377,7 +377,7 @@
                   "name": "divider_ratio",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.9-146.78"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -393,7 +393,7 @@
                   "name": "lock_not_while_wide",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.84"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -409,7 +409,7 @@
                   "name": "pfd_never_both_high",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-149.56"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -425,7 +425,7 @@
                   "name": "pfd_reset_on_both",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.9-151.55"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.9-156.55"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -441,7 +441,7 @@
                   "name": "prescaler_div8",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -457,7 +457,7 @@
                   "name": "reset_forces_outputs",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-129.62"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -492,9 +492,9 @@
             ],
             "cells": [
                 {
-                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$52",
+                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$48",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.53-106.67"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.53-103.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -505,9 +505,22 @@
                   }
                 },
                 {
-                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$97",
+                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$53",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.33-140.67"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.53-110.67"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$99",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.33-144.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -518,9 +531,9 @@
                   }
                 },
                 {
-                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$102",
+                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$104",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.33-142.59"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.33-146.59"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -531,9 +544,9 @@
                   }
                 },
                 {
-                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167$133",
+                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:172$139",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.32-167.66"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:172.32-172.66"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -544,20 +557,7 @@
                   }
                 },
                 {
-                  "name": "$add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$47",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.53-99.67"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000100",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$192",
+                  "name": "$flatten\\dut.\\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$209",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:25.31-25.45"
                   },
@@ -570,9 +570,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$170",
+                  "name": "$flatten\\dut.\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$179",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.49-22.64"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.49-35.64"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -580,6 +580,19 @@
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000001",
                     "Y_WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$195",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:61.18-61.32"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000001010"
                   }
                 }
             ]
@@ -605,9 +618,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$95",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$97",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.57-139.72"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.57-143.72"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -618,9 +631,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$103",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$105",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.33-142.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.33-146.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -631,9 +644,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167$134",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:172$140",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.32-167.74"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:172.32-172.74"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -644,9 +657,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168$138",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173$144",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.63-168.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.63-173.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -657,9 +670,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61$18",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$19",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.32-61.44"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65.32-65.44"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -670,9 +683,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$169",
+                  "name": "$flatten\\dut.\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$178",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.25-22.38"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.25-35.38"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -683,15 +696,28 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$178",
+                  "name": "$flatten\\dut.\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$187",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:47.20-47.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000101",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000101",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$193",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001010",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
@@ -718,9 +744,9 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:26$175",
+                  "name": "$flatten\\dut.$or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$174",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:26.27-26.42"
+                    "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.19-53.37"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -731,7 +757,20 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$181",
+                  "name": "$flatten\\dut.\\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$184",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:39.27-39.42"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$198",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34"
                   },
@@ -744,7 +783,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$181$async_cut",
+                  "name": "$flatten\\dut.\\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$198$async_cut",
                   "attributes": {
 
                   },
@@ -757,9 +796,9 @@
                   }
                 },
                 {
-                  "name": "$or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:73$21",
+                  "name": "$or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77$22",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:73.33-73.48"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.33-77.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -787,9 +826,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$117",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$123",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.47-157.64"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.47-162.64"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -798,9 +837,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$119",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$125",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.68-157.83"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.68-162.83"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -809,9 +848,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$142",
+                  "name": "$eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174$148",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.63-169.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.63-174.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -820,9 +859,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$68",
+                  "name": "$flatten\\dut.\\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$190",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.39-124.46"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.25"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -831,9 +870,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$70",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$70",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.50-124.58"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128.39-128.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -842,9 +881,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$72",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$72",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.62-124.69"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128.50-128.58"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -853,9 +892,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$74",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$74",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.39-125.48"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128.62-128.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -864,9 +903,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$76",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$76",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.52-125.61"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129.39-129.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -875,9 +914,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$84",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$78",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-134.43"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129.52-129.61"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -886,9 +925,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$85",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$86",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.47-134.56"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.34-138.43"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -897,9 +936,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$93",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$87",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.45-139.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.47-138.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -908,9 +947,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$100",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$95",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.45-141.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.45-143.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -919,9 +958,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$99",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$101",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-141.41"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.33-145.41"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -930,9 +969,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$107",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$102",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.36-145.55"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.45-145.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -941,9 +980,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$127",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$109",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.60-165.67"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.36-149.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -952,9 +991,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$129",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$111",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.71-165.78"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.36-154.44"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -963,9 +1002,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$144",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$113",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.47-171.52"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.48-154.63"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -974,9 +1013,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37$13",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170$133",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.52-37.58"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.60-170.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -985,9 +1024,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$23",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170$135",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.44-76.50"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.71-170.78"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -996,9 +1035,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$26",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176$150",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.48-79.55"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.47-176.52"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1007,9 +1046,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$30",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41$14",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.71-79.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.52-41.58"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1018,9 +1057,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$33",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$24",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.43-80.48"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.44-80.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1029,9 +1068,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$36",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$27",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.40-81.46"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.48-83.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1040,13 +1079,435 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$38",
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$31",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.33-82.37"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.71-83.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$34",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84.43-84.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$37",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85.40-85.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$39",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.33-86.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assert",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.$and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$173",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.19-52.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$212",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$196",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$196$async_cut",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$415",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$420",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$425",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_div.$procdff$374",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "0",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_div.$procdff$379",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procdff$390",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procdff$395",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procdff$400",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procdff$405",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "00000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procdff$410",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:37.3-39.43"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "1",
+                    "CLK_POLARITY": "0",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$procdff$382",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "1",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$procdff$385",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "1",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pre.$procdff$354",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:52.3-54.27"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pre.$procdff$359",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:48.3-50.35"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pre.$procdff$364",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:44.3-46.35"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pre.$procdff$369",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:25.3-27.35"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ge",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:17$201",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.25-17.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$206",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:20.25-20.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ge$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48$15",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48.23-48.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
@@ -1073,9 +1534,9 @@
             ],
             "cells": [
                 {
-                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$50",
+                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$46",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.25-106.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.25-103.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1086,41 +1547,41 @@
                   }
                 },
                 {
-                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107$53",
+                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$51",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.24-107.39"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000011",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000011",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108$55",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.13-108.25"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000011",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000011",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$45",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.25-99.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.25-110.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000100",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$54",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.24-111.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112$56",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112.13-112.25"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
@@ -1152,16 +1613,16 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.$ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$166",
+                  "name": "$flatten\\dut.$ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$175",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.20-53.46"
+                    "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65.20-65.46"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$procmux$209",
+                  "name": "$flatten\\dut.\\u_div.$procmux$226",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:24.14-24.18|/work/blocks/pll/digital/rtl/pll_divider.v:24.10-25.46"
@@ -1171,7 +1632,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$188",
+                  "name": "$flatten\\dut.\\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$205",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55"
                   },
@@ -1180,154 +1641,76 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:21$172",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:21.24-22.64"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$171",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$procmux$225",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.28|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.5-172.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$227",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.11-156.16|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.7-157.85"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$229",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$231",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-150.70|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-151.56"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$233",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$235",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$237",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.72|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-142.79"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$239",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$241",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.54|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.7-135.79"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$243",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$245",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.11-122.17|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.7-125.63"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$247",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$249",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.11-111.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.7-114.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000010000"
-                  }
-                },
-                {
-                  "name": "$procmux$252",
+                  "name": "$flatten\\dut.\\u_lock.$procmux$229",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55|/work/blocks/pll/digital/rtl/pll_lock_det.v:57.14-62.8"
                   },
                   "parameters": {
-                    "WIDTH": "00000000000000000000000000010000"
+                    "WIDTH": "00000000000000000000000000001010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procmux$232",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33|/work/blocks/pll/digital/rtl/pll_lock_det.v:54.14-62.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procmux$235",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.18-57.55|/work/blocks/pll/digital/rtl/pll_lock_det.v:57.14-62.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$procmux$238",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33|/work/blocks/pll/digital/rtl/pll_lock_det.v:54.14-62.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$181",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:34.24-35.64"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$180",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:35.24-35.64"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:57.29-57.54"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001010"
                   }
                 },
                 {
                   "name": "$procmux$254",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.11-110.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.7-110.38"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.9-167.28|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.5-177.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1336,26 +1719,34 @@
                 {
                   "name": "$procmux$256",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.11-111.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.7-114.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.11-161.16|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.7-162.85"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$259",
+                  "name": "$procmux$258",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$261",
+                  "name": "$procmux$260",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.13-108.25|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.9-108.42"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.11-155.70|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.7-156.56"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$262",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1364,18 +1755,25 @@
                 {
                   "name": "$procmux$264",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$267",
+                  "name": "$procmux$266",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.11-143.72|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-146.79"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$268",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1384,27 +1782,34 @@
                 {
                   "name": "$procmux$270",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.11-136.54|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.7-139.79"
                   },
                   "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
+                    "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$273",
+                  "name": "$procmux$272",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
+                    "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$275",
+                  "name": "$procmux$274",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.13-107.39|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.9-107.55"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126.11-126.17|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126.7-129.63"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$276",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-123.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.5-163.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1413,163 +1818,268 @@
                 {
                   "name": "$procmux$278",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.7-118.10"
                   },
                   "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
+                    "WIDTH": "00000000000000000000000000010000"
                   }
                 },
                 {
                   "name": "$procmux$281",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$procmux$283",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:114.11-114.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:114.7-114.38"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$284",
+                  "name": "$procmux$285",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.7-118.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$288",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$287",
+                  "name": "$procmux$290",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112.13-112.25|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112.9-112.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$293",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.11-106.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.7-113.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$289",
+                  "name": "$procmux$296",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.13-106.40|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.9-106.68"
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$299",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.11-106.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.7-113.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$procmux$302",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$procmux$304",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.13-111.39|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.9-111.55"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$307",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.11-106.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.7-113.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$310",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$313",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.11-106.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.7-113.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$316",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$318",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.13-110.40|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.9-110.68"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$292",
+                  "name": "$procmux$321",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.11-106.18|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.7-113.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$295",
+                  "name": "$procmux$324",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$297",
+                  "name": "$procmux$326",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.13-100.20|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.9-100.37"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.13-104.20|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.9-104.37"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$300",
+                  "name": "$procmux$329",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.11-100.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.7-105.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$303",
+                  "name": "$procmux$332",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$306",
+                  "name": "$procmux$335",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.11-100.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.7-105.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$309",
+                  "name": "$procmux$338",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$311",
+                  "name": "$procmux$340",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.13-99.40|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.9-99.68"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.13-103.40|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.9-103.68"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$314",
+                  "name": "$procmux$343",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.11-100.19|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.7-105.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$317",
+                  "name": "$procmux$346",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.9-94.15|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:94.5-119.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$319",
+                  "name": "$procmux$348",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.31-37.42|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.27-37.60"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.31-41.42|/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.27-41.60"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$ternary$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44$17",
+                  "name": "$ternary$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48$18",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44.22-44.69"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48.22-48.69"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
@@ -1632,358 +2142,6 @@
             ]
           },
           {
-            "type": "$adff",
-            "ports": [
-                {
-                  "name": "ARST",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "CLK",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "D",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Q",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$376",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$381",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$386",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_div.$procdff$345",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "0",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_div.$procdff$350",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "000",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000011"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$361",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:28.3-35.8"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$366",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:28.3-35.8"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "00000",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000101"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$371",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:24.3-26.43"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "1",
-                    "CLK_POLARITY": "0",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pfd.$procdff$353",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "1",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pfd.$procdff$356",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "1",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$325",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:25.3-27.27"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$330",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:21.3-23.35"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$335",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:17.3-19.35"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$340",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:13.3-15.35"
-                  },
-                  "parameters": {
-                    "ARST_POLARITY": "00000000000000000000000000000000",
-                    "ARST_VALUE": "0",
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
-            "type": "$assert",
-            "ports": [
-                {
-                  "name": "A",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "EN",
-                  "direction": "io",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic",
-                  "attributes": {
-
-                  },
-                  "parameters": {
-
-                  }
-                },
-                {
-                  "name": "dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic",
-                  "attributes": {
-
-                  },
-                  "parameters": {
-
-                  }
-                }
-            ]
-          },
-          {
-            "type": "$and",
-            "ports": [
-                {
-                  "name": "A",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "B",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Y",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "$flatten\\dut.\\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$195",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$179",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$179$async_cut",
-                  "attributes": {
-
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
-            "type": "$ge",
-            "ports": [
-                {
-                  "name": "A",
-                  "direction": "io",
-                  "range": [3, 0]
-                },
-                {
-                  "name": "B",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Y",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "$flatten\\dut.\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:17$184",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.25-17.38"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000011",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$189",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_divider.v:20.25-20.40"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000011",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000011",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$ge$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44$14",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44.23-44.36"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000011",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
             "type": "$le",
             "ports": [
                 {
@@ -2004,7 +2162,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$le$/work/blocks/pll/digital/rtl/pll_divider.v:17$185",
+                  "name": "$flatten\\dut.\\u_div.$le$/work/blocks/pll/digital/rtl/pll_divider.v:17$202",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.44-17.57"
                   },
@@ -2017,9 +2175,9 @@
                   }
                 },
                 {
-                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$83",
+                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$85",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.34-133.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.34-137.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2030,9 +2188,9 @@
                   }
                 },
                 {
-                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$98",
+                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$100",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.33-140.84"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.33-144.84"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2043,9 +2201,9 @@
                   }
                 },
                 {
-                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44$15",
+                  "name": "$le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48$16",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44.40-44.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48.40-48.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2078,7 +2236,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$186",
+                  "name": "$flatten\\dut.\\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$203",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58"
                   },
@@ -2091,9 +2249,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104$49",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$47",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.18-104.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.13-103.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2104,9 +2262,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$51",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108$50",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.13-106.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.18-108.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2117,9 +2275,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$67",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$52",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-123.66"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.13-110.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2130,9 +2288,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$69",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$69",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.46"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-127.66"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2143,9 +2301,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$71",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$71",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.58"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-128.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2156,9 +2314,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$73",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$73",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.69"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-128.58"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2169,9 +2327,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$75",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$75",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-125.48"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-128.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2182,9 +2340,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$77",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$77",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-125.61"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-129.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2195,9 +2353,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$78",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$79",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.32"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.39-129.61"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2208,9 +2366,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$79",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$80",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.42"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.11-136.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2221,9 +2379,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$81",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$81",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.54"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.11-136.42"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2234,9 +2392,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$90",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$83",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.33-135.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.11-136.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2247,9 +2405,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$91",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$92",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.32"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.33-139.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2260,9 +2418,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$92",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$93",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.41"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.11-143.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2273,9 +2431,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$94",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$94",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.11-143.41"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2286,9 +2444,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$96",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$96",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.72"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.11-143.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2299,9 +2457,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$105",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$98",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.32-142.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.11-143.72"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2312,9 +2470,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$106",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$107",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.38-145.54"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.32-146.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2327,7 +2485,7 @@
                 {
                   "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$108",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-149.32"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.38-149.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2338,9 +2496,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$112",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$110",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-150.70"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.11-154.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2351,9 +2509,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$109",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$112",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.13-150.37"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.11-154.44"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2364,9 +2522,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$110",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$114",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.43-150.68"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.11-154.63"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2377,9 +2535,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151$115",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$118",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.36-151.54"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154.11-155.70"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2390,9 +2548,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$125",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$115",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.28"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155.13-155.37"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2403,9 +2561,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$126",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$116",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.56"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155.43-155.68"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2416,9 +2574,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$128",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156$121",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.67"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.36-156.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2429,9 +2587,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$130",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167$131",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.78"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.9-167.28"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2442,9 +2600,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$131",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170$132",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-166.52"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.32-170.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2455,9 +2613,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$132",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170$134",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-166.62"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.32-170.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2468,9 +2626,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$135",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170$136",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-167.74"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.32-170.78"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2481,59 +2639,7 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168$139",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.32-168.76"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$140",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.50"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$141",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.59"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$143",
-                  "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.76"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$145",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$137",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-171.52"
                   },
@@ -2546,9 +2652,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$146",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$138",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-171.68"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-171.62"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2559,9 +2665,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44$16",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$141",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:44.23-44.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-172.74"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2572,9 +2678,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61$19",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173$145",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.21-61.45"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.32-173.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2585,9 +2691,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$22",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174$146",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.19-76.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.32-174.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2598,9 +2704,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$24",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174$147",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.19-76.50"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.32-174.59"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2611,9 +2717,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$25",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174$149",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.44"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.32-174.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2624,9 +2730,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$27",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176$151",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.55"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.32-176.52"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2637,9 +2743,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$29",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176$152",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.67"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.32-176.68"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2650,9 +2756,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$31",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48$17",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.77"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:48.23-48.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2663,9 +2769,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$32",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$20",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.39"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65.21-65.45"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2676,9 +2782,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$34",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$23",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.48"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2689,9 +2795,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$35",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$25",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.19-81.36"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2702,9 +2808,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$37",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$26",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.19-81.46"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.19-83.44"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2715,9 +2821,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$39",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$28",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.19-82.37"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.19-83.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2728,9 +2834,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$40",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$30",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.19-82.46"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.19-83.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2741,9 +2847,87 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$46",
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$32",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.13-99.40"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.19-83.77"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$33",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84.19-84.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$35",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84.19-84.48"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$36",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85.19-85.36"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$38",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85.19-85.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$40",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.19-86.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$41",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.19-86.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2771,243 +2955,252 @@
             ],
             "cells": [
                 {
-                  "name": "$procdff$387",
+                  "name": "$procdff$426",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.3-178.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$388",
+                  "name": "$procdff$427",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.3-178.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$389",
+                  "name": "$procdff$428",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.3-178.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$390",
+                  "name": "$procdff$429",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$391",
+                  "name": "$procdff$430",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$392",
+                  "name": "$procdff$431",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$393",
+                  "name": "$procdff$432",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$394",
+                  "name": "$procdff$433",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$395",
+                  "name": "$procdff$434",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$435",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procdff$396",
+                  "name": "$procdff$436",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$397",
+                  "name": "$procdff$437",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$398",
+                  "name": "$procdff$438",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procdff$399",
+                  "name": "$procdff$439",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$400",
+                  "name": "$procdff$440",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$401",
+                  "name": "$procdff$441",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
                   }
                 },
                 {
-                  "name": "$procdff$402",
+                  "name": "$procdff$442",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$403",
+                  "name": "$procdff$443",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$404",
+                  "name": "$procdff$444",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000010000"
                   }
                 },
                 {
-                  "name": "$procdff$405",
+                  "name": "$procdff$445",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:92.3-120.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000010000"
                   }
                 },
                 {
-                  "name": "$procdff$406",
+                  "name": "$procdff$446",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
                   }
                 },
                 {
-                  "name": "$procdff$407",
+                  "name": "$procdff$447",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$408",
+                  "name": "$procdff$448",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$409",
+                  "name": "$procdff$449",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$410",
+                  "name": "$procdff$450",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$411",
+                  "name": "$procdff$451",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$412",
+                  "name": "$procdff$452",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:75.3-79.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$413",
+                  "name": "$procdff$453",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:34.3-34.46"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:38.3-38.46"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -3108,7 +3301,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$187",
+                  "name": "$flatten\\dut.\\u_div.$sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$204",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_divider.v:18.35-18.47"
                   },
@@ -3138,7 +3331,29 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$180",
+                  "name": "$flatten\\dut.$not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$172",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52.30-52.38"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$not$/work/blocks/pll/digital/rtl/pll_lock_det.v:59$194",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:59.18-59.26"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$197",
                   "attributes": {
                     "src": "/work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24"
                   },
@@ -3149,9 +3364,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:15$198",
+                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:27$215",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:15.27-15.34"
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:27.27-27.34"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3160,9 +3375,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:19$201",
+                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$218",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:19.27-19.34"
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:46.27-46.34"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3171,9 +3386,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:23$204",
+                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$221",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:23.27-23.34"
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:50.27-50.34"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3182,9 +3397,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:27$207",
+                  "name": "$flatten\\dut.\\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$224",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:27.23-27.26"
+                    "src": "/work/blocks/pll/digital/rtl/pll_prescaler.v:54.23-54.26"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3237,9 +3452,9 @@
             ],
             "cells": [
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107$54",
+                  "name": "$flatten\\dut.\\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$191",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.13-107.39"
+                    "src": "/work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3250,9 +3465,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$86",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$55",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-134.56"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.13-111.39"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3263,9 +3478,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$89",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$88",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-135.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.34-138.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3276,9 +3491,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$101",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$91",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-141.53"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.34-139.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3289,9 +3504,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$104",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$103",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-142.76"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.33-145.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3302,9 +3517,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$111",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$106",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.12-150.69"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.33-146.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3315,9 +3530,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$118",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$117",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.38-157.64"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155.12-155.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3328,9 +3543,22 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$120",
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$124",
                   "attributes": {
-                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.38-157.83"
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.38-162.64"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$126",
+                  "attributes": {
+                    "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.38-162.83"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -3347,7 +3575,7 @@
             "keep": "00000000000000000000000000000001",
             "hdlname": "ihsan_sa_pll_formal",
             "top": "00000000000000000000000000000001",
-            "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:8.1-175.10"
+            "src": "/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:8.1-180.10"
         }
       }
   ]

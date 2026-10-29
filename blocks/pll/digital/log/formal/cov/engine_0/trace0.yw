@@ -10,14 +10,15 @@
     {"path": ["\\pll_en_in"], "width": 1, "offset": 0, "init_only": false},
     {"path": ["\\rst_n"], "width": 1, "offset": 0, "init_only": false},
     {"path": ["\\vco_out"], "width": 1, "offset": 0, "init_only": false},
-    {"path": ["\\_witness_", "\\anyinit_procdff_387"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_388"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_389"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_390"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_391"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_392"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_393"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_394"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_426"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_427"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_428"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_429"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_430"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_431"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_432"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_433"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_434"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\cp_trim0"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\cp_trim1"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\pll_en"], "width": 1, "offset": 0, "init_only": true},
@@ -25,6 +26,8 @@
     {"path": ["\\dut", "\\u_div", "\\fb_en"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_lock", "\\lock"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_lock", "\\lock_cnt"], "width": 5, "offset": 0, "init_only": true},
+    {"path": ["\\dut", "\\u_lock", "\\recover"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\dut", "\\u_lock", "\\wd_cnt"], "width": 10, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_lock", "\\wide_q"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_pfd", "\\pfd_fb_q"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_pfd", "\\pfd_ref_q"], "width": 1, "offset": 0, "init_only": true},
@@ -42,7 +45,7 @@
     {"path": ["\\dut.u_pfd.pfd_ref_q$async_q_past"], "width": 1, "offset": 0, "init_only": true}
   ],
   "steps": [
-    {"bits": "0000000000000000000000000000000000000000000000"},
+    {"bits": "0000000000000000000000000000000000000000000000000000000000"},
     {"bits": "0000000000"}
   ]
 }

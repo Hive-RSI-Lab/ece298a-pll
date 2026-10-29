@@ -3,8 +3,8 @@
  "gate": "formal",
  "phase": "P4",
  "tool": "formal",
- "input_digest": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
- "status": "pass",
+ "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+ "status": "fail",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,17 +12,40 @@
   "max_count": 0
  },
  "counts": {
-  "total": 8,
+  "total": 9,
   "by_severity": {
-   "info": 8
+   "info": 8,
+   "error": 1
   },
   "by_source": {
-   "sby-smtbmc": 6,
+   "sby-smtbmc": 7,
    "check_formal": 2
   }
  },
- "failing_count": 0,
- "failing": [],
+ "failing_count": 1,
+ "failing": [
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "vacuous_pass",
+   "refs": [
+    "REQ-RECOVER-OUT"
+   ],
+   "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 300
+  }
+ ],
  "violations": [
   {
    "check": "formal",
@@ -131,6 +154,27 @@
   },
   {
    "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "vacuous_pass",
+   "refs": [
+    "REQ-RECOVER-OUT"
+   ],
+   "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 300
+  },
+  {
+   "check": "formal",
    "severity": "info",
    "file": null,
    "module": null,
@@ -197,7 +241,7 @@
   "frontend": "native",
   "frontend_why": null,
   "multiclock": true,
-  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$345, $flatten\\dut.\\u_lock.$procdff$371; async reset/latch cell(s) $adff",
+  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$380, $flatten\\dut.\\u_lock.$procdff$416; async reset/latch cell(s) $adff",
   "proven": [],
   "bounded": [
    "REQ-DIV-N",
@@ -208,7 +252,9 @@
    "REQ-RST-ASYNC"
   ],
   "failed": [],
-  "vacuous": [],
+  "vacuous": [
+   "REQ-RECOVER-OUT"
+  ],
   "smt_status": "UNKNOWN",
   "pdr_status": "PASS",
   "cover_points": [
@@ -236,10 +282,10 @@
   "async_reset_cuts_note": "smt/pdr's proven/bounded verdicts above hold for a model in which each cut flop's async clear (formal.async_reset_cuts) reads the cut flops' PRE-RESET values instead of their Q - the clear lands in the same step the flop sets, and every other reset input (rst_n) is unchanged - so they show the settled zero-delay behaviour, not the delta-cycle glitch (both flops briefly both-set before the clear catches up) or the reset pulse's width, which stay sim's job"
  },
  "inputs_at_start": {
-  "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
-  "formal": "dir_text:198bd2a395cf8d24094ae05d48044957d6815fc32fe1e1f3edeb1de8c9925b08",
-  "spec_yaml": "json_canonical:ac784df5c9763c127bc11d87d4e16df3a2be5411104eefe53561c839120127c1"
+  "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+  "formal": "dir_text:a724ec421066498b7eec2bacbad80f8f2872352cbfeacae230074d4ca71c82d5",
+  "spec_yaml": "json_canonical:1ece11cd981de23294c430007a55c29c2950a215bfadd22c10b764d0ac5147a9"
  },
- "recorded_ts": "2026-10-28T16:00:14",
- "attempts": 7
+ "recorded_ts": "2026-10-29T10:47:44",
+ "attempts": 8
 }

@@ -1,123 +1,140 @@
 TN:verilator_coverage
 SF:/work/blocks/pll/digital/rtl/ihsan_sa_pll.v
-DA:12,286
-BRDA:12,0,clk:0->1,286
-BRDA:12,0,clk:1->0,286
-DA:13,28
-BRDA:13,0,rst_n:0->1,28
-BRDA:13,0,rst_n:1->0,28
-DA:14,5
-BRDA:14,0,n_sel[0]:0->1,5
-BRDA:14,0,n_sel[0]:1->0,4
-BRDA:14,0,n_sel[1]:0->1,3
-BRDA:14,0,n_sel[1]:1->0,3
-BRDA:14,0,n_sel[2]:0->1,3
-BRDA:14,0,n_sel[2]:1->0,3
-DA:15,5894
-BRDA:15,0,vco_out:0->1,5894
-BRDA:15,0,vco_out:1->0,5894
-DA:16,3
-BRDA:16,0,pll_en_in:0->1,3
-BRDA:16,0,pll_en_in:1->0,3
-DA:17,1
-BRDA:17,0,obs_sel:0->1,1
-BRDA:17,0,obs_sel:1->0,1
-DA:18,3
-BRDA:18,0,cp_trim_in[0]:0->1,3
-BRDA:18,0,cp_trim_in[0]:1->0,3
-BRDA:18,0,cp_trim_in[1]:0->1,2
-BRDA:18,0,cp_trim_in[1]:1->0,2
-DA:19,686
-BRDA:19,0,obs_out:0->1,686
-BRDA:19,0,obs_out:1->0,686
-DA:20,552
-BRDA:20,0,clk_fb:0->1,552
-BRDA:20,0,clk_fb:1->0,552
-DA:21,6
-BRDA:21,0,lock:0->1,6
-BRDA:21,0,lock:1->0,6
-DA:22,273
-BRDA:22,0,pfd_up:0->1,273
-BRDA:22,0,pfd_up:1->0,273
-DA:23,286
-BRDA:23,0,pfd_dn:0->1,286
-BRDA:23,0,pfd_dn:1->0,286
-DA:24,3
-BRDA:24,0,pll_en:0->1,3
-BRDA:24,0,pll_en:1->0,3
-DA:25,3
-BRDA:25,0,cp_trim0:0->1,3
-BRDA:25,0,cp_trim0:1->0,3
-DA:26,2
-BRDA:26,0,cp_trim1:0->1,2
-BRDA:26,0,cp_trim1:1->0,2
-DA:28,716
-BRDA:28,0,clk_pre:0->1,716
-BRDA:28,0,clk_pre:1->0,716
-DA:29,363
-BRDA:29,0,obs_q3:0->1,363
-BRDA:29,0,obs_q3:1->0,363
-DA:30,552
-BRDA:30,0,clk_fb_int:0->1,552
-BRDA:30,0,clk_fb_int:1->0,552
-DA:31,686
-BRDA:31,0,obs_int:0->1,686
-BRDA:31,0,obs_int:1->0,686
-DA:53,24824
-BRDA:53,0,(obs_sel==0) => 0,24824
-BRDA:53,0,(obs_sel==1) => 1,2149
-BRDA:53,0,cond_then,2149
-BRDA:53,0,cond_else,24824
-BRF:48
-BRH:26
+DA:13,6534
+BRDA:13,0,clk:0->1,6534
+BRDA:13,0,clk:1->0,6534
+DA:14,31
+BRDA:14,0,rst_n:0->1,31
+BRDA:14,0,rst_n:1->0,31
+DA:15,5
+BRDA:15,0,n_sel[0]:0->1,5
+BRDA:15,0,n_sel[0]:1->0,4
+BRDA:15,0,n_sel[1]:0->1,3
+BRDA:15,0,n_sel[1]:1->0,3
+BRDA:15,0,n_sel[2]:0->1,3
+BRDA:15,0,n_sel[2]:1->0,3
+DA:16,55912
+BRDA:16,0,vco_out:0->1,55912
+BRDA:16,0,vco_out:1->0,55912
+DA:17,7
+BRDA:17,0,pll_en_in:0->1,7
+BRDA:17,0,pll_en_in:1->0,7
+DA:18,1
+BRDA:18,0,obs_sel:0->1,1
+BRDA:18,0,obs_sel:1->0,1
+DA:19,3
+BRDA:19,0,cp_trim_in[0]:0->1,3
+BRDA:19,0,cp_trim_in[0]:1->0,3
+BRDA:19,0,cp_trim_in[1]:0->1,2
+BRDA:19,0,cp_trim_in[1]:1->0,2
+DA:20,6937
+BRDA:20,0,obs_out:0->1,6937
+BRDA:20,0,obs_out:1->0,6937
+DA:21,6800
+BRDA:21,0,clk_fb:0->1,6800
+BRDA:21,0,clk_fb:1->0,6800
+DA:22,7
+BRDA:22,0,lock:0->1,7
+BRDA:22,0,lock:1->0,7
+DA:23,6115
+BRDA:23,0,pfd_up:0->1,6115
+BRDA:23,0,pfd_up:1->0,6115
+DA:24,6129
+BRDA:24,0,pfd_dn:0->1,6129
+BRDA:24,0,pfd_dn:1->0,6129
+DA:25,7
+BRDA:25,0,pll_en:0->1,7
+BRDA:25,0,pll_en:1->0,7
+DA:26,3
+BRDA:26,0,cp_trim0:0->1,3
+BRDA:26,0,cp_trim0:1->0,3
+DA:27,2
+BRDA:27,0,cp_trim1:0->1,2
+BRDA:27,0,cp_trim1:1->0,2
+DA:33,6967
+BRDA:33,0,clk_pre:0->1,6967
+BRDA:33,0,clk_pre:1->0,6967
+DA:34,3489
+BRDA:34,0,obs_q3:0->1,3489
+BRDA:34,0,obs_q3:1->0,3489
+DA:35,6800
+BRDA:35,0,clk_fb_int:0->1,6800
+BRDA:35,0,clk_fb_int:1->0,6800
+DA:36,6937
+BRDA:36,0,obs_int:0->1,6937
+BRDA:36,0,obs_int:1->0,6937
+DA:37,6521
+BRDA:37,0,pfd_up_q:0->1,6521
+BRDA:37,0,pfd_up_q:1->0,6521
+DA:38,6531
+BRDA:38,0,pfd_dn_q:0->1,6531
+BRDA:38,0,pfd_dn_q:1->0,6531
+DA:39,4
+BRDA:39,0,recover:0->1,4
+BRDA:39,0,recover:1->0,4
+DA:52,147133
+BRDA:52,0,(pfd_up_q==0) => 0,80907
+BRDA:52,0,(pfd_up_q==1 && recover==0) => 1,147133
+BRDA:52,0,(recover==1) => 0,13804
+DA:53,210590
+BRDA:53,0,(pfd_dn_q==0 && recover==0) => 0,210590
+BRDA:53,0,(pfd_dn_q==1) => 1,20596
+BRDA:53,0,(recover==1) => 1,14210
+DA:65,243888
+BRDA:65,0,(obs_sel==0) => 0,243888
+BRDA:65,0,(obs_sel==1) => 1,2149
+BRDA:65,0,cond_then,2149
+BRDA:65,0,cond_else,243888
+BRF:60
+BRH:36
 end_of_record
 SF:/work/blocks/pll/digital/rtl/pll_ctrl_regs.v
-DA:4,286
-BRDA:4,0,clk:0->1,286
-BRDA:4,0,clk:1->0,286
-DA:5,28
-BRDA:5,0,rst_n:0->1,28
-BRDA:5,0,rst_n:1->0,28
-DA:6,3
-BRDA:6,0,pll_en_in:0->1,3
-BRDA:6,0,pll_en_in:1->0,3
+DA:4,6534
+BRDA:4,0,clk:0->1,6534
+BRDA:4,0,clk:1->0,6534
+DA:5,31
+BRDA:5,0,rst_n:0->1,31
+BRDA:5,0,rst_n:1->0,31
+DA:6,7
+BRDA:6,0,pll_en_in:0->1,7
+BRDA:6,0,pll_en_in:1->0,7
 DA:7,3
 BRDA:7,0,cp_trim_in[0]:0->1,3
 BRDA:7,0,cp_trim_in[0]:1->0,3
 BRDA:7,0,cp_trim_in[1]:0->1,2
 BRDA:7,0,cp_trim_in[1]:1->0,2
-DA:8,3
-BRDA:8,0,pll_en:0->1,3
-BRDA:8,0,pll_en:1->0,3
+DA:8,7
+BRDA:8,0,pll_en:0->1,7
+BRDA:8,0,pll_en:1->0,7
 DA:9,3
 BRDA:9,0,cp_trim0:0->1,3
 BRDA:9,0,cp_trim0:1->0,3
 DA:10,2
 BRDA:10,0,cp_trim1:0->1,2
 BRDA:10,0,cp_trim1:1->0,2
-DA:12,312
-DA:13,284
-BRDA:13,0,if,28
-BRDA:13,0,else,284
-BRDA:13,0,(rst_n==0) => 1,28
-BRDA:13,0,(rst_n==1) => 0,284
-DA:14,28
-DA:15,28
-DA:16,28
-DA:17,284
-DA:18,284
-DA:19,284
-DA:20,284
+DA:12,6563
+DA:13,6532
+BRDA:13,0,if,31
+BRDA:13,0,else,6532
+BRDA:13,0,(rst_n==0) => 1,31
+BRDA:13,0,(rst_n==1) => 0,6532
+DA:14,31
+DA:15,31
+DA:16,31
+DA:17,6532
+DA:18,6532
+DA:19,6532
+DA:20,6532
 BRF:20
 BRH:8
 end_of_record
 SF:/work/blocks/pll/digital/rtl/pll_divider.v
-DA:8,716
-BRDA:8,0,clk_pre:0->1,716
-BRDA:8,0,clk_pre:1->0,716
-DA:9,28
-BRDA:9,0,rst_n:0->1,28
-BRDA:9,0,rst_n:1->0,28
+DA:8,6967
+BRDA:8,0,clk_pre:0->1,6967
+BRDA:8,0,clk_pre:1->0,6967
+DA:9,31
+BRDA:9,0,rst_n:0->1,31
+BRDA:9,0,rst_n:1->0,31
 DA:10,5
 BRDA:10,0,n_sel[0]:0->1,5
 BRDA:10,0,n_sel[0]:1->0,4
@@ -125,9 +142,9 @@ BRDA:10,0,n_sel[1]:0->1,3
 BRDA:10,0,n_sel[1]:1->0,3
 BRDA:10,0,n_sel[2]:0->1,3
 BRDA:10,0,n_sel[2]:1->0,3
-DA:11,552
-BRDA:11,0,clk_fb:0->1,552
-BRDA:11,0,clk_fb:1->0,552
+DA:11,6800
+BRDA:11,0,clk_fb:0->1,6800
+BRDA:11,0,clk_fb:1->0,6800
 DA:13,84
 BRDA:13,0,div_cnt[0]:0->1,84
 BRDA:13,0,div_cnt[0]:1->0,84
@@ -135,16 +152,16 @@ BRDA:13,0,div_cnt[1]:0->1,44
 BRDA:13,0,div_cnt[1]:1->0,44
 BRDA:13,0,div_cnt[2]:0->1,16
 BRDA:13,0,div_cnt[2]:1->0,16
-DA:14,76
-BRDA:14,0,fb_en:0->1,76
-BRDA:14,0,fb_en:1->0,76
-DA:17,23526
+DA:14,79
+BRDA:14,0,fb_en:0->1,79
+BRDA:14,0,fb_en:1->0,79
+DA:17,223834
 BRDA:17,0,n_legal:0->1,2
 BRDA:17,0,n_legal:1->0,1
 BRDA:17,0,((n_sel <= 3'h5)==0) => 0,863
 BRDA:17,0,((n_sel >= 3'h1)==0) => 0,413
-BRDA:17,0,((n_sel >= 3'h1)==1 && (n_sel <= 3'h5)==1) => 1,23526
-DA:18,23526
+BRDA:17,0,((n_sel >= 3'h1)==1 && (n_sel <= 3'h5)==1) => 1,223834
+DA:18,223834
 BRDA:18,0,n_m1[0]:0->1,3
 BRDA:18,0,n_m1[0]:1->0,3
 BRDA:18,0,n_m1[1]:0->1,2
@@ -152,222 +169,279 @@ BRDA:18,0,n_m1[1]:1->0,2
 BRDA:18,0,n_m1[2]:0->1,2
 BRDA:18,0,n_m1[2]:1->0,2
 BRDA:18,0,(n_legal==0) => 0,1276
-BRDA:18,0,(n_legal==1) => 1,23526
-BRDA:18,0,cond_then,23526
+BRDA:18,0,(n_legal==1) => 1,223834
+BRDA:18,0,cond_then,223834
 BRDA:18,0,cond_else,1276
 DA:20,60
 BRDA:20,0,last:0->1,60
 BRDA:20,0,last:1->0,59
-DA:22,744
-DA:23,716
-BRDA:23,0,elsif,28
-BRDA:23,0,(rst_n==0) => 1,28
-BRDA:23,0,(rst_n==1) => 0,716
-DA:24,572
-BRDA:24,0,if,572
+DA:22,6998
+DA:23,6967
+BRDA:23,0,elsif,31
+BRDA:23,0,(rst_n==0) => 1,31
+BRDA:23,0,(rst_n==1) => 0,6967
+DA:24,6823
+BRDA:24,0,if,6823
 BRDA:24,0,else,144
 DA:25,144
-DA:27,744
-DA:28,711
-BRDA:28,0,if,33
-BRDA:28,0,else,711
-BRDA:28,0,(rst_n==0) => 1,33
-BRDA:28,0,(rst_n==1) => 0,711
-DA:29,711
-DA:31,14254
-BRDA:31,0,(clk_pre==0) => 0,14254
-BRDA:31,0,(clk_pre==1 && fb_en==1) => 1,9607
-BRDA:31,0,(fb_en==0) => 0,6854
+DA:27,6998
+DA:28,6962
+BRDA:28,0,if,36
+BRDA:28,0,else,6962
+BRDA:28,0,(rst_n==0) => 1,36
+BRDA:28,0,(rst_n==1) => 0,6962
+DA:29,6962
+DA:31,126937
+BRDA:31,0,(clk_pre==0) => 0,126937
+BRDA:31,0,(clk_pre==1 && fb_en==1) => 1,115841
+BRDA:31,0,(fb_en==0) => 0,7097
 BRF:49
 BRH:35
 end_of_record
 SF:/work/blocks/pll/digital/rtl/pll_lock_det.v
-DA:11,286
-BRDA:11,0,clk:0->1,286
-BRDA:11,0,clk:1->0,286
-DA:12,28
-BRDA:12,0,rst_n:0->1,28
-BRDA:12,0,rst_n:1->0,28
-DA:13,273
-BRDA:13,0,pfd_up:0->1,273
-BRDA:13,0,pfd_up:1->0,273
-DA:14,286
-BRDA:14,0,pfd_dn:0->1,286
-BRDA:14,0,pfd_dn:1->0,286
-DA:15,6
-BRDA:15,0,lock:0->1,6
-BRDA:15,0,lock:1->0,6
-DA:19,23
-BRDA:19,0,wide_q:0->1,23
-BRDA:19,0,wide_q:1->0,22
-DA:20,96
-BRDA:20,0,lock_cnt[0]:0->1,96
-BRDA:20,0,lock_cnt[0]:1->0,96
-BRDA:20,0,lock_cnt[1]:0->1,50
-BRDA:20,0,lock_cnt[1]:1->0,50
-BRDA:20,0,lock_cnt[2]:0->1,25
-BRDA:20,0,lock_cnt[2]:1->0,25
-BRDA:20,0,lock_cnt[3]:0->1,12
-BRDA:20,0,lock_cnt[3]:1->0,12
-BRDA:20,0,lock_cnt[4]:0->1,6
-BRDA:20,0,lock_cnt[4]:1->0,6
-DA:21,15710
-BRDA:21,0,cnt_nxt[0]:0->1,110
-BRDA:21,0,cnt_nxt[0]:1->0,110
-BRDA:21,0,cnt_nxt[1]:0->1,51
-BRDA:21,0,cnt_nxt[1]:1->0,51
-BRDA:21,0,cnt_nxt[2]:0->1,27
-BRDA:21,0,cnt_nxt[2]:1->0,27
-BRDA:21,0,cnt_nxt[3]:0->1,12
-BRDA:21,0,cnt_nxt[3]:1->0,12
-BRDA:21,0,cnt_nxt[4]:0->1,6
-BRDA:21,0,cnt_nxt[4]:1->0,6
-BRDA:21,0,(wide_q==0) => 0,9686
-BRDA:21,0,(wide_q==1) => 1,15710
-BRDA:21,0,cond_then,15710
-BRDA:21,0,cond_else,9686
-DA:22,7840
-BRDA:22,0,cond_then,1846
-BRDA:22,0,cond_else,7840
-DA:24,310
-DA:25,277
-BRDA:25,0,if,33
-BRDA:25,0,else,277
-BRDA:25,0,(rst_n==0) => 1,33
-BRDA:25,0,(rst_n==1) => 0,277
-DA:26,277
-BRDA:26,0,else,277
-BRDA:26,0,(pfd_dn==1) => 1,9
-BRDA:26,0,(pfd_up==0 && pfd_dn==0) => 0,245
-BRDA:26,0,(pfd_up==1) => 1,23
-DA:28,312
-DA:29,284
-BRDA:29,0,if,28
-BRDA:29,0,else,284
-BRDA:29,0,(rst_n==0) => 1,28
-BRDA:29,0,(rst_n==1) => 0,284
-DA:30,28
-DA:31,28
-DA:32,284
-DA:33,284
-DA:34,284
-BRF:50
-BRH:43
+DA:19,6534
+BRDA:19,0,clk:0->1,6534
+BRDA:19,0,clk:1->0,6534
+DA:20,31
+BRDA:20,0,rst_n:0->1,31
+BRDA:20,0,rst_n:1->0,31
+DA:21,7
+BRDA:21,0,pll_en:0->1,7
+BRDA:21,0,pll_en:1->0,7
+DA:22,6115
+BRDA:22,0,pfd_up:0->1,6115
+BRDA:22,0,pfd_up:1->0,6115
+DA:23,6129
+BRDA:23,0,pfd_dn:0->1,6129
+BRDA:23,0,pfd_dn:1->0,6129
+DA:24,7
+BRDA:24,0,lock:0->1,7
+BRDA:24,0,lock:1->0,7
+DA:25,4
+BRDA:25,0,recover:0->1,4
+BRDA:25,0,recover:1->0,4
+DA:31,27
+BRDA:31,0,wide_q:0->1,27
+BRDA:31,0,wide_q:1->0,26
+DA:32,107
+BRDA:32,0,lock_cnt[0]:0->1,107
+BRDA:32,0,lock_cnt[0]:1->0,107
+BRDA:32,0,lock_cnt[1]:0->1,54
+BRDA:32,0,lock_cnt[1]:1->0,54
+BRDA:32,0,lock_cnt[2]:0->1,27
+BRDA:32,0,lock_cnt[2]:1->0,27
+BRDA:32,0,lock_cnt[3]:0->1,13
+BRDA:32,0,lock_cnt[3]:1->0,13
+BRDA:32,0,lock_cnt[4]:0->1,7
+BRDA:32,0,lock_cnt[4]:1->0,7
+DA:33,3107
+BRDA:33,0,wd_cnt[0]:0->1,3107
+BRDA:33,0,wd_cnt[0]:1->0,3107
+BRDA:33,0,wd_cnt[1]:0->1,1554
+BRDA:33,0,wd_cnt[1]:1->0,1554
+BRDA:33,0,wd_cnt[2]:0->1,777
+BRDA:33,0,wd_cnt[2]:1->0,777
+BRDA:33,0,wd_cnt[3]:0->1,388
+BRDA:33,0,wd_cnt[3]:1->0,388
+BRDA:33,0,wd_cnt[4]:0->1,195
+BRDA:33,0,wd_cnt[4]:1->0,195
+BRDA:33,0,wd_cnt[5]:0->1,96
+BRDA:33,0,wd_cnt[5]:1->0,96
+BRDA:33,0,wd_cnt[6]:0->1,48
+BRDA:33,0,wd_cnt[6]:1->0,48
+BRDA:33,0,wd_cnt[7]:0->1,22
+BRDA:33,0,wd_cnt[7]:1->0,22
+BRDA:33,0,wd_cnt[8]:0->1,11
+BRDA:33,0,wd_cnt[8]:1->0,11
+BRDA:33,0,wd_cnt[9]:0->1,6
+BRDA:33,0,wd_cnt[9]:1->0,6
+DA:34,227652
+BRDA:34,0,cnt_nxt[0]:0->1,121
+BRDA:34,0,cnt_nxt[0]:1->0,121
+BRDA:34,0,cnt_nxt[1]:0->1,58
+BRDA:34,0,cnt_nxt[1]:1->0,58
+BRDA:34,0,cnt_nxt[2]:0->1,29
+BRDA:34,0,cnt_nxt[2]:1->0,29
+BRDA:34,0,cnt_nxt[3]:0->1,13
+BRDA:34,0,cnt_nxt[3]:1->0,13
+BRDA:34,0,cnt_nxt[4]:0->1,7
+BRDA:34,0,cnt_nxt[4]:1->0,7
+BRDA:34,0,(wide_q==0) => 0,10548
+BRDA:34,0,(wide_q==1) => 1,227652
+BRDA:34,0,cond_then,227652
+BRDA:34,0,cond_else,10548
+DA:35,8433
+BRDA:35,0,cond_then,2115
+BRDA:35,0,cond_else,8433
+DA:37,6558
+DA:38,6522
+BRDA:38,0,if,36
+BRDA:38,0,else,6522
+BRDA:38,0,(rst_n==0) => 1,36
+BRDA:38,0,(rst_n==1) => 0,6522
+DA:39,6522
+BRDA:39,0,else,6522
+BRDA:39,0,(pfd_dn==1) => 1,415
+BRDA:39,0,(pfd_up==0 && pfd_dn==0) => 0,272
+BRDA:39,0,(pfd_up==1) => 1,5835
+DA:41,6563
+DA:42,6532
+BRDA:42,0,if,31
+BRDA:42,0,else,6532
+BRDA:42,0,(rst_n==0) => 1,31
+BRDA:42,0,(rst_n==1) => 0,6532
+DA:43,31
+DA:44,31
+DA:45,6532
+DA:46,6532
+DA:47,6532
+DA:50,6563
+DA:51,6532
+BRDA:51,0,elsif,31
+BRDA:51,0,(rst_n==0) => 1,31
+BRDA:51,0,(rst_n==1) => 0,6532
+DA:52,31
+DA:53,31
+DA:54,6211
+BRDA:54,0,elsif,321
+BRDA:54,0,(lock==1) => 1,61
+BRDA:54,0,(pll_en==0) => 1,309
+BRDA:54,0,(pll_en==1 && lock==0) => 0,6211
+DA:55,321
+DA:56,321
+DA:57,6204
+BRDA:57,0,if,7
+BRDA:57,0,else,6204
+BRDA:57,0,(recover==0) => 0,5806
+BRDA:57,0,(recover==1) => 1,405
+DA:58,7
+DA:59,7
+BRDA:59,0,if,7
+BRDA:59,0,(recover==0) => 1,4
+BRDA:59,0,(recover==1) => 0,3
+DA:60,6204
+DA:61,6204
+BRF:88
+BRH:72
 end_of_record
 SF:/work/blocks/pll/digital/rtl/pll_pfd.v
-DA:9,286
-BRDA:9,0,clk:0->1,286
-BRDA:9,0,clk:1->0,286
-DA:10,552
-BRDA:10,0,clk_fb:0->1,552
-BRDA:10,0,clk_fb:1->0,552
-DA:11,28
-BRDA:11,0,rst_n:0->1,28
-BRDA:11,0,rst_n:1->0,28
-DA:12,273
-BRDA:12,0,pfd_up:0->1,273
-BRDA:12,0,pfd_up:1->0,273
-DA:13,286
-BRDA:13,0,pfd_dn:0->1,286
-BRDA:13,0,pfd_dn:1->0,286
-DA:15,286
-BRDA:15,0,pfd_fb_q:0->1,286
-BRDA:15,0,pfd_fb_q:1->0,286
-BRDA:15,0,pfd_ref_q:0->1,273
-BRDA:15,0,pfd_ref_q:1->0,273
-DA:16,24073
-BRDA:16,0,(pfd_fb_q==0) => 0,11701
-BRDA:16,0,(pfd_ref_q==0) => 0,24073
-BRDA:16,0,(pfd_ref_q==1 && pfd_fb_q==1) => 1,271
-BRDA:16,0,pfd_both:0->1,271
-BRDA:16,0,pfd_both:1->0,271
-DA:17,271
-BRDA:17,0,pfd_dly_mid:0->1,271
-BRDA:17,0,pfd_dly_mid:1->0,271
-DA:18,271
-BRDA:18,0,pfd_rst:0->1,271
-BRDA:18,0,pfd_rst:1->0,271
-DA:19,24713
-BRDA:19,0,(pfd_rst==1) => 1,271
-BRDA:19,0,(rst_n==0) => 1,954
-BRDA:19,0,(rst_n==1 && pfd_rst==0) => 0,24713
-BRDA:19,0,pfd_clr:0->1,300
-BRDA:19,0,pfd_clr:1->0,299
-DA:29,584
-DA:30,300
-BRDA:30,0,if,300
-BRDA:30,0,else,284
-DA:31,284
-DA:33,852
-DA:34,552
-BRDA:34,0,if,300
-BRDA:34,0,else,552
-DA:35,552
+DA:9,6534
+BRDA:9,0,clk:0->1,6534
+BRDA:9,0,clk:1->0,6534
+DA:10,6800
+BRDA:10,0,clk_fb:0->1,6800
+BRDA:10,0,clk_fb:1->0,6800
+DA:11,31
+BRDA:11,0,rst_n:0->1,31
+BRDA:11,0,rst_n:1->0,31
+DA:12,6521
+BRDA:12,0,pfd_up:0->1,6521
+BRDA:12,0,pfd_up:1->0,6521
+DA:13,6531
+BRDA:13,0,pfd_dn:0->1,6531
+BRDA:13,0,pfd_dn:1->0,6531
+DA:15,6531
+BRDA:15,0,pfd_fb_q:0->1,6531
+BRDA:15,0,pfd_fb_q:1->0,6531
+BRDA:15,0,pfd_ref_q:0->1,6521
+BRDA:15,0,pfd_ref_q:1->0,6521
+DA:16,224394
+BRDA:16,0,(pfd_fb_q==0) => 0,224394
+BRDA:16,0,(pfd_ref_q==0) => 0,81259
+BRDA:16,0,(pfd_ref_q==1 && pfd_fb_q==1) => 1,6516
+BRDA:16,0,pfd_both:0->1,6516
+BRDA:16,0,pfd_both:1->0,6516
+DA:17,6516
+BRDA:17,0,pfd_dly_mid:0->1,6516
+BRDA:17,0,pfd_dly_mid:1->0,6516
+DA:18,6516
+BRDA:18,0,pfd_rst:0->1,6516
+BRDA:18,0,pfd_rst:1->0,6516
+DA:19,237445
+BRDA:19,0,(pfd_rst==1) => 1,6516
+BRDA:19,0,(rst_n==0) => 1,1029
+BRDA:19,0,(rst_n==1 && pfd_rst==0) => 0,237445
+BRDA:19,0,pfd_clr:0->1,6548
+BRDA:19,0,pfd_clr:1->0,6547
+DA:29,13080
+DA:30,6548
+BRDA:30,0,if,6548
+BRDA:30,0,else,6532
+DA:31,6532
+DA:33,13348
+DA:34,6800
+BRDA:34,0,if,6548
+BRDA:34,0,else,6800
+DA:35,6800
 BRF:32
 BRH:32
 end_of_record
 SF:/work/blocks/pll/digital/rtl/pll_prescaler.v
-DA:6,5894
-BRDA:6,0,vco_out:0->1,5894
-BRDA:6,0,vco_out:1->0,5894
-DA:7,28
-BRDA:7,0,rst_n:0->1,28
-BRDA:7,0,rst_n:1->0,28
-DA:8,716
-BRDA:8,0,clk_pre:0->1,716
-BRDA:8,0,clk_pre:1->0,716
-DA:9,363
-BRDA:9,0,obs_q3:0->1,363
-BRDA:9,0,obs_q3:1->0,363
-DA:11,2848
-BRDA:11,0,pre_q1:0->1,1427
-BRDA:11,0,pre_q1:1->0,1427
-BRDA:11,0,pre_q2:0->1,716
-BRDA:11,0,pre_q2:1->0,716
-BRDA:11,0,q3:0->1,363
-BRDA:11,0,q3:1->0,363
-BRDA:11,0,pre_q0:0->1,2848
-BRDA:11,0,pre_q0:1->0,2848
-DA:13,5915
-DA:14,5686
-BRDA:14,0,if,229
-BRDA:14,0,else,5686
-BRDA:14,0,(rst_n==0) => 1,229
-BRDA:14,0,(rst_n==1) => 0,5686
-DA:15,5686
-BRDA:15,0,else,5686
-BRDA:15,0,(pre_q0==0) => 1,2848
-BRDA:15,0,(pre_q0==1) => 0,2838
-DA:17,2876
-DA:18,2848
-BRDA:18,0,if,28
-BRDA:18,0,else,2848
-BRDA:18,0,(rst_n==0) => 1,28
-BRDA:18,0,(rst_n==1) => 0,2848
-DA:19,2848
-BRDA:19,0,else,2848
-BRDA:19,0,(pre_q1==0) => 1,1427
-BRDA:19,0,(pre_q1==1) => 0,1421
-DA:21,1455
-DA:22,1427
-BRDA:22,0,if,28
-BRDA:22,0,else,1427
-BRDA:22,0,(rst_n==0) => 1,28
-BRDA:22,0,(rst_n==1) => 0,1427
-DA:23,1427
-BRDA:23,0,else,1427
-BRDA:23,0,(pre_q2==0) => 1,716
-BRDA:23,0,(pre_q2==1) => 0,711
-DA:25,744
-DA:26,716
-BRDA:26,0,if,28
-BRDA:26,0,else,716
-BRDA:26,0,(rst_n==0) => 1,28
-BRDA:26,0,(rst_n==1) => 0,716
-DA:27,716
-BRDA:27,0,else,716
-BRDA:27,0,(q3==0) => 1,363
-BRDA:27,0,(q3==1) => 0,353
-BRF:44
-BRH:44
+DA:15,55912
+BRDA:15,0,vco_out:0->1,55912
+BRDA:15,0,vco_out:1->0,55912
+DA:16,31
+BRDA:16,0,rst_n:0->1,31
+BRDA:16,0,rst_n:1->0,31
+DA:17,6967
+BRDA:17,0,clk_pre:0->1,6967
+BRDA:17,0,clk_pre:1->0,6967
+DA:18,3489
+BRDA:18,0,obs_q3:0->1,3489
+BRDA:18,0,obs_q3:1->0,3489
+DA:20,13929
+BRDA:20,0,pre_q2:0->1,6967
+BRDA:20,0,pre_q2:1->0,6967
+BRDA:20,0,q3:0->1,3489
+BRDA:20,0,q3:1->0,3489
+BRDA:20,0,pre_q1:0->1,13929
+BRDA:20,0,pre_q1:1->0,13929
+DA:37,27849
+BRDA:37,0,pre_q0:0->1,27849
+BRDA:37,0,pre_q0:1->0,27849
+DA:38,27849
+BRDA:38,0,pre_c0:0->1,27849
+BRDA:38,0,pre_c0:1->0,27849
+DA:39,55933
+DA:40,55688
+BRDA:40,0,if,245
+BRDA:40,0,else,55688
+BRDA:40,0,(rst_n==0) => 1,245
+BRDA:40,0,(rst_n==1) => 0,55688
+DA:41,55688
+BRDA:41,0,else,55688
+BRDA:41,0,(pre_q0==0) => 1,27849
+BRDA:41,0,(pre_q0==1) => 0,27839
+DA:44,27880
+DA:45,27849
+BRDA:45,0,if,31
+BRDA:45,0,else,27849
+BRDA:45,0,(rst_n==0) => 1,31
+BRDA:45,0,(rst_n==1) => 0,27849
+DA:46,27849
+BRDA:46,0,else,27849
+BRDA:46,0,(pre_q1==0) => 1,13929
+BRDA:46,0,(pre_q1==1) => 0,13920
+DA:48,13960
+DA:49,13929
+BRDA:49,0,if,31
+BRDA:49,0,else,13929
+BRDA:49,0,(rst_n==0) => 1,31
+BRDA:49,0,(rst_n==1) => 0,13929
+DA:50,13929
+BRDA:50,0,else,13929
+BRDA:50,0,(pre_q2==0) => 1,6967
+BRDA:50,0,(pre_q2==1) => 0,6962
+DA:52,6998
+DA:53,6967
+BRDA:53,0,if,31
+BRDA:53,0,else,6967
+BRDA:53,0,(rst_n==0) => 1,31
+BRDA:53,0,(rst_n==1) => 0,6967
+DA:54,6967
+BRDA:54,0,else,6967
+BRDA:54,0,(q3==0) => 1,3489
+BRDA:54,0,(q3==1) => 0,3478
+BRF:46
+BRH:46
 end_of_record

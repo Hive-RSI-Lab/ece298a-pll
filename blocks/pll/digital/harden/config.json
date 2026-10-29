@@ -33,7 +33,7 @@
     "/work/blocks/pll/digital/harden/tt_um_ihsan_sa_pll.v"
   ],
   "DIE_AREA": "0 0 346.64 160.72",
-  "FP_DEF_TEMPLATE": "/opt/.chip-flow@85aa1743444a65f303819158ddb6bdde457ac0c6/engine/reference/tt/tt-support-tools/tech/gf180mcuD/def/tt_block_1x1_pgvdd.def",
+  "FP_DEF_TEMPLATE": "/hive/modules/hive-chip-flow/engine/reference/tt/tt-support-tools/tech/gf180mcuD/def/tt_block_1x1_pgvdd.def",
   "VDD_PIN": "VPWR",
   "GND_PIN": "VGND",
   "RT_MAX_LAYER": "Metal4",
@@ -73,10 +73,6 @@
   "CTS_ROOT_BUFFER": "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8",
   "RUN_POST_GRT_DESIGN_REPAIR": true,
   "RUN_POST_GRT_RESIZER_TIMING": 1,
-  "EXTRA_EXCLUDED_CELLS": [
-    "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1",
-    "gf180mcu_fd_sc_mcu7t5v0__dffrnq_2"
-  ],
-  "RSZ_DONT_TOUCH_RX": "^(uo_out\\[[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs)_obuf)$",
+  "RSZ_DONT_TOUCH_RX": "^(uo_out\\[[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs)_obuf|u_ihsan_sa_pll\\.u_pre\\.(u_pre_(ff0|inv0|ckbuf0)(_[0-9]+)?|pre_(q0|d0)))$",
   "SYNTH_BUFFER_CELL": "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8/I/Z"
 }
