@@ -245,3 +245,117 @@ SBY 11:04:52 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:43  C
 SBY 11:04:57 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:48  Checking cover reachability in step 168..
 SBY 11:05:03 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:55  Checking cover reachability in step 169..
 SBY 11:05:14 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:06  Checking cover reachability in step 170..
+SBY 11:05:25 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:16  Checking cover reachability in step 171..
+SBY 11:05:30 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:21  Checking cover reachability in step 172..
+SBY 11:05:38 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:30  Checking cover reachability in step 173..
+SBY 11:05:46 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:38  Checking cover reachability in step 174..
+SBY 11:05:52 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:44  Checking cover reachability in step 175..
+SBY 11:06:03 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:55  Checking cover reachability in step 176..
+SBY 11:06:14 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:05  Checking cover reachability in step 177..
+SBY 11:06:25 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:17  Checking cover reachability in step 178..
+SBY 11:06:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:25  Checking cover reachability in step 179..
+SBY 11:06:47 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:39  Checking cover reachability in step 180..
+SBY 11:06:56 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:47  Checking cover reachability in step 181..
+SBY 11:07:07 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:06:58  Checking cover reachability in step 182..
+SBY 11:07:19 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:07:10  Checking cover reachability in step 183..
+SBY 11:07:46 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:07:37  Checking cover reachability in step 184..
+SBY 11:08:08 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:07:59  Checking cover reachability in step 185..
+SBY 11:08:27 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:08:19  Checking cover reachability in step 186..
+SBY 11:09:09 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:09:01  Checking cover reachability in step 187..
+SBY 11:09:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:09:24  Checking cover reachability in step 188..
+SBY 11:09:59 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:09:50  Checking cover reachability in step 189..
+SBY 11:10:20 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:12  Checking cover reachability in step 190..
+SBY 11:10:37 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:29  Checking cover reachability in step 191..
+SBY 11:10:54 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:46  Checking cover reachability in step 192..
+SBY 11:11:03 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:54  Checking cover reachability in step 193..
+SBY 11:11:15 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:11:07  Checking cover reachability in step 194..
+SBY 11:11:27 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:11:19  Checking cover reachability in step 195..
+SBY 11:12:06 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:11:58  Checking cover reachability in step 196..
+SBY 11:12:39 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:12:30  Checking cover reachability in step 197..
+SBY 11:13:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:13:24  Checking cover reachability in step 198..
+SBY 11:14:07 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:13:59  Checking cover reachability in step 199..
+SBY 11:14:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:14:25  Checking cover reachability in step 200..
+SBY 11:14:49 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:14:41  Checking cover reachability in step 201..
+SBY 11:15:23 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:15:14  Checking cover reachability in step 202..
+SBY 11:16:06 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:15:58  Checking cover reachability in step 203..
+SBY 11:16:44 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:16:36  Checking cover reachability in step 204..
+SBY 11:17:13 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:17:04  Checking cover reachability in step 205..
+SBY 11:17:40 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:17:32  Checking cover reachability in step 206..
+SBY 11:18:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:17:56  Checking cover reachability in step 207..
+SBY 11:18:23 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:18:14  Checking cover reachability in step 208..
+SBY 11:18:38 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:18:29  Checking cover reachability in step 209..
+SBY 11:18:57 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:18:48  Checking cover reachability in step 210..
+SBY 11:19:12 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:19:04  Checking cover reachability in step 211..
+SBY 11:19:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:19:25  Checking cover reachability in step 212..
+SBY 11:19:53 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:19:45  Checking cover reachability in step 213..
+SBY 11:20:12 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:20:04  Checking cover reachability in step 214..
+SBY 11:20:32 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:20:24  Checking cover reachability in step 215..
+SBY 11:20:53 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:20:45  Checking cover reachability in step 216..
+SBY 11:21:20 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:21:11  Checking cover reachability in step 217..
+SBY 11:21:38 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:21:30  Checking cover reachability in step 218..
+SBY 11:22:14 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:22:05  Checking cover reachability in step 219..
+SBY 11:22:33 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:22:24  Checking cover reachability in step 220..
+SBY 11:23:00 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:22:52  Checking cover reachability in step 221..
+SBY 11:23:29 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:23:21  Checking cover reachability in step 222..
+SBY 11:23:55 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:23:46  Checking cover reachability in step 223..
+SBY 11:24:40 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:24:32  Checking cover reachability in step 224..
+SBY 11:25:02 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:24:54  Checking cover reachability in step 225..
+SBY 11:25:32 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:25:23  Checking cover reachability in step 226..
+SBY 11:26:07 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:25:58  Checking cover reachability in step 227..
+SBY 11:26:42 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:26:34  Checking cover reachability in step 228..
+SBY 11:27:11 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:27:03  Checking cover reachability in step 229..
+SBY 11:27:39 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:27:30  Checking cover reachability in step 230..
+SBY 11:28:17 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:28:09  Checking cover reachability in step 231..
+SBY 11:28:47 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:28:38  Checking cover reachability in step 232..
+SBY 11:29:19 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:29:11  Checking cover reachability in step 233..
+SBY 11:30:19 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:30:11  waiting for solver (1 minute)
+SBY 11:30:25 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:30:17  Checking cover reachability in step 234..
+SBY 11:31:05 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:30:56  Checking cover reachability in step 235..
+SBY 11:31:59 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:31:50  Checking cover reachability in step 236..
+SBY 11:32:40 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:32:31  Checking cover reachability in step 237..
+SBY 11:33:35 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:33:27  Checking cover reachability in step 238..
+SBY 11:34:35 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:34:27  waiting for solver (1 minute)
+SBY 11:34:44 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:34:36  Checking cover reachability in step 239..
+SBY 11:35:35 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:35:26  Checking cover reachability in step 240..
+SBY 11:36:24 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:36:16  Checking cover reachability in step 241..
+SBY 11:37:09 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:37:00  Checking cover reachability in step 242..
+SBY 11:38:09 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:38:00  waiting for solver (1 minute)
+SBY 11:38:10 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:38:02  Checking cover reachability in step 243..
+SBY 11:39:10 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:39:02  waiting for solver (1 minute)
+SBY 11:39:32 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:39:23  Checking cover reachability in step 244..
+SBY 11:40:21 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:12  Reached cover statement in step 244 at ihsan_sa_pll_formal: COVER_LOCK
+SBY 11:40:21 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:12  Writing trace to VCD file: engine_0/trace9.vcd
+SBY 11:40:22 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:13  Writing trace to Verilog testbench: engine_0/trace9_tb.v
+SBY 11:40:22 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:13  Writing trace to constraints file: engine_0/trace9.smtc
+SBY 11:40:22 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:13  Writing trace to Yosys witness file: engine_0/trace9.yw
+SBY 11:40:22 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:13  Checking cover reachability in step 244..
+SBY 11:41:13 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:41:05  Checking cover reachability in step 245..
+SBY 11:42:00 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:41:51  Checking cover reachability in step 246..
+SBY 11:42:59 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:51  waiting for solver (1 minute)
+SBY 11:43:02 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:54  Reached cover statement in step 246 at ihsan_sa_pll_formal: COVER_LOCK_DROP
+SBY 11:43:02 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:54  Writing trace to VCD file: engine_0/trace10.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:55  Writing trace to Verilog testbench: engine_0/trace10_tb.v
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:56  Writing trace to constraints file: engine_0/trace10.smtc
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:56  Writing trace to Yosys witness file: engine_0/trace10.yw
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:56  Status: passed
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: finished (returncode=0)
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] engine_0: Status returned by engine: pass
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: Elapsed clock time [H:MM:SS (secs)]: 0:43:06 (2586)
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: Elapsed process time [H:MM:SS (secs)]: 0:40:19 (2419)
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: engine_0 (smtbmc yices) returned pass
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: cover trace: /work/blocks/pll/digital/log/formal/cov/engine_0/trace0.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic at  step 1
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic at  step 1
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.pfd_never_both_high at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-149.56 step 1
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.reset_forces_outputs at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-129.62 step 1
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: cover trace: /work/blocks/pll/digital/log/formal/cov/engine_0/trace1.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.lock_not_while_wide at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.84 step 1
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: cover trace: /work/blocks/pll/digital/log/formal/cov/engine_0/trace10.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.COVER_LOCK_DROP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.7-176.69 step 246
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: cover trace: /work/blocks/pll/digital/log/formal/cov/engine_0/trace2.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.COVER_PFD_UP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.39 step 2
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: cover trace: /work/blocks/pll/digital/log/formal/cov/engine_0/trace3.vcd
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78 step 3
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: and 6 further traces
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] summary: see /work/blocks/pll/digital/log/formal/cov/PASS for a complete summary
+SBY 11:43:04 [/work/blocks/pll/digital/log/formal/cov] DONE (PASS, rc=0)

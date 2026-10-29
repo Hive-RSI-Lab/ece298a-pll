@@ -4,7 +4,7 @@
  "phase": "P4",
  "tool": "formal",
  "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
- "status": "fail",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,40 +12,17 @@
   "max_count": 0
  },
  "counts": {
-  "total": 9,
+  "total": 8,
   "by_severity": {
-   "info": 8,
-   "error": 1
+   "info": 8
   },
   "by_source": {
-   "sby-smtbmc": 7,
+   "sby-smtbmc": 6,
    "check_formal": 2
   }
  },
- "failing_count": 1,
- "failing": [
-  {
-   "check": "formal",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "vacuous_pass",
-   "refs": [
-    "REQ-RECOVER-OUT"
-   ],
-   "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 300
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
  "violations": [
   {
    "check": "formal",
@@ -154,27 +131,6 @@
   },
   {
    "check": "formal",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "vacuous_pass",
-   "refs": [
-    "REQ-RECOVER-OUT"
-   ],
-   "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-RECOVER-OUT (property recover_forces_dn): passed only vacuously - no trace within 300 steps (spec.yaml formal.cover_depth) ever enables this assert, so it checked nothing; an assume or the assert's own condition rules out every state it guards (with several clocks, check formal.multiclock is on). Fix the assumptions, or raise formal.cover_depth if the state is reachable only later",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 300
-  },
-  {
-   "check": "formal",
    "severity": "info",
    "file": null,
    "module": null,
@@ -241,7 +197,7 @@
   "frontend": "native",
   "frontend_why": null,
   "multiclock": true,
-  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$380, $flatten\\dut.\\u_lock.$procdff$416; async reset/latch cell(s) $adff",
+  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$374, $flatten\\dut.\\u_lock.$procdff$410; async reset/latch cell(s) $adff",
   "proven": [],
   "bounded": [
    "REQ-DIV-N",
@@ -252,9 +208,7 @@
    "REQ-RST-ASYNC"
   ],
   "failed": [],
-  "vacuous": [
-   "REQ-RECOVER-OUT"
-  ],
+  "vacuous": [],
   "smt_status": "UNKNOWN",
   "pdr_status": "PASS",
   "cover_points": [
@@ -283,9 +237,9 @@
  },
  "inputs_at_start": {
   "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "formal": "dir_text:a724ec421066498b7eec2bacbad80f8f2872352cbfeacae230074d4ca71c82d5",
-  "spec_yaml": "json_canonical:1ece11cd981de23294c430007a55c29c2950a215bfadd22c10b764d0ac5147a9"
+  "formal": "dir_text:ee443899a179eea94a88d755ecda4737c8b3dbc3b09fe22f0510dcbe837462fd",
+  "spec_yaml": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36"
  },
- "recorded_ts": "2026-10-29T10:47:44",
- "attempts": 8
+ "recorded_ts": "2026-10-29T11:43:05",
+ "attempts": 9
 }

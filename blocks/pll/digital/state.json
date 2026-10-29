@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-10-29T11:05:01",
+ "updated": "2026-10-29T11:43:06",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -1455,17 +1455,17 @@
   },
   "formal": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 8,
+   "status": "pass",
+   "attempts": 9,
    "last": {
-    "ts": "2026-10-29T10:47:44",
-    "status": "fail",
-    "failing_count": 1,
-    "total": 9,
+    "ts": "2026-10-29T11:43:05",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 8,
     "inputs": {
      "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-     "formal": "dir_text:a724ec421066498b7eec2bacbad80f8f2872352cbfeacae230074d4ca71c82d5",
-     "spec_yaml": "json_canonical:1ece11cd981de23294c430007a55c29c2950a215bfadd22c10b764d0ac5147a9"
+     "formal": "dir_text:ee443899a179eea94a88d755ecda4737c8b3dbc3b09fe22f0510dcbe837462fd",
+     "spec_yaml": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36"
     },
     "job": null,
     "facts": {
@@ -1601,48 +1601,22 @@
       "depth": 20,
       "cover_depth": 300
      }
-    }
-   ],
-   "stale": [
-    {
-     "ts": "2026-10-29T10:49:12",
-     "edit_class": "formal_edit",
-     "refs": [
-      "formal/ihsan_sa_pll_formal.sv"
-     ],
-     "human_hold": 1
     },
     {
-     "ts": "2026-10-29T10:49:19",
-     "edit_class": "spec_edit",
-     "refs": [
-      "spec/spec.yaml"
-     ],
-     "human_hold": 2
-    },
-    {
-     "ts": "2026-10-29T10:57:16",
-     "edit_class": "spec_edit",
-     "refs": [
-      "spec/spec.yaml",
-      "spec/spec.md"
-     ],
-     "human_hold": 2
-    },
-    {
-     "ts": "2026-10-29T10:57:24",
-     "edit_class": "gate_error",
-     "refs": [],
-     "human_hold": 0,
-     "error": "CheckError: /work/blocks/pll/digital/spec/spec.yaml is not valid YAML: mapping values are not allowed here\n  in \"<unicode string>\", line 116, column 552:\n     ... ty) is at most 3.65 ns (274 MHz): in the loop model on the ss_pf ... \n                                         ^"
-    },
-    {
-     "ts": "2026-10-29T10:59:10",
-     "edit_class": "spec_edit",
-     "refs": [
-      "spec/spec.yaml"
-     ],
-     "human_hold": 2
+     "ts": "2026-10-29T11:43:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 8,
+     "inputs": {
+      "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+      "formal": "dir_text:ee443899a179eea94a88d755ecda4737c8b3dbc3b09fe22f0510dcbe837462fd",
+      "spec_yaml": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36"
+     },
+     "job": null,
+     "facts": {
+      "depth": 20,
+      "cover_depth": 300
+     }
     }
    ]
   },
@@ -3106,7 +3080,7 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36",
-   "hashed": "2026-10-29T11:00:23"
+   "hashed": "2026-10-29T11:43:05"
   },
   "holdout": {
    "path": "holdout",
@@ -3194,7 +3168,7 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-   "hashed": "2026-10-29T11:03:13"
+   "hashed": "2026-10-29T11:43:05"
   },
   "tb": {
    "path": "tb",
@@ -3217,8 +3191,8 @@
   "formal": {
    "path": "formal",
    "kind": "formal",
-   "sha256": "dir_text:a724ec421066498b7eec2bacbad80f8f2872352cbfeacae230074d4ca71c82d5",
-   "hashed": "2026-10-29T10:47:44"
+   "sha256": "dir_text:ee443899a179eea94a88d755ecda4737c8b3dbc3b09fe22f0510dcbe837462fd",
+   "hashed": "2026-10-29T11:43:05"
   },
   "harden_config": {
    "path": "harden/config.json",
@@ -6514,6 +6488,14 @@
    "status": "fail",
    "attempt": 10,
    "failing_count": 3
+  },
+  {
+   "ts": "2026-10-29T11:43:05",
+   "event": "gate",
+   "gate": "formal",
+   "status": "pass",
+   "attempt": 9,
+   "failing_count": 0
   }
  ]
 }
