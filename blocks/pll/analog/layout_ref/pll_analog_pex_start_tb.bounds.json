@@ -1,0 +1,6 @@
+[
+  {"measure": "pex_start_swing_hi_pct_vdd", "min": 90.0, "severity": "error",
+   "msg": "vco_out runs full swing 0.8..1 us after pll_en rises, vctrl = vdd-0.3 V, no kick"},
+  {"measure": "pex_start_swing_lo_pct_vdd", "min": 90.0, "severity": "error",
+   "msg": "vco_out runs full swing 2.2..3 us after pll_en rises, vctrl = 0.3 V, no kick"}
+]

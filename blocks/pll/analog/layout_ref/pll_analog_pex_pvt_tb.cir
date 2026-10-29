@@ -1,0 +1,182 @@
+* pll_analog_pex_pvt_tb.cir - the post-layout bench at every corner the
+* spec scores. pll_analog_pex_tb.cir is the pex_sim gate's own bench, typical
+* only (the gate fills in {pdk}/{extracted} and runs it at tt_27c); this is
+* the same bench with the corner left open, in sim_run's double-brace token form,
+* so layout/pex_pvt.py can run it through the engine's sim_run at each
+* corner of spec_sweep() with {{NETLIST}} = the extracted, parasitic-
+* annotated netlist of a fresh magic extraction of this run's own GDS.
+*
+* Measures and bounds (sidecar .bounds.json = spec.yaml post_layout_bounds,
+* each scoped to the corners the spec scores that measure at):
+*  - icp_up_code00_ua, icp_dn_code00_ua: pump UP source / DN sink, code 00,
+*    vctrl at vdd/2 (every corner).
+*  - vco_kvco_mhz_per_v = (f(vdd-0.3) - f(0.3)) / (vdd-0.6) (every corner).
+*  - vco_fmax_tt_mhz = f(vdd-0.3) (tt_27c only, as in the spec).
+* Printed and not bounded post-layout (the spec has no post-layout bound for
+* them): vco_f_hi_mhz = f(vdd-0.3) at every corner, vco_f_lo_mhz = f(0.3)
+* and vco_f_vdd_mhz = f at vctrl = vdd, the ceiling the pre-layout
+* vco_fmax_ff_mhz bounds to 150..370 MHz.
+*
+* Everything that scaled with the 3.3 V supply in pll_analog_pex_tb.cir
+* scales with vddp here: the logic-high inputs, the vdd/2 threshold, the
+* top of the tuning range (vhi = vdd-0.3) and the slow-end ramp (vhi down to
+* 0.3 V). START-UP KICK: 200 uA for 1 ns (200 fC) into ring node r1 at
+* t = 1 ns of every tran, a large-signal start that throws r1 to a rail. The
+* extraction keeps r1 by name because the generator labels r1..r5 (non-pin,
+* metal3 drawing). The pre-layout benches kick r1 with 1 fC, the stand-in
+* for device noise, and pll_analog_pex_tb.cir kicks vctrl through a pin; on
+* the extracted netlist each left the ring on its DC balance point at 11-12
+* of the 31 corners (the vp10, ff and pss ones; at tt_27c_vp10, vctrl = vdd-
+* 0.3 V the 1 fC kick decays to +-25 mV within 10 ns): post-layout that
+* point is locally stable there, where pre-layout it is not. The ring still
+* starts there from a large signal - from pll_en rising with no kick at all,
+* as on silicon, and from this kick - and runs at the same limit cycle
+* either way. What this bench measures is that running ring. Whether it
+* starts from enable is pll_analog_pex_start_tb.cir's question (2026-10-29,
+* extracted layout): at vctrl = vdd-0.3 V it does at all 31 corners; at
+* vctrl = 0.3 V it does not at ff_125c (all three supplies) or ss_m40c_vm10.
+* PUMP: the pre-layout cp bench and pll_analog_pex_tb.cir read the pump
+* currents from an operating point with the input held high. On the
+* extracted netlist at ss_m40c_vm10 that op lands on a second DC solution
+* of the self-biased reference (bias_ref 0.51 V against 0.72 V, Icp 168 uA)
+* that a transient from the all-off op never reaches (17.7 uA, bias_ref
+* 0.72 V for 2 us). So the pumps are switched on in a tran here, the way the
+* PFD switches them, from the op every corner solves cleanly.
+* Frequency is f = (n-1)/(t(rise n) - t(rise 1)) over vdd/2 crossings after
+* the settle time; a stalled ring (< 2 rises) prints f = 0, and then Kvco
+* prints 0 too (a slope between a stalled end and a live one is not a
+* Kvco), so it fails its bound instead of passing on fhi alone. The slow
+* end runs to 1 us (pex_tb: 650 ns) so the slowest pre-layout corner
+* (~7 MHz at ss_125c_vp10) still gives 4 rises after its settle time.
+* sim_timeout_s: 1800
+
+.include '{{PDK}}/libs.tech/ngspice/design.spice'
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+.include '{{NETLIST}}'
+{{SIZING}}
+
+.temp {{TEMP_C}}
+.param vddp={{VDD}}
+.csparam vddp={vddp}
+.csparam vmid={vddp/2}
+.csparam vhi={vddp-0.3}
+
+vdd_src  vdd      0 dc {vddp}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc {vddp}
+vup      pfd_up   0 dc 0 pulse(0 {vddp} 10n 1n 1n 300n 1)
+vdn      pfd_dn   0 dc 0 pulse(0 {vddp} 320n 1n 1n 300n 1)
+vt0      cp_trim0 0 dc 0
+vt1      cp_trim1 0 dc 0
+vvc      vctrl    vr dc {vddp/2}
+vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
+cload    vco_out  0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+ikick    0        xdut.r1 pulse(0 200u 1n 50p 50p 1n 1)
+
+.control
+set noaskquit
+* --- pump currents, code 00, vctrl = vdd/2: UP alone 10..310 ns, DN alone
+* 320..620 ns, each the mean of i(vvc) over its last 200 ns (the ring runs
+* meanwhile, and its ripple on the bias averages out over ~40 periods), in
+* a tran from the all-off operating point (see PUMP above)
+tran 1n 630n 0 1n
+set tp = $curplot
+meas tran iupa avg i(vvc) from=110n to=310n
+meas tran idna avg i(vvc) from=420n to=620n
+let x = iupa*1e6
+set iup = "$&x"
+let x = -idna*1e6
+set idn = "$&x"
+destroy $tp
+alter @vup[pulse] = [ 0 0 10n 1n 1n 300n 1 ]
+alter @vdn[pulse] = [ 0 0 320n 1n 1n 300n 1 ]
+* --- VCO frequency: top of the tuning range, bottom (ramped down from the
+* top with the ring running), and vctrl = vdd
+setplot new
+set rp = $curplot
+let fhi = 0
+let flo = 0
+let fvd = 0
+let vramp_lo = 0.3 - vhi
+foreach pt 0 1 2
+  if $pt eq 0
+    alter vvc dc = $&vhi
+    set tsx = "20p"
+    set tex = "45n"
+    set tdx = "10n"
+    set nmx = "9"
+  end
+  if $pt eq 1
+    alter vvc dc = $&vhi
+    alter @vramp[pulse] = [ 0 $&vramp_lo 20n 100n 100n 1 1 ]
+    set tsx = "250p"
+    set tex = "1000n"
+    set tdx = "200n"
+    set nmx = "5"
+  end
+  if $pt eq 2
+    alter @vramp[pulse] = [ 0 0 20n 100n 100n 1 1 ]
+    alter vvc dc = $&vddp
+    set tsx = "20p"
+    set tex = "45n"
+    set tdx = "10n"
+    set nmx = "9"
+  end
+  tran $tsx $tex 0 $tsx
+  set tp = $curplot
+  let nx = length(time)
+  let nx1 = nx - 1
+  let nx2 = nx - 2
+  let hv = (v(vco_out) gt vmid)
+  let late = time[1,$&nx1] gt $tdx
+  let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
+  let fk = 0
+  let nmax = $nmx
+  if nrise ge 2
+    let nr = nrise
+    if nr gt nmax
+      let nr = nmax
+    end
+    meas tran tra when v(vco_out)=$&vmid rise=1 td=$tdx
+    meas tran trb when v(vco_out)=$&vmid rise=$&nr td=$tdx
+    let fk = (nr - 1)/(trb - tra)
+  end
+  set fks = "$&fk"
+  setplot $rp
+  if $pt eq 0
+    let fhi = $fks
+  end
+  if $pt eq 1
+    let flo = $fks
+  end
+  if $pt eq 2
+    let fvd = $fks
+  end
+  destroy $tp
+end
+let kv = (fhi - flo)/(vhi - 0.3)/1e6
+if (fhi eq 0) or (flo eq 0)
+  let kv = 0
+end
+let fhm = fhi/1e6
+let flm = flo/1e6
+let fvm = fvd/1e6
+set kvs = "$&kv"
+set fhs = "$&fhm"
+set fls = "$&flm"
+set fvs = "$&fvm"
+echo
+echo "  Measurements for Transient Analysis (pll_analog_pex_pvt_tb, computed in .control)"
+echo "icp_up_code00_ua = $iup"
+echo "icp_dn_code00_ua = $idn"
+echo "vco_kvco_mhz_per_v = $kvs"
+echo "vco_fmax_tt_mhz = $fhs"
+echo "vco_f_hi_mhz = $fhs"
+echo "vco_f_lo_mhz = $fls"
+echo "vco_f_vdd_mhz = $fvs"
+echo
+.endc
+.end
