@@ -272,6 +272,8 @@ def main() -> int:
         line(f"analog sim_pvt corners passing ({n_pvt}/{len(corners)})", n_pvt / len(corners),
              "; ".join(bad_pvt))
         passed("analog bench_strength", a["bench_strength"])
+
+        # --- Close digital issue 8: timing with vco_out at ~2.7 ns --------
         t = d["timing"]
         period = vco_period_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
         if period is None or not VCO_PERIOD_NS[0] <= period <= VCO_PERIOD_NS[1]:
