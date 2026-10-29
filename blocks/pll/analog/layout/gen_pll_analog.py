@@ -1022,6 +1022,21 @@ def generate():
             via(top, px, yt, "via4", M4, M5)
             via(top, px, yt, "via3", M3, M4)
     labels.sort(key=lambda lbl: PINS.index(lbl[0]))
+    # every routed internal net keeps its name through extraction: a non-pin
+    # label (metal3 drawing, 42/0, which magic reads as `noport`) on its
+    # first channel track. magic's parasitic extraction (extresist) drops
+    # the coupling capacitance of a net it has to name itself (a_x_y#): on
+    # the ring nodes r1..r5 that was about half their wire C, and the
+    # post-layout VCO read 226 MHz at typical where it runs at about 198.
+    # The names also let a post-layout bench kick r1 as the pre-layout
+    # ones do.
+    named = set()
+    for ci, tr in enumerate(tracks):
+        for net, (_t, a, b) in sorted(tr.items()):
+            if net in PINS or net in named:
+                continue
+            named.add(net)
+            labels.append((net, r5((a + b) / 2), track_y(net, ci), M3))
     return layoutlib.finalize(top, CELL, labels)
 
 
