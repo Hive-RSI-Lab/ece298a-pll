@@ -78,11 +78,11 @@ pfd_up                                     |pfd_up
 pfd_dn                                     |pfd_dn                                     
 pll_en                                     |pll_en                                     
 vss                                        |vss                                        
+vdd                                        |vdd                                        
 bias_ref                                   |bias_ref                                   
 cp_trim0                                   |cp_trim0                                   
 cp_trim1                                   |cp_trim1                                   
 vco_out                                    |vco_out                                    
-vdd                                        |vdd                                        
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes pll_analog and pll_analog are equivalent.

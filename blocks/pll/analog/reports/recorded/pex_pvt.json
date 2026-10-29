@@ -3,15 +3,19 @@
  "gate": "pex_pvt",
  "bench": "pll_analog_pex_pvt_tb.cir",
  "status": "fail",
- "failing_count": 2,
+ "failing_count": 3,
  "failing": [
   {
-   "corner": "tt_27c",
-   "msg": "vco_fmax_tt_mhz @ tt_27c = 195.988 outside bound [200.0, +inf] (post-layout f at vctrl = vdd-0.3 V, scored at tt_27c as in the spec (spec.yaml post_layout_bound"
+   "corner": "ss_m40c_vm10",
+   "msg": "icp_up_code00_ua @ ss_m40c_vm10 = 168.343 outside bound [12.0, 30.0] (post-layout UP current, code 00, vctrl = vdd/2 (spec.yaml post_layout_bounds)); icp_dn_code00_ua @ ss_m40c_vm10 = 172.572 outside bound [12.0, 30.0] (post-layout DN current, code 00, vctrl = vdd/2 (spec.yaml post_layout_bounds))"
   },
   {
    "corner": "ff_pss",
-   "msg": "vco_kvco_mhz_per_v @ ff_pss = 35.2401 outside bound [40.0, 250.0] (post-layout mean df/dv over vctrl 0.3 .. vdd-0.3 V (spec.yaml post_layout_bounds))"
+   "msg": "vco_kvco_mhz_per_v @ ff_pss = 36.0812 outside bound [40.0, 250.0] (post-layout mean df/dv over vctrl 0.3 .. vdd-0.3 V (spec.yaml post_layout_bounds))"
+  },
+  {
+   "corner": "tt_pss",
+   "msg": "ngspice reported gmin stepping failed at corner 'tt_pss': Note: Dynamic gmin stepping completed"
   }
  ],
  "facts": {
@@ -21,11 +25,11 @@
    "tt_m40c",
    "tt_m40c_vp10",
    "tt_27c_vm10",
+   "tt_27c",
    "tt_27c_vp10",
    "tt_125c_vm10",
    "tt_125c",
    "tt_125c_vp10",
-   "ss_m40c_vm10",
    "ss_m40c",
    "ss_m40c_vp10",
    "ss_27c_vm10",
@@ -44,7 +48,6 @@
    "ff_125c",
    "ff_125c_vp10",
    "ss_pff",
-   "tt_pss",
    "tt_pff"
   ],
   "swept": [
@@ -82,283 +85,283 @@
   ],
   "measured": {
    "tt_m40c_vm10": {
-    "icp_up_code00_ua": 19.0685,
-    "icp_dn_code00_ua": 18.9432,
-    "vco_kvco_mhz_per_v": 87.7806,
-    "vco_fmax_tt_mhz": 216.675,
-    "vco_f_hi_mhz": 216.675,
-    "vco_f_lo_mhz": 8.63509,
-    "vco_f_vdd_mhz": 241.613
+    "icp_up_code00_ua": 19.0791,
+    "icp_dn_code00_ua": 18.9951,
+    "vco_kvco_mhz_per_v": 90.8548,
+    "vco_fmax_tt_mhz": 224.242,
+    "vco_f_hi_mhz": 224.242,
+    "vco_f_lo_mhz": 8.91619,
+    "vco_f_vdd_mhz": 249.974
    },
    "tt_m40c": {
-    "icp_up_code00_ua": 19.1727,
-    "icp_dn_code00_ua": 19.1539,
-    "vco_kvco_mhz_per_v": 74.522,
-    "vco_fmax_tt_mhz": 208.582,
-    "vco_f_hi_mhz": 208.582,
-    "vco_f_lo_mhz": 7.37268,
-    "vco_f_vdd_mhz": 211.934
+    "icp_up_code00_ua": 19.2801,
+    "icp_dn_code00_ua": 18.8892,
+    "vco_kvco_mhz_per_v": 77.1523,
+    "vco_fmax_tt_mhz": 215.922,
+    "vco_f_hi_mhz": 215.922,
+    "vco_f_lo_mhz": 7.61077,
+    "vco_f_vdd_mhz": 219.698
    },
    "tt_m40c_vp10": {
-    "icp_up_code00_ua": 19.5303,
-    "icp_dn_code00_ua": 19.1856,
-    "vco_kvco_mhz_per_v": 56.6923,
-    "vco_fmax_tt_mhz": 178.265,
-    "vco_f_hi_mhz": 178.265,
-    "vco_f_lo_mhz": 6.48728,
-    "vco_f_vdd_mhz": 179.037
+    "icp_up_code00_ua": 19.5209,
+    "icp_dn_code00_ua": 19.2028,
+    "vco_kvco_mhz_per_v": 58.7549,
+    "vco_fmax_tt_mhz": 184.725,
+    "vco_f_hi_mhz": 184.725,
+    "vco_f_lo_mhz": 6.69776,
+    "vco_f_vdd_mhz": 185.408
    },
    "tt_27c_vm10": {
-    "icp_up_code00_ua": 18.5369,
-    "icp_dn_code00_ua": 18.4113,
-    "vco_kvco_mhz_per_v": 84.4046,
-    "vco_fmax_tt_mhz": 208.102,
-    "vco_f_hi_mhz": 208.102,
-    "vco_f_lo_mhz": 8.06309,
-    "vco_f_vdd_mhz": 226.713
+    "icp_up_code00_ua": 18.6408,
+    "icp_dn_code00_ua": 18.4363,
+    "vco_kvco_mhz_per_v": 87.2156,
+    "vco_fmax_tt_mhz": 215.011,
+    "vco_f_hi_mhz": 215.011,
+    "vco_f_lo_mhz": 8.30994,
+    "vco_f_vdd_mhz": 234.158
    },
    "tt_27c": {
-    "icp_up_code00_ua": 18.6573,
-    "icp_dn_code00_ua": 18.7708,
-    "vco_kvco_mhz_per_v": 70.0082,
-    "vco_fmax_tt_mhz": 195.988,
-    "vco_f_hi_mhz": 195.988,
-    "vco_f_lo_mhz": 6.96596,
-    "vco_f_vdd_mhz": 198.264
+    "icp_up_code00_ua": 18.684,
+    "icp_dn_code00_ua": 18.7817,
+    "vco_kvco_mhz_per_v": 72.4406,
+    "vco_fmax_tt_mhz": 202.745,
+    "vco_f_hi_mhz": 202.745,
+    "vco_f_lo_mhz": 7.1555,
+    "vco_f_vdd_mhz": 205.34
    },
    "tt_27c_vp10": {
-    "icp_up_code00_ua": 18.8201,
-    "icp_dn_code00_ua": 18.7534,
-    "vco_kvco_mhz_per_v": 53.2867,
-    "vco_fmax_tt_mhz": 167.623,
-    "vco_f_hi_mhz": 167.623,
-    "vco_f_lo_mhz": 6.1644,
-    "vco_f_vdd_mhz": 168.174
+    "icp_up_code00_ua": 18.7999,
+    "icp_dn_code00_ua": 18.7705,
+    "vco_kvco_mhz_per_v": 55.1837,
+    "vco_fmax_tt_mhz": 173.549,
+    "vco_f_hi_mhz": 173.549,
+    "vco_f_lo_mhz": 6.34227,
+    "vco_f_vdd_mhz": 174.177
    },
    "tt_125c_vm10": {
-    "icp_up_code00_ua": 17.3272,
-    "icp_dn_code00_ua": 17.4685,
-    "vco_kvco_mhz_per_v": 77.8421,
-    "vco_fmax_tt_mhz": 191.653,
-    "vco_f_hi_mhz": 191.653,
-    "vco_f_lo_mhz": 7.1672,
-    "vco_f_vdd_mhz": 203.114
+    "icp_up_code00_ua": 17.5487,
+    "icp_dn_code00_ua": 17.4231,
+    "vco_kvco_mhz_per_v": 80.3044,
+    "vco_fmax_tt_mhz": 197.671,
+    "vco_f_hi_mhz": 197.671,
+    "vco_f_lo_mhz": 7.34952,
+    "vco_f_vdd_mhz": 209.598
    },
    "tt_125c": {
-    "icp_up_code00_ua": 17.6901,
-    "icp_dn_code00_ua": 17.4518,
-    "vco_kvco_mhz_per_v": 62.5751,
-    "vco_fmax_tt_mhz": 175.202,
-    "vco_f_hi_mhz": 175.202,
-    "vco_f_lo_mhz": 6.24933,
-    "vco_f_vdd_mhz": 176.316
+    "icp_up_code00_ua": 17.5908,
+    "icp_dn_code00_ua": 17.441,
+    "vco_kvco_mhz_per_v": 64.6294,
+    "vco_fmax_tt_mhz": 180.923,
+    "vco_f_hi_mhz": 180.923,
+    "vco_f_lo_mhz": 6.42359,
+    "vco_f_vdd_mhz": 182.05
    },
    "tt_125c_vp10": {
-    "icp_up_code00_ua": 17.9429,
-    "icp_dn_code00_ua": 17.5638,
-    "vco_kvco_mhz_per_v": 47.7993,
-    "vco_fmax_tt_mhz": 150.43,
-    "vco_f_hi_mhz": 150.43,
-    "vco_f_lo_mhz": 5.59817,
-    "vco_f_vdd_mhz": 151.023
+    "icp_up_code00_ua": 17.8147,
+    "icp_dn_code00_ua": 17.5572,
+    "vco_kvco_mhz_per_v": 49.536,
+    "vco_fmax_tt_mhz": 155.841,
+    "vco_f_hi_mhz": 155.841,
+    "vco_f_lo_mhz": 5.74683,
+    "vco_f_vdd_mhz": 156.455
    },
    "ss_m40c_vm10": {
-    "icp_up_code00_ua": 17.6361,
-    "icp_dn_code00_ua": 17.3861,
-    "vco_kvco_mhz_per_v": 72.184,
-    "vco_fmax_tt_mhz": 179.658,
-    "vco_f_hi_mhz": 179.658,
-    "vco_f_lo_mhz": 8.58193,
+    "icp_up_code00_ua": 168.343,
+    "icp_dn_code00_ua": 172.572,
+    "vco_kvco_mhz_per_v": 0.0,
+    "vco_fmax_tt_mhz": 0.0,
+    "vco_f_hi_mhz": 0.0,
+    "vco_f_lo_mhz": 8.86652,
     "vco_f_vdd_mhz": 0.0
    },
    "ss_m40c": {
-    "icp_up_code00_ua": 17.7857,
-    "icp_dn_code00_ua": 17.6505,
-    "vco_kvco_mhz_per_v": 64.6675,
-    "vco_fmax_tt_mhz": 181.797,
-    "vco_f_hi_mhz": 181.797,
-    "vco_f_lo_mhz": 7.19474,
-    "vco_f_vdd_mhz": 201.026
+    "icp_up_code00_ua": 17.7705,
+    "icp_dn_code00_ua": 17.6202,
+    "vco_kvco_mhz_per_v": 66.9585,
+    "vco_fmax_tt_mhz": 188.213,
+    "vco_f_hi_mhz": 188.213,
+    "vco_f_lo_mhz": 7.42496,
+    "vco_f_vdd_mhz": 208.062
    },
    "ss_m40c_vp10": {
-    "icp_up_code00_ua": 17.9015,
-    "icp_dn_code00_ua": 17.7382,
-    "vco_kvco_mhz_per_v": 55.1378,
-    "vco_fmax_tt_mhz": 173.312,
-    "vco_f_hi_mhz": 173.312,
-    "vco_f_lo_mhz": 6.24449,
-    "vco_f_vdd_mhz": 175.457
+    "icp_up_code00_ua": 17.9835,
+    "icp_dn_code00_ua": 17.7444,
+    "vco_kvco_mhz_per_v": 57.0776,
+    "vco_fmax_tt_mhz": 179.386,
+    "vco_f_hi_mhz": 179.386,
+    "vco_f_lo_mhz": 6.44077,
+    "vco_f_vdd_mhz": 182.394
    },
    "ss_27c_vm10": {
-    "icp_up_code00_ua": 17.2159,
-    "icp_dn_code00_ua": 17.1122,
-    "vco_kvco_mhz_per_v": 70.2429,
-    "vco_fmax_tt_mhz": 174.488,
-    "vco_f_hi_mhz": 174.488,
-    "vco_f_lo_mhz": 8.01234,
-    "vco_f_vdd_mhz": 193.711
+    "icp_up_code00_ua": 17.1381,
+    "icp_dn_code00_ua": 17.0976,
+    "vco_kvco_mhz_per_v": 72.627,
+    "vco_fmax_tt_mhz": 180.389,
+    "vco_f_hi_mhz": 180.389,
+    "vco_f_lo_mhz": 8.26302,
+    "vco_f_vdd_mhz": 200.201
    },
    "ss_27c": {
-    "icp_up_code00_ua": 17.1766,
-    "icp_dn_code00_ua": 17.3178,
-    "vco_kvco_mhz_per_v": 62.572,
-    "vco_fmax_tt_mhz": 175.735,
-    "vco_f_hi_mhz": 175.735,
-    "vco_f_lo_mhz": 6.79059,
-    "vco_f_vdd_mhz": 189.666
+    "icp_up_code00_ua": 17.3245,
+    "icp_dn_code00_ua": 17.2376,
+    "vco_kvco_mhz_per_v": 64.6736,
+    "vco_fmax_tt_mhz": 181.614,
+    "vco_f_hi_mhz": 181.614,
+    "vco_f_lo_mhz": 6.9954,
+    "vco_f_vdd_mhz": 196.157
    },
    "ss_27c_vp10": {
-    "icp_up_code00_ua": 17.4803,
-    "icp_dn_code00_ua": 17.3524,
-    "vco_kvco_mhz_per_v": 52.1894,
-    "vco_fmax_tt_mhz": 164.085,
-    "vco_f_hi_mhz": 164.085,
-    "vco_f_lo_mhz": 5.95112,
-    "vco_f_vdd_mhz": 165.721
+    "icp_up_code00_ua": 17.4455,
+    "icp_dn_code00_ua": 17.543,
+    "vco_kvco_mhz_per_v": 54.0583,
+    "vco_fmax_tt_mhz": 169.91,
+    "vco_f_hi_mhz": 169.91,
+    "vco_f_lo_mhz": 6.11337,
+    "vco_f_vdd_mhz": 171.777
    },
    "ss_125c_vm10": {
-    "icp_up_code00_ua": 16.254,
-    "icp_dn_code00_ua": 16.3295,
-    "vco_kvco_mhz_per_v": 66.1613,
-    "vco_fmax_tt_mhz": 163.921,
-    "vco_f_hi_mhz": 163.921,
-    "vco_f_lo_mhz": 7.11878,
-    "vco_f_vdd_mhz": 178.575
+    "icp_up_code00_ua": 16.2113,
+    "icp_dn_code00_ua": 16.2694,
+    "vco_kvco_mhz_per_v": 68.2337,
+    "vco_fmax_tt_mhz": 169.021,
+    "vco_f_hi_mhz": 169.021,
+    "vco_f_lo_mhz": 7.30711,
+    "vco_f_vdd_mhz": 184.237
    },
    "ss_125c": {
-    "icp_up_code00_ua": 16.3284,
-    "icp_dn_code00_ua": 16.4053,
-    "vco_kvco_mhz_per_v": 58.3343,
-    "vco_fmax_tt_mhz": 163.624,
-    "vco_f_hi_mhz": 163.624,
-    "vco_f_lo_mhz": 6.1214,
-    "vco_f_vdd_mhz": 171.55
+    "icp_up_code00_ua": 16.4502,
+    "icp_dn_code00_ua": 16.3546,
+    "vco_kvco_mhz_per_v": 60.0624,
+    "vco_fmax_tt_mhz": 168.462,
+    "vco_f_hi_mhz": 168.462,
+    "vco_f_lo_mhz": 6.29365,
+    "vco_f_vdd_mhz": 177.105
    },
    "ss_125c_vp10": {
-    "icp_up_code00_ua": 16.663,
-    "icp_dn_code00_ua": 16.4242,
-    "vco_kvco_mhz_per_v": 47.4299,
-    "vco_fmax_tt_mhz": 149.127,
-    "vco_f_hi_mhz": 149.127,
-    "vco_f_lo_mhz": 5.41431,
-    "vco_f_vdd_mhz": 150.035
+    "icp_up_code00_ua": 16.6313,
+    "icp_dn_code00_ua": 16.4452,
+    "vco_kvco_mhz_per_v": 49.0044,
+    "vco_fmax_tt_mhz": 154.04,
+    "vco_f_hi_mhz": 154.04,
+    "vco_f_lo_mhz": 5.55657,
+    "vco_f_vdd_mhz": 154.964
    },
    "ff_m40c_vm10": {
-    "icp_up_code00_ua": 21.3556,
-    "icp_dn_code00_ua": 21.288,
-    "vco_kvco_mhz_per_v": 105.853,
-    "vco_fmax_tt_mhz": 259.921,
-    "vco_f_hi_mhz": 259.921,
-    "vco_f_lo_mhz": 9.04827,
-    "vco_f_vdd_mhz": 265.838
+    "icp_up_code00_ua": 21.3396,
+    "icp_dn_code00_ua": 21.1525,
+    "vco_kvco_mhz_per_v": 109.334,
+    "vco_fmax_tt_mhz": 268.44,
+    "vco_f_hi_mhz": 268.44,
+    "vco_f_lo_mhz": 9.31836,
+    "vco_f_vdd_mhz": 274.916
    },
    "ff_m40c": {
-    "icp_up_code00_ua": 21.6267,
-    "icp_dn_code00_ua": 21.3722,
-    "vco_kvco_mhz_per_v": 79.8168,
-    "vco_fmax_tt_mhz": 223.344,
-    "vco_f_hi_mhz": 223.344,
-    "vco_f_lo_mhz": 7.83854,
-    "vco_f_vdd_mhz": 224.141
+    "icp_up_code00_ua": 21.6013,
+    "icp_dn_code00_ua": 21.2944,
+    "vco_kvco_mhz_per_v": 82.7602,
+    "vco_fmax_tt_mhz": 231.524,
+    "vco_f_hi_mhz": 231.524,
+    "vco_f_lo_mhz": 8.0714,
+    "vco_f_vdd_mhz": 229.985
    },
    "ff_m40c_vp10": {
-    "icp_up_code00_ua": 21.9485,
-    "icp_dn_code00_ua": 21.4345,
-    "vco_kvco_mhz_per_v": 60.1963,
-    "vco_fmax_tt_mhz": 189.348,
-    "vco_f_hi_mhz": 189.348,
-    "vco_f_lo_mhz": 6.95335,
-    "vco_f_vdd_mhz": 189.529
+    "icp_up_code00_ua": 21.8957,
+    "icp_dn_code00_ua": 21.2244,
+    "vco_kvco_mhz_per_v": 62.0691,
+    "vco_fmax_tt_mhz": 195.261,
+    "vco_f_hi_mhz": 195.261,
+    "vco_f_lo_mhz": 7.19165,
+    "vco_f_vdd_mhz": 195.563
    },
    "ff_27c_vm10": {
-    "icp_up_code00_ua": 20.7009,
-    "icp_dn_code00_ua": 20.5387,
-    "vco_kvco_mhz_per_v": 99.0425,
-    "vco_fmax_tt_mhz": 243.18,
-    "vco_f_hi_mhz": 243.18,
-    "vco_f_lo_mhz": 8.44932,
-    "vco_f_vdd_mhz": 244.948
+    "icp_up_code00_ua": 20.5654,
+    "icp_dn_code00_ua": 20.5617,
+    "vco_kvco_mhz_per_v": 101.78,
+    "vco_fmax_tt_mhz": 249.931,
+    "vco_f_hi_mhz": 249.931,
+    "vco_f_lo_mhz": 8.71152,
+    "vco_f_vdd_mhz": 253.064
    },
    "ff_27c": {
-    "icp_up_code00_ua": 20.7123,
-    "icp_dn_code00_ua": 20.7004,
-    "vco_kvco_mhz_per_v": 73.9204,
-    "vco_fmax_tt_mhz": 206.966,
-    "vco_f_hi_mhz": 206.966,
-    "vco_f_lo_mhz": 7.38085,
-    "vco_f_vdd_mhz": 207.466
+    "icp_up_code00_ua": 20.8496,
+    "icp_dn_code00_ua": 20.7122,
+    "vco_kvco_mhz_per_v": 76.3463,
+    "vco_fmax_tt_mhz": 213.744,
+    "vco_f_hi_mhz": 213.744,
+    "vco_f_lo_mhz": 7.60887,
+    "vco_f_vdd_mhz": 214.34
    },
    "ff_27c_vp10": {
-    "icp_up_code00_ua": 20.9438,
-    "icp_dn_code00_ua": 20.8677,
-    "vco_kvco_mhz_per_v": 55.5077,
-    "vco_fmax_tt_mhz": 174.815,
-    "vco_f_hi_mhz": 174.815,
-    "vco_f_lo_mhz": 6.62664,
-    "vco_f_vdd_mhz": 175.139
+    "icp_up_code00_ua": 20.9121,
+    "icp_dn_code00_ua": 20.8679,
+    "vco_kvco_mhz_per_v": 57.4465,
+    "vco_fmax_tt_mhz": 180.868,
+    "vco_f_hi_mhz": 180.868,
+    "vco_f_lo_mhz": 6.80521,
+    "vco_f_vdd_mhz": 181.282
    },
    "ff_125c_vm10": {
-    "icp_up_code00_ua": 19.3123,
-    "icp_dn_code00_ua": 19.1017,
-    "vco_kvco_mhz_per_v": 86.9441,
-    "vco_fmax_tt_mhz": 213.689,
-    "vco_f_hi_mhz": 213.689,
-    "vco_f_lo_mhz": 7.63139,
-    "vco_f_vdd_mhz": 215.312
+    "icp_up_code00_ua": 19.2253,
+    "icp_dn_code00_ua": 19.0952,
+    "vco_kvco_mhz_per_v": 89.7257,
+    "vco_fmax_tt_mhz": 220.498,
+    "vco_f_hi_mhz": 220.498,
+    "vco_f_lo_mhz": 7.84815,
+    "vco_f_vdd_mhz": 222.151
    },
    "ff_125c": {
-    "icp_up_code00_ua": 19.422,
-    "icp_dn_code00_ua": 19.3896,
-    "vco_kvco_mhz_per_v": 65.2645,
-    "vco_fmax_tt_mhz": 182.982,
-    "vco_f_hi_mhz": 182.982,
-    "vco_f_lo_mhz": 6.76782,
-    "vco_f_vdd_mhz": 183.672
+    "icp_up_code00_ua": 19.3855,
+    "icp_dn_code00_ua": 19.3592,
+    "vco_kvco_mhz_per_v": 66.7431,
+    "vco_fmax_tt_mhz": 187.132,
+    "vco_f_hi_mhz": 187.132,
+    "vco_f_lo_mhz": 6.92575,
+    "vco_f_vdd_mhz": 187.709
    },
    "ff_125c_vp10": {
-    "icp_up_code00_ua": 19.7208,
-    "icp_dn_code00_ua": 19.1404,
-    "vco_kvco_mhz_per_v": 49.5398,
-    "vco_fmax_tt_mhz": 156.2,
-    "vco_f_hi_mhz": 156.2,
-    "vco_f_lo_mhz": 6.09451,
-    "vco_f_vdd_mhz": 156.916
+    "icp_up_code00_ua": 19.822,
+    "icp_dn_code00_ua": 19.3172,
+    "vco_kvco_mhz_per_v": 50.2263,
+    "vco_fmax_tt_mhz": 158.43,
+    "vco_f_hi_mhz": 158.43,
+    "vco_f_lo_mhz": 6.24435,
+    "vco_f_vdd_mhz": 158.891
    },
    "ss_pff": {
-    "icp_up_code00_ua": 26.6553,
-    "icp_dn_code00_ua": 26.5653,
-    "vco_kvco_mhz_per_v": 89.9794,
-    "vco_fmax_tt_mhz": 225.27,
-    "vco_f_hi_mhz": 225.27,
-    "vco_f_lo_mhz": 12.0189,
-    "vco_f_vdd_mhz": 240.013
+    "icp_up_code00_ua": 26.6611,
+    "icp_dn_code00_ua": 26.6027,
+    "vco_kvco_mhz_per_v": 92.7846,
+    "vco_fmax_tt_mhz": 232.272,
+    "vco_f_hi_mhz": 232.272,
+    "vco_f_lo_mhz": 12.3724,
+    "vco_f_vdd_mhz": 247.432
    },
    "ff_pss": {
-    "icp_up_code00_ua": 13.9615,
-    "icp_dn_code00_ua": 13.7411,
-    "vco_kvco_mhz_per_v": 35.2401,
-    "vco_fmax_tt_mhz": 111.187,
-    "vco_f_hi_mhz": 111.187,
-    "vco_f_lo_mhz": 4.4096,
-    "vco_f_vdd_mhz": 110.363
+    "icp_up_code00_ua": 13.9774,
+    "icp_dn_code00_ua": 13.3361,
+    "vco_kvco_mhz_per_v": 36.0812,
+    "vco_fmax_tt_mhz": 113.877,
+    "vco_f_hi_mhz": 113.877,
+    "vco_f_lo_mhz": 4.55082,
+    "vco_f_vdd_mhz": 114.488
    },
    "tt_pss": {
-    "icp_up_code00_ua": 15.2271,
-    "icp_dn_code00_ua": 15.2731,
-    "vco_kvco_mhz_per_v": 55.5669,
-    "vco_fmax_tt_mhz": 155.638,
-    "vco_f_hi_mhz": 155.638,
-    "vco_f_lo_mhz": 5.60742,
-    "vco_f_vdd_mhz": 156.885
+    "icp_up_code00_ua": 15.0416,
+    "icp_dn_code00_ua": 15.1086,
+    "vco_kvco_mhz_per_v": 57.6197,
+    "vco_fmax_tt_mhz": 161.351,
+    "vco_f_hi_mhz": 161.351,
+    "vco_f_lo_mhz": 5.77792,
+    "vco_f_vdd_mhz": 161.094
    },
    "tt_pff": {
-    "icp_up_code00_ua": 24.1585,
-    "icp_dn_code00_ua": 24.0777,
-    "vco_kvco_mhz_per_v": 90.4611,
-    "vco_fmax_tt_mhz": 253.34,
-    "vco_f_hi_mhz": 253.34,
-    "vco_f_lo_mhz": 9.09514,
-    "vco_f_vdd_mhz": 261.648
+    "icp_up_code00_ua": 24.2186,
+    "icp_dn_code00_ua": 23.9013,
+    "vco_kvco_mhz_per_v": 93.2166,
+    "vco_fmax_tt_mhz": 261.059,
+    "vco_f_hi_mhz": 261.059,
+    "vco_f_lo_mhz": 9.37427,
+    "vco_f_vdd_mhz": 270.151
    }
   }
  }
