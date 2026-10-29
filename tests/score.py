@@ -1,0 +1,332 @@
+"""The project's score: the share of the goals' checkable done-lines that pass.
+
+    bash tests/score.sh        (runs this with the tree's python, chip-flow set)
+
+Each "Done when" in GOALS.md's proposed goals is cut into the lines below,
+each worth one. A line over corners (the analog PVT sweep, the digital STA
+corners, the post-layout benches) earns the share of its corners that pass,
+so a change that fixes one corner moves the number. Every gate is re-run
+here, from a scratch copy of blocks/pll, through chip-flow's gate.py
+(sim_pvt through the engine's sweep, a corner per worker: pvt_sweep), with
+one exception: bench_strength takes longer than the check may run, so its
+recorded pass counts only while its inputs are unchanged
+(bench_strength_fresh). A gate that can't run (a tool missing,
+a refusal, a timeout) fails its line; nothing is skipped.
+
+Prints a line per done-line, then the score alone on the last line: 100 x
+the mean over the lines, higher is better.
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parent.parent
+BLOCK = ROOT / "blocks" / "pll"
+CFH = Path(os.environ["CHIP_FLOW_HOME"])
+EDA = str(CFH / "bin" / "eda")
+GATE = str(CFH / "engine" / "scripts" / "gate.py")
+
+# The check that runs this stops at 30 minutes; the chains run side by side
+# and each stops here, so the score always prints.
+DEADLINE = time.monotonic() + float(os.environ.get("PLL_SCORE_BUDGET_S", 24 * 60))
+VCO_PERIOD_NS = (2.6, 2.8)  # "the VCO clock at about 2.7 ns"
+VCO_TARGET_HZ = 100e6
+# The 31 corners the signed-off spec scores (H1-ada9eb plus its open items):
+# the full grid, the two resistor-skew corners and the engine's tt_pss/tt_pff.
+# A spec that drops one still has it counted, as failing: taking a corner out
+# of the spec can't raise the score.
+REQUIRED_CORNERS = [f"{p}_{t}{s}" for p in ("tt", "ss", "ff") for t in ("m40c", "27c", "125c")
+                    for s in ("_vm10", "", "_vp10")] + ["ss_pff", "ff_pss", "tt_pss", "tt_pff"]
+
+
+def copy_block(scratch: Path, name: str) -> Path:
+    dst = scratch / name
+    shutil.copytree(BLOCK, dst, symlinks=True, ignore=shutil.ignore_patterns(
+        "state_snapshots", "__pycache__", "runs", "sim_build"))
+    return dst
+
+
+def gate(ws: Path, skill: str, name: str, logs: Path, tag: str) -> dict:
+    """Run one gate in ws; its result json, with status "pass" only on a pass."""
+    out, log = logs / f"{tag}-{name}.json", logs / f"{tag}-{name}.log"
+    left = DEADLINE - time.monotonic()
+    if left <= 0:
+        return {"status": "timeout", "why": "the score's time ran out before it started"}
+    try:
+        with log.open("w") as f:
+            rc = subprocess.run([EDA, "python", GATE, "--gate", name, "--skill", skill,
+                                 "--workspace", str(ws), "--out", str(out)],
+                                cwd=ws, stdout=f, stderr=subprocess.STDOUT,
+                                stdin=subprocess.DEVNULL, timeout=left).returncode
+    except subprocess.TimeoutExpired:
+        return {"status": "timeout", "why": "the score's time ran out"}
+    try:
+        res = json.loads(out.read_text())
+    except (OSError, ValueError):
+        tail = log.read_text(errors="replace").strip().splitlines()[-1:] or [""]
+        return {"status": f"exit {rc}", "why": tail[0][:200]}
+    if rc != 0 and res.get("status") == "pass":
+        res["status"] = f"exit {rc}"
+    return res
+
+
+def chain(ws: Path, skill: str, names: list[str], logs: Path, tag: str) -> dict[str, dict]:
+    """Gates in pipeline order; once one doesn't pass, the rest aren't run."""
+    got: dict[str, dict] = {}
+    for n in names:
+        got[n] = gate(ws, skill, n, logs, tag)
+        if got[n].get("status") != "pass" and n != names[-1]:
+            for m in names[names.index(n) + 1:]:
+                got[m] = {"status": "not run", "why": f"{n} did not pass"}
+            break
+    return got
+
+
+def why(res: dict) -> str:
+    if res.get("why"):
+        return f"{res['status']}: {res['why']}"
+    msgs = [str(v.get("msg") or v.get("kind")) for v in res.get("failing") or []]
+    err = str(res.get("error") or "").strip().splitlines()[-1:] or []
+    return f"{res.get('status')}" + "".join(f"; {m[:160]}" for m in (err + msgs)[:3])
+
+
+def spec_corners(spec: dict) -> list[str]:
+    """Every corner the analog spec scores: its grid, its extras, and the
+    engine's tt_pss/tt_pff, as sim_pvt runs them."""
+    g = (spec.get("corners") or {}).get("grid") or {}
+    proc = {"typical": "tt", "ss": "ss", "ff": "ff"}
+    temp = lambda t: f"m{-t}c" if t < 0 else f"{t}c"  # noqa: E731
+    sup = lambda s: "" if s == 0 else (f"_vm{-s}" if s < 0 else f"_vp{s}")  # noqa: E731
+    out = [f"{proc[p]}_{temp(t)}{sup(s)}" for p in g.get("process", [])
+           for t in g.get("temp_c", []) for s in g.get("supply_pct", [])]
+    for c in list((spec.get("corners") or {}).get("extra") or []) + ["tt_pss", "tt_pff"]:
+        if c not in out:
+            out.append(c)
+    return out
+
+
+def pvt_sweep(ws: Path, corners: list[str], logs: Path) -> tuple[int, list[str]]:
+    """sim_pvt's sweep, one corner per worker: the engine's own
+    sim_run.run_workspace_benches over the spec's sweep, with sim_pvt's
+    timeout and refusals, which the gate runs one deck at a time (about 25
+    minutes here, against the check's 30). A corner passes when every bench
+    scored there ran and has no error-severity finding."""
+    sys.path[:0] = [str(CFH / "engine" / "scripts"), str(CFH / "engine" / "lib")]
+    import check_sim_pvt  # noqa: E402
+    import sim_run  # noqa: E402
+    import speclib  # noqa: E402
+
+    try:
+        sweep, _ = sim_run.spec_sweep(ws)
+        timeout = speclib.sim_timeout(speclib.load_spec(ws / "spec" / "spec.yaml"), "sim_pvt",
+                                      None, check_sim_pvt.DEFAULT_TIMEOUT)
+    except Exception as e:  # noqa: BLE001  (a refusal fails every corner)
+        return 0, [f"sim_pvt refused: {str(e).strip()[:200]}"]
+    by_name = {c["name"]: c for c in sweep}
+
+    def one(name: str) -> str:
+        if name not in by_name:
+            return "not in the spec's sweep"
+        if time.monotonic() > DEADLINE:
+            return "the score's time ran out"
+        try:
+            res = sim_run.run_workspace_benches(
+                ws, corners=[by_name[name]], timeout=timeout, check="sim_pvt",
+                out_subdir=f"log/score_pvt/{name}", scope_corners=sweep, refuse_unswept=True)
+        except Exception as e:  # noqa: BLE001
+            return f"did not run: {str(e).strip()[:160]}"
+        (logs / f"pvt-{name}.json").write_text(json.dumps(res, default=str))
+        if not res["results"]:
+            return "no bench ran"
+        for r in res["results"]:
+            if r.get("returncode") or r.get("engine_errors"):
+                return f"{r.get('bench')} did not run clean"
+        errs = [v for v in res["violations"] if v.get("severity") == "error"]
+        return str(errs[0].get("msg"))[:160] if errs else ""
+
+    with ThreadPoolExecutor(max(1, min(12, (os.cpu_count() or 2) // 2))) as pool:
+        bad = {c: m for c, m in zip(corners, pool.map(one, corners)) if m}
+    return len(corners) - len(bad), [f"{c}: {m}" for c, m in bad.items()][:4]
+
+
+def analog(ws: Path, corners: list[str], logs: Path) -> tuple[dict, tuple[int, list[str]]]:
+    got = chain(ws, "ade", ["spec_lint", "netlist_lint", "sim_tt"], logs, "analog")
+    if any(r.get("status") != "pass" for r in got.values()):
+        first = next(n for n, r in got.items() if r.get("status") != "pass")
+        return got | {"bench_strength": {"status": "not run", "why": f"{first} did not pass"}}, \
+            (0, [f"not run: {first} did not pass"])
+    pvt = pvt_sweep(ws, corners, logs)
+    if pvt[0] < len(corners):
+        got["bench_strength"] = {"status": "not run", "why": "sim_pvt did not pass"}
+    else:
+        got["bench_strength"] = bench_strength_fresh(ws)
+    return got, pvt
+
+
+def bench_strength_fresh(ws: Path) -> dict:
+    """bench_strength's recorded pass, while it still holds. The gate runs
+    253 mutants for 30 minutes and more, past the check's whole limit, so it
+    isn't re-run here: its pass counts only while every input it read
+    (netlist, tb, sizing, spec, mutant rulings; the engine's invalidation
+    map) hashes as it did when it passed, in state.json and in the recorded
+    report both. Any change to those reads as failing until bench_strength is
+    run again and its pass committed."""
+    sys.path[:0] = [str(CFH / "engine" / "lib")]
+    import statelib  # noqa: E402
+
+    try:
+        st = json.loads((ws / "state.json").read_text())
+        rep = json.loads((ws / "reports" / "recorded" / "gate-bench_strength.json").read_text())
+        cur = statelib.gate_input_hashes(ws, "ade", "bench_strength", statelib.load_map(),
+                                         st.get("artifacts"))
+        entry = (st.get("gates") or {}).get("bench_strength") or {}
+        fresh = statelib.gate_freshness(entry, cur)
+    except Exception as e:  # noqa: BLE001
+        return {"status": "error", "why": f"can't read its record: {str(e).strip()[:160]}"}
+    if entry.get("status") != "pass" or rep.get("status") != "pass":
+        return {"status": "fail", "why": "its last recorded run did not pass"}
+    if not fresh["fresh"] or rep.get("inputs_at_start") != cur:
+        changed = fresh["changed_inputs"] or ["the recorded report's inputs"]
+        return {"status": "stale", "why": "changed since it passed: " + ", ".join(changed)
+                + " (re-run bench_strength and commit its pass)"}
+    return {"status": "pass"}
+
+
+def vco_period_ns(sdc: Path) -> float | None:
+    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", sdc.read_text())
+    return float(m.group(1)) if m else None
+
+
+def layers(ws: Path, logs: Path) -> tuple[dict[str, bool], dict]:
+    """run_layers.py in ws: which layers passed, and layer 3's measures."""
+    log = logs / "layers.log"
+    # the committed measures are the last run's: only this run's may count
+    (ws / "reports" / "cosim_measures.json").unlink(missing_ok=True)
+    left = DEADLINE - time.monotonic()
+    try:
+        with log.open("w") as f:
+            subprocess.run([EDA, "python", str(ws / "tb" / "run_layers.py")], cwd=ws,
+                           stdout=f, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                           timeout=max(left, 1))
+    except subprocess.TimeoutExpired:
+        pass
+    text = log.read_text(errors="replace")
+    got = {k: f"== layer {k}: PASS" in text for k in "123"}
+    try:
+        meas = json.loads((ws / "reports" / "cosim_measures.json").read_text())
+    except (OSError, ValueError):
+        meas = {}
+    return got, meas
+
+
+def main() -> int:
+    spec = yaml.safe_load((BLOCK / "analog" / "spec" / "spec.yaml").read_text()) or {}
+    corners = REQUIRED_CORNERS + [c for c in spec_corners(spec) if c not in REQUIRED_CORNERS]
+    scratch = Path(tempfile.mkdtemp(prefix="pll-score-"))
+    logs = scratch / "logs"
+    logs.mkdir()
+    try:
+        sim, lay, dig, top = (copy_block(scratch, n) for n in ("sim", "layout", "digital", "top"))
+        # sim_pvt, the harden and the co-simulation are the slow ones: side by side.
+        with ThreadPoolExecutor(4) as pool:
+            f_sim = pool.submit(analog, sim / "analog", corners, logs)
+            f_lay = pool.submit(chain, lay / "analog", "ade", ["drc", "lvs", "pex_sim"], logs, "layout")
+            f_dig = pool.submit(chain, dig / "digital", "vde",
+                                ["spec_lint", "lint", "synth", "harden", "timing"], logs, "digital")
+            f_top = pool.submit(layers, top, logs)
+            (a, (n_pvt, bad_pvt)), l, d, (lay3, meas) = f_sim.result(), f_lay.result(), f_dig.result(), f_top.result()
+
+        lines: list[tuple[str, float, str]] = []
+
+        def line(name: str, got: float, note: str = "") -> None:
+            lines.append((name, max(0.0, min(1.0, got)), note))
+
+        def passed(name: str, res: dict) -> None:
+            ok = res.get("status") == "pass"
+            line(name, 1.0 if ok else 0.0, "" if ok else why(res))
+
+        # --- Sign off the PLL's analog half ------------------------------
+        signoff = BLOCK / "analog" / "log" / "H1-signoff.md"
+        ok = signoff.is_file() and re.search(r"\*\*Answer:\*\*\s*approved", signoff.read_text())
+        line("analog sign-off recorded", 1.0 if ok else 0.0,
+             "" if ok else "no approved answer in analog/log/H1-signoff.md")
+        extra = (spec.get("corners") or {}).get("extra") or []
+        fmax = [m for m in spec.get("measures") or [] if m.get("name") == "vco_fmax_ff_mhz"]
+        miss = [c for c in ("ss_pff", "ff_pss") if c not in extra]
+        if not (fmax and fmax[0].get("corners") == "all"):
+            miss.append("vco_fmax_ff_mhz at every corner")
+        line("spec scores ss_pff, ff_pss and the VCO ceiling at every corner",
+             1.0 if not miss else 0.0, "missing: " + ", ".join(miss) if miss else "")
+        passed("analog spec_lint", a["spec_lint"])
+        line(f"analog sim_pvt corners passing ({n_pvt}/{len(corners)})", n_pvt / len(corners),
+             "; ".join(bad_pvt))
+        passed("analog bench_strength", a["bench_strength"])
+        t = d["timing"]
+        period = vco_period_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
+        if period is None or not VCO_PERIOD_NS[0] <= period <= VCO_PERIOD_NS[1]:
+            line("digital timing with vco_out at ~2.7 ns", 0.0, f"vco_out period is {period} ns")
+        elif t.get("status") not in ("pass", "fail"):
+            line("digital timing with vco_out at ~2.7 ns", 0.0, why(t))
+        else:
+            sta = (t.get("facts") or {}).get("corners") or {}
+            good = [c for c, v in sta.items()
+                    if (v.get("setup_ws") or -1) >= 0 and (v.get("hold_ws") or -1) >= 0]
+            share = len(good) / len(sta) if sta else 0.0
+            if t.get("status") != "pass" and share == 1.0:
+                share = 0.0  # every corner met but the gate still failed: not a pass
+            line(f"digital timing with vco_out at {period} ns ({len(good)}/{len(sta)} STA corners)",
+                 share, "" if t.get("status") == "pass" else why(t))
+
+        # --- Test the whole PLL loop in co-simulation --------------------
+        n = sum(lay3.values())
+        line(f"the three loop layers run from one command ({n}/3 pass)", n / 3,
+             ", ".join(f"layer {k} failed" for k, v in lay3.items() if not v))
+        op = meas.get("operating_point") or {}
+        f = meas.get("vco_freq_hz") or 0.0
+        lock = (lay3["3"] and meas.get("analog_kind") == "transistor"
+                and op.get("f_vco_target_hz") == VCO_TARGET_HZ
+                and abs(f - VCO_TARGET_HZ) <= 1e-3 * VCO_TARGET_HZ
+                and (meas.get("lock_rises") or 0) >= 1 and meas.get("lock_drops_after_lock") == 0
+                and meas.get("window_after_lock") is True)
+        line("co-sim locks at 100 MHz with lock_detect held", 1.0 if lock else 0.0,
+             "" if lock else f"vco {f / 1e6:.3f} MHz, lock_rises {meas.get('lock_rises')}, "
+             f"drops {meas.get('lock_drops_after_lock')}, layer 3 {'pass' if lay3['3'] else 'fail'}")
+        readme = BLOCK / "tb" / "README.md"
+        ok = readme.is_file() and "run_layers" in readme.read_text()
+        line("the co-simulation is written up next to the benches", 1.0 if ok else 0.0,
+             "" if ok else "tb/README.md missing or doesn't name run_layers.py")
+
+        # --- Lay out the analog half and match it after extraction -------
+        passed("analog layout drc", l["drc"])
+        passed("analog layout lvs", l["lvs"])
+        p = l["pex_sim"]
+        # pex_sim runs at typical unless its facts name the corners it ran.
+        done = ((p.get("facts") or {}).get("corners") or ["tt_27c"]) if p.get("status") == "pass" else []
+        n = len([c for c in corners if c in done])
+        line(f"post-layout benches pass at every scored corner ({n}/{len(corners)})",
+             n / len(corners), "" if p.get("status") == "pass" else why(p))
+    finally:
+        if os.environ.get("PLL_SCORE_KEEP"):
+            print(f"score: scratch kept at {scratch}", file=sys.stderr)
+        else:
+            shutil.rmtree(scratch, ignore_errors=True)
+
+    for name, got, note in lines:
+        print(f"{got:5.3f}  {name}" + (f"  -- {note}" if note and got < 1 else ""))
+    print(f"{100 * sum(g for _, g, _ in lines) / len(lines):.2f}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

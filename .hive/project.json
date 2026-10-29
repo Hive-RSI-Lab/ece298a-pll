@@ -1,4 +1,12 @@
 {
   "test": "EDA_TOOLCHAIN=${EDA_TOOLCHAIN:-/opt/eda-toolchain/iic-osic-tools-2026.09} uv run --no-project --with pyyaml bash tests/check.sh",
-  "score": null
+  "score": {
+    "command": "bash tests/score.sh",
+    "direction": "higher",
+    "tolerance": 0,
+    "paths": [
+      "tests/score.sh",
+      "tests/score.py"
+    ]
+  }
 }
