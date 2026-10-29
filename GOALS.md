@@ -8,14 +8,14 @@ Filed by runs. Each says what done looks like as something a run can check, and 
 
 ### Sign off the PLL's analog half and close what it carries into layout
 
-- **Status:** open; the owner approved H1-ada9eb, recorded in `blocks/pll/analog/log/H1-signoff.md` (#4), and the open items below remain
-- **What:** The analog half has passed every pre-layout check over 29 simulation corners (spec lint, netlist lint, the typical and PVT simulations, and the bench-strength check), and its layout waits on the owner's sign-off. That sign-off decides whether the analog netlist, the spec it is checked against and those results are frozen as the reference layout has to match. It also accepts two changes made since the proposal: wider charge-pump current windows, and a phase-margin floor of 30 degrees scored at every corner. The [review](https://github.com/ihsan-sa/ece298a/blob/main/docs/pll-h1-review.md) sets out the results, the thin margins and the open items. The sign-off has been asked for, and the owner's answer arrives as an ask. A run records that answer as he gave it; it never approves the sign-off itself, and it changes nothing under `blocks/pll/analog` until the answer is recorded. If he approves, the run closes the open items: it puts the two resistor-skew corners (`ss_pff`, `ff_pss`) back into the spec, scores the VCO's 333 MHz ceiling at every corner (the VCO reaches about 363 MHz at fast, cold, low supply with its control voltage at the rail), corrects the frequency that the spec's sign-off note mislabels, reruns the analog checks, and reruns the digital timing with the VCO clock at about 2.7 ns. If he rejects it, the run reworks the design against his reason and asks again.
-- **Done when:** the owner's answer is recorded as the analog sign-off in this repository. If he approved, the analog spec also scores both skew corners and the VCO ceiling at every corner, the analog spec lint, PVT simulation and bench-strength checks pass on that spec, and the digital timing check passes with the VCO clock at about 2.7 ns.
+- **Status:** open; the owner approved H1-ada9eb, recorded in `blocks/pll/analog/log/H1-signoff.md` (#6); the items the approval carries into layout stay open
+- **What:** The analog half passed every pre-layout check over 29 simulation corners (spec lint, netlist lint, the typical and PVT simulations, and the bench-strength check), and the owner signed it off: `approve H1-ada9eb`, recorded in `blocks/pll/analog/log/H1-signoff.md`. That freezes the analog netlist, the spec it is checked against and those results as the reference layout has to match, together with the two changes made since the proposal: wider charge-pump current windows, and a phase-margin floor of 30 degrees scored at every corner. The [review](https://github.com/ihsan-sa/ece298a/blob/main/docs/pll-h1-review.md) sets out the results, the thin margins and the open items. What stays open is what the approval carries into layout: put the two resistor-skew corners (`ss_pff`, `ff_pss`) back into the spec, score the VCO's 333 MHz ceiling at every corner (the VCO reaches about 363 MHz at fast, cold, low supply with its control voltage at the rail), correct the frequency that the spec's sign-off note mislabels, rerun the analog checks, and rerun the digital timing with the VCO clock at about 2.7 ns. A run never signs off on the owner's behalf: if these changes move the design away from what they approved, it asks them again.
+- **Done when:** the owner's answer is recorded as the analog sign-off in this repository (done, #6), the analog spec scores both skew corners and the VCO ceiling at every corner, the analog spec lint, PVT simulation and bench-strength checks pass on that spec, and the digital timing check passes with the VCO clock at about 2.7 ns.
 
 ### Test the whole PLL loop in co-simulation
 
 - **Status:** open
-- **What:** The course grades a system verification of the term project. The proposal (`blocks/pll/brief/proposal-classic-pll.md`) tests the loop as a whole in three layers: a linear model of the loop, the real digital RTL in cocotb with Python models of the pump, filter and VCO calibrated from the analog benches, and a mixed-signal co-simulation of the digital RTL with the analog netlist. Build those benches under `blocks/pll` and run them. This reads the analog half but does not change it, so it can go ahead while the sign-off above is pending.
+- **What:** The course grades a system verification of the term project. The proposal (`blocks/pll/brief/proposal-classic-pll.md`) tests the loop as a whole in three layers: a linear model of the loop, the real digital RTL in cocotb with Python models of the pump, filter and VCO calibrated from the analog benches, and a mixed-signal co-simulation of the digital RTL with the analog netlist. Build those benches under `blocks/pll` and run them. This reads the analog half but does not change it, so it can go ahead while the open items above are closed.
 - **Done when:** the three layers run from one command in this repository, the co-simulation shows the loop locking at the 100 MHz nominal point with the lock detector asserting, and the result is written up next to the benches.
 
 ## Later
@@ -38,4 +38,9 @@ Goals waiting for an open slot. When a proposed goal closes, the run that closed
 
 What has landed, from the git history (a line per PR).
 
-- No pull request has landed yet; the work so far was committed straight to the `track/pll` branch.
+- #1: Add a check workflow and GOALS.md for the dispatch engine.
+- #6: Record the owner's analog sign-off H1-ada9eb.
+- #10: Fill the Tiny Tapeout datasheet and pinout so the docs check passes.
+- #9: check.sh runs iverilog through chip-flow's eda when it isn't on PATH.
+- #3: Set up the Hive files for pll: goals, test command, lessons; deploy the gds viewer to Pages only from main.
+- Before #1, the work was committed straight to the `track/pll` branch.
