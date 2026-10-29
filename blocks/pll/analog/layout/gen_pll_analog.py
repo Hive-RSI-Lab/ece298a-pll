@@ -9,11 +9,15 @@ Floorplan, bottom to top: the VCO block, then five rows, each with a
 private routing channel above it:
 
   ring     the VCO ring block (ring_block): stages in the order
-           3 2 4 1 5, then NAND2 and output inverter, flush right under
+           3 2 4 1 5, then NAND2 (r5's input first) and output
+           inverter, flush right under
            the vco_out pin. NMOS half below one shared channel, PMOS half
            mirrored above it. Each stage is one column: its inverter
            (2 fingers, drain in the middle) next to the channel, its
            starve device behind it, n_k/p_k joined by a metal2 strap.
+           Every inverter-row device's gate via sits over its left pad
+           and its top is level with the stage inverters', so no stub
+           runs further than the channel for the taller NAND/output.
            Sources tie in metal1 to a rail per half. The starve gates
            run on their own metal3 track behind the inverters, so the
            channel carries only r1..r5, nb, vco_out and pll_en, as short
@@ -208,7 +212,7 @@ RING_ORDER = [3, 2, 4, 1, 5]   # every hop spans 1-2 stages; 5 next to NAND
 # shares ng; its parallel PMOS pair shares nb).
 RING_COLS = (
     [("stage", k) for k in RING_ORDER]
-    + [("row", ["MN_G2", "MN_G1"], ["MP_G2", "MP_G1"]),
+    + [("row", ["MN_G1", "MN_G2"], ["MP_G1", "MP_G2"]),
        ("row", ["MN_O"], ["MP_O"]), ("row", [], ["MP_O"])])
 # nets that live only between a stage's (or the NAND's) own devices,
 # joined by a metal2 strap under them: no channel stub
@@ -253,8 +257,9 @@ TAP = 1.0         # tap COMP size
 TAP_RUN = 15.0    # longest stretch of a row without a tap
 TRK_W = 0.4       # metal2/3/4 wire width (= a via landing)
 TRK_P = 0.8       # metal3 track pitch, metal4 column pitch
-RING_TRK_P = 1.0  # the ring block's shared channel: wider pitch and
-RING_LW = 0.3     # thinner wires (0.4 via landings kept) - less coupling
+RING_TRK_P = 0.8  # the ring block's shared channel: every ring node's
+RING_LW = 0.3     # stubs cross all of it, so its pitch is the rows'; thinner
+                  # wires (0.4 via landings kept) - less coupling
 CH_IN = 1.0       # row's top shape to the channel's first track
 ROW_SP = 1.6      # channel's last track to the next row's lowest shape
 RES_P = {1.0: 3.0, 2.0: 4.0}   # resistor segment pitch by width
@@ -461,12 +466,8 @@ RAIL = (-1.7, -1.1)     # a ring-block metal1 supply rail, from S COMP bottom
 RTAP_Y = -2.2           # its taps' COMP bottom, from S COMP bottom
 RTAP_P = 8.0            # tap pitch along a rail
 RWELL_Y = -2.6          # PMOS half nwell bottom, from S COMP bottom
-GOFF_R = 1.1            # ring block gate via, right of the right pad
-NEXT_X = 1.2            # COMP right edge to the next stage's left pad:
-                        # the gate jog (ends 1.37 past COMP) clears the
-                        # next same-height gate pad (0.54 in) by 0.37
-NEXT_XR = 1.8           # the same for NAND/output columns, whose taller
-                        # pads and rail drops reach the jog's height
+NEXT_X = 0.6            # COMP right edge to the next column's left pad,
+NEXT_XR = 0.6           # stage or NAND/output: no jog reaches past COMP
 STRAP_Y = -0.6          # metal2 strap joining an inverter's n_k/p_k pads
 MINI_Y = -1.6           # metal3 starve-gate track (vbn_vco / vbp_vco)
 RING_CH_IN = 0.6        # inverter-row top shape to the first ring track
@@ -504,16 +505,23 @@ def ring_dev_cell(draw_fet, dev):
               inter_sd_l=0.52), nf
 
 
+def fin_w(dev):
+    """A ring-block device's finger width: its COMP height."""
+    _k, _d, _g, _s, wt, _l, nu = DEV[dev]
+    return wt / nu / RING_NF.get(dev, 1)
+
+
 def dev_width(draw_fet, dev):
     cell, nf = ring_dev_cell(draw_fet, dev)
     comp, _sd, _g = fet_geom_nf(cell, nf)
     return comp[2] - comp[0]
 
 
-def ring_place(top, draw_fet, dev, xl, ybot, used):
+def ring_place(top, draw_fet, dev, xl, ybot, used, imps):
     """Place dev with its left pad at x=xl and COMP bottom at ybot; draw
-    its gate jog and gate via (right of the right pad). Returns (pads,
-    nets per pad, gate net, gate via (x, y), COMP box)."""
+    its gate jog and gate via (over the left pad). Returns (pads,
+    nets per pad, gate net, gate via (x, y), COMP box); its implant box
+    goes on imps."""
     typ, d, g, s, wt, l, nu = DEV[dev]
     cell, nf = ring_dev_cell(draw_fet, dev)
     comp, sd, gps = fet_geom_nf(cell, nf)
@@ -523,9 +531,13 @@ def ring_place(top, draw_fet, dev, xl, ybot, used):
     sd = [tbox(b, dx, dy) for b in sd]
     gps = [tbox(b, dx, dy) for b in gps]
     nets = [s if k % 2 == 0 else d for k in range(nf + 1)]
+    imp = LY["nplus"] if typ == "n" else LY["pplus"]
+    imps.extend(tbox(b, dx, dy) for b in layoutlib.layer_boxes(cell, imp))
     gy0, gy1 = gps[0][1], gps[0][3]
-    xg = cx(sd[-1]) + GOFF_R
-    rect(top, gps[0][0], gy0, xg + TRK_W / 2, gy1, M1)
+    # the gate via sits over the left pad, whose net leaves away from the
+    # channel, so the jog is no longer than the gate pads' own span
+    xg = cx(sd[0])
+    rect(top, xg - TRK_W / 2, gy0, gps[-1][2], gy1, M1)
     via(top, xg, (gy0 + gy1) / 2, "via1", M1, M2)
     return sd, nets, g, (xg, (gy0 + gy1) / 2), tbox(comp, dx, dy)
 
@@ -533,7 +545,8 @@ def ring_place(top, draw_fet, dev, xl, ybot, used):
 def ring_half(top, draw_fet, kind, cols, used):
     """One half of the ring block in its own frame, gates toward the
     shared channel above:
-      inverter row   COMP bottom y=0: stage inverters, NAND, output
+      inverter row   COMP top at the stage inverters' (bottom y=0):
+                     stage inverters, NAND, output
       n_k/p_k strap  metal2 at STRAP_Y under each stage inverter
       starve track   metal3 at MINI_Y: vbn_vco (or vbp_vco)
       starve row     COMP top at S_TOP, under its stage's inverter
@@ -548,6 +561,11 @@ def ring_half(top, draw_fet, kind, cols, used):
     rail_y = (s_bot + RAIL[0], s_bot + RAIL[1])
     terms, tops, xmax = [], [0.0], 0.0
     mini_xs = []
+    imps = []                      # implant boxes of the devices placed
+    # every inverter-row device ends at the stage inverters' top, so a
+    # taller one (NAND, output inverter) reaches away from the channel
+    # and no stub crossing it is longer for its sake
+    h_inv = max(fin_w(d) for c in cols if c[1] for d in c[2])
     straps = {}                    # internal net -> pad xs on its strap
 
     def tie(net, pad):
@@ -559,8 +577,8 @@ def ring_half(top, draw_fet, kind, cols, used):
     for x, sdv, idevs in cols:
         xi = x
         for dev in idevs:
-            sd, nets, g, (xg, yg), comp = ring_place(top, draw_fet, dev,
-                                                     xi, 0.0, used)
+            sd, nets, g, (xg, yg), comp = ring_place(
+                top, draw_fet, dev, xi, h_inv - fin_w(dev), used, imps)
             for net, pad in zip(nets, sd):
                 if tie(net, pad):
                     continue
@@ -576,7 +594,7 @@ def ring_half(top, draw_fet, kind, cols, used):
             if sdv is not None:
                 # the starve device's n_k/p_k pad(s) join this strap
                 ssd, snets, sg, (sxg, syg), scomp = ring_place(
-                    top, draw_fet, sdv, xi, s_bot, used)
+                    top, draw_fet, sdv, xi, s_bot, used, imps)
                 for net, pad in zip(snets, ssd):
                     if tie(net, pad):
                         continue
@@ -594,6 +612,14 @@ def ring_half(top, draw_fet, kind, cols, used):
             tops.append(max(b[3] for b in sd) + 0.9)
             xmax = max(xmax, comp[2], xg + 0.2)
             xi = comp[2] + NEXT_XR
+    # neighbouring columns sit closer than implant spacing (NP.2/PP.2):
+    # one implant fills the gap between two devices that face each other
+    for a in imps:
+        for b in imps:
+            y0, y1 = max(a[1], b[1]), min(a[3], b[3])
+            if 0 < b[0] - a[2] < 0.4 and y1 > y0:
+                rect(top, a[2], y0, b[0], y1,
+                     LY["nplus" if kind == "n" else "pplus"])
     for xs in straps.values():
         rect(top, min(xs) - TRK_W / 2, STRAP_Y - TRK_W / 2,
              max(xs) + TRK_W / 2, STRAP_Y + TRK_W / 2, M2)
