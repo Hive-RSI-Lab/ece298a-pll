@@ -2,111 +2,142 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/eda-toolchain/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793222512
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793286243
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
-     0.00ns INFO     cocotb.regression                  running test_pll.test_prescaler_div8 (1/15)
-  4341.00ns INFO     cocotb.regression                  test_pll.test_prescaler_div8 passed
-  4341.00ns INFO     cocotb.regression                  running test_pll.test_obs_sel (2/15)
+     0.00ns INFO     cocotb.regression                  running test_pll.test_prescaler_div8 (1/18)
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:490: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._098_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:491: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._098_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:492: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._098_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:493: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._098_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:556: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._103_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:557: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._103_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:558: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._103_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:559: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._103_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:791: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._123_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:792: Unable to match ModPath A1 -> Z in ihsan_sa_pll.dut._123_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:793: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._123_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:794: Unable to match ModPath A2 -> Z in ihsan_sa_pll.dut._123_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:964: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._137_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:965: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._137_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:966: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._137_
+SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:967: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._137_
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1047: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1077: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1107: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1137: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1167: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1197: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1227: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1257: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1287: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1317: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1347: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1377: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1407: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1437: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1467: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1497: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1527: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1557: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1587: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1617:  4341.00ns INFO     cocotb.regression                  test_pll.test_prescaler_div8 passed
+  4341.00ns INFO     cocotb.regression                  running test_pll.test_obs_sel (2/18)
  11743.00ns INFO     cocotb.regression                  test_pll.test_obs_sel passed
- 11743.00ns INFO     cocotb.regression                  running test_pll.test_divider_ratio (3/15)
+ 11743.00ns INFO     cocotb.regression                  running test_pll.test_divider_ratio (3/18)
  26648.00ns INFO     cocotb.regression                  test_pll.test_divider_ratio passed
- 26648.00ns INFO     cocotb.regression                  running test_pll.test_divider_illegal_codes (4/15)
+ 26648.00ns INFO     cocotb.regression                  running test_pll.test_divider_illegal_codes (4/18)
  29831.00ns INFO     cocotb.regression                  test_pll.test_divider_illegal_codes passed
- 29831.00ns INFO     cocotb.regression                  running test_pll.test_reset_release_clean (5/15)
+ 29831.00ns INFO     cocotb.regression                  running test_pll.test_reset_release_clean (5/18)
  32679.00ns INFO     cocotb.regression                  test_pll.test_reset_release_clean passed
- 32679.00ns INFO     cocotb.regression                  running test_pll.test_pfd_up_lead (6/15)
- 36528.53ns INFO     cocotb.regression                  test_pll.test_pfd_up_lead passed
- 36528.53ns INFO     cocotb.regression                  running test_pll.test_pfd_dn_lead (7/15)
- 40378.05ns INFO     cocotb.regression                  test_pll.test_pfd_dn_lead passed
- 40378.05ns INFO     cocotb.regression                  running test_pll.test_pfd_frequency (8/15)
- 43950.05ns INFO     cocotb.regression                  test_pll.test_pfd_frequency passed
- 43950.05ns INFO     cocotb.regression                  running test_pll.test_lock_assert (9/15)
- 46633.13ns INFO     cocotb.regression                  test_pll.test_lock_assert passed
- 46633.13ns INFO     cocotb.regression                  running test_pll.test_lock_deassert (10/15)
- 50836.20ns INFO     cocotb.regression                  test_pll.test_lock_deassert passed
- 50836.20ns INFO     cocotb.regression                  running test_pll.test_lock_deassert_dn (11/15)
+ 32679.00ns INFO     cocotb.regression                  running test_pll.test_pfd_up_lead (6/18)
+ 36528.59ns INFO     cocotb.regression                  test_pll.test_pfd_up_lead passed
+ 36528.59ns INFO     cocotb.regression                  running test_pll.test_pfd_dn_lead (7/18)
+ 40378.18ns INFO     cocotb.regression                  test_pll.test_pfd_dn_lead passed
+ 40378.18ns INFO     cocotb.regression                  running test_pll.test_pfd_frequency (8/18)
+ 43950.18ns INFO     cocotb.regression                  test_pll.test_pfd_frequency passed
+ 43950.18ns INFO     cocotb.regression                  running test_pll.test_lock_assert (9/18)
+ 46633.27ns INFO     cocotb.regression                  test_pll.test_lock_assert passed
+ 46633.27ns INFO     cocotb.regression                  running test_pll.test_lock_deassert (10/18)
+ 50836.37ns INFO     cocotb.regression                  test_pll.test_lock_deassert passed
+ 50836.37ns INFO     cocotb.regression                  running test_pll.test_lock_deassert_dn (11/18)
                                                             Spec: pfd_up OR pfd_dn still high at the clk falling edge is a wide
- 55119.28ns INFO     cocotb.regression                  test_pll.test_lock_deassert_dn passed
- 55119.28ns INFO     cocotb.regression                  running test_pll.test_ctrl_regs (12/15)
- 55745.28ns INFO     cocotb.regression                  test_pll.test_ctrl_regs passed
- 55745.28ns INFO     cocotb.regression                  running test_pll.test_async_reset_outputs (13/15)
- 57840.45ns INFO     cocotb.regression                  test_pll.test_async_reset_outputs passed
- 57840.45ns INFO     cocotb.regression                  running test_pll.test_tt_tieoff (14/15)
- 57921.45ns INFO     cocotb.regression                  test_pll.test_tt_tieoff passed
- 57921.45ns INFO     cocotb.regression                  running test_pll.test_no_vctrl_bias_ua (15/15)
- 57971.45ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
- 57971.45ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
- 57971.45ns INFO     cocotb.regression                  test_pll.test_no_vctrl_bias_ua passed
- 57971.45ns INFO     cocotb.regression                  *********************************************************************************************
+ 55119.46ns INFO     cocotb.regression                  test_pll.test_lock_deassert_dn passed
+ 55119.46ns INFO     cocotb.regression                  running test_pll.test_ctrl_regs (12/18)
+ 55745.47ns INFO     cocotb.regression                  test_pll.test_ctrl_regs passed
+ 55745.47ns INFO     cocotb.regression                  running test_pll.test_async_reset_outputs (13/18)
+ 57855.66ns INFO     cocotb.regression                  test_pll.test_async_reset_outputs passed
+ 57855.66ns INFO     cocotb.regression                  running test_pll.test_tt_tieoff (14/18)
+ 57936.66ns INFO     cocotb.regression                  test_pll.test_tt_tieoff passed
+ 57936.66ns INFO     cocotb.regression                  running test_pll.test_no_vctrl_bias_ua (15/18)
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns ERROR    gpi                                Invalid Index - Index 8 is not in the range of [7:0]
+ 57986.66ns WARNING  gpi                                Failed to find a handle at index 8 via any registered implementation
+ 57986.66ns INFO     cocotb.regression                  test_pll.test_no_vctrl_bias_ua passed
+ 57986.66ns INFO     cocotb.regression                  running test_pll.test_recover_unlocked (16/18)
+                                                            Feedback never close enough to lock (60 ns UP pulses every cycle):
+244959.86ns INFO     cocotb.regression                  test_pll.test_recover_unlocked passed
+244959.86ns INFO     cocotb.regression                  running test_pll.test_recover_lock_clears (17/18)
+                                                            Lock at any reference edge clears the count: a short locked stretch
+422493.06ns INFO     cocotb.regression                  test_pll.test_recover_lock_clears passed
+422493.06ns INFO     cocotb.regression                  running test_pll.test_recover_pll_en (18/18)
+                                                            pll_en low clears the count and ends a recovery in progress; the
+558346.25ns INFO     cocotb.regression                  test_pll.test_recover_pll_en passed
+558346.25ns INFO     cocotb.regression                  *********************************************************************************************
                                                         ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *********************************************************************************************
-                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.02     185943.27  **
-                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.01     667313.49  **
-                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.03     595019.34  **
-                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.01     598773.45  **
-                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.00     651523.92  **
-                                                        ** test_pll.test_pfd_up_lead             PASS        3849.52           0.01     439726.71  **
-                                                        ** test_pll.test_pfd_dn_lead             PASS        3849.52           0.01     446173.34  **
-                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.01     505921.78  **
-                                                        ** test_pll.test_lock_assert             PASS        2683.07           0.01     512484.27  **
-                                                        ** test_pll.test_lock_deassert           PASS        4203.07           0.01     514980.67  **
-                                                        ** test_pll.test_lock_deassert_dn        PASS        4283.07           0.01     512704.76  **
-                                                        ** test_pll.test_ctrl_regs               PASS         626.00           0.00    1426712.34  **
-                                                        ** test_pll.test_async_reset_outputs     PASS        2095.17           0.00     517443.69  **
-                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     203457.27  **
-                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.03       1515.16  **
+                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.04     114669.03  **
+                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.02     455412.57  **
+                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.05     278979.54  **
+                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.01     345626.32  **
+                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.00     594953.34  **
+                                                        ** test_pll.test_pfd_up_lead             PASS        3849.58           0.01     367248.28  **
+                                                        ** test_pll.test_pfd_dn_lead             PASS        3849.58           0.01     423375.32  **
+                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.01     483764.37  **
+                                                        ** test_pll.test_lock_assert             PASS        2683.10           0.01     483566.44  **
+                                                        ** test_pll.test_lock_deassert           PASS        4203.10           0.01     490603.00  **
+                                                        ** test_pll.test_lock_deassert_dn        PASS        4283.09           0.01     494549.28  **
+                                                        ** test_pll.test_ctrl_regs               PASS         626.00           0.00    1062895.93  **
+                                                        ** test_pll.test_async_reset_outputs     PASS        2110.19           0.00     482158.69  **
+                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     478409.57  **
+                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.03       1488.42  **
+                                                        ** test_pll.test_recover_unlocked        PASS      186973.19           0.40     468295.92  **
+                                                        ** test_pll.test_recover_lock_clears     PASS      177533.19           0.70     253879.26  **
+                                                        ** test_pll.test_recover_pll_en          PASS      135853.20           0.59     229541.52  **
                                                         *********************************************************************************************
-                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57971.45           0.18     328013.98  **
+                                                        ** TESTS=18 PASS=18 FAIL=0 SKIP=0                  558346.25           2.08     268580.71  **
                                                         *********************************************************************************************
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:362: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._057_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:363: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._057_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:364: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._057_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:365: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._057_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:465: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._066_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:466: Unable to match ModPath A1 -> ZN in ihsan_sa_pll.dut._066_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:467: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._066_
-SDF ERROR: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:468: Unable to match ModPath A2 -> ZN in ihsan_sa_pll.dut._066_
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:556: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:586: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:616: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:646: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:676: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:706: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:736: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:766: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:796: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:826: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:856: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:886: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:916: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:946: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:976: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1006: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1036: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1066: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1096: TIMINGCHECK not supported.
-SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1126: TIMINGCHECK not supported.
+ TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1647: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1677: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1707: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1737: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1767: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1797: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1827: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1857: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1887: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:1917: TIMINGCHECK not supported.
+SDF WARNING: /work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf:2433: TIMINGCHECK not supported.

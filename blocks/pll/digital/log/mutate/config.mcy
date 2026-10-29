@@ -21,7 +21,7 @@ else:
 [test sim]
 maxbatchsize 1
 expect PASS FAIL
-run python3 /opt/.chip-flow@85aa1743444a65f303819158ddb6bdde457ac0c6/engine/scripts/mutate_runner.py --tb /work/blocks/pll/digital/tb --top ihsan_sa_pll
+run python3 /hive/modules/hive-chip-flow/engine/scripts/mutate_runner.py --tb /work/blocks/pll/digital/tb --top ihsan_sa_pll
 
 [report]
 print(f"mutants={tags()} killed={tags('KILLED')} survived={tags('SURVIVED')}")

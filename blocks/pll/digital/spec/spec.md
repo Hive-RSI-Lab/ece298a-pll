@@ -20,10 +20,17 @@ standalone TT pins); nothing here renames, widens or adds one.
    UP, slower gives net DN). The reset fires whenever both are high; UP and
    DN never both stay high beyond the reset delay. The reset pulse has no
    width in zero-delay RTL: the bench checks it happens, ngspice (analog
-   side / msde cosim) measures its width. (REQ-PFD-*)
+   side / msde cosim) measures its width. Outside a recovery (item 4b)
+   the PFD's flops are the outputs as they are. (REQ-PFD-*)
 2. **/8 prescaler.** Three ripple toggle flops (`dffq_1` with an `inv_1`
    from Q to D) clocked by `vco_out`, the only logic above 50 MHz; the first
-   stage sees up to 370 MHz (2.7 ns), the VCO's ceiling at every corner. Output
+   stage sees up to 370 MHz (2.7 ns), the VCO's ceiling at every corner. At
+   ss no library flop toggles that fast: the first stage is a
+   hand-instantiated `dffrnq_2` + `inv_1` (the fastest reset loop, about
+   3.4 ns at ss_125C_3v00 in Liberty, 3.65 ns once placed and routed),
+   held to 3.65 ns there: in the ss_pff loop model every lock point still
+   locks at that speed, the 5 MHz x 5 point (acquisition peak about
+   283 MHz) with no margin. Recovery (item 4b) covers a VCO above it. (REQ-TIM-VCO) Output
    `clk_pre` = `vco_out`/8 exactly (at most 46 MHz) clocks everything after it.
    (REQ-PRE-DIV8)
 3. **Programmable /N divider.** N = 1..5 from `n_sel` = `ui_in[2:0]`.
@@ -38,6 +45,17 @@ standalone TT pins); nothing here renames, widens or adds one.
    after **K = 16** consecutive reference cycles without a wide pulse and
    drops on the next reference edge after any wide pulse; it is never
    asserted while pulses are wide. Output on `uo_out[2]`. (REQ-LOCK-*)
+4b. **Runaway recovery.** Clocked by `clk`, next to the lock detector. With
+   `pll_en` high and `lock` low at W = 1024 consecutive reference rising
+   edges, a recovery starts on the 1024th: for exactly M = 128 reference
+   periods `pfd_up` is held 0 and `pfd_dn` 1, which pulls Vctrl to ground,
+   then the count restarts from 0. `pll_en` low or `lock` high at a
+   reference edge clears the count and ends a recovery. Why: a VCO driven
+   past what the first prescaler stage can divide (Vctrl near the rail at
+   ss_pff reaches 310 MHz) drops edges, so `clk_fb` looks slow and the PFD
+   alone would hold Vctrl at the rail for good. W x T_ref (82 us at
+   12.5 MHz) is past the 50 us lock-time bound, so a loop that is still
+   acquiring is never cut short. (REQ-RECOVER, REQ-RECOVER-OUT)
 5. **Observation.** `obs_out` = `uo_out[0]` is `clk_pre` (VCO/8) when
    `obs_sel` = `ui_in[7]` = 0, or one more toggle flop (VCO/16) when 1.
    `uo_out[3]`/`uo_out[4]` carry `pfd_up`/`pfd_dn` for debug and stay in the
@@ -79,15 +97,17 @@ pulse reset.
 
 | Instance | Module | Domain | Responsibility |
 |---|---|---|---|
-| `u_pre` | `pll_prescaler` | `vco_out` | three ripple toggle flops `pre_q0..pre_q2`; `pre_q2` is `clk_pre` = `vco_out`/8. Stage k+1 is clocked by the rising edge of stage k's Q. Flops carry an asynchronous active-low reset (a `dffrnq`-type cell, the reset requirement overrides the `dffq_1` cell hint in Behaviour 2) and each stage's toggle loop is one flop plus one inverter, nothing else (REQ-TIM-VCO). Also holds the fourth toggle flop `obs_q3` (`clk_pre`/2 = `vco_out`/16, clocked by `clk_pre`). |
+| `u_pre` | `pll_prescaler` | `vco_out` | three ripple toggle flops `pre_q0..pre_q2`; `pre_q2` is `clk_pre` = `vco_out`/8. Stage k+1 is clocked by the rising edge of stage k's Q. Flops carry an asynchronous active-low reset (a `dffrnq`-type cell, the reset requirement overrides the `dffq_1` cell hint in Behaviour 2) and each stage's toggle loop is one flop plus one inverter, nothing else (REQ-TIM-VCO). Stage 0 is hand-instantiated in synthesis as `u_pre_ff0` (`dffrnq_2`) and `u_pre_inv0` (`inv_1`), and stage 1 is clocked through `u_pre_ckbuf0` (`clkbuf_1`, net `pre_c0`, where the SDC defines the generated clock `pre_q0`) so the toggle loop's Q net carries nothing else and CTS stays off it; all three are `must_keep` and kept from the resizer. Simulation and formal see the plain flop clocking stage 1. Also holds the fourth toggle flop `obs_q3` (`clk_pre`/2 = `vco_out`/16, clocked by `clk_pre`). |
 | `u_div` | `pll_divider` | `clk_pre` | mod-N counter `div_cnt[2:0]` on the rising edge of `clk_pre`, N decoded from `n_sel` (0,6,7 -> 1). A single enable flop `fb_en` is clocked on the FALLING edge of `clk_pre` and is 1 for exactly one `clk_pre` cycle out of N (constant 1 when N = 1). `clk_fb` = `clk_pre` AND `fb_en`: glitch-free because `fb_en` only changes while `clk_pre` is low, and N = 1 is a pure pass-through with no clock mux. `n_sel` is quasi-static and is not synchronised. |
 | `u_pfd` | `pll_pfd` | `clk` and `clk_fb` (one flop each) | reference flop `pfd_ref_q` (clocked by `clk`, D = 1) and feedback flop `pfd_fb_q` (clocked by `clk_fb`, D = 1), both with an asynchronous clear driven by `~rst_n OR pfd_rst`. `pfd_rst` = AND(`pfd_ref_q`, `pfd_fb_q`) passed through two hand-instantiated, `(* keep *)` delay cells `pfd_dly0`, `pfd_dly1` (`must_keep`). `pfd_up` = `pfd_ref_q`, `pfd_dn` = `pfd_fb_q`. |
-| `u_lock` | `pll_lock_det` | `clk` | `wide_q` samples (`pfd_up` OR `pfd_dn`) on the FALLING edge of `clk` (the half-period threshold); `lock_cnt[4:0]` counts reference edges with `wide_q` = 0, saturating at 16, cleared to 0 by `wide_q` = 1; `lock` = (`lock_cnt` == 16), registered. `pfd_dn` comes from the `clk_fb` domain and is sampled by one flop only (a lock indicator tolerates a rare metastable sample; no synchroniser). |
+| `u_lock` | `pll_lock_det` | `clk` | recovery: `wd_cnt[9:0]` counts reference edges with `pll_en` = 1 and `lock` = 0, and `recover` (registered) rises when it reaches W - 1 = 1023, then counts the M = 128 periods of the recovery; `pll_en` = 0 or `lock` = 1 clears both. `wide_q` samples (`pfd_up` OR `pfd_dn`) on the FALLING edge of `clk` (the half-period threshold); `lock_cnt[4:0]` counts reference edges with `wide_q` = 0, saturating at 16, cleared to 0 by `wide_q` = 1; `lock` = (`lock_cnt` == 16), registered. `pfd_dn` comes from the `clk_fb` domain and is sampled by one flop only (a lock indicator tolerates a rare metastable sample; no synchroniser). |
 | `u_ctrl` | `pll_ctrl_regs` | `clk` | three D flops: `pll_en` <- `pll_en_in`, `cp_trim0` <- `cp_trim_in[0]`, `cp_trim1` <- `cp_trim_in[1]` on the rising edge of `clk`. |
 
 Top-level glue (no module): `obs_out` = `obs_sel` ? `obs_q3` : `clk_pre`
 (a plain mux on a quasi-static select; `obs_sel` changes are not
-glitch-protected), and the port fan-out of `clk_fb`, `pfd_up`, `pfd_dn`,
+glitch-protected), the recovery override `pfd_up` = `pfd_ref_q` AND NOT
+`recover`, `pfd_dn` = `pfd_fb_q` OR `recover` (the lock detector samples
+these, so a recovery is never clean), and the port fan-out of `clk_fb`, `pfd_up`, `pfd_dn`,
 `lock` and the control registers.
 
 Signals crossing between instances:
@@ -97,7 +117,9 @@ Signals crossing between instances:
 | `clk_pre` | `u_pre` | `u_div`, `u_pre.obs_q3`, top mux | `vco_out`/8 (generated) |
 | `obs_q3` | `u_pre` | top mux | `clk_pre` |
 | `clk_fb` | `u_div` | `u_pfd.pfd_fb_q` clock, port | `clk_pre`/N (generated, gated) |
-| `pfd_up`, `pfd_dn` | `u_pfd` | `u_lock`, ports | `clk` / `clk_fb` |
+| `pfd_up`, `pfd_dn` | `u_pfd` (through the recovery override) | `u_lock`, ports | `clk` / `clk_fb` |
+| `recover` | `u_lock` | the recovery override | `clk` |
+| `pll_en` | `u_ctrl` | `u_lock`, port | `clk` |
 
 Clock plan for synthesis and STA (also in `spec.yaml` `timing_notes`):
 `clk` is the harden's CLOCK_PORT at 80 ns; `vco_out` is a second port clock

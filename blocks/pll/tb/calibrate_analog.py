@@ -11,6 +11,8 @@ the same PDK model sections the analog gates load, and writes:
     vctrl impedance (so the V2I gate and pump off-capacitance are inside C2)
   - tb/pll_analog_ideal.sp : the behavioural stand-in the cosim bench runs
     when analog_kind is "ideal" (generated from the json, not hand-edited)
+With --corner ss_pff it writes tb/pll_analog_cal_ss_pff.json alone, which
+prescaler_margin.py reads.
 
 Nothing here reads a spec bound; every number is measured.
 """
@@ -32,6 +34,9 @@ import pll_tb_common as C  # noqa: E402
 CORNERS = {
     # name: (mos, res, mim, temp, vdd)
     "tt_27c": ("typical", "res_typical", "mimcap_typical", 27, 3.3),
+    # the skew corner where the VCO is fastest against slow digital
+    # (ss transistors, fast passives; prescaler_margin.py reads it)
+    "ss_pff": ("ss", "res_ff", "mimcap_ff", 125, 2.97),
 }
 
 DUT = ("xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref "
@@ -240,7 +245,8 @@ def main(argv=None) -> int:
     ap.add_argument("--jobs", type=int, default=4)
     args = ap.parse_args(argv)
     vdd = CORNERS[args.corner][4]
-    grid = [round(0.1 * k, 2) for k in range(31)] + [3.1, 3.2, vdd]
+    grid = ([round(0.1 * k, 2) for k in range(31) if 0.1 * k < vdd - 0.01] +
+            [x for x in (3.1, 3.2) if x < vdd] + [vdd])
     with tempfile.TemporaryDirectory(prefix="pllcal_") as td:
         tmp = Path(td)
         with ThreadPoolExecutor(args.jobs) as ex:
@@ -272,8 +278,14 @@ def main(argv=None) -> int:
         "icp_dn_mid_a": interp(pmp["dn_a_vs_vctrl"], vdd / 2),
         "filter": flt,
     }
-    C.CAL_JSON.write_text(json.dumps(cal, indent=1), encoding="utf-8")
-    write_ideal(cal, C.HERE / "pll_analog_ideal.sp")
+    if args.corner == "tt_27c":
+        C.CAL_JSON.write_text(json.dumps(cal, indent=1), encoding="utf-8")
+        write_ideal(cal, C.HERE / "pll_analog_ideal.sp")
+    else:
+        # another corner only feeds prescaler_margin.py; the cosim model
+        # stays the tt one
+        (C.HERE / f"pll_analog_cal_{args.corner}.json").write_text(
+            json.dumps(cal, indent=1), encoding="utf-8")
     print(json.dumps({k: cal[k] for k in ("icp_up_mid_a", "icp_dn_mid_a")} |
                      {"vctrl_at_100mhz_v": v100, "kvco_hz_per_v": kvco,
                       "r1_ohm": flt["r1_ohm"], "c1_f": flt["c1_f"],

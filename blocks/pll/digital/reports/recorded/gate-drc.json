@@ -3,7 +3,7 @@
  "gate": "drc",
  "phase": "P6",
  "tool": "drc",
- "input_digest": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
+ "input_digest": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -25,9 +25,9 @@
   "klayout_count": 0
  },
  "inputs_at_start": {
-  "harden": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+  "harden": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
  },
- "recorded_ts": "2026-10-28T17:21:41",
- "attempts": 6
+ "recorded_ts": "2026-10-29T11:03:49",
+ "attempts": 8
 }

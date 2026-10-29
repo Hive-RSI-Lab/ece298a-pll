@@ -3,7 +3,7 @@
  "gate": "glsim",
  "phase": "P6",
  "tool": "glsim",
- "input_digest": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
+ "input_digest": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -37,7 +37,10 @@
     "test_ctrl_regs": true,
     "test_async_reset_outputs": true,
     "test_tt_tieoff": true,
-    "test_no_vctrl_bias_ua": true
+    "test_no_vctrl_bias_ua": true,
+    "test_recover_unlocked": true,
+    "test_recover_lock_clears": true,
+    "test_recover_pll_en": true
    },
    "sdf": {
     "test_prescaler_div8": true,
@@ -54,22 +57,28 @@
     "test_ctrl_regs": true,
     "test_async_reset_outputs": true,
     "test_tt_tieoff": true,
-    "test_no_vctrl_bias_ua": true
+    "test_no_vctrl_bias_ua": true,
+    "test_recover_unlocked": true,
+    "test_recover_lock_clears": true,
+    "test_recover_pll_en": true
    }
   },
   "sdf": {
-   "zero_interconnects_dropped": 154,
+   "zero_interconnects_dropped": 267,
    "sdf_unannotated": [
-    "_057_ (gf180mcu_fd_sc_mcu7t5v0__xnor2_1)",
-    "_066_ (gf180mcu_fd_sc_mcu7t5v0__xnor2_1)"
+    "_098_ (gf180mcu_fd_sc_mcu7t5v0__xor2_1)",
+    "_103_ (gf180mcu_fd_sc_mcu7t5v0__xor2_1)",
+    "_123_ (gf180mcu_fd_sc_mcu7t5v0__xor2_1)",
+    "_137_ (gf180mcu_fd_sc_mcu7t5v0__xnor2_1)"
    ],
    "instances_renamed": {
+    "u_ihsan_sa_pll.u_pre.u_pre_ff0": "u_ihsan_sa_pll__u_pre__u_pre_ff0",
+    "u_ihsan_sa_pll.u_obs_obuf": "u_ihsan_sa_pll__u_obs_obuf",
     "clkbuf_0_u_ihsan_sa_pll.clk_fb_int": "clkbuf_0_u_ihsan_sa_pll__clk_fb_int",
     "u_ihsan_sa_pll.u_pfd.pfd_dly0": "u_ihsan_sa_pll__u_pfd__pfd_dly0",
-    "u_ihsan_sa_pll.u_obs_obuf": "u_ihsan_sa_pll__u_obs_obuf",
     "clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q1": "clkbuf_1_0__f_u_ihsan_sa_pll__u_pre__pre_q1",
+    "clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q1": "clkbuf_1_1__f_u_ihsan_sa_pll__u_pre__pre_q1",
     "clkbuf_0_u_ihsan_sa_pll.clk_pre": "clkbuf_0_u_ihsan_sa_pll__clk_pre",
-    "clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0": "clkbuf_1_0__f_u_ihsan_sa_pll__u_pre__pre_q0",
     "clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int": "clkbuf_1_0__f_u_ihsan_sa_pll__clk_fb_int",
     "clkbuf_0_u_ihsan_sa_pll.clk_fb_int_regs": "clkbuf_0_u_ihsan_sa_pll__clk_fb_int_regs",
     "clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int_regs": "clkbuf_1_0__f_u_ihsan_sa_pll__clk_fb_int_regs",
@@ -78,15 +87,17 @@
     "clkbuf_1_0__f_u_ihsan_sa_pll.clk_pre_regs": "clkbuf_1_0__f_u_ihsan_sa_pll__clk_pre_regs",
     "clkbuf_1_1__f_u_ihsan_sa_pll.clk_pre_regs": "clkbuf_1_1__f_u_ihsan_sa_pll__clk_pre_regs",
     "u_ihsan_sa_pll.u_clk_fb_obuf": "u_ihsan_sa_pll__u_clk_fb_obuf",
-    "u_ihsan_sa_pll.u_pfd.pfd_dly1": "u_ihsan_sa_pll__u_pfd__pfd_dly1"
+    "u_ihsan_sa_pll.u_pfd.pfd_dly1": "u_ihsan_sa_pll__u_pfd__pfd_dly1",
+    "u_ihsan_sa_pll.u_pre.u_pre_ckbuf0": "u_ihsan_sa_pll__u_pre__u_pre_ckbuf0",
+    "u_ihsan_sa_pll.u_pre.u_pre_inv0": "u_ihsan_sa_pll__u_pre__u_pre_inv0"
    }
   }
  },
  "inputs_at_start": {
-  "harden": "dir_text:7ecf79abeb6494fcb3b20eb738639a5da4fef82c65c786d92f3c84b45447da76",
-  "tb": "dir_text:1c410da71ba05588f5bbbd4708b1a145250d08dee17f707dfcc45f581df75abd",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:4245c211e131cde0c1984344e1787a5816579be9a6e78fdfa5c28603e2a5a285"
+  "harden": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
+  "tb": "dir_text:022a1f658f4693c973114db21c0e45003fd9d8abcbfad44a47e01cbeaa60b0fe",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
  },
- "recorded_ts": "2026-10-28T17:21:54",
- "attempts": 5
+ "recorded_ts": "2026-10-29T11:04:06",
+ "attempts": 8
 }

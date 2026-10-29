@@ -1,43 +1,41 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:23:47 (1427)
-Elapsed process time [H:MM:SS (secs)]: 0:22:03 (1323)
+Elapsed clock time [H:MM:SS (secs)]: 0:43:06 (2586)
+Elapsed process time [H:MM:SS (secs)]: 0:40:19 (2419)
 engine_0 (smtbmc yices) returned pass
 cover trace: engine_0/trace0.vcd
 cover trace: engine_0/trace0.yw
   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic at  step 1
   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic at  step 1
-  reached cover statement ihsan_sa_pll_formal.pfd_never_both_high at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56 step 1
-  reached cover statement ihsan_sa_pll_formal.reset_forces_outputs at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62 step 1
+  reached cover statement ihsan_sa_pll_formal.pfd_never_both_high at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-149.56 step 1
+  reached cover statement ihsan_sa_pll_formal.reset_forces_outputs at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-129.62 step 1
 cover trace: engine_0/trace1.vcd
 cover trace: engine_0/trace1.yw
-  reached cover statement ihsan_sa_pll_formal.lock_not_while_wide at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84 step 1
+  reached cover statement ihsan_sa_pll_formal.lock_not_while_wide at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.84 step 1
 cover trace: engine_0/trace10.vcd
 cover trace: engine_0/trace10.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_LOCK at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37 step 244
-cover trace: engine_0/trace11.vcd
-cover trace: engine_0/trace11.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_LOCK_DROP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69 step 246
+  reached cover statement ihsan_sa_pll_formal.COVER_LOCK_DROP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.7-176.69 step 246
 cover trace: engine_0/trace2.vcd
 cover trace: engine_0/trace2.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_PFD_UP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39 step 2
+  reached cover statement ihsan_sa_pll_formal.COVER_PFD_UP at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.39 step 2
 cover trace: engine_0/trace3.vcd
 cover trace: engine_0/trace3.yw
-  reached cover statement ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78 step 3
+  reached cover statement ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78 step 3
 cover trace: engine_0/trace4.vcd
 cover trace: engine_0/trace4.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_PRE_PERIOD at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.7-167.75 step 18
+  reached cover statement ihsan_sa_pll_formal.COVER_PFD_RESET at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.79 step 18
+  reached cover statement ihsan_sa_pll_formal.COVER_PRE_PERIOD at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-172.75 step 18
+  reached cover statement ihsan_sa_pll_formal.pfd_reset_on_both at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.9-156.55 step 18
 cover trace: engine_0/trace5.vcd
 cover trace: engine_0/trace5.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_PFD_RESET at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.7-165.79 step 18
-  reached cover statement ihsan_sa_pll_formal.pfd_reset_on_both at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.9-151.55 step 18
+  reached cover statement ihsan_sa_pll_formal.COVER_PFD_DN at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.39 step 18
 cover trace: engine_0/trace6.vcd
 cover trace: engine_0/trace6.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_PFD_DN at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:164.7-164.39 step 18
+  reached cover statement ihsan_sa_pll_formal.divider_ratio at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.9-146.78 step 19
 cover trace: engine_0/trace7.vcd
 cover trace: engine_0/trace7.yw
-  reached cover statement ihsan_sa_pll_formal.divider_ratio at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78 step 19
+  reached cover statement ihsan_sa_pll_formal.COVER_FB_ILLEGAL at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.7-174.77 step 34
 cover trace: engine_0/trace8.vcd
 cover trace: engine_0/trace8.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_FB_ILLEGAL at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.77 step 34
+  reached cover statement ihsan_sa_pll_formal.COVER_FB_N5 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.7-173.77 step 34
 cover trace: engine_0/trace9.vcd
 cover trace: engine_0/trace9.yw
-  reached cover statement ihsan_sa_pll_formal.COVER_FB_N5 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.77 step 34
+  reached cover statement ihsan_sa_pll_formal.COVER_LOCK at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:175.7-175.37 step 244

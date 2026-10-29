@@ -1,7 +1,7 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
+Elapsed clock time [H:MM:SS (secs)]: 0:00:08 (8)
 Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
 engine_0 (smtbmc yices) returned pass for basecase
 engine_0 (smtbmc yices) returned FAIL for induction
 counterexample trace [induction]: engine_0/trace_induct.vcd
 counterexample trace [induction]: engine_0/trace_induct.yw
-  failed assertion ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78
+  failed assertion ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78

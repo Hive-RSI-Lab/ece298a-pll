@@ -1,20 +1,20 @@
 mutate -mode none
-mutate -mode cnot1 -module ihsan_sa_pll -cell u_div -port n_sel -portbit 2 -ctrlbit 1 -wire n_sel -wirebit 2 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:14.23-14.28 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.15-37.76
-mutate -mode inv -module pll_lock_det -cell $add$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$17 -port Y -portbit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:22.49-22.64
-mutate -mode inv -module pll_divider -cell $and$/work/blocks/pll/digital/rtl/pll_divider.v:31$15 -port Y -portbit 0 -wire clk_fb -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:11.23-11.29 -src /work/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34
-mutate -mode const0 -module pll_lock_det -cell $ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64
-mutate -mode const0 -module pll_divider -cell $sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$7 -port Y -portbit 1 -src /work/blocks/pll/digital/rtl/pll_divider.v:18.35-18.47
-mutate -mode const0 -module ihsan_sa_pll -cell u_ctrl -port pll_en -portbit 0 -wire pll_en -wirebit 0 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:24.23-24.29 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.17-50.48
-mutate -mode const1 -module pll_divider -cell $le$/work/blocks/pll/digital/rtl/pll_divider.v:17$5 -port A -portbit 2 -src /work/blocks/pll/digital/rtl/pll_divider.v:17.44-17.57
-mutate -mode const1 -module pll_ctrl_regs -cell $procdff$106 -port Q -portbit 0 -wire cp_trim0 -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:9.23-9.31 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8
-mutate -mode const0 -module pll_lock_det -cell $eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32
-mutate -mode const0 -module pll_lock_det -cell $or$/work/blocks/pll/digital/rtl/pll_lock_det.v:26$22 -port B -portbit 0 -wire pfd_dn -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:14.17-14.23 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:26.27-26.42
-mutate -mode const0 -module pll_lock_det -cell $procdff$86 -port Q -portbit 0 -wire wide_q -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:19.13-19.19 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:24.3-26.43
-mutate -mode const1 -module pll_divider -cell $logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$6 -port Y -portbit 0 -wire n_legal -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:17.14-17.21 -src /work/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58
-mutate -mode const0 -module pll_lock_det -cell $ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:21$19 -port A -portbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:21.24-22.64
-mutate -mode inv -module pll_divider -cell $ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$8 -port Y -portbit 0 -wire n_m1 -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:18.14-18.18 -src /work/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55
-mutate -mode const1 -module pll_pfd -cell $procdff$68 -port ARST -portbit 0 -src /work/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35
-mutate -mode const1 -module pll_divider -cell $procdff$96 -port D -portbit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46
-mutate -mode const1 -module pll_pfd -cell $procdff$71 -port CLK -portbit 0 -wire clk -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_pfd.v:9.17-9.20 -src /work/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36
-mutate -mode inv -module pll_pfd -cell $not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$27 -port A -portbit 0 -wire rst_n -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_pfd.v:11.17-11.22 -src /work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24
-mutate -mode const1 -module pll_ctrl_regs -cell $procdff$111 -port Q -portbit 0 -wire cp_trim1 -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:10.23-10.31 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8
+mutate -mode const0 -module pll_prescaler -cell $procdff$73 -port CLK -portbit 0 -src /work/blocks/pll/digital/rtl/pll_prescaler.v:52.3-54.27
+mutate -mode const1 -module pll_lock_det -cell $eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28 -port B -portbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:47.20-47.32
+mutate -mode const1 -module pll_ctrl_regs -cell $procdff$144 -port D -portbit 0 -wire cp_trim_in -wirebit 1 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:7.23-7.33 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8
+mutate -mode const1 -module pll_ctrl_regs -cell $procdff$134 -port D -portbit 0 -wire pll_en_in -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:6.23-6.32 -src /work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8
+mutate -mode inv -module pll_lock_det -cell $logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:51$30 -port Y -portbit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:51.9-51.15
+mutate -mode const0 -module pll_lock_det -cell $procmux$58 -port Y -portbit 9 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:54.18-54.33 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:54.14-62.8
+mutate -mode inv -module pll_divider -cell $logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9 -port Y -portbit 0 -wire n_legal -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:17.14-17.21 -src /work/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58
+mutate -mode const0 -module pll_divider -cell $procdff$124 -port Q -portbit 0 -wire fb_en -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_divider.v:14.13-14.18 -src /work/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31
+mutate -mode const0 -module pll_divider -cell $auto$proc_dff.cc:220:proc_dff$120 -port A -portbit 0
+mutate -mode cnot0 -module pll_lock_det -cell $procdff$104 -port Q -portbit 5 -ctrlbit 3 -wire wd_cnt -wirebit 5 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:33.13-33.19 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:50.3-62.8
+mutate -mode const1 -module pll_lock_det -cell $ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22 -port A -portbit 3 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:34.24-35.64
+mutate -mode cnot1 -module pll_lock_det -cell $procdff$114 -port Q -portbit 0 -ctrlbit 1 -wire lock_cnt -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:32.13-32.21 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:41.3-48.8
+mutate -mode const0 -module pll_divider -cell $ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11 -port B -portbit 2 -src /work/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55
+mutate -mode cnot1 -module pll_lock_det -cell $eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$19 -port A -portbit 1 -ctrlbit 2 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:35.25-35.38
+mutate -mode inv -module ihsan_sa_pll -cell u_pfd -port pfd_dn -portbit 0 -wire pfd_dn_q -wirebit 0 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:38.8-38.16 -src /work/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.11-49.44
+mutate -mode const0 -module pll_prescaler -cell $logic_not$/work/blocks/pll/digital/rtl/pll_prescaler.v:40$43 -port Y -portbit 0 -src /work/blocks/pll/digital/rtl/pll_prescaler.v:40.9-40.15
+mutate -mode const1 -module pll_ctrl_regs -cell $auto$proc_dff.cc:220:proc_dff$130 -port Y -portbit 0
+mutate -mode const0 -module pll_pfd -cell $not$/work/blocks/pll/digital/rtl/pll_pfd.v:19$38 -port A -portbit 0 -wire rst_n -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_pfd.v:11.17-11.22 -src /work/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24
+mutate -mode inv -module pll_lock_det -cell $or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25 -port A -portbit 0 -wire pfd_up -wirebit 0 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:22.17-22.23 -src /work/blocks/pll/digital/rtl/pll_lock_det.v:39.27-39.42
