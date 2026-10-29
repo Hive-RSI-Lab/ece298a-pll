@@ -7,7 +7,8 @@
 # It needs python3 with PyYAML, and Icarus Verilog: the iverilog on PATH when
 # there is one (CI installs it), or else chip-flow's eda wrapper, which runs
 # iverilog from the EDA toolchain ($CHIP_FLOW_HOME/bin/eda, then
-# /opt/chip-flow/bin/eda). It runs:
+# /opt/chip-flow/bin/eda), or else the toolchain's own iverilog under
+# $EDA_TOOLCHAIN/foss/tools/iverilog/bin. It runs:
 #   1. tests/check_info.py: info.yaml has what the Tiny Tapeout flow reads, and
 #      its source list matches src/, test/Makefile and test/tb.v.
 #   2. A lint of the Verilog: the Tiny Tapeout wrapper in src/, and the PLL's
@@ -32,8 +33,11 @@ else
   for eda in ${CHIP_FLOW_HOME:+"$CHIP_FLOW_HOME/bin/eda"} /opt/chip-flow/bin/eda; do
     if [ -x "$eda" ]; then iverilog=("$eda" iverilog); break; fi
   done
+  if [ ${#iverilog[@]} -eq 0 ] && [ -n "${EDA_TOOLCHAIN:-}" ] && [ -x "$EDA_TOOLCHAIN/foss/tools/iverilog/bin/iverilog" ]; then
+    iverilog=("$EDA_TOOLCHAIN/foss/tools/iverilog/bin/iverilog")
+  fi
   if [ ${#iverilog[@]} -eq 0 ]; then
-    echo "check: iverilog is not on PATH and no chip-flow eda wrapper was found; see the top of tests/check.sh" >&2
+    echo "check: iverilog is not on PATH, no chip-flow eda wrapper was found and \$EDA_TOOLCHAIN has none; see the top of tests/check.sh" >&2
     exit 2
   fi
   echo "check: no iverilog on PATH, so running it through ${iverilog[0]}"
