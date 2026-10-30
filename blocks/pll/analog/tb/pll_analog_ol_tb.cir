@@ -35,6 +35,11 @@
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' moscap
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+* the MOS caps' charge is nonlinear: a tighter charge tolerance keeps the
+* transient step from collapsing on a source-driven vctrl
+.options chgtol=1e-16
 .include '{{NETLIST}}'
 {{SIZING}}
 

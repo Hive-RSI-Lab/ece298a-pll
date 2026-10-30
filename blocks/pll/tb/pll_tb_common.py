@@ -63,6 +63,10 @@ def model_lines(corner: str = "typical", res: str = "res_typical",
         f".lib '{p}/sm141064.spice' {corner}",
         f".lib '{p}/sm141064.spice' {res}",
         f".lib '{p}/sm141064.spice' {mim}",
+        # the loop filter's MOS caps, at the MIM corner's factor
+        f".lib '{p}/sm141064.spice' moscap",
+        ".param cap_nmos_03v3_b_corner=mim_corner_2p0ff",
+        ".options chgtol=1e-16",
         f".include '{NETLIST}'",
         sizing_param_line(),
     ]

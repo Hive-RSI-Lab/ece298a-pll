@@ -42,11 +42,12 @@ fmax is set by the wire and drain-junction C on r1..r5, so each node gets
 the shortest wiring the folded order allows. No metal4 and no cap plate
 is near it.
 
-C1 (20 pF, 100 x 100 um) sits over res/cp_n/cp_p and C2 (2 pF) over
-mix_n/buf_p, both MIM-B (metal4 bottom plate on vss, metal5 top). No
-metal4 trunk runs under a cap (MIMTM.1); nets of the covered rows take
-their trunks in a strip right of C1. Both plates come out in metal5 to a
-via4/via3 stack on their own net's track beside the cap.
+C1 (20 pF) and C2 (2 pF) are MOS caps (cap_nmos_03v3_b, the PDK's
+cap_nmos_b cell: n+ in nwell under the poly, accumulation, about 3.9 fF/um2
+above 0.5 V) in two rows of their own at the top, cap_a and cap_b, under
+one nwell tied to vss through every unit's n+ side. They were MIM-B caps
+over the rows until 2026-10-30: a MIM-B top plate is Metal5, which Tiny
+Tapeout's GF180 precheck forbids, so nothing here draws above Metal4.
 
 Outside the ring block each device is one or more single-finger units
 (draw_nfet/draw_pfet, gate contact on top). netgen merges parallel units (W add) and series
@@ -60,7 +61,7 @@ spacing, even at L=0.28). A diode-connected unit (gate = right pad net)
 ties the jog to its right pad in metal1. Channel tracks are metal3, one
 net per track span (left-edge packing). A net seen in more than one
 channel gets a vertical metal4 trunk with a via3 on each of its tracks.
-Metal4 is kept off the caps (MIMTM.1). Pins: digital-side pins (vco_out,
+Pins: digital-side pins (vco_out,
 pfd_up, pfd_dn, pll_en, cp_trim0, cp_trim1) are metal3 tracks run out to
 the RIGHT edge - the edge facing the digital half and its prescaler;
 vctrl, bias_ref, vdd, vss are metal4 trunks run to the BOTTOM edge. Each
@@ -86,10 +87,9 @@ import layoutlib  # noqa: E402
 
 LY = dict(layoutlib.GF180_LAYER)
 LY.update({"via2": (38, 0), "metal3": (42, 0), "via3": (40, 0),
-           "metal4": (46, 0), "via4": (41, 0), "metal5": (81, 0),
+           "metal4": (46, 0),
            "metal3_label": (42, 10), "metal4_label": (46, 10)})
-M1, M2, M3, M4, M5 = (LY[k] for k in
-                      ("metal1", "metal2", "metal3", "metal4", "metal5"))
+M1, M2, M3, M4 = (LY[k] for k in ("metal1", "metal2", "metal3", "metal4"))
 
 CELL = "pll_analog"
 PINS = ["vco_out", "pfd_up", "pfd_dn", "pll_en", "cp_trim0", "cp_trim1",
@@ -107,7 +107,7 @@ W_CPN, L_CPN = 20.0, 2.0
 W_CPP, L_CPP = 50.0, 2.0
 W_SWN, W_SWP, L_SW = 2.0, 4.0, 0.5
 R1_L = 150.0
-C1_W, C2_W = 100.0, 32.0
+C1_W, C1_L, C2_W, C2_L = 420.0, 12.0, 43.0, 12.0
 W_V2I, L_V2I, RV2I_L = 10.0, 1.0, 35.0
 W_FLR, L_FLR = 2.0, 2.0
 W_V2IP, W_V2IN, L_V2I2 = 10.0, 4.0, 0.5
@@ -201,8 +201,11 @@ RES = {
     "RBIAS_TOP": ("vref", "bias_ref", 1.0, RBT_L, 6),
     "RBIAS_INT": ("bias_ref", "vss", 1.0, RB_L, 10),
 }
-# ---- MIM caps: name -> (top plate net, bottom plate net, side) ---------
-CAPS = {"C1": ("vfilt", "vss", C1_W), "C2": ("vctrl", "vss", C2_W)}
+# ---- MOS caps (cap_nmos_03v3_b): name -> (gate net, n+/nwell net,
+# W total, L, units). A unit is the PDK's cap_nmos_b cell, poly L along x.
+CAPS = {"C1": ("vfilt", "vss", C1_W, C1_L, 12),
+        "C2": ("vctrl", "vss", C2_W, C2_L, 1)}
+CAP_GAP = 2.0     # COMP to COMP between neighbouring cap units
 
 
 RING_ORDER = [3, 2, 4, 1, 5]   # every hop spans 1-2 stages; 5 next to NAND
@@ -247,6 +250,8 @@ ROWS = [
                    "MP_BUFT", "MP_T4", "MP_BUFT", "MP_T4", "MP_T2",
                    "MP_T1A", "MP_B2", "MP_B1", "MP_T1B", "MP_T2",
                    "MP_T4", "MP_BUFT", "MP_T4", "MP_BUFT"]),
+    ("cap_a", "c", ["C1"] * 7),
+    ("cap_b", "c", ["C1"] * 5 + ["C2"]),
 ]
 RES_ORDER = ["R1", "R_V2I", "RBIAS_TOP", "RBIAS_INT"]
 
@@ -264,7 +269,6 @@ CH_IN = 1.0       # row's top shape to the channel's first track
 ROW_SP = 1.6      # channel's last track to the next row's lowest shape
 RES_P = {1.0: 3.0, 2.0: 4.0}   # resistor segment pitch by width
 RES_GAP = 3.0     # extra space between two resistor chains
-M4_KEEP = 2.0     # other metal4 kept this far off a cap's bottom plate
 
 
 # ======================================================================
@@ -703,10 +707,9 @@ def plan(chan_terms, x_rows, keepouts, ports):
 
     chan_terms: [[(net, x, y_local)], ...] bottom to top.
     keepouts: [(ch_lo, ch_hi, xa, xb)]: no metal4 column in xa..xb for a
-      trunk whose channel span meets ch_lo..ch_hi (a cap lies there).
-    ports: [(key, net, channel, x_pref)]: a cap plate's metal5 strap
-      lands on a via4/via3 column on the net's own track in `channel`;
-      the column goes as near x_pref as the keep-outs allow.
+      trunk whose channel span meets ch_lo..ch_hi.
+    ports: [(key, net, channel, x_pref)]: a metal4 column on the net's own
+      track in `channel`, as near x_pref as the keep-outs allow.
     Returns (trunks {net: (x, lo, hi)}, port_x {key: x}, tracks
     [{net: (i, x0, x1)}], ntracks [n], x_right)."""
     nch = len(chan_terms)
@@ -841,32 +844,56 @@ def vcg_tracks(terms, iv):
     return {n: (got[n], r5(iv[n][0]), r5(iv[n][1])) for n in iv}
 
 
-# ---- caps over the rows ------------------------------------------------
-# cap -> (first row under it, last row under it or None = up to the top,
-#         x of its bottom plate's left edge, channel of the top plate's
-#         port, channel of the bottom plate's port). The cap's metal4
-#         bottom plate starts BOT_LIFT above that row's COMP bottom.
-CAP_PLACE = {
-    "C1": (3, None, 0.0, 3, 4),
-    "C2": (1, 2, 0.0, 2, 1),
-}
-BOT_LIFT = 0.4
-BOT_EXT = 2.0      # bottom plate widened right of the top plate, for via4
-MIM_ENC = 0.6      # draw_cap_mim's own bottom-plate margin
+def cap_cell(name):
+    """The PDK cap_nmos_b cell for one unit of cap `name`, its COMP box and
+    its two metal1 terminals: the gate plate over the poly, and the n+
+    diffusion's U (a strip each side of the poly, joined under it)."""
+    from cells.draw_cap_mos import draw_cap_mos
+    _g, _sd, wt, lc, nu = CAPS[name]
+    cell = draw_cap_mos(type="cap_nmos_b", lc=lc, wc=r5(wt / nu), volt="3.3V")
+    comp = layoutlib.layer_boxes(cell, LY["comp"])[0]
+    m1 = layoutlib.layer_boxes(cell, M1)
+    if len(m1) != 2:
+        raise layoutlib.LayoutError(f"{name}: expected 2 metal1 shapes, got {m1}")
+    sd, gate = sorted(m1, key=lambda b: b[0])
+    return cell, comp, gate, sd
 
 
-def cap_box(name):
-    """(x0, x1) of a cap's metal4 bottom plate, widened by BOT_EXT."""
-    side = CAPS[name][2]
-    x0 = CAP_PLACE[name][2]
-    return x0, x0 + side + 2 * MIM_ENC + BOT_EXT
+def build_cap_row(top, items, y0, used):
+    """One row of MOS cap units, COMP bottoms at y0, under one nwell (every
+    unit's n+ side is vss). Each unit's gate goes up from the top of its
+    plate, its n+ side from the top of the U's left strip. Returns (terms,
+    top_y, bottom_y, x_end) as build_row does."""
+    terms, tops, bots, nws = [], [], [], []
+    x = 0.0
+    for it in items:
+        gnet, sdnet, *_r = CAPS[it]
+        cell, comp, gate, sd = cap_cell(it)
+        dx, dy = r5(x - comp[0]), r5(y0 - comp[1])
+        top.add_ref(cell).move((dx, dy))
+        used[it] = used.get(it, 0) + 1
+        gate, sd = tbox(gate, dx, dy), tbox(sd, dx, dy)
+        xs, ys = r5(sd[0] + 0.5), r5(sd[3] - 0.3)
+        via(top, xs, ys, "via1", M1, M2)
+        terms.append((sdnet, xs, ys))
+        xg, yg = r5(cx(gate)), r5(gate[3] - 0.3)
+        via(top, xg, yg, "via1", M1, M2)
+        terms.append((gnet, xg, yg))
+        bb = cell.dbbox()
+        tops.append(max(bb.top + dy, gate[3] + 0.3))
+        bots.append(bb.bottom + dy)
+        nws += [b for b in (tbox(b, dx, dy) for b in
+                            layoutlib.layer_boxes(cell, LY["nwell"]))]
+        x = x + (comp[2] - comp[0]) + CAP_GAP
+    rect(top, min(b[0] for b in nws), min(b[1] for b in nws),
+         max(b[2] for b in nws), max(b[3] for b in nws), LY["nwell"])
+    return terms, max(tops), min(bots), x - CAP_GAP
 
 
 def generate():
     import gdsfactory as gf
 
     draw_fet, draw_res = layoutlib.gf180_cells()
-    from cells.draw_cap_mim import draw_cap_mim
 
     # ---- pass 1: terminals (x) and row extents, in a scratch cell ----
     scratch = gf.Component()
@@ -877,6 +904,8 @@ def generate():
             rows1.append(None)
         elif kind == "r":
             rows1.append(build_res_row(scratch, draw_res, 0.0))
+        elif kind == "c":
+            rows1.append(build_cap_row(scratch, items, 0.0, used))
         else:
             rows1.append(build_row(scratch, draw_fet, name, kind, items,
                                    0.0, used))
@@ -890,20 +919,14 @@ def generate():
                                                  ring_x0, 0, used)
             rows1[ri] = (t, b - CH_IN, bt, xe)
             ring_ri, ring_rails = ri, rails
-    for dev, (_t, _d, _g, _s, _w, _l, nu) in DEV.items():
+    for dev, nu in [(d, v[6]) for d, v in DEV.items()] + \
+            [(c, v[4]) for c, v in CAPS.items()]:
         if used.get(dev, 0) != nu:
             raise layoutlib.LayoutError(
                 f"{dev}: {used.get(dev, 0)} units placed, {nu} wanted")
     nch = len(rows1)
     x_rows = max(r[3] for r in rows1)
     keepouts, ports = [], []
-    for cname, (ra, rb, _x0, ct, cb) in CAP_PLACE.items():
-        xa, xb = cap_box(cname)
-        keepouts.append((ra, nch - 1 if rb is None else rb,
-                         xa - M4_KEEP - TRK_W, xb + M4_KEEP + TRK_W))
-        tnet, bnet, _side = CAPS[cname]
-        ports.append((cname + ".top", tnet, ct, xb + M4_KEEP + TRK_W))
-        ports.append((cname + ".bot", bnet, cb, xb + M4_KEEP + TRK_W))
     # ring rails: a metal4 riser from each rail's left end up to the
     # first channel above the block that carries the same supply
     for net, rx, _ry, _lay in ring_rails:
@@ -933,6 +956,8 @@ def generate():
         else:
             if kind == "r":
                 terms, ty, by, xe = build_res_row(top, draw_res, y0)
+            elif kind == "c":
+                terms, ty, by, xe = build_cap_row(top, items, y0, used)
             else:
                 terms, ty, by, xe = build_row(top, draw_fet, name, kind,
                                               items, y0, used)
@@ -1011,42 +1036,6 @@ def generate():
         via(top, x_right - 0.2, yt, "via2", M2, M3)
         labels.append((net, x_right - 0.2, yt, LY["metal2_label"]))
 
-    # ---- caps: MIM-B (metal4 bottom, metal5 top) over the rows. Both
-    # plates come out in metal5: the top plate directly, the bottom plate
-    # through a via4 column on its widened right edge (MIMTM.2/.5); each
-    # strap runs right at its own net's track height to a via4+via3 stack
-    # on that track, beside the cap.
-    for cname, (ra, rb, x0, ct, cb) in CAP_PLACE.items():
-        tnet, bnet, side = CAPS[cname]
-        fx0 = r5(x0 + MIM_ENC)
-        fy0 = r5(row_y0[ra] + BOT_LIFT + MIM_ENC)
-        top.add_ref(draw_cap_mim(mim_option="MIM-B", metal_level="M5",
-                                 lc=side, wc=side)).move((fx0, fy0))
-        fx1, fy1 = fx0 + side, fy0 + side
-        cap_top = fy1 + MIM_ENC
-        if rb is not None and cap_top + M4_KEEP > chan_y[rb + 1] - TRK_W:
-            raise layoutlib.LayoutError(
-                f"{cname} runs into channel {rb + 1}'s metal4")
-        rect(top, fx1, fy0 - MIM_ENC, fx1 + MIM_ENC + BOT_EXT,
-             fy1 + MIM_ENC, M4)
-        vx = fx1 + MIM_ENC + BOT_EXT / 2
-        for plate, net, ci in (("top", tnet, ct), ("bot", bnet, cb)):
-            yt = track_y(net, ci)
-            lo, hi = ((fy0 + 1.0, fy1 - 1.0) if plate == "top"
-                      else (fy0 + 0.4, fy1 - 0.4))
-            if not lo <= yt <= hi:
-                raise layoutlib.LayoutError(
-                    f"{cname}.{plate}: track {net} y={yt:.2f} is off the "
-                    f"plate ({lo:.2f}..{hi:.2f})")
-            px = port_x[f"{cname}.{plate}"]
-            x_from = fx1 - 1.0 if plate == "top" else vx
-            if plate == "bot":
-                via(top, vx, yt, "via4", M4, M5, land=1.0)
-            rect(top, x_from - 0.5, yt - 0.5, px + 0.5, yt + 0.5, M5)
-            # metal4 landing kept to a track's width: the next metal4
-            # column is one TRK_P away (the metal5 strap is 1.0 tall)
-            via(top, px, yt, "via4", M4, M5)
-            via(top, px, yt, "via3", M3, M4)
     labels.sort(key=lambda lbl: PINS.index(lbl[0]))
     # every routed internal net keeps its name through extraction: a non-pin
     # label (metal3 drawing, 42/0, which magic reads as `noport`) on its
