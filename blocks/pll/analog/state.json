@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-30T04:14:53",
+ "updated": "2026-10-30T06:03:04",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -1387,6 +1387,29 @@
       "equivalent": 0,
       "below_spread": 34
      }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-30T05:12:56",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "CheckError: spec/mutant_rulings.yaml below_spread names mutant 'xMN_SW0B_connection_removed', which a bench now kills - remove the stale ruling"
+    },
+    {
+     "ts": "2026-10-30T05:48:34",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "OSError: [Errno 28] No space left on device"
+    },
+    {
+     "ts": "2026-10-30T06:03:04",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "OSError: [Errno 28] No space left on device"
     }
    ]
   },
@@ -3785,6 +3808,24 @@
    "status": "pass",
    "attempt": 10,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T05:12:56",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "CheckError: spec/mutant_rulings.yaml below_spread names mutant 'xMN_SW0B_connection_removed', which a bench now kills - remove the stale ruling"
+  },
+  {
+   "ts": "2026-10-30T05:48:34",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "OSError: [Errno 28] No space left on device"
+  },
+  {
+   "ts": "2026-10-30T06:03:04",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "OSError: [Errno 28] No space left on device"
   }
  ]
 }
