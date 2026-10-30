@@ -2,8 +2,9 @@
 # LibreLane's base SDC: the primary clock (CLOCK_PORT at CLOCK_PERIOD, both
 # spec.yaml's), I/O delays, drive and load - what a one-clock harden gets.
 source $::env(SCRIPTS_DIR)/base.sdc
-# The design's other clocks, generated clocks and exceptions.
-source {/work/blocks/pll/digital/harden/constraints.sdc}
+# The design's other clocks, generated clocks and exceptions, beside this
+# file in the design directory (no machine's path written here).
+source "$::env(DESIGN_DIR)/constraints.sdc"
 set_clock_uncertainty $::env(CLOCK_UNCERTAINTY_CONSTRAINT) [all_clocks]
 set_clock_transition $::env(CLOCK_TRANSITION_CONSTRAINT) [all_clocks]
 if { [info exists ::env(OPENLANE_SDC_IDEAL_CLOCKS)] && $::env(OPENLANE_SDC_IDEAL_CLOCKS) } {

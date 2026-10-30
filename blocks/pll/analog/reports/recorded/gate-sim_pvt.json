@@ -3,7 +3,7 @@
  "gate": "sim_pvt",
  "phase": "P4",
  "tool": "sim_pvt",
- "input_digest": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+ "input_digest": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -75,7 +75,7 @@
      "icp_up_code11_ua": 38.2932,
      "icp_code11_over_code00_ratio": 1.9792,
      "cp_updn_mismatch_pct": 4.45084,
-     "vctrl_leak_off_na": 0.00242607
+     "vctrl_leak_off_na": 0.00238333
     },
     "engine_errors": [],
     "violations": [],
@@ -101,7 +101,7 @@
      "icp_up_code11_ua": 38.6835,
      "icp_code11_over_code00_ratio": 1.97538,
      "cp_updn_mismatch_pct": 5.42516,
-     "vctrl_leak_off_na": 0.00276434
+     "vctrl_leak_off_na": 0.00277064
     },
     "engine_errors": [],
     "violations": [],
@@ -127,7 +127,7 @@
      "icp_up_code11_ua": 39.1316,
      "icp_code11_over_code00_ratio": 1.96899,
      "cp_updn_mismatch_pct": 6.68834,
-     "vctrl_leak_off_na": 0.00329065
+     "vctrl_leak_off_na": 0.00329695
     },
     "engine_errors": [],
     "violations": [],
@@ -153,7 +153,7 @@
      "icp_up_code11_ua": 37.244,
      "icp_code11_over_code00_ratio": 1.98014,
      "cp_updn_mismatch_pct": 4.11716,
-     "vctrl_leak_off_na": 0.00242599
+     "vctrl_leak_off_na": 0.00238333
     },
     "engine_errors": [],
     "violations": [],
@@ -179,7 +179,7 @@
      "icp_up_code11_ua": 37.5873,
      "icp_code11_over_code00_ratio": 1.97677,
      "cp_updn_mismatch_pct": 4.97552,
-     "vctrl_leak_off_na": 0.00276435
+     "vctrl_leak_off_na": 0.00277064
     },
     "engine_errors": [],
     "violations": [],
@@ -205,7 +205,7 @@
      "icp_up_code11_ua": 37.9864,
      "icp_code11_over_code00_ratio": 1.97034,
      "cp_updn_mismatch_pct": 6.1474,
-     "vctrl_leak_off_na": 0.00329066
+     "vctrl_leak_off_na": 0.00329695
     },
     "engine_errors": [],
     "violations": [],
@@ -231,7 +231,7 @@
      "icp_up_code11_ua": 35.049,
      "icp_code11_over_code00_ratio": 1.9807,
      "cp_updn_mismatch_pct": 4.01297,
-     "vctrl_leak_off_na": 0.0024256
+     "vctrl_leak_off_na": 0.00238263
     },
     "engine_errors": [],
     "violations": [],
@@ -250,14 +250,14 @@
     "returncode": 0,
     "measures": {
      "icp_up_code00_ua": 17.8719,
-     "icp_dn_code00_ua": 17.5402,
+     "icp_dn_code00_ua": 17.5403,
      "icp_up_code00_tt_ua": 17.8719,
      "icp_up_code01_ua": 22.2553,
      "icp_up_code10_ua": 26.6267,
      "icp_up_code11_ua": 35.342,
      "icp_code11_over_code00_ratio": 1.97752,
-     "cp_updn_mismatch_pct": 4.77008,
-     "vctrl_leak_off_na": 0.00276387
+     "cp_updn_mismatch_pct": 4.77006,
+     "vctrl_leak_off_na": 0.00277015
     },
     "engine_errors": [],
     "violations": [],
@@ -283,7 +283,7 @@
      "icp_up_code11_ua": 35.6923,
      "icp_code11_over_code00_ratio": 1.97048,
      "cp_updn_mismatch_pct": 5.89303,
-     "vctrl_leak_off_na": 0.00329036
+     "vctrl_leak_off_na": 0.00329664
     },
     "engine_errors": [],
     "violations": [],
@@ -309,7 +309,7 @@
      "icp_up_code11_ua": 35.2218,
      "icp_code11_over_code00_ratio": 1.98138,
      "cp_updn_mismatch_pct": 3.97824,
-     "vctrl_leak_off_na": 0.00242607
+     "vctrl_leak_off_na": 0.00237661
     },
     "engine_errors": [],
     "violations": [],
@@ -335,7 +335,7 @@
      "icp_up_code11_ua": 35.5928,
      "icp_code11_over_code00_ratio": 1.97802,
      "cp_updn_mismatch_pct": 4.92279,
-     "vctrl_leak_off_na": 0.00276301
+     "vctrl_leak_off_na": 0.00273772
     },
     "engine_errors": [],
     "violations": [],
@@ -361,7 +361,7 @@
      "icp_up_code11_ua": 35.9786,
      "icp_code11_over_code00_ratio": 1.97279,
      "cp_updn_mismatch_pct": 6.03829,
-     "vctrl_leak_off_na": 0.00317489
+     "vctrl_leak_off_na": 0.00318119
     },
     "engine_errors": [],
     "violations": [],
@@ -387,7 +387,7 @@
      "icp_up_code11_ua": 34.4317,
      "icp_code11_over_code00_ratio": 1.98183,
      "cp_updn_mismatch_pct": 3.69084,
-     "vctrl_leak_off_na": 0.002426
+     "vctrl_leak_off_na": 0.00237661
     },
     "engine_errors": [],
     "violations": [],
@@ -413,7 +413,7 @@
      "icp_up_code11_ua": 34.7584,
      "icp_code11_over_code00_ratio": 1.97907,
      "cp_updn_mismatch_pct": 4.51235,
-     "vctrl_leak_off_na": 0.00276293
+     "vctrl_leak_off_na": 0.00273772
     },
     "engine_errors": [],
     "violations": [],
@@ -439,7 +439,7 @@
      "icp_up_code11_ua": 35.1004,
      "icp_code11_over_code00_ratio": 1.97406,
      "cp_updn_mismatch_pct": 5.5243,
-     "vctrl_leak_off_na": 0.0031749
+     "vctrl_leak_off_na": 0.00318119
     },
     "engine_errors": [],
     "violations": [],
@@ -465,7 +465,7 @@
      "icp_up_code11_ua": 32.7103,
      "icp_code11_over_code00_ratio": 1.98203,
      "cp_updn_mismatch_pct": 3.63209,
-     "vctrl_leak_off_na": 0.00242588
+     "vctrl_leak_off_na": 0.00237653
     },
     "engine_errors": [],
     "violations": [],
@@ -491,7 +491,7 @@
      "icp_up_code11_ua": 32.9887,
      "icp_code11_over_code00_ratio": 1.97966,
      "cp_updn_mismatch_pct": 4.33674,
-     "vctrl_leak_off_na": 0.00276283
+     "vctrl_leak_off_na": 0.00273767
     },
     "engine_errors": [],
     "violations": [],
@@ -517,7 +517,7 @@
      "icp_up_code11_ua": 33.2859,
      "icp_code11_over_code00_ratio": 1.97445,
      "cp_updn_mismatch_pct": 5.27244,
-     "vctrl_leak_off_na": 0.00317487
+     "vctrl_leak_off_na": 0.00318116
     },
     "engine_errors": [],
     "violations": [],
@@ -543,7 +543,7 @@
      "icp_up_code11_ua": 42.9753,
      "icp_code11_over_code00_ratio": 1.97708,
      "cp_updn_mismatch_pct": 4.88601,
-     "vctrl_leak_off_na": 0.00242606
+     "vctrl_leak_off_na": 0.00239694
     },
     "engine_errors": [],
     "violations": [],
@@ -569,7 +569,7 @@
      "icp_up_code11_ua": 43.4136,
      "icp_code11_over_code00_ratio": 1.97261,
      "cp_updn_mismatch_pct": 5.91307,
-     "vctrl_leak_off_na": 0.00282632
+     "vctrl_leak_off_na": 0.00283262
     },
     "engine_errors": [],
     "violations": [],
@@ -595,7 +595,7 @@
      "icp_up_code11_ua": 43.9727,
      "icp_code11_over_code00_ratio": 1.96472,
      "cp_updn_mismatch_pct": 7.37713,
-     "vctrl_leak_off_na": 0.00349625
+     "vctrl_leak_off_na": 0.00350255
     },
     "engine_errors": [],
     "violations": [],
@@ -621,7 +621,7 @@
      "icp_up_code11_ua": 41.5914,
      "icp_code11_over_code00_ratio": 1.97833,
      "cp_updn_mismatch_pct": 4.5249,
-     "vctrl_leak_off_na": 0.002426
+     "vctrl_leak_off_na": 0.00239694
     },
     "engine_errors": [],
     "violations": [],
@@ -647,7 +647,7 @@
      "icp_up_code11_ua": 41.9782,
      "icp_code11_over_code00_ratio": 1.97417,
      "cp_updn_mismatch_pct": 5.44594,
-     "vctrl_leak_off_na": 0.00282633
+     "vctrl_leak_off_na": 0.00283262
     },
     "engine_errors": [],
     "violations": [],
@@ -673,7 +673,7 @@
      "icp_up_code11_ua": 42.48,
      "icp_code11_over_code00_ratio": 1.96596,
      "cp_updn_mismatch_pct": 6.83338,
-     "vctrl_leak_off_na": 0.00349626
+     "vctrl_leak_off_na": 0.00350255
     },
     "engine_errors": [],
     "violations": [],
@@ -694,12 +694,12 @@
      "icp_up_code00_ua": 19.574,
      "icp_dn_code00_ua": 19.2389,
      "icp_up_code00_tt_ua": 19.574,
-     "icp_up_code01_ua": 24.3823,
+     "icp_up_code01_ua": 24.3824,
      "icp_up_code10_ua": 29.1778,
-     "icp_up_code11_ua": 38.7386,
-     "icp_code11_over_code00_ratio": 1.97908,
-     "cp_updn_mismatch_pct": 4.41062,
-     "vctrl_leak_off_na": 0.00242227
+     "icp_up_code11_ua": 38.7387,
+     "icp_code11_over_code00_ratio": 1.97909,
+     "cp_updn_mismatch_pct": 4.41063,
+     "vctrl_leak_off_na": 0.00239042
     },
     "engine_errors": [],
     "violations": [],
@@ -717,15 +717,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "icp_up_code00_ua": 19.7843,
-     "icp_dn_code00_ua": 19.3351,
-     "icp_up_code00_tt_ua": 19.7843,
-     "icp_up_code01_ua": 24.625,
-     "icp_up_code10_ua": 29.4511,
-     "icp_up_code11_ua": 39.0708,
-     "icp_code11_over_code00_ratio": 1.97484,
-     "cp_updn_mismatch_pct": 5.25031,
-     "vctrl_leak_off_na": 0.00282177
+     "icp_up_code00_ua": 19.7844,
+     "icp_dn_code00_ua": 19.3352,
+     "icp_up_code00_tt_ua": 19.7844,
+     "icp_up_code01_ua": 24.6251,
+     "icp_up_code10_ua": 29.4512,
+     "icp_up_code11_ua": 39.0709,
+     "icp_code11_over_code00_ratio": 1.97483,
+     "cp_updn_mismatch_pct": 5.25029,
+     "vctrl_leak_off_na": 0.00282805
     },
     "engine_errors": [],
     "violations": [],
@@ -748,10 +748,10 @@
      "icp_up_code00_tt_ua": 20.1046,
      "icp_up_code01_ua": 24.9836,
      "icp_up_code10_ua": 29.8426,
-     "icp_up_code11_ua": 39.5175,
-     "icp_code11_over_code00_ratio": 1.96559,
-     "cp_updn_mismatch_pct": 6.62162,
-     "vctrl_leak_off_na": 0.00349356
+     "icp_up_code11_ua": 39.5176,
+     "icp_code11_over_code00_ratio": 1.9656,
+     "cp_updn_mismatch_pct": 6.62163,
+     "vctrl_leak_off_na": 0.00349984
     },
     "engine_errors": [],
     "violations": [],
@@ -777,7 +777,7 @@
      "icp_up_code11_ua": 53.6205,
      "icp_code11_over_code00_ratio": 1.98148,
      "cp_updn_mismatch_pct": 7.84894,
-     "vctrl_leak_off_na": 0.0024259
+     "vctrl_leak_off_na": 0.00237642
     },
     "engine_errors": [],
     "violations": [],
@@ -803,7 +803,7 @@
      "icp_up_code11_ua": 27.9371,
      "icp_code11_over_code00_ratio": 1.96109,
      "cp_updn_mismatch_pct": 8.6882,
-     "vctrl_leak_off_na": 0.00349625
+     "vctrl_leak_off_na": 0.00350255
     },
     "engine_errors": [],
     "violations": [],
@@ -829,7 +829,7 @@
      "icp_up_code11_ua": 30.4478,
      "icp_code11_over_code00_ratio": 1.97578,
      "cp_updn_mismatch_pct": 5.32301,
-     "vctrl_leak_off_na": 0.00276435
+     "vctrl_leak_off_na": 0.00277064
     },
     "engine_errors": [],
     "violations": [],
@@ -855,7 +855,7 @@
      "icp_up_code11_ua": 48.8184,
      "icp_code11_over_code00_ratio": 1.97781,
      "cp_updn_mismatch_pct": 4.61295,
-     "vctrl_leak_off_na": 0.00276435
+     "vctrl_leak_off_na": 0.00277064
     },
     "engine_errors": [],
     "violations": [],
@@ -873,7 +873,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.6418
+     "ol_pm_pn16_nopad_pvt_deg": 52.7946
     },
     "engine_errors": [],
     "violations": [],
@@ -891,7 +891,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.1525
+     "ol_pm_pn16_nopad_pvt_deg": 51.318
     },
     "engine_errors": [],
     "violations": [],
@@ -909,7 +909,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.1033
+     "ol_pm_pn16_nopad_pvt_deg": 48.4333
     },
     "engine_errors": [],
     "violations": [],
@@ -927,7 +927,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.6259
+     "ol_pm_pn16_nopad_pvt_deg": 51.7648
     },
     "engine_errors": [],
     "violations": [],
@@ -945,12 +945,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.5956,
-     "ol_pm_pn16_nopad_deg": 49.5956,
-     "ol_pm_pn16_pad5p_deg": 33.9399,
-     "ol_fc_pn16_nopad_khz": 482.408,
-     "ol_pm_pn8_nopad_deg": 55.3114,
-     "ol_pm_pn40_nopad_deg": 36.0328
+     "ol_pm_pn16_nopad_pvt_deg": 49.8441,
+     "ol_pm_pn16_nopad_deg": 49.8441,
+     "ol_pm_pn16_pad5p_deg": 34.107,
+     "ol_fc_pn16_nopad_khz": 485.342,
+     "ol_pm_pn8_nopad_deg": 55.4792,
+     "ol_pm_pn40_nopad_deg": 36.2709
     },
     "engine_errors": [],
     "violations": [],
@@ -968,7 +968,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 45.9718
+     "ol_pm_pn16_nopad_pvt_deg": 45.7948
     },
     "engine_errors": [],
     "violations": [],
@@ -986,7 +986,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.703
+     "ol_pm_pn16_nopad_pvt_deg": 49.8405
     },
     "engine_errors": [],
     "violations": [],
@@ -1004,7 +1004,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 46.8328
+     "ol_pm_pn16_nopad_pvt_deg": 46.9545
     },
     "engine_errors": [],
     "violations": [],
@@ -1022,7 +1022,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.0451
+     "ol_pm_pn16_nopad_pvt_deg": 43.2732
     },
     "engine_errors": [],
     "violations": [],
@@ -1040,7 +1040,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.965
+     "ol_pm_pn16_nopad_pvt_deg": 54.2194
     },
     "engine_errors": [],
     "violations": [],
@@ -1058,7 +1058,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.2939
+     "ol_pm_pn16_nopad_pvt_deg": 53.3642
     },
     "engine_errors": [],
     "violations": [],
@@ -1076,7 +1076,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.0594
+     "ol_pm_pn16_nopad_pvt_deg": 52.2424
     },
     "engine_errors": [],
     "violations": [],
@@ -1094,7 +1094,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.4053
+     "ol_pm_pn16_nopad_pvt_deg": 53.569
     },
     "engine_errors": [],
     "violations": [],
@@ -1112,7 +1112,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.3742
+     "ol_pm_pn16_nopad_pvt_deg": 52.6149
     },
     "engine_errors": [],
     "violations": [],
@@ -1130,7 +1130,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.6287
+     "ol_pm_pn16_nopad_pvt_deg": 50.8445
     },
     "engine_errors": [],
     "violations": [],
@@ -1148,7 +1148,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.1108
+     "ol_pm_pn16_nopad_pvt_deg": 52.1686
     },
     "engine_errors": [],
     "violations": [],
@@ -1166,7 +1166,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.407
+     "ol_pm_pn16_nopad_pvt_deg": 51.5512
     },
     "engine_errors": [],
     "violations": [],
@@ -1184,7 +1184,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.3861
+     "ol_pm_pn16_nopad_pvt_deg": 48.5043
     },
     "engine_errors": [],
     "violations": [],
@@ -1202,7 +1202,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.1133
+     "ol_pm_pn16_nopad_pvt_deg": 50.2651
     },
     "engine_errors": [],
     "violations": [],
@@ -1220,7 +1220,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 46.7273
+     "ol_pm_pn16_nopad_pvt_deg": 46.8913
     },
     "engine_errors": [],
     "violations": [],
@@ -1238,7 +1238,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 42.9774
+     "ol_pm_pn16_nopad_pvt_deg": 43.1076
     },
     "engine_errors": [],
     "violations": [],
@@ -1256,7 +1256,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.3891
+     "ol_pm_pn16_nopad_pvt_deg": 48.5224
     },
     "engine_errors": [],
     "violations": [],
@@ -1274,7 +1274,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 44.5131
+     "ol_pm_pn16_nopad_pvt_deg": 44.6553
     },
     "engine_errors": [],
     "violations": [],
@@ -1292,7 +1292,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.5588
+     "ol_pm_pn16_nopad_pvt_deg": 40.7779
     },
     "engine_errors": [],
     "violations": [],
@@ -1310,7 +1310,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 45.1222
+     "ol_pm_pn16_nopad_pvt_deg": 45.2358
     },
     "engine_errors": [],
     "violations": [],
@@ -1328,7 +1328,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.8571
+     "ol_pm_pn16_nopad_pvt_deg": 41.0222
     },
     "engine_errors": [],
     "violations": [],
@@ -1346,7 +1346,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 37.1707
+     "ol_pm_pn16_nopad_pvt_deg": 37.3301
     },
     "engine_errors": [],
     "violations": [],
@@ -1364,7 +1364,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.0041
+     "ol_pm_pn16_nopad_pvt_deg": 50.129
     },
     "engine_errors": [],
     "violations": [],
@@ -1382,7 +1382,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.2852
+     "ol_pm_pn16_nopad_pvt_deg": 43.4927
     },
     "engine_errors": [],
     "violations": [],
@@ -1400,12 +1400,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.8547,
-     "ol_pm_pn16_nopad_deg": 49.8547,
-     "ol_pm_pn16_pad5p_deg": 35.0878,
-     "ol_fc_pn16_nopad_khz": 370.933,
-     "ol_pm_pn8_nopad_deg": 55.3981,
-     "ol_pm_pn40_nopad_deg": 36.3215
+     "ol_pm_pn16_nopad_pvt_deg": 50.0136,
+     "ol_pm_pn16_nopad_deg": 50.0136,
+     "ol_pm_pn16_pad5p_deg": 35.214,
+     "ol_fc_pn16_nopad_khz": 371.122,
+     "ol_pm_pn8_nopad_deg": 55.5489,
+     "ol_pm_pn40_nopad_deg": 36.4543
     },
     "engine_errors": [],
     "violations": [],
@@ -1423,12 +1423,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.201,
-     "ol_pm_pn16_nopad_deg": 49.201,
-     "ol_pm_pn16_pad5p_deg": 32.5847,
-     "ol_fc_pn16_nopad_khz": 655.293,
-     "ol_pm_pn8_nopad_deg": 55.187,
-     "ol_pm_pn40_nopad_deg": 35.5901
+     "ol_pm_pn16_nopad_pvt_deg": 49.3504,
+     "ol_pm_pn16_nopad_deg": 49.3504,
+     "ol_pm_pn16_pad5p_deg": 32.702,
+     "ol_fc_pn16_nopad_khz": 655.243,
+     "ol_pm_pn8_nopad_deg": 55.3358,
+     "ol_pm_pn40_nopad_deg": 35.7116
     },
     "engine_errors": [],
     "violations": [],
@@ -1446,7 +1446,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.29108
+     "cp_overlap_net_charge_fc": 2.29196
     },
     "engine_errors": [],
     "violations": [],
@@ -1464,7 +1464,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31761
+     "cp_overlap_net_charge_fc": 2.32677
     },
     "engine_errors": [],
     "violations": [],
@@ -1482,7 +1482,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.6767
+     "cp_overlap_net_charge_fc": 2.67885
     },
     "engine_errors": [],
     "violations": [],
@@ -1500,7 +1500,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31836
+     "cp_overlap_net_charge_fc": 2.31889
     },
     "engine_errors": [],
     "violations": [],
@@ -1518,7 +1518,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.38286
+     "cp_overlap_net_charge_fc": 2.37968
     },
     "engine_errors": [],
     "violations": [],
@@ -1536,7 +1536,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.52869
+     "cp_overlap_net_charge_fc": 2.52703
     },
     "engine_errors": [],
     "violations": [],
@@ -1554,7 +1554,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27521
+     "cp_overlap_net_charge_fc": 2.2756
     },
     "engine_errors": [],
     "violations": [],
@@ -1572,7 +1572,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.34284
+     "cp_overlap_net_charge_fc": 2.34273
     },
     "engine_errors": [],
     "violations": [],
@@ -1590,7 +1590,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53425
+     "cp_overlap_net_charge_fc": 2.53233
     },
     "engine_errors": [],
     "violations": [],
@@ -1608,7 +1608,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.2302
+     "cp_overlap_net_charge_fc": 2.21725
     },
     "engine_errors": [],
     "violations": [],
@@ -1626,7 +1626,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.0699
+     "cp_overlap_net_charge_fc": 2.0739
     },
     "engine_errors": [],
     "violations": [],
@@ -1644,7 +1644,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.54041
+     "cp_overlap_net_charge_fc": 2.57371
     },
     "engine_errors": [],
     "violations": [],
@@ -1680,7 +1680,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14973
+     "cp_overlap_net_charge_fc": 2.14931
     },
     "engine_errors": [],
     "violations": [],
@@ -1698,7 +1698,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.17239
+     "cp_overlap_net_charge_fc": 2.17172
     },
     "engine_errors": [],
     "violations": [],
@@ -1716,7 +1716,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14375
+     "cp_overlap_net_charge_fc": 2.14378
     },
     "engine_errors": [],
     "violations": [],
@@ -1734,7 +1734,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.25158
+     "cp_overlap_net_charge_fc": 2.24918
     },
     "engine_errors": [],
     "violations": [],
@@ -1752,7 +1752,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27102
+     "cp_overlap_net_charge_fc": 2.27007
     },
     "engine_errors": [],
     "violations": [],
@@ -1770,7 +1770,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53384
+     "cp_overlap_net_charge_fc": 2.52902
     },
     "engine_errors": [],
     "violations": [],
@@ -1788,7 +1788,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.63521
+     "cp_overlap_net_charge_fc": 2.63569
     },
     "engine_errors": [],
     "violations": [],
@@ -1806,7 +1806,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.92418
+     "cp_overlap_net_charge_fc": 2.91576
     },
     "engine_errors": [],
     "violations": [],
@@ -1824,7 +1824,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.57828
+     "cp_overlap_net_charge_fc": 2.57215
     },
     "engine_errors": [],
     "violations": [],
@@ -1842,7 +1842,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.69157
+     "cp_overlap_net_charge_fc": 2.68979
     },
     "engine_errors": [],
     "violations": [],
@@ -1860,7 +1860,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.98191
+     "cp_overlap_net_charge_fc": 2.97728
     },
     "engine_errors": [],
     "violations": [],
@@ -1878,7 +1878,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.51362
+     "cp_overlap_net_charge_fc": 2.51443
     },
     "engine_errors": [],
     "violations": [],
@@ -1896,7 +1896,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.57504
+     "cp_overlap_net_charge_fc": 2.57833
     },
     "engine_errors": [],
     "violations": [],
@@ -1914,7 +1914,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.84388
+     "cp_overlap_net_charge_fc": 2.83973
     },
     "engine_errors": [],
     "violations": [],
@@ -1932,7 +1932,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.60104
+     "cp_overlap_net_charge_fc": 3.60275
     },
     "engine_errors": [],
     "violations": [],
@@ -1950,7 +1950,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.19683
+     "cp_overlap_net_charge_fc": 2.1971
     },
     "engine_errors": [],
     "violations": [],
@@ -1968,7 +1968,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 1.97022
+     "cp_overlap_net_charge_fc": 1.96896
     },
     "engine_errors": [],
     "violations": [],
@@ -1986,7 +1986,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.03798
+     "cp_overlap_net_charge_fc": 3.0448
     },
     "engine_errors": [],
     "violations": [],
@@ -2004,7 +2004,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "presc_div2_ratio": 0.999991
+     "presc_div2_ratio": 0.999993
     },
     "engine_errors": [],
     "violations": [],
@@ -2079,7 +2079,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000112001,
+     "standby_current_ua": 0.000112002,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2098,7 +2098,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.00012758,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2117,7 +2117,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000147255,
+     "standby_current_ua": 0.000147256,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2136,7 +2136,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000964237,
+     "standby_current_ua": 0.000964935,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2155,7 +2155,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00111058,
+     "standby_current_ua": 0.00111132,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2174,7 +2174,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.0013079,
+     "standby_current_ua": 0.00130872,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2193,7 +2193,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00010188,
+     "standby_current_ua": 0.000101878,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2212,7 +2212,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000115853,
+     "standby_current_ua": 0.000115851,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2231,7 +2231,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000132028,
+     "standby_current_ua": 0.000132031,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2269,7 +2269,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000120008,
+     "standby_current_ua": 0.000120009,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2307,7 +2307,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224722,
+     "standby_current_ua": 0.000224804,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2326,7 +2326,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000253984,
+     "standby_current_ua": 0.000254071,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2345,7 +2345,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000290456,
+     "standby_current_ua": 0.000290552,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2421,7 +2421,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000160833,
+     "standby_current_ua": 0.000160852,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2440,7 +2440,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000190077,
+     "standby_current_ua": 0.000190098,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2459,7 +2459,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000231492,
+     "standby_current_ua": 0.000231515,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2478,7 +2478,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00809559,
+     "standby_current_ua": 0.00810187,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2497,7 +2497,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00950214,
+     "standby_current_ua": 0.00950887,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2516,7 +2516,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.011452,
+     "standby_current_ua": 0.0114595,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2535,7 +2535,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224722,
+     "standby_current_ua": 0.000224804,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2573,7 +2573,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.00012758,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2592,7 +2592,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.00012758,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2611,7 +2611,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.71997
+     "startup_time_us": 0.717679
     },
     "engine_errors": [],
     "violations": [],
@@ -2629,7 +2629,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.690578
+     "startup_time_us": 0.686018
     },
     "engine_errors": [],
     "violations": [],
@@ -2647,7 +2647,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.718481
+     "startup_time_us": 0.711568
     },
     "engine_errors": [],
     "violations": [],
@@ -2665,7 +2665,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.732886
+     "startup_time_us": 0.639083
     },
     "engine_errors": [],
     "violations": [],
@@ -2683,7 +2683,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.6762
+     "startup_time_us": 0.670512
     },
     "engine_errors": [],
     "violations": [],
@@ -2701,7 +2701,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.689799
+     "startup_time_us": 0.682278
     },
     "engine_errors": [],
     "violations": [],
@@ -2719,7 +2719,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.594299
+     "startup_time_us": 0.58735
     },
     "engine_errors": [],
     "violations": [],
@@ -2737,7 +2737,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.589663
+     "startup_time_us": 0.581524
     },
     "engine_errors": [],
     "violations": [],
@@ -2755,7 +2755,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.572206
+     "startup_time_us": 0.562529
     },
     "engine_errors": [],
     "violations": [],
@@ -2773,7 +2773,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.920455
+     "startup_time_us": 1.62794
     },
     "engine_errors": [],
     "violations": [],
@@ -2791,7 +2791,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.882573
+     "startup_time_us": 0.880489
     },
     "engine_errors": [],
     "violations": [],
@@ -2809,7 +2809,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.833712
+     "startup_time_us": 0.828991
     },
     "engine_errors": [],
     "violations": [],
@@ -2827,7 +2827,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.861543
+     "startup_time_us": 0.858917
     },
     "engine_errors": [],
     "violations": [],
@@ -2845,7 +2845,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.879539
+     "startup_time_us": 0.875527
     },
     "engine_errors": [],
     "violations": [],
@@ -2863,7 +2863,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.804102
+     "startup_time_us": 0.798225
     },
     "engine_errors": [],
     "violations": [],
@@ -2881,7 +2881,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.843155
+     "startup_time_us": 0.836009
     },
     "engine_errors": [],
     "violations": [],
@@ -2899,7 +2899,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.816617
+     "startup_time_us": 0.810162
     },
     "engine_errors": [],
     "violations": [],
@@ -2917,7 +2917,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.822947
+     "startup_time_us": 0.815277
     },
     "engine_errors": [],
     "violations": [],
@@ -2935,7 +2935,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.552273
+     "startup_time_us": 0.547973
     },
     "engine_errors": [],
     "violations": [],
@@ -2953,7 +2953,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.586029
+     "startup_time_us": 0.579703
     },
     "engine_errors": [],
     "violations": [],
@@ -2971,7 +2971,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.587599
+     "startup_time_us": 0.57994
     },
     "engine_errors": [],
     "violations": [],
@@ -2989,7 +2989,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.549852
+     "startup_time_us": 0.544495
     },
     "engine_errors": [],
     "violations": [],
@@ -3007,7 +3007,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.473436
+     "startup_time_us": 0.466245
     },
     "engine_errors": [],
     "violations": [],
@@ -3025,7 +3025,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.560757
+     "startup_time_us": 0.552481
     },
     "engine_errors": [],
     "violations": [],
@@ -3043,7 +3043,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.477918
+     "startup_time_us": 0.470177
     },
     "engine_errors": [],
     "violations": [],
@@ -3061,7 +3061,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.467578
+     "startup_time_us": 0.458179
     },
     "engine_errors": [],
     "violations": [],
@@ -3079,7 +3079,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.435066
+     "startup_time_us": 0.424441
     },
     "engine_errors": [],
     "violations": [],
@@ -3097,7 +3097,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.55308
+     "startup_time_us": 0.54338
     },
     "engine_errors": [],
     "violations": [],
@@ -3115,7 +3115,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.911327
+     "startup_time_us": 0.900329
     },
     "engine_errors": [],
     "violations": [],
@@ -3133,7 +3133,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.854239
+     "startup_time_us": 0.847395
     },
     "engine_errors": [],
     "violations": [],
@@ -3151,7 +3151,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.509207
+     "startup_time_us": 0.50488
     },
     "engine_errors": [],
     "violations": [],
@@ -3169,14 +3169,14 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 114.951,
-     "vco_df_dv_min_mhz_per_v": 3.27291,
-     "vco_fmin_tt_mhz": 13.2764,
+     "vco_kvco_mhz_per_v": 114.95,
+     "vco_df_dv_min_mhz_per_v": 3.26962,
+     "vco_fmin_tt_mhz": 13.2777,
      "vco_fmax_tt_mhz": 285.71,
      "vco_out_swing_pct_vdd": 100.748,
      "vco_out_duty_pct": 54.1509,
      "vco_fmax_ff_mhz": 319.911,
-     "vco_out_tr_ns": 0.043292,
+     "vco_out_tr_ns": 0.043293,
      "vco_out_tf_ns": 0.04229
     },
     "engine_errors": [],
@@ -3196,13 +3196,13 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 98.8975,
-     "vco_df_dv_min_mhz_per_v": 6.15311,
+     "vco_df_dv_min_mhz_per_v": 6.15333,
      "vco_fmin_tt_mhz": 11.9518,
      "vco_fmax_tt_mhz": 278.975,
      "vco_out_swing_pct_vdd": 100.574,
      "vco_out_duty_pct": 53.9635,
      "vco_fmax_ff_mhz": 286.594,
-     "vco_out_tr_ns": 0.043422,
+     "vco_out_tr_ns": 0.043421,
      "vco_out_tf_ns": 0.04137
     },
     "engine_errors": [],
@@ -3254,8 +3254,8 @@
      "vco_out_swing_pct_vdd": 100.633,
      "vco_out_duty_pct": 54.1043,
      "vco_fmax_ff_mhz": 295.853,
-     "vco_out_tr_ns": 0.051105,
-     "vco_out_tf_ns": 0.048755
+     "vco_out_tr_ns": 0.051106,
+     "vco_out_tf_ns": 0.048756
     },
     "engine_errors": [],
     "violations": [],
@@ -3274,7 +3274,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 91.9244,
-     "vco_df_dv_min_mhz_per_v": 14.1394,
+     "vco_df_dv_min_mhz_per_v": 14.1401,
      "vco_fmin_tt_mhz": 9.55305,
      "vco_fmax_tt_mhz": 257.749,
      "vco_out_swing_pct_vdd": 100.452,
@@ -3300,7 +3300,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 71.0836,
-     "vco_df_dv_min_mhz_per_v": 16.8899,
+     "vco_df_dv_min_mhz_per_v": 16.8905,
      "vco_fmin_tt_mhz": 8.60161,
      "vco_fmax_tt_mhz": 223.985,
      "vco_out_swing_pct_vdd": 100.333,
@@ -3326,13 +3326,13 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 99.1503,
-     "vco_df_dv_min_mhz_per_v": 22.4751,
+     "vco_df_dv_min_mhz_per_v": 22.4711,
      "vco_fmin_tt_mhz": 9.93872,
      "vco_fmax_tt_mhz": 244.925,
      "vco_out_swing_pct_vdd": 100.408,
      "vco_out_duty_pct": 53.9513,
      "vco_fmax_ff_mhz": 258.621,
-     "vco_out_tr_ns": 0.06451,
+     "vco_out_tr_ns": 0.06452,
      "vco_out_tf_ns": 0.059366
     },
     "engine_errors": [],
@@ -3355,11 +3355,11 @@
      "vco_df_dv_min_mhz_per_v": 23.9414,
      "vco_fmin_tt_mhz": 8.76728,
      "vco_fmax_tt_mhz": 223.366,
-     "vco_out_swing_pct_vdd": 100.298,
+     "vco_out_swing_pct_vdd": 100.299,
      "vco_out_duty_pct": 53.8016,
      "vco_fmax_ff_mhz": 224.58,
      "vco_out_tr_ns": 0.06598,
-     "vco_out_tf_ns": 0.059554
+     "vco_out_tf_ns": 0.059553
     },
     "engine_errors": [],
     "violations": [],
@@ -3384,8 +3384,8 @@
      "vco_out_swing_pct_vdd": 100.198,
      "vco_out_duty_pct": 53.6697,
      "vco_fmax_ff_mhz": 195.04,
-     "vco_out_tr_ns": 0.06821,
-     "vco_out_tf_ns": 0.06075
+     "vco_out_tr_ns": 0.0682,
+     "vco_out_tf_ns": 0.06076
     },
     "engine_errors": [],
     "violations": [],
@@ -3404,14 +3404,14 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 93.5612,
-     "vco_df_dv_min_mhz_per_v": 0.244304,
+     "vco_df_dv_min_mhz_per_v": 0.245063,
      "vco_fmin_tt_mhz": 13.3709,
      "vco_fmax_tt_mhz": 235.111,
      "vco_out_swing_pct_vdd": 101.221,
      "vco_out_duty_pct": 54.6222,
      "vco_fmax_ff_mhz": 266.85,
      "vco_out_tr_ns": 0.05128,
-     "vco_out_tf_ns": 0.052018
+     "vco_out_tf_ns": 0.052019
     },
     "engine_errors": [],
     "violations": [],
@@ -3429,15 +3429,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 83.7821,
+     "vco_kvco_mhz_per_v": 83.7818,
      "vco_df_dv_min_mhz_per_v": 0.952,
      "vco_fmin_tt_mhz": 11.2492,
-     "vco_fmax_tt_mhz": 237.461,
+     "vco_fmax_tt_mhz": 237.46,
      "vco_out_swing_pct_vdd": 101.002,
      "vco_out_duty_pct": 54.1969,
      "vco_fmax_ff_mhz": 264.268,
-     "vco_out_tr_ns": 0.04839,
-     "vco_out_tf_ns": 0.048175
+     "vco_out_tr_ns": 0.0484,
+     "vco_out_tf_ns": 0.048176
     },
     "engine_errors": [],
     "violations": [],
@@ -3460,10 +3460,10 @@
      "vco_fmin_tt_mhz": 9.92629,
      "vco_fmax_tt_mhz": 230.712,
      "vco_out_swing_pct_vdd": 100.815,
-     "vco_out_duty_pct": 53.2548,
+     "vco_out_duty_pct": 53.2546,
      "vco_fmax_ff_mhz": 235.761,
      "vco_out_tr_ns": 0.04877,
-     "vco_out_tf_ns": 0.047417
+     "vco_out_tf_ns": 0.047416
     },
     "engine_errors": [],
     "violations": [],
@@ -3486,10 +3486,10 @@
      "vco_fmin_tt_mhz": 12.3854,
      "vco_fmax_tt_mhz": 224.796,
      "vco_out_swing_pct_vdd": 101.159,
-     "vco_out_duty_pct": 54.0874,
+     "vco_out_duty_pct": 54.0868,
      "vco_fmax_ff_mhz": 250.605,
      "vco_out_tr_ns": 0.05932,
-     "vco_out_tf_ns": 0.058719
+     "vco_out_tf_ns": 0.05872
     },
     "engine_errors": [],
     "violations": [],
@@ -3512,7 +3512,7 @@
      "vco_fmin_tt_mhz": 10.5737,
      "vco_fmax_tt_mhz": 226.315,
      "vco_out_swing_pct_vdd": 100.923,
-     "vco_out_duty_pct": 53.9501,
+     "vco_out_duty_pct": 53.9494,
      "vco_fmax_ff_mhz": 245.705,
      "vco_out_tr_ns": 0.0568,
      "vco_out_tf_ns": 0.055229
@@ -3564,9 +3564,9 @@
      "vco_fmin_tt_mhz": 10.798,
      "vco_fmax_tt_mhz": 207.413,
      "vco_out_swing_pct_vdd": 100.93,
-     "vco_out_duty_pct": 53.6883,
+     "vco_out_duty_pct": 53.6882,
      "vco_fmax_ff_mhz": 226.896,
-     "vco_out_tr_ns": 0.07237,
+     "vco_out_tr_ns": 0.07236,
      "vco_out_tf_ns": 0.06949
     },
     "engine_errors": [],
@@ -3616,7 +3616,7 @@
      "vco_fmin_tt_mhz": 7.39313,
      "vco_fmax_tt_mhz": 188.484,
      "vco_out_swing_pct_vdd": 100.323,
-     "vco_out_duty_pct": 53.823,
+     "vco_out_duty_pct": 53.8231,
      "vco_fmax_ff_mhz": 189.479,
      "vco_out_tr_ns": 0.0724,
      "vco_out_tf_ns": 0.06676
@@ -3638,14 +3638,14 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 141.9,
-     "vco_df_dv_min_mhz_per_v": 25.9478,
+     "vco_df_dv_min_mhz_per_v": 25.9397,
      "vco_fmin_tt_mhz": 12.7834,
      "vco_fmax_tt_mhz": 349.086,
      "vco_out_swing_pct_vdd": 100.543,
      "vco_out_duty_pct": 54.0247,
      "vco_fmax_ff_mhz": 362.873,
-     "vco_out_tr_ns": 0.038603,
-     "vco_out_tf_ns": 0.036378
+     "vco_out_tr_ns": 0.038602,
+     "vco_out_tf_ns": 0.036379
     },
     "engine_errors": [],
     "violations": [],
@@ -3664,7 +3664,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 109.293,
-     "vco_df_dv_min_mhz_per_v": 24.5524,
+     "vco_df_dv_min_mhz_per_v": 24.5527,
      "vco_fmin_tt_mhz": 11.3741,
      "vco_fmax_tt_mhz": 306.465,
      "vco_out_swing_pct_vdd": 100.383,
@@ -3696,7 +3696,7 @@
      "vco_out_swing_pct_vdd": 100.283,
      "vco_out_duty_pct": 53.718,
      "vco_fmax_ff_mhz": 265.977,
-     "vco_out_tr_ns": 0.041984,
+     "vco_out_tr_ns": 0.041983,
      "vco_out_tf_ns": 0.038125
     },
     "engine_errors": [],
@@ -3723,7 +3723,7 @@
      "vco_out_duty_pct": 54.0135,
      "vco_fmax_ff_mhz": 326.997,
      "vco_out_tr_ns": 0.046571,
-     "vco_out_tf_ns": 0.04269
+     "vco_out_tf_ns": 0.042689
     },
     "engine_errors": [],
     "violations": [],
@@ -3794,14 +3794,14 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 112.096,
-     "vco_df_dv_min_mhz_per_v": 50.2671,
+     "vco_df_dv_min_mhz_per_v": 50.2676,
      "vco_fmin_tt_mhz": 10.0724,
      "vco_fmax_tt_mhz": 275.739,
      "vco_out_swing_pct_vdd": 100.285,
      "vco_out_duty_pct": 53.8743,
      "vco_fmax_ff_mhz": 277.296,
      "vco_out_tr_ns": 0.060548,
-     "vco_out_tf_ns": 0.05363
+     "vco_out_tf_ns": 0.053629
     },
     "engine_errors": [],
     "violations": [],
@@ -3819,14 +3819,14 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 84.7158,
+     "vco_kvco_mhz_per_v": 84.7162,
      "vco_df_dv_min_mhz_per_v": 9.94667,
-     "vco_fmin_tt_mhz": 9.05721,
-     "vco_fmax_tt_mhz": 237.79,
+     "vco_fmin_tt_mhz": 9.05722,
+     "vco_fmax_tt_mhz": 237.791,
      "vco_out_swing_pct_vdd": 100.245,
-     "vco_out_duty_pct": 53.7394,
+     "vco_out_duty_pct": 53.7395,
      "vco_fmax_ff_mhz": 238.576,
-     "vco_out_tr_ns": 0.06267,
+     "vco_out_tr_ns": 0.06266,
      "vco_out_tf_ns": 0.054641
     },
     "engine_errors": [],
@@ -3846,14 +3846,14 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 65.6728,
-     "vco_df_dv_min_mhz_per_v": 3.31881,
-     "vco_fmin_tt_mhz": 8.2904,
+     "vco_df_dv_min_mhz_per_v": 3.31683,
+     "vco_fmin_tt_mhz": 8.29042,
      "vco_fmax_tt_mhz": 207.279,
      "vco_out_swing_pct_vdd": 100.22,
      "vco_out_duty_pct": 53.6179,
-     "vco_fmax_ff_mhz": 207.894,
+     "vco_fmax_ff_mhz": 207.895,
      "vco_out_tr_ns": 0.06531,
-     "vco_out_tf_ns": 0.056481
+     "vco_out_tf_ns": 0.05648
     },
     "engine_errors": [],
     "violations": [],
@@ -3876,10 +3876,10 @@
      "vco_fmin_tt_mhz": 16.9314,
      "vco_fmax_tt_mhz": 290.047,
      "vco_out_swing_pct_vdd": 100.885,
-     "vco_out_duty_pct": 54.1058,
+     "vco_out_duty_pct": 54.1057,
      "vco_fmax_ff_mhz": 310.393,
-     "vco_out_tr_ns": 0.065958,
-     "vco_out_tf_ns": 0.064048
+     "vco_out_tr_ns": 0.065957,
+     "vco_out_tf_ns": 0.064047
     },
     "engine_errors": [],
     "violations": [],
@@ -3928,7 +3928,7 @@
      "vco_fmin_tt_mhz": 8.0419,
      "vco_fmax_tt_mhz": 203.881,
      "vco_out_swing_pct_vdd": 100.568,
-     "vco_out_duty_pct": 53.1887,
+     "vco_out_duty_pct": 53.1892,
      "vco_fmax_ff_mhz": 205.284,
      "vco_out_tr_ns": 0.05592,
      "vco_out_tf_ns": 0.05194
@@ -3955,7 +3955,7 @@
      "vco_fmax_tt_mhz": 331.75,
      "vco_out_swing_pct_vdd": 100.551,
      "vco_out_duty_pct": 53.9786,
-     "vco_fmax_ff_mhz": 346.033,
+     "vco_fmax_ff_mhz": 346.034,
      "vco_out_tr_ns": 0.047151,
      "vco_out_tf_ns": 0.044654
     },
@@ -4119,11 +4119,11 @@
   "scoped_out": []
  },
  "inputs_at_start": {
-  "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-  "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+  "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+  "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
   "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-  "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+  "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
  },
- "recorded_ts": "2026-10-29T22:50:24",
+ "recorded_ts": "2026-10-30T04:14:53",
  "attempts": 10
 }

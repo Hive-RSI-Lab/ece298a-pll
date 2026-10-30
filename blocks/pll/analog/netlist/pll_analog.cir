@@ -1,8 +1,12 @@
 * pll_analog.cir - analog half of the charge-pump PLL (P4 netlist).
 * GF180MCU 3.3 V, gf180mcu_fd_pr models only: nfet_03v3 / pfet_03v3
 * (subckt wrappers, so every MOS is an X instance), ppolyf_u (350 ohm/sq
-* typical, 280 ff, 420 ss) and cap_mim_2f0_m4m5_noshield (2 fF/um2, MIM-B between metal4 and metal5, the only MIM gf180mcuD draws; the
-* PDK has no cap_mim_2f0ff in the mimcap_<corner> sections the benches load).
+* typical, 280 ff, 420 ss) and cap_nmos_03v3_b (NMOS-in-nwell accumulation
+* capacitor, about 3.9 fF/um2 above 0.5 V). The loop filter was MIM-B until
+* 2026-10-30: its top plate is Metal5, which Tiny Tapeout's GF180 precheck
+* forbids. Benches load the moscap subckts with their corner factor tied to
+* the MIM corner's (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, the same as
+* moscap_<corner>'s).
 * Topology and refdes: spec/topology.md. Pins in topology.md's order.
 * Sizing: every W/L/length below is a global .param; sizing/sizing.yaml
 * carries the same values (and their bounds) and the bench's {{SIZING}}
@@ -19,8 +23,8 @@
 .param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
 .param w_b2=4e-06 l_b2=1e-06 rb_l=0.000366 rbt_l=0.00018 w_cpn=2e-05
 .param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
-.param w_swp=4e-06 l_sw=5e-07 r1_l=0.00015 c1_w=0.0001
-.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=3.5e-05
+.param w_swp=4e-06 l_sw=5e-07 r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05
+.param c2_w=4.3e-05 c2_l=1.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=3.5e-05
 .param w_flr=2e-06 l_flr=2e-06 w_v2ip=1e-05 w_v2in=4e-06
 .param l_v2i2=5e-07 w_sp=1e-05 w_sn=4e-06 l_s=5e-07
 .param w_rp=6e-06 w_rn=3e-06 l_r=2.8e-07 w_gp=4e-06
@@ -116,8 +120,8 @@ XMP_BUFL2 vdump vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
 
 * (4) loop filter: R1-C1 series, C2 shunt
 XR1 vctrl vfilt vss ppolyf_u r_width=2e-6 r_length=r1_l
-XC1 vfilt vss cap_mim_2f0_m4m5_noshield c_width=c1_w c_length=c1_w
-XC2 vctrl vss cap_mim_2f0_m4m5_noshield c_width=c2_w c_length=c2_w
+XC1 vfilt vss cap_nmos_03v3_b c_width=c1_w c_length=c1_l
+XC2 vctrl vss cap_nmos_03v3_b c_width=c2_w c_length=c2_l
 
 * (5) VCO control: degenerated V2I + floor current -> vbp_vco / vbn_vco
 * MN_CL (gate vref, a (W/L)cl/(W/L)b1 copy of Ib) sits under R_V2I: in
