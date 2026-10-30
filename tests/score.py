@@ -237,13 +237,15 @@ def pex_pvt(ws: Path, logs: Path) -> dict:
 
 def tile(ws: Path, logs: Path) -> dict[str, dict]:
     """The Harden goal's gates, msde's on the whole block: top_harden
-    assembles top/ and hardens it in the TT tile; once it passes, full-tile
-    DRC, LVS and the shuttle's precheck each run on what it made, one's fail
-    not stopping the others (each is its own line)."""
+    assembles top/ and hardens it in the TT tile; once it has run (pass or
+    fail: LibreLane's own LVS failing still leaves a GDS), full-tile DRC,
+    LVS and the shuttle's precheck each run on what it made, one's fail not
+    stopping the others (each is its own line)."""
     got = {"top_harden": gate(ws, "msde", "top_harden", logs, "tile")}
+    ran = got["top_harden"].get("status") in ("pass", "fail")
     for n in ("top_drc", "top_lvs", "precheck"):
-        got[n] = (gate(ws, "msde", n, logs, "tile") if got["top_harden"].get("status") == "pass"
-                  else {"status": "not run", "why": "top_harden did not pass"})
+        got[n] = (gate(ws, "msde", n, logs, "tile") if ran
+                  else {"status": "not run", "why": "top_harden did not run"})
     return got
 
 
