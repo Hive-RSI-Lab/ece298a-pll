@@ -113,7 +113,7 @@ requirements:
     check: measure
     bounds: {clk_wns_ns: {min: 0}}
   - id: REQ-TIM-VCO
-    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width at a 2.7 ns vco_out period (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling at every corner) - each flop's toggle loop is under the 2.7 ns period at both corners. At ss (ss_125C_3v00) no library flop toggles at 2.7 ns, so there the first stage's toggle loop (clock-to-Q, inverter, setup, without the SDC's 0.25 ns uncertainty) is held to 3.65 ns (274 MHz), what the hand-placed dffrnq_2 + inv_1 reaches after routing. Evidence for that bound is tb/prescaler_margin.py on the ss_pff calibration. Acquiring from Vctrl = 0, every lock-table point locks with a stage of up to 3.65 ns, and the 5 MHz x 5 point (peak about 283 MHz) stops locking from 3.68 ns, so that point has no margin on the pre-layout netlist. REQ-RECOVER covers a VCO above the stage.
+    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width, and every vco_out path meets setup and hold, with vco_out timed per process at the extracted VCO's ceiling on that process plus margin (harden/constraints.sdc; ceilings from analog/reports/recorded/pex_pvt.json vco_f_vdd_mhz, vctrl at the rail, any temperature, supply or resistor skew). tt and ff are timed at 2.7 ns (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling), above their post-layout ceilings of 269.4 MHz (tt_pff) and 274.2 MHz (ff_m40c_vm10). ss is timed at 4.0 ns (250 MHz) against its 246.8 MHz post-layout ceiling (ss_pff); with the SDC's 0.25 ns uncertainty the first stage's toggle loop (hand-placed dffrnq_2 + inv_1, about 3.65 ns routed at ss_125C_3v00) has to close in 3.75 ns, 267 MHz, 8% above that ceiling. No library flop toggles at 2.7 ns at ss, so the ss VCO has to stay below the stage, and if the post-layout ss ceiling passes about 265 MHz, this bound is revisited. REQ-RECOVER covers a VCO above the stage.
     check: measure
     bounds: {vco_out_period_ns: {min: 2.7}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
   - id: REQ-HARDEN-STANDALONE
@@ -172,10 +172,10 @@ clock:
 
 timing_notes:
   clk:     {period_ns: 80,  note: "reference, 5-12.5 MHz, constrained at 12.5 MHz"}
-  vco_out: {period_ns: 2.7, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths; at ss the first toggle loop is held to 3.65 ns, not 2.7 (REQ-TIM-VCO)"}
+  vco_out: {period_ns: 2.7, note: "prescaler flops only; 2.7 ns at tt and ff, 4.0 ns at ss: the post-layout VCO ceiling on each process plus margin, picked per STA corner in harden/constraints.sdc (REQ-TIM-VCO)"}
   clk_pre: {period_ns: 20,  note: "generated clock vco_out/8, constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
   clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 46 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
-  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock 2.7 ns on the port), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
+  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock on the port, 2.7 ns at tt/ff, 4.0 ns at ss), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
 
 design_choices:
   illegal_n_codes: "codes 0, 6, 7 decode as N = 1 (no hidden state, divider never stalls)"

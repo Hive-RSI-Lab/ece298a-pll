@@ -30,3 +30,35 @@ jobs:
 
       - name: Run tests/check.sh
         run: bash tests/check.sh
+
+  # The project's own test, as the Hive runs it locally: tests/check.sh with
+  # the tools from the IIC-OSIC-TOOLS image the flow pins (2026.09; locally it
+  # is unpacked at /opt/eda-toolchain/iic-osic-tools-2026.09), so the lint runs
+  # the image's iverilog rather than Ubuntu's. The image is about 4 GB packed,
+  # so the job frees the runner's preinstalled SDKs before pulling it.
+  hive-test:
+    name: test (iic-osic-tools 2026.09)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      IMAGE: hpretl/iic-osic-tools:2026.09
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Free disk space for the image
+        run: |
+          df -h /
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL
+          df -h /
+
+      - name: Pull the IIC-OSIC-TOOLS image
+        run: docker pull --quiet "$IMAGE"
+
+      - name: Run tests/check.sh in the image
+        run: |
+          docker run --rm --entrypoint bash \
+            --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp -e EDA_TOOLCHAIN=/ \
+            -v "$GITHUB_WORKSPACE:/work" -w /work \
+            "$IMAGE" tests/check.sh

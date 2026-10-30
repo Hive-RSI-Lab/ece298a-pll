@@ -10,8 +10,9 @@ here, from a scratch copy of blocks/pll, through chip-flow's gate.py
 (sim_pvt through the engine's sweep, a corner per worker: pvt_sweep), with
 one exception: bench_strength takes longer than the check may run, so its
 recorded pass counts only while its inputs are unchanged
-(bench_strength_fresh). A gate that can't run (a tool missing,
-a refusal, a timeout) fails its line; nothing is skipped.
+(bench_strength_fresh); nor do the Harden goal's top_harden, top_drc,
+top_lvs and precheck, for the same reason (tile). A gate that can't run (a tool missing, a
+refusal, a timeout) fails its line; nothing is skipped.
 
 Prints a line per done-line, then the score alone on the last line: 100 x
 the mean over the lines, higher is better.
@@ -40,7 +41,6 @@ GATE = str(CFH / "engine" / "scripts" / "gate.py")
 # The check that runs this stops at 30 minutes; the chains run side by side
 # and each stops here, so the score always prints.
 DEADLINE = time.monotonic() + float(os.environ.get("PLL_SCORE_BUDGET_S", 24 * 60))
-VCO_PERIOD_NS = (2.6, 2.8)  # "the VCO clock at about 2.7 ns"
 VCO_TARGET_HZ = 100e6
 # The 31 corners the signed-off spec scores (H1-ada9eb plus its open items):
 # the full grid, the two resistor-skew corners and the engine's tt_pss/tt_pff.
@@ -179,28 +179,66 @@ def bench_strength_fresh(ws: Path) -> dict:
     253 mutants for 30 minutes and more, past the check's whole limit, so it
     isn't re-run here: its pass counts only while every input it read
     (netlist, tb, sizing, spec, mutant rulings; the engine's invalidation
-    map) hashes as it did when it passed, in state.json and in the recorded
-    report both. Any change to those reads as failing until bench_strength is
-    run again and its pass committed."""
+    map) hashes as it did when it passed (recorded_fresh)."""
+    return recorded_fresh(ws, "ade", "bench_strength")
+
+
+def recorded_fresh(ws: Path, skill: str, name: str, built: tuple[str, str] | None = None) -> dict:
+    """A gate's recorded pass, while it still holds: the last run in
+    state.json and its report in reports/recorded/ both passed, and every
+    input it read hashes as it did then, in both. Any change to those reads
+    as failing until the gate is run again and its pass committed.
+
+    built = (artifact kind, gate) names an input that is a build product
+    git doesn't keep (top/'s hardened GDS): it can't be hashed here, so it
+    counts as unchanged when that gate's own record is fresh and this one
+    was recorded after it, i.e. it judged what that run built."""
     sys.path[:0] = [str(CFH / "engine" / "lib")]
     import statelib  # noqa: E402
 
     try:
         st = json.loads((ws / "state.json").read_text())
-        rep = json.loads((ws / "reports" / "recorded" / "gate-bench_strength.json").read_text())
-        cur = statelib.gate_input_hashes(ws, "ade", "bench_strength", statelib.load_map(),
+        rep = json.loads((ws / "reports" / "recorded" / f"gate-{name}.json").read_text())
+        cur = statelib.gate_input_hashes(ws, skill, name, statelib.load_map(),
                                          st.get("artifacts"))
-        entry = (st.get("gates") or {}).get("bench_strength") or {}
-        fresh = statelib.gate_freshness(entry, cur)
+    except FileNotFoundError:
+        return {"status": "fail", "why": f"no recorded run (run {name} and commit its result)"}
     except Exception as e:  # noqa: BLE001
         return {"status": "error", "why": f"can't read its record: {str(e).strip()[:160]}"}
+    entry = (st.get("gates") or {}).get(name) or {}
+    last = entry.get("last") or {}
     if entry.get("status") != "pass" or rep.get("status") != "pass":
-        return {"status": "fail", "why": "its last recorded run did not pass"}
-    if not fresh["fresh"] or rep.get("inputs_at_start") != cur:
+        return {"status": "fail", "why": "its last recorded run did not pass: " + why(rep)}
+    if built:
+        kind, by = built
+        src = (st.get("gates") or {}).get(by) or {}
+        if recorded_fresh(ws, skill, by).get("status") != "pass":
+            return {"status": "stale", "why": f"{by} has no fresh pass, so nothing it built counts"}
+        if str(last.get("ts") or "") < str((src.get("last") or {}).get("ts") or "~"):
+            return {"status": "stale", "why": f"recorded before {by}'s last run (re-run {name} on "
+                    "what it built and commit its pass)"}
+        cur[kind] = (last.get("inputs") or {}).get(kind)
+    fresh = statelib.gate_freshness(entry, cur)
+    if not fresh["fresh"] or (rep.get("inputs_at_start") or {}) | (
+            {built[0]: cur[built[0]]} if built else {}) != cur:
         changed = fresh["changed_inputs"] or ["the recorded report's inputs"]
         return {"status": "stale", "why": "changed since it passed: " + ", ".join(changed)
-                + " (re-run bench_strength and commit its pass)"}
+                + f" (re-run {name} and commit its pass)"}
     return {"status": "pass"}
+
+
+def tile(ws: Path) -> dict[str, dict]:
+    """The Harden goal's gates, msde's on the whole block. top_harden
+    (LibreLane around the analog macro, 8-11 minutes) and the precheck (7
+    more) together run past what the check leaves the score, so their
+    recorded results count, as bench_strength's do: top_harden while its
+    inputs (digital/rtl, analog/layout, the SDCs) are unchanged, and
+    top_drc, top_lvs and precheck, which read top/'s GDS that git doesn't
+    keep, while top_harden's pass holds and they were recorded after it."""
+    got = {"top_harden": recorded_fresh(ws, "msde", "top_harden")}
+    for n in ("top_drc", "top_lvs", "precheck"):
+        got[n] = recorded_fresh(ws, "msde", n, built=("top_gds", "top_harden"))
+    return got
 
 
 def pex_pvt(ws: Path, logs: Path) -> dict:
@@ -233,9 +271,35 @@ def pex_pvt(ws: Path, logs: Path) -> dict:
     return got
 
 
-def vco_period_ns(sdc: Path) -> float | None:
-    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", sdc.read_text())
-    return float(m.group(1)) if m else None
+def vco_periods_ns(sdc: Path) -> dict[str, float]:
+    """vco_out's period per process (ss, tt, ff) from the design SDC: its
+    pll_vco_period_ns table, or one literal create_clock period for all."""
+    text = sdc.read_text()
+    m = re.search(r"set\s+pll_vco_period_ns\s+\{([^}]*)\}", text)
+    if m:
+        tok = m.group(1).split()
+        return {k: float(v) for k, v in zip(tok[::2], tok[1::2])}
+    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", text)
+    return {p: float(m.group(1)) for p in ("ss", "tt", "ff")} if m else {}
+
+
+def vco_ceilings_mhz(pv: dict) -> dict[str, float]:
+    """The extracted VCO's fastest (vctrl at the rail) per process over
+    every corner pex_pvt swept: this run's, else the recorded run's."""
+    meas = (pv.get("facts") or {}).get("measured") or {}
+    if not meas:
+        try:
+            rec = json.loads((BLOCK / "analog" / "reports" / "recorded" / "pex_pvt.json").read_text())
+            meas = (rec.get("facts") or {}).get("measured") or {}
+        except (OSError, ValueError):
+            meas = {}
+    top: dict[str, float] = {}
+    for corner, m in meas.items():
+        f = (m or {}).get("vco_f_vdd_mhz")
+        p = corner.split("_", 1)[0]
+        if isinstance(f, (int, float)):
+            top[p] = max(top.get(p, 0.0), float(f))
+    return top
 
 
 def layers(ws: Path, logs: Path) -> tuple[dict[str, bool], dict]:
@@ -276,6 +340,7 @@ def main() -> int:
                                 ["spec_lint", "lint", "synth", "harden", "timing"], logs, "digital")
             f_top = pool.submit(layers, top, logs)
             (a, (n_pvt, bad_pvt)), l, d, (lay3, meas) = f_sim.result(), f_lay.result(), f_dig.result(), f_top.result()
+        h = tile(BLOCK)
 
         lines: list[tuple[str, float, str]] = []
 
@@ -303,13 +368,22 @@ def main() -> int:
              "; ".join(bad_pvt))
         passed("analog bench_strength", a["bench_strength"])
 
-        # --- Close digital issue 8: timing with vco_out at ~2.7 ns --------
+        # --- Close digital issue 8: timing with vco_out at the post-layout
+        # VCO ceiling of each process. The SDC's period on a process must
+        # cover the extracted VCO's fastest on it; tt and ff never looser
+        # than the analog spec's 2.7 ns.
         t = d["timing"]
-        period = vco_period_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
-        if period is None or not VCO_PERIOD_NS[0] <= period <= VCO_PERIOD_NS[1]:
-            line("digital timing with vco_out at ~2.7 ns", 0.0, f"vco_out period is {period} ns")
+        periods = vco_periods_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
+        ceil = vco_ceilings_mhz(l["pex_pvt"])
+        name = "digital timing with vco_out at the post-layout VCO ceiling"
+        short = [f"{p} {periods.get(p)} ns vs {ceil.get(p, 0):.1f} MHz"
+                 for p in ("ss", "tt", "ff")
+                 if p not in periods or p not in ceil or 1000 / periods[p] < ceil[p]
+                 or (p != "ss" and periods[p] > 2.7)]
+        if short:
+            line(name, 0.0, "vco_out period misses the ceiling: " + "; ".join(short))
         elif t.get("status") not in ("pass", "fail"):
-            line("digital timing with vco_out at ~2.7 ns", 0.0, why(t))
+            line(name, 0.0, why(t))
         else:
             sta = (t.get("facts") or {}).get("corners") or {}
             good = [c for c, v in sta.items()
@@ -317,7 +391,8 @@ def main() -> int:
             share = len(good) / len(sta) if sta else 0.0
             if t.get("status") != "pass" and share == 1.0:
                 share = 0.0  # every corner met but the gate still failed: not a pass
-            line(f"digital timing with vco_out at {period} ns ({len(good)}/{len(sta)} STA corners)",
+            line(f"{name}, ss {periods['ss']} / tt {periods['tt']} / ff {periods['ff']} ns "
+                 f"({len(good)}/{len(sta)} STA corners)",
                  share, "" if t.get("status") == "pass" else why(t))
 
         # --- Test the whole PLL loop in co-simulation --------------------
@@ -349,6 +424,12 @@ def main() -> int:
         n = len([c for c in corners if c in done])
         line(f"post-layout benches pass at every scored corner ({n}/{len(corners)})",
              n / len(corners), why(pv))
+
+        # --- Harden the tile and pass the Tiny Tapeout precheck ----------
+        passed("tile top_harden (the digital half around the analog macro)", h["top_harden"])
+        passed("tile top_drc", h["top_drc"])
+        passed("tile top_lvs", h["top_lvs"])
+        passed("tile Tiny Tapeout precheck", h["precheck"])
     finally:
         if os.environ.get("PLL_SCORE_KEEP"):
             print(f"score: scratch kept at {scratch}", file=sys.stderr)

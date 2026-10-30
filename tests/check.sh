@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# The fast check for this repo. GitHub runs it as the `check` job on every pull
-# request and every push to main, and you can run the same thing locally:
+# The fast check for this repo. GitHub runs it on every pull request and every
+# push to main twice: as the `check` job with Ubuntu's iverilog, and as the
+# `test (iic-osic-tools 2026.09)` job inside the IIC-OSIC-TOOLS image, with
+# the same tools as the Hive's local run. You can run it locally too:
 #
 #   bash tests/check.sh
 #
@@ -18,6 +20,9 @@
 #      and any warning fails the check.
 #   3. tests/check_netlists.py: the analog netlist, testbenches, bounds and
 #      spec files are well formed (no PDK or simulator needed).
+#   Then docs/review/stages.py --check says whether the review page's stage
+#   table matches the recorded gate reports. A stale page is a note, not a
+#   failure; a crash in the script fails the check.
 # The SPICE corners, formal proof, hardening and the Tiny Tapeout workflows
 # (gds, docs, test, fpga) still run on their own.
 set -euo pipefail
@@ -77,4 +82,13 @@ lint "the PLL digital RTL" "${rtl[@]}" blocks/pll/digital/harden/tt_um_ihsan_sa_
 
 echo "== 3/3 analog netlists and specs"
 python3 tests/check_netlists.py
+
+rc=0
+python3 docs/review/stages.py --check || rc=$?
+if [ "$rc" -eq 3 ]; then
+  echo "note: docs/review/stages.md is stale; run python3 docs/review/stages.py and commit it"
+elif [ "$rc" -ne 0 ]; then
+  echo "check: docs/review/stages.py failed (exit $rc)"
+  exit 1
+fi
 echo "check: ok"
