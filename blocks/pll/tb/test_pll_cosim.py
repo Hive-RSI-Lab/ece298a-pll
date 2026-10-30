@@ -12,6 +12,12 @@ real prescaler and divider. cosim_bench.json picks the analog model:
 Operating point: the brief's nominal point, f_ref = 6.25 MHz, n_sel = 2
 (P*N = 16, f_vco = 100 MHz), cp_trim = 00, obs_sel = 0, tt.
 
+PLL_COSIM_SETUP (cosim_corners.py, never the gate) moves the same bench to
+another corner and cell netlist: a json {"corner", "vdd", "netlist",
+"lines", "out"} whose lines replace model_lines() (the corner's PDK libs,
+.temp, the extracted netlist) and whose vdd drives the pins and the cell;
+its measures go to "out", never to cosim_measures.json.
+
 Measures (reports/cosim_measures.json, written before any assertion), with
 bounds from the specs (pll_cosim.bounds.json):
   lock_time_us          pll_en rising -> first lock rising       (<= 50 us,
@@ -216,11 +222,17 @@ async def test_pll_lock_nominal(dut):
         f"cosim_bench.json names {meta['analog_netlist']} but analog_kind "
         f"{kind!r} runs {netlist}")
     extra = list(C.model_lines()) if real_cell else []
+    setup = json.loads(os.environ.get("PLL_COSIM_SETUP") or "null")
+    corner, vdd, cell = "tt_27c", C.VDD, "analog/netlist/pll_analog.cir"
+    if setup:
+        assert real_cell, "PLL_COSIM_SETUP moves the transistor cell only"
+        extra = list(setup["lines"])
+        corner, vdd, cell = setup["corner"], float(setup["vdd"]), setup["netlist"]
     extra += [".save v(x1.vctrl)", ".options reltol=1e-3"]
     if os.environ.get("PLL_COSIM_ANALOG_VCD"):            # debug only
         extra += [".save " + " ".join(f"v({n})" for n in DEBUG_NODES)]
 
-    pin = dict(vdd=C.VDD, vss=0.0)
+    pin = dict(vdd=vdd, vss=0.0)
     block = AnalogBlock(
         name="pll_analog",
         spice_file=str(HERE / netlist),
@@ -234,7 +246,7 @@ async def test_pll_lock_nominal(dut):
             "cp_trim1": DigitalPin(direction="input", **pin),
             "vco_out": DigitalPin(direction="output", **pin),
         },
-        vdd=C.VDD, vss=0.0, tran_step=tran_step, extra_lines=extra,
+        vdd=vdd, vss=0.0, tran_step=tran_step, extra_lines=extra,
     )
 
     # tile inputs: reset held, PLL disabled, nominal point
@@ -288,7 +300,19 @@ async def test_pll_lock_nominal(dut):
         dut.rst_n.value = 1
         dut.pll_en_in.value = 1
 
+    async def progress():
+        """a log line per simulated microsecond: how fast a slow (extracted)
+        cell runs, and where a run that never finishes stopped."""
+        t0 = time.monotonic()
+        while True:
+            await Timer(1000, unit="ns")
+            v = vctrl[-1][1] if vctrl else float("nan")
+            dut._log.info("progress: %.0f ns simulated, %.0f s wall, vctrl %.4f V, lock %s",
+                          cocotb.utils.get_sim_time(unit="ns"), time.monotonic() - t0, v,
+                          dut.lock.value)
+
     cocotb.start_soon(sample_vctrl())
+    cocotb.start_soon(progress())
     cocotb.start_soon(sample_vctrl_at_ref())
     cocotb.start_soon(release())
 
@@ -331,9 +355,10 @@ async def test_pll_lock_nominal(dut):
         measures = {
             "analog_kind": kind,
             "analog_netlist": netlist,
+            "cell_netlist": cell if real_cell else None,
             "operating_point": {"f_ref_hz": C.F_REF_HZ, "n_sel": C.N_SEL,
                                 "p_times_n": PN, "f_vco_target_hz": C.F_REF_HZ * PN,
-                                "cp_trim": "00", "corner": "tt_27c"},
+                                "cp_trim": "00", "corner": corner, "vdd": vdd},
             "lock_time_us": lock_time_us,
             "lock_drops_after_lock": drops,
             "fb_period_rel_err": rel_err(fb_t, T_REF_NS),
@@ -370,8 +395,9 @@ async def test_pll_lock_nominal(dut):
             "vctrl_trace_us_v": [[round(t / 1000, 4), round(v, 5)]
                                  for t, v in vctrl[::20]],
         }
-        REPORTS.mkdir(parents=True, exist_ok=True)
-        (REPORTS / out_name).write_text(
+        out_path = Path(setup["out"]) if setup else REPORTS / out_name
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(
             json.dumps(measures, indent=1), encoding="utf-8")
         await bridge.stop()
 

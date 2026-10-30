@@ -64,14 +64,18 @@ MOSCAP_Q = """* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.
 * (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
+* overflowed on a wild Newton iterate in the op search (the post-layout bench,
+* ff_27c_vm10).
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
-C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
 .ends cap_nmos_03v3_b"""
 
 
 def model_lines(corner: str = "typical", res: str = "res_typical",
-                mim: str = "mimcap_typical") -> list[str]:
-    """PDK model includes + the real netlist + its sizing (tt by default)."""
+                mim: str = "mimcap_typical", netlist: Path | None = None) -> list[str]:
+    """PDK model includes + the real netlist (or another netlist of the same
+    cell, e.g. the layout's extraction) + its sizing (tt by default)."""
     p = pdk_ngspice_dir()
     return [
         f".include '{p}/design.spice'",
@@ -81,7 +85,7 @@ def model_lines(corner: str = "typical", res: str = "res_typical",
         # the loop filter's MOS caps in charge form (the analog benches'
         # comment says why), at the MIM corner's factor
         *MOSCAP_Q.splitlines(),
-        f".include '{NETLIST}'",
+        f".include '{netlist or NETLIST}'",
         sizing_param_line(),
     ]
 
