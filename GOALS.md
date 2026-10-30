@@ -36,6 +36,12 @@ Filed by runs. Each says what done looks like as something a run can check, and 
 - **What:** With the analog layout done, harden the digital half around the analog macro into one tile, run full-tile DRC and LVS, and pass the Tiny Tapeout precheck. Replace the template placeholder in `src/` and the template README with the real design, so the Tiny Tapeout gds, docs and test workflows build and test this design rather than the template.
 - **Done when:** the tile hardens with no DRC or LVS errors, the Tiny Tapeout precheck passes, and the gds, docs and test workflows pass on main with the real design in `src/`.
 
+### Make every stage reviewable for the Nov 5 evaluation
+
+- **Status:** done 2026-10-30 (task 261030-095433, issue #33). `docs/review/stages.md` lists the 29 gates of the flow in order (spec and split, analog schematic, digital RTL, digital standalone hardening, the whole loop, analog layout, the full tile). Each row says what the gate shows, its last recorded result and what it found, the day it ran, and how to see it work: the file to open, the viewer command (`klayout`, `gtkwave`) and the command that re-runs the gate. It ends with the sign-offs: H1-ada9eb approved, H2-a9fad5 presented and pending. `python3 docs/review/stages.py` writes it from each workspace's `state.json` and `reports/recorded/`, with no EDA tool needed. The decisions taken without the owner, and the pictures, are on the review page task 261030-011402 is writing in `docs/review/`.
+- **What:** The owner, 2026-10-29 (chat 261030-010852-f80e292aba): "make sure to make it possible for me to review to work/see it". The course's evaluation is on Nov 5. Put every stage of the flow on one page with its result and a way to see it work, written from the recorded gate reports so it can't drift from them.
+- **Done when:** `docs/review/stages.md` lists every gate the flow runs with its recorded result and how to see it, and `python3 docs/review/stages.py --check` passes (the page matches the recorded reports).
+
 ## Later
 
 Goals waiting for an open slot. When a proposed goal closes, the run that closed it moves the top one here up into Proposed goals as open.
