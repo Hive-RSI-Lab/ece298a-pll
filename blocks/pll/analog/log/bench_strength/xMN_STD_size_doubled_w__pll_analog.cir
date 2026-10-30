@@ -56,9 +56,16 @@ XMN_B2 vbp va vref vss nfet_03v3 w=w_b2 l=l_b2
 XRBIAS_TOP vref bias_ref vss ppolyf_u r_width=1e-6 r_length=rbt_l
 XRBIAS_INT bias_ref vss vss ppolyf_u r_width=1e-6 r_length=rb_l
 * startup: weak pull-up on vst, released once vref rises
+* MN_ST is long (l=4u, was 2u) so its kick is weak. With vst high it pulls
+* vbp down and MN_B2 (triode) drags vref with it; at l=2u that held vref at
+* ~0.76 V at ss_m40c_vm10, where MN_STD sank only ~0.1 uA more than MP_STL
+* sourced (pre-layout) and less once extracted: the startup never released
+* and Ib sat at ~42 uA (Icp 168 uA, bias_ref 0.51 V), a second stable state
+* reached from pll_en rising. At l=4u vref stays near 1 V and MN_STD wins
+* by >= 15 uA at every corner (2026-10-30).
 XMP_STL vst en_b vdd vdd pfet_03v3 w=5e-7 l=1e-5
 xMN_STD vst vref vss vss nfet_03v3 w=2e-05 l=1e-6
-XMN_ST vbp vst vss vss nfet_03v3 w=5e-7 l=2e-6
+XMN_ST vbp vst vss vss nfet_03v3 w=5e-7 l=4e-6
 XMN_STE vst en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
 * standby clamps
 XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7

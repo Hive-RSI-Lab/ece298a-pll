@@ -17,7 +17,10 @@
 *  - pex_start_swing_lo_pct_vdd: the same over 2.2..3 us at vctrl = 0.3 V
 * 2026-10-29, extracted layout: hi passes at all 31 corners; lo fails at
 * ff_125c, ff_125c_vm10, ff_125c_vp10 and ss_m40c_vm10 (vco_out flat: the
-* starved ring sits on its balance point). At five more corners the engine
+* starved ring sits on its balance point). 2026-10-30 (MN_ST l = 4 um, on
+* the redrawn ring of c0301c6): ss_m40c_vm10 passes both (its bias had
+* locked in start-up, Icp 168 uA); lo fails at ff_125c and tt_125c, all
+* three supplies each; tt_125c fails on main's c0301c6 extraction too. At five more corners the engine
 * reads ngspice's "gmin stepping" note on the pll_en = 0 op as an engine
 * error while both swings pass.
 * sim_timeout_s: 1800

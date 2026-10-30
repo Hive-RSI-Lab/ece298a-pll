@@ -133,7 +133,7 @@ DEV = {
     "MN_B2": ("n", "vbp", "va", "vref", W_B2, L_B2, 1),
     "MP_STL": ("p", "vst", "en_b", "vdd", 0.5, 10.0, 1),
     "MN_STD": ("n", "vst", "vref", "vss", 10.0, 1.0, 2),
-    "MN_ST": ("n", "vbp", "vst", "vss", 0.5, 2.0, 1),
+    "MN_ST": ("n", "vbp", "vst", "vss", 0.5, 4.0, 1),
     "MN_STE": ("n", "vst", "en_b", "vss", 1.0, LMIN, 1),
     "MP_ENB": ("p", "vbp", "pll_en", "vdd", 1.0, LMIN, 1),
     "MN_ENA": ("n", "va", "en_b", "vss", 1.0, LMIN, 1),
@@ -283,6 +283,26 @@ def via(top, x, y, cut, lower, upper, land=TRK_W):
     rect(top, x - h, y - h, x + h, y + h, LY[cut])
     rect(top, x - e, y - e, x + e, y + e, lower)
     rect(top, x - e, y - e, x + e, y + e, upper)
+
+
+def fill_m3_notches(top):
+    """Two via landings on one thinner (ring channel) metal3 track closer
+    than M3.2a (0.28) leave a notch between them, inside one shape: fill
+    it. The landings can sit in different cells (a ring half's via2 and a
+    trunk's via3), so this reads the merged metal3 of the whole top cell.
+    A gap between two separate shapes is left alone (a different net)."""
+    import klayout.db as kdb
+
+    li = top.kcl.layer(*M3)
+    m3 = kdb.Region(top.kdb_cell.begin_shapes_rec(li)).merged()
+    dbu = top.kcl.dbu
+    for ep in m3.space_check(int(round(0.28 / dbu))).each():
+        box = ep.bbox()
+        if box.width() == 0 or box.height() == 0:
+            continue
+        if m3.interacting(kdb.Region(box.enlarged(0, 1))).count() != 1:
+            continue
+        top.kdb_cell.shapes(li).insert(box)
 
 
 def tbox(b, dx, dy):
@@ -1063,6 +1083,7 @@ def generate():
                 continue
             named.add(net)
             labels.append((net, r5((a + b) / 2), track_y(net, ci), M3))
+    fill_m3_notches(top)
     return layoutlib.finalize(top, CELL, labels)
 
 
