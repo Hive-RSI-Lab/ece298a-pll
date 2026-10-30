@@ -3,8 +3,8 @@
  "gate": "precheck",
  "phase": "P3",
  "tool": "precheck",
- "input_digest": "dir_text:609075770fd2857a2ed9d62a08a62904475f7f6d65a93d0303420fbbf9b343f0",
- "status": "fail",
+ "input_digest": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,135 +12,21 @@
   "max_count": 0
  },
  "counts": {
-  "total": 3,
-  "by_severity": {
-   "error": 3
-  },
-  "by_source": {
-   "tt-precheck": 3
-  }
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
  },
- "failing_count": 3,
- "failing": [
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "KLayout Checks",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "KLayout Checks: Forbidden layer Metal5 found in top/log/precheck_run/design/tt_um_ihsan_sa_pll.gds",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "KLayout Checks: Forbidden layer Metal5 found in top/log/precheck_run/design/tt_um_ihsan_sa_pll.gds",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "Pin check",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "Pin check: Some ports are missing or have wrong dimensions, see 14 LEF errors above",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "Pin check: Some ports are missing or have wrong dimensions, see 14 LEF errors above",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "KLayout GF180MCU DRC",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "KLayout GF180MCU DRC: Klayout gf180mcuD failed with 1 DRC violations",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "KLayout GF180MCU DRC: Klayout gf180mcuD failed with 1 DRC violations",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
- "violations": [
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "KLayout Checks",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "KLayout Checks: Forbidden layer Metal5 found in top/log/precheck_run/design/tt_um_ihsan_sa_pll.gds",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "KLayout Checks: Forbidden layer Metal5 found in top/log/precheck_run/design/tt_um_ihsan_sa_pll.gds",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "Pin check",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "Pin check: Some ports are missing or have wrong dimensions, see 14 LEF errors above",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "Pin check: Some ports are missing or have wrong dimensions, see 14 LEF errors above",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "precheck",
-   "severity": "error",
-   "file": null,
-   "module": "KLayout GF180MCU DRC",
-   "line": null,
-   "kind": "precheck_failed",
-   "refs": [],
-   "msg": "KLayout GF180MCU DRC: Klayout gf180mcuD failed with 1 DRC violations",
-   "source": "tt-precheck",
-   "items": [
-    {
-     "msg": "KLayout GF180MCU DRC: Klayout gf180mcuD failed with 1 DRC violations",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
  "facts": {
   "top": "tt_um_ihsan_sa_pll",
   "checks_run": 12
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:609075770fd2857a2ed9d62a08a62904475f7f6d65a93d0303420fbbf9b343f0",
+  "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
   "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
  },
- "recorded_ts": "2026-10-30T00:56:30",
- "attempts": 1
+ "recorded_ts": "2026-10-30T06:29:50",
+ "attempts": 3
 }

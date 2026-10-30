@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-30T02:08:31",
+ "updated": "2026-10-30T06:17:30",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -13,7 +13,7 @@
    "status": "pass",
    "attempts": 18,
    "last": {
-    "ts": "2026-10-29T22:26:35",
+    "ts": "2026-10-30T00:01:50",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -194,7 +194,7 @@
      "job": null
     },
     {
-     "ts": "2026-10-29T22:26:35",
+     "ts": "2026-10-30T00:01:50",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
@@ -208,14 +208,14 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 11,
+   "attempts": 12,
    "last": {
-    "ts": "2026-10-29T22:27:23",
+    "ts": "2026-10-30T00:41:34",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+     "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null
@@ -332,12 +332,23 @@
      "job": null
     },
     {
-     "ts": "2026-10-29T22:27:23",
+     "ts": "2026-10-30T00:04:30",
+     "status": "fail",
+     "failing_count": 2,
+     "total": 2,
+     "inputs": {
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-10-30T00:41:34",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null
@@ -347,17 +358,17 @@
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 14,
+   "attempts": 17,
    "last": {
-    "ts": "2026-10-29T22:28:21",
+    "ts": "2026-10-30T06:17:30",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-     "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+     "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-     "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
     "job": null,
     "facts": {
@@ -602,15 +613,69 @@
      }
     },
     {
-     "ts": "2026-10-29T22:28:21",
+     "ts": "2026-10-30T00:06:35",
+     "status": "fail",
+     "failing_count": 4,
+     "total": 4,
+     "inputs": {
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+      "tb": "dir_text:bffb7a9fb048343887606de362f6f5da2f265504926c973fd497df4e3a8f479c",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-10-30T00:44:22",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+      "tb": "dir_text:dba750df7051eeed8f630dd1def1f6fc0e9a41a0ba49cb160bd187f1cee1c6db",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-10-30T03:47:58",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+      "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-10-30T06:17:30",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+      "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
      },
      "job": null,
      "facts": {
@@ -626,15 +691,15 @@
    "status": "pass",
    "attempts": 10,
    "last": {
-    "ts": "2026-10-29T22:50:24",
+    "ts": "2026-10-30T04:14:53",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-     "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+     "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+     "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-     "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
     "job": null,
     "facts": {
@@ -1095,15 +1160,15 @@
      }
     },
     {
-     "ts": "2026-10-29T22:50:24",
+     "ts": "2026-10-30T04:14:53",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+      "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
      },
      "job": null,
      "facts": {
@@ -1147,16 +1212,16 @@
   "bench_strength": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 8,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-30T02:08:30",
+    "ts": "2026-10-28T19:23:09",
     "status": "pass",
     "failing_count": 0,
     "total": 34,
     "inputs": {
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+     "netlist": "dir_text:c20767143e29ce734d55b7e2a8cacb836b60b62cefe973cc06edc21007841f07",
      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-     "mutant_rulings": "json_canonical:15abeb757542442a922d3d16bee70d3d3e8fa5cc0c705f8494b676d3f779d966",
+     "mutant_rulings": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
     },
@@ -1167,7 +1232,7 @@
      "survived": 34,
      "devices_total": 87,
      "devices_mutated": 87,
-     "killed_by_sensitivity": 74,
+     "killed_by_sensitivity": 73,
      "equivalent": 0,
      "below_spread": 34
     }
@@ -1340,44 +1405,43 @@
       "equivalent": 0,
       "below_spread": 34
      }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-30T05:12:56",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "CheckError: spec/mutant_rulings.yaml below_spread names mutant 'xMN_SW0B_connection_removed', which a bench now kills - remove the stale ruling"
     },
     {
-     "ts": "2026-10-30T02:08:30",
-     "status": "pass",
-     "failing_count": 0,
-     "total": 34,
-     "inputs": {
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-      "mutant_rulings": "json_canonical:15abeb757542442a922d3d16bee70d3d3e8fa5cc0c705f8494b676d3f779d966",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
-     },
-     "job": null,
-     "facts": {
-      "total_mutants": 253,
-      "killed": 219,
-      "survived": 34,
-      "devices_total": 87,
-      "devices_mutated": 87,
-      "killed_by_sensitivity": 74,
-      "equivalent": 0,
-      "below_spread": 34
-     }
+     "ts": "2026-10-30T05:48:34",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "OSError: [Errno 28] No space left on device"
+    },
+    {
+     "ts": "2026-10-30T06:03:04",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "OSError: [Errno 28] No space left on device"
     }
    ]
   },
   "drc": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 7,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-29T22:55:37",
+    "ts": "2026-10-30T06:16:01",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:2731ec2ae99b6799edadbc27d9f163c0320fd97381093914e0e841e5ec55237e",
+     "layout": "dir_text:a0ba4b5670c50059b1a8b586d9315b0769d362b004843b3805ba4a8a2ddeca78",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null,
@@ -1434,12 +1498,12 @@
      "job": null
     },
     {
-     "ts": "2026-10-29T22:50:48",
-     "status": "fail",
-     "failing_count": 2,
-     "total": 2,
+     "ts": "2026-10-30T00:01:34",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
      "inputs": {
-      "layout": "dir_text:2fc428f1dcb3d7df423422bda0c53e9e75988fc41eeaec2865ccc1e3d9e5d6ee",
+      "layout": "dir_text:4de4f855dc31f20245aee4c216e9d5c8e845006614c81566460a7d670422ec54",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null,
@@ -1448,23 +1512,12 @@
      ]
     },
     {
-     "ts": "2026-10-29T22:53:17",
-     "status": "fail",
-     "failing_count": 2,
-     "total": 2,
-     "inputs": {
-      "layout": "dir_text:ae6233c3397019ff5c549547350aba5fa26026ad186070c1228dbc7d4eaf59ff",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
-     },
-     "job": null
-    },
-    {
-     "ts": "2026-10-29T22:55:37",
+     "ts": "2026-10-30T06:16:01",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "layout": "dir_text:2731ec2ae99b6799edadbc27d9f163c0320fd97381093914e0e841e5ec55237e",
+      "layout": "dir_text:a0ba4b5670c50059b1a8b586d9315b0769d362b004843b3805ba4a8a2ddeca78",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null,
@@ -1477,17 +1530,17 @@
   "lvs": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 7,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-29T22:55:56",
+    "ts": "2026-10-30T06:16:11",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:5acddbe5cdb8bd61ad6efecb1054860f04c7eca8c13004483c4a024fd8cc99b7",
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+     "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-     "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
     "job": null
    },
@@ -1545,41 +1598,31 @@
      "job": null
     },
     {
-     "ts": "2026-10-29T22:50:59",
+     "ts": "2026-10-30T00:01:28",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "layout": "dir_text:42324979f3029e1f33729f970411fab316ec7daa2a110483f031544078f6eef4",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+      "layout": "dir_text:4de4f855dc31f20245aee4c216e9d5c8e845006614c81566460a7d670422ec54",
+      "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
      },
-     "job": null
+     "job": null,
+     "inputs_changed_during_run": [
+      "layout"
+     ]
     },
     {
-     "ts": "2026-10-29T22:53:31",
+     "ts": "2026-10-30T06:16:11",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "layout": "dir_text:ae6233c3397019ff5c549547350aba5fa26026ad186070c1228dbc7d4eaf59ff",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+      "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+      "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
-     },
-     "job": null
-    },
-    {
-     "ts": "2026-10-29T22:55:56",
-     "status": "pass",
-     "failing_count": 0,
-     "total": 0,
-     "inputs": {
-      "layout": "dir_text:5acddbe5cdb8bd61ad6efecb1054860f04c7eca8c13004483c4a024fd8cc99b7",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
      },
      "job": null
     }
@@ -1588,17 +1631,17 @@
   "pex_sim": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 8,
+   "attempts": 5,
    "last": {
-    "ts": "2026-10-29T22:56:19",
+    "ts": "2026-10-29T18:23:56",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:5acddbe5cdb8bd61ad6efecb1054860f04c7eca8c13004483c4a024fd8cc99b7",
+     "layout": "dir_text:f871e89792f61ba7ea4b2d522b9886e05445d877ef534151611916559197de15",
      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
      "layout_ref": "dir_text:8c790856f40eeff8e3dcc2e740440217d75c31381a29eb945577d60de8cee330",
-     "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
+     "netlist": "dir_text:c20767143e29ce734d55b7e2a8cacb836b60b62cefe973cc06edc21007841f07",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null
@@ -1673,48 +1716,6 @@
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null
-    },
-    {
-     "ts": "2026-10-29T22:51:18",
-     "status": "pass",
-     "failing_count": 0,
-     "total": 0,
-     "inputs": {
-      "layout": "dir_text:42324979f3029e1f33729f970411fab316ec7daa2a110483f031544078f6eef4",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-      "layout_ref": "dir_text:8c790856f40eeff8e3dcc2e740440217d75c31381a29eb945577d60de8cee330",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
-     },
-     "job": null
-    },
-    {
-     "ts": "2026-10-29T22:54:01",
-     "status": "pass",
-     "failing_count": 0,
-     "total": 0,
-     "inputs": {
-      "layout": "dir_text:ae6233c3397019ff5c549547350aba5fa26026ad186070c1228dbc7d4eaf59ff",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-      "layout_ref": "dir_text:8c790856f40eeff8e3dcc2e740440217d75c31381a29eb945577d60de8cee330",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
-     },
-     "job": null
-    },
-    {
-     "ts": "2026-10-29T22:56:19",
-     "status": "pass",
-     "failing_count": 0,
-     "total": 0,
-     "inputs": {
-      "layout": "dir_text:5acddbe5cdb8bd61ad6efecb1054860f04c7eca8c13004483c4a024fd8cc99b7",
-      "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-      "layout_ref": "dir_text:8c790856f40eeff8e3dcc2e740440217d75c31381a29eb945577d60de8cee330",
-      "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
-     },
-     "job": null
     }
    ]
   }
@@ -1746,43 +1747,43 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-   "hashed": "2026-10-30T02:08:29"
+   "hashed": "2026-10-30T06:17:30"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
-   "hashed": "2026-10-30T02:08:26"
+   "sha256": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+   "hashed": "2026-10-30T06:17:30"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
-   "hashed": "2026-10-30T02:08:28"
+   "sha256": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+   "hashed": "2026-10-30T06:17:30"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
-   "sha256": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78",
-   "hashed": "2026-10-30T02:08:30"
+   "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+   "hashed": "2026-10-30T06:17:30"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
    "kind": "mutant_rulings",
-   "sha256": "json_canonical:15abeb757542442a922d3d16bee70d3d3e8fa5cc0c705f8494b676d3f779d966",
-   "hashed": "2026-10-30T02:08:29"
+   "sha256": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
+   "hashed": "2026-10-28T19:23:09"
   },
   "layout": {
    "path": "layout",
    "kind": "layout",
-   "sha256": "dir_text:5acddbe5cdb8bd61ad6efecb1054860f04c7eca8c13004483c4a024fd8cc99b7",
-   "hashed": "2026-10-29T22:56:19"
+   "sha256": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+   "hashed": "2026-10-30T06:16:11"
   },
   "layout_ref": {
    "path": "layout_ref",
    "kind": "layout_ref",
    "sha256": "dir_text:8c790856f40eeff8e3dcc2e740440217d75c31381a29eb945577d60de8cee330",
-   "hashed": "2026-10-29T22:56:19"
+   "hashed": "2026-10-29T18:23:56"
   }
  },
  "open_issues": [
@@ -3773,7 +3774,29 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:26:35",
+   "ts": "2026-10-30T00:01:28",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-10-30T00:01:34",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-10-30T00:01:50",
    "event": "gate",
    "gate": "spec_lint",
    "status": "pass",
@@ -3781,23 +3804,47 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:27:23",
+   "ts": "2026-10-30T00:04:30",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "fail",
+   "attempt": 11,
+   "failing_count": 2
+  },
+  {
+   "ts": "2026-10-30T00:06:35",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "fail",
+   "attempt": 14,
+   "failing_count": 4
+  },
+  {
+   "ts": "2026-10-30T00:41:34",
    "event": "gate",
    "gate": "netlist_lint",
    "status": "pass",
-   "attempt": 11,
+   "attempt": 12,
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:28:21",
+   "ts": "2026-10-30T00:44:22",
    "event": "gate",
    "gate": "sim_tt",
    "status": "pass",
-   "attempt": 14,
+   "attempt": 15,
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:50:24",
+   "ts": "2026-10-30T03:47:58",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 16,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T04:14:53",
    "event": "gate",
    "gate": "sim_pvt",
    "status": "pass",
@@ -3805,95 +3852,48 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:50:48",
-   "event": "gate",
-   "gate": "drc",
-   "status": "fail",
-   "attempt": 5,
-   "failing_count": 2,
-   "inputs_changed_during_run": [
-    "layout"
-   ]
+   "ts": "2026-10-30T05:12:56",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "CheckError: spec/mutant_rulings.yaml below_spread names mutant 'xMN_SW0B_connection_removed', which a bench now kills - remove the stale ruling"
   },
   {
-   "ts": "2026-10-29T22:50:59",
-   "event": "gate",
-   "gate": "lvs",
-   "status": "pass",
-   "attempt": 5,
-   "failing_count": 0
+   "ts": "2026-10-30T05:48:34",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "OSError: [Errno 28] No space left on device"
   },
   {
-   "ts": "2026-10-29T22:51:18",
-   "event": "gate",
-   "gate": "pex_sim",
-   "status": "pass",
-   "attempt": 6,
-   "failing_count": 0
+   "ts": "2026-10-30T06:03:04",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "OSError: [Errno 28] No space left on device"
   },
   {
-   "ts": "2026-10-29T22:53:17",
-   "event": "gate",
-   "gate": "drc",
-   "status": "fail",
-   "attempt": 6,
-   "failing_count": 2
-  },
-  {
-   "ts": "2026-10-29T22:53:31",
-   "event": "gate",
-   "gate": "lvs",
-   "status": "pass",
-   "attempt": 6,
-   "failing_count": 0
-  },
-  {
-   "ts": "2026-10-29T22:54:01",
-   "event": "gate",
-   "gate": "pex_sim",
-   "status": "pass",
-   "attempt": 7,
-   "failing_count": 0
-  },
-  {
-   "ts": "2026-10-29T22:55:37",
+   "ts": "2026-10-30T06:16:01",
    "event": "gate",
    "gate": "drc",
    "status": "pass",
-   "attempt": 7,
+   "attempt": 6,
    "failing_count": 0,
    "inputs_changed_during_run": [
     "layout"
    ]
   },
   {
-   "ts": "2026-10-29T22:55:56",
+   "ts": "2026-10-30T06:16:11",
    "event": "gate",
    "gate": "lvs",
    "status": "pass",
-   "attempt": 7,
+   "attempt": 6,
    "failing_count": 0
   },
   {
-   "ts": "2026-10-29T22:56:19",
+   "ts": "2026-10-30T06:17:30",
    "event": "gate",
-   "gate": "pex_sim",
+   "gate": "sim_tt",
    "status": "pass",
-   "attempt": 8,
-   "failing_count": 0
-  },
-  {
-   "ts": "2026-10-29T23:43:58",
-   "event": "gate_error",
-   "gate": "bench_strength",
-   "error": "CheckError: spec/mutant_rulings.yaml below_spread 'xMN_ENA_size_doubled_w': recorded delta 0.008446 does not match the measured 0.004519 - rewrite it from this run's mutants facts"
-  },
-  {
-   "ts": "2026-10-30T02:08:30",
-   "event": "gate",
-   "gate": "bench_strength",
-   "status": "pass",
-   "attempt": 8,
+   "attempt": 17,
    "failing_count": 0
   }
  ]

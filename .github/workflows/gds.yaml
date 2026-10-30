@@ -1,5 +1,10 @@
 name: gds
 
+# Tiny Tapeout's analog-project flow (ttgf-analog-template 5e6eca6): the tile
+# is hardened by chip-flow's top_harden (the digital core around the analog
+# macro), and its GDS and LEF are committed under gds/ and lef/. This
+# workflow packages them, runs Tiny Tapeout's precheck on them and publishes
+# the GDS viewer.
 on:
   push:
   workflow_dispatch:
@@ -13,9 +18,18 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Build GDS
-        uses: TinyTapeout/tt-gds-action@ttgf26c
+      - name: Read top module name
+        id: top_module
+        run: |
+          echo TOP_MODULE=`yq '.project.top_module' info.yaml` | tee $GITHUB_OUTPUT
+
+      - name: Create and publish the GDS artifact
+        uses: TinyTapeout/tt-gds-action/custom_gds@ttgf26c
         with:
+          top_module: ${{ steps.top_module.outputs.TOP_MODULE }}
+          gds_path: gds/${{ steps.top_module.outputs.TOP_MODULE }}.gds
+          lef_path: lef/${{ steps.top_module.outputs.TOP_MODULE }}.lef
+          verilog_path: src/project.v
           pdk: gf180mcuD
 
   precheck:
@@ -24,18 +38,6 @@ jobs:
     steps:
       - name: Run Tiny Tapeout Precheck
         uses: TinyTapeout/tt-gds-action/precheck@ttgf26c
-
-  gl_test:
-    needs: gds
-    runs-on: ubuntu-24.04
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v6
-        with:
-          submodules: recursive
-
-      - name: GL test
-        uses: TinyTapeout/tt-gds-action/gl_test@ttgf26c
 
   viewer:
     # Pages deploys only from main: on a branch it finds more than one

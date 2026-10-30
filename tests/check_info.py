@@ -52,11 +52,26 @@ def main() -> int:
     if top and not re.search(rf"\b{re.escape(top)}\b", Path("test/tb.v").read_text()):
         problems.append(f"test/tb.v does not instantiate {top}")
 
+    # an analog project (Tiny Tapeout's analog template) also lists ua[0..5],
+    # and takes a 1x2 tile or larger
+    analog = project.get("analog_pins")
+    pins = PINS
+    if analog is not None:
+        pins = PINS + [f"ua[{i}]" for i in range(6)]
+        if not isinstance(analog, int) or not 0 <= analog <= 6:
+            problems.append(f"project.analog_pins is {analog!r}, not 0 to 6")
+        if project.get("tiles") == "1x1":
+            problems.append("an analog project's tiles start at 1x2")
+        if not isinstance(project.get("uses_vapwr"), bool):
+            problems.append("an analog project sets uses_vapwr true or false")
+        used = [i for i in range(6) if str((info.get("pinout") or {}).get(f"ua[{i}]") or "").strip()]
+        if isinstance(analog, int) and used != list(range(analog)):
+            problems.append(f"analog_pins is {analog}, but the pinout names ua{used}")
     pinout = info.get("pinout") or {}
-    if sorted(pinout) != sorted(PINS):
-        extra = sorted(set(pinout) - set(PINS))
-        lost = sorted(set(PINS) - set(pinout))
-        problems.append(f"pinout must keep the template's 24 pins (missing {lost}, extra {extra})")
+    if sorted(pinout) != sorted(pins):
+        extra = sorted(set(pinout) - set(pins))
+        lost = sorted(set(pins) - set(pinout))
+        problems.append(f"pinout must keep the template's {len(pins)} pins (missing {lost}, extra {extra})")
 
     if problems:
         for p in problems:
