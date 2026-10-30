@@ -14,9 +14,10 @@ reference clock on `clk` (5 to 12.5 MHz) at 8 × N times the reference, where N
 is 1 to 5.
 
 The analog half is a hard macro: a charge pump, a passive loop filter, a
-current-starved ring VCO and its bias. The VCO runs at about 50 to 200 MHz at
-the typical corner, so pick N and the reference so that 8 × N × f_ref falls
-in that range. The loop filter's control voltage leaves the tile on
+current-starved ring VCO and its bias. After layout, the VCO covers about 12
+to 114 MHz at every process, voltage and temperature corner (7 to 205 MHz at
+the typical corner). Pick N and the reference so that 8 × N × f_ref falls in
+that range. The nominal point is 6.25 MHz × 16 = 100 MHz. The loop filter's control voltage leaves the tile on
 `ua[0]`, and `ua[1]` takes an optional external bias resistor.
 
 The digital half closes the loop:
