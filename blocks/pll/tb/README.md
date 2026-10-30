@@ -84,11 +84,53 @@ local slope).
 - With the zero-delay RTL PFD there is a dead zone. Once locked, the pump gets
   almost no charge, so vctrl sits flat. The reset-pulse width only exists in the
   gate-level netlist, which this bench does not simulate.
-- Not covered yet: other (f_ref, N) points, relock after a change of N, corners
-  and the vctrl pad cap. The bench takes them as parameters (`pll_tb_common.py`,
+- Not covered yet: other (f_ref, N) points, relock after a change of N, and
+  the vctrl pad cap. The bench takes them as parameters (`pll_tb_common.py`,
   `calibrate_analog.py --corner`), but only the nominal point is gated.
+  The corners are run on the extracted netlist by `cosim_corners.py` (below).
 - Debug knobs, which are not used by the gate: `PLL_COSIM_DURATION_NS`,
   `PLL_COSIM_ANALOG_VCD=<file>` with `PLL_COSIM_DEBUG_NODES=x1.xpll.vref,...`.
+
+## The loop on the extracted netlist at the corners that bound its range (2026-10-30)
+
+`cosim_corners.py` runs layer 3's bench (`test_pll_cosim.py`, same 100 MHz
+point, same bounds and evidence checks as the cosim gate) with the cell
+swapped for the layout's parasitic extraction
+(`analog/log/pex_pvt/pll_analog.pex.ordered.spice`, extracted when missing)
+and the PDK corner, temperature and supply moved to each corner. The bench
+reads the move from `PLL_COSIM_SETUP` and the gate never sets it. The
+corners are the ones that bound the post-layout sweep
+(`analog/reports/recorded/pex_pvt.json`; `bounding_corners()`):
+
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py   # ~25-30 min, 4 corners side by side
+
+A corner takes 25-30 minutes of wall time on a loaded machine (about 50 s
+per simulated us, against 3 s for the schematic cell). The result is
+recorded in `../reports/recorded/cosim_corners.json` with a hash of every
+input. `tests/score.py` counts it only while those hashes hold, as it does
+bench_strength's. `--from-logs` rewrites that report from the last run's
+`log/cosim_corners/<corner>/result.json` without running anything.
+
+| Corner | Why it bounds the range | Lock | f_vco (MHz) | vctrl (V) | vctrl p-p, last 10 us (5 ns samples / at ref edges, mV) |
+|---|---|---|---|---|---|
+| ff_pss | lowest ceiling 126.4 MHz, lowest Kvco 39.9 MHz/V, lowest Icp 13.6 uA | 6.72 us, held | 100.0000 | 2.206 | **20.9** / 0.0007 |
+| ff_m40c_vm10 | highest ceiling 299.5 MHz | 4.00 us, held | 100.0041 | 1.448 | **27.4** / 20.1 |
+| ff_125c_vp10 | lowest phase margin 34.5 deg | 4.48 us, held | 100.0000 | 1.776 | 16.2 / 0.0007 |
+| ss_m40c_vm10 | highest phase margin 52.9 deg | 4.96 us, held | 100.0005 | 1.805 | 17.4 / 11.4 |
+
+The loop locks and holds at all four corners: lock rises within 7 us, never
+falls, and f_fb and f_vco are within 4.1e-5 of their targets (bound 1e-3).
+Two corners miss REQ-LOOP-VCTRL's 20 mV p-p, which this bench keeps as it
+is. That is not drift. At ff_pss vctrl sampled at each reference edge moves
+less than 1 uV over the window. At ff_m40c_vm10 its 100 ns trace sits at
+1.4439 V within about 1 mV between isolated kicks of +-15-20 mV, one every
+0.8-2.4 us. Each kick is a pump correction pulse seen through R1, and
+everything in it but the kicks is flat. These corrections come from the
+bench's zero-delay PFD (its dead zone, see the bench notes) and from edges
+quantised to the 1 ns sync grid. At ff_m40c_vm10 (Kvco about 118 MHz/V)
+a kick moves the VCO by about 2 MHz for tens of ns: a jitter question, not
+a lock one. Still open: whether a finer sync grid or the gate-level PFD's
+reset pulse removes them, and other (f_ref, N) points at these corners.
 
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 

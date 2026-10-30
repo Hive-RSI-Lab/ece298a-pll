@@ -24,7 +24,9 @@ current where those are other corners. bounding_corners() says which.
 Each corner is its own process (its own cocotb build, ngspice and SIGALRM),
 --jobs side by side. Writes a gate-shaped json (default
 reports/recorded/cosim_corners.json): status pass only when every corner
-asked for passes, facts.corners the ones that passed, per-corner measures,
+asked for meets every bound, facts.corners the ones that did, facts.locked
+the ones that locked and held at 100 MHz (every bound but vctrl's p-p,
+locks()), per-corner measures,
 and inputs: a hash of every file the run read (the bench, the RTL, the
 analog netlist, sizing, the layout generator and the spec). tests/score.py
 counts the recorded pass while those hashes hold, as it does bench_strength's:
@@ -122,6 +124,22 @@ def setup_for(corner_name: str, extracted: Path, out: Path) -> dict:
             "lines": lines, "out": str(out)}
 
 
+def locks(res: dict) -> bool:
+    """The loop locked and held at this corner: it ran clean (no bridge
+    error, no ngspice non-convergence), lock rose within 50 us and never
+    fell, and over the last 10 us after lock f_fb and f_vco are within
+    0.1 % - every bound but vctrl's 20 mV p-p, which says whether vctrl has
+    settled and is counted on its own (settled)."""
+    m = res.get("measures") or {}
+    other = [w for w in res.get("why") or [] if "vctrl_pp_last_10us_mv" not in w
+             and not w.startswith("test failed")]
+    lt, fb, vco = m.get("lock_time_us"), m.get("fb_period_rel_err"), m.get("vco_period_rel_err")
+    return (not other and isinstance(lt, (int, float)) and lt <= 50
+            and m.get("lock_drops_after_lock") == 0 and m.get("window_after_lock") is True
+            and isinstance(fb, (int, float)) and fb <= 1e-3
+            and isinstance(vco, (int, float)) and vco <= 1e-3)
+
+
 def run_one(corner: str, extracted: Path, work: Path, timeout_s: float) -> dict:
     """The bench at one corner, in this process; the result dict."""
     import check_cosim  # noqa: E402
@@ -168,6 +186,8 @@ def main(argv=None) -> int:
     ap.add_argument("--jobs", type=int, default=4)
     ap.add_argument("--timeout-s", type=float, default=TIMEOUT_S, help="per corner")
     ap.add_argument("--out", default=str(OUT))
+    ap.add_argument("--from-logs", action="store_true",
+                    help="summarise the last run's log/cosim_corners/<corner>/result.json, run nothing")
     ap.add_argument("--one", help=argparse.SUPPRESS)       # a worker: this corner only
     ap.add_argument("--work", help=argparse.SUPPRESS)
     a = ap.parse_args(argv)
@@ -215,16 +235,28 @@ def main(argv=None) -> int:
               + "".join(f"\n    {w}" for w in res.get("why") or []), flush=True)
         return res
 
-    with ThreadPoolExecutor(max(1, a.jobs)) as pool:
-        results = list(pool.map(one, corners))
+    if a.from_logs:
+        results = []
+        for c in corners:
+            try:
+                r = json.loads((root / c / "result.json").read_text())
+            except (OSError, ValueError):
+                r = {"corner": c, "status": "fail", "why": ["no result in log/cosim_corners"],
+                     "measures": None}
+            r["bounds_the_range"] = why.get(c, [])
+            results.append(r)
+    else:
+        with ThreadPoolExecutor(max(1, a.jobs)) as pool:
+            results = list(pool.map(one, corners))
     passed = [r["corner"] for r in results if r["status"] == "pass"]
+    locked = [r["corner"] for r in results if locks(r)]
     rep = {"script": "cosim_corners", "gate": "cosim_corners",
            "status": "pass" if corners and len(passed) == len(corners) else "fail",
            "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
            "failing_count": len(corners) - len(passed),
            "failing": [{"corner": r["corner"], "msg": "; ".join(r.get("why") or [])[:300]}
                        for r in results if r["status"] != "pass"],
-           "facts": {"corners": passed, "swept": corners, "bounding": why,
+           "facts": {"corners": passed, "locked": locked, "swept": corners, "bounding": why,
                      "extracted": str(extracted.relative_to(C.WS)) if extracted.is_relative_to(C.WS)
                      else str(extracted),
                      "operating_point": {"f_ref_hz": C.F_REF_HZ, "n_sel": C.N_SEL,
@@ -234,7 +266,8 @@ def main(argv=None) -> int:
            "inputs": inputs}
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(rep, indent=1, default=str) + "\n")
-    print(f"cosim_corners: {len(passed)}/{len(corners)} corners lock -> {a.out}")
+    print(f"cosim_corners: {len(locked)}/{len(corners)} corners lock, {len(passed)}/{len(corners)} "
+          f"meet every bound (vctrl settled too) -> {a.out}")
     return 0 if rep["status"] == "pass" else 1
 
 

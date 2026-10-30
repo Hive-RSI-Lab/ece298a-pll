@@ -1,1 +1,3 @@
 cosim_build/
+cosim_corners/*/build/
+cosim_corners_try.*

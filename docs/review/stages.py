@@ -153,9 +153,11 @@ def h_top_harden(r):
 def h_cosim_corners(r):
     x = r["facts"]
     res = {y["corner"]: (y.get("measures") or {}) for y in x.get("results") or []}
-    locks = ", ".join(f"{c} {f(res.get(c, {}).get('lock_time_us'), 2)} us" for c in x["corners"])
-    return f"locks at {len(x['corners'])} of {len(x['swept'])} bounding corners on the extracted netlist" \
-        + (f": {locks}" if locks else "")
+    locked = x.get("locked") or x["corners"]
+    locks = ", ".join(f"{c} {f(res.get(c, {}).get('lock_time_us'), 2)} us" for c in locked)
+    return f"locks at {len(locked)} of {len(x['swept'])} bounding corners on the extracted netlist" \
+        + (f" ({locks})" if locks else "") \
+        + f"; vctrl within 20 mV p-p at {len(x['corners'])} of them"
 
 
 # The stages in flow order. Each row: workspace, gate, what it shows, and how
