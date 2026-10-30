@@ -3,7 +3,7 @@
  "gate": "drc",
  "phase": "P5",
  "tool": "analog_drc",
- "input_digest": "dir_text:a6938d51783925ebc9a3a8134434a8ce6bb4fff33c9c2096b8899d3cbcd69f35",
+ "input_digest": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -31,17 +31,17 @@
   "bbox_um": {
    "x0": -1.1,
    "y0": -9.3,
-   "x1": 116.72,
-   "y1": 246.63,
-   "width": 117.82,
-   "height": 255.93
+   "x1": 120.92,
+   "y1": 245.83,
+   "width": 122.02,
+   "height": 255.13
   },
   "footprint": null
  },
  "inputs_at_start": {
-  "layout": "dir_text:4de4f855dc31f20245aee4c216e9d5c8e845006614c81566460a7d670422ec54",
+  "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
   "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
  },
- "recorded_ts": "2026-10-30T00:01:34",
- "attempts": 5
+ "recorded_ts": "2026-10-30T06:18:06",
+ "attempts": 7
 }

@@ -3,7 +3,7 @@
  "gate": "lvs",
  "phase": "P5",
  "tool": "analog_lvs",
- "input_digest": "dir_text:a6938d51783925ebc9a3a8134434a8ce6bb4fff33c9c2096b8899d3cbcd69f35",
+ "input_digest": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -78,11 +78,11 @@
   "log": "log/lvs/netgen_lvs.log"
  },
  "inputs_at_start": {
-  "layout": "dir_text:4de4f855dc31f20245aee4c216e9d5c8e845006614c81566460a7d670422ec54",
-  "netlist": "dir_text:d41beb179bb7b4487e5536a8722b4f7f89f4bc1eafe30a77814dea6f8e43fcbf",
+  "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+  "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
   "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
   "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
  },
- "recorded_ts": "2026-10-30T00:01:28",
- "attempts": 5
+ "recorded_ts": "2026-10-30T06:17:52",
+ "attempts": 6
 }
