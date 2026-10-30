@@ -18,7 +18,7 @@ Regenerate the figures after any result changes:
 | Analog schematic, 31 PVT corners | signed off by you (H1-ada9eb); the loop filter's caps changed since (decision 0), resimulated at all 31 corners | `blocks/pll/analog/log/H1-signoff.md`, `blocks/pll/analog/reports/recorded/gate-sim_pvt.json` |
 | Digital RTL: PFD, /8 prescaler, /N divider, lock detector, registers | done; sim, formal, coverage, mutation, holdout, standalone harden, DRC, LVS, precheck and gate-level sim pass | `blocks/pll/digital/state.json` |
 | Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us; all three layers pass with the MOS caps | `blocks/pll/tb/README.md`, figure below |
-| Digital timing with the VCO clock at 2.7 ns | tt and ff meet; ss_125C waived (decision 2), recorded in `digital/reports/waivers.json` | `blocks/pll/digital/state.json` issue 8 |
+| Digital timing with the VCO clock at each process's post-layout ceiling plus margin (ss 3.75 ns, tt and ff 2.7 ns) | tt and ff meet; ss_125C misses by 0.15 ns, waived (decision 2), recorded in `digital/reports/waivers.json` | `blocks/pll/digital/state.json` issue 8 |
 | Analog layout | DRC clean, LVS unique match | `blocks/pll/analog/layout/` |
 | Post-layout benches on the extracted netlist | 30 of 31 corners pass; ff_pss does not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
@@ -164,9 +164,12 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    not recorded as approved. The tile is built on this layout, and
    `blocks/pll/analog/log/H2-proceed.md` records that this was done pending
    your review. If you reject it, the layout is redone and the tile rebuilt.
-2. **Digital issue 8, the ss_125C timing waiver.** With the VCO clock
-   constrained at 2.7 ns (370 MHz), the /2 prescaler stage misses setup by
-   1.2 ns at ss_125C. No flop in the GF180 library toggles that fast at ss.
+2. **Digital issue 8, the ss_125C timing waiver.** The VCO clock is
+   constrained per process at its post-layout ceiling plus margin: 3.75 ns
+   (267 MHz) at ss, 2.7 ns (370 MHz) at tt and ff. At ss_125C the /2
+   prescaler stage misses setup by 0.15 ns, inside the 0.25 ns clock
+   uncertainty (at a flat 2.7 ns it missed by 1.2 ns). No flop in the GF180
+   library toggles at 2.7 ns at ss.
    It is waived at that corner because the VCO can't go that fast at ss:
    after layout, the fastest corner with slow transistors (ss_pff)
    reaches 263 MHz at the rail (247 before chip-flow's extraction fix),

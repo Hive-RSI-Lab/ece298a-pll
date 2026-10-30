@@ -1,9 +1,9 @@
 [
  {
   "gate": "timing",
-  "reason": "Digital issue 8: with vco_out constrained at 2.7 ns (370 MHz), setup misses at ss_125C_3v00 only: -1.20 ns max, -1.18 nom, -1.16 min parasitics, on the vco_out /2 toggle loop (u_pre_ff0). tt +0.65 ns, ff +1.43 ns, hold met at every corner. No flop in gf180mcu_fd_sc_mcu7t5v0 toggles at 2.7 ns at ss: the fastest reset toggle loop (dffrnq_2 + inv_1) is 3.65 ns routed, 274 MHz. The VCO doesn't reach that with slow transistors: after layout, ss_pff tops out at 247 MHz at the rail. A runaway recovery forces DN after 1024 unlocked reference cycles. Details: state.json issue 8.",
-  "approved_by": "lead lead-lead-83757baacd for the owner under their standing sign-off (Slack 2026-10-28 13:18: 'yea just do it all i signoff we can always go back'), and the owner's 'build it all, i will retroactively review' (chat 261030-010852, 2026-10-29 21:13). Not the owner's own ruling: waiting for their review (docs/review/README.md).",
-  "inputs_sha256": "f7272b47d2ef8fc161957b66cf75c94f2618ee6907eb0f1be8679a01a74e0020",
+  "reason": "Digital issue 8: with vco_out constrained per process at the post-layout VCO ceiling plus margin (ss 3.75 ns, tt and ff 2.7 ns; harden/constraints.sdc), setup misses at ss_125C_3v00 only: -0.15 ns max, -0.13 nom, -0.11 min parasitics, on the vco_out /2 toggle loop (u_pre_ff0), inside the 0.25 ns clock uncertainty. tt +0.65 ns, ff +1.43 ns, hold met at every corner. The fastest reset toggle loop in gf180mcu_fd_sc_mcu7t5v0 (dffrnq_2 + inv_1) is 3.65 ns routed, 274 MHz; the extracted VCO with slow transistors tops out at 263.2 MHz at the rail (ss_pff, MOS-cap + MN_ST macro, 2026-10-30). Before, at 2.7 ns, it missed by -1.20 ns. A runaway recovery forces DN after 1024 unlocked reference cycles. Details: state.json issue 8.",
+  "approved_by": "lead lead-lead-83757baacd for the owner under their standing sign-off (Slack 2026-10-28 13:18: 'yea just do it all i signoff we can always go back'), and the owner's 'build it all, i will retroactively review' (chat 261030-010852, 2026-10-29 21:13). Not the owner's own ruling: waiting for their review (docs/review/README.md). Re-bound to the timing run on the 3.75 ns ss period by worker w-261030-101238 (task 261030-101238) under the same sign-off, the miss now -0.15 ns instead of -1.20; not a new ruling.",
+  "inputs_sha256": "277fb24b9b9123a878cb788b3ce8049cf8514c680a329fb443b39942977b8935",
   "checker_version": 1
  }
 ]

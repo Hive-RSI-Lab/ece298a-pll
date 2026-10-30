@@ -47,8 +47,8 @@ tools. Run them from the repository's root.
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
 | synth (digital) | the RTL synthesises to GF180 standard cells | pass | 113 cells, gf180mcu_fd_sc_mcu7t5v0 | 2026-10-29 | `chip-flow gate --gate synth --skill vde --workspace blocks/pll/digital` |
-| harden (digital) | the digital half places and routes on its own | pass | 1501 instances, setup WNS -1.18 ns, hold WNS 0.43 ns | 2026-10-30 | `chip-flow gate --gate harden --skill vde --workspace blocks/pll/digital` |
-| timing (digital) | setup and hold meet with the VCO clock at 2.7 ns, every STA corner | **FAIL** (waived, pending your review: `blocks/pll/digital/reports/waivers.json`) | worst setup -1.20 ns at max_ss_125C_3v00; hold >= 0.42 ns everywhere; corner max_ss_125C_3v00: worst setup slack -1.2000ns | 2026-10-30 | issue 8 in `blocks/pll/digital/state.json`; GOALS.md's digital issue 8 goal<br>`chip-flow gate --gate timing --skill vde --workspace blocks/pll/digital` |
+| harden (digital) | the digital half places and routes on its own | pass | 1501 instances, setup WNS -0.13 ns, hold WNS 0.43 ns | 2026-10-30 | `chip-flow gate --gate harden --skill vde --workspace blocks/pll/digital` |
+| timing (digital) | setup and hold meet with the VCO clock at 2.7 ns, every STA corner | **FAIL** (waived, pending your review: `blocks/pll/digital/reports/waivers.json`) | worst setup -0.15 ns at max_ss_125C_3v00; hold >= 0.42 ns everywhere; corner max_ss_125C_3v00: worst setup slack -0.1500ns | 2026-10-30 | issue 8 in `blocks/pll/digital/state.json`; GOALS.md's digital issue 8 goal<br>`chip-flow gate --gate timing --skill vde --workspace blocks/pll/digital` |
 | drc (digital) | the digital layout is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-29 | `chip-flow gate --gate drc --skill vde --workspace blocks/pll/digital` |
 | lvs (digital) | the digital layout matches its netlist | pass | layout matches the netlist | 2026-10-29 | `chip-flow gate --gate lvs --skill vde --workspace blocks/pll/digital` |
 | glsim (digital) | the tests pass on the gate-level netlist, with and without delays | pass | functional 18/18, sdf 18/18 | 2026-10-29 | `chip-flow gate --gate glsim --skill vde --workspace blocks/pll/digital` |
@@ -73,7 +73,7 @@ tools. Run them from the repository's root.
 
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
-| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.63 ns | 2026-10-30 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
+| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.18 ns | 2026-10-30 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
 | top_drc (top) | the whole tile is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-30 | `chip-flow gate --gate top_drc --skill msde --workspace blocks/pll` |
 | top_lvs (top) | the whole tile matches its netlist, analog macro included | pass | layout matches the netlist | 2026-10-30 | `blocks/pll/log/top_lvs/top_lvs.rpt` after a run<br>`chip-flow gate --gate top_lvs --skill msde --workspace blocks/pll` |
 | precheck (top) | the tile passes Tiny Tapeout's precheck | pass | 12 Tiny Tapeout checks run | 2026-10-30 | `chip-flow gate --gate precheck --skill msde --workspace blocks/pll` |

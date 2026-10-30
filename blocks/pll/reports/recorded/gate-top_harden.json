@@ -49,14 +49,14 @@
   "top": "ihsan_sa_pll",
   "run_tag": "run",
   "resumed": false,
-  "wall_s": 162.92,
+  "wall_s": 144.92,
   "run_dir": "top/harden/runs/run",
   "metrics": {
    "design__instance__count": 2363,
    "design__instance__area": 99474.1,
    "design__instance_unmapped__count": 0,
    "timing__hold__ws": 0.5055425110514379,
-   "timing__setup__ws": 2.629647241056848,
+   "timing__setup__ws": 2.1806059797279933,
    "timing__hold__tns": 0,
    "timing__setup__tns": 0,
    "timing__hold__wns": 0,
@@ -65,7 +65,7 @@
    "timing__hold_r2r__ws": 0.505543,
    "timing__hold_r2r_vio__count": 0,
    "timing__setup_vio__count": 0,
-   "timing__setup_r2r__ws": 2.629647,
+   "timing__setup_r2r__ws": 2.180606,
    "timing__setup_r2r_vio__count": 0,
    "design__die__bbox": "0.0 0.0 346.64 325.36",
    "design__core__bbox": "3.36 3.92 343.28 321.44",
@@ -106,8 +106,8 @@
   "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
   "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
   "top_sdc": null,
-  "digital_sdc": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883"
+  "digital_sdc": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23"
  },
- "recorded_ts": "2026-10-30T06:22:00",
- "attempts": 5
+ "recorded_ts": "2026-10-30T07:26:01",
+ "attempts": 6
 }
