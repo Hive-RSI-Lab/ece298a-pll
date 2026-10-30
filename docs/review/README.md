@@ -23,7 +23,7 @@ Regenerate the figures after any result changes:
 | Post-layout benches on the extracted netlist | 28 of 31 corners pass; ff_pss, ss_m40c_vm10 and tt_pss do not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | blocked: chip-flow's top_harden shorts vctrl to VGND (fix in hive-chip-flow PR #28, testing) | GOALS.md, "Harden the tile" |
 | Tile DRC, LVS, Tiny Tapeout precheck | not run yet (needs the tile) | |
-| `src/`, `info.yaml`, workflows in Tiny Tapeout's analog-project shape | not yet; `src/` is still the template (see "What is left") | |
+| `src/`, `test/`, `info.yaml`, workflows in Tiny Tapeout's analog-project shape | staged and tested in `blocks/pll/tt`; goes in with the tile's GDS | `blocks/pll/tt/README.md` |
 
 Nothing is ever submitted to Tiny Tapeout or the course for you. "Ready for
 submission" stops at: precheck passes on the committed GDS, and the repository
@@ -50,6 +50,14 @@ Once GitHub Pages is on for the repository (asked of a warden, request
 GDS viewer on the repository's Pages site on every push to main.
 
 ### The loop locking
+
+The loop locking on the transistor-level analog netlist, co-simulated with the
+digital RTL. To watch it lock in a waveform viewer without any EDA tree, run
+the RTL test of the real top (Icarus Verilog and cocotb). It uses a
+behavioural model of the analog macro and takes about a second:
+
+    python3 blocks/pll/tt/assemble.py   # before the tile is in, this is a local preview: do not commit it
+    cd test && make && gtkwave tb.fst   # or surfer tb.fst
 
 ![co-simulation lock](cosim-lock.png)
 
@@ -121,14 +129,12 @@ In order:
 
 1. hive-chip-flow PR #28 lands (top_harden's false vctrl/VGND short), then the
    tile hardens: `top_harden`, `top_drc`, `top_lvs`, `precheck`.
-2. The repository takes the analog template's shape:
-   - `gds/tt_um_ihsan_sa_pll.gds` and `lef/tt_um_ihsan_sa_pll.lef` from the
-     tile.
-   - `src/project.v`, the top with VGND/VDPWR and `ua`.
-   - `info.yaml` with tiles 1x2, analog_pins 2, and ua[0] VCTRL, ua[1] BIAS_REF.
-   - The gds workflow switched to `custom_gds`, which runs precheck on the
-     committed GDS.
-   - `test/` testing the real top with a behavioural VCO.
+2. The repository takes the analog template's shape. This is staged and
+   tested in `blocks/pll/tt`. `python3 blocks/pll/tt/assemble.py` puts in
+   place `src/` (the real top and the digital RTL), `test/` (an RTL test of
+   the top with a behavioural analog model, which locks at 100 and 150 MHz),
+   an `info.yaml` for a 1x2 analog tile, the `custom_gds` gds workflow, and
+   the tile's GDS and LEF.
 3. ss_m40c_vm10's bias start-up (task 261030-001020) and the ff_pss decision
    (3 above). Each changes the analog layout, so the tile is rebuilt after.
 4. The issue 8 waiver written where chip-flow's release gate reads it
