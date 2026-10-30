@@ -45,9 +45,11 @@ Supplies and the two analog pads (vctrl, bias_ref) are on the bottom edge.
 
 To open it yourself: `klayout blocks/pll/analog/layout/pll_analog.gds`. The
 generator that draws it is `blocks/pll/analog/layout/gen_pll_analog.py`.
-Once GitHub Pages is on for the repository (asked of a warden, request
-261030-015628), the gds workflow's viewer job publishes the full tile's 3D
-GDS viewer on the repository's Pages site on every push to main.
+GitHub Pages is on for the repository (warden request 261030-015628,
+2026-10-30). The gds workflow's viewer job publishes a 3D GDS viewer of
+what main builds at https://hive-rsi-lab.github.io/ece298a-pll/ on every
+push to main. Until the tile replaces the template, that is still the
+template's GDS.
 
 ### The loop locking
 
