@@ -42,12 +42,8 @@ The digital half closes the loop:
    `ui[7]` high the VCO divided by 16. Locked, the VCO sits at 8 × N times the
    reference.
 4. `uo[1]` is the feedback clock (VCO / 8N), which should match the reference
-   when locked. `uo[3]` and `uo[4]` show the UP and DN pulses for debugging.
+   when locked. `uo[7:3]` are driven low.
 5. To see the loop's control voltage, put a high-impedance probe on `ua[0]`.
-
-In the standalone digital harden, `ui[3]` stands in for the VCO clock and
-`uo[7:5]` echo the enable and trim bits sent to the analog macro. In the full
-tile the VCO is on-chip, and those outputs may be driven low.
 
 ## External hardware
 

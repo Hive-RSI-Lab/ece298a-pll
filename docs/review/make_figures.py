@@ -54,12 +54,13 @@ def layout() -> None:
             ax.add_collection(PolyCollection(pts, facecolors=colour, edgecolors="none",
                                              alpha=alpha, label=name))
     bottom = sorted((p for p in abstract["pins"] if p["y"] < 0), key=lambda p: p["x"])
+    x_right = abstract["bbox_um"][2]
     for pin in abstract["pins"]:
         low = pin in bottom
         ax.annotate(pin["name"], (pin["x"], pin["y"]), fontsize=7, color=INK,
-                    xytext=(4 if pin["x"] > 120 else 0,
+                    xytext=(4 if pin["x"] > x_right - 2 else 0,
                             -9 - 9 * bottom.index(pin) if low else 0),
-                    textcoords="offset points", ha="left" if pin["x"] > 120 or low else "center",
+                    textcoords="offset points", ha="left" if pin["x"] > x_right - 2 or low else "center",
                     va="center")
     x0, y0, x1, y1 = abstract["bbox_um"]
     ax.set_xlim(x0 - 2, x1 + 22)
@@ -69,11 +70,43 @@ def layout() -> None:
     ax.set_xlabel("x (um)")
     ax.set_ylabel("y (um)")
     ax.set_title(f"pll_analog layout, {x1 - x0:.0f} x {y1 - y0:.0f} um "
-                 "(charge pump, loop filter MIM caps, ring VCO, bias)",
+                 "(ring VCO, bias, pump, R1, MOS-cap loop filter)",
                  fontsize=9, color=INK, loc="left")
     ax.legend(loc="upper left", bbox_to_anchor=(1.0, 1.0), fontsize=7, frameon=False)
     fig.tight_layout()
     fig.savefig(OUT / "analog-layout.png")
+    plt.close(fig)
+
+
+def tile() -> None:
+    """The hardened tile, as committed in gds/ (Metal1-4 and the macro)."""
+    gds = ROOT / "gds" / "tt_um_ihsan_sa_pll.gds"
+    if not gds.is_file():
+        return
+    lib = gdstk.read_gds(str(gds))
+    top = lib.top_level()[0]
+    polys = top.get_polygons()
+    fig, ax = plt.subplots(figsize=(8.4, 8.0))
+    for name, layer, colour, alpha in LAYERS:
+        if layer in (21, 22, 30):
+            continue  # wells, COMP and poly hide the routing at this scale
+        pts = [p.points for p in polys if p.layer == layer and p.datatype == 0]
+        if pts:
+            ax.add_collection(PolyCollection(pts, facecolors=colour, edgecolors="none",
+                                             alpha=alpha, label=name))
+    (x0, y0), (x1, y1) = top.bounding_box()
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(y0, y1)
+    ax.set_aspect("equal")
+    ax.grid(False)
+    ax.set_xlabel("x (um)")
+    ax.set_ylabel("y (um)")
+    ax.set_title(f"{top.name}: the 1x2 tile, {x1 - x0:.0f} x {y1 - y0:.0f} um "
+                 "(the analog macro in the middle, standard cells around it)",
+                 fontsize=9, color=INK, loc="left")
+    ax.legend(loc="upper left", bbox_to_anchor=(1.0, 1.0), fontsize=7, frameon=False)
+    fig.tight_layout()
+    fig.savefig(OUT / "tile.png")
     plt.close(fig)
 
 
@@ -155,6 +188,7 @@ def cosim() -> None:
 
 if __name__ == "__main__":
     layout()
+    tile()
     corners()
     cosim()
     print("wrote", ", ".join(p.name for p in sorted(OUT.glob("*.png"))))
