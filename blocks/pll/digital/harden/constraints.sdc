@@ -29,9 +29,12 @@ proc pll_driver_pin {aliases} {
 #      fast resistor) is the corner ss_125C_3v00 times, its slowest flops
 #      against its fastest VCO. With the derived 0.10 ns setup uncertainty
 #      below, the first stage's toggle loop must close in 3.65 ns (274 MHz);
-#      routed at ss_125C_3v00 (5% derate) it closes in about 3.65 ns, and
-#      the stage's three cells are placed by hand (harden/config.override.json
-#      MANUAL_GLOBAL_PLACEMENTS) so that loop wire does not move run to run.
+#      routed at ss_125C_3v00 (5% derate) it closes in 3.62-3.68 ns
+#      depending on how the run routes its D net, so ss setup reads within
+#      0.03 ns of zero either way: closure, not margin. Placing the three
+#      cells by hand (two layouts tried, 2026-10-30) did no better than the
+#      placer. Margin at ss needs a /2 that is not a library flop (a TSPC
+#      stage in the analog macro, digital issue 8 in GOALS.md).
 #   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 24-27%
 #      above their post-layout ceilings, and they meet it.
 # Each STA corner links one process's liberty, so the period follows the
