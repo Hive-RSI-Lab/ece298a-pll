@@ -3,7 +3,7 @@
  "gate": "timing",
  "phase": "P6",
  "tool": "timing",
- "input_digest": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
+ "input_digest": "harden_signoff:7037ae3752a3619f284bf899dcd972a50e80433414a8a7a6f815ab5abb2d82b1",
  "status": "fail",
  "criteria": {
   "fail_severities": [
@@ -181,9 +181,9 @@
   }
  },
  "inputs_at_start": {
-  "harden": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
+  "harden": "harden_signoff:7037ae3752a3619f284bf899dcd972a50e80433414a8a7a6f815ab5abb2d82b1",
   "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
  },
- "recorded_ts": "2026-10-29T11:05:01",
- "attempts": 10
+ "recorded_ts": "2026-10-30T03:50:29",
+ "attempts": 11
 }
