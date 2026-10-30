@@ -20,7 +20,7 @@ Regenerate the figures after any result changes:
 | Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us; all three layers pass with the MOS caps | `blocks/pll/tb/README.md`, figure below |
 | Digital timing with the VCO clock at 2.7 ns | tt and ff meet; ss_125C waived (decision 2), recorded in `digital/reports/waivers.json` | `blocks/pll/digital/state.json` issue 8 |
 | Analog layout | DRC clean, LVS unique match | `blocks/pll/analog/layout/` |
-| Post-layout benches on the extracted netlist | 29 of 31 corners pass; ss_m40c_vm10 and ff_pss do not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
+| Post-layout benches on the extracted netlist | 30 of 31 corners pass; ff_pss does not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
 | Tiny Tapeout precheck | **passes**, both from chip-flow's gate and run on the committed `gds/`, `lef/`, `src/project.v` and `info.yaml` themselves | figure below |
 | Repository in Tiny Tapeout's analog-project shape | **done**: `src/` (real top + RTL), `test/` (RTL test, 4/4), 1x2 analog `info.yaml`, `custom_gds` gds workflow | `blocks/pll/tt/README.md` |
@@ -76,12 +76,11 @@ behavioural model of the analog macro and takes about a second:
 
 What fails, and why:
 
-- **ss_m40c_vm10**: the bias reference settles in its second DC operating
-  point (pump current 168 uA, no oscillation). This is a real start-up risk,
-  not a bench artefact: the start-up circuit never releases at this corner.
-  Task 261030-001020 found it and has a fix (MN_ST L 2 -> 4 um), which
-  brings pex_pvt to 30 of 31. It merges after this change.
-- **ff_pss**: Kvco reads 37.1 MHz/V against a 40 MHz/V floor (decision 3).
+- **ff_pss**: Kvco reads 39.2 MHz/V against a 40 MHz/V floor (decision 3).
+- ss_m40c_vm10 used to fail too: the bias reference settled in its second DC
+  operating point (pump current 168 uA, no oscillation). Task 261030-001020's
+  fix (MN_ST L 2 -> 4 um) is in this layout, and the corner passes
+  (Icp 17.5 uA, Kvco 80.1 MHz/V).
 
 One thing the figure shows that no bound catches: at ff_pss the VCO's ceiling
 is about 115 MHz after layout (158 MHz before). Every corner still reaches the
@@ -114,6 +113,15 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    to about 1%. Every pre-layout bound passes at all 31 corners, before and
    after. Post-layout, the same two corners miss as before (ss_m40c_vm10,
    ff_pss).
+
+   Since this table: the MN_ST fix is merged into this layout, and
+   chip-flow's extraction stopped counting each net's coupling C twice
+   (hive-chip-flow 3c085e6). Rebuilt with both (task 261030-101238),
+   pex_pvt passes 30 of 31. ss_m40c_vm10 passes. ff_pss Kvco reads 39.2,
+   and the VCO reads about 6% faster at every corner: tt_27c 215.3 MHz at
+   vdd-0.3 V, Kvco 77.0 MHz/V. The current numbers per corner are in
+   `blocks/pll/analog/reports/recorded/pex_pvt.json`. The table keeps the
+   MIM-vs-MOS comparison on one extraction.
 
    Pre-layout (sim_pvt, every bound passes before and after), and post-layout (pex_pvt on the extracted netlist), MIM before / MOS after:
 
@@ -161,11 +169,12 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    1.2 ns at ss_125C. No flop in the GF180 library toggles that fast at ss.
    It is waived at that corner because the VCO can't go that fast at ss:
    after layout, the fastest corner with slow transistors (ss_pff)
-   reaches 247 MHz at the rail, and the stage manages 274 MHz. A recovery circuit also pulls the loop back if it
+   reaches 263 MHz at the rail (247 before chip-flow's extraction fix),
+   and the stage manages 274 MHz. A recovery circuit also pulls the loop back if it
    ever runs away. The approval on record is the lead's under your 10-28
    "i signoff" message, not your own ruling. Details are in issue 8 of
    `blocks/pll/digital/state.json`.
-3. **ff_pss Kvco, 36 vs 40 MHz/V (open).** The 40 MHz/V floor protects loop
+3. **ff_pss Kvco, 39.2 vs 40 MHz/V (open).** The 40 MHz/V floor protects loop
    gain, and through it the phase margin. The decision rests on the phase
    margin at ff_pss, not the Kvco number. The linear loop model (layer 1,
    `blocks/pll/tb/pll_loop_model.py`) with ff_pss's post-layout pump current
@@ -191,10 +200,8 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
 
 ## What is left
 
-1. Merge with task 261030-001020's bias start-up fix (MN_ST), then rebuild:
-   the analog layout, pex_pvt, the tile, precheck, and `assemble.py`.
-2. The ff_pss decision (3 above).
-3. The gds, docs and test workflows passing on main with this design.
-4. The local chip-flow fixes landing in the module: hive-chip-flow PR #28,
-   and briefs 261030-033156 and 261030-043908. Until they land, the module
-   as installed can't rebuild this tile. The diff is in this run's notes.
+1. The ff_pss decision (3 above).
+2. The gds, docs and test workflows passing on main with this design.
+
+Every stage's last recorded result, and how to re-run it, is on
+[stages.md](stages.md).
