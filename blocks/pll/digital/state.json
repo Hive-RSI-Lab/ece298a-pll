@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-10-30T06:19:20",
+ "updated": "2026-10-30T07:23:15",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -1758,7 +1758,7 @@
    "status": "pass",
    "attempts": 13,
    "last": {
-    "ts": "2026-10-30T06:19:07",
+    "ts": "2026-10-30T07:22:58",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -1766,13 +1766,13 @@
      "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
      "harden_config": "json_canonical_sans_roots:71ff0c450cd303f4bef3e0c2607c5b701d1d6c915fc5ce92d80428bfb2ab4cb8",
      "harden_override": "json_canonical:70373600ebc75eb412ebf69b01ef53ebd0a276710890e615b75d766bea0749ed",
-     "harden_sdc": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883",
+     "harden_sdc": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23",
      "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
      "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
     },
     "job": null,
     "facts": {
-     "wall_s": 86.62
+     "wall_s": 82.87
     }
    },
    "history": [
@@ -2002,7 +2002,7 @@
      }
     },
     {
-     "ts": "2026-10-30T06:19:07",
+     "ts": "2026-10-30T07:22:58",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
@@ -2010,13 +2010,13 @@
       "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
       "harden_config": "json_canonical_sans_roots:71ff0c450cd303f4bef3e0c2607c5b701d1d6c915fc5ce92d80428bfb2ab4cb8",
       "harden_override": "json_canonical:70373600ebc75eb412ebf69b01ef53ebd0a276710890e615b75d766bea0749ed",
-      "harden_sdc": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883",
+      "harden_sdc": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23",
       "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
       "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
      },
      "job": null,
      "facts": {
-      "wall_s": 86.62
+      "wall_s": 82.87
      }
     }
    ]
@@ -2026,12 +2026,12 @@
    "status": "fail",
    "attempts": 12,
    "last": {
-    "ts": "2026-10-30T06:19:19",
+    "ts": "2026-10-30T07:23:15",
     "status": "fail",
     "failing_count": 3,
     "total": 3,
     "inputs": {
-     "harden": "harden_signoff:490c14c0f6b8f55ee9b0e4afc66570273c207212436db135653dde3f95cca8a1",
+     "harden": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
      "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
     },
     "job": null,
@@ -2042,7 +2042,7 @@
        "hold_ws": 0.43
       },
       "max_ss_125C_3v00": {
-       "setup_ws": -1.2,
+       "setup_ws": -0.15,
        "hold_ws": 2.36
       },
       "max_tt_025C_3v30": {
@@ -2054,7 +2054,7 @@
        "hold_ws": 0.42
       },
       "min_ss_125C_3v00": {
-       "setup_ws": -1.16,
+       "setup_ws": -0.11,
        "hold_ws": 2.33
       },
       "min_tt_025C_3v30": {
@@ -2066,7 +2066,7 @@
        "hold_ws": 0.43
       },
       "nom_ss_125C_3v00": {
-       "setup_ws": -1.18,
+       "setup_ws": -0.13,
        "hold_ws": 2.34
       },
       "nom_tt_025C_3v30": {
@@ -2639,12 +2639,12 @@
      }
     },
     {
-     "ts": "2026-10-30T06:19:19",
+     "ts": "2026-10-30T07:23:15",
      "status": "fail",
      "failing_count": 3,
      "total": 3,
      "inputs": {
-      "harden": "harden_signoff:490c14c0f6b8f55ee9b0e4afc66570273c207212436db135653dde3f95cca8a1",
+      "harden": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
       "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
      },
      "job": null,
@@ -2655,7 +2655,7 @@
         "hold_ws": 0.43
        },
        "max_ss_125C_3v00": {
-        "setup_ws": -1.2,
+        "setup_ws": -0.15,
         "hold_ws": 2.36
        },
        "max_tt_025C_3v30": {
@@ -2667,7 +2667,7 @@
         "hold_ws": 0.42
        },
        "min_ss_125C_3v00": {
-        "setup_ws": -1.16,
+        "setup_ws": -0.11,
         "hold_ws": 2.33
        },
        "min_tt_025C_3v30": {
@@ -2679,7 +2679,7 @@
         "hold_ws": 0.43
        },
        "nom_ss_125C_3v00": {
-        "setup_ws": -1.18,
+        "setup_ws": -0.13,
         "hold_ws": 2.34
        },
        "nom_tt_025C_3v30": {
@@ -3309,7 +3309,7 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-   "hashed": "2026-10-30T06:19:07"
+   "hashed": "2026-10-30T07:22:58"
   },
   "tb": {
    "path": "tb",
@@ -3321,7 +3321,7 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml_sans_formal",
    "sha256": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f",
-   "hashed": "2026-10-30T06:19:19"
+   "hashed": "2026-10-30T07:23:15"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -3339,31 +3339,31 @@
    "path": "harden/config.json",
    "kind": "harden_config",
    "sha256": "json_canonical_sans_roots:71ff0c450cd303f4bef3e0c2607c5b701d1d6c915fc5ce92d80428bfb2ab4cb8",
-   "hashed": "2026-10-30T06:19:07"
+   "hashed": "2026-10-30T07:22:58"
   },
   "harden_override": {
    "path": "harden/config.override.json",
    "kind": "harden_override",
    "sha256": "json_canonical:70373600ebc75eb412ebf69b01ef53ebd0a276710890e615b75d766bea0749ed",
-   "hashed": "2026-10-30T06:19:07"
+   "hashed": "2026-10-30T07:22:58"
   },
   "harden_sdc": {
    "path": "harden/constraints.sdc",
    "kind": "harden_sdc",
-   "sha256": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883",
-   "hashed": "2026-10-30T06:19:07"
+   "sha256": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23",
+   "hashed": "2026-10-30T07:22:58"
   },
   "harden_info": {
    "path": "harden/info.yaml",
    "kind": "harden_info",
    "sha256": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
-   "hashed": "2026-10-30T06:19:07"
+   "hashed": "2026-10-30T07:22:58"
   },
   "harden": {
    "path": "harden",
    "kind": "harden",
-   "sha256": "harden_signoff:490c14c0f6b8f55ee9b0e4afc66570273c207212436db135653dde3f95cca8a1",
-   "hashed": "2026-10-30T06:19:19"
+   "sha256": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
+   "hashed": "2026-10-30T07:23:15"
   }
  },
  "open_issues": [
@@ -6658,7 +6658,7 @@
    "failing_count": 3
   },
   {
-   "ts": "2026-10-30T06:19:07",
+   "ts": "2026-10-30T07:22:58",
    "event": "gate",
    "gate": "harden",
    "status": "pass",
@@ -6666,7 +6666,7 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-30T06:19:19",
+   "ts": "2026-10-30T07:23:15",
    "event": "gate",
    "gate": "timing",
    "status": "fail",

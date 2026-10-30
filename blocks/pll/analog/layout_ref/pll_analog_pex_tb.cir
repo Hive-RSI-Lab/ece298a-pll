@@ -68,10 +68,13 @@
 * 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
 * PDK form under Gear). Its corner factor follows the MIM corner's
 * (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
+* ln(cosh(x)) is written as |x| + ln(1 + exp(-2|x|)) - ln 2, the same
+* value and slope (tanh x) that can't overflow: a gmin-stepping trial point
+* reached cosh(-3268) on the extracted netlist and ngspice called it an error.
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
-C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
 .ends cap_nmos_03v3_b
 .include '{extracted}'
 

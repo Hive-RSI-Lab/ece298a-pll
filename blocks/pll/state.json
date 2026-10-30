@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-10-30T06:29:50",
+ "updated": "2026-10-30T07:29:33",
  "phase": "P2",
  "toolchain": null,
  "gates": {
@@ -127,9 +127,9 @@
   "top_harden": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-30T06:22:26",
+    "ts": "2026-10-30T07:26:01",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -137,11 +137,11 @@
      "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
      "top_sdc": null,
-     "digital_sdc": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883"
+     "digital_sdc": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23"
     },
     "job": null,
     "facts": {
-     "wall_s": 161.89
+     "wall_s": 144.92
     }
    },
    "history": [
@@ -210,7 +210,7 @@
      }
     },
     {
-     "ts": "2026-10-30T06:22:26",
+     "ts": "2026-10-30T06:22:00",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
@@ -222,7 +222,23 @@
      },
      "job": null,
      "facts": {
-      "wall_s": 161.89
+      "wall_s": 162.92
+     }
+    },
+    {
+     "ts": "2026-10-30T07:26:01",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 144.92
      }
     }
    ]
@@ -230,14 +246,14 @@
   "top_lvs": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-10-30T06:25:41",
+    "ts": "2026-10-30T07:28:49",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
+     "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
     },
     "job": null
@@ -277,12 +293,23 @@
      "job": null
     },
     {
-     "ts": "2026-10-30T06:25:41",
+     "ts": "2026-10-30T06:24:40",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
+      "top_gds": "dir_text:43e993d561df709831d3cb0b6555d21a69fa6b7e766bb4ec70f35bdb6b9b634e",
+      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-10-30T07:28:49",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
       "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
      },
      "job": null
@@ -292,14 +319,14 @@
   "top_drc": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-10-30T06:25:02",
+    "ts": "2026-10-30T07:28:19",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969"
+     "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd"
     },
     "job": null,
     "facts": {
@@ -351,12 +378,26 @@
      }
     },
     {
-     "ts": "2026-10-30T06:25:02",
+     "ts": "2026-10-30T06:24:32",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969"
+      "top_gds": "dir_text:43e993d561df709831d3cb0b6555d21a69fa6b7e766bb4ec70f35bdb6b9b634e"
+     },
+     "job": null,
+     "facts": {
+      "magic_count": 0,
+      "klayout_count": 0
+     }
+    },
+    {
+     "ts": "2026-10-30T07:28:19",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd"
      },
      "job": null,
      "facts": {
@@ -369,14 +410,14 @@
   "precheck": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 3,
+   "attempts": 4,
    "last": {
-    "ts": "2026-10-30T06:29:50",
+    "ts": "2026-10-30T07:29:33",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
+     "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
      "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
     },
     "job": null,
@@ -414,12 +455,26 @@
      }
     },
     {
-     "ts": "2026-10-30T06:29:50",
+     "ts": "2026-10-30T06:40:35",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
      "inputs": {
-      "top_gds": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
+      "top_gds": "dir_text:43e993d561df709831d3cb0b6555d21a69fa6b7e766bb4ec70f35bdb6b9b634e",
+      "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
+     },
+     "job": null,
+     "facts": {
+      "checks_run": 12
+     }
+    },
+    {
+     "ts": "2026-10-30T07:29:33",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
       "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
      },
      "job": null,
@@ -439,7 +494,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554",
-   "hashed": "2026-10-30T06:29:50"
+   "hashed": "2026-10-30T07:29:33"
   },
   "tb": {
    "path": "tb",
@@ -451,7 +506,7 @@
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-   "hashed": "2026-10-30T06:22:26"
+   "hashed": "2026-10-30T07:26:01"
   },
   "analog_netlist": {
    "path": "analog/netlist",
@@ -469,25 +524,25 @@
    "path": "analog/layout",
    "kind": "analog_layout",
    "sha256": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
-   "hashed": "2026-10-30T06:25:41"
+   "hashed": "2026-10-30T07:28:49"
   },
   "top_sdc": {
    "path": "top.sdc",
    "kind": "top_sdc",
    "sha256": null,
-   "hashed": "2026-10-30T06:22:26"
+   "hashed": "2026-10-30T07:26:01"
   },
   "digital_sdc": {
    "path": "digital/harden/constraints.sdc",
    "kind": "digital_sdc",
-   "sha256": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883",
-   "hashed": "2026-10-30T06:22:26"
+   "sha256": "text_eol:35451325bacf632bec0abd56a1a7f8bb95644a261c2cfc9770eb8264a1133f23",
+   "hashed": "2026-10-30T07:26:01"
   },
   "top_gds": {
    "path": "top/harden/runs/run/final/gds",
    "kind": "top_gds",
-   "sha256": "dir_text:fbd93040a25590245fb4f05bf0ab41dc64d02400794b8d2790b641f03e6d5969",
-   "hashed": "2026-10-30T06:29:50"
+   "sha256": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
+   "hashed": "2026-10-30T07:29:33"
   }
  },
  "open_issues": [],
@@ -734,7 +789,7 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-30T06:22:26",
+   "ts": "2026-10-30T06:22:00",
    "event": "gate",
    "gate": "top_harden",
    "status": "pass",
@@ -742,7 +797,7 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-30T06:25:02",
+   "ts": "2026-10-30T06:24:32",
    "event": "gate",
    "gate": "top_drc",
    "status": "pass",
@@ -750,7 +805,7 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-30T06:25:41",
+   "ts": "2026-10-30T06:24:40",
    "event": "gate",
    "gate": "top_lvs",
    "status": "pass",
@@ -758,11 +813,49 @@
    "failing_count": 0
   },
   {
-   "ts": "2026-10-30T06:29:50",
+   "ts": "2026-10-30T06:31:04",
+   "event": "gate_error",
+   "gate": "precheck",
+   "error": "CheckError: precheck.py timed out after 300s: Command '['/hive/modules/hive-chip-flow/bin/eda', 'python3', '/work/blocks/pll/top/log/precheck_run/precheck/precheck.py', '--gds', '/work/blocks/pll/top/"
+  },
+  {
+   "ts": "2026-10-30T06:40:35",
    "event": "gate",
    "gate": "precheck",
    "status": "pass",
    "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T07:26:01",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T07:28:19",
+   "event": "gate",
+   "gate": "top_drc",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T07:28:49",
+   "event": "gate",
+   "gate": "top_lvs",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T07:29:33",
+   "event": "gate",
+   "gate": "precheck",
+   "status": "pass",
+   "attempt": 4,
    "failing_count": 0
   }
  ]
