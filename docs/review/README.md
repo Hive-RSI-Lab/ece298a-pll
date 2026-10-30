@@ -15,21 +15,29 @@ Regenerate the figures after any result changes:
 
 | Stage | State | Evidence |
 |---|---|---|
-| Analog schematic, 31 PVT corners | done, signed off by you (H1-ada9eb) | `blocks/pll/analog/log/H1-signoff.md` |
+| Analog schematic, 31 PVT corners | signed off by you (H1-ada9eb); the loop filter's caps changed since (decision 0), resimulated at all 31 corners | `blocks/pll/analog/log/H1-signoff.md`, `blocks/pll/analog/reports/recorded/gate-sim_pvt.json` |
 | Digital RTL: PFD, /8 prescaler, /N divider, lock detector, registers | done; sim, formal, coverage, mutation, holdout, standalone harden, DRC, LVS, precheck and gate-level sim pass | `blocks/pll/digital/state.json` |
-| Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us | `blocks/pll/tb/README.md`, figure below |
-| Digital timing with the VCO clock at 2.7 ns | tt and ff meet; ss_125C waived (decision 2) | `blocks/pll/digital/state.json` issue 8 |
+| Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us; all three layers pass with the MOS caps | `blocks/pll/tb/README.md`, figure below |
+| Digital timing with the VCO clock at 2.7 ns | tt and ff meet; ss_125C waived (decision 2), recorded in `digital/reports/waivers.json` | `blocks/pll/digital/state.json` issue 8 |
 | Analog layout | DRC clean, LVS unique match | `blocks/pll/analog/layout/` |
-| Post-layout benches on the extracted netlist | 28 of 31 corners pass; ff_pss, ss_m40c_vm10 and tt_pss do not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
-| Full tile (digital hardened around the analog macro) | blocked: chip-flow's top_harden shorts vctrl to VGND (fix in hive-chip-flow PR #28, testing) | GOALS.md, "Harden the tile" |
-| Tile DRC, LVS, Tiny Tapeout precheck | not run yet (needs the tile) | |
-| `src/`, `test/`, `info.yaml`, workflows in Tiny Tapeout's analog-project shape | staged and tested in `blocks/pll/tt`; goes in with the tile's GDS | `blocks/pll/tt/README.md` |
+| Post-layout benches on the extracted netlist | 29 of 31 corners pass; ss_m40c_vm10 and ff_pss do not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
+| Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
+| Tiny Tapeout precheck | **passes**, both from chip-flow's gate and run on the committed `gds/`, `lef/`, `src/project.v` and `info.yaml` themselves | figure below |
+| Repository in Tiny Tapeout's analog-project shape | **done**: `src/` (real top + RTL), `test/` (RTL test, 4/4), 1x2 analog `info.yaml`, `custom_gds` gds workflow | `blocks/pll/tt/README.md` |
 
 Nothing is ever submitted to Tiny Tapeout or the course for you. "Ready for
 submission" stops at: precheck passes on the committed GDS, and the repository
-has the analog template's shape.
+has the analog template's shape. Both hold now. What is still open is listed
+at the bottom.
 
 ## What it looks like
+
+### The tile
+
+The 1x2 tile as committed in `gds/`: the analog macro in the middle, the
+digital core's standard cells around it, and the Metal4 power stripes.
+
+![the tile](tile.png)
 
 ### The analog macro
 
@@ -37,8 +45,8 @@ Bottom to top, as `gen_pll_analog.py` draws it: the ring VCO (the small
 block at the bottom right, under the vco_out pin); two rows of bias, buffer
 and enable devices; the resistors' poly serpentines (R1, R_V2I and the bias
 resistors, the tall red bars); the charge pump's NMOS row and its PMOS mirror
-bank. The loop filter's MIM capacitors are the two large Metal4 plates over
-the rows: C1 on top, C2 bottom left. Digital pins are on the right edge.
+bank; and the two rows of MOS caps on top, C1 (12 units) and C2 (the
+taller unit at the top right). Digital pins are on the right edge.
 Supplies and the two analog pads (vctrl, bias_ref) are on the bottom edge.
 
 ![pll_analog layout](analog-layout.png)
@@ -46,10 +54,10 @@ Supplies and the two analog pads (vctrl, bias_ref) are on the bottom edge.
 To open it yourself: `klayout blocks/pll/analog/layout/pll_analog.gds`. The
 generator that draws it is `blocks/pll/analog/layout/gen_pll_analog.py`.
 GitHub Pages is on for the repository (warden request 261030-015628,
-2026-10-30). The gds workflow's viewer job publishes a 3D GDS viewer of
-what main builds at https://hive-rsi-lab.github.io/ece298a-pll/ on every
-push to main. Until the tile replaces the template, that is still the
-template's GDS.
+2026-10-30). Once this branch is on main, the gds workflow's viewer job
+publishes a 3D viewer of the tile's GDS at
+https://hive-rsi-lab.github.io/ece298a-pll/ on every push to main. To open
+the tile yourself: `klayout gds/tt_um_ihsan_sa_pll.gds`.
 
 ### The loop locking
 
@@ -58,7 +66,6 @@ digital RTL. To watch it lock in a waveform viewer without any EDA tree, run
 the RTL test of the real top (Icarus Verilog and cocotb). It uses a
 behavioural model of the analog macro and takes about a second:
 
-    python3 blocks/pll/tt/assemble.py   # before the tile is in, this is a local preview: do not commit it
     cd test && make && gtkwave tb.fst   # or surfer tb.fst
 
 ![co-simulation lock](cosim-lock.png)
@@ -71,21 +78,78 @@ What fails, and why:
 
 - **ss_m40c_vm10**: the bias reference settles in its second DC operating
   point (pump current 168 uA, no oscillation). This is a real start-up risk,
-  not a bench artefact: started from pll_en rising, the extracted netlist
-  reaches the same state. Task 261030-001020 is working on it (a start-up
-  path or a bias change).
-- **ff_pss**: Kvco reads 36 MHz/V against a 40 MHz/V floor (decision 3).
-- **tt_pss**: a simulator-log misread, not a circuit failure. ngspice prints
-  "Dynamic gmin stepping failed" and then converges by true gmin stepping;
-  chip-flow reads the first line as an engine error. The fix is hive-chip-flow
-  PR #34 (testing). Every measure at tt_pss is in bounds.
+  not a bench artefact: the start-up circuit never releases at this corner.
+  Task 261030-001020 found it and has a fix (MN_ST L 2 -> 4 um), which
+  brings pex_pvt to 30 of 31. It merges after this change.
+- **ff_pss**: Kvco reads 37.1 MHz/V against a 40 MHz/V floor (decision 3).
 
 One thing the figure shows that no bound catches: at ff_pss the VCO's ceiling
-is 114 MHz after layout (158 MHz before). Every corner still reaches the
+is about 115 MHz after layout (158 MHz before). Every corner still reaches the
 100 MHz nominal point, but the lock range promised in `docs/info.md` (up to
 about 200 MHz) only holds at typical. Decision 4 covers it.
 
 ## Decisions taken without you, waiting for your review
+
+0. **The loop filter's capacitors are MOS caps, not MIM (a change to the
+   netlist you signed off at H1).** Tiny Tapeout's precheck failed the tile
+   with "KLayout Checks: Forbidden layer Metal5 found". Tiny Tapeout's GF180
+   process has five metal layers with MIM option B, so a MIM cap's top plate
+   is Metal5, and Metal5 is reserved for the shuttle. C1 and C2 are now
+   `cap_nmos_03v3_b`: NMOS-in-nwell accumulation caps, about 3.98 fF/um2 at
+   1.6 V.
+   - C1: 420 x 12 um, as 12 units of 35 x 12 um, 20.1 pF. It was a
+     100 x 100 um MIM, 20.0 pF.
+   - C2: 43 x 12 um, 2.06 pF. It was a 32 x 32 um MIM, 2.05 pF.
+   - Area: 5556 um2 of MOS cap against 11024 um2 of MIM. A MOS cap can't sit
+     over the other devices the way the MIM did, though, so the macro grows
+     from 128 x 180 um to 118 x 256 um. It still fits the 1x2 tile.
+   - The capacitance falls below about 0.5 V on the gate: 3.6 fF/um2 at
+     0.3 V, 9% under nominal. That only matters at the bottom of the tuning
+     range (vctrl near 0.3 V, the lowest output frequencies). At the 100 MHz
+     point, vctrl is about 1.6 V.
+   - Results at each corner, before and after, are in the table below.
+     Undoing it means another way to get 20 pF without Metal5, and none is
+     as small.
+   The phase margin moves by +0.1 to +0.3 deg and the post-layout VCO by up
+   to about 1%. Every pre-layout bound passes at all 31 corners, before and
+   after. Post-layout, the same two corners miss as before (ss_m40c_vm10,
+   ff_pss).
+
+   Pre-layout (sim_pvt, every bound passes before and after), and post-layout (pex_pvt on the extracted netlist), MIM before / MOS after:
+
+   | corner | phase margin, P*N=16 (deg) | post-layout Kvco (MHz/V) | post-layout f at vdd-0.3 V (MHz) | post-layout Icp up (uA) |
+   |---|---|---|---|---|
+   | tt_m40c_vm10 | 52.6 / 52.8 | 90.9 / 91.5 | 224.2 / 225.8 | 19.1 / 19.0 |
+   | tt_m40c | 51.2 / 51.3 | 77.2 / 78.0 | 215.9 / 218.1 | 19.3 / 19.3 |
+   | tt_m40c_vp10 | 48.2 / 48.4 | 58.8 / 59.8 | 184.7 / 188.0 | 19.5 / 19.3 |
+   | tt_27c_vm10 | 51.6 / 51.8 | 87.2 / 87.7 | 215.0 / 216.2 | 18.6 / 18.5 |
+   | tt_27c | 49.5 / 49.8 | 72.4 / 72.7 | 202.7 / 203.3 | 18.7 / 18.6 |
+   | tt_27c_vp10 | 46.0 / 45.8 | 55.2 / 55.4 | 173.5 / 174.2 | 18.8 / 18.7 |
+   | tt_125c_vm10 | 49.7 / 49.8 | 80.3 / 80.5 | 197.7 / 198.0 | 17.5 / 17.4 |
+   | tt_125c | 46.8 / 47.0 | 64.6 / 64.0 | 180.9 / 179.2 | 17.6 / 17.6 |
+   | tt_125c_vp10 | 43.1 / 43.3 | 49.5 / 48.9 | 155.8 / 154.0 | 17.8 / 17.8 |
+   | ss_m40c_vm10 | 54.0 / 54.2 | 0.0 / 0.0 | 0.0 / 0.0 | 168.3 / 168.7 |
+   | ss_m40c | 53.3 / 53.4 | 67.0 / 67.4 | 188.2 / 189.4 | 17.8 / 17.8 |
+   | ss_m40c_vp10 | 52.1 / 52.2 | 57.1 / 57.7 | 179.4 / 181.2 | 18.0 / 17.9 |
+   | ss_27c_vm10 | 53.4 / 53.6 | 72.6 / 73.0 | 180.4 / 181.2 | 17.1 / 17.1 |
+   | ss_27c | 52.4 / 52.6 | 64.7 / 65.0 | 181.6 / 182.4 | 17.3 / 17.3 |
+   | ss_27c_vp10 | 50.7 / 50.8 | 54.1 / 54.2 | 169.9 / 170.3 | 17.4 / 17.4 |
+   | ss_125c_vm10 | 52.0 / 52.2 | 68.2 / 68.5 | 169.0 / 169.5 | 16.2 / 16.2 |
+   | ss_125c | 51.4 / 51.6 | 60.1 / 60.2 | 168.5 / 168.7 | 16.5 / 16.4 |
+   | ss_125c_vp10 | 48.3 / 48.5 | 49.0 / 48.5 | 154.0 / 152.5 | 16.6 / 16.7 |
+   | ff_m40c_vm10 | 50.1 / 50.3 | 109.3 / 110.4 | 268.4 / 270.9 | 21.3 / 21.3 |
+   | ff_m40c | 46.7 / 46.9 | 82.8 / 83.7 | 231.5 / 234.1 | 21.6 / 21.5 |
+   | ff_m40c_vp10 | 42.9 / 43.1 | 62.1 / 63.2 | 195.3 / 198.6 | 21.9 / 21.8 |
+   | ff_27c_vm10 | 48.4 / 48.5 | 101.8 / 102.8 | 249.9 / 252.2 | 20.6 / 20.5 |
+   | ff_27c | 44.5 / 44.7 | 76.3 / 76.9 | 213.7 / 215.1 | 20.8 / 20.6 |
+   | ff_27c_vp10 | 40.7 / 40.8 | 57.4 / 58.1 | 180.9 / 182.9 | 20.9 / 20.8 |
+   | ff_125c_vm10 | 45.1 / 45.2 | 89.7 / 89.1 | 220.5 / 219.0 | 19.2 / 19.1 |
+   | ff_125c | 40.9 / 41.0 | 66.7 / 66.5 | 187.1 / 186.3 | 19.4 / 19.3 |
+   | ff_125c_vp10 | 37.2 / 37.3 | 50.2 / 50.8 | 158.4 / 160.1 | 19.8 / 19.6 |
+   | ss_pff | 50.0 / 50.1 | 92.8 / 93.2 | 232.3 / 233.2 | 26.7 / 26.6 |
+   | ff_pss | 43.3 / 43.5 | 36.1 / 37.1 | 113.9 / 116.9 | 14.0 / 13.9 |
+   | tt_pss | 49.9 / 50.0 | 57.6 / 57.4 | 161.4 / 160.6 | 15.0 / 15.1 |
+   | tt_pff | 49.2 / 49.4 | 93.2 / 93.9 | 261.1 / 262.8 | 24.2 / 24.1 |
 
 1. **The analog layout goes ahead to the tile (H2-a9fad5).** The engine
    presented the layout sign-off as challenge H2-a9fad5 on 2026-10-28. It is
@@ -118,27 +182,19 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    8 x N x f_ref between those, with 100 MHz as the nominal point. Typical
    silicon goes further (7 to 205 MHz).
 5. **The tile is 1x2, not 1x1.** Tiny Tapeout's GF180 analog tiles start at
-   1x2. `info.yaml` says 1x1 today and changes with the tile.
+   1x2.
 6. **PFD_UP and PFD_DN leave the debug pins in the full tile.** In the
    standalone digital harden, `uo[3]` and `uo[4]` show the PFD's UP and DN
    pulses. In the tile, chip-flow wires each crossing signal to the analog
    macro only, so `uo[3:7]` read 0. Keeping UP/DN visible needs a chip-flow
    change (a crossing signal that also goes to a pad). Say if you want it.
 
-## What is left before "ready for submission"
+## What is left
 
-In order:
-
-1. hive-chip-flow PR #28 lands (top_harden's false vctrl/VGND short), then the
-   tile hardens: `top_harden`, `top_drc`, `top_lvs`, `precheck`.
-2. The repository takes the analog template's shape. This is staged and
-   tested in `blocks/pll/tt`. `python3 blocks/pll/tt/assemble.py` puts in
-   place `src/` (the real top and the digital RTL), `test/` (an RTL test of
-   the top with a behavioural analog model, which locks at 100 and 150 MHz),
-   an `info.yaml` for a 1x2 analog tile, the `custom_gds` gds workflow, and
-   the tile's GDS and LEF.
-3. ss_m40c_vm10's bias start-up (task 261030-001020) and the ff_pss decision
-   (3 above). Each changes the analog layout, so the tile is rebuilt after.
-4. The issue 8 waiver written where chip-flow's release gate reads it
-   (`blocks/pll/digital/reports/waivers.json`, bound to the timing gate's
-   inputs). That needs a fresh digital timing run.
+1. Merge with task 261030-001020's bias start-up fix (MN_ST), then rebuild:
+   the analog layout, pex_pvt, the tile, precheck, and `assemble.py`.
+2. The ff_pss decision (3 above).
+3. The gds, docs and test workflows passing on main with this design.
+4. The local chip-flow fixes landing in the module: hive-chip-flow PR #28,
+   and briefs 261030-033156 and 261030-043908. Until they land, the module
+   as installed can't rebuild this tile. The diff is in this run's notes.

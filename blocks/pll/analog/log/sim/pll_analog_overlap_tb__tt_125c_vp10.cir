@@ -14,8 +14,21 @@
 .lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
 .lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
 .lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
+* moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
+* + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
+* too small" on its current probe) at most corners on the extracted netlist;
+* Q(v), its integral, is the same device and holds (pex tt_27c: Icp 18.52 vs
+* 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
+* PDK form under Gear). Its corner factor follows the MIM corner's
+* (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+.ends cap_nmos_03v3_b
 .include '/work/blocks/pll/analog/netlist/pll_analog.cir'
-.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.0001 c2_w=3.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=3.5e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='4e-05' l_cl='2e-06'
+.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=3.5e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='4e-05' l_cl='2e-06'
 
 .temp 125
 .param vddp=3.63
