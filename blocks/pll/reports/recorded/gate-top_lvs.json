@@ -3,8 +3,8 @@
  "gate": "top_lvs",
  "phase": "P3",
  "tool": "top_lvs",
- "input_digest": "dir_text:609075770fd2857a2ed9d62a08a62904475f7f6d65a93d0303420fbbf9b343f0",
- "status": "fail",
+ "input_digest": "dir_text:57b07594df052b905f84f6af356daaac21c321866ed1c3a31c1a7207c4659784",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,63 +12,21 @@
   "max_count": 0
  },
  "counts": {
-  "total": 1,
-  "by_severity": {
-   "error": 1
-  },
-  "by_source": {
-   "netgen": 1
-  }
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
  },
- "failing_count": 1,
- "failing": [
-  {
-   "check": "top_lvs",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "netlist_mismatch",
-   "refs": [],
-   "msg": "netgen: the assembled layout does not match the powered netlist with the analog macro: Top level cell failed pin matching.\nuio_out[1]                                 |uio_oe[4] **Mismatch**                     \nuio_out[2]                                 |uio_oe[5] **Mismatch**                     \nuio_out[3]                                 |uio_oe[6] **Mismatch**                     \nuio_oe[1]                                  |uio_oe[7] **Mismatch**                     \nuio_out[4]                                 |uio_out[0] **Mismatch**                    \nuio_oe[2]                                  |uio_out[1] **Mismatch**                    \nuio_out[5]                                 |uio_out[2] **Mismatch**                    \nuio_oe[3]                                  |uio_out[3] **Mismatch**                    \nuio_out[6]                                 |uio_out[4] **Mismatch**                    \nuio_oe[4]                                  |uio_out[5] **Mismatch**                    \nuio_out[7]                                 |uio_out[6] **Mismatch**                    \nuo_out[3]                                  |uio_out[7] **Mismatch**                    \nuio_oe[5]                                  |uo_out[3] **Mismatch**                     \nuio_oe[6]                                  |uo_out[4] **Mismatch**                     \nuo_out[4]                                  |uo_out[5] **Mismatch**                     \nuo_out[5]                                  |uo_out[6] **Mismatch**                     \nuio_oe[7]                                  |uo_out[7] **Mismatch**                     \nVPWR                                       |VPWR                                       \nena                                        |ena                                        \nua[2]                                      |ua[2]                                      \nua[3]                                      |ua[3]                                      \nua[4]                                      |ua[4]                                      \nua[5]                                      |ua[5]                                      \nua[6]                                      |ua[6]                                      \nua[7]                                      |ua[7]                                      \nui_in[3]                                   |ui_in[3]                                   \nui_in[4]                                   |ui_in[4]                                   \nui_in[5]                                   |ui_in[5]                                   \nuio_in[2]                                  |uio_in[2]                                  \nuio_in[3]                                  |uio_in[3]                                  \nuio_in[4]                                  |uio_in[4]                                  \nuio_in[5]                                  |uio_in[5]                                  \nuio_in[6]                                  |uio_in[6]                                  \nuio_in[7]                                  |uio_in[7]                                  \n(no pin, node is VGND)                     |ua[0]                                      \n---------------------------------------------------------------------------------------\nCell pin lists for tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll altered to match.\nDevice classes tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll are equivalent.\n\nFinal result: Top level cell failed pin matching.",
-   "source": "netgen",
-   "items": [
-    {
-     "msg": "netgen: the assembled layout does not match the powered netlist with the analog macro: Top level cell failed pin matching.\nuio_out[1]                                 |uio_oe[4] **Mismatch**                     \nuio_out[2]                                 |uio_oe[5] **Mismatch**                     \nuio_out[3]                                 |uio_oe[6] **Mismatch**                     \nuio_oe[1]                                  |uio_oe[7] **Mismatch**                     \nuio_out[4]                                 |uio_out[0] **Mismatch**                    \nuio_oe[2]                                  |uio_out[1] **Mismatch**                    \nuio_out[5]                                 |uio_out[2] **Mismatch**                    \nuio_oe[3]                                  |uio_out[3] **Mismatch**                    \nuio_out[6]                                 |uio_out[4] **Mismatch**                    \nuio_oe[4]                                  |uio_out[5] **Mismatch**                    \nuio_out[7]                                 |uio_out[6] **Mismatch**                    \nuo_out[3]                                  |uio_out[7] **Mismatch**                    \nuio_oe[5]                                  |uo_out[3] **Mismatch**                     \nuio_oe[6]                                  |uo_out[4] **Mismatch**                     \nuo_out[4]                                  |uo_out[5] **Mismatch**                     \nuo_out[5]                                  |uo_out[6] **Mismatch**                     \nuio_oe[7]                                  |uo_out[7] **Mismatch**                     \nVPWR                                       |VPWR                                       \nena                                        |ena                                        \nua[2]                                      |ua[2]                                      \nua[3]                                      |ua[3]                                      \nua[4]                                      |ua[4]                                      \nua[5]                                      |ua[5]                                      \nua[6]                                      |ua[6]                                      \nua[7]                                      |ua[7]                                      \nui_in[3]                                   |ui_in[3]                                   \nui_in[4]                                   |ui_in[4]                                   \nui_in[5]                                   |ui_in[5]                                   \nuio_in[2]                                  |uio_in[2]                                  \nuio_in[3]                                  |uio_in[3]                                  \nuio_in[4]                                  |uio_in[4]                                  \nuio_in[5]                                  |uio_in[5]                                  \nuio_in[6]                                  |uio_in[6]                                  \nuio_in[7]                                  |uio_in[7]                                  \n(no pin, node is VGND)                     |ua[0]                                      \n---------------------------------------------------------------------------------------\nCell pin lists for tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll altered to match.\nDevice classes tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll are equivalent.\n\nFinal result: Top level cell failed pin matching.",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
- "violations": [
-  {
-   "check": "top_lvs",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "netlist_mismatch",
-   "refs": [],
-   "msg": "netgen: the assembled layout does not match the powered netlist with the analog macro: Top level cell failed pin matching.\nuio_out[1]                                 |uio_oe[4] **Mismatch**                     \nuio_out[2]                                 |uio_oe[5] **Mismatch**                     \nuio_out[3]                                 |uio_oe[6] **Mismatch**                     \nuio_oe[1]                                  |uio_oe[7] **Mismatch**                     \nuio_out[4]                                 |uio_out[0] **Mismatch**                    \nuio_oe[2]                                  |uio_out[1] **Mismatch**                    \nuio_out[5]                                 |uio_out[2] **Mismatch**                    \nuio_oe[3]                                  |uio_out[3] **Mismatch**                    \nuio_out[6]                                 |uio_out[4] **Mismatch**                    \nuio_oe[4]                                  |uio_out[5] **Mismatch**                    \nuio_out[7]                                 |uio_out[6] **Mismatch**                    \nuo_out[3]                                  |uio_out[7] **Mismatch**                    \nuio_oe[5]                                  |uo_out[3] **Mismatch**                     \nuio_oe[6]                                  |uo_out[4] **Mismatch**                     \nuo_out[4]                                  |uo_out[5] **Mismatch**                     \nuo_out[5]                                  |uo_out[6] **Mismatch**                     \nuio_oe[7]                                  |uo_out[7] **Mismatch**                     \nVPWR                                       |VPWR                                       \nena                                        |ena                                        \nua[2]                                      |ua[2]                                      \nua[3]                                      |ua[3]                                      \nua[4]                                      |ua[4]                                      \nua[5]                                      |ua[5]                                      \nua[6]                                      |ua[6]                                      \nua[7]                                      |ua[7]                                      \nui_in[3]                                   |ui_in[3]                                   \nui_in[4]                                   |ui_in[4]                                   \nui_in[5]                                   |ui_in[5]                                   \nuio_in[2]                                  |uio_in[2]                                  \nuio_in[3]                                  |uio_in[3]                                  \nuio_in[4]                                  |uio_in[4]                                  \nuio_in[5]                                  |uio_in[5]                                  \nuio_in[6]                                  |uio_in[6]                                  \nuio_in[7]                                  |uio_in[7]                                  \n(no pin, node is VGND)                     |ua[0]                                      \n---------------------------------------------------------------------------------------\nCell pin lists for tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll altered to match.\nDevice classes tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll are equivalent.\n\nFinal result: Top level cell failed pin matching.",
-   "source": "netgen",
-   "items": [
-    {
-     "msg": "netgen: the assembled layout does not match the powered netlist with the analog macro: Top level cell failed pin matching.\nuio_out[1]                                 |uio_oe[4] **Mismatch**                     \nuio_out[2]                                 |uio_oe[5] **Mismatch**                     \nuio_out[3]                                 |uio_oe[6] **Mismatch**                     \nuio_oe[1]                                  |uio_oe[7] **Mismatch**                     \nuio_out[4]                                 |uio_out[0] **Mismatch**                    \nuio_oe[2]                                  |uio_out[1] **Mismatch**                    \nuio_out[5]                                 |uio_out[2] **Mismatch**                    \nuio_oe[3]                                  |uio_out[3] **Mismatch**                    \nuio_out[6]                                 |uio_out[4] **Mismatch**                    \nuio_oe[4]                                  |uio_out[5] **Mismatch**                    \nuio_out[7]                                 |uio_out[6] **Mismatch**                    \nuo_out[3]                                  |uio_out[7] **Mismatch**                    \nuio_oe[5]                                  |uo_out[3] **Mismatch**                     \nuio_oe[6]                                  |uo_out[4] **Mismatch**                     \nuo_out[4]                                  |uo_out[5] **Mismatch**                     \nuo_out[5]                                  |uo_out[6] **Mismatch**                     \nuio_oe[7]                                  |uo_out[7] **Mismatch**                     \nVPWR                                       |VPWR                                       \nena                                        |ena                                        \nua[2]                                      |ua[2]                                      \nua[3]                                      |ua[3]                                      \nua[4]                                      |ua[4]                                      \nua[5]                                      |ua[5]                                      \nua[6]                                      |ua[6]                                      \nua[7]                                      |ua[7]                                      \nui_in[3]                                   |ui_in[3]                                   \nui_in[4]                                   |ui_in[4]                                   \nui_in[5]                                   |ui_in[5]                                   \nuio_in[2]                                  |uio_in[2]                                  \nuio_in[3]                                  |uio_in[3]                                  \nuio_in[4]                                  |uio_in[4]                                  \nuio_in[5]                                  |uio_in[5]                                  \nuio_in[6]                                  |uio_in[6]                                  \nuio_in[7]                                  |uio_in[7]                                  \n(no pin, node is VGND)                     |ua[0]                                      \n---------------------------------------------------------------------------------------\nCell pin lists for tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll altered to match.\nDevice classes tt_um_ihsan_sa_pll and tt_um_ihsan_sa_pll are equivalent.\n\nFinal result: Top level cell failed pin matching.",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
  "facts": {
   "top": "tt_um_ihsan_sa_pll",
-  "matched": false,
-  "final": "Top level cell failed pin matching.",
+  "matched": true,
+  "final": "Circuits match uniquely.",
   "macro_devices_extracted": {
    "res": 22,
-   "fet": 144,
-   "cap": 2
+   "cap": 13,
+   "fet": 144
   },
   "macro_devices_wanted": {
    "fet": 85,
@@ -78,9 +36,9 @@
   "report": "log/top_lvs/top_lvs.rpt"
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:609075770fd2857a2ed9d62a08a62904475f7f6d65a93d0303420fbbf9b343f0",
-  "analog_layout": "dir_text:f871e89792f61ba7ea4b2d522b9886e05445d877ef534151611916559197de15"
+  "top_gds": "dir_text:57b07594df052b905f84f6af356daaac21c321866ed1c3a31c1a7207c4659784",
+  "analog_layout": "dir_text:a6938d51783925ebc9a3a8134434a8ce6bb4fff33c9c2096b8899d3cbcd69f35"
  },
- "recorded_ts": "2026-10-30T00:49:11",
- "attempts": 1
+ "recorded_ts": "2026-10-30T00:07:52",
+ "attempts": 3
 }

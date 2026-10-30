@@ -93,16 +93,25 @@ r1_l:
   value: 0.00015
   min: 6e-05
   max: 0.00025
-# C1 side (square MIM): 2 fF/um2 -> 20 pF at 100 um
+# C1 (cap_nmos_03v3_b): total W at L = c1_l, about 3.98 fF/um2 at 1.6 V ->
+# 20.1 pF at 420 um x 12 um (12 units of 35 um); was a 100 um MIM (20 pF)
 c1_w:
-  value: 0.0001
-  min: 7e-05
-  max: 0.00011
-# C2 side (square MIM): 2 pF at 32 um, C2 <= C1/10
+  value: 0.00042
+  min: 0.0003
+  max: 0.0005
+c1_l:
+  value: 1.2e-05
+  min: 1.0e-05
+  max: 1.4e-05
+# C2 (cap_nmos_03v3_b): 2.06 pF at 43 um x 12 um, C2 <= C1/10; was a 32 um MIM
 c2_w:
-  value: 3.2e-05
-  min: 2e-05
-  max: 5e-05
+  value: 4.3e-05
+  min: 2.5e-05
+  max: 6.0e-05
+c2_l:
+  value: 1.2e-05
+  min: 1.0e-05
+  max: 1.4e-05
 # MN_V2I W
 w_v2i:
   value: 1e-05

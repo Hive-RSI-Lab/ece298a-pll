@@ -1,0 +1,9 @@
+[
+ {
+  "gate": "timing",
+  "reason": "Digital issue 8: with vco_out constrained at 2.7 ns (370 MHz), setup misses at ss_125C_3v00 only: -1.20 ns max, -1.18 nom, -1.16 min parasitics, on the vco_out /2 toggle loop (u_pre_ff0). tt +0.65 ns, ff +1.43 ns, hold met at every corner. No flop in gf180mcu_fd_sc_mcu7t5v0 toggles at 2.7 ns at ss: the fastest reset toggle loop (dffrnq_2 + inv_1) is 3.65 ns routed, 274 MHz. The VCO doesn't reach that with slow transistors: after layout, ss_pff tops out at 247 MHz at the rail. A runaway recovery forces DN after 1024 unlocked reference cycles. Details: state.json issue 8.",
+  "approved_by": "lead lead-lead-83757baacd for the owner under their standing sign-off (Slack 2026-10-28 13:18: 'yea just do it all i signoff we can always go back'), and the owner's 'build it all, i will retroactively review' (chat 261030-010852, 2026-10-29 21:13). Not the owner's own ruling: waiting for their review (docs/review/README.md).",
+  "inputs_sha256": "f7272b47d2ef8fc161957b66cf75c94f2618ee6907eb0f1be8679a01a74e0020",
+  "checker_version": 1
+ }
+]

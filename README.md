@@ -1,42 +1,33 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/check/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# Charge-pump PLL for Tiny Tapeout (GF180)
 
-- [Read the documentation for project](docs/info.md)
+The ECE 298A term project: a charge-pump phase-locked loop on one Tiny Tapeout
+GF180 tile. A current-starved ring VCO is locked to the reference on `clk`, at
+8 × N times the reference (N = 1 to 5), with a lock detector.
+
+- **To review it** (where it stands, pictures, the decisions waiting for
+  you): [docs/review/README.md](docs/review/README.md)
+- The datasheet: [docs/info.md](docs/info.md)
+- Goals and their status: [GOALS.md](GOALS.md)
+
+## Where things are
+
+| Path | What |
+|---|---|
+| `blocks/pll/analog` | the analog half: netlist, spec, benches, the layout generator and its GDS |
+| `blocks/pll/digital` | the digital half: RTL, formal, testbenches, the standalone harden |
+| `blocks/pll/interface.yaml` | every signal between the two halves, and the two analog pads |
+| `blocks/pll/tb` | the whole loop: linear model, RTL with a behavioural analog model, and the co-simulation with the transistor-level analog |
+| `src/`, `test/`, `info.yaml` | what the Tiny Tapeout flow reads |
+| `tests/check.sh` | the fast check every pull request passes |
+| `tests/score.sh` | the share of GOALS.md's checkable done-lines that pass |
+
+The design is built with [chip-flow](https://github.com/Hive-RSI-Lab/hive-chip-flow)
+and the IIC-OSIC-TOOLS tree (ngspice, magic, netgen, klayout, LibreLane).
 
 ## What is Tiny Tapeout?
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
-
-To learn more and get started, visit https://tinytapeout.com.
-
-## Set up your Verilog project
-
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
-
-The GitHub action will automatically build the ASIC files using [LibreLane](https://www.zerotoasiccourse.com/terminology/librelane/).
-
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
+Tiny Tapeout is an educational project that makes it easier and cheaper to get
+digital and analog designs manufactured on a real chip. See
+https://tinytapeout.com and, for analog projects, https://tinytapeout.com/specs/analog/.

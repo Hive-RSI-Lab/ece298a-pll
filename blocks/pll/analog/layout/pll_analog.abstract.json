@@ -3,68 +3,68 @@
  "bbox_um": [
   -1.1,
   -9.3,
-  126.9,
-  170.2
+  116.72,
+  246.63
  ],
  "pins": [
   {
    "name": "bias_ref",
    "layer": "metal2",
-   "x": 125.2,
+   "x": 51.6,
    "y": -9.1
   },
   {
    "name": "cp_trim0",
    "layer": "metal2",
-   "x": 126.5,
-   "y": 125.88
+   "x": 116.22,
+   "y": 115.48
   },
   {
    "name": "cp_trim1",
    "layer": "metal2",
-   "x": 126.5,
-   "y": 127.48
+   "x": 116.22,
+   "y": 117.88
   },
   {
    "name": "pfd_dn",
    "layer": "metal2",
-   "x": 126.5,
-   "y": 51.71
+   "x": 116.22,
+   "y": 49.31
   },
   {
    "name": "pfd_up",
    "layer": "metal2",
-   "x": 126.5,
+   "x": 116.22,
    "y": 50.11
   },
   {
    "name": "pll_en",
    "layer": "metal2",
-   "x": 126.5,
+   "x": 116.22,
    "y": 2.71
   },
   {
    "name": "vco_out",
    "layer": "metal2",
-   "x": 126.5,
+   "x": 116.22,
    "y": 3.51
   },
   {
    "name": "vctrl",
    "layer": "metal2",
-   "x": 108.4,
+   "x": 31.6,
    "y": -9.1
   },
   {
    "name": "vdd",
    "layer": "metal2",
-   "x": 123.6,
+   "x": 58.8,
    "y": -9.1
   },
   {
    "name": "vss",
    "layer": "metal2",
-   "x": 113.2,
+   "x": 52.4,
    "y": -9.1
   }
  ]

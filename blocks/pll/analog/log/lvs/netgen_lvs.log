@@ -1,18 +1,17 @@
 
-Circuit 1 cell pfet_03v3 and Circuit 2 cell pfet_03v3 are black boxes.
-Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
-Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+Circuit 1 cell ppolyf_u and Circuit 2 cell ppolyf_u are black boxes.
+Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
+Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
 
 Subcircuit pins:
-Circuit 1: pfet_03v3                       |Circuit 2: pfet_03v3                       
+Circuit 1: ppolyf_u                        |Circuit 2: ppolyf_u                        
 -------------------------------------------|-------------------------------------------
 1                                          |1                                          
 2                                          |2                                          
 3                                          |3                                          
-4                                          |4                                          
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes pfet_03v3 and pfet_03v3 are equivalent.
+Device classes ppolyf_u and ppolyf_u are equivalent.
 
 Circuit 1 cell nfet_03v3 and Circuit 2 cell nfet_03v3 are black boxes.
 Warning: Equate pins:  cell nfet_03v3 is a placeholder, treated as a black box.
@@ -29,41 +28,42 @@ Circuit 1: nfet_03v3                       |Circuit 2: nfet_03v3
 Cell pin lists are equivalent.
 Device classes nfet_03v3 and nfet_03v3 are equivalent.
 
-Circuit 1 cell ppolyf_u and Circuit 2 cell ppolyf_u are black boxes.
-Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
-Warning: Equate pins:  cell ppolyf_u is a placeholder, treated as a black box.
+Circuit 1 cell cap_nmos_03v3_b and Circuit 2 cell cap_nmos_03v3_b are black boxes.
+Warning: Equate pins:  cell cap_nmos_03v3_b is a placeholder, treated as a black box.
+Warning: Equate pins:  cell cap_nmos_03v3_b is a placeholder, treated as a black box.
 
 Subcircuit pins:
-Circuit 1: ppolyf_u                        |Circuit 2: ppolyf_u                        
+Circuit 1: cap_nmos_03v3_b                 |Circuit 2: cap_nmos_03v3_b                 
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes cap_nmos_03v3_b and cap_nmos_03v3_b are equivalent.
+
+Circuit 1 cell pfet_03v3 and Circuit 2 cell pfet_03v3 are black boxes.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell pfet_03v3 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: pfet_03v3                       |Circuit 2: pfet_03v3                       
 -------------------------------------------|-------------------------------------------
 1                                          |1                                          
 2                                          |2                                          
 3                                          |3                                          
+4                                          |4                                          
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
-Device classes ppolyf_u and ppolyf_u are equivalent.
+Device classes pfet_03v3 and pfet_03v3 are equivalent.
 
-Circuit 1 cell cap_mim_2f0_m4m5_noshield and Circuit 2 cell cap_mim_2f0_m4m5_noshield are black boxes.
-Warning: Equate pins:  cell cap_mim_2f0_m4m5_noshield is a placeholder, treated as a black box.
-Warning: Equate pins:  cell cap_mim_2f0_m4m5_noshield is a placeholder, treated as a black box.
-
-Subcircuit pins:
-Circuit 1: cap_mim_2f0_m4m5_noshield       |Circuit 2: cap_mim_2f0_m4m5_noshield       
--------------------------------------------|-------------------------------------------
-1                                          |1                                          
-2                                          |2                                          
----------------------------------------------------------------------------------------
-Cell pin lists are equivalent.
-Device classes cap_mim_2f0_m4m5_noshield and cap_mim_2f0_m4m5_noshield are equivalent.
-
-Class pll_analog (0):  Merged 63 parallel devices.
+Class pll_analog (0):  Merged 74 parallel devices.
 Class pll_analog (0):  Merged 18 series devices.
 Subcircuit summary:
 Circuit 1: pll_analog                      |Circuit 2: pll_analog                      
 -------------------------------------------|-------------------------------------------
-pfet_03v3 (71->37)                         |pfet_03v3 (44->37)                         
 nfet_03v3 (73->44)                         |nfet_03v3 (47->44)                         
-cap_mim_2f0_m4m5_noshield (2)              |cap_mim_2f0_m4m5_noshield (2)              
+cap_nmos_03v3_b (13->2)                    |cap_nmos_03v3_b (2)                        
+pfet_03v3 (71->37)                         |pfet_03v3 (44->37)                         
 ppolyf_u (22->4)                           |ppolyf_u (4)                               
 Number of devices: 87                      |Number of devices: 87                      
 Number of nets: 53                         |Number of nets: 53                         
@@ -74,15 +74,15 @@ Subcircuit pins:
 Circuit 1: pll_analog                      |Circuit 2: pll_analog                      
 -------------------------------------------|-------------------------------------------
 vctrl                                      |vctrl                                      
+vdd                                        |vdd                                        
 pfd_up                                     |pfd_up                                     
 pfd_dn                                     |pfd_dn                                     
 pll_en                                     |pll_en                                     
-vss                                        |vss                                        
-vdd                                        |vdd                                        
 bias_ref                                   |bias_ref                                   
 cp_trim0                                   |cp_trim0                                   
 cp_trim1                                   |cp_trim1                                   
 vco_out                                    |vco_out                                    
+vss                                        |vss                                        
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes pll_analog and pll_analog are equivalent.

@@ -22,9 +22,9 @@
  "facts": {
   "top": "ihsan_sa_pll",
   "run_tag": "run",
-  "resumed": true,
-  "wall_s": 77.12,
-  "run_dir": "/work/blocks/pll/digital/harden/runs/run",
+  "resumed": false,
+  "wall_s": 123.23,
+  "run_dir": "harden/runs/run",
   "metrics": {
    "design__instance__count": 1501,
    "design__instance__area": 51967,
@@ -70,6 +70,6 @@
   "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
   "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
  },
- "recorded_ts": "2026-10-29T11:03:13",
- "attempts": 11
+ "recorded_ts": "2026-10-30T03:50:11",
+ "attempts": 12
 }
