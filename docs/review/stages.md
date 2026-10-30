@@ -29,7 +29,7 @@ tools. Run them from the repository's root.
 | netlist_lint (analog) | the netlist parses and every device is a GF180 model | pass |  | 2026-10-30 | `blocks/pll/analog/netlist/pll_analog.cir`<br>`chip-flow gate --gate netlist_lint --skill ade --workspace blocks/pll/analog` |
 | sim_tt (analog) | every bench passes at typical | pass | tt: Icp up 19.0 uA, Kvco 91.9 MHz/V | 2026-10-30 | ngspice decks in `blocks/pll/analog/tb/`<br>`chip-flow gate --gate sim_tt --skill ade --workspace blocks/pll/analog` |
 | sim_pvt (analog) | every bench passes at all 31 PVT corners | pass | 187 bench runs over 31 corners, every bound met | 2026-10-30 | `blocks/pll/analog/reports/recorded/gate-sim_pvt.json` (every measure at every corner)<br>`chip-flow gate --gate sim_pvt --skill ade --workspace blocks/pll/analog` |
-| bench_strength (analog) | the benches catch planted faults in the netlist | pass | 219 of 253 planted netlist faults caught; 34 too small to see, each ruled on | 2026-10-28 | `blocks/pll/analog/log/bench_strength/`<br>`chip-flow gate --gate bench_strength --skill ade --workspace blocks/pll/analog` |
+| bench_strength (analog) | the benches catch planted faults in the netlist | pass | 220 of 253 planted netlist faults caught; 33 too small to see, each ruled on | 2026-10-30 | `blocks/pll/analog/log/bench_strength/`<br>`chip-flow gate --gate bench_strength --skill ade --workspace blocks/pll/analog` |
 
 ## Digital RTL
 
@@ -47,8 +47,8 @@ tools. Run them from the repository's root.
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
 | synth (digital) | the RTL synthesises to GF180 standard cells | pass | 113 cells, gf180mcu_fd_sc_mcu7t5v0 | 2026-10-29 | `chip-flow gate --gate synth --skill vde --workspace blocks/pll/digital` |
-| harden (digital) | the digital half places and routes on its own | pass | 1501 instances, setup WNS 0.12 ns, hold WNS 0.43 ns | 2026-10-30 | `chip-flow gate --gate harden --skill vde --workspace blocks/pll/digital` |
-| timing (digital) | setup and hold meet with the VCO clock at 2.7 ns, every STA corner | **FAIL** (waived, pending your review: `blocks/pll/digital/reports/waivers.json`) | worst setup -1.20 ns at max_ss_125C_3v00; hold >= 0.42 ns everywhere; corner max_ss_125C_3v00: worst setup slack -1.2000ns | 2026-10-30 | issue 8 in `blocks/pll/digital/state.json`; GOALS.md's digital issue 8 goal<br>`chip-flow gate --gate timing --skill vde --workspace blocks/pll/digital` |
+| harden (digital) | the digital half places and routes on its own | pass | 1501 instances, setup WNS -0.13 ns, hold WNS 0.43 ns | 2026-10-30 | `chip-flow gate --gate harden --skill vde --workspace blocks/pll/digital` |
+| timing (digital) | setup and hold meet with the VCO clock at 2.7 ns, every STA corner | **FAIL** (waived, pending your review: `blocks/pll/digital/reports/waivers.json`) | worst setup -0.15 ns at max_ss_125C_3v00; hold >= 0.42 ns everywhere; corner max_ss_125C_3v00: worst setup slack -0.1500ns | 2026-10-30 | issue 8 in `blocks/pll/digital/state.json`; GOALS.md's digital issue 8 goal<br>`chip-flow gate --gate timing --skill vde --workspace blocks/pll/digital` |
 | drc (digital) | the digital layout is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-29 | `chip-flow gate --gate drc --skill vde --workspace blocks/pll/digital` |
 | lvs (digital) | the digital layout matches its netlist | pass | layout matches the netlist | 2026-10-29 | `chip-flow gate --gate lvs --skill vde --workspace blocks/pll/digital` |
 | glsim (digital) | the tests pass on the gate-level netlist, with and without delays | pass | functional 18/18, sdf 18/18 | 2026-10-29 | `chip-flow gate --gate glsim --skill vde --workspace blocks/pll/digital` |
@@ -66,14 +66,14 @@ tools. Run them from the repository's root.
 |---|---|---|---|---|---|
 | drc (analog) | the analog layout is DRC clean | pass | klayout: 0 violations | 2026-10-30 | `klayout blocks/pll/analog/layout/pll_analog.gds`<br>`chip-flow gate --gate drc --skill ade --workspace blocks/pll/analog` |
 | lvs (analog) | the analog layout matches the signed-off netlist | pass | layout matches the netlist | 2026-10-30 | `blocks/pll/analog/layout/gen_pll_analog.py` draws it<br>`chip-flow gate --gate lvs --skill ade --workspace blocks/pll/analog` |
-| pex_sim (analog) | the benches run on the extracted netlist at typical | pass | tt extracted: Icp 18.9 uA, Kvco 71.7 MHz/V, fmax 200.8 MHz; 1297 parasitic C | 2026-10-29 | `chip-flow gate --gate pex_sim --skill ade --workspace blocks/pll/analog` |
+| pex_sim (analog) | the benches run on the extracted netlist at typical | pass | tt extracted: Icp 18.8 uA, Kvco 77.3 MHz/V, fmax 216.3 MHz; 1411 parasitic C | 2026-10-30 | `chip-flow gate --gate pex_sim --skill ade --workspace blocks/pll/analog` |
 | pex_pvt (analog) | the extracted netlist meets its post-layout bounds at every corner | pass | 31 of 31 corners pass their post-layout bounds | - | every measure at every corner: `blocks/pll/analog/reports/recorded/pex_pvt.json`<br>`chip-flow eda python blocks/pll/analog/layout/pex_pvt.py --workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json` |
 
 ## Full tile (Tiny Tapeout submission shape)
 
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
-| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.63 ns | 2026-10-30 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
+| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.18 ns | 2026-10-30 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
 | top_drc (top) | the whole tile is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-30 | `chip-flow gate --gate top_drc --skill msde --workspace blocks/pll` |
 | top_lvs (top) | the whole tile matches its netlist, analog macro included | pass | layout matches the netlist | 2026-10-30 | `blocks/pll/log/top_lvs/top_lvs.rpt` after a run<br>`chip-flow gate --gate top_lvs --skill msde --workspace blocks/pll` |
 | precheck (top) | the tile passes Tiny Tapeout's precheck | pass | 12 Tiny Tapeout checks run | 2026-10-30 | `chip-flow gate --gate precheck --skill msde --workspace blocks/pll` |

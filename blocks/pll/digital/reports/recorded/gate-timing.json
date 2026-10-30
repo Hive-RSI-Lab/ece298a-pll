@@ -3,7 +3,7 @@
  "gate": "timing",
  "phase": "P6",
  "tool": "timing",
- "input_digest": "harden_signoff:490c14c0f6b8f55ee9b0e4afc66570273c207212436db135653dde3f95cca8a1",
+ "input_digest": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
  "status": "fail",
  "criteria": {
   "fail_severities": [
@@ -30,11 +30,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
      "file": null,
      "line": null
     }
@@ -49,11 +49,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -1.1600ns",
+   "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -1.1600ns",
+     "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
      "file": null,
      "line": null
     }
@@ -68,11 +68,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.1800ns",
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.1800ns",
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
      "file": null,
      "line": null
     }
@@ -89,11 +89,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+   "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2000ns",
+     "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
      "file": null,
      "line": null
     }
@@ -108,11 +108,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -1.1600ns",
+   "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -1.1600ns",
+     "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
      "file": null,
      "line": null
     }
@@ -127,11 +127,11 @@
    "line": null,
    "kind": "setup_violation",
    "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.1800ns",
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
    "source": "opensta",
    "items": [
     {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.1800ns",
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
      "file": null,
      "line": null
     }
@@ -147,7 +147,7 @@
     "hold_ws": 0.43
    },
    "max_ss_125C_3v00": {
-    "setup_ws": -1.2,
+    "setup_ws": -0.15,
     "hold_ws": 2.36
    },
    "max_tt_025C_3v30": {
@@ -159,7 +159,7 @@
     "hold_ws": 0.42
    },
    "min_ss_125C_3v00": {
-    "setup_ws": -1.16,
+    "setup_ws": -0.11,
     "hold_ws": 2.33
    },
    "min_tt_025C_3v30": {
@@ -171,7 +171,7 @@
     "hold_ws": 0.43
    },
    "nom_ss_125C_3v00": {
-    "setup_ws": -1.18,
+    "setup_ws": -0.13,
     "hold_ws": 2.34
    },
    "nom_tt_025C_3v30": {
@@ -181,9 +181,9 @@
   }
  },
  "inputs_at_start": {
-  "harden": "harden_signoff:490c14c0f6b8f55ee9b0e4afc66570273c207212436db135653dde3f95cca8a1",
+  "harden": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
   "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
  },
- "recorded_ts": "2026-10-30T06:19:19",
+ "recorded_ts": "2026-10-30T07:23:15",
  "attempts": 12
 }
