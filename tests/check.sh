@@ -10,7 +10,9 @@
 # /opt/chip-flow/bin/eda), or else the toolchain's own iverilog under
 # $EDA_TOOLCHAIN/foss/tools/iverilog/bin. It runs:
 #   1. tests/check_info.py: info.yaml has what the Tiny Tapeout flow reads, and
-#      its source list matches src/, test/Makefile and test/tb.v.
+#      its source list matches src/, test/Makefile and test/tb.v. In the
+#      analog-project shape, blocks/pll/tt/assemble.py --check: src/ and test/
+#      are its copies, src/ of the digital RTL.
 #   2. A lint of the Verilog: the Tiny Tapeout wrapper in src/, and the PLL's
 #      digital RTL with its hardening top, each compile under iverilog -Wall,
 #      and any warning fails the check.
@@ -45,6 +47,11 @@ fi
 
 echo "== 1/3 info.yaml"
 python3 tests/check_info.py
+# in the analog-project shape, src/, test/, info.yaml and the gds workflow are
+# blocks/pll/tt/assemble.py's copies, src/ of the digital RTL the harden used
+if grep -q '^ *analog_pins:' info.yaml; then
+  python3 blocks/pll/tt/assemble.py --check
+fi
 
 echo "== 2/3 lint (iverilog -Wall)"
 lint() {
