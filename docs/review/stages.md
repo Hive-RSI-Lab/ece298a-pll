@@ -12,7 +12,7 @@ $CHIP_FLOW_HOME/engine/scripts/gate.py` in place of `chip-flow gate`. The
 commands without chip-flow (the RTL test, klayout, gtkwave) need only those
 tools. Run them from the repository's root.
 
-**27 of 29 gates pass on their last recorded run.** 2 fail.
+**28 of 29 gates pass on their last recorded run.** 1 fail.
 
 ## Spec and split
 
@@ -67,7 +67,7 @@ tools. Run them from the repository's root.
 | drc (analog) | the analog layout is DRC clean | pass | klayout: 0 violations | 2026-10-30 | `klayout blocks/pll/analog/layout/pll_analog.gds`<br>`chip-flow gate --gate drc --skill ade --workspace blocks/pll/analog` |
 | lvs (analog) | the analog layout matches the signed-off netlist | pass | layout matches the netlist | 2026-10-30 | `blocks/pll/analog/layout/gen_pll_analog.py` draws it<br>`chip-flow gate --gate lvs --skill ade --workspace blocks/pll/analog` |
 | pex_sim (analog) | the benches run on the extracted netlist at typical | pass | tt extracted: Icp 18.9 uA, Kvco 71.7 MHz/V, fmax 200.8 MHz; 1297 parasitic C | 2026-10-29 | `chip-flow gate --gate pex_sim --skill ade --workspace blocks/pll/analog` |
-| pex_pvt (analog) | the extracted netlist meets its post-layout bounds at every corner | **FAIL** | 29 of 31 corners pass their post-layout bounds; icp_up_code00_ua @ ss_m40c_vm10 = 168.669 outside bound [12.0, 30.0] (post-layout UP current, code 00, vctrl = vdd/2 (spec.yaml post_layout_ | - | every measure at every corner: `blocks/pll/analog/reports/recorded/pex_pvt.json`<br>`chip-flow eda python blocks/pll/analog/layout/pex_pvt.py --workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json` |
+| pex_pvt (analog) | the extracted netlist meets its post-layout bounds at every corner | pass | 31 of 31 corners pass their post-layout bounds | - | every measure at every corner: `blocks/pll/analog/reports/recorded/pex_pvt.json`<br>`chip-flow eda python blocks/pll/analog/layout/pex_pvt.py --workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json` |
 
 ## Full tile (Tiny Tapeout submission shape)
 

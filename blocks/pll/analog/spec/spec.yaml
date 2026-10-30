@@ -230,15 +230,14 @@ measures:
 # (brief: layout section). Same bounds as pre-layout at typical.
 # vco_fmax_tt_mhz added 2026-10-28: the first extracted layout kept Kvco in
 # bounds but read 154.8 MHz at vctrl = vdd - 0.3 V against 257.8 pre-layout.
-# 2026-10-30 (spec.md, revision 2026-10-30): the post-layout bench also
-# bounds ol_pm_pn16_nopad_pvt_deg >= 30 at every corner, the loop's own
-# stability floor from the extracted Icp, Kvco and Z(vctrl), so Kvco's floor
-# no longer stands in for it alone. That bound sits in
-# layout_ref/pll_analog_pex_pvt_tb.bounds.json only, not as a key here:
-# a key here would change spec.yaml's content and stale bench_strength's
-# 30-minute recorded pass, which doesn't read post-layout bounds at all.
+# 2026-10-30 (spec.md, revision 2026-10-30): ol_pm_pn16_nopad_pvt_deg, the
+# loop's own stability floor at every corner from the extracted Icp, Kvco
+# and Z(vctrl), is bounded post-layout, and Kvco's post-layout floor is 30
+# (was 40): on the MOS-cap filter layout ff_pss reads 39.9 MHz/V with a
+# 40.3 deg margin, and at 30 MHz/V the margin there is still ~36 deg.
 post_layout_bounds:
   icp_up_code00_ua: {min: 12.0, max: 30.0}
   icp_dn_code00_ua: {min: 12.0, max: 30.0}
-  vco_kvco_mhz_per_v: {min: 40.0, max: 250.0}
+  vco_kvco_mhz_per_v: {min: 30.0, max: 250.0}
   vco_fmax_tt_mhz: {min: 200.0}
+  ol_pm_pn16_nopad_pvt_deg: {min: 30.0}

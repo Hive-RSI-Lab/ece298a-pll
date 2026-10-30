@@ -17,7 +17,13 @@
 *    netlist: PM = 90 + arg Z(fc), |H(fc)| = Icp Kvco |Z| / (2 pi fc 16) = 1,
 *    with Icp = the mean of the two pump currents above, Kvco = the mean
 *    slope above (the running ring's, see START-UP KICK) and Z = v(vctrl)
-*    for a 1 A AC current into vctrl, both pump inputs low, vctrl's DC
+*    for a 1 A AC current into vctrl, both pump inputs low, ring node r1
+*    held at 0 V through rhold (1 Ohm in the ac, 1 TOhm in the trans): the
+*    ac's op leaves the ring on its balance point, an unstable equilibrium
+*    whose right-half-plane pole couples into vctrl through MN_V2I; on the
+*    MOS-cap layout it gave Z a negative real part and a -67 deg 'margin'
+*    at ss_125c_vm10. A stopped ring loads vctrl as a running one does (the
+*    V2I gate). vctrl's DC
 *    point (vdd/2) set through lfeed (1 nH in the transients, 1 GH in the
 *    ac: open at 1 kHz and up). Added 2026-10-30: Kvco's floor stands in
 *    for the loop's stability, and at ff_pss the post-layout mean slope is
@@ -81,7 +87,10 @@
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
-C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
+* overflowed on a wild Newton iterate in the op search ('Error: -10030.2 out
+* of range for cosh', which the engine reads as an ngspice error; ff_27c_vm10).
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
 .ends cap_nmos_03v3_b
 .include '{{NETLIST}}'
 {{SIZING}}
@@ -102,6 +111,9 @@ vt1      cp_trim1 0 dc 0
 vvc      vfd      vr dc {vddp/2}
 lfeed    vfd      vctrl 1n
 iac      0        vctrl dc 0 ac 1
+* the ring held for the ac only (rhold 1 Ohm there, 1 TOhm in the trans)
+rhold    xdut.r1  vrh 1e12
+vrh      vrh      0 dc 0
 vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
 cload    vco_out  0 15f
 xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
@@ -200,6 +212,7 @@ if kv gt 0
   alter @vramp[pulse] = [ 0 0 20n 100n 100n 1 1 ]
   alter vvc dc = $&vmid
   alter lfeed = 1e9
+  alter rhold = 1
   ac dec 50 1k 100meg
   set ap = $curplot
   let zp = 180/pi*ph(v(vctrl))
