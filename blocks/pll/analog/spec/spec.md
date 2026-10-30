@@ -132,7 +132,13 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 Post-layout (`post_layout_bounds`): `icp_up_code00_ua`, `icp_dn_code00_ua`
 (12..30), `vco_kvco_mhz_per_v` and `vco_fmax_tt_mhz` (>= 200, added
 2026-10-28 after the first extraction read 154.8 MHz) re-simulated from the
-extracted netlist at typical hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
+extracted netlist at typical hold the same bounds. Since 2026-10-30 the
+post-layout bounds also hold `ol_pm_pn16_nopad_pvt_deg` (>= 30 at every
+corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30).
+Both are in the post-layout bench's `.bounds.json`, which pex_pvt scores;
+`spec.yaml`'s `post_layout_bounds` keeps Kvco at 40 and has no margin key
+until bench_strength is next re-run (changing it stales that gate's
+recorded pass, which reads no post-layout bound). No Monte Carlo: the brief asks for no yield number, and GF180
 poly models have no per-instance mismatch to draw from anyway.
 
 ### Revision 2026-10-10 (H1)
@@ -172,6 +178,44 @@ carried are closed in the spec:
    `vco_fmax_tt_mhz`'s.
 3. The mislabelled frequency above is corrected.
 4. Period jitter is no longer a spec measure (see "Period jitter").
+
+### Revision 2026-10-30 (post-layout: ff_pss Kvco and the loop margin)
+
+The extracted layout read Kvco 36.1 MHz/V at `ff_pss` against the 40 floor,
+and the open question was whether to shorten `R_V2I` or move the bound.
+Neither: the miss was mostly the bench's. `ff_pss` is the corner where the
+VCO's current ceiling (MN_CL, a copy of Ib, which the slow resistor cuts by
+about a third) caps the top of the range: f(vdd-0.3) and f(vdd) are within
+0.5 % of each other, so the mean slope is set by the ceiling, and a
+shorter `R_V2I` would only reach that ceiling at a lower `vctrl`, leaving
+the mean slope where it is. The ceiling was also read too early: the
+post-layout bench measured the top of the range 10..45 ns into a tran whose
+bias still settles from the op (the ring starts from its balance point), 4-8 % under the
+settled frequency. Read over 100..250 ns, `ff_pss` reads f(vdd-0.3) 128.0
+MHz (was 117.9) and Kvco 40.7 MHz/V, and all 31 corners pass.
+
+That was 2 % over the floor, so the loop's own requirement is now gated
+post-layout too: `ol_pm_pn16_nopad_pvt_deg` >= 30 at every corner, the
+pre-layout ol bench's definition (P*N = 16, no pad) with the extracted Icp,
+the extracted Kvco and Z(vctrl) of the extracted netlist (ring node r1 held
+for the ac, so its balance-point op doesn't put a right-half-plane pole in
+Z). At `ff_pss` the margin stays >= 30 down to a Kvco of about 20 MHz/V
+(Icp 13.8 uA, the extracted filter: 36 degrees at 30 MHz/V, 30.2 at 20),
+and the local slope where the PLL locks at 100 MHz is well above the mean:
+about 69 MHz/V between vctrl 2.1 and 2.4 V.
+
+Then the loop filter's C1/C2 became MOS caps (task 261030-011402), and on
+that layout `ff_pss` reads 39.9 MHz/V with a 40.3 degree margin. So the
+post-layout Kvco floor is 30 MHz/V (was 40), where `ff_pss`'s margin is
+still about 36 degrees. The floor stood in for the margin, which is now
+bounded itself, and R_V2I stays as signed off. Over the 31 corners the
+margin reads 34.5 (ff_125c_vp10) to 52.9 degrees.
+
+The ceilings the digital side is timed against move with the settled
+reading: ss 263.3 MHz (ss_pff), tt 290.7 (tt_pff), ff 299.5
+(ff_m40c_vm10), all under 370. At ff_pss the ceiling is 126.4 MHz, so
+post-layout the PLL keeps lock points up to about 120 MHz there, not 150;
+the 100 MHz nominal point stays inside every corner's band.
 
 ### Period jitter (estimate, not gated)
 

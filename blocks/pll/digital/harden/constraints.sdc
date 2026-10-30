@@ -21,15 +21,17 @@ proc pll_driver_pin {aliases} {
 # fastest the extracted VCO runs on that process (vctrl at the rail, any
 # temperature, supply or resistor skew: analog/reports/recorded/pex_pvt.json
 # vco_f_vdd_mhz), plus margin. The VCO and these flops share a die, so an
-# ss STA corner meets an ss VCO. Post-layout ceilings (MOS-cap + MN_ST
-# macro, chip-flow's coupling-C fix; 2026-10-30): ss 263.2 MHz (ss_pff),
-# tt 288.2 (tt_pff), ff 296.9 (ff_m40c_vm10). They were 246.8 / 269.4 / 274.2
-# on the extraction that counted each net's coupling C twice.
-#   ss 3.75 ns (266.7 MHz): with the 0.25 ns clock uncertainty the toggle
-#      loops must close in 3.5 ns, 286 MHz, 8.6% above the ss ceiling.
-#      ss_125C_3v00 is also the slowest ss flop against the ss VCO's
-#      fastest corner.
-#   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 28% and 25%
+# ss STA corner meets an ss VCO. Post-layout ceilings: ss 263.3 MHz (ss_pff),
+# tt 290.7 (tt_pff), ff 299.5 (ff_m40c_vm10), read from the settled ring on
+# the MOS-cap filter layout (2026-10-30; the 10..45 ns window before read
+# about 247/269/274).
+#   ss 3.75 ns (267 MHz): just over the ss ceiling. ss_pff (ss, 125 C, 3.0 V,
+#      fast resistor) is the corner ss_125C_3v00 times, its slowest flops
+#      against its fastest VCO. With the 0.25 ns clock uncertainty the
+#      toggle loops must close in 3.5 ns (286 MHz), more than the first
+#      stage's ~3.65 ns routed (274 MHz), which is still 4% above the ceiling
+#      itself: the ss margin is the uncertainty's, not the VCO's.
+#   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 24-27%
 #      above their post-layout ceilings, and they meet it.
 # Each STA corner links one process's liberty, so the period follows the
 # liberty loaded; with several loaded (or none recognised) the tightest wins.
@@ -61,7 +63,7 @@ set pll_pre_q1 [pll_driver_pin {u_ihsan_sa_pll.u_pre.pre_q1}]
 set pll_pre_q2 [pll_driver_pin {u_ihsan_sa_pll.clk_pre u_ihsan_sa_pll.u_pre.pre_q2}]
 create_generated_clock -name pre_q0 -source [get_ports {ui_in[3]}] -divide_by 2 $pll_pre_q0
 create_generated_clock -name pre_q1 -source $pll_pre_q0 -divide_by 2 $pll_pre_q1
-# clk_pre = vco_out/8 (21.6 ns at tt and ff, 30 ns at ss). It has to be
+# clk_pre = vco_out/8 (21.6 ns at tt and ff, 32 ns at ss). It has to be
 # a generated clock: a create_clock on the stage-2 Q pin gives that flop's
 # own toggle loop zero launch latency against a propagated capture clock,
 # a false hold violation. REQ-TIM-PRE's 20 ns is tighter; harden run 2
