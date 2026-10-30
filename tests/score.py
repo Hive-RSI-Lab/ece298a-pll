@@ -11,7 +11,8 @@ here, from a scratch copy of blocks/pll, through chip-flow's gate.py
 one exception: bench_strength takes longer than the check may run, so its
 recorded pass counts only while its inputs are unchanged
 (bench_strength_fresh); nor do the Harden goal's top_harden, top_drc,
-top_lvs and precheck, for the same reason (tile). A gate that can't run (a tool missing, a
+top_lvs and precheck, for the same reason (tile), nor the loop on the
+extracted netlist at its bounding corners (cosim_corners_fresh). A gate that can't run (a tool missing, a
 refusal, a timeout) fails its line; nothing is skipped.
 
 Prints a line per done-line, then the score alone on the last line: 100 x
@@ -241,6 +242,32 @@ def tile(ws: Path) -> dict[str, dict]:
     return got
 
 
+def cosim_corners_fresh() -> tuple[list[str], dict, str]:
+    """tb/cosim_corners.py's recorded run (reports/recorded/cosim_corners.json)
+    while every input it hashed is unchanged: the corners that bound the
+    post-layout range (bounding_corners of the recorded pex_pvt), the
+    recorded facts, and why it doesn't count (empty when it does). A loop on
+    the extracted netlist takes longer than the score's budget, so it is
+    recorded as bench_strength is; a corner the run didn't run, or any
+    changed input, counts as failing."""
+    sys.path.insert(0, str(BLOCK / "tb"))
+    import cosim_corners  # noqa: E402
+
+    try:
+        pex = json.loads((BLOCK / "analog" / "reports" / "recorded" / "pex_pvt.json").read_text())
+        want = list(cosim_corners.bounding_corners(pex))
+    except (OSError, ValueError):
+        return [], {}, "no recorded pex_pvt to bound the range"
+    try:
+        rep = json.loads(cosim_corners.OUT.read_text())
+    except (OSError, ValueError):
+        return want, {}, "no recorded run (run tb/cosim_corners.py and commit its report)"
+    changed = [k for k, v in cosim_corners.input_hashes().items() if (rep.get("inputs") or {}).get(k) != v]
+    if changed:
+        return want, {}, "changed since it ran: " + ", ".join(changed) + " (re-run tb/cosim_corners.py)"
+    return want, rep, ""
+
+
 def pex_pvt(ws: Path, logs: Path) -> dict:
     """The layout chain (drc, lvs, pex_sim) and then, once drc and lvs pass,
     layout/pex_pvt.py: the post-layout bench at every corner of the spec's
@@ -417,6 +444,18 @@ def main() -> int:
         ok = readme.is_file() and "run_layers" in readme.read_text()
         line("the co-simulation is written up next to the benches", 1.0 if ok else 0.0,
              "" if ok else "tb/README.md missing or doesn't name run_layers.py")
+
+        # --- System verification: the loop on the extracted netlist at the
+        # corners that bound its range ----------------------------------
+        want, rep, note = cosim_corners_fresh()
+        facts = rep.get("facts") or {}
+        fails = {f.get("corner"): f.get("msg") for f in rep.get("failing") or []}
+        for key, name in (("locked", "co-sim locks at 100 MHz on the extracted netlist at the bounding corners"),
+                          ("corners", "and vctrl settles within 20 mV p-p there")):
+            ok = [c for c in want if c in set(facts.get(key) or [])]
+            bad = [f"{c}: {fails.get(c) or 'not run'}" for c in want if c not in ok]
+            line(f"{name} ({len(ok)}/{len(want)})", len(ok) / len(want) if want else 0.0,
+                 note or "; ".join(bad)[:300])
 
         # --- Lay out the analog half and match it after extraction -------
         passed("analog layout drc", l["drc"])

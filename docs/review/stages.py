@@ -150,6 +150,16 @@ def h_top_harden(r):
         f"setup WNS {f(m.get('timing__setup__ws'), 2)} ns"
 
 
+def h_cosim_corners(r):
+    x = r["facts"]
+    res = {y["corner"]: (y.get("measures") or {}) for y in x.get("results") or []}
+    locked = x.get("locked") or x["corners"]
+    locks = ", ".join(f"{c} {f(res.get(c, {}).get('lock_time_us'), 2)} us" for c in locked)
+    return f"locks at {len(locked)} of {len(x['swept'])} bounding corners on the extracted netlist" \
+        + (f" ({locks})" if locks else "") \
+        + f"; vctrl within 20 mV p-p at {len(x['corners'])} of them"
+
+
 # The stages in flow order. Each row: workspace, gate, what it shows, and how
 # you see it work yourself besides re-running the gate.
 STAGES = [
@@ -197,6 +207,10 @@ STAGES = [
         ("top", "cosim", "the digital RTL and the transistor-level analog lock together", h_cosim,
          "`blocks/pll/tb/README.md`; all three layers: `chip-flow eda python blocks/pll/tb/run_layers.py` "
          "(about 2.5 min)"),
+        ("top", "cosim_corners", "the same loop locks on the extracted analog netlist at the corners that "
+         "bound its post-layout range (lowest and highest VCO ceiling and phase margin)", h_cosim_corners,
+         "`blocks/pll/tb/README.md`; every corner's measures and vctrl trace: "
+         "`blocks/pll/reports/recorded/cosim_corners.json`"),
     ]),
     ("Analog layout", [
         ("analog", "drc", "the analog layout is DRC clean", h_drc,
@@ -220,8 +234,8 @@ STAGES = [
 
 def recorded(ws: str, gate: str):
     d = BLOCK if ws == "top" else BLOCK / ws
-    if gate == "pex_pvt":
-        return load(d / "reports" / "recorded" / "pex_pvt.json"), d
+    if gate in ("pex_pvt", "cosim_corners"):
+        return load(d / "reports" / "recorded" / f"{gate}.json"), d
     return load(d / "reports" / "recorded" / f"gate-{gate}.json"), d
 
 
@@ -243,7 +257,7 @@ def waived(d: Path, gate: str) -> str:
 def row(ws: str, gate: str, shows: str, head, see) -> tuple[str, str]:
     r, d = recorded(ws, gate)
     last = state_last(d, gate)
-    when = (last.get("ts") or "")[:10] or "-"
+    when = (last.get("ts") or (r or {}).get("ts") or "")[:10] or "-"
     if r is None:
         status, line = "not run", ""
     else:
@@ -261,9 +275,12 @@ def row(ws: str, gate: str, shows: str, head, see) -> tuple[str, str]:
     mark = {"pass": "pass", "fail": "**FAIL**"}.get(status, f"**{status}**")
     mark += waived(d, gate) if status == "fail" else ""
     rel = d.relative_to(ROOT)
-    rerun = f"`chip-flow gate --gate {gate} --skill {WS[ws][1]} --workspace {rel}`" \
-        if gate != "pex_pvt" else "`chip-flow eda python blocks/pll/analog/layout/pex_pvt.py " \
-        "--workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json`"
+    rerun = f"`chip-flow gate --gate {gate} --skill {WS[ws][1]} --workspace {rel}`"
+    if gate == "pex_pvt":
+        rerun = "`chip-flow eda python blocks/pll/analog/layout/pex_pvt.py " \
+            "--workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json`"
+    elif gate == "cosim_corners":
+        rerun = "`chip-flow eda python blocks/pll/tb/cosim_corners.py`"
     how = "<br>".join(x for x in [see or "", rerun] if x)
     return status, f"| {gate} ({ws}) | {shows} | {mark} | {line} | {when} | {how} |"
 
