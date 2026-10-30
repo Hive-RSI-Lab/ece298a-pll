@@ -41,7 +41,6 @@ GATE = str(CFH / "engine" / "scripts" / "gate.py")
 # The check that runs this stops at 30 minutes; the chains run side by side
 # and each stops here, so the score always prints.
 DEADLINE = time.monotonic() + float(os.environ.get("PLL_SCORE_BUDGET_S", 24 * 60))
-VCO_PERIOD_NS = (2.6, 2.8)  # "the VCO clock at about 2.7 ns"
 VCO_TARGET_HZ = 100e6
 # The 31 corners the signed-off spec scores (H1-ada9eb plus its open items):
 # the full grid, the two resistor-skew corners and the engine's tt_pss/tt_pff.
@@ -272,9 +271,35 @@ def pex_pvt(ws: Path, logs: Path) -> dict:
     return got
 
 
-def vco_period_ns(sdc: Path) -> float | None:
-    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", sdc.read_text())
-    return float(m.group(1)) if m else None
+def vco_periods_ns(sdc: Path) -> dict[str, float]:
+    """vco_out's period per process (ss, tt, ff) from the design SDC: its
+    pll_vco_period_ns table, or one literal create_clock period for all."""
+    text = sdc.read_text()
+    m = re.search(r"set\s+pll_vco_period_ns\s+\{([^}]*)\}", text)
+    if m:
+        tok = m.group(1).split()
+        return {k: float(v) for k, v in zip(tok[::2], tok[1::2])}
+    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", text)
+    return {p: float(m.group(1)) for p in ("ss", "tt", "ff")} if m else {}
+
+
+def vco_ceilings_mhz(pv: dict) -> dict[str, float]:
+    """The extracted VCO's fastest (vctrl at the rail) per process over
+    every corner pex_pvt swept: this run's, else the recorded run's."""
+    meas = (pv.get("facts") or {}).get("measured") or {}
+    if not meas:
+        try:
+            rec = json.loads((BLOCK / "analog" / "reports" / "recorded" / "pex_pvt.json").read_text())
+            meas = (rec.get("facts") or {}).get("measured") or {}
+        except (OSError, ValueError):
+            meas = {}
+    top: dict[str, float] = {}
+    for corner, m in meas.items():
+        f = (m or {}).get("vco_f_vdd_mhz")
+        p = corner.split("_", 1)[0]
+        if isinstance(f, (int, float)):
+            top[p] = max(top.get(p, 0.0), float(f))
+    return top
 
 
 def layers(ws: Path, logs: Path) -> tuple[dict[str, bool], dict]:
@@ -343,13 +368,22 @@ def main() -> int:
              "; ".join(bad_pvt))
         passed("analog bench_strength", a["bench_strength"])
 
-        # --- Close digital issue 8: timing with vco_out at ~2.7 ns --------
+        # --- Close digital issue 8: timing with vco_out at the post-layout
+        # VCO ceiling of each process. The SDC's period on a process must
+        # cover the extracted VCO's fastest on it; tt and ff never looser
+        # than the analog spec's 2.7 ns.
         t = d["timing"]
-        period = vco_period_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
-        if period is None or not VCO_PERIOD_NS[0] <= period <= VCO_PERIOD_NS[1]:
-            line("digital timing with vco_out at ~2.7 ns", 0.0, f"vco_out period is {period} ns")
+        periods = vco_periods_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
+        ceil = vco_ceilings_mhz(l["pex_pvt"])
+        name = "digital timing with vco_out at the post-layout VCO ceiling"
+        short = [f"{p} {periods.get(p)} ns vs {ceil.get(p, 0):.1f} MHz"
+                 for p in ("ss", "tt", "ff")
+                 if p not in periods or p not in ceil or 1000 / periods[p] < ceil[p]
+                 or (p != "ss" and periods[p] > 2.7)]
+        if short:
+            line(name, 0.0, "vco_out period misses the ceiling: " + "; ".join(short))
         elif t.get("status") not in ("pass", "fail"):
-            line("digital timing with vco_out at ~2.7 ns", 0.0, why(t))
+            line(name, 0.0, why(t))
         else:
             sta = (t.get("facts") or {}).get("corners") or {}
             good = [c for c, v in sta.items()
@@ -357,7 +391,8 @@ def main() -> int:
             share = len(good) / len(sta) if sta else 0.0
             if t.get("status") != "pass" and share == 1.0:
                 share = 0.0  # every corner met but the gate still failed: not a pass
-            line(f"digital timing with vco_out at {period} ns ({len(good)}/{len(sta)} STA corners)",
+            line(f"{name}, ss {periods['ss']} / tt {periods['tt']} / ff {periods['ff']} ns "
+                 f"({len(good)}/{len(sta)} STA corners)",
                  share, "" if t.get("status") == "pass" else why(t))
 
         # --- Test the whole PLL loop in co-simulation --------------------
