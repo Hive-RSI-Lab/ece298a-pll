@@ -332,14 +332,18 @@ def main() -> int:
     logs.mkdir()
     try:
         sim, lay, dig, top = (copy_block(scratch, n) for n in ("sim", "layout", "digital", "top"))
-        # sim_pvt, the harden and the co-simulation are the slow ones: side by side.
-        with ThreadPoolExecutor(4) as pool:
+        # The co-simulation goes first, on its own: chip-flow's cosim gate
+        # gives cocotb a fixed 240 s of wall clock, and the transistor-level
+        # loop (about 100 s alone with the MOS caps' voltage-dependent C) ran
+        # past it beside sim_pvt, pex_pvt and the harden on a loaded machine.
+        lay3, meas = layers(top, logs)
+        # sim_pvt, pex_pvt and the harden are the slow ones: side by side.
+        with ThreadPoolExecutor(3) as pool:
             f_sim = pool.submit(analog, sim / "analog", corners, logs)
             f_lay = pool.submit(pex_pvt, lay / "analog", logs)
             f_dig = pool.submit(chain, dig / "digital", "vde",
                                 ["spec_lint", "lint", "synth", "harden", "timing"], logs, "digital")
-            f_top = pool.submit(layers, top, logs)
-            (a, (n_pvt, bad_pvt)), l, d, (lay3, meas) = f_sim.result(), f_lay.result(), f_dig.result(), f_top.result()
+            (a, (n_pvt, bad_pvt)), l, d = f_sim.result(), f_lay.result(), f_dig.result()
         h = tile(BLOCK)
 
         lines: list[tuple[str, float, str]] = []
