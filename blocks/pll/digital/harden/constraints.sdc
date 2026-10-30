@@ -27,10 +27,14 @@ proc pll_driver_pin {aliases} {
 # about 247/269/274).
 #   ss 3.75 ns (267 MHz): just over the ss ceiling. ss_pff (ss, 125 C, 3.0 V,
 #      fast resistor) is the corner ss_125C_3v00 times, its slowest flops
-#      against its fastest VCO. With the 0.25 ns clock uncertainty the
-#      toggle loops must close in 3.5 ns (286 MHz), more than the first
-#      stage's ~3.65 ns routed (274 MHz), which is still 4% above the ceiling
-#      itself: the ss margin is the uncertainty's, not the VCO's.
+#      against its fastest VCO. With the derived 0.10 ns setup uncertainty
+#      below, the first stage's toggle loop must close in 3.65 ns (274 MHz);
+#      routed at ss_125C_3v00 (5% derate) it closes in 3.62-3.68 ns
+#      depending on how the run routes its D net, so ss setup reads within
+#      0.03 ns of zero either way: closure, not margin. Placing the three
+#      cells by hand (two layouts tried, 2026-10-30) did no better than the
+#      placer. Margin at ss needs a /2 that is not a library flop (a TSPC
+#      stage in the analog macro, digital issue 8 in GOALS.md).
 #   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 24-27%
 #      above their post-layout ceilings, and they meet it.
 # Each STA corner links one process's liberty, so the period follows the
@@ -53,6 +57,25 @@ proc pll_vco_period {} {
     return [tcl::mathfunc::min {*}$per]
 }
 create_clock -name vco_out -period [pll_vco_period] [get_ports {ui_in[3]}]
+
+# Setup uncertainty within vco_out: 0.10 ns, derived here, in place of the
+# flow's generic 0.25 ns (CLOCK_UNCERTAINTY_CONSTRAINT, which flow.sdc sets on
+# [all_clocks] after this file; an inter-clock uncertainty takes precedence
+# over it). The only vco_out -> vco_out path is u_pre_ff0's own toggle loop:
+# it launches and captures on the same CLK pin one VCO period apart, so
+#   skew: 0. One pin; CRPR removes the common path, and OCV on the data
+#      path is the flow's 5% timing derate, kept.
+#   loop-filter ripple, Kvco and supply: 0 here. The period is the ceiling's
+#      own: vctrl held at the rail (it cannot rise above it) at ss_pff, the
+#      -10% supply corner, the fastest the ring runs on ss.
+#   random period jitter: the analog spec's written estimate ("Period
+#      jitter", analog/log/scratch/jitter/RESULT.md) is 2.5 ps rms at ss,
+#      125 C (worst seed 4.2 ps by plain std). x1.41 for the starve devices'
+#      noise it leaves out, x2 for flicker and supply noise it leaves out:
+#      about 12 ps rms; 7 sigma (one period in 1e12) is 83 ps.
+# Rounded up to 0.10 ns. Hold and every other clock keep the flow's 0.25 ns.
+set_clock_uncertainty -setup 0.10 \
+    -from [get_clocks vco_out] -to [get_clocks vco_out]
 
 # The /8 ripple prescaler: each stage clocks the next. Stage 0's divided
 # clock is defined after its own buffer (u_pre_ckbuf0, net pre_c0), not on
