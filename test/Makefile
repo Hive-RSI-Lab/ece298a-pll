@@ -6,13 +6,15 @@ SIM ?= icarus
 FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = project.v ihsan_sa_pll.v pll_prescaler.v pll_divider.v pll_pfd.v pll_lock_det.v pll_ctrl_regs.v pll_analog.v
 
 ifneq ($(GATES),yes)
 
-# RTL simulation:
+# RTL simulation, the analog macro replaced by its behavioural model:
 SIM_BUILD				= sim_build/rtl
 VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
+VERILOG_SOURCES += $(PWD)/pll_analog_model.v
+COMPILE_ARGS    += -DPLL_ANALOG_MODEL
 
 else
 
@@ -28,11 +30,13 @@ VERILOG_SOURCES += $(PDK_ROOT)/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilo
 
 # this gets copied in by the GDS action workflow
 VERILOG_SOURCES += $(PWD)/gate_level_netlist.v
+VERILOG_SOURCES += $(PWD)/pll_analog_model.v
 
 endif
 
 # Allow sharing configuration between design and testbench via `include`:
 COMPILE_ARGS 		+= -I$(SRC_DIR)
+COMPILE_ARGS 		+= -g2012
 
 # Include the testbench sources:
 VERILOG_SOURCES += $(PWD)/tb.v
