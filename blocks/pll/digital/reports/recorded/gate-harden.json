@@ -22,25 +22,25 @@
  "facts": {
   "top": "ihsan_sa_pll",
   "run_tag": "run",
-  "resumed": false,
-  "wall_s": 123.23,
+  "resumed": true,
+  "wall_s": 86.62,
   "run_dir": "harden/runs/run",
   "metrics": {
    "design__instance__count": 1501,
    "design__instance__area": 51967,
    "design__instance_unmapped__count": 0,
    "timing__hold__ws": 0.4278762743001459,
-   "timing__setup__ws": -1.1797996247224025,
+   "timing__setup__ws": 0.12020029756198347,
    "timing__hold__tns": 0,
-   "timing__setup__tns": -1.1797996247224025,
+   "timing__setup__tns": 0,
    "timing__hold__wns": 0,
-   "timing__setup__wns": -1.1797996247224025,
+   "timing__setup__wns": 0,
    "timing__hold_vio__count": 0,
    "timing__hold_r2r__ws": 0.427876,
    "timing__hold_r2r_vio__count": 0,
-   "timing__setup_vio__count": 3,
-   "timing__setup_r2r__ws": -1.1798,
-   "timing__setup_r2r_vio__count": 3,
+   "timing__setup_vio__count": 0,
+   "timing__setup_r2r__ws": 0.1202,
+   "timing__setup_r2r_vio__count": 0,
    "design__die__bbox": "0.0 0.0 346.64 160.72",
    "design__core__bbox": "3.36 3.92 343.28 156.8",
    "design__die__area": 55712,
@@ -64,12 +64,12 @@
  },
  "inputs_at_start": {
   "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "harden_config": "json_canonical_sans_roots:6b807ac512657c3b4fd6a586876d9759c971950f89c6165d189ccb8251e59a48",
+  "harden_config": "json_canonical_sans_roots:71ff0c450cd303f4bef3e0c2607c5b701d1d6c915fc5ce92d80428bfb2ab4cb8",
   "harden_override": "json_canonical:70373600ebc75eb412ebf69b01ef53ebd0a276710890e615b75d766bea0749ed",
-  "harden_sdc": "text_eol:d38df9c39f5261221c5e25b52af98125edddbf00027cdb1c2da2a7d08560b781",
+  "harden_sdc": "text_eol:b3407de50ce5a37a91d708102d7422d935859df3cc3eda55d0b67ae11af37883",
   "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
  },
- "recorded_ts": "2026-10-30T03:50:11",
- "attempts": 12
+ "recorded_ts": "2026-10-30T06:19:07",
+ "attempts": 13
 }

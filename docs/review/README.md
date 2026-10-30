@@ -7,6 +7,10 @@ build it all, i will retroactively review and tell you what to change or
 redesign." So nothing below counts as approved by you. Each decision says what
 was chosen, why, and what changing it would cost.
 
+Each stage's gate, its recorded result and the one command to re-run or
+view it are in [stages.md](stages.md) (`python3 docs/review/stages.py`
+rewrites it from the recorded reports).
+
 Regenerate the figures after any result changes:
 
     uv run --python 3.12 --no-project --with gdstk --with matplotlib python docs/review/make_figures.py
@@ -156,15 +160,18 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    not recorded as approved. The tile is built on this layout, and
    `blocks/pll/analog/log/H2-proceed.md` records that this was done pending
    your review. If you reject it, the layout is redone and the tile rebuilt.
-2. **Digital issue 8, the ss_125C timing waiver.** With the VCO clock
+2. **Digital issue 8, the /2 prescaler's timing at ss.** With the VCO clock
    constrained at 2.7 ns (370 MHz), the /2 prescaler stage misses setup by
-   1.2 ns at ss_125C. No flop in the GF180 library toggles that fast at ss.
-   It is waived at that corner because the VCO can't go that fast at ss:
-   after layout, the fastest corner with slow transistors (ss_pff)
-   reaches 247 MHz at the rail, and the stage manages 274 MHz. A recovery circuit also pulls the loop back if it
-   ever runs away. The approval on record is the lead's under your 10-28
-   "i signoff" message, not your own ruling. Details are in issue 8 of
-   `blocks/pll/digital/state.json`.
+   1.2 ns at ss_125C, and no GF180 flop toggles that fast at ss. Task
+   261030-095411 changed what it is timed against. `vco_out` is now timed
+   at the extracted VCO's ceiling plus margin on each process: 4.0 ns at ss,
+   where the post-layout ceiling is about 247 MHz, and 2.7 ns at tt and ff.
+   chip-flow's timing gate still reads one 2.7 ns period at every corner
+   (a hive-chip-flow fix is queued), so until that lands the ss miss is
+   also recorded as a waiver in `blocks/pll/digital/reports/waivers.json`.
+   The approval on record is the lead's under your 10-28 "i signoff"
+   message, not your own ruling. A recovery circuit pulls the loop back if
+   the VCO ever runs away.
 3. **ff_pss Kvco, 36 vs 40 MHz/V (open).** The 40 MHz/V floor protects loop
    gain, and through it the phase margin. The decision rests on the phase
    margin at ff_pss, not the Kvco number. The linear loop model (layer 1,
