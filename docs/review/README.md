@@ -7,6 +7,10 @@ build it all, i will retroactively review and tell you what to change or
 redesign." So nothing below counts as approved by you. Each decision says what
 was chosen, why, and what changing it would cost.
 
+Each stage's gate, its recorded result and the one command to re-run or
+view it are in [stages.md](stages.md) (`python3 docs/review/stages.py`
+rewrites it from the recorded reports).
+
 Regenerate the figures after any result changes:
 
     uv run --python 3.12 --no-project --with gdstk --with matplotlib python docs/review/make_figures.py
@@ -205,6 +209,3 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
 
 1. The ff_pss decision (3 above).
 2. The gds, docs and test workflows passing on main with this design.
-
-Every stage's last recorded result, and how to re-run it, is on
-[stages.md](stages.md).

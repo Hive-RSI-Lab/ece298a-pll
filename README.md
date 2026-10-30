@@ -7,8 +7,9 @@ GF180 tile. A current-starved ring VCO is locked to the reference on `clk`, at
 8 × N times the reference (N = 1 to 5), with a lock detector.
 
 - **To review it** (where it stands, pictures, the decisions waiting for
-  you): [docs/review/README.md](docs/review/README.md); every stage's
-  result and how to see it: [docs/review/stages.md](docs/review/stages.md)
+  you): [docs/review/README.md](docs/review/README.md). Every stage's recorded
+  result, and the command to see it work yourself:
+  [docs/review/stages.md](docs/review/stages.md)
 - The datasheet: [docs/info.md](docs/info.md)
 - Goals and their status: [GOALS.md](GOALS.md)
 
