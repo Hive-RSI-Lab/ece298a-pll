@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # The fast check for this repo. GitHub runs it on every pull request and every
 # push to main twice: as the `check` job with Ubuntu's iverilog, and as the
-# `test (iic-osic-tools 2026.09)` job inside the IIC-OSIC-TOOLS image, which is
-# the run the Hive takes as this project's test. You can run it locally too:
+# `test (iic-osic-tools 2026.09)` job inside the IIC-OSIC-TOOLS image, with
+# the same tools as the Hive's local run. You can run it locally too:
 #
 #   bash tests/check.sh
 #
