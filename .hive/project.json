@@ -1,5 +1,8 @@
 {
   "test": "EDA_TOOLCHAIN=${EDA_TOOLCHAIN:-/opt/eda-toolchain/iic-osic-tools-2026.09} uv run --no-project --with pyyaml bash tests/check.sh",
+  "forge_tests": [
+    "test (iic-osic-tools 2026.09)"
+  ],
   "score": {
     "command": "bash tests/score.sh",
     "direction": "higher",
