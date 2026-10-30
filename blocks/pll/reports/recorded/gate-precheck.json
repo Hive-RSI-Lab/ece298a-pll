@@ -3,7 +3,7 @@
  "gate": "precheck",
  "phase": "P3",
  "tool": "precheck",
- "input_digest": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
+ "input_digest": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -24,9 +24,9 @@
   "checks_run": 12
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:8b8186f7c4ee5f9429f31b1ab27ab1bf0294a7defb65b1f7d9693c7ca6b8acfd",
+  "top_gds": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb",
   "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
  },
- "recorded_ts": "2026-10-30T07:29:33",
- "attempts": 4
+ "recorded_ts": "2026-10-30T16:14:46",
+ "attempts": 5
 }
