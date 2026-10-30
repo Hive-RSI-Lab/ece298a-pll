@@ -178,20 +178,6 @@ x pll_en vi vbp_vco vss s=122000,2244 d=122000,2244 l=56 w=1000 x=23206 y=4284 n
 x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=16270 y=24256 pfet_03v3
 x a_4800_10790 vcl a_4200_10658 vss s=26400,664 d=26400,664 l=3500 w=200 x=4800 y=10790 ppolyf_u
 x pll_en vdd vbp vdd s=26000,660 d=26000,660 l=56 w=200 x=12758 y=7318 pfet_03v3
-C vbp vdd 27.0
-C vbp vbt 5.3
-C vctrl vdd 3.3
-C vbp vcp_n 7.5
-C up_s vcp_p 2.5
-C vctrl vbl 2.9
-C en_b vdd 3.7
-C pll_en vbp_vco 2.0
-C up_s vbp 3.1
-C vdd vdump 3.1
-C vbt vdump 2.9
-C vbt vdd 9.7
-C vi vref 3.0
-C vdd vcp_n 4.4
 C vbl vdump 2.1
 C vbp t2 2.7
 C vs vcl 2.2
@@ -215,6 +201,20 @@ C vdd t2 2.6
 C vdd vbh 4.9
 C vctrl vdump 5.7
 C pll_en vdd 5.1
+C vbp vdd 27.0
+C vbp vbt 5.3
+C vctrl vdd 3.3
+C vbp vcp_n 7.5
+C up_s vcp_p 2.5
+C vctrl vbl 2.9
+C en_b vdd 3.7
+C pll_en vbp_vco 2.0
+C up_s vbp 3.1
+C vdd vdump 3.1
+C vbt vdump 2.9
+C vbt vdd 9.7
+C vi vref 3.0
+C vdd vcp_n 4.4
 R vco_out 140
 C bias_ref0 7.0
 R bias_ref 74
