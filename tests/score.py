@@ -10,8 +10,10 @@ here, from a scratch copy of blocks/pll, through chip-flow's gate.py
 (sim_pvt through the engine's sweep, a corner per worker: pvt_sweep), with
 one exception: bench_strength takes longer than the check may run, so its
 recorded pass counts only while its inputs are unchanged
-(bench_strength_fresh). A gate that can't run (a tool missing,
-a refusal, a timeout) fails its line; nothing is skipped.
+(bench_strength_fresh). The Harden goal's gates (top_harden, then
+top_drc, top_lvs and precheck on what it made) run on a scratch copy of the
+whole block, msde's (tile). A gate that can't run (a tool missing, a
+refusal, a timeout) fails its line; nothing is skipped.
 
 Prints a line per done-line, then the score alone on the last line: 100 x
 the mean over the lines, higher is better.
@@ -233,6 +235,18 @@ def pex_pvt(ws: Path, logs: Path) -> dict:
     return got
 
 
+def tile(ws: Path, logs: Path) -> dict[str, dict]:
+    """The Harden goal's gates, msde's on the whole block: top_harden
+    assembles top/ and hardens it in the TT tile; once it passes, full-tile
+    DRC, LVS and the shuttle's precheck each run on what it made, one's fail
+    not stopping the others (each is its own line)."""
+    got = {"top_harden": gate(ws, "msde", "top_harden", logs, "tile")}
+    for n in ("top_drc", "top_lvs", "precheck"):
+        got[n] = (gate(ws, "msde", n, logs, "tile") if got["top_harden"].get("status") == "pass"
+                  else {"status": "not run", "why": "top_harden did not pass"})
+    return got
+
+
 def vco_period_ns(sdc: Path) -> float | None:
     m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", sdc.read_text())
     return float(m.group(1)) if m else None
@@ -267,15 +281,18 @@ def main() -> int:
     logs = scratch / "logs"
     logs.mkdir()
     try:
-        sim, lay, dig, top = (copy_block(scratch, n) for n in ("sim", "layout", "digital", "top"))
-        # sim_pvt, the harden and the co-simulation are the slow ones: side by side.
-        with ThreadPoolExecutor(4) as pool:
+        sim, lay, dig, top, ws_tile = (copy_block(scratch, n)
+                                       for n in ("sim", "layout", "digital", "top", "tile"))
+        # sim_pvt, the hardens and the co-simulation are the slow ones: side by side.
+        with ThreadPoolExecutor(5) as pool:
             f_sim = pool.submit(analog, sim / "analog", corners, logs)
             f_lay = pool.submit(pex_pvt, lay / "analog", logs)
             f_dig = pool.submit(chain, dig / "digital", "vde",
                                 ["spec_lint", "lint", "synth", "harden", "timing"], logs, "digital")
             f_top = pool.submit(layers, top, logs)
+            f_tile = pool.submit(tile, ws_tile, logs)
             (a, (n_pvt, bad_pvt)), l, d, (lay3, meas) = f_sim.result(), f_lay.result(), f_dig.result(), f_top.result()
+            h = f_tile.result()
 
         lines: list[tuple[str, float, str]] = []
 
@@ -349,6 +366,12 @@ def main() -> int:
         n = len([c for c in corners if c in done])
         line(f"post-layout benches pass at every scored corner ({n}/{len(corners)})",
              n / len(corners), why(pv))
+
+        # --- Harden the tile and pass the Tiny Tapeout precheck ----------
+        passed("tile top_harden (the digital half around the analog macro)", h["top_harden"])
+        passed("tile top_drc", h["top_drc"])
+        passed("tile top_lvs", h["top_lvs"])
+        passed("tile Tiny Tapeout precheck", h["precheck"])
     finally:
         if os.environ.get("PLL_SCORE_KEEP"):
             print(f"score: scratch kept at {scratch}", file=sys.stderr)
