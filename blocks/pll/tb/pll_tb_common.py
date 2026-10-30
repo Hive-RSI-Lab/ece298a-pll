@@ -54,6 +54,21 @@ def sizing_param_line() -> str:
     return ".param " + " ".join(parts)
 
 
+MOSCAP_Q = """* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
+* moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
+* + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
+* too small" on its current probe) at most corners on the extracted netlist;
+* Q(v), its integral, is the same device and holds (pex tt_27c: Icp 18.52 vs
+* 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
+* PDK form under Gear). Its corner factor follows the MIM corner's
+* (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+.ends cap_nmos_03v3_b"""
+
+
 def model_lines(corner: str = "typical", res: str = "res_typical",
                 mim: str = "mimcap_typical") -> list[str]:
     """PDK model includes + the real netlist + its sizing (tt by default)."""
@@ -63,10 +78,9 @@ def model_lines(corner: str = "typical", res: str = "res_typical",
         f".lib '{p}/sm141064.spice' {corner}",
         f".lib '{p}/sm141064.spice' {res}",
         f".lib '{p}/sm141064.spice' {mim}",
-        # the loop filter's MOS caps, at the MIM corner's factor
-        f".lib '{p}/sm141064.spice' moscap",
-        ".param cap_nmos_03v3_b_corner=mim_corner_2p0ff",
-        ".options chgtol=1e-16",
+        # the loop filter's MOS caps in charge form (the analog benches'
+        # comment says why), at the MIM corner's factor
+        *MOSCAP_Q.splitlines(),
         f".include '{NETLIST}'",
         sizing_param_line(),
     ]
