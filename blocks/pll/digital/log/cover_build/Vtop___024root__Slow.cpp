@@ -6,6 +6,8 @@
 
 // Parameter definitions for Vtop___024root
 constexpr CData/*4:0*/ Vtop___024root::ihsan_sa_pll__DOT__u_lock__DOT__K;
+constexpr SData/*9:0*/ Vtop___024root::ihsan_sa_pll__DOT__u_lock__DOT__W_LAST;
+constexpr SData/*9:0*/ Vtop___024root::ihsan_sa_pll__DOT__u_lock__DOT__M_LAST;
 
 
 void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf);

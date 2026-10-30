@@ -1,0 +1,935 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `equiv.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll'. Setting top module to ihsan_sa_pll.
+
+2.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+
+2.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+Removed 0 unused modules.
+
+3. Executing FLATTEN pass (flatten design).
+Deleting now unused module pll_prescaler.
+Deleting now unused module pll_pfd.
+Deleting now unused module pll_lock_det.
+Deleting now unused module pll_divider.
+Deleting now unused module pll_ctrl_regs.
+<suppressed ~5 debug messages>
+Renaming module ihsan_sa_pll to ref.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \ref
+
+4.2. Analyzing design hierarchy..
+Top module:  \ref
+Removed 0 unused modules.
+
+5. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing JSON backend.
+
+7. Executing RTLIL backend.
+Output filename: ref.il
+
+8. Executing ASYNC2SYNC pass.
+Replacing ref.$flatten\u_ctrl.$procdff$134 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.pll_en_in, Q=\u_ctrl.pll_en
+Replacing ref.$flatten\u_ctrl.$procdff$139 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [0], Q=\u_ctrl.cp_trim0
+Replacing ref.$flatten\u_ctrl.$procdff$144 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [1], Q=\u_ctrl.cp_trim1
+Replacing ref.$flatten\u_div.$procdff$124 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y, Q=\u_div.fb_en
+Replacing ref.$flatten\u_div.$procdff$129 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$procmux$67_Y, Q=\u_div.div_cnt
+Replacing ref.$flatten\u_lock.$procdff$104 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$58_Y, Q=\u_lock.wd_cnt
+Replacing ref.$flatten\u_lock.$procdff$109 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28_Y, Q=\u_lock.lock
+Replacing ref.$flatten\u_lock.$procdff$114 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y, Q=\u_lock.lock_cnt
+Replacing ref.$flatten\u_lock.$procdff$119 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_Y, Q=\u_lock.wide_q
+Replacing ref.$flatten\u_lock.$procdff$99 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$64_Y, Q=\u_lock.recover
+Replacing ref.$flatten\u_pfd.$procdff$91 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$90, D=1'1, Q=\u_pfd.pfd_fb_q
+Replacing ref.$flatten\u_pfd.$procdff$94 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$93, D=1'1, Q=\u_pfd.pfd_ref_q
+Replacing ref.$flatten\u_pre.$procdff$73 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_Y, Q=\u_pre.q3
+Replacing ref.$flatten\u_pre.$procdff$78 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_Y, Q=\u_pre.pre_q2
+Replacing ref.$flatten\u_pre.$procdff$83 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_Y, Q=\u_pre.pre_q1
+Replacing ref.$flatten\u_pre.$procdff$88 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_Y, Q=\u_pre.pre_q0
+
+9. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll'. Setting top module to ihsan_sa_pll.
+
+10.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+
+10.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+Removed 0 unused modules.
+
+11. Executing MUTATE pass.
+Add output constant 1 at pll_ctrl_regs.$auto$proc_dff.cc:220:proc_dff$130.Y[0].
+
+12. Executing FLATTEN pass (flatten design).
+Deleting now unused module pll_prescaler.
+Deleting now unused module pll_pfd.
+Deleting now unused module pll_lock_det.
+Deleting now unused module pll_divider.
+Deleting now unused module pll_ctrl_regs.
+<suppressed ~5 debug messages>
+Renaming module ihsan_sa_pll to uut.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \uut
+
+13.2. Analyzing design hierarchy..
+Top module:  \uut
+Removed 0 unused modules.
+
+14. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+15. Executing JSON backend.
+
+16. Executing RTLIL backend.
+Output filename: uut.il
+
+17. Executing ASYNC2SYNC pass.
+Replacing uut.$flatten\u_ctrl.$procdff$134 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.pll_en_in, Q=\u_ctrl.pll_en
+Replacing uut.$flatten\u_ctrl.$procdff$139 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [0], Q=\u_ctrl.cp_trim0
+Replacing uut.$flatten\u_ctrl.$procdff$144 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [1], Q=\u_ctrl.cp_trim1
+Replacing uut.$flatten\u_div.$procdff$124 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y, Q=\u_div.fb_en
+Replacing uut.$flatten\u_div.$procdff$129 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$procmux$67_Y, Q=\u_div.div_cnt
+Replacing uut.$flatten\u_lock.$procdff$104 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$58_Y, Q=\u_lock.wd_cnt
+Replacing uut.$flatten\u_lock.$procdff$109 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28_Y, Q=\u_lock.lock
+Replacing uut.$flatten\u_lock.$procdff$114 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y, Q=\u_lock.lock_cnt
+Replacing uut.$flatten\u_lock.$procdff$119 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_Y, Q=\u_lock.wide_q
+Replacing uut.$flatten\u_lock.$procdff$99 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$64_Y, Q=\u_lock.recover
+Replacing uut.$flatten\u_pfd.$procdff$91 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$90, D=1'1, Q=\u_pfd.pfd_fb_q
+Replacing uut.$flatten\u_pfd.$procdff$94 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$93, D=1'1, Q=\u_pfd.pfd_ref_q
+Replacing uut.$flatten\u_pre.$procdff$73 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_Y, Q=\u_pre.q3
+Replacing uut.$flatten\u_pre.$procdff$78 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_Y, Q=\u_pre.pre_q2
+Replacing uut.$flatten\u_pre.$procdff$83 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_Y, Q=\u_pre.pre_q1
+Replacing uut.$flatten\u_pre.$procdff$88 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_Y, Q=\u_pre.pre_q0
+
+18. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> clk_fb
+Presumably equivalent wires: clk_fb_int_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), clk_fb_int_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> clk_fb_int
+Presumably equivalent wires: clk_pre_gold (\u_pre.pre_q2_gold), clk_pre_gate (\u_pre.pre_q2_gate) -> clk_pre
+Presumably equivalent wires: cp_trim0_gold (\u_ctrl.cp_trim0_gold), cp_trim0_gate (\u_ctrl.cp_trim0_gate) -> cp_trim0
+Presumably equivalent wires: cp_trim1_gold (\u_ctrl.cp_trim1_gold), cp_trim1_gate (\u_ctrl.cp_trim1_gate) -> cp_trim1
+Presumably equivalent wires: cp_trim_in_gold (\cp_trim_in_gold), cp_trim_in_gate (\cp_trim_in_gate) -> cp_trim_in
+Presumably equivalent wires: lock_gold (\u_lock.lock_gold), lock_gate (\u_lock.lock_gate) -> lock
+Presumably equivalent wires: n_sel_gold (\n_sel_gold), n_sel_gate (\n_sel_gate) -> n_sel
+Presumably equivalent wires: obs_int_gold ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gold), obs_int_gate ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gate) -> obs_int
+Presumably equivalent wires: obs_out_gold ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gold), obs_out_gate ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gate) -> obs_out
+Presumably equivalent wires: obs_q3_gold (\u_pre.q3_gold), obs_q3_gate (\u_pre.q3_gate) -> obs_q3
+Presumably equivalent wires: obs_sel_gold (\obs_sel_gold), obs_sel_gate (\obs_sel_gate) -> obs_sel
+Presumably equivalent wires: pfd_dn_gold ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold), pfd_dn_gate ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate) -> pfd_dn
+Presumably equivalent wires: pfd_dn_q_gold (\u_pfd.pfd_fb_q_gold), pfd_dn_q_gate (\u_pfd.pfd_fb_q_gate) -> pfd_dn_q
+Presumably equivalent wires: pfd_up_gold ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold), pfd_up_gate ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate) -> pfd_up
+Presumably equivalent wires: pfd_up_q_gold (\u_pfd.pfd_ref_q_gold), pfd_up_q_gate (\u_pfd.pfd_ref_q_gate) -> pfd_up_q
+Presumably equivalent wires: pll_en_gold (\u_ctrl.pll_en_gold), pll_en_gate (\u_ctrl.pll_en_gate) -> pll_en
+Presumably equivalent wires: pll_en_in_gold (\pll_en_in_gold), pll_en_in_gate (\pll_en_in_gate) -> pll_en_in
+Presumably equivalent wires: recover_gold (\u_lock.recover_gold), recover_gate (\u_lock.recover_gate) -> recover
+Presumably equivalent wires: rst_n_gold (\rst_n_gold), rst_n_gate (\rst_n_gate) -> rst_n
+Presumably equivalent wires: u_ctrl.clk_gold (\clk_gold), u_ctrl.clk_gate (\clk_gate) -> u_ctrl.clk
+Presumably equivalent wires: u_ctrl.cp_trim0_gold (\u_ctrl.cp_trim0_gold), u_ctrl.cp_trim0_gate (\u_ctrl.cp_trim0_gate) -> u_ctrl.cp_trim0
+Presumably equivalent wires: u_ctrl.cp_trim1_gold (\u_ctrl.cp_trim1_gold), u_ctrl.cp_trim1_gate (\u_ctrl.cp_trim1_gate) -> u_ctrl.cp_trim1
+Presumably equivalent wires: u_ctrl.cp_trim_in_gold (\cp_trim_in_gold), u_ctrl.cp_trim_in_gate (\cp_trim_in_gate) -> u_ctrl.cp_trim_in
+Presumably equivalent wires: u_ctrl.pll_en_gold (\u_ctrl.pll_en_gold), u_ctrl.pll_en_gate (\u_ctrl.pll_en_gate) -> u_ctrl.pll_en
+Presumably equivalent wires: u_ctrl.pll_en_in_gold (\pll_en_in_gold), u_ctrl.pll_en_in_gate (\pll_en_in_gate) -> u_ctrl.pll_en_in
+Presumably equivalent wires: u_ctrl.rst_n_gold (\rst_n_gold), u_ctrl.rst_n_gate (\rst_n_gate) -> u_ctrl.rst_n
+Presumably equivalent wires: u_div.clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), u_div.clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> u_div.clk_fb
+Presumably equivalent wires: u_div.clk_pre_gold (\u_pre.pre_q2_gold), u_div.clk_pre_gate (\u_pre.pre_q2_gate) -> u_div.clk_pre
+Presumably equivalent wires: u_div.div_cnt_gold (\u_div.div_cnt_gold), u_div.div_cnt_gate (\u_div.div_cnt_gate) -> u_div.div_cnt
+Presumably equivalent wires: u_div.fb_en_gold (\u_div.fb_en_gold), u_div.fb_en_gate (\u_div.fb_en_gate) -> u_div.fb_en
+Presumably equivalent wires: u_div.last_gold ($flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y_gold), u_div.last_gate ($flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y_gate) -> u_div.last
+Presumably equivalent wires: u_div.n_legal_gold ($flatten\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9_Y_gold), u_div.n_legal_gate ($flatten\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9_Y_gate) -> u_div.n_legal
+Presumably equivalent wires: u_div.n_m1_gold ($flatten\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11_Y_gold), u_div.n_m1_gate ($flatten\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11_Y_gate) -> u_div.n_m1
+Presumably equivalent wires: u_div.n_sel_gold (\n_sel_gold), u_div.n_sel_gate (\n_sel_gate) -> u_div.n_sel
+Presumably equivalent wires: u_div.rst_n_gold (\rst_n_gold), u_div.rst_n_gate (\rst_n_gate) -> u_div.rst_n
+Presumably equivalent wires: u_lock.clk_gold (\clk_gold), u_lock.clk_gate (\clk_gate) -> u_lock.clk
+Presumably equivalent wires: u_lock.cnt_nxt_gold ($flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y_gold), u_lock.cnt_nxt_gate ($flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y_gate) -> u_lock.cnt_nxt
+Presumably equivalent wires: u_lock.lock_gold (\u_lock.lock_gold), u_lock.lock_gate (\u_lock.lock_gate) -> u_lock.lock
+Presumably equivalent wires: u_lock.lock_cnt_gold (\u_lock.lock_cnt_gold), u_lock.lock_cnt_gate (\u_lock.lock_cnt_gate) -> u_lock.lock_cnt
+Presumably equivalent wires: u_lock.pfd_dn_gold ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold), u_lock.pfd_dn_gate ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate) -> u_lock.pfd_dn
+Presumably equivalent wires: u_lock.pfd_up_gold ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold), u_lock.pfd_up_gate ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate) -> u_lock.pfd_up
+Presumably equivalent wires: u_lock.pll_en_gold (\u_ctrl.pll_en_gold), u_lock.pll_en_gate (\u_ctrl.pll_en_gate) -> u_lock.pll_en
+Presumably equivalent wires: u_lock.recover_gold (\u_lock.recover_gold), u_lock.recover_gate (\u_lock.recover_gate) -> u_lock.recover
+Presumably equivalent wires: u_lock.rst_n_gold (\rst_n_gold), u_lock.rst_n_gate (\rst_n_gate) -> u_lock.rst_n
+Presumably equivalent wires: u_lock.wd_cnt_gold (\u_lock.wd_cnt_gold), u_lock.wd_cnt_gate (\u_lock.wd_cnt_gate) -> u_lock.wd_cnt
+Presumably equivalent wires: u_lock.wide_q_gold (\u_lock.wide_q_gold), u_lock.wide_q_gate (\u_lock.wide_q_gate) -> u_lock.wide_q
+Presumably equivalent wires: u_pfd.clk_gold (\clk_gold), u_pfd.clk_gate (\clk_gate) -> u_pfd.clk
+Presumably equivalent wires: u_pfd.clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), u_pfd.clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> u_pfd.clk_fb
+Presumably equivalent wires: u_pfd.pfd_both_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_both_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_both
+Presumably equivalent wires: u_pfd.pfd_clr_gold ($flatten\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39_Y_gold), u_pfd.pfd_clr_gate ($flatten\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39_Y_gate) -> u_pfd.pfd_clr
+Presumably equivalent wires: u_pfd.pfd_dly_mid_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_dly_mid_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_dly_mid
+Presumably equivalent wires: u_pfd.pfd_dn_gold (\u_pfd.pfd_fb_q_gold), u_pfd.pfd_dn_gate (\u_pfd.pfd_fb_q_gate) -> u_pfd.pfd_dn
+Presumably equivalent wires: u_pfd.pfd_fb_q_gold (\u_pfd.pfd_fb_q_gold), u_pfd.pfd_fb_q_gate (\u_pfd.pfd_fb_q_gate) -> u_pfd.pfd_fb_q
+Presumably equivalent wires: u_pfd.pfd_ref_q_gold (\u_pfd.pfd_ref_q_gold), u_pfd.pfd_ref_q_gate (\u_pfd.pfd_ref_q_gate) -> u_pfd.pfd_ref_q
+Presumably equivalent wires: u_pfd.pfd_rst_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_rst_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_rst
+Presumably equivalent wires: u_pfd.pfd_up_gold (\u_pfd.pfd_ref_q_gold), u_pfd.pfd_up_gate (\u_pfd.pfd_ref_q_gate) -> u_pfd.pfd_up
+Presumably equivalent wires: u_pfd.rst_n_gold (\rst_n_gold), u_pfd.rst_n_gate (\rst_n_gate) -> u_pfd.rst_n
+Presumably equivalent wires: u_pre.clk_pre_gold (\u_pre.pre_q2_gold), u_pre.clk_pre_gate (\u_pre.pre_q2_gate) -> u_pre.clk_pre
+Presumably equivalent wires: u_pre.obs_q3_gold (\u_pre.q3_gold), u_pre.obs_q3_gate (\u_pre.q3_gate) -> u_pre.obs_q3
+Presumably equivalent wires: u_pre.pre_c0_gold (\u_pre.pre_q0_gold), u_pre.pre_c0_gate (\u_pre.pre_q0_gate) -> u_pre.pre_c0
+Presumably equivalent wires: u_pre.pre_q0_gold (\u_pre.pre_q0_gold), u_pre.pre_q0_gate (\u_pre.pre_q0_gate) -> u_pre.pre_q0
+Presumably equivalent wires: u_pre.pre_q1_gold (\u_pre.pre_q1_gold), u_pre.pre_q1_gate (\u_pre.pre_q1_gate) -> u_pre.pre_q1
+Presumably equivalent wires: u_pre.pre_q2_gold (\u_pre.pre_q2_gold), u_pre.pre_q2_gate (\u_pre.pre_q2_gate) -> u_pre.pre_q2
+Presumably equivalent wires: u_pre.q3_gold (\u_pre.q3_gold), u_pre.q3_gate (\u_pre.q3_gate) -> u_pre.q3
+Presumably equivalent wires: u_pre.rst_n_gold (\rst_n_gold), u_pre.rst_n_gate (\rst_n_gate) -> u_pre.rst_n
+Presumably equivalent wires: u_pre.vco_out_gold (\vco_out_gold), u_pre.vco_out_gate (\vco_out_gate) -> u_pre.vco_out
+Presumably equivalent wires: vco_out_gold (\vco_out_gold), vco_out_gate (\vco_out_gate) -> vco_out
+Changing input CLK of cell $flatten\u_pfd.$procdff$91_gate ($sdff): $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate -> \clk_fb
+Changing input A of cell $flatten\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31_gate ($logic_not): \u_ctrl.pll_en_gate -> \pll_en
+Changing input B of cell $flatten\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32_gate ($logic_or): \u_lock.lock_gate -> \lock
+Changing input A of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gate ($or): $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate -> \pfd_up
+Changing input B of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gate ($or): $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate -> \pfd_dn
+Changing input CLK of cell $flatten\u_pfd.$procdff$91_gold ($sdff): $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold -> \clk_fb
+Changing input A of cell $flatten\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31_gold ($logic_not): \u_ctrl.pll_en_gold -> \pll_en
+Changing input B of cell $flatten\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32_gold ($logic_or): \u_lock.lock_gold -> \lock
+Changing input A of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gold ($or): $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold -> \pfd_up
+Changing input B of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gold ($or): $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold -> \pfd_dn
+Presumably equivalent cells: u_ctrl_gold u_ctrl_gate ($scopeinfo) -> u_ctrl
+Presumably equivalent cells: u_div_gold u_div_gate ($scopeinfo) -> u_div
+Presumably equivalent cells: u_lock_gold u_lock_gate ($scopeinfo) -> u_lock
+Presumably equivalent cells: u_pfd_gold u_pfd_gate ($scopeinfo) -> u_pfd
+Presumably equivalent cells: u_pre_gold u_pre_gate ($scopeinfo) -> u_pre
+
+19. Executing EQUIV_MAKE pass (creating equiv checking module).
+Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
+Presumably equivalent wires: clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> clk_fb
+Presumably equivalent wires: clk_fb_int_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), clk_fb_int_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> clk_fb_int
+Presumably equivalent wires: clk_pre_gold (\u_pre.pre_q2_gold), clk_pre_gate (\u_pre.pre_q2_gate) -> clk_pre
+Presumably equivalent wires: cp_trim0_gold (\u_ctrl.cp_trim0_gold), cp_trim0_gate (\u_ctrl.cp_trim0_gate) -> cp_trim0
+Presumably equivalent wires: cp_trim1_gold (\u_ctrl.cp_trim1_gold), cp_trim1_gate (\u_ctrl.cp_trim1_gate) -> cp_trim1
+Presumably equivalent wires: cp_trim_in_gold (\cp_trim_in_gold), cp_trim_in_gate (\cp_trim_in_gate) -> cp_trim_in
+Presumably equivalent wires: lock_gold (\u_lock.lock_gold), lock_gate (\u_lock.lock_gate) -> lock
+Presumably equivalent wires: n_sel_gold (\n_sel_gold), n_sel_gate (\n_sel_gate) -> n_sel
+Presumably equivalent wires: obs_int_gold ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gold), obs_int_gate ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gate) -> obs_int
+Presumably equivalent wires: obs_out_gold ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gold), obs_out_gate ($ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_Y_gate) -> obs_out
+Presumably equivalent wires: obs_q3_gold (\u_pre.q3_gold), obs_q3_gate (\u_pre.q3_gate) -> obs_q3
+Presumably equivalent wires: obs_sel_gold (\obs_sel_gold), obs_sel_gate (\obs_sel_gate) -> obs_sel
+Presumably equivalent wires: pfd_dn_gold ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold), pfd_dn_gate ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate) -> pfd_dn
+Presumably equivalent wires: pfd_dn_q_gold (\u_pfd.pfd_fb_q_gold), pfd_dn_q_gate (\u_pfd.pfd_fb_q_gate) -> pfd_dn_q
+Presumably equivalent wires: pfd_up_gold ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold), pfd_up_gate ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate) -> pfd_up
+Presumably equivalent wires: pfd_up_q_gold (\u_pfd.pfd_ref_q_gold), pfd_up_q_gate (\u_pfd.pfd_ref_q_gate) -> pfd_up_q
+Presumably equivalent wires: pll_en_gold (\u_ctrl.pll_en_gold), pll_en_gate (\u_ctrl.pll_en_gate) -> pll_en
+Presumably equivalent wires: pll_en_in_gold (\pll_en_in_gold), pll_en_in_gate (\pll_en_in_gate) -> pll_en_in
+Presumably equivalent wires: recover_gold (\u_lock.recover_gold), recover_gate (\u_lock.recover_gate) -> recover
+Presumably equivalent wires: rst_n_gold (\rst_n_gold), rst_n_gate (\rst_n_gate) -> rst_n
+Presumably equivalent wires: u_ctrl.clk_gold (\clk_gold), u_ctrl.clk_gate (\clk_gate) -> u_ctrl.clk
+Presumably equivalent wires: u_ctrl.cp_trim0_gold (\u_ctrl.cp_trim0_gold), u_ctrl.cp_trim0_gate (\u_ctrl.cp_trim0_gate) -> u_ctrl.cp_trim0
+Presumably equivalent wires: u_ctrl.cp_trim1_gold (\u_ctrl.cp_trim1_gold), u_ctrl.cp_trim1_gate (\u_ctrl.cp_trim1_gate) -> u_ctrl.cp_trim1
+Presumably equivalent wires: u_ctrl.cp_trim_in_gold (\cp_trim_in_gold), u_ctrl.cp_trim_in_gate (\cp_trim_in_gate) -> u_ctrl.cp_trim_in
+Presumably equivalent wires: u_ctrl.pll_en_gold (\u_ctrl.pll_en_gold), u_ctrl.pll_en_gate (\u_ctrl.pll_en_gate) -> u_ctrl.pll_en
+Presumably equivalent wires: u_ctrl.pll_en_in_gold (\pll_en_in_gold), u_ctrl.pll_en_in_gate (\pll_en_in_gate) -> u_ctrl.pll_en_in
+Presumably equivalent wires: u_ctrl.rst_n_gold (\rst_n_gold), u_ctrl.rst_n_gate (\rst_n_gate) -> u_ctrl.rst_n
+Presumably equivalent wires: u_div.clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), u_div.clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> u_div.clk_fb
+Presumably equivalent wires: u_div.clk_pre_gold (\u_pre.pre_q2_gold), u_div.clk_pre_gate (\u_pre.pre_q2_gate) -> u_div.clk_pre
+Presumably equivalent wires: u_div.div_cnt_gold (\u_div.div_cnt_gold), u_div.div_cnt_gate (\u_div.div_cnt_gate) -> u_div.div_cnt
+Presumably equivalent wires: u_div.fb_en_gold (\u_div.fb_en_gold), u_div.fb_en_gate (\u_div.fb_en_gate) -> u_div.fb_en
+Presumably equivalent wires: u_div.last_gold ($flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y_gold), u_div.last_gate ($flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y_gate) -> u_div.last
+Presumably equivalent wires: u_div.n_legal_gold ($flatten\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9_Y_gold), u_div.n_legal_gate ($flatten\u_div.$logic_and$/work/blocks/pll/digital/rtl/pll_divider.v:17$9_Y_gate) -> u_div.n_legal
+Presumably equivalent wires: u_div.n_m1_gold ($flatten\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11_Y_gold), u_div.n_m1_gate ($flatten\u_div.$ternary$/work/blocks/pll/digital/rtl/pll_divider.v:18$11_Y_gate) -> u_div.n_m1
+Presumably equivalent wires: u_div.n_sel_gold (\n_sel_gold), u_div.n_sel_gate (\n_sel_gate) -> u_div.n_sel
+Presumably equivalent wires: u_div.rst_n_gold (\rst_n_gold), u_div.rst_n_gate (\rst_n_gate) -> u_div.rst_n
+Presumably equivalent wires: u_lock.clk_gold (\clk_gold), u_lock.clk_gate (\clk_gate) -> u_lock.clk
+Presumably equivalent wires: u_lock.cnt_nxt_gold ($flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y_gold), u_lock.cnt_nxt_gate ($flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y_gate) -> u_lock.cnt_nxt
+Presumably equivalent wires: u_lock.lock_gold (\u_lock.lock_gold), u_lock.lock_gate (\u_lock.lock_gate) -> u_lock.lock
+Presumably equivalent wires: u_lock.lock_cnt_gold (\u_lock.lock_cnt_gold), u_lock.lock_cnt_gate (\u_lock.lock_cnt_gate) -> u_lock.lock_cnt
+Presumably equivalent wires: u_lock.pfd_dn_gold ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold), u_lock.pfd_dn_gate ($or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate) -> u_lock.pfd_dn
+Presumably equivalent wires: u_lock.pfd_up_gold ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold), u_lock.pfd_up_gate ($and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate) -> u_lock.pfd_up
+Presumably equivalent wires: u_lock.pll_en_gold (\u_ctrl.pll_en_gold), u_lock.pll_en_gate (\u_ctrl.pll_en_gate) -> u_lock.pll_en
+Presumably equivalent wires: u_lock.recover_gold (\u_lock.recover_gold), u_lock.recover_gate (\u_lock.recover_gate) -> u_lock.recover
+Presumably equivalent wires: u_lock.rst_n_gold (\rst_n_gold), u_lock.rst_n_gate (\rst_n_gate) -> u_lock.rst_n
+Presumably equivalent wires: u_lock.wd_cnt_gold (\u_lock.wd_cnt_gold), u_lock.wd_cnt_gate (\u_lock.wd_cnt_gate) -> u_lock.wd_cnt
+Presumably equivalent wires: u_lock.wide_q_gold (\u_lock.wide_q_gold), u_lock.wide_q_gate (\u_lock.wide_q_gate) -> u_lock.wide_q
+Presumably equivalent wires: u_pfd.clk_gold (\clk_gold), u_pfd.clk_gate (\clk_gate) -> u_pfd.clk
+Presumably equivalent wires: u_pfd.clk_fb_gold ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold), u_pfd.clk_fb_gate ($flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate) -> u_pfd.clk_fb
+Presumably equivalent wires: u_pfd.pfd_both_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_both_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_both
+Presumably equivalent wires: u_pfd.pfd_clr_gold ($flatten\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39_Y_gold), u_pfd.pfd_clr_gate ($flatten\u_pfd.$or$/work/blocks/pll/digital/rtl/pll_pfd.v:19$39_Y_gate) -> u_pfd.pfd_clr
+Presumably equivalent wires: u_pfd.pfd_dly_mid_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_dly_mid_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_dly_mid
+Presumably equivalent wires: u_pfd.pfd_dn_gold (\u_pfd.pfd_fb_q_gold), u_pfd.pfd_dn_gate (\u_pfd.pfd_fb_q_gate) -> u_pfd.pfd_dn
+Presumably equivalent wires: u_pfd.pfd_fb_q_gold (\u_pfd.pfd_fb_q_gold), u_pfd.pfd_fb_q_gate (\u_pfd.pfd_fb_q_gate) -> u_pfd.pfd_fb_q
+Presumably equivalent wires: u_pfd.pfd_ref_q_gold (\u_pfd.pfd_ref_q_gold), u_pfd.pfd_ref_q_gate (\u_pfd.pfd_ref_q_gate) -> u_pfd.pfd_ref_q
+Presumably equivalent wires: u_pfd.pfd_rst_gold ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gold), u_pfd.pfd_rst_gate ($flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_Y_gate) -> u_pfd.pfd_rst
+Presumably equivalent wires: u_pfd.pfd_up_gold (\u_pfd.pfd_ref_q_gold), u_pfd.pfd_up_gate (\u_pfd.pfd_ref_q_gate) -> u_pfd.pfd_up
+Presumably equivalent wires: u_pfd.rst_n_gold (\rst_n_gold), u_pfd.rst_n_gate (\rst_n_gate) -> u_pfd.rst_n
+Presumably equivalent wires: u_pre.clk_pre_gold (\u_pre.pre_q2_gold), u_pre.clk_pre_gate (\u_pre.pre_q2_gate) -> u_pre.clk_pre
+Presumably equivalent wires: u_pre.obs_q3_gold (\u_pre.q3_gold), u_pre.obs_q3_gate (\u_pre.q3_gate) -> u_pre.obs_q3
+Presumably equivalent wires: u_pre.pre_c0_gold (\u_pre.pre_q0_gold), u_pre.pre_c0_gate (\u_pre.pre_q0_gate) -> u_pre.pre_c0
+Presumably equivalent wires: u_pre.pre_q0_gold (\u_pre.pre_q0_gold), u_pre.pre_q0_gate (\u_pre.pre_q0_gate) -> u_pre.pre_q0
+Presumably equivalent wires: u_pre.pre_q1_gold (\u_pre.pre_q1_gold), u_pre.pre_q1_gate (\u_pre.pre_q1_gate) -> u_pre.pre_q1
+Presumably equivalent wires: u_pre.pre_q2_gold (\u_pre.pre_q2_gold), u_pre.pre_q2_gate (\u_pre.pre_q2_gate) -> u_pre.pre_q2
+Presumably equivalent wires: u_pre.q3_gold (\u_pre.q3_gold), u_pre.q3_gate (\u_pre.q3_gate) -> u_pre.q3
+Presumably equivalent wires: u_pre.rst_n_gold (\rst_n_gold), u_pre.rst_n_gate (\rst_n_gate) -> u_pre.rst_n
+Presumably equivalent wires: u_pre.vco_out_gold (\vco_out_gold), u_pre.vco_out_gate (\vco_out_gate) -> u_pre.vco_out
+Presumably equivalent wires: vco_out_gold (\vco_out_gold), vco_out_gate (\vco_out_gate) -> vco_out
+Changing input CLK of cell $flatten\u_pre.$procdff$83_gate ($sdff): \u_pre.pre_q0_gate -> \u_pre.pre_q0
+Changing input CLK of cell $flatten\u_pre.$procdff$78_gate ($sdff): \u_pre.pre_q1_gate -> \u_pre.pre_q1
+Changing input CLK of cell $flatten\u_pre.$procdff$73_gate ($sdff): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input CLK of cell $flatten\u_pfd.$procdff$91_gate ($sdff): $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gate -> \clk_fb
+Changing input CLK of cell $flatten\u_div.$procdff$129_gate ($sdff): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input CLK of cell $flatten\u_div.$procdff$124_gate ($sdff): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input A of cell $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_gate ($and): \u_pfd.pfd_ref_q_gate -> \u_pfd.pfd_ref_q
+Changing input A of cell $flatten\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$15_gate ($add): \u_div.div_cnt_gate -> \u_div.div_cnt
+Changing input A of cell $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_gate ($and): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input B of cell $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_gate ($and): \u_div.fb_en_gate -> \u_div.fb_en
+Changing input A of cell $flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_gate ($ge): \u_div.div_cnt_gate -> \u_div.div_cnt
+Changing input A of cell $flatten\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$20_gate ($add): \u_lock.lock_cnt_gate -> \u_lock.lock_cnt
+Changing input A of cell $flatten\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$36_gate ($add): \u_lock.wd_cnt_gate -> \u_lock.wd_cnt
+Changing input A of cell $flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$19_gate ($eq): \u_lock.lock_cnt_gate -> \u_lock.lock_cnt
+Changing input A of cell $flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$34_gate ($eq): \u_lock.wd_cnt_gate -> \u_lock.wd_cnt
+Changing input A of cell $flatten\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31_gate ($logic_not): \u_ctrl.pll_en_gate -> \u_ctrl.pll_en
+Changing input B of cell $flatten\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32_gate ($logic_or): \u_lock.lock_gate -> \u_lock.lock
+Changing input A of cell $flatten\u_lock.$not$/work/blocks/pll/digital/rtl/pll_lock_det.v:59$35_gate ($not): \u_lock.recover_gate -> \u_lock.recover
+Changing input A of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gate ($or): $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gate -> \pfd_up
+Changing input B of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gate ($or): $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gate -> \pfd_dn
+Changing input A of cell $flatten\u_lock.$procmux$61_gate ($mux): \u_lock.recover_gate -> \u_lock.recover
+Changing input S of cell $flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_gate ($mux): \u_lock.wide_q_gate -> \u_lock.wide_q
+Changing input S of cell $flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$33_gate ($mux): \u_lock.recover_gate -> \u_lock.recover
+Changing input A of cell $flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_gate ($and): \u_pfd.pfd_ref_q_gate -> \u_pfd.pfd_ref_q
+Changing input B of cell $flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_gate ($and): \u_pfd.pfd_fb_q_gate -> \u_pfd.pfd_fb_q
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_gate ($not): \u_pre.pre_q0_gate -> \u_pre.pre_q0
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_gate ($not): \u_pre.pre_q1_gate -> \u_pre.pre_q1
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_gate ($not): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_gate ($not): \u_pre.q3_gate -> \u_pre.q3
+Changing input A of cell $not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$1_gate ($not): \u_lock.recover_gate -> \u_lock.recover
+Changing input A of cell $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_gate ($or): \u_pfd.pfd_fb_q_gate -> \u_pfd.pfd_fb_q
+Changing input B of cell $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_gate ($or): \u_lock.recover_gate -> \u_lock.recover
+Changing input A of cell $ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_gate ($mux): \u_pre.pre_q2_gate -> \u_pre.pre_q2
+Changing input B of cell $ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_gate ($mux): \u_pre.q3_gate -> \u_pre.q3
+Changing input CLK of cell $flatten\u_pre.$procdff$83_gold ($sdff): \u_pre.pre_q0_gold -> \u_pre.pre_q0
+Changing input CLK of cell $flatten\u_pre.$procdff$78_gold ($sdff): \u_pre.pre_q1_gold -> \u_pre.pre_q1
+Changing input CLK of cell $flatten\u_pre.$procdff$73_gold ($sdff): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input CLK of cell $flatten\u_pfd.$procdff$91_gold ($sdff): $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_Y_gold -> \clk_fb
+Changing input CLK of cell $flatten\u_div.$procdff$129_gold ($sdff): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input CLK of cell $flatten\u_div.$procdff$124_gold ($sdff): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input A of cell $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_gold ($and): \u_pfd.pfd_ref_q_gold -> \u_pfd.pfd_ref_q
+Changing input A of cell $flatten\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$15_gold ($add): \u_div.div_cnt_gold -> \u_div.div_cnt
+Changing input A of cell $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_gold ($and): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input B of cell $flatten\u_div.$and$/work/blocks/pll/digital/rtl/pll_divider.v:31$18_gold ($and): \u_div.fb_en_gold -> \u_div.fb_en
+Changing input A of cell $flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_gold ($ge): \u_div.div_cnt_gold -> \u_div.div_cnt
+Changing input A of cell $flatten\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$20_gold ($add): \u_lock.lock_cnt_gold -> \u_lock.lock_cnt
+Changing input A of cell $flatten\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$36_gold ($add): \u_lock.wd_cnt_gold -> \u_lock.wd_cnt
+Changing input A of cell $flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$19_gold ($eq): \u_lock.lock_cnt_gold -> \u_lock.lock_cnt
+Changing input A of cell $flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$34_gold ($eq): \u_lock.wd_cnt_gold -> \u_lock.wd_cnt
+Changing input A of cell $flatten\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$31_gold ($logic_not): \u_ctrl.pll_en_gold -> \u_ctrl.pll_en
+Changing input B of cell $flatten\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$32_gold ($logic_or): \u_lock.lock_gold -> \u_lock.lock
+Changing input A of cell $flatten\u_lock.$not$/work/blocks/pll/digital/rtl/pll_lock_det.v:59$35_gold ($not): \u_lock.recover_gold -> \u_lock.recover
+Changing input A of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gold ($or): $and$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$2_Y_gold -> \pfd_up
+Changing input B of cell $flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_gold ($or): $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_Y_gold -> \pfd_dn
+Changing input A of cell $flatten\u_lock.$procmux$61_gold ($mux): \u_lock.recover_gold -> \u_lock.recover
+Changing input S of cell $flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_gold ($mux): \u_lock.wide_q_gold -> \u_lock.wide_q
+Changing input S of cell $flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$33_gold ($mux): \u_lock.recover_gold -> \u_lock.recover
+Changing input A of cell $flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_gold ($and): \u_pfd.pfd_ref_q_gold -> \u_pfd.pfd_ref_q
+Changing input B of cell $flatten\u_pfd.$and$/work/blocks/pll/digital/rtl/pll_pfd.v:16$37_gold ($and): \u_pfd.pfd_fb_q_gold -> \u_pfd.pfd_fb_q
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_gold ($not): \u_pre.pre_q0_gold -> \u_pre.pre_q0
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_gold ($not): \u_pre.pre_q1_gold -> \u_pre.pre_q1
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_gold ($not): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input A of cell $flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_gold ($not): \u_pre.q3_gold -> \u_pre.q3
+Changing input A of cell $not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$1_gold ($not): \u_lock.recover_gold -> \u_lock.recover
+Changing input A of cell $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_gold ($or): \u_pfd.pfd_fb_q_gold -> \u_pfd.pfd_fb_q
+Changing input B of cell $or$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$3_gold ($or): \u_lock.recover_gold -> \u_lock.recover
+Changing input A of cell $ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_gold ($mux): \u_pre.pre_q2_gold -> \u_pre.pre_q2
+Changing input B of cell $ternary$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:65$4_gold ($mux): \u_pre.q3_gold -> \u_pre.q3
+Presumably equivalent cells: u_ctrl_gold u_ctrl_gate ($scopeinfo) -> u_ctrl
+Presumably equivalent cells: u_div_gold u_div_gate ($scopeinfo) -> u_div
+Presumably equivalent cells: u_lock_gold u_lock_gate ($scopeinfo) -> u_lock
+Presumably equivalent cells: u_pfd_gold u_pfd_gate ($scopeinfo) -> u_pfd
+Presumably equivalent cells: u_pre_gold u_pre_gate ($scopeinfo) -> u_pre
+
+20. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Final init constraint equation: { $auto$async2sync.cc:253:execute$180_gold $auto$async2sync.cc:253:execute$150_gold $auto$async2sync.cc:253:execute$152_gold $auto$async2sync.cc:253:execute$154_gold $auto$async2sync.cc:253:execute$156_gold $auto$async2sync.cc:253:execute$158_gold $auto$async2sync.cc:253:execute$160_gold $auto$async2sync.cc:253:execute$162_gold $auto$async2sync.cc:253:execute$164_gold $auto$async2sync.cc:253:execute$166_gold $auto$async2sync.cc:253:execute$168_gold $auto$async2sync.cc:253:execute$170_gold $auto$async2sync.cc:253:execute$172_gold $auto$async2sync.cc:253:execute$174_gold $auto$async2sync.cc:253:execute$176_gold $auto$async2sync.cc:253:execute$178_gold $auto$async2sync.cc:253:execute$218_gate $auto$async2sync.cc:253:execute$188_gate $auto$async2sync.cc:253:execute$190_gate $auto$async2sync.cc:253:execute$192_gate $auto$async2sync.cc:253:execute$194_gate $auto$async2sync.cc:253:execute$196_gate $auto$async2sync.cc:253:execute$198_gate $auto$async2sync.cc:253:execute$200_gate $auto$async2sync.cc:253:execute$202_gate $auto$async2sync.cc:253:execute$204_gate $auto$async2sync.cc:253:execute$206_gate $auto$async2sync.cc:253:execute$208_gate $auto$async2sync.cc:253:execute$210_gate $auto$async2sync.cc:253:execute$212_gate $auto$async2sync.cc:253:execute$214_gate $auto$async2sync.cc:253:execute$216_gate } = 62'00000000000000000000000000000000000000000000000000000000000000
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 313 cells to SAT database.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$395 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$392 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$389 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$386 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$383 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$380 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$377 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$374 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$371 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$368 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$365 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$362 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$359 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$356 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$353 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$350 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$347 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$344 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$341 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$338 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$335 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$332 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$329 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$326 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$323 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$320 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$317 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$314 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$311 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$308 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$305 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$302 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$299 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$296 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$293 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$290 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$287 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$284 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$281 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$278 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$275 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$272 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$269 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$266 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$263 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$260 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$257 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$254 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$251 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$248 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$245 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$242 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$239 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$236 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$233 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$230 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$227 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$224 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$221 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$404 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$401 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$398 when 1'1.
+
+Solving problem with 20445 variables and 55250 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+21. Executing EQUIV_INDUCT pass.
+Found 86 unproven $equiv cells in module equiv:
+  Proving existence of base case for step 1. (5926 clauses over 2278 variables)
+  Proving induction step 1. (12807 clauses over 4853 variables)
+  Proof for induction step holds. Entire workset of 86 cells proven!
+Proved 86 previously unproven $equiv cells.
+
+22. Executing EQUIV_STATUS pass.
+Found 86 $equiv cells in equiv:
+  Of those cells 86 are proven and 0 are unproven.
+  Equivalence successfully proven!
+
+End of script. Logfile hash: 1c4215a481, time: 0.43s, user: 0.09s, system: 0.03s, MEM: 45.18 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 82% 1x sat (0 sec), 8% 1x equiv_induct (0 sec), ...

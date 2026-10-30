@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/eda-toolchain/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793216068
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793286005
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -23,13 +23,13 @@
  35511.81ns INFO     cocotb.regression                  *************************************************************************************************************
                                                         ** TEST                                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *************************************************************************************************************
-                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.01     586720.22  **
-                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.03     517091.01  **
-                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.01     717723.31  **
-                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.00     738268.06  **
-                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.01     596068.20  **
-                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.01     288842.15  **
-                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00    2571943.04  **
+                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.01     672340.05  **
+                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.02     953915.43  **
+                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.01     727139.45  **
+                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.00     752080.83  **
+                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.01     593574.70  **
+                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.01     270050.79  **
+                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00    2463559.27  **
                                                         *************************************************************************************************************
-                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           0.07     537164.51  **
+                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           0.05     702597.40  **
                                                         *************************************************************************************************************

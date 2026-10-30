@@ -1,0 +1,69 @@
+* pll_analog_pex_start_tb.cir - does the extracted VCO start from pll_en
+* rising, with no kick at all, at every corner? A check beside the
+* post-layout bench pll_analog_pex_pvt_tb.cir (which starts the ring with a
+* 200 fC kick into r1, see its START-UP KICK note), run by
+*     eda python layout/pex_pvt.py --bench pll_analog_pex_start_tb
+* Not a spec measure: spec.yaml's post_layout_bounds bound Icp, Kvco and
+* fmax, and the start-up time is a pre-layout measure (tb/
+* pll_analog_startup_tb.cir). Its bound here is only "it runs".
+*
+* The cell starts from its pll_en = 0 operating point; pll_en rises at 5 ns
+* (1 ns edge). vctrl is forced, bias_ref floats (internal default), vco_out
+* into 15 fF, pump inputs low. Two runs: vctrl = vdd-0.3 V (the top of the
+* tuning range, where the extracted ring's balance point is locally stable
+* at some corners) and vctrl = 0.3 V (the slowest ring, the pre-layout
+* start-up bench's worst case).
+*  - pex_start_swing_hi_pct_vdd: (max-min of vco_out) / vdd over 0.8..1 us
+*  - pex_start_swing_lo_pct_vdd: the same over 2.2..3 us at vctrl = 0.3 V
+* 2026-10-29, extracted layout: hi passes at all 31 corners; lo fails at
+* ff_125c, ff_125c_vm10, ff_125c_vp10 and ss_m40c_vm10 (vco_out flat: the
+* starved ring sits on its balance point). At five more corners the engine
+* reads ngspice's "gmin stepping" note on the pll_en = 0 op as an engine
+* error while both swings pass.
+* sim_timeout_s: 1800
+
+.include '{{PDK}}/libs.tech/ngspice/design.spice'
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+.include '{{NETLIST}}'
+{{SIZING}}
+
+.temp {{TEMP_C}}
+.param vddp={{VDD}}
+.csparam vddp={vddp}
+.csparam vhi={vddp-0.3}
+
+vdd_src  vdd      0 dc {vddp}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc 0 pulse(0 {vddp} 5n 1n 1n 1 1)
+vup      pfd_up   0 dc 0
+vdn      pfd_dn   0 dc 0
+vt0      cp_trim0 0 dc 0
+vt1      cp_trim1 0 dc 0
+vvc      vctrl    0 dc 0.3
+cload    vco_out  0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+
+.control
+set noaskquit
+alter vvc dc = $&vhi
+tran 50p 1u 0 50p
+meas tran vx max v(vco_out) from=800n to=1u
+meas tran vn min v(vco_out) from=800n to=1u
+let x = (vx - vn)/vddp*100
+set shi = "$&x"
+destroy all
+alter vvc dc = 0.3
+tran 250p 3u 0 250p
+meas tran vx max v(vco_out) from=2.2u to=3u
+meas tran vn min v(vco_out) from=2.2u to=3u
+let x = (vx - vn)/vddp*100
+set slo = "$&x"
+echo
+echo "  Measurements for Transient Analysis (pll_analog_pex_start_tb, computed in .control)"
+echo "pex_start_swing_hi_pct_vdd = $shi"
+echo "pex_start_swing_lo_pct_vdd = $slo"
+echo
+.endc
+.end

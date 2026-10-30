@@ -1,46 +1,51 @@
 initial
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$494] #b000)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$512] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$652] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$634] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q2[0:0]#sampled$616] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$598] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$438] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$456] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$440] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$458] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$420] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$422] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$492] #b000)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$474] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$476] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$530] #b00000)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$510] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$528] #b00000)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$546] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$564] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$580] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$650] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$632] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q2#sampled$614] false)
-assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$596] false)
-assume (= [$auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$557#sampled$558] false)
-assume (= [$auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$590] false)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$478] false)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$584] true)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$568] true)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$636] true)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q1#sampled$618] true)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q2#sampled$600] true)
-assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_out#sampled$654] true)
-assume (= [_witness_.anyinit_procdff_387] false)
-assume (= [_witness_.anyinit_procdff_388] false)
-assume (= [_witness_.anyinit_procdff_389] false)
-assume (= [_witness_.anyinit_procdff_390] false)
-assume (= [_witness_.anyinit_procdff_391] false)
-assume (= [_witness_.anyinit_procdff_392] false)
-assume (= [_witness_.anyinit_procdff_393] false)
-assume (= [_witness_.anyinit_procdff_394] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$534] #b000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$588] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$552] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$570] #b0000000000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$728] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$710] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q2[0:0]#sampled$692] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$674] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$478] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$496] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$480] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$498] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$460] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$462] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$532] #b000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$514] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$516] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$606] #b00000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$586] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$604] #b00000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.recover#sampled$550] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wd_cnt#sampled$568] #b0000000000)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$622] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$640] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$656] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$726] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$708] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q2#sampled$690] false)
+assume (= [$auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$672] false)
+assume (= [$auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$633#sampled$634] false)
+assume (= [$auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$666] false)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$518] false)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$660] true)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$644] true)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$712] true)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q1#sampled$694] true)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q2#sampled$676] true)
+assume (= [$auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_out#sampled$730] true)
+assume (= [_witness_.anyinit_procdff_426] false)
+assume (= [_witness_.anyinit_procdff_427] false)
+assume (= [_witness_.anyinit_procdff_428] false)
+assume (= [_witness_.anyinit_procdff_429] false)
+assume (= [_witness_.anyinit_procdff_430] false)
+assume (= [_witness_.anyinit_procdff_431] false)
+assume (= [_witness_.anyinit_procdff_432] false)
+assume (= [_witness_.anyinit_procdff_433] false)
+assume (= [_witness_.anyinit_procdff_434] false)
 assume (= [clk_q] false)
 assume (= [dut.u_pfd.pfd_fb_q$async_arst_past] false)
 assume (= [dut.u_pfd.pfd_fb_q$async_clk_past] false)
@@ -81,16 +86,16 @@ assume (= [vco_out] false)
 state 1
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 2
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
@@ -99,7 +104,7 @@ assume (= [vco_out] true)
 state 3
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
@@ -110,7 +115,7 @@ assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
@@ -119,7 +124,7 @@ assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
@@ -128,7 +133,7 @@ assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
@@ -137,25 +142,25 @@ assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 8
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 9
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
@@ -173,7 +178,7 @@ assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
@@ -181,13 +186,13 @@ state 12
 assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
-assume (= [obs_sel] true)
-assume (= [pll_en_in] false)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 13
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
@@ -196,101 +201,101 @@ assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 14
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 15
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 16
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 17
-assume (= [clk] false)
+assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 18
-assume (= [clk] false)
+assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 19
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b001)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 20
 assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 21
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b001)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 22
 assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 23
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 24
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
@@ -299,52 +304,52 @@ assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 26
 assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b100)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 27
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 28
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
 state 29
 assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 30
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
@@ -353,16 +358,16 @@ assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 32
-assume (= [clk] true)
+assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b000)
+assume (= [n_sel] #b100)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
 
@@ -371,15 +376,1905 @@ assume (= [clk] false)
 assume (= [cp_trim_in] #b00)
 assume (= [n_sel] #b000)
 assume (= [obs_sel] false)
-assume (= [pll_en_in] false)
+assume (= [pll_en_in] true)
 assume (= [rst_n] true)
 assume (= [vco_out] false)
 
 state 34
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 35
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b100)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 36
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 37
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 38
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 39
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 40
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b100)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 41
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 42
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 43
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 44
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 45
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 46
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 47
 assume (= [clk] true)
 assume (= [cp_trim_in] #b00)
-assume (= [n_sel] #b101)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 48
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 49
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 50
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 51
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 52
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 53
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 54
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
 assume (= [obs_sel] false)
 assume (= [pll_en_in] false)
 assume (= [rst_n] true)
 assume (= [vco_out] true)
+
+state 55
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 56
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 57
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 58
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 59
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 60
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 61
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 62
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b101)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 63
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 64
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 65
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 66
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 67
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 68
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 69
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 70
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b100)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 71
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 72
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 73
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 74
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 75
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 76
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 77
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 78
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 79
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 80
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 81
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 82
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 83
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 84
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 85
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 86
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 87
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 88
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 89
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 90
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 91
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 92
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 93
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b100)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 94
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 95
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 96
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 97
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 98
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 99
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 100
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 101
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 102
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 103
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 104
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 105
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 106
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 107
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 108
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 109
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 110
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 111
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 112
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 113
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 114
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 115
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 116
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 117
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 118
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 119
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 120
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 121
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 122
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 123
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 124
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 125
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 126
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 127
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 128
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 129
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 130
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 131
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 132
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 133
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 134
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 135
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 136
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 137
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 138
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 139
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 140
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 141
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 142
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 143
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 144
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 145
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 146
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 147
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 148
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 149
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 150
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 151
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 152
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 153
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 154
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 155
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 156
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 157
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 158
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 159
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 160
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b010)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 161
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 162
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 163
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 164
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 165
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 166
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 167
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 168
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 169
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 170
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 171
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 172
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 173
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 174
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 175
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 176
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 177
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 178
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 179
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 180
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 181
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 182
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 183
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 184
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 185
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 186
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 187
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 188
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 189
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 190
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 191
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 192
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 193
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 194
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 195
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 196
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 197
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 198
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 199
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 200
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 201
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 202
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 203
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 204
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 205
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 206
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 207
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 208
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 209
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 210
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 211
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 212
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 213
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 214
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 215
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 216
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 217
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 218
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 219
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 220
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 221
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 222
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 223
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 224
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 225
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 226
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 227
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 228
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 229
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 230
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 231
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 232
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 233
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 234
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b001)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 235
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 236
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 237
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] true)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 238
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 239
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b110)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 240
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 241
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 242
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] true)
+
+state 243
+assume (= [clk] false)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)
+
+state 244
+assume (= [clk] true)
+assume (= [cp_trim_in] #b00)
+assume (= [n_sel] #b000)
+assume (= [obs_sel] false)
+assume (= [pll_en_in] false)
+assume (= [rst_n] true)
+assume (= [vco_out] false)

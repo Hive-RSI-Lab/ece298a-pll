@@ -27,6 +27,6 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 4. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: e3e0280f13, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 26.95 MB peak
+End of script. Logfile hash: e3e0280f13, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 26.91 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 37% 2x read_rtlil (0 sec), 32% 2x write_jny (0 sec), ...
+Time spent: 35% 2x read_rtlil (0 sec), 33% 2x write_jny (0 sec), ...

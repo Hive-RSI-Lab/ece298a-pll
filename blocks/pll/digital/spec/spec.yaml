@@ -34,7 +34,7 @@ requirements:
     text: With clk_fb slower than clk the total pfd_up high time over 20 reference cycles exceeds the total pfd_dn high time (net UP); with clk_fb faster than clk the total pfd_dn high time exceeds the total pfd_up high time (net DN).
     check: sim
   - id: REQ-PFD-RESET
-    text: Whenever pfd_up and pfd_dn are both high the PFD reset fires and both are cleared before the next active edge of either clock; the reset event is observed (covered) in simulation, its width is a cosim measure owned by msde.
+    text: Outside a recovery (REQ-RECOVER), whenever pfd_up and pfd_dn are both high the PFD reset fires and both are cleared before the next active edge of either clock; the reset event is observed (covered) in simulation, its width is a cosim measure owned by msde.
     check: both
     property: pfd_reset_on_both
   - id: REQ-PFD-NO-OVERLAP
@@ -56,6 +56,13 @@ requirements:
     text: lock is never asserted in a reference cycle in which a wide pfd_up or pfd_dn pulse (still high at the falling edge of clk) was observed in that cycle or any of the previous 15.
     check: formal
     property: lock_not_while_wide
+  # --- runaway recovery ----------------------------------------------------
+  - id: REQ-RECOVER
+    text: With pll_en high and lock low at W = 1024 consecutive reference rising edges, a recovery starts on the 1024th; it holds pfd_up at 0 and pfd_dn at 1 for exactly M = 128 reference periods, then ends and the count restarts from 0. pll_en low or lock high at a reference rising edge clears the count and ends a recovery in progress. (A VCO driven past what the prescaler divides makes clk_fb look slow, so the PFD alone would hold Vctrl at the rail; the forced DN pulls it to ground and the loop acquires again from below.)
+    check: sim
+  - id: REQ-RECOVER-OUT
+    text: While a recovery is in progress pfd_up is 0 and pfd_dn is 1. (A sim check, not formal - a recovery starts 1024 reference cycles after reset, far past any formal depth, so an assertion on it would be vacuous.)
+    check: sim
   # --- control registers, reset, tile tie-offs ------------------------------
   - id: REQ-CTRL-REG
     text: pll_en, cp_trim0 and cp_trim1 equal pll_en_in (ui_in[6]) and cp_trim_in[1:0] (uio_in[1:0]) sampled on the rising edge of clk, one clk cycle after the input changes, and hold their value between changes.
@@ -106,7 +113,7 @@ requirements:
     check: measure
     bounds: {clk_wns_ns: {min: 0}}
   - id: REQ-TIM-VCO
-    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width at a 2.7 ns vco_out period (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling at every corner) - each flop's toggle loop is under the 2.7 ns period at both corners.
+    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width at a 2.7 ns vco_out period (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling at every corner) - each flop's toggle loop is under the 2.7 ns period at both corners. At ss (ss_125C_3v00) no library flop toggles at 2.7 ns, so there the first stage's toggle loop (clock-to-Q, inverter, setup, without the SDC's 0.25 ns uncertainty) is held to 3.65 ns (274 MHz), what the hand-placed dffrnq_2 + inv_1 reaches after routing. Evidence for that bound is tb/prescaler_margin.py on the ss_pff calibration. Acquiring from Vctrl = 0, every lock-table point locks with a stage of up to 3.65 ns, and the 5 MHz x 5 point (peak about 283 MHz) stops locking from 3.68 ns, so that point has no margin on the pre-layout netlist. REQ-RECOVER covers a VCO above the stage.
     check: measure
     bounds: {vco_out_period_ns: {min: 2.7}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
   - id: REQ-HARDEN-STANDALONE
@@ -165,7 +172,7 @@ clock:
 
 timing_notes:
   clk:     {period_ns: 80,  note: "reference, 5-12.5 MHz, constrained at 12.5 MHz"}
-  vco_out: {period_ns: 2.7, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths"}
+  vco_out: {period_ns: 2.7, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths; at ss the first toggle loop is held to 3.65 ns, not 2.7 (REQ-TIM-VCO)"}
   clk_pre: {period_ns: 20,  note: "generated clock vco_out/8, constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
   clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 46 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
   sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock 2.7 ns on the port), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
@@ -175,12 +182,17 @@ design_choices:
   lock_k_cycles: 16
   lock_wide_threshold: "pulse still high at the falling edge of clk after the reference rising edge (half a reference period)"
   lock_deassert: "one wide pulse drops lock on the next reference edge"
+  recover_w_cycles: 1024
+  recover_m_cycles: 128
+  recover_why: "W x T_ref is 82 us at 12.5 MHz, past the 50 us lock-time bound, so a loop that is acquiring is never cut short; 128 periods of DN (10 us at 12.5 MHz) take Vctrl from the rail to ground at the weakest pump current (13.6 uA into 22 pF is 5.3 us)"
 
 # Instance names of the two hand-instantiated PFD reset delay cells inside
-# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1). Everything else in the
+# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1), the port clock buffers
+# and the prescaler's hand-instantiated first stage (u_pre.u_pre_ff0/inv0)
+# with the buffer that clocks stage 1 (u_pre.u_pre_ckbuf0). Everything else in the
 # design reaches a port and cannot be pruned as unused. See spec.md
 # "## Architecture" for the module and instance naming.
-must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf]
+must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf, u_pre_ff0, u_pre_inv0, u_pre_ckbuf0]
 
 # Formal depths (P3 property-writer): prove depth covers the 16-cycle lock
 # history window; cover_depth reaches lock (16 ref cycles) and an N=5 clk_fb

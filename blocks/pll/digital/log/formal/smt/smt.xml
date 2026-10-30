@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-10-28T15:36:17" hostname="iiks2" package="smt" id="0" name="default" tests="16" errors="0" failures="2" time="0" skipped="15">
+<testsuite timestamp="2026-10-29T10:59:39" hostname="iiks2" package="smt" id="0" name="default" tests="16" errors="0" failures="2" time="0" skipped="15">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
@@ -9,46 +9,46 @@
 <testcase classname="default" name="build execution" time="0">
 <failure type="UNKNOWN" message="Task returned status UNKNOWN." />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.77" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.77" id="COVER_FB_ILLEGAL">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.7-174.77" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:174.7-174.77" id="COVER_FB_ILLEGAL">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.77" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.77" id="COVER_FB_N5">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.7-173.77" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:173.7-173.77" id="COVER_FB_N5">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37" id="COVER_LOCK">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:175.7-175.37" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:175.7-175.37" id="COVER_LOCK">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69" id="COVER_LOCK_DROP">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.7-176.69" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:176.7-176.69" id="COVER_LOCK_DROP">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:164.7-164.39" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:164.7-164.39" id="COVER_PFD_DN">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.39" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.39" id="COVER_PFD_DN">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.7-165.79" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.7-165.79" id="COVER_PFD_RESET">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.79" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.79" id="COVER_PFD_RESET">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39" id="COVER_PFD_UP">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.39" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.39" id="COVER_PFD_UP">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.7-167.75" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.7-167.75" id="COVER_PRE_PERIOD">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-172.75" time="0" type="COVER" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-172.75" id="COVER_PRE_PERIOD">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78" id="divider_ratio">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.9-146.78" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.9-146.78" id="divider_ratio">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84" id="lock_not_while_wide">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.84" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.84" id="lock_not_while_wide">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56" id="pfd_never_both_high">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-149.56" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-149.56" id="pfd_never_both_high">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.9-151.55" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.9-151.55" id="pfd_reset_on_both">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.9-156.55" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.9-156.55" id="pfd_reset_on_both">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78" id="prescaler_div8" tracefile="engine_0/trace_induct.vcd">
-<failure type="ASSERT" message="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78 failed. Trace file: engine_0/trace_induct.vcd" />
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78" id="prescaler_div8" tracefile="engine_0/trace_induct.vcd">
+<failure type="ASSERT" message="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78 failed. Trace file: engine_0/trace_induct.vcd" />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62" id="reset_forces_outputs">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-129.62" time="0" type="ASSERT" location="/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-129.62" id="reset_forces_outputs">
 <skipped />
 </testcase>
 <testcase classname="default" name="Property ASSERT dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic in ihsan_sa_pll_formal" time="0" type="ASSERT" location="" id="dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic">
@@ -57,105 +57,105 @@
 <testcase classname="default" name="Property ASSERT dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic in ihsan_sa_pll_formal" time="0" type="ASSERT" location="" id="dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic">
 <skipped />
 </testcase>
-<system-out>SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Removing directory '/work/blocks/pll/digital/log/formal/smt'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/work/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll_formal.sv'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/work/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll.v'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_ctrl_regs.v'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_divider.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_divider.v'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_lock_det.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_lock_det.v'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_pfd.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_pfd.v'.
-SBY 15:36:14 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_prescaler.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_prescaler.v'.
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0: smtbmc yices
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] base: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/src; yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] base: finished (returncode=0)
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] prep: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/model; yosys -ql design_prep.log design_prep.ys&quot;
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] prep: finished (returncode=0)
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] smt2: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/model; yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] smt2: finished (returncode=0)
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Solver: yices
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Solver: yices
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 20..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 19..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 18..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 17..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 16..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 15..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 14..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 13..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 12..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 11..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 10..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 9..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 8..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 7..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 6..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 5..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 4..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 3..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 2..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 1..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 0..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Temporal induction failed!
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Assert failed in ihsan_sa_pll_formal: prescaler_div8
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to constraints file: engine_0/trace_induct.smtc
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace_induct.yw
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Status: failed
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: finished (returncode=1)
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: Status returned by engine for induction: FAIL
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
-SBY 15:36:16 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Status: passed
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: finished (returncode=0)
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: Status returned by engine for basecase: pass
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) returned pass for basecase
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) returned FAIL for induction
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary: counterexample trace [induction]: /work/blocks/pll/digital/log/formal/smt/engine_0/trace_induct.vcd
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] summary:   failed assertion ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78
-SBY 15:36:17 [/work/blocks/pll/digital/log/formal/smt] DONE (UNKNOWN, rc=4)
+<system-out>SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Removing directory '/work/blocks/pll/digital/log/formal/smt'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/work/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll_formal.sv'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/work/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll.v'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_ctrl_regs.v'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_divider.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_divider.v'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_lock_det.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_lock_det.v'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_pfd.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_pfd.v'.
+SBY 10:59:31 [/work/blocks/pll/digital/log/formal/smt] Copy '/work/blocks/pll/digital/rtl/pll_prescaler.v' to '/work/blocks/pll/digital/log/formal/smt/src/pll_prescaler.v'.
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0: smtbmc yices
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] base: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] base: finished (returncode=0)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] prep: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] prep: finished (returncode=0)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] smt2: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] smt2: finished (returncode=0)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: starting process &quot;cd /work/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 18..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 17..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 15..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 14..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 13..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 12..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 11..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 10..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 9..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 8..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 7..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 6..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 5..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 4..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 3..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 2..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 1..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 0..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Temporal induction failed!
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Assert failed in ihsan_sa_pll_formal: prescaler_div8
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to constraints file: engine_0/trace_induct.smtc
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace_induct.yw
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Status: failed
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: finished (returncode=1)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.induction: Status returned by engine for induction: FAIL
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: finished (returncode=0)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:08 (8)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) returned pass for basecase
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) returned FAIL for induction
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary: counterexample trace [induction]: /work/blocks/pll/digital/log/formal/smt/engine_0/trace_induct.vcd
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] summary:   failed assertion ihsan_sa_pll_formal.prescaler_div8 at /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.9-139.78
+SBY 10:59:39 [/work/blocks/pll/digital/log/formal/smt] DONE (UNKNOWN, rc=4)
 </system-out>
 <system-err>
 </system-err>

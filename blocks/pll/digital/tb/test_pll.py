@@ -179,7 +179,9 @@ async def pfd_setup(dut, offsets):
     ref_rises, prime) - ref_rises excludes the priming edge at `prime`."""
     await start_vco(dut, n_sel=1)
     m = Monitor(dut.clk_fb)
+    t_give_up = now() + 4 * 8 * TV  # a few clk_fb periods: a stalled divider fails, not hangs
     while not m.rises():
+        assert now() < t_give_up, "clk_fb never rose (stalled prescaler or divider)"
         await Timer(1, unit="ns")
     fb0 = m.rises()[0] + 2 * REF_T
     fb = [fb0 + k * REF_T for k in range(len(offsets))]
@@ -371,7 +373,10 @@ async def test_async_reset_outputs(dut):
     await wait_until(fb[-1] - 3)
     dut.obs_sel.value = 0
     dut.rst_n.value = 0
-    await Timer(5, unit="ns")  # past the reset-to-output delay
+    # past the reset-to-output delay: at gate level rst_n reaches the PFD
+    # flops through the resizer's buffers and pfd_up/pfd_dn through the
+    # recovery override, several ns at the nominal corner
+    await Timer(20, unit="ns")
     for s in ("pfd_up", "pfd_dn", "lock", "clk_fb", "obs_out", "pll_en", "cp_trim0", "cp_trim1"):
         assert int(getattr(dut, s).value) == 0, f"{s}={getattr(dut, s).value} during rst_n low"
 
@@ -422,3 +427,103 @@ async def test_no_vctrl_bias_ua(dut):
         if nm in ("vctrl", "bias_ref", "ua") or nm.startswith("ua["):
             bad.append(h._path)
     assert not bad, f"digital side carries forbidden analog names: {bad}"
+
+
+# --- runaway recovery ---------------------------------------------------
+W_RECOVER = 1024  # reference cycles unlocked (pll_en high) before recovery
+M_RECOVER = 128   # reference cycles of forced DN
+
+
+async def recover_run(dut, offsets, en_events=()):
+    """pfd_setup's reference/feedback pattern with pll_en_in raised before
+    the priming edge, so pll_en is 1 from edge E[0] (E = [prime] + the
+    measured rises). en_events: (k, value) sets pll_en_in mid-cycle after
+    E[k]. Returns (E, recoveries, mon_up, mon_lock); a recovery is a
+    pfd_dn high interval longer than four reference periods, as (start, width)."""
+    fb, rises, prime = await pfd_setup(dut, offsets)
+    dut.pll_en_in.value = 1
+    E = [prime] + rises
+    md, mu, ml = Monitor(dut.pfd_dn), Monitor(dut.pfd_up), Monitor(dut.lock)
+
+    async def drive_en():
+        for k, v in en_events:
+            await wait_until(E[k] + REF_T / 2)
+            dut.pll_en_in.value = v
+
+    cocotb.start_soon(drive_en())
+    await wait_until(E[-1] + REF_T / 2)
+    # longer than any PFD pulse: the DN that pfd_setup leaves pending until
+    # its priming edge lasts about one reference period
+    recs = [(s, w) for s, w in md.pulses() if w > 4 * REF_T]
+    dut.rst_n.value = 0
+    await Timer(20, unit="ns")
+    return E, recs, mu, ml
+
+
+def edge_index(E, t):
+    """Index of the reference edge a port change at t follows (clk-to-q and
+    gate delay are under GL_SKEW)."""
+    k = min(range(len(E)), key=lambda i: abs(E[i] - t))
+    assert abs(E[k] - t) <= GL_SKEW, f"change at {t} ns is on no reference edge"
+    return k
+
+
+# req: REQ-RECOVER REQ-RECOVER-OUT
+@cocotb.test()
+async def test_recover_unlocked(dut):
+    """Feedback never close enough to lock (60 ns UP pulses every cycle):
+    recovery starts on edge E[W], holds pfd_dn high and pfd_up low for
+    exactly M reference periods, then the count restarts from 0."""
+    n = 2 * W_RECOVER + 2 * M_RECOVER + 30
+    E, recs, mu, _ = await recover_run(dut, [-60.0] * n)
+    assert len(recs) == 2, f"expected two recoveries in {n} cycles, got {recs}"
+    first = W_RECOVER
+    second = W_RECOVER + M_RECOVER + W_RECOVER
+    for (s, w), k in zip(recs, (first, second)):
+        assert edge_index(E, s) == k, (
+            f"recovery started on edge {edge_index(E, s)}, expected {k}")
+        assert abs(w - M_RECOVER * REF_T) <= GL_TOL, (
+            f"recovery lasted {w} ns, expected {M_RECOVER} reference periods")
+        assert mu.high_time(s + GL_SKEW, s + w) == 0, (
+            "pfd_up pulsed during recovery")
+    # outside recovery the PFD is unchanged: wide UP pulses every cycle
+    before = mu.pulses(E[first - 10], E[first - 1])
+    assert len(before) >= 8 and all(abs(w - 60.0) <= GL_SKEW for _, w in before), (
+        f"pfd_up before recovery: {before[:3]}")
+    after = mu.pulses(E[first + M_RECOVER] + GL_SKEW, E[first + M_RECOVER + 10])
+    assert len(after) >= 8, "pfd_up did not pulse again after recovery ended"
+
+
+# req: REQ-RECOVER
+@cocotb.test()
+async def test_recover_lock_clears(dut):
+    """Lock at any reference edge clears the count: a short locked stretch
+    before W unlocked cycles postpones recovery to W edges after lock falls."""
+    offs = [-60.0] * 1000 + [-10.0] * 24 + [-60.0] * (W_RECOVER + M_RECOVER + 40)
+    E, recs, _, ml = await recover_run(dut, offs)
+    falls = [t for t, v in ml.ev[1:] if v == 0]
+    assert ml.rises() and falls, "lock never rose and fell"
+    j = edge_index(E, falls[-1])
+    assert len(recs) == 1, f"expected one recovery, got {recs}"
+    k = edge_index(E, recs[0][0])
+    assert k == j + W_RECOVER, (
+        f"recovery on edge {k}, expected {j + W_RECOVER} (W after lock fell on {j})")
+
+
+# req: REQ-RECOVER
+@cocotb.test()
+async def test_recover_pll_en(dut):
+    """pll_en low clears the count and ends a recovery in progress; the
+    count restarts from the edge pll_en is seen high again."""
+    back = 611                       # pll_en is 1 again from E[611]
+    start = back + W_RECOVER
+    stop = start + 20                # pll_en low from E[start + 21]
+    offs = [-60.0] * (start + 60)
+    E, recs, _, _ = await recover_run(
+        dut, offs, en_events=[(600, 0), (back - 1, 1), (stop, 0)])
+    assert len(recs) == 1, f"expected one recovery, got {recs}"
+    s, w = recs[0]
+    assert edge_index(E, s) == start, (
+        f"recovery on edge {edge_index(E, s)}, expected {start}")
+    assert edge_index(E, s + w) == stop + 2, (
+        f"recovery ended on edge {edge_index(E, s + w)}, expected {stop + 2}")

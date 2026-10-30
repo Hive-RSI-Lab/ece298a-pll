@@ -203,6 +203,36 @@ def bench_strength_fresh(ws: Path) -> dict:
     return {"status": "pass"}
 
 
+def pex_pvt(ws: Path, logs: Path) -> dict:
+    """The layout chain (drc, lvs, pex_sim) and then, once drc and lvs pass,
+    layout/pex_pvt.py: the post-layout bench at every corner of the spec's
+    sweep, on the netlist pex_sim just extracted (or its own extraction when
+    pex_sim stopped before it wrote one). pex_pvt's facts.corners are the
+    corners that passed. pex_sim's own pass or fail at typical doesn't gate
+    the sweep: a bound missed at one corner says nothing of the others."""
+    got = chain(ws, "ade", ["drc", "lvs", "pex_sim"], logs, "layout")
+    if any(got[g].get("status") != "pass" for g in ("drc", "lvs")):
+        return got | {"pex_pvt": {"status": "not run", "why": "drc or lvs did not pass"}}
+    out, log = logs / "layout-pex_pvt.json", logs / "layout-pex_pvt.log"
+    left = DEADLINE - time.monotonic()
+    cmd = [EDA, "python", str(ws / "layout" / "pex_pvt.py"), "--workspace", str(ws),
+           "--budget-s", str(max(left - 60, 1)), "--out", str(out)]
+    extracted = ws / ((got["pex_sim"].get("facts") or {}).get("extracted") or "-")
+    if got["pex_sim"].get("status") in ("pass", "fail") and extracted.is_file():
+        cmd += ["--extracted", str(extracted)]
+    try:
+        with log.open("w") as f:
+            subprocess.run(cmd, cwd=ws, stdout=f, stderr=subprocess.STDOUT,
+                           stdin=subprocess.DEVNULL, timeout=max(left, 1))
+        got["pex_pvt"] = json.loads(out.read_text())
+    except subprocess.TimeoutExpired:
+        got["pex_pvt"] = {"status": "timeout", "why": "the score's time ran out"}
+    except (OSError, ValueError):
+        tail = log.read_text(errors="replace").strip().splitlines()[-1:] or [""]
+        got["pex_pvt"] = {"status": "error", "why": tail[0][:200]}
+    return got
+
+
 def vco_period_ns(sdc: Path) -> float | None:
     m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", sdc.read_text())
     return float(m.group(1)) if m else None
@@ -241,7 +271,7 @@ def main() -> int:
         # sim_pvt, the harden and the co-simulation are the slow ones: side by side.
         with ThreadPoolExecutor(4) as pool:
             f_sim = pool.submit(analog, sim / "analog", corners, logs)
-            f_lay = pool.submit(chain, lay / "analog", "ade", ["drc", "lvs", "pex_sim"], logs, "layout")
+            f_lay = pool.submit(pex_pvt, lay / "analog", logs)
             f_dig = pool.submit(chain, dig / "digital", "vde",
                                 ["spec_lint", "lint", "synth", "harden", "timing"], logs, "digital")
             f_top = pool.submit(layers, top, logs)
@@ -272,6 +302,8 @@ def main() -> int:
         line(f"analog sim_pvt corners passing ({n_pvt}/{len(corners)})", n_pvt / len(corners),
              "; ".join(bad_pvt))
         passed("analog bench_strength", a["bench_strength"])
+
+        # --- Close digital issue 8: timing with vco_out at ~2.7 ns --------
         t = d["timing"]
         period = vco_period_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
         if period is None or not VCO_PERIOD_NS[0] <= period <= VCO_PERIOD_NS[1]:
@@ -310,12 +342,13 @@ def main() -> int:
         # --- Lay out the analog half and match it after extraction -------
         passed("analog layout drc", l["drc"])
         passed("analog layout lvs", l["lvs"])
-        p = l["pex_sim"]
-        # pex_sim runs at typical unless its facts name the corners it ran.
-        done = ((p.get("facts") or {}).get("corners") or ["tt_27c"]) if p.get("status") == "pass" else []
+        pv = l["pex_pvt"]
+        # pex_pvt runs the post-layout bench at every corner of the spec's
+        # sweep (pex_sim, the engine's gate, at typical only)
+        done = set((pv.get("facts") or {}).get("corners") or [])
         n = len([c for c in corners if c in done])
         line(f"post-layout benches pass at every scored corner ({n}/{len(corners)})",
-             n / len(corners), "" if p.get("status") == "pass" else why(p))
+             n / len(corners), why(pv))
     finally:
         if os.environ.get("PLL_SCORE_KEEP"):
             print(f"score: scratch kept at {scratch}", file=sys.stderr)

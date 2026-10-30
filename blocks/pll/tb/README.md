@@ -89,3 +89,48 @@ local slope).
   `calibrate_analog.py --corner`), but only the nominal point is gated.
 - Debug knobs, which are not used by the gate: `PLL_COSIM_DURATION_NS`,
   `PLL_COSIM_ANALOG_VCD=<file>` with `PLL_COSIM_DEBUG_NODES=x1.xpll.vref,...`.
+
+## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
+
+`prescaler_margin.py` is not a layer and not a gate. It asks how fast the
+first /2 prescaler stage has to be at the corner where the VCO is fastest
+against slow digital: ss_pff (ss transistors, fast passives, 125 C, 2.97 V).
+It steps a behavioural loop built from `pll_analog_cal_ss_pff.json`, which
+`calibrate_analog.py --corner ss_pff` measured on the real netlist. The
+model's first stage drops a VCO edge whenever its toggle loop (t_lim) has
+not finished since the last toggle. Output: `../reports/prescaler_margin.json`.
+
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/prescaler_margin.py [--t-lim-ns 3.5]   # ~40 s
+
+Results:
+- **Acquisition overshoots.** From vctrl = 0 the VCO peaks at 254 / 280 /
+  243 MHz on the way to the 200 MHz points (6.25 MHz x 4, 5 MHz x 5,
+  12.5 MHz x 2). The ideal model overshoots more than the transistor cell
+  does at tt (145 vs 129 MHz peak for 100 MHz), so these peaks err high.
+- **The old prescaler locked up.** The hardened dffrnq_4 loop handled about
+  238 MHz at ss (t_lim 4.2 ns). At that speed all three 200 MHz points
+  overshoot, the first stage drops edges, clk_fb looks slow, and vctrl runs
+  to the rail (310 MHz) and stays there. A loop of 3.65 ns or faster locks at
+  every point; at 3.68 ns the 5 MHz x 5 point (peak about 283 MHz) no
+  longer does. The new hand-placed dffrnq_2 + inv_1 stage is 3.65 ns at ss
+  after routing (STA, without the 0.25 ns uncertainty), so that point has no
+  margin before layout. REQ-TIM-VCO holds stage 0 to 3.65 ns at ss.
+- **A start at the rail never recovers by itself.** Only a stage that keeps
+  up with 310 MHz (t_lim under 3.2 ns, which no library flop reaches at ss)
+  would get out. Otherwise the 200 MHz points sit at 310 MHz for good, and
+  nothing in the analog cell discharges vctrl when pll_en goes low. With the
+  digital's recovery (REQ-RECOVER: 1024 unlocked reference cycles, then 128
+  cycles of DN), 6.25 MHz x 4 and 12.5 MHz x 2 lock after one recovery (189
+  and 95 us) with a 3.65 ns stage. 5 MHz x 5 overshoots past the stage again
+  after the recovery and keeps cycling: it is the point with no margin.
+- **False lock from the rail.** 6.25 MHz x 3 started at the rail locks at
+  300 MHz, not 150. A stage that drops every other edge divides by 4, and
+  that fits the loop exactly, so lock rises and recovery never fires. The
+  model's stage drops edges cleanly; a real overclocked flop is messier.
+  Either way the cure is a VCO that cannot outrun the stage.
+- **Post-layout.** These numbers are the pre-layout netlist's. The
+  post-layout corner sweep (task 261029-062920, not merged at the time of
+  writing) puts the extracted VCO at ss_pff at 240 MHz with vctrl at the
+  rail, and 266 MHz at its fastest corner. Both are below the stage's
+  274 MHz, and if they hold, none of the cases above can happen on silicon.
+  Rerun this script with a post-layout calibration once that lands.

@@ -1,0 +1,267 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `equiv.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll'. Setting top module to ihsan_sa_pll.
+
+2.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+
+2.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+Removed 0 unused modules.
+
+3. Executing FLATTEN pass (flatten design).
+Deleting now unused module pll_prescaler.
+Deleting now unused module pll_pfd.
+Deleting now unused module pll_lock_det.
+Deleting now unused module pll_divider.
+Deleting now unused module pll_ctrl_regs.
+<suppressed ~5 debug messages>
+Renaming module ihsan_sa_pll to ref.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \ref
+
+4.2. Analyzing design hierarchy..
+Top module:  \ref
+Removed 0 unused modules.
+
+5. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6. Executing JSON backend.
+
+7. Executing RTLIL backend.
+Output filename: ref.il
+
+8. Executing ASYNC2SYNC pass.
+Replacing ref.$flatten\u_ctrl.$procdff$134 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.pll_en_in, Q=\u_ctrl.pll_en
+Replacing ref.$flatten\u_ctrl.$procdff$139 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [0], Q=\u_ctrl.cp_trim0
+Replacing ref.$flatten\u_ctrl.$procdff$144 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [1], Q=\u_ctrl.cp_trim1
+Replacing ref.$flatten\u_div.$procdff$124 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y, Q=\u_div.fb_en
+Replacing ref.$flatten\u_div.$procdff$129 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$procmux$67_Y, Q=\u_div.div_cnt
+Replacing ref.$flatten\u_lock.$procdff$104 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$58_Y, Q=\u_lock.wd_cnt
+Replacing ref.$flatten\u_lock.$procdff$109 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28_Y, Q=\u_lock.lock
+Replacing ref.$flatten\u_lock.$procdff$114 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y, Q=\u_lock.lock_cnt
+Replacing ref.$flatten\u_lock.$procdff$119 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_Y, Q=\u_lock.wide_q
+Replacing ref.$flatten\u_lock.$procdff$99 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$64_Y, Q=\u_lock.recover
+Replacing ref.$flatten\u_pfd.$procdff$91 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$90, D=1'1, Q=\u_pfd.pfd_fb_q
+Replacing ref.$flatten\u_pfd.$procdff$94 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$93, D=1'1, Q=\u_pfd.pfd_ref_q
+Replacing ref.$flatten\u_pre.$procdff$73 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_Y, Q=\u_pre.q3
+Replacing ref.$flatten\u_pre.$procdff$78 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_Y, Q=\u_pre.pre_q2
+Replacing ref.$flatten\u_pre.$procdff$83 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_Y, Q=\u_pre.pre_q1
+Replacing ref.$flatten\u_pre.$procdff$88 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_Y, Q=\u_pre.pre_q0
+
+9. Executing RTLIL frontend.
+Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll'. Setting top module to ihsan_sa_pll.
+
+10.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+
+10.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll
+Used module:     \pll_ctrl_regs
+Used module:     \pll_lock_det
+Used module:     \pll_pfd
+Used module:     \pll_divider
+Used module:     \pll_prescaler
+Removed 0 unused modules.
+
+11. Executing MUTATE pass.
+Add output constant 1 at pll_ctrl_regs.$auto$proc_dff.cc:220:proc_dff$130.Y[0].
+
+12. Executing FLATTEN pass (flatten design).
+Deleting now unused module pll_prescaler.
+Deleting now unused module pll_pfd.
+Deleting now unused module pll_lock_det.
+Deleting now unused module pll_divider.
+Deleting now unused module pll_ctrl_regs.
+<suppressed ~5 debug messages>
+Renaming module ihsan_sa_pll to uut.
+
+13. Executing HIERARCHY pass (managing design hierarchy).
+
+13.1. Analyzing design hierarchy..
+Top module:  \uut
+
+13.2. Analyzing design hierarchy..
+Top module:  \uut
+Removed 0 unused modules.
+
+14. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+15. Executing JSON backend.
+
+16. Executing RTLIL backend.
+Output filename: uut.il
+
+17. Executing ASYNC2SYNC pass.
+Replacing uut.$flatten\u_ctrl.$procdff$134 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.pll_en_in, Q=\u_ctrl.pll_en
+Replacing uut.$flatten\u_ctrl.$procdff$139 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [0], Q=\u_ctrl.cp_trim0
+Replacing uut.$flatten\u_ctrl.$procdff$144 ($adff): ARST=\u_ctrl.rst_n, D=\u_ctrl.cp_trim_in [1], Q=\u_ctrl.cp_trim1
+Replacing uut.$flatten\u_div.$procdff$124 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:20$12_Y, Q=\u_div.fb_en
+Replacing uut.$flatten\u_div.$procdff$129 ($adff): ARST=\u_div.rst_n, D=$flatten\u_div.$procmux$67_Y, Q=\u_div.div_cnt
+Replacing uut.$flatten\u_lock.$procdff$104 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$58_Y, Q=\u_lock.wd_cnt
+Replacing uut.$flatten\u_lock.$procdff$109 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:47$28_Y, Q=\u_lock.lock
+Replacing uut.$flatten\u_lock.$procdff$114 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:34$22_Y, Q=\u_lock.lock_cnt
+Replacing uut.$flatten\u_lock.$procdff$119 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$or$/work/blocks/pll/digital/rtl/pll_lock_det.v:39$25_Y, Q=\u_lock.wide_q
+Replacing uut.$flatten\u_lock.$procdff$99 ($adff): ARST=\u_lock.rst_n, D=$flatten\u_lock.$procmux$64_Y, Q=\u_lock.recover
+Replacing uut.$flatten\u_pfd.$procdff$91 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$90, D=1'1, Q=\u_pfd.pfd_fb_q
+Replacing uut.$flatten\u_pfd.$procdff$94 ($adff): ARST=$flatten\u_pfd.$auto$rtlil.cc:3255:ReduceOr$93, D=1'1, Q=\u_pfd.pfd_ref_q
+Replacing uut.$flatten\u_pre.$procdff$73 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:54$53_Y, Q=\u_pre.q3
+Replacing uut.$flatten\u_pre.$procdff$78 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:50$50_Y, Q=\u_pre.pre_q2
+Replacing uut.$flatten\u_pre.$procdff$83 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:46$47_Y, Q=\u_pre.pre_q1
+Replacing uut.$flatten\u_pre.$procdff$88 ($adff): ARST=\u_pre.rst_n, D=$flatten\u_pre.$not$/work/blocks/pll/digital/rtl/pll_prescaler.v:41$44_Y, Q=\u_pre.pre_q0
+
+18. Executing MITER pass (creating miter circuit).
+Creating miter cell "miter" with gold cell "ref" and gate cell "uut".
+
+18.1. Executing FLATTEN pass (flatten design).
+<suppressed ~2 debug messages>
+
+18.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module miter.
+Couldn't topologically sort cells, optimizing module miter may take a longer time.
+Removed 48 unused cells and 143 unused wires.
+
+19. Executing HIERARCHY pass (managing design hierarchy).
+
+19.1. Analyzing design hierarchy..
+Top module:  \miter
+
+19.2. Analyzing design hierarchy..
+Top module:  \miter
+Removing unused module `\ref'.
+Removing unused module `\uut'.
+Removed 2 unused modules.
+Module miter directly or indirectly contains formal properties -> setting "keep" attribute.
+
+20. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Final init constraint equation: { $flatten\gold.$auto$async2sync.cc:253:execute$180 $flatten\gold.$auto$async2sync.cc:253:execute$178 $flatten\gold.$auto$async2sync.cc:253:execute$176 $flatten\gold.$auto$async2sync.cc:253:execute$174 $flatten\gold.$auto$async2sync.cc:253:execute$172 $flatten\gold.$auto$async2sync.cc:253:execute$170 $flatten\gold.$auto$async2sync.cc:253:execute$168 $flatten\gold.$auto$async2sync.cc:253:execute$166 $flatten\gold.$auto$async2sync.cc:253:execute$164 $flatten\gold.$auto$async2sync.cc:253:execute$162 $flatten\gold.$auto$async2sync.cc:253:execute$160 $flatten\gold.$auto$async2sync.cc:253:execute$158 $flatten\gold.$auto$async2sync.cc:253:execute$156 $flatten\gold.$auto$async2sync.cc:253:execute$154 $flatten\gold.$auto$async2sync.cc:253:execute$152 $flatten\gold.$auto$async2sync.cc:253:execute$150 $flatten\gate.$auto$async2sync.cc:253:execute$218 $flatten\gate.$auto$async2sync.cc:253:execute$216 $flatten\gate.$auto$async2sync.cc:253:execute$214 $flatten\gate.$auto$async2sync.cc:253:execute$212 $flatten\gate.$auto$async2sync.cc:253:execute$210 $flatten\gate.$auto$async2sync.cc:253:execute$208 $flatten\gate.$auto$async2sync.cc:253:execute$206 $flatten\gate.$auto$async2sync.cc:253:execute$204 $flatten\gate.$auto$async2sync.cc:253:execute$202 $flatten\gate.$auto$async2sync.cc:253:execute$200 $flatten\gate.$auto$async2sync.cc:253:execute$198 $flatten\gate.$auto$async2sync.cc:253:execute$196 $flatten\gate.$auto$async2sync.cc:253:execute$194 $flatten\gate.$auto$async2sync.cc:253:execute$192 $flatten\gate.$auto$async2sync.cc:253:execute$190 $flatten\gate.$auto$async2sync.cc:253:execute$188 } = 62'00000000000000000000000000000000000000000000000000000000000000
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 3:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 4:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 5:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 6:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 7:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Setting up time step 8:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+Solving problem with 16354 variables and 44074 clauses..
+SAT proof finished - no model found: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+CHECK_MUTATE_BASE_CASE_HELD
+
+21. Executing SAT pass (solving SAT problems in the circuit).
+Using SAT solver `minisat`.
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+** Trying induction with length 1 **
+
+Setting up time step 1:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Final init constraint equation: { $flatten\gold.$auto$async2sync.cc:253:execute$180 $flatten\gold.$auto$async2sync.cc:253:execute$178 $flatten\gold.$auto$async2sync.cc:253:execute$176 $flatten\gold.$auto$async2sync.cc:253:execute$174 $flatten\gold.$auto$async2sync.cc:253:execute$172 $flatten\gold.$auto$async2sync.cc:253:execute$170 $flatten\gold.$auto$async2sync.cc:253:execute$168 $flatten\gold.$auto$async2sync.cc:253:execute$166 $flatten\gold.$auto$async2sync.cc:253:execute$164 $flatten\gold.$auto$async2sync.cc:253:execute$162 $flatten\gold.$auto$async2sync.cc:253:execute$160 $flatten\gold.$auto$async2sync.cc:253:execute$158 $flatten\gold.$auto$async2sync.cc:253:execute$156 $flatten\gold.$auto$async2sync.cc:253:execute$154 $flatten\gold.$auto$async2sync.cc:253:execute$152 $flatten\gold.$auto$async2sync.cc:253:execute$150 $flatten\gate.$auto$async2sync.cc:253:execute$218 $flatten\gate.$auto$async2sync.cc:253:execute$216 $flatten\gate.$auto$async2sync.cc:253:execute$214 $flatten\gate.$auto$async2sync.cc:253:execute$212 $flatten\gate.$auto$async2sync.cc:253:execute$210 $flatten\gate.$auto$async2sync.cc:253:execute$208 $flatten\gate.$auto$async2sync.cc:253:execute$206 $flatten\gate.$auto$async2sync.cc:253:execute$204 $flatten\gate.$auto$async2sync.cc:253:execute$202 $flatten\gate.$auto$async2sync.cc:253:execute$200 $flatten\gate.$auto$async2sync.cc:253:execute$198 $flatten\gate.$auto$async2sync.cc:253:execute$196 $flatten\gate.$auto$async2sync.cc:253:execute$194 $flatten\gate.$auto$async2sync.cc:253:execute$192 $flatten\gate.$auto$async2sync.cc:253:execute$190 $flatten\gate.$auto$async2sync.cc:253:execute$188 } = 62'00000000000000000000000000000000000000000000000000000000000000
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+[base case 1] Solving problem with 1891 variables and 5053 clauses..
+Base case for induction length 1 proven.
+
+Setting up time step 2:
+Final constraint equation: { } = { }
+Imported 159 cells to SAT database.
+Import proof for assert: $auto$miter.cc:268:create_miter_equiv$237 when 1'1.
+
+[induction step 1] Solving problem with 3833 variables and 10193 clauses..
+Induction step proven: SUCCESS!
+
+                  /$$$$$$      /$$$$$$$$     /$$$$$$$    
+                 /$$__  $$    | $$_____/    | $$__  $$   
+                | $$  \ $$    | $$          | $$  \ $$   
+                | $$  | $$    | $$$$$       | $$  | $$   
+                | $$  | $$    | $$__/       | $$  | $$   
+                | $$/$$ $$    | $$          | $$  | $$   
+                |  $$$$$$/ /$$| $$$$$$$$ /$$| $$$$$$$//$$
+                 \____ $$$|__/|________/|__/|_______/|__/
+                       \__/                              
+
+End of script. Logfile hash: 04169136bd, time: 0.08s, user: 0.07s, system: 0.02s, MEM: 41.85 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 91% 2x sat (0 sec), 1% 1x clean (0 sec), ...

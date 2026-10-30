@@ -12,7 +12,7 @@ PERL = perl
 # Python3 executable (from $PYTHON3, defaults to 'python3' if not set)
 PYTHON3 = python3
 # Path to Verilator kit (from $VERILATOR_ROOT)
-VERILATOR_ROOT = /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/tools/verilator/share/verilator
+VERILATOR_ROOT = /opt/eda-toolchain/iic-osic-tools-2026.09/foss/tools/verilator/share/verilator
 # SystemC include directory with systemc.h (from $SYSTEMC_INCLUDE)
 SYSTEMC_INCLUDE ?=
 # SystemC library directory with libsystemc.a (from $SYSTEMC_LIBDIR)
@@ -40,7 +40,7 @@ VM_USER_CFLAGS = \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
-  -Wl,-rpath,/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/libs -L/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/libs -lcocotbvpi_verilator \
+  -Wl,-rpath,/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/libs -L/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/libs -lcocotbvpi_verilator \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \
@@ -49,7 +49,7 @@ VM_USER_CLASSES = \
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
   . \
-  ../../../../../../../../toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/share/lib/verilator \
+  ../../../../../../opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/share/lib/verilator \
 
 ### Default rules...
 # Include list of all generated classes
@@ -64,7 +64,7 @@ VPATH += $(VM_USER_DIR)
 LDFLAGS += $(CFG_LDFLAGS_DYNAMIC)
 LDLIBS += $(CFG_LDLIBS_DYNAMIC)
 
-verilator.o: /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/share/lib/verilator/verilator.cpp 
+verilator.o: /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/share/lib/verilator/verilator.cpp 
 	$(OBJCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(OPT_FAST)  -c -o $@ $<
 
 ### Link rules... (from --exe)
