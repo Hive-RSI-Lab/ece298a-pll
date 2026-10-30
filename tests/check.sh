@@ -20,7 +20,7 @@
 #      spec files are well formed (no PDK or simulator needed).
 #   Then docs/review/stages.py --check says whether the review page's stage
 #   table matches the recorded gate reports. A stale page is a note, not a
-#   failure (the score counts it); a crash in the script fails the check.
+#   failure; a crash in the script fails the check.
 # The SPICE corners, formal proof, hardening and the Tiny Tapeout workflows
 # (gds, docs, test, fpga) still run on their own.
 set -euo pipefail

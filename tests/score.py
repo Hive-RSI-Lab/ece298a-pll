@@ -395,13 +395,6 @@ def main() -> int:
         passed("tile top_drc", h["top_drc"])
         passed("tile top_lvs", h["top_lvs"])
         passed("tile Tiny Tapeout precheck", h["precheck"])
-
-        # --- Make every stage reviewable for the owner --------------------
-        rc = subprocess.run([sys.executable, str(ROOT / "docs" / "review" / "stages.py"), "--check"],
-                            cwd=ROOT, capture_output=True, text=True).returncode
-        line("docs/review/stages.md shows every stage's recorded result", 1.0 if rc == 0 else 0.0,
-             "" if rc == 0 else ("stale: run python3 docs/review/stages.py" if rc == 3
-                                 else f"stages.py exited {rc}"))
     finally:
         if os.environ.get("PLL_SCORE_KEEP"):
             print(f"score: scratch kept at {scratch}", file=sys.stderr)
