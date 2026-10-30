@@ -21,18 +21,22 @@ proc pll_driver_pin {aliases} {
 # fastest the extracted VCO runs on that process (vctrl at the rail, any
 # temperature, supply or resistor skew: analog/reports/recorded/pex_pvt.json
 # vco_f_vdd_mhz), plus margin. The VCO and these flops share a die, so an
-# ss STA corner meets an ss VCO. Post-layout ceilings: ss 246.8 MHz (ss_pff),
-# tt 269.4 (tt_pff), ff 274.2 (ff_m40c_vm10).
-#   ss 4.0 ns (250 MHz): with the 0.25 ns clock uncertainty the toggle loops
-#      must close in 3.75 ns, 267 MHz, 8% above the ss ceiling. ss_125C_3v00
-#      is also the slowest ss flop against the ss VCO's fastest corner.
-#   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 35% above
-#      their post-layout ceilings, and they meet it.
+# ss STA corner meets an ss VCO. Post-layout ceilings: ss 262.3 MHz (ss_pff),
+# tt 293.1 (tt_pff), ff 302.9 (ff_m40c_vm10), read from the settled ring
+# (2026-10-30; the 10..45 ns window before read 246.8/269.4/274.2).
+#   ss 3.8 ns (263 MHz): just over the ss ceiling. ss_pff (ss, 125 C, 3.0 V,
+#      fast resistor) is the corner ss_125C_3v00 times, its slowest flops
+#      against its fastest VCO. With the 0.25 ns clock uncertainty the
+#      toggle loops must close in 3.55 ns (282 MHz), more than the first
+#      stage's ~3.65 ns routed (274 MHz), which is still 4% above the ceiling
+#      itself: the ss margin is the uncertainty's, not the VCO's.
+#   tt, ff 2.7 ns (370 MHz, the analog spec's vco_fmax ceiling): 22-26%
+#      above their post-layout ceilings, and they meet it.
 # Each STA corner links one process's liberty, so the period follows the
 # liberty loaded; with several loaded (or none recognised) the tightest wins.
 # tests/score.py reads this table and checks it against the post-layout
 # ceilings it measures.
-set pll_vco_period_ns {ss 4.0 tt 2.7 ff 2.7}
+set pll_vco_period_ns {ss 3.8 tt 2.7 ff 2.7}
 proc pll_vco_period {} {
     global pll_vco_period_ns
     set per {}

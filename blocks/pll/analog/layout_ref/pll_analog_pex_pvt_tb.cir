@@ -12,6 +12,16 @@
 *    vctrl at vdd/2 (every corner).
 *  - vco_kvco_mhz_per_v = (f(vdd-0.3) - f(0.3)) / (vdd-0.6) (every corner).
 *  - vco_fmax_tt_mhz = f(vdd-0.3) (tt_27c only, as in the spec).
+*  - ol_pm_pn16_nopad_pvt_deg: the loop's phase margin at P*N = 16, no
+*    pad (every corner), pll_analog_ol_tb.cir's definition on the extracted
+*    netlist: PM = 90 + arg Z(fc), |H(fc)| = Icp Kvco |Z| / (2 pi fc 16) = 1,
+*    with Icp = the mean of the two pump currents above, Kvco = the mean
+*    slope above (the running ring's, see START-UP KICK) and Z = v(vctrl)
+*    for a 1 A AC current into vctrl, both pump inputs low, vctrl's DC
+*    point (vdd/2) set through lfeed (1 nH in the transients, 1 GH in the
+*    ac: open at 1 kHz and up). Added 2026-10-30: Kvco's floor stands in
+*    for the loop's stability, and at ff_pss the post-layout mean slope is
+*    under it while this margin is not (spec.md, revision 2026-10-30).
 * Printed and not bounded post-layout (the spec has no post-layout bound for
 * them): vco_f_hi_mhz = f(vdd-0.3) at every corner, vco_f_lo_mhz = f(0.3)
 * and vco_f_vdd_mhz = f at vctrl = vdd, the ceiling the pre-layout
@@ -43,7 +53,13 @@
 * ss_m40c_vm10, start-up never released, Icp 168 uA, that an op could land
 * on; MN_ST at l = 4 um removed it, see the netlist's start-up note.)
 * Frequency is f = (n-1)/(t(rise n) - t(rise 1)) over vdd/2 crossings after
-* the settle time; a stalled ring (< 2 rises) prints f = 0, and then Kvco
+* the settle time. SETTLE: at the top of the range and at vctrl = vdd that
+* is 100 ns, over up to 30 periods to 250 ns. Until 2026-10-30 it was 10 ns
+* over 8 periods to 45 ns, while the bias, which starts from the op with
+* the ring on its balance point, still settles to the running ring's
+* currents: 10..45 ns read 4-8 % under the 100..250 ns value (tt_27c 212 vs
+* 218 MHz, ff_pss 118 vs 127), and the 3 % wobble around it is the
+* ring's ripple on the bias, which the longer average takes out; a stalled ring (< 2 rises) prints f = 0, and then Kvco
 * prints 0 too (a slope between a stalled end and a live one is not a
 * Kvco), so it fails its bound instead of passing on fhi alone. The slow
 * end runs to 1 us (pex_tb: 650 ns) so the slowest pre-layout corner
@@ -70,7 +86,9 @@ vup      pfd_up   0 dc 0 pulse(0 {vddp} 10n 1n 1n 300n 1)
 vdn      pfd_dn   0 dc 0 pulse(0 {vddp} 320n 1n 1n 300n 1)
 vt0      cp_trim0 0 dc 0
 vt1      cp_trim1 0 dc 0
-vvc      vctrl    vr dc {vddp/2}
+vvc      vfd      vr dc {vddp/2}
+lfeed    vfd      vctrl 1n
+iac      0        vctrl dc 0 ac 1
 vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
 cload    vco_out  0 15f
 xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
@@ -105,9 +123,9 @@ foreach pt 0 1 2
   if $pt eq 0
     alter vvc dc = $&vhi
     set tsx = "20p"
-    set tex = "45n"
-    set tdx = "10n"
-    set nmx = "9"
+    set tex = "250n"
+    set tdx = "100n"
+    set nmx = "31"
   end
   if $pt eq 1
     alter vvc dc = $&vhi
@@ -121,9 +139,9 @@ foreach pt 0 1 2
     alter @vramp[pulse] = [ 0 0 20n 100n 100n 1 1 ]
     alter vvc dc = $&vddp
     set tsx = "20p"
-    set tex = "45n"
-    set tdx = "10n"
-    set nmx = "9"
+    set tex = "250n"
+    set tdx = "100n"
+    set nmx = "31"
   end
   tran $tsx $tex 0 $tsx
   set tp = $curplot
@@ -161,6 +179,30 @@ let kv = (fhi - flo)/(vhi - 0.3)/1e6
 if (fhi eq 0) or (flo eq 0)
   let kv = 0
 end
+* --- loop phase margin, P*N = 16, no pad (see the header); Kvco <= 0 or
+* |H| never crossing 1 prints nothing, a missing measure
+set pmok = "0"
+if kv gt 0
+  set kvh = "$&kv"
+  alter @vramp[pulse] = [ 0 0 20n 100n 100n 1 1 ]
+  alter vvc dc = $&vmid
+  alter lfeed = 1e9
+  ac dec 50 1k 100meg
+  set ap = $curplot
+  let zp = 180/pi*ph(v(vctrl))
+  let fr = real(frequency)
+  let h16 = ($iup + $idn)/2*1e-6 * $kvh*1e6 * mag(v(vctrl)) / (2*pi*fr*16)
+  let fc16 = 0
+  meas ac fc16 when h16=1 fall=1
+  if fc16 gt 0
+    meas ac pz16 find zp at=$&fc16
+    let x = 90 + pz16
+    set pms = "$&x"
+    set pmok = "1"
+  end
+  setplot $rp
+  destroy $ap
+end
 let fhm = fhi/1e6
 let flm = flo/1e6
 let fvm = fvd/1e6
@@ -177,6 +219,9 @@ echo "vco_fmax_tt_mhz = $fhs"
 echo "vco_f_hi_mhz = $fhs"
 echo "vco_f_lo_mhz = $fls"
 echo "vco_f_vdd_mhz = $fvs"
+if $pmok eq 1
+  echo "ol_pm_pn16_nopad_pvt_deg = $pms"
+end
 echo
 .endc
 .end

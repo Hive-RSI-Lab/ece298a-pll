@@ -6,5 +6,7 @@
   {"measure": "vco_kvco_mhz_per_v", "min": 40.0, "max": 250.0, "severity": "error",
    "msg": "post-layout mean df/dv over vctrl 0.3 .. vdd-0.3 V (spec.yaml post_layout_bounds)"},
   {"measure": "vco_fmax_tt_mhz", "min": 200.0, "severity": "error", "corners": ["tt_27c"],
-   "msg": "post-layout f at vctrl = vdd-0.3 V, scored at tt_27c as in the spec (spec.yaml post_layout_bounds)"}
+   "msg": "post-layout f at vctrl = vdd-0.3 V, scored at tt_27c as in the spec (spec.yaml post_layout_bounds)"},
+  {"measure": "ol_pm_pn16_nopad_pvt_deg", "min": 30.0, "severity": "error",
+   "msg": "post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vctrl) (spec.md, revision 2026-10-30)"}
 ]
