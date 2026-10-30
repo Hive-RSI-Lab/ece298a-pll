@@ -3,7 +3,7 @@
  "gate": "sim_pvt",
  "phase": "P4",
  "tool": "sim_pvt",
- "input_digest": "dir_text:c20767143e29ce734d55b7e2a8cacb836b60b62cefe973cc06edc21007841f07",
+ "input_digest": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -79,7 +79,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -105,7 +105,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -131,7 +131,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -157,7 +157,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -183,7 +183,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -209,7 +209,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -235,7 +235,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -250,18 +250,18 @@
     "returncode": 0,
     "measures": {
      "icp_up_code00_ua": 17.8719,
-     "icp_dn_code00_ua": 17.5403,
+     "icp_dn_code00_ua": 17.5402,
      "icp_up_code00_tt_ua": 17.8719,
      "icp_up_code01_ua": 22.2553,
      "icp_up_code10_ua": 26.6267,
      "icp_up_code11_ua": 35.342,
      "icp_code11_over_code00_ratio": 1.97752,
-     "cp_updn_mismatch_pct": 4.77006,
+     "cp_updn_mismatch_pct": 4.77008,
      "vctrl_leak_off_na": 0.00276387
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -287,7 +287,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -313,7 +313,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -339,7 +339,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -365,7 +365,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -391,7 +391,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -417,7 +417,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -443,7 +443,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -469,7 +469,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -495,7 +495,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -521,7 +521,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -547,7 +547,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -573,7 +573,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -599,7 +599,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -625,7 +625,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -651,7 +651,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -677,7 +677,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -694,16 +694,16 @@
      "icp_up_code00_ua": 19.574,
      "icp_dn_code00_ua": 19.2389,
      "icp_up_code00_tt_ua": 19.574,
-     "icp_up_code01_ua": 24.3824,
+     "icp_up_code01_ua": 24.3823,
      "icp_up_code10_ua": 29.1778,
-     "icp_up_code11_ua": 38.7387,
-     "icp_code11_over_code00_ratio": 1.97909,
-     "cp_updn_mismatch_pct": 4.41063,
+     "icp_up_code11_ua": 38.7386,
+     "icp_code11_over_code00_ratio": 1.97908,
+     "cp_updn_mismatch_pct": 4.41062,
      "vctrl_leak_off_na": 0.00242227
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -717,19 +717,19 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "icp_up_code00_ua": 19.7844,
-     "icp_dn_code00_ua": 19.3352,
-     "icp_up_code00_tt_ua": 19.7844,
-     "icp_up_code01_ua": 24.6251,
-     "icp_up_code10_ua": 29.4512,
-     "icp_up_code11_ua": 39.0709,
-     "icp_code11_over_code00_ratio": 1.97483,
-     "cp_updn_mismatch_pct": 5.25029,
+     "icp_up_code00_ua": 19.7843,
+     "icp_dn_code00_ua": 19.3351,
+     "icp_up_code00_tt_ua": 19.7843,
+     "icp_up_code01_ua": 24.625,
+     "icp_up_code10_ua": 29.4511,
+     "icp_up_code11_ua": 39.0708,
+     "icp_code11_over_code00_ratio": 1.97484,
+     "cp_updn_mismatch_pct": 5.25031,
      "vctrl_leak_off_na": 0.00282177
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -748,14 +748,14 @@
      "icp_up_code00_tt_ua": 20.1046,
      "icp_up_code01_ua": 24.9836,
      "icp_up_code10_ua": 29.8426,
-     "icp_up_code11_ua": 39.5176,
-     "icp_code11_over_code00_ratio": 1.9656,
-     "cp_updn_mismatch_pct": 6.62163,
+     "icp_up_code11_ua": 39.5175,
+     "icp_code11_over_code00_ratio": 1.96559,
+     "cp_updn_mismatch_pct": 6.62162,
      "vctrl_leak_off_na": 0.00349356
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -781,7 +781,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -807,7 +807,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_cp_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -833,7 +833,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -859,7 +859,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_cp_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -877,7 +877,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -895,7 +895,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -909,11 +909,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.2224
+     "ol_pm_pn16_nopad_pvt_deg": 48.1033
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -931,7 +931,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -945,16 +945,16 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.5144,
-     "ol_pm_pn16_nopad_deg": 49.5144,
-     "ol_pm_pn16_pad5p_deg": 33.8996,
-     "ol_fc_pn16_nopad_khz": 479.973,
-     "ol_pm_pn8_nopad_deg": 55.296,
-     "ol_pm_pn40_nopad_deg": 35.937
+     "ol_pm_pn16_nopad_pvt_deg": 49.5956,
+     "ol_pm_pn16_nopad_deg": 49.5956,
+     "ol_pm_pn16_pad5p_deg": 33.9399,
+     "ol_fc_pn16_nopad_khz": 482.408,
+     "ol_pm_pn8_nopad_deg": 55.3114,
+     "ol_pm_pn40_nopad_deg": 36.0328
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -968,11 +968,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 45.9595
+     "ol_pm_pn16_nopad_pvt_deg": 45.9718
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -986,11 +986,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.7023
+     "ol_pm_pn16_nopad_pvt_deg": 49.703
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1004,11 +1004,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 46.8258
+     "ol_pm_pn16_nopad_pvt_deg": 46.8328
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1022,11 +1022,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.1341
+     "ol_pm_pn16_nopad_pvt_deg": 43.0451
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1040,11 +1040,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.9609
+     "ol_pm_pn16_nopad_pvt_deg": 53.965
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1058,11 +1058,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.3432
+     "ol_pm_pn16_nopad_pvt_deg": 53.2939
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1076,11 +1076,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.0721
+     "ol_pm_pn16_nopad_pvt_deg": 52.0594
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1094,11 +1094,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.438
+     "ol_pm_pn16_nopad_pvt_deg": 53.4053
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1112,11 +1112,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.3728
+     "ol_pm_pn16_nopad_pvt_deg": 52.3742
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1130,11 +1130,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.6604
+     "ol_pm_pn16_nopad_pvt_deg": 50.6287
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1148,11 +1148,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.9795
+     "ol_pm_pn16_nopad_pvt_deg": 52.1108
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1166,11 +1166,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.4099
+     "ol_pm_pn16_nopad_pvt_deg": 51.407
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1184,11 +1184,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.3063
+     "ol_pm_pn16_nopad_pvt_deg": 48.3861
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1206,7 +1206,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1224,7 +1224,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1238,11 +1238,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 42.9315
+     "ol_pm_pn16_nopad_pvt_deg": 42.9774
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1260,7 +1260,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1278,7 +1278,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1292,11 +1292,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.6648
+     "ol_pm_pn16_nopad_pvt_deg": 40.5588
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1314,7 +1314,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1328,11 +1328,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.9335
+     "ol_pm_pn16_nopad_pvt_deg": 40.8571
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1346,11 +1346,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 37.229
+     "ol_pm_pn16_nopad_pvt_deg": 37.1707
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1368,7 +1368,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1382,11 +1382,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.3352
+     "ol_pm_pn16_nopad_pvt_deg": 43.2852
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_ol_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1400,16 +1400,16 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.86,
-     "ol_pm_pn16_nopad_deg": 49.86,
-     "ol_pm_pn16_pad5p_deg": 35.0905,
-     "ol_fc_pn16_nopad_khz": 371.053,
-     "ol_pm_pn8_nopad_deg": 55.3991,
-     "ol_pm_pn40_nopad_deg": 36.3278
+     "ol_pm_pn16_nopad_pvt_deg": 49.8547,
+     "ol_pm_pn16_nopad_deg": 49.8547,
+     "ol_pm_pn16_pad5p_deg": 35.0878,
+     "ol_fc_pn16_nopad_khz": 370.933,
+     "ol_pm_pn8_nopad_deg": 55.3981,
+     "ol_pm_pn40_nopad_deg": 36.3215
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_ol_tb.cir",
@@ -1432,7 +1432,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_ol_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1450,7 +1450,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1464,11 +1464,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31756
+     "cp_overlap_net_charge_fc": 2.31761
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1482,11 +1482,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.67517
+     "cp_overlap_net_charge_fc": 2.6767
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1500,11 +1500,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.3184
+     "cp_overlap_net_charge_fc": 2.31836
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1518,11 +1518,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.38237
+     "cp_overlap_net_charge_fc": 2.38286
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1536,11 +1536,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.52766
+     "cp_overlap_net_charge_fc": 2.52869
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1554,11 +1554,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27533
+     "cp_overlap_net_charge_fc": 2.27521
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1572,11 +1572,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.3488
+     "cp_overlap_net_charge_fc": 2.34284
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1590,11 +1590,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53375
+     "cp_overlap_net_charge_fc": 2.53425
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1608,11 +1608,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.21706
+     "cp_overlap_net_charge_fc": 2.2302
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1626,11 +1626,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.07138
+     "cp_overlap_net_charge_fc": 2.0699
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1644,11 +1644,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.5436
+     "cp_overlap_net_charge_fc": 2.54041
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1662,11 +1662,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31473
+     "cp_overlap_net_charge_fc": 2.31474
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1680,11 +1680,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14958
+     "cp_overlap_net_charge_fc": 2.14973
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1698,11 +1698,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.17204
+     "cp_overlap_net_charge_fc": 2.17239
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1716,11 +1716,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14378
+     "cp_overlap_net_charge_fc": 2.14375
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1734,11 +1734,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.25123
+     "cp_overlap_net_charge_fc": 2.25158
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1752,11 +1752,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27115
+     "cp_overlap_net_charge_fc": 2.27102
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1770,11 +1770,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53415
+     "cp_overlap_net_charge_fc": 2.53384
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1788,11 +1788,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.63523
+     "cp_overlap_net_charge_fc": 2.63521
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1810,7 +1810,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1824,11 +1824,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.57811
+     "cp_overlap_net_charge_fc": 2.57828
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1842,11 +1842,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.68996
+     "cp_overlap_net_charge_fc": 2.69157
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1860,11 +1860,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.98185
+     "cp_overlap_net_charge_fc": 2.98191
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1878,11 +1878,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.51423
+     "cp_overlap_net_charge_fc": 2.51362
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1896,11 +1896,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.58202
+     "cp_overlap_net_charge_fc": 2.57504
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1918,7 +1918,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1932,11 +1932,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.60887
+     "cp_overlap_net_charge_fc": 3.60104
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1950,11 +1950,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.19684
+     "cp_overlap_net_charge_fc": 2.19683
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1968,11 +1968,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 1.96921
+     "cp_overlap_net_charge_fc": 1.97022
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_overlap_tb.cir",
@@ -1986,11 +1986,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.0382
+     "cp_overlap_net_charge_fc": 3.03798
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_overlap_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_presc_tb.cir",
@@ -2004,11 +2004,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "presc_div2_ratio": 1.00003
+     "presc_div2_ratio": 0.999991
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_presc_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_presc_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2027,7 +2027,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2046,7 +2046,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2065,7 +2065,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2079,12 +2079,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000112002,
+     "standby_current_ua": 0.000112001,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2098,12 +2098,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00012758,
+     "standby_current_ua": 0.000127579,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2117,12 +2117,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000147256,
+     "standby_current_ua": 0.000147255,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2136,12 +2136,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000964935,
+     "standby_current_ua": 0.000964237,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2155,12 +2155,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00111132,
+     "standby_current_ua": 0.00111058,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2174,12 +2174,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00130872,
+     "standby_current_ua": 0.0013079,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2193,12 +2193,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000101878,
+     "standby_current_ua": 0.00010188,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2212,12 +2212,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000115851,
+     "standby_current_ua": 0.000115853,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2231,12 +2231,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000132031,
+     "standby_current_ua": 0.000132028,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2255,7 +2255,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2269,12 +2269,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000120009,
+     "standby_current_ua": 0.000120008,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2293,7 +2293,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2307,12 +2307,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224804,
+     "standby_current_ua": 0.000224722,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2326,12 +2326,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000254071,
+     "standby_current_ua": 0.000253984,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2345,12 +2345,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000290552,
+     "standby_current_ua": 0.000290456,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2369,7 +2369,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2388,7 +2388,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2407,7 +2407,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2421,12 +2421,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000160852,
+     "standby_current_ua": 0.000160833,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2440,12 +2440,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000190098,
+     "standby_current_ua": 0.000190077,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2459,12 +2459,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000231515,
+     "standby_current_ua": 0.000231492,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2478,12 +2478,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00810187,
+     "standby_current_ua": 0.00809559,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2497,12 +2497,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00950887,
+     "standby_current_ua": 0.00950214,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2516,12 +2516,12 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.0114595,
+     "standby_current_ua": 0.011452,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2535,12 +2535,12 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224804,
+     "standby_current_ua": 0.000224722,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2559,7 +2559,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2573,12 +2573,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00012758,
+     "standby_current_ua": 0.000127579,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -2592,12 +2592,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00012758,
+     "standby_current_ua": 0.000127579,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_pwr_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2611,11 +2611,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.717691
+     "startup_time_us": 0.71997
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2629,11 +2629,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.686017
+     "startup_time_us": 0.690578
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2647,11 +2647,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.711566
+     "startup_time_us": 0.718481
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2665,11 +2665,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.639067
+     "startup_time_us": 0.732886
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2683,11 +2683,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.670512
+     "startup_time_us": 0.6762
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2701,11 +2701,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.682278
+     "startup_time_us": 0.689799
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2719,11 +2719,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.58735
+     "startup_time_us": 0.594299
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2737,11 +2737,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.581528
+     "startup_time_us": 0.589663
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2755,11 +2755,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.562531
+     "startup_time_us": 0.572206
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2773,11 +2773,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 1.62794
+     "startup_time_us": 0.920455
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2791,11 +2791,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.880494
+     "startup_time_us": 0.882573
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2809,11 +2809,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.828985
+     "startup_time_us": 0.833712
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2827,11 +2827,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.858917
+     "startup_time_us": 0.861543
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2845,11 +2845,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.875528
+     "startup_time_us": 0.879539
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2863,11 +2863,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.798217
+     "startup_time_us": 0.804102
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2881,11 +2881,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.836009
+     "startup_time_us": 0.843155
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2899,11 +2899,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.810162
+     "startup_time_us": 0.816617
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2917,11 +2917,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.815277
+     "startup_time_us": 0.822947
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2935,11 +2935,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.547973
+     "startup_time_us": 0.552273
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2953,11 +2953,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.579701
+     "startup_time_us": 0.586029
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2971,11 +2971,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.579937
+     "startup_time_us": 0.587599
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -2989,11 +2989,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.544495
+     "startup_time_us": 0.549852
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3007,11 +3007,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.46626
+     "startup_time_us": 0.473436
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3025,11 +3025,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.55248
+     "startup_time_us": 0.560757
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3043,11 +3043,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.470192
+     "startup_time_us": 0.477918
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3061,11 +3061,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.458182
+     "startup_time_us": 0.467578
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3079,11 +3079,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.42445
+     "startup_time_us": 0.435066
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3097,11 +3097,11 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.543381
+     "startup_time_us": 0.55308
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3115,11 +3115,11 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.900329
+     "startup_time_us": 0.911327
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_startup_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3133,11 +3133,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.847396
+     "startup_time_us": 0.854239
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_startup_tb.cir",
@@ -3151,11 +3151,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.504864
+     "startup_time_us": 0.509207
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_startup_tb__tt_pff.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3176,12 +3176,12 @@
      "vco_out_swing_pct_vdd": 100.748,
      "vco_out_duty_pct": 54.1509,
      "vco_fmax_ff_mhz": 319.911,
-     "vco_out_tr_ns": 0.043293,
+     "vco_out_tr_ns": 0.043292,
      "vco_out_tf_ns": 0.04229
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3207,7 +3207,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3233,7 +3233,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3259,7 +3259,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3274,7 +3274,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 91.9244,
-     "vco_df_dv_min_mhz_per_v": 14.1399,
+     "vco_df_dv_min_mhz_per_v": 14.1394,
      "vco_fmin_tt_mhz": 9.55305,
      "vco_fmax_tt_mhz": 257.749,
      "vco_out_swing_pct_vdd": 100.452,
@@ -3285,7 +3285,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3300,7 +3300,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 71.0836,
-     "vco_df_dv_min_mhz_per_v": 16.8903,
+     "vco_df_dv_min_mhz_per_v": 16.8899,
      "vco_fmin_tt_mhz": 8.60161,
      "vco_fmax_tt_mhz": 223.985,
      "vco_out_swing_pct_vdd": 100.333,
@@ -3311,7 +3311,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3326,18 +3326,18 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 99.1503,
-     "vco_df_dv_min_mhz_per_v": 22.4711,
+     "vco_df_dv_min_mhz_per_v": 22.4751,
      "vco_fmin_tt_mhz": 9.93872,
      "vco_fmax_tt_mhz": 244.925,
      "vco_out_swing_pct_vdd": 100.408,
      "vco_out_duty_pct": 53.9513,
      "vco_fmax_ff_mhz": 258.621,
-     "vco_out_tr_ns": 0.06452,
-     "vco_out_tf_ns": 0.059367
+     "vco_out_tr_ns": 0.06451,
+     "vco_out_tf_ns": 0.059366
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3355,15 +3355,15 @@
      "vco_df_dv_min_mhz_per_v": 23.9414,
      "vco_fmin_tt_mhz": 8.76728,
      "vco_fmax_tt_mhz": 223.366,
-     "vco_out_swing_pct_vdd": 100.299,
+     "vco_out_swing_pct_vdd": 100.298,
      "vco_out_duty_pct": 53.8016,
      "vco_fmax_ff_mhz": 224.58,
      "vco_out_tr_ns": 0.06598,
-     "vco_out_tf_ns": 0.059553
+     "vco_out_tf_ns": 0.059554
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3384,12 +3384,12 @@
      "vco_out_swing_pct_vdd": 100.198,
      "vco_out_duty_pct": 53.6697,
      "vco_fmax_ff_mhz": 195.04,
-     "vco_out_tr_ns": 0.0682,
-     "vco_out_tf_ns": 0.06076
+     "vco_out_tr_ns": 0.06821,
+     "vco_out_tf_ns": 0.06075
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3411,11 +3411,11 @@
      "vco_out_duty_pct": 54.6222,
      "vco_fmax_ff_mhz": 266.85,
      "vco_out_tr_ns": 0.05128,
-     "vco_out_tf_ns": 0.05202
+     "vco_out_tf_ns": 0.052018
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3429,19 +3429,19 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 83.7818,
+     "vco_kvco_mhz_per_v": 83.7821,
      "vco_df_dv_min_mhz_per_v": 0.952,
      "vco_fmin_tt_mhz": 11.2492,
-     "vco_fmax_tt_mhz": 237.46,
+     "vco_fmax_tt_mhz": 237.461,
      "vco_out_swing_pct_vdd": 101.002,
      "vco_out_duty_pct": 54.1969,
-     "vco_fmax_ff_mhz": 264.269,
-     "vco_out_tr_ns": 0.0484,
+     "vco_fmax_ff_mhz": 264.268,
+     "vco_out_tr_ns": 0.04839,
      "vco_out_tf_ns": 0.048175
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3460,14 +3460,14 @@
      "vco_fmin_tt_mhz": 9.92629,
      "vco_fmax_tt_mhz": 230.712,
      "vco_out_swing_pct_vdd": 100.815,
-     "vco_out_duty_pct": 53.255,
+     "vco_out_duty_pct": 53.2548,
      "vco_fmax_ff_mhz": 235.761,
      "vco_out_tr_ns": 0.04877,
      "vco_out_tf_ns": 0.047417
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3493,7 +3493,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3512,14 +3512,14 @@
      "vco_fmin_tt_mhz": 10.5737,
      "vco_fmax_tt_mhz": 226.315,
      "vco_out_swing_pct_vdd": 100.923,
-     "vco_out_duty_pct": 53.9502,
+     "vco_out_duty_pct": 53.9501,
      "vco_fmax_ff_mhz": 245.705,
      "vco_out_tr_ns": 0.0568,
      "vco_out_tf_ns": 0.055229
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3538,14 +3538,14 @@
      "vco_fmin_tt_mhz": 10.3576,
      "vco_fmax_tt_mhz": 214.354,
      "vco_out_swing_pct_vdd": 100.705,
-     "vco_out_duty_pct": 54.1235,
+     "vco_out_duty_pct": 54.1237,
      "vco_fmax_ff_mhz": 216.428,
      "vco_out_tr_ns": 0.05763,
      "vco_out_tf_ns": 0.05489
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3564,14 +3564,14 @@
      "vco_fmin_tt_mhz": 10.798,
      "vco_fmax_tt_mhz": 207.413,
      "vco_out_swing_pct_vdd": 100.93,
-     "vco_out_duty_pct": 53.6882,
+     "vco_out_duty_pct": 53.6883,
      "vco_fmax_ff_mhz": 226.896,
      "vco_out_tr_ns": 0.07237,
      "vco_out_tf_ns": 0.06949
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3597,7 +3597,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3616,14 +3616,14 @@
      "vco_fmin_tt_mhz": 7.39313,
      "vco_fmax_tt_mhz": 188.484,
      "vco_out_swing_pct_vdd": 100.323,
-     "vco_out_duty_pct": 53.8232,
+     "vco_out_duty_pct": 53.823,
      "vco_fmax_ff_mhz": 189.479,
      "vco_out_tr_ns": 0.0724,
      "vco_out_tf_ns": 0.06676
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3638,7 +3638,7 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 141.9,
-     "vco_df_dv_min_mhz_per_v": 25.9397,
+     "vco_df_dv_min_mhz_per_v": 25.9478,
      "vco_fmin_tt_mhz": 12.7834,
      "vco_fmax_tt_mhz": 349.086,
      "vco_out_swing_pct_vdd": 100.543,
@@ -3649,7 +3649,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_m40c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3675,7 +3675,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_m40c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3696,12 +3696,12 @@
      "vco_out_swing_pct_vdd": 100.283,
      "vco_out_duty_pct": 53.718,
      "vco_fmax_ff_mhz": 265.977,
-     "vco_out_tr_ns": 0.041983,
+     "vco_out_tr_ns": 0.041984,
      "vco_out_tf_ns": 0.038125
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_m40c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_m40c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3727,7 +3727,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_27c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3753,7 +3753,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_27c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3779,7 +3779,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_27c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_27c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3794,18 +3794,18 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 112.096,
-     "vco_df_dv_min_mhz_per_v": 50.2676,
+     "vco_df_dv_min_mhz_per_v": 50.2671,
      "vco_fmin_tt_mhz": 10.0724,
      "vco_fmax_tt_mhz": 275.739,
      "vco_out_swing_pct_vdd": 100.285,
      "vco_out_duty_pct": 53.8743,
      "vco_fmax_ff_mhz": 277.296,
      "vco_out_tr_ns": 0.060548,
-     "vco_out_tf_ns": 0.053629
+     "vco_out_tf_ns": 0.05363
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vm10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_125c_vm10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3819,19 +3819,19 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 84.7162,
+     "vco_kvco_mhz_per_v": 84.7158,
      "vco_df_dv_min_mhz_per_v": 9.94667,
-     "vco_fmin_tt_mhz": 9.05722,
-     "vco_fmax_tt_mhz": 237.791,
+     "vco_fmin_tt_mhz": 9.05721,
+     "vco_fmax_tt_mhz": 237.79,
      "vco_out_swing_pct_vdd": 100.245,
-     "vco_out_duty_pct": 53.7395,
+     "vco_out_duty_pct": 53.7394,
      "vco_fmax_ff_mhz": 238.576,
-     "vco_out_tr_ns": 0.06266,
+     "vco_out_tr_ns": 0.06267,
      "vco_out_tf_ns": 0.054641
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_125c.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3846,18 +3846,18 @@
     "returncode": 0,
     "measures": {
      "vco_kvco_mhz_per_v": 65.6728,
-     "vco_df_dv_min_mhz_per_v": 3.31683,
-     "vco_fmin_tt_mhz": 8.29042,
+     "vco_df_dv_min_mhz_per_v": 3.31881,
+     "vco_fmin_tt_mhz": 8.2904,
      "vco_fmax_tt_mhz": 207.279,
      "vco_out_swing_pct_vdd": 100.22,
      "vco_out_duty_pct": 53.6179,
-     "vco_fmax_ff_mhz": 207.895,
+     "vco_fmax_ff_mhz": 207.894,
      "vco_out_tr_ns": 0.06531,
-     "vco_out_tf_ns": 0.05648
+     "vco_out_tf_ns": 0.056481
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_125c_vp10.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_125c_vp10.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3876,14 +3876,14 @@
      "vco_fmin_tt_mhz": 16.9314,
      "vco_fmax_tt_mhz": 290.047,
      "vco_out_swing_pct_vdd": 100.885,
-     "vco_out_duty_pct": 54.1057,
-     "vco_fmax_ff_mhz": 310.392,
-     "vco_out_tr_ns": 0.065957,
+     "vco_out_duty_pct": 54.1058,
+     "vco_fmax_ff_mhz": 310.393,
+     "vco_out_tr_ns": 0.065958,
      "vco_out_tf_ns": 0.064048
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_pff.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ss_pff.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3909,7 +3909,7 @@
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_pss.cir"
+    "deck": "log/sim/pll_analog_vco_tb__ff_pss.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3928,14 +3928,14 @@
      "vco_fmin_tt_mhz": 8.0419,
      "vco_fmax_tt_mhz": 203.881,
      "vco_out_swing_pct_vdd": 100.568,
-     "vco_out_duty_pct": 53.1893,
+     "vco_out_duty_pct": 53.1887,
      "vco_fmax_ff_mhz": 205.284,
      "vco_out_tr_ns": 0.05592,
      "vco_out_tf_ns": 0.05194
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pss.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_pss.cir"
    },
    {
     "bench": "pll_analog_vco_tb.cir",
@@ -3955,13 +3955,13 @@
      "vco_fmax_tt_mhz": 331.75,
      "vco_out_swing_pct_vdd": 100.551,
      "vco_out_duty_pct": 53.9786,
-     "vco_fmax_ff_mhz": 346.034,
+     "vco_fmax_ff_mhz": 346.033,
      "vco_out_tr_ns": 0.047151,
-     "vco_out_tf_ns": 0.044655
+     "vco_out_tf_ns": 0.044654
     },
     "engine_errors": [],
     "violations": [],
-    "deck": "/work/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt_pff.cir"
+    "deck": "log/sim/pll_analog_vco_tb__tt_pff.cir"
    }
   ],
   "not_scored": [
@@ -4119,11 +4119,11 @@
   "scoped_out": []
  },
  "inputs_at_start": {
-  "netlist": "dir_text:c20767143e29ce734d55b7e2a8cacb836b60b62cefe973cc06edc21007841f07",
+  "netlist": "dir_text:f7d86cd506c16b81fd413bf1d66d5c2ed87995fb8cfa9f2fedfbf09a407d294b",
   "tb": "dir_text:efd9799144260e352d6f69a25effecc4fd0b59bbd586e63c75169b804a3bc56d",
   "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
   "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
  },
- "recorded_ts": "2026-10-28T18:49:46",
- "attempts": 9
+ "recorded_ts": "2026-10-29T22:50:24",
+ "attempts": 10
 }

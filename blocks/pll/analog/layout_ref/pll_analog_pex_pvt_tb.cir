@@ -34,14 +34,14 @@
 * either way. What this bench measures is that running ring. Whether it
 * starts from enable is pll_analog_pex_start_tb.cir's question (2026-10-29,
 * extracted layout): at vctrl = vdd-0.3 V it does at all 31 corners; at
-* vctrl = 0.3 V it does not at ff_125c (all three supplies) or ss_m40c_vm10.
+* vctrl = 0.3 V it does not at ff_125c or tt_125c (all three supplies
+* each, 2026-10-30).
 * PUMP: the pre-layout cp bench and pll_analog_pex_tb.cir read the pump
-* currents from an operating point with the input held high. On the
-* extracted netlist at ss_m40c_vm10 that op lands on a second DC solution
-* of the self-biased reference (bias_ref 0.51 V against 0.72 V, Icp 168 uA)
-* that a transient from the all-off op never reaches (17.7 uA, bias_ref
-* 0.72 V for 2 us). So the pumps are switched on in a tran here, the way the
-* PFD switches them, from the op every corner solves cleanly.
+* currents from an operating point with the input held high. Here the
+* pumps are switched on in a tran, the way the PFD switches them. (Until
+* 2026-10-30 the extracted reference also had a second stable state at
+* ss_m40c_vm10, start-up never released, Icp 168 uA, that an op could land
+* on; MN_ST at l = 4 um removed it, see the netlist's start-up note.)
 * Frequency is f = (n-1)/(t(rise n) - t(rise 1)) over vdd/2 crossings after
 * the settle time; a stalled ring (< 2 rises) prints f = 0, and then Kvco
 * prints 0 too (a slope between a stalled end and a live one is not a
