@@ -134,7 +134,11 @@ Post-layout (`post_layout_bounds`): `icp_up_code00_ua`, `icp_dn_code00_ua`
 2026-10-28 after the first extraction read 154.8 MHz) re-simulated from the
 extracted netlist at typical hold the same bounds. Since 2026-10-30 the
 post-layout bounds also hold `ol_pm_pn16_nopad_pvt_deg` (>= 30 at every
-corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30). No Monte Carlo: the brief asks for no yield number, and GF180
+corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30).
+Both are in the post-layout bench's `.bounds.json`, which pex_pvt scores;
+`spec.yaml`'s `post_layout_bounds` keeps Kvco at 40 and has no margin key
+until bench_strength is next re-run (changing it stales that gate's
+recorded pass, which reads no post-layout bound). No Monte Carlo: the brief asks for no yield number, and GF180
 poly models have no per-instance mismatch to draw from anyway.
 
 ### Revision 2026-10-10 (H1)

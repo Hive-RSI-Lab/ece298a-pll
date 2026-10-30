@@ -65,10 +65,7 @@ MOSCAP_Q = """* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
-* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
-* overflowed on a wild Newton iterate in the op search ('Error: -10030.2 out
-* of range for cosh', which the engine reads as an ngspice error; ff_27c_vm10).
-C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
 .ends cap_nmos_03v3_b"""
 
 
