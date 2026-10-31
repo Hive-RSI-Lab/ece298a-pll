@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-10-30T16:14:46",
+ "updated": "2026-10-30T20:35:10",
  "phase": "P2",
  "toolchain": null,
  "gates": {
@@ -127,9 +127,9 @@
   "top_harden": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 7,
+   "attempts": 8,
    "last": {
-    "ts": "2026-10-30T16:08:34",
+    "ts": "2026-10-30T20:33:25",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -137,11 +137,11 @@
      "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
      "top_sdc": null,
-     "digital_sdc": "text_eol:1f83c464b69394bbddc89288dfdf7aa426cc47e6643760c1880dc27dddb2aedc"
+     "digital_sdc": "text_eol:2cc8f62c31d9f1daad212ee532bc4b1ae6e6e784cda23b5e5c9c2a362668bbc9"
     },
     "job": null,
     "facts": {
-     "wall_s": 376.21
+     "wall_s": 129.49
     }
    },
    "history": [
@@ -256,20 +256,36 @@
      "facts": {
       "wall_s": 376.21
      }
+    },
+    {
+     "ts": "2026-10-30T20:33:25",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:2cc8f62c31d9f1daad212ee532bc4b1ae6e6e784cda23b5e5c9c2a362668bbc9"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 129.49
+     }
     }
    ]
   },
   "top_lvs": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-30T16:10:48",
+    "ts": "2026-10-30T20:34:14",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb",
+     "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27",
      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
     },
     "job": null
@@ -340,20 +356,31 @@
       "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-30T20:34:14",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27",
+      "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
+     },
+     "job": null
     }
    ]
   },
   "top_drc": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-30T16:09:37",
+    "ts": "2026-10-30T20:34:11",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb"
+     "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27"
     },
     "job": null,
     "facts": {
@@ -445,20 +472,34 @@
       "magic_count": 0,
       "klayout_count": 0
      }
+    },
+    {
+     "ts": "2026-10-30T20:34:11",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27"
+     },
+     "job": null,
+     "facts": {
+      "magic_count": 0,
+      "klayout_count": 0
+     }
     }
    ]
   },
   "precheck": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-30T16:14:46",
+    "ts": "2026-10-30T20:35:10",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb",
+     "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27",
      "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
     },
     "job": null,
@@ -536,6 +577,20 @@
      "facts": {
       "checks_run": 12
      }
+    },
+    {
+     "ts": "2026-10-30T20:35:10",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27",
+      "interface": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554"
+     },
+     "job": null,
+     "facts": {
+      "checks_run": 12
+     }
     }
    ]
   }
@@ -549,7 +604,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:63d865f95b5180ceb77702d57fcb98737fcc8f3f18778a347aca87f17099b554",
-   "hashed": "2026-10-30T16:14:46"
+   "hashed": "2026-10-30T20:35:10"
   },
   "tb": {
    "path": "tb",
@@ -561,7 +616,7 @@
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-   "hashed": "2026-10-30T16:08:34"
+   "hashed": "2026-10-30T20:33:25"
   },
   "analog_netlist": {
    "path": "analog/netlist",
@@ -579,25 +634,25 @@
    "path": "analog/layout",
    "kind": "analog_layout",
    "sha256": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
-   "hashed": "2026-10-30T16:10:48"
+   "hashed": "2026-10-30T20:34:14"
   },
   "top_sdc": {
    "path": "top.sdc",
    "kind": "top_sdc",
    "sha256": null,
-   "hashed": "2026-10-30T16:08:34"
+   "hashed": "2026-10-30T20:33:25"
   },
   "digital_sdc": {
    "path": "digital/harden/constraints.sdc",
    "kind": "digital_sdc",
-   "sha256": "text_eol:1f83c464b69394bbddc89288dfdf7aa426cc47e6643760c1880dc27dddb2aedc",
-   "hashed": "2026-10-30T16:08:34"
+   "sha256": "text_eol:2cc8f62c31d9f1daad212ee532bc4b1ae6e6e784cda23b5e5c9c2a362668bbc9",
+   "hashed": "2026-10-30T20:33:25"
   },
   "top_gds": {
    "path": "top/harden/runs/run/final/gds",
    "kind": "top_gds",
-   "sha256": "dir_text:db7c442a863b6255027af7a1df66cd58d5136083868327e4a0f89b004bf618eb",
-   "hashed": "2026-10-30T16:14:46"
+   "sha256": "dir_text:8a9a84af6fe40250fcacb316acc2d93c545ef4b64cc39bb866033cd77732bf27",
+   "hashed": "2026-10-30T20:35:10"
   }
  },
  "open_issues": [],
@@ -943,6 +998,38 @@
    "gate": "precheck",
    "status": "pass",
    "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T20:33:25",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 8,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T20:34:11",
+   "event": "gate",
+   "gate": "top_drc",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T20:34:14",
+   "event": "gate",
+   "gate": "top_lvs",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-30T20:35:10",
+   "event": "gate",
+   "gate": "precheck",
+   "status": "pass",
+   "attempt": 6,
    "failing_count": 0
   }
  ]
