@@ -268,6 +268,28 @@ def cosim_corners_fresh() -> tuple[list[str], dict, str]:
     return want, rep, ""
 
 
+def cosim_gl_fresh() -> tuple[dict, str]:
+    """tb/cosim_gl.py's recorded run (reports/recorded/cosim_corners_gl.json,
+    the same bench with the hardened gate-level digital and its SDF in the
+    loop) while every input it hashed is unchanged, and why it doesn't count
+    (empty when it does). The harden's netlist and SDF are not in git: their
+    hashes are checked where the files are here and skipped where not."""
+    sys.path.insert(0, str(BLOCK / "tb"))
+    import cosim_gl  # noqa: E402
+
+    try:
+        rep = json.loads(cosim_gl.OUT.read_text())
+    except (OSError, ValueError):
+        return {}, "no recorded gate-level run (run tb/cosim_gl.py and commit its report)"
+    have = cosim_gl.input_hashes()
+    rec = rep.get("inputs") or {}
+    changed = [k for k, v in have.items() if rec.get(k) != v]
+    changed += [k for k in rec if k not in have and "/harden/runs/" not in k]
+    if changed:
+        return {}, "changed since it ran: " + ", ".join(changed) + " (re-run tb/cosim_gl.py)"
+    return rep, ""
+
+
 def pex_pvt(ws: Path, logs: Path) -> dict:
     """The layout chain (drc, lvs, pex_sim) and then, once drc and lvs pass,
     layout/pex_pvt.py: the post-layout bench at every corner of the spec's
@@ -452,12 +474,21 @@ def main() -> int:
         want, rep, note = cosim_corners_fresh()
         facts = rep.get("facts") or {}
         fails = {f.get("corner"): f.get("msg") for f in rep.get("failing") or []}
-        for key, name in (("locked", "co-sim locks at 100 MHz on the extracted netlist at the bounding corners"),
-                          ("corners", "and vctrl settles within 20 mV p-p there")):
-            ok = [c for c in want if c in set(facts.get(key) or [])]
-            bad = [f"{c}: {fails.get(c) or 'not run'}" for c in want if c not in ok]
+        # vctrl's ripple is read from the gate-level run (issue #47): the
+        # RTL's zero-delay PFD has no reset pulse, so its lone pump kicks
+        # through R1 are the bench's, not the chip's
+        gl, gl_note = cosim_gl_fresh()
+        gl_facts = gl.get("facts") or {}
+        gl_fails = {f.get("corner"): f.get("msg") for f in gl.get("failing") or []}
+        for key, name, fa, fl, nt in (
+                ("locked", "co-sim locks at 100 MHz on the extracted netlist at the bounding corners",
+                 facts, fails, note),
+                ("corners", "and vctrl settles within 20 mV p-p there, with the gate-level digital",
+                 gl_facts, gl_fails, note or gl_note)):
+            ok = [c for c in want if c in set(fa.get(key) or [])]
+            bad = [f"{c}: {fl.get(c) or 'not run'}" for c in want if c not in ok]
             line(f"{name} ({len(ok)}/{len(want)})", len(ok) / len(want) if want else 0.0,
-                 note or "; ".join(bad)[:300])
+                 nt or "; ".join(bad)[:300])
 
         # --- Lay out the analog half and match it after extraction -------
         passed("analog layout drc", l["drc"])
