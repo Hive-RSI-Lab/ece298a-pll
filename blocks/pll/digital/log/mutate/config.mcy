@@ -3,12 +3,12 @@ size 20
 seed 1
 
 [script]
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/ihsan_sa_pll.v
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_ctrl_regs.v
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_divider.v
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_lock_det.v
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_pfd.v
-read_verilog -sv -nosynthesis /work/blocks/pll/digital/rtl/pll_prescaler.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v
+read_verilog -sv -nosynthesis /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v
 hierarchy -top ihsan_sa_pll
 proc
 
@@ -21,7 +21,7 @@ else:
 [test sim]
 maxbatchsize 1
 expect PASS FAIL
-run python3 /hive/modules/hive-chip-flow/engine/scripts/mutate_runner.py --tb /work/blocks/pll/digital/tb --top ihsan_sa_pll
+run python3 /home/hive2/modules/chip-flow/engine/scripts/mutate_runner.py --tb /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/tb --top ihsan_sa_pll
 
 [report]
 print(f"mutants={tags()} killed={tags('KILLED')} survived={tags('SURVIVED')}")

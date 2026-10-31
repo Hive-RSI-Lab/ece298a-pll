@@ -2558,8 +2558,9 @@
     },
     "gf180mcu_fd_sc_mcu7t5v0__clkbuf_1": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
-        "src": "rtl/pll_prescaler.v:81.1-85.10"
+        "abc9_box": "00000000000000000000000000000001",
+        "area": "13.171200",
+        "blackbox": "00000000000000000000000000000001"
       },
       "ports": {
         "I": {
@@ -2578,14 +2579,13 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:82.17-82.18"
+            "capacitance": "0.003561"
           }
         },
         "Z": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:83.17-83.18"
           }
         }
       }
@@ -2797,7 +2797,7 @@
     "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8": {
       "attributes": {
         "blackbox": "00000000000000000000000000000001",
-        "src": "rtl/ihsan_sa_pll.v:86.1-90.10"
+        "src": "rtl/ihsan_sa_pll.v:87.1-91.10"
       },
       "ports": {
         "I": {
@@ -2816,14 +2816,14 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:87.17-87.18"
+            "src": "rtl/ihsan_sa_pll.v:88.17-88.18"
           }
         },
         "Z": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:88.17-88.18"
+            "src": "rtl/ihsan_sa_pll.v:89.17-89.18"
           }
         }
       }
@@ -3949,8 +3949,8 @@
     },
     "gf180mcu_fd_sc_mcu7t5v0__dffrnq_2": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
-        "src": "rtl/pll_prescaler.v:65.1-71.10"
+        "area": "79.027200",
+        "blackbox": "00000000000000000000000000000001"
       },
       "ports": {
         "CLK": {
@@ -3961,12 +3961,12 @@
           "direction": "input",
           "bits": [ 3 ]
         },
-        "RN": {
-          "direction": "input",
-          "bits": [ 4 ]
-        },
         "Q": {
           "direction": "output",
+          "bits": [ 4 ]
+        },
+        "RN": {
+          "direction": "input",
           "bits": [ 5 ]
         }
       },
@@ -3977,28 +3977,27 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:66.17-66.20"
+            "capacitance": "0.003346"
           }
         },
         "D": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:67.17-67.18"
+            "capacitance": "0.002955"
           }
         },
         "Q": {
           "hide_name": 0,
-          "bits": [ 5 ],
+          "bits": [ 4 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:69.17-69.18"
           }
         },
         "RN": {
           "hide_name": 0,
-          "bits": [ 4 ],
+          "bits": [ 5 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:68.17-68.19"
+            "capacitance": "0.007439"
           }
         }
       }
@@ -5352,8 +5351,9 @@
     },
     "gf180mcu_fd_sc_mcu7t5v0__inv_1": {
       "attributes": {
-        "blackbox": "00000000000000000000000000000001",
-        "src": "rtl/pll_prescaler.v:74.1-78.10"
+        "abc9_box": "00000000000000000000000000000001",
+        "area": "8.780800",
+        "blackbox": "00000000000000000000000000000001"
       },
       "ports": {
         "I": {
@@ -5372,14 +5372,13 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:75.17-75.18"
+            "capacitance": "0.004623"
           }
         },
         "ZN": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:76.17-76.19"
           }
         }
       }
@@ -11903,7 +11902,7 @@
     "ihsan_sa_pll": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "rtl/ihsan_sa_pll.v:12.1-80.10"
+        "src": "rtl/ihsan_sa_pll.v:13.1-81.10"
       },
       "ports": {
         "clk": {
@@ -11918,7 +11917,7 @@
           "direction": "input",
           "bits": [ 4, 5, 6 ]
         },
-        "vco_out": {
+        "vco_div2": {
           "direction": "input",
           "bits": [ 7 ]
         },
@@ -13441,7 +13440,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "rtl/pll_prescaler.v:48.3-50.35"
+            "src": "rtl/pll_prescaler.v:23.3-25.35"
           },
           "port_directions": {
             "CLK": "input",
@@ -13462,7 +13461,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "rtl/pll_prescaler.v:44.3-46.35"
+            "src": "rtl/pll_prescaler.v:19.3-21.35"
           },
           "port_directions": {
             "CLK": "input",
@@ -13471,7 +13470,7 @@
             "RN": "input"
           },
           "connections": {
-            "CLK": [ 121 ],
+            "CLK": [ 7 ],
             "D": [ 103 ],
             "Q": [ 102 ],
             "RN": [ 3 ]
@@ -13483,7 +13482,7 @@
           "parameters": {
           },
           "attributes": {
-            "src": "rtl/pll_prescaler.v:52.3-54.27"
+            "src": "rtl/pll_prescaler.v:27.3-29.27"
           },
           "port_directions": {
             "CLK": "input",
@@ -14052,7 +14051,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "rtl/ihsan_sa_pll.v:74.48-74.90"
+            "src": "rtl/ihsan_sa_pll.v:75.48-75.90"
           },
           "port_directions": {
             "I": "input",
@@ -14071,7 +14070,7 @@
           "attributes": {
             "keep": "00000000000000000000000000000001",
             "module_not_derived": "00000000000000000000000000000001",
-            "src": "rtl/ihsan_sa_pll.v:75.48-75.91"
+            "src": "rtl/ihsan_sa_pll.v:76.48-76.91"
           },
           "port_directions": {
             "I": "input",
@@ -14099,7 +14098,7 @@
           },
           "connections": {
             "I": [ 94 ],
-            "Z": [ 122 ]
+            "Z": [ 121 ]
           }
         },
         "u_pfd.pfd_dly1": {
@@ -14118,72 +14117,8 @@
             "Z": "output"
           },
           "connections": {
-            "I": [ 122 ],
+            "I": [ 121 ],
             "Z": [ 95 ]
-          }
-        },
-        "u_pre.u_pre_ckbuf0": {
-          "hide_name": 0,
-          "type": "gf180mcu_fd_sc_mcu7t5v0__clkbuf_1",
-          "parameters": {
-          },
-          "attributes": {
-            "hdlname": "u_pre u_pre_ckbuf0",
-            "keep": "00000000000000000000000000000001",
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "rtl/pll_prescaler.v:35.48-35.85"
-          },
-          "port_directions": {
-            "I": "input",
-            "Z": "output"
-          },
-          "connections": {
-            "I": [ 123 ],
-            "Z": [ 121 ]
-          }
-        },
-        "u_pre.u_pre_ff0": {
-          "hide_name": 0,
-          "type": "gf180mcu_fd_sc_mcu7t5v0__dffrnq_2",
-          "parameters": {
-          },
-          "attributes": {
-            "hdlname": "u_pre u_pre_ff0",
-            "keep": "00000000000000000000000000000001",
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "rtl/pll_prescaler.v:32.48-33.57"
-          },
-          "port_directions": {
-            "CLK": "input",
-            "D": "input",
-            "Q": "output",
-            "RN": "input"
-          },
-          "connections": {
-            "CLK": [ 7 ],
-            "D": [ 124 ],
-            "Q": [ 123 ],
-            "RN": [ 3 ]
-          }
-        },
-        "u_pre.u_pre_inv0": {
-          "hide_name": 0,
-          "type": "gf180mcu_fd_sc_mcu7t5v0__inv_1",
-          "parameters": {
-          },
-          "attributes": {
-            "hdlname": "u_pre u_pre_inv0",
-            "keep": "00000000000000000000000000000001",
-            "module_not_derived": "00000000000000000000000000000001",
-            "src": "rtl/pll_prescaler.v:34.45-34.81"
-          },
-          "port_directions": {
-            "I": "input",
-            "ZN": "output"
-          },
-          "connections": {
-            "I": [ 123 ],
-            "ZN": [ 124 ]
           }
         }
       },
@@ -14293,25 +14228,25 @@
             "src": "rtl/pll_lock_det.v:37.3-39.43"
           }
         },
-        "$abc$868$flatten\\u_pre.$0\\pre_q1[0:0]": {
+        "$abc$868$flatten\\u_pre.$0\\pre_q0[0:0]": {
           "hide_name": 1,
           "bits": [ 103 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:44.3-46.35"
+            "src": "rtl/pll_prescaler.v:19.3-21.35"
           }
         },
-        "$abc$868$flatten\\u_pre.$0\\pre_q2[0:0]": {
+        "$abc$868$flatten\\u_pre.$0\\pre_q1[0:0]": {
           "hide_name": 1,
           "bits": [ 101 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:48.3-50.35"
+            "src": "rtl/pll_prescaler.v:23.3-25.35"
           }
         },
         "$abc$868$flatten\\u_pre.$0\\q3[0:0]": {
           "hide_name": 1,
           "bits": [ 104 ],
           "attributes": {
-            "src": "rtl/pll_prescaler.v:52.3-54.27"
+            "src": "rtl/pll_prescaler.v:27.3-29.27"
           }
         },
         "$abc$967$auto$rtlil.cc:3488:NotGate$962": {
@@ -14600,147 +14535,147 @@
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:13.23-13.26"
+            "src": "rtl/ihsan_sa_pll.v:14.23-14.26"
           }
         },
         "clk_fb": {
           "hide_name": 0,
           "bits": [ 13 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:21.23-21.29"
+            "src": "rtl/ihsan_sa_pll.v:22.23-22.29"
           }
         },
         "clk_fb_int": {
           "hide_name": 0,
           "bits": [ 89 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:35.8-35.18"
+            "src": "rtl/ihsan_sa_pll.v:36.8-36.18"
           }
         },
         "clk_pre": {
           "hide_name": 0,
           "bits": [ 87 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:33.8-33.15"
+            "src": "rtl/ihsan_sa_pll.v:34.8-34.15"
           }
         },
         "cp_trim0": {
           "hide_name": 0,
           "bits": [ 18 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:26.23-26.31"
+            "src": "rtl/ihsan_sa_pll.v:27.23-27.31"
           }
         },
         "cp_trim1": {
           "hide_name": 0,
           "bits": [ 19 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:27.23-27.31"
+            "src": "rtl/ihsan_sa_pll.v:28.23-28.31"
           }
         },
         "cp_trim_in": {
           "hide_name": 0,
           "bits": [ 10, 11 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:19.23-19.33"
+            "src": "rtl/ihsan_sa_pll.v:20.23-20.33"
           }
         },
         "lock": {
           "hide_name": 0,
           "bits": [ 14 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:22.23-22.27"
+            "src": "rtl/ihsan_sa_pll.v:23.23-23.27"
           }
         },
         "n_sel": {
           "hide_name": 0,
           "bits": [ 4, 5, 6 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:15.23-15.28"
+            "src": "rtl/ihsan_sa_pll.v:16.23-16.28"
           }
         },
         "obs_int": {
           "hide_name": 0,
           "bits": [ 93 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:36.8-36.15"
+            "src": "rtl/ihsan_sa_pll.v:37.8-37.15"
           }
         },
         "obs_out": {
           "hide_name": 0,
           "bits": [ 12 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:20.23-20.30"
+            "src": "rtl/ihsan_sa_pll.v:21.23-21.30"
           }
         },
         "obs_q3": {
           "hide_name": 0,
           "bits": [ 92 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:34.8-34.14"
+            "src": "rtl/ihsan_sa_pll.v:35.8-35.14"
           }
         },
         "obs_sel": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:18.23-18.30"
+            "src": "rtl/ihsan_sa_pll.v:19.23-19.30"
           }
         },
         "pfd_dn": {
           "hide_name": 0,
           "bits": [ 16 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:24.23-24.29"
+            "src": "rtl/ihsan_sa_pll.v:25.23-25.29"
           }
         },
         "pfd_dn_q": {
           "hide_name": 0,
           "bits": [ 85 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:38.8-38.16"
+            "src": "rtl/ihsan_sa_pll.v:39.8-39.16"
           }
         },
         "pfd_up": {
           "hide_name": 0,
           "bits": [ 15 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:23.23-23.29"
+            "src": "rtl/ihsan_sa_pll.v:24.23-24.29"
           }
         },
         "pfd_up_q": {
           "hide_name": 0,
           "bits": [ 84 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:37.8-37.16"
+            "src": "rtl/ihsan_sa_pll.v:38.8-38.16"
           }
         },
         "pll_en": {
           "hide_name": 0,
           "bits": [ 17 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:25.23-25.29"
+            "src": "rtl/ihsan_sa_pll.v:26.23-26.29"
           }
         },
         "pll_en_in": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:17.23-17.32"
+            "src": "rtl/ihsan_sa_pll.v:18.23-18.32"
           }
         },
         "recover": {
           "hide_name": 0,
           "bits": [ 26 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:39.8-39.15"
+            "src": "rtl/ihsan_sa_pll.v:40.8-40.15"
           }
         },
         "rst_n": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:14.23-14.28"
+            "src": "rtl/ihsan_sa_pll.v:15.23-15.28"
           }
         },
         "u_ctrl.clk": {
@@ -14969,7 +14904,7 @@
         },
         "u_pfd.pfd_dly_mid": {
           "hide_name": 0,
-          "bits": [ 122 ],
+          "bits": [ 121 ],
           "attributes": {
             "hdlname": "u_pfd pfd_dly_mid",
             "keep": "00000000000000000000000000000001",
@@ -15030,7 +14965,7 @@
           "bits": [ 87 ],
           "attributes": {
             "hdlname": "u_pre clk_pre",
-            "src": "rtl/pll_prescaler.v:17.17-17.24"
+            "src": "rtl/pll_prescaler.v:14.17-14.24"
           }
         },
         "u_pre.obs_q3": {
@@ -15038,47 +14973,23 @@
           "bits": [ 92 ],
           "attributes": {
             "hdlname": "u_pre obs_q3",
-            "src": "rtl/pll_prescaler.v:18.17-18.23"
-          }
-        },
-        "u_pre.pre_c0": {
-          "hide_name": 0,
-          "bits": [ 121 ],
-          "attributes": {
-            "hdlname": "u_pre pre_c0",
-            "src": "rtl/pll_prescaler.v:31.8-31.14"
-          }
-        },
-        "u_pre.pre_d0": {
-          "hide_name": 0,
-          "bits": [ 124 ],
-          "attributes": {
-            "hdlname": "u_pre pre_d0",
-            "src": "rtl/pll_prescaler.v:30.8-30.14"
+            "src": "rtl/pll_prescaler.v:15.17-15.23"
           }
         },
         "u_pre.pre_q0": {
           "hide_name": 0,
-          "bits": [ 123 ],
+          "bits": [ 102 ],
           "attributes": {
             "hdlname": "u_pre pre_q0",
-            "src": "rtl/pll_prescaler.v:29.8-29.14"
+            "src": "rtl/pll_prescaler.v:17.7-17.13"
           }
         },
         "u_pre.pre_q1": {
           "hide_name": 0,
-          "bits": [ 102 ],
-          "attributes": {
-            "hdlname": "u_pre pre_q1",
-            "src": "rtl/pll_prescaler.v:20.7-20.13"
-          }
-        },
-        "u_pre.pre_q2": {
-          "hide_name": 0,
           "bits": [ 87 ],
           "attributes": {
-            "hdlname": "u_pre pre_q2",
-            "src": "rtl/pll_prescaler.v:20.15-20.21"
+            "hdlname": "u_pre pre_q1",
+            "src": "rtl/pll_prescaler.v:17.15-17.21"
           }
         },
         "u_pre.q3": {
@@ -15086,7 +14997,7 @@
           "bits": [ 92 ],
           "attributes": {
             "hdlname": "u_pre q3",
-            "src": "rtl/pll_prescaler.v:20.23-20.25"
+            "src": "rtl/pll_prescaler.v:17.23-17.25"
           }
         },
         "u_pre.rst_n": {
@@ -15094,22 +15005,22 @@
           "bits": [ 3 ],
           "attributes": {
             "hdlname": "u_pre rst_n",
-            "src": "rtl/pll_prescaler.v:16.17-16.22"
+            "src": "rtl/pll_prescaler.v:13.17-13.22"
           }
         },
-        "u_pre.vco_out": {
+        "u_pre.vco_div2": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "hdlname": "u_pre vco_out",
-            "src": "rtl/pll_prescaler.v:15.17-15.24"
+            "hdlname": "u_pre vco_div2",
+            "src": "rtl/pll_prescaler.v:12.17-12.25"
           }
         },
-        "vco_out": {
+        "vco_div2": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "rtl/ihsan_sa_pll.v:16.23-16.30"
+            "src": "rtl/ihsan_sa_pll.v:17.23-17.31"
           }
         }
       }

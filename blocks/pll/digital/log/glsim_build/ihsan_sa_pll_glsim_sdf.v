@@ -16,9 +16,9 @@ module ihsan_sa_pll (
     output wire pll_en,
     input  wire pll_en_in,
     input  wire rst_n,
-    input  wire vco_out
+    input  wire vco_div2
 );
-  wire [7:0] tt_ui_in = {obs_sel, pll_en_in, 1'b0, 1'b0, vco_out, n_sel[2], n_sel[1], n_sel[0]};
+  wire [7:0] tt_ui_in = {obs_sel, pll_en_in, 1'b0, 1'b0, vco_div2, n_sel[2], n_sel[1], n_sel[0]};
   wire [7:0] tt_uio_in = {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, cp_trim_in[1], cp_trim_in[0]};
   wire [7:0] tt_uo_out;
   wire [7:0] tt_uio_out;
@@ -40,6 +40,6 @@ module ihsan_sa_pll (
       .uio_out(tt_uio_out), .uio_oe(tt_uio_oe), .ena(tt_ena),
       .clk(tt_clk), .rst_n(tt_rst_n)
   );
-  initial $sdf_annotate("/work/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf", dut);
+  initial $sdf_annotate("/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/glsim_build/sdf_icarus.sdf", dut);
 endmodule
 `default_nettype wire

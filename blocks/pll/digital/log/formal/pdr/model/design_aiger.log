@@ -32,13 +32,13 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 
 6.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ihsan_sa_pll_formal.
-<suppressed ~31 debug messages>
+<suppressed ~30 debug messages>
 
 6.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ihsan_sa_pll_formal'.
-Computing hashes of 310 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 302 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 309 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 301 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
 <suppressed ~3 debug messages>
 Removed a total of 1 cells.
@@ -49,20 +49,20 @@ Running muxtree optimizer on module \ihsan_sa_pll_formal..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~112 debug messages>
+<suppressed ~109 debug messages>
 
 6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \ihsan_sa_pll_formal.
-    Consolidated identical input bits for $mux cell $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192:
-      Old ports: A=10'1111111111, B=10'0001111111, Y=$flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y
-      New ports: A=1'1, B=1'0, Y=$flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7]
-      New connections: { $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [9:8] $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [6:0] } = { $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7] $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7] 7'1111111 }
+    Consolidated identical input bits for $mux cell $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192:
+      Old ports: A=10'1111111111, B=10'0001111111, Y=$flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y
+      New ports: A=1'1, B=1'0, Y=$flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7]
+      New connections: { $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [9:8] $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [6:0] } = { $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7] $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y [7] 7'1111111 }
   Optimizing cells in module \ihsan_sa_pll_formal.
 Performed a total of 1 changes.
 
 6.5. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ihsan_sa_pll_formal'.
-Computing hashes of 309 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 301 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
 Removed a total of 0 cells.
 
@@ -87,7 +87,7 @@ Running muxtree optimizer on module \ihsan_sa_pll_formal..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~110 debug messages>
+<suppressed ~107 debug messages>
 
 6.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \ihsan_sa_pll_formal.
@@ -95,9 +95,9 @@ Performed a total of 0 changes.
 
 6.13. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ihsan_sa_pll_formal'.
-Computing hashes of 308 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 300 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 307 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 299 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
 <suppressed ~3 debug messages>
 Removed a total of 1 cells.
@@ -122,7 +122,7 @@ Running muxtree optimizer on module \ihsan_sa_pll_formal..
   Evaluating internal representation of mux trees.
   Analyzing evaluation results.
 Removed 0 multiplexer ports.
-<suppressed ~110 debug messages>
+<suppressed ~107 debug messages>
 
 6.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \ihsan_sa_pll_formal.
@@ -130,7 +130,7 @@ Performed a total of 0 changes.
 
 6.21. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ihsan_sa_pll_formal'.
-Computing hashes of 307 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 299 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
 Removed a total of 0 cells.
 
@@ -181,8 +181,8 @@ Successfully finished Verilog frontend.
 Using extmapper simplemap for cells of type $reduce_or.
 Using extmapper simplemap for cells of type $eqx.
 Using extmapper simplemap for cells of type $mux.
-Using extmapper simplemap for cells of type $ff.
 Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $ff.
 Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $or.
 Using extmapper simplemap for cells of type $ne.
@@ -191,8 +191,6 @@ Using extmapper simplemap for cells of type $logic_not.
 Using extmapper simplemap for cells of type $logic_and.
 Running "alumacc" on wrapper $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
 Using template $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=3:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
-Running "alumacc" on wrapper $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
-Using template $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$le:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=4:Y_WIDTH=1:394426c56d1a028ba8fdd5469b163e04011def47.
 Using extmapper simplemap for cells of type $eq.
 Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=10:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=10:394426c56d1a028ba8fdd5469b163e04011def47.
 Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=10:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=10:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=10:B_SIGNED=0:B_WIDTH=1:Y_WIDTH=10:394426c56d1a028ba8fdd5469b163e04011def47.
@@ -213,7 +211,6 @@ Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=4:B_SIGNED=0:B_WIDTH=1:Y_WID
 Using extmapper simplemap for cells of type $reduce_and.
 Using template $paramod$943564b9366bbc392bf4bbc801aa0a2d7742a4e0\_90_alu for cells of type $alu.
 Using template $paramod$8b1a36ab2238111d2a0f4cb4ef2e14f2a55fc1f9\_90_alu for cells of type $alu.
-Using template $paramod$dad13a281fa6a9ffd6dd427a87dc9a952e80e9ea\_90_alu for cells of type $alu.
 Using template $paramod$754650b284649a026620fc6856e5b6886cbfe794\_90_alu for cells of type $alu.
 Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
 Using template $paramod$b8c0a997bce700f23568a5ada79cc6781d1f5ca0\_90_alu for cells of type $alu.
@@ -231,34 +228,34 @@ Using template $paramod\_90_lcu_brent_kung\WIDTH=32'0000000000000000000000000000
 Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
 Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
 No more expansions possible.
-<suppressed ~1363 debug messages>
+<suppressed ~1326 debug messages>
 
 8. Executing OPT pass (performing simple optimizations).
 
 8.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module ihsan_sa_pll_formal.
-<suppressed ~572 debug messages>
+<suppressed ~568 debug messages>
 
 8.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\ihsan_sa_pll_formal'.
-Computing hashes of 815 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 805 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 755 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 746 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 749 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 740 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 743 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 734 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-Computing hashes of 742 cells of `\ihsan_sa_pll_formal'.
+Computing hashes of 733 cells of `\ihsan_sa_pll_formal'.
 Finding duplicate cells in `\ihsan_sa_pll_formal'.
-<suppressed ~219 debug messages>
-Removed a total of 73 cells.
+<suppressed ~216 debug messages>
+Removed a total of 72 cells.
 
 8.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ihsan_sa_pll_formal..
-Removed 40 unused cells and 735 unused wires.
+Removed 40 unused cells and 731 unused wires.
 <suppressed ~43 debug messages>
 
 8.5. Finished fast OPT passes.
@@ -272,16 +269,16 @@ Removed 40 unused cells and 735 unused wires.
 12. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
 
 13. Executing AIGMAP pass (map logic to AIG).
-Module ihsan_sa_pll_formal: replaced 360 cells with 2196 new cells, skipped 342 cells.
+Module ihsan_sa_pll_formal: replaced 357 cells with 2178 new cells, skipped 336 cells.
   replaced 3 cell types:
-     201 $_MUX_
-     108 $_OR_
+     199 $_MUX_
+     107 $_OR_
       51 $_XOR_
   not replaced 8 cell types:
-     120 $_AND_
-      96 $_FF_
-      80 $_NOT_
-      30 $anyinit
+     118 $_AND_
+      94 $_FF_
+      79 $_NOT_
+      29 $anyinit
        8 $assert
        1 $assume
        1 $initstate
@@ -289,7 +286,7 @@ Module ihsan_sa_pll_formal: replaced 360 cells with 2196 new cells, skipped 342 
 
 14. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \ihsan_sa_pll_formal..
-Removed 0 unused cells and 251 unused wires.
+Removed 0 unused cells and 248 unused wires.
 <suppressed ~1 debug messages>
 
 15. Printing statistics.
@@ -298,17 +295,17 @@ Removed 0 unused cells and 251 unused wires.
 
         +----------Local Count, excluding submodules.
         | 
-     2405 wires
-     2680 wire bits
-      144 public wires
-      231 public wire bits
+     2380 wires
+     2655 wire bits
+      142 public wires
+      229 public wire bits
         7 ports
        10 port bits
-     2538 cells
-      984   $_AND_
-       96   $_FF_
-     1412   $_NOT_
-       30   $anyinit
+     2514 cells
+      975   $_AND_
+       94   $_FF_
+     1400   $_NOT_
+       29   $anyinit
         8   $assert
         1   $assume
         1   $initstate
@@ -316,7 +313,7 @@ Removed 0 unused cells and 251 unused wires.
 
 16. Executing AIGER backend.
 Warning: Treating undriven bit ihsan_sa_pll_formal.\clk like $anyseq.
-Warning: Treating undriven bit ihsan_sa_pll_formal.\vco_out like $anyseq.
+Warning: Treating undriven bit ihsan_sa_pll_formal.\vco_div2 like $anyseq.
 Warning: Treating undriven bit ihsan_sa_pll_formal.\rst_n like $anyseq.
 Warning: Treating undriven bit ihsan_sa_pll_formal.\pll_en_in like $anyseq.
 Warning: Treating undriven bit ihsan_sa_pll_formal.\obs_sel like $anyseq.
@@ -328,6 +325,6 @@ Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [1] like $anyseq.
 Warning: Treating a total of 10 undriven bits in ihsan_sa_pll_formal like $anyseq.
 
 Warnings: 11 unique messages, 11 total
-End of script. Logfile hash: 53adc3215c, time: 0.33s, user: 0.06s, system: 0.03s, MEM: 36.56 MB peak
+End of script. Logfile hash: af148ad6af, time: 0.07s, user: 0.06s, system: 0.01s, MEM: 37.04 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 26% 9x opt_clean (0 sec), 22% 1x techmap (0 sec), ...
+Time spent: 27% 1x techmap (0 sec), 21% 9x opt_clean (0 sec), ...

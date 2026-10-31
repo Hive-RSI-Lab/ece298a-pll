@@ -1,4 +1,4 @@
-# running in /work/blocks/pll/digital/log/formal/smt/model/
+# running in /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/smt/model/
 read_rtlil design_prep.il
 hierarchy -smtcheck
 delete */t:$print

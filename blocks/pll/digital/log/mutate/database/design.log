@@ -8,33 +8,33 @@
 
 -- Executing script file `database/design.ys' --
 
-1. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/ihsan_sa_pll.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/ihsan_sa_pll.v' to AST representation.
+1. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v' to AST representation.
 Generating RTLIL representation for module `\ihsan_sa_pll'.
 Successfully finished Verilog frontend.
 
-2. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/pll_ctrl_regs.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/pll_ctrl_regs.v' to AST representation.
+2. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v' to AST representation.
 Generating RTLIL representation for module `\pll_ctrl_regs'.
 Successfully finished Verilog frontend.
 
-3. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/pll_divider.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/pll_divider.v' to AST representation.
+3. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v' to AST representation.
 Generating RTLIL representation for module `\pll_divider'.
 Successfully finished Verilog frontend.
 
-4. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/pll_lock_det.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/pll_lock_det.v' to AST representation.
+4. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v' to AST representation.
 Generating RTLIL representation for module `\pll_lock_det'.
 Successfully finished Verilog frontend.
 
-5. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/pll_pfd.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/pll_pfd.v' to AST representation.
+5. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v' to AST representation.
 Generating RTLIL representation for module `\pll_pfd'.
 Successfully finished Verilog frontend.
 
-6. Executing Verilog-2005 frontend: /work/blocks/pll/digital/rtl/pll_prescaler.v
-Parsing SystemVerilog input from `/work/blocks/pll/digital/rtl/pll_prescaler.v' to AST representation.
+6. Executing Verilog-2005 frontend: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v
+Parsing SystemVerilog input from `/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v' to AST representation.
 Generating RTLIL representation for module `\pll_prescaler'.
 Successfully finished Verilog frontend.
 
@@ -63,70 +63,66 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:52$51 in module pll_prescaler.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:48$48 in module pll_prescaler.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:44$45 in module pll_prescaler.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:39$42 in module pll_prescaler.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_pfd.v:33$41 in module pll_pfd.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_pfd.v:29$40 in module pll_pfd.
-Marked 3 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29 in module pll_lock_det.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26 in module pll_lock_det.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:37$23 in module pll_lock_det.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_divider.v:27$16 in module pll_divider.
-Marked 2 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13 in module pll_divider.
-Marked 1 switch rules as full_case in process $proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5 in module pll_ctrl_regs.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:27$48 in module pll_prescaler.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:23$45 in module pll_prescaler.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:19$42 in module pll_prescaler.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:33$41 in module pll_pfd.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:29$40 in module pll_pfd.
+Marked 3 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29 in module pll_lock_det.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26 in module pll_lock_det.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:37$23 in module pll_lock_det.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:27$16 in module pll_divider.
+Marked 2 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13 in module pll_divider.
+Marked 1 switch rules as full_case in process $proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5 in module pll_ctrl_regs.
 Removed a total of 0 dead cases.
 
 8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
-Removed 15 redundant assignments.
+Removed 14 redundant assignments.
 Promoted 0 assignments to connections.
 
 8.4. Executing PROC_INIT pass (extract init attributes).
 
 8.5. Executing PROC_ARST pass (detect async resets in processes).
-Found async reset \rst_n in `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:52$51'.
-Found async reset \rst_n in `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:48$48'.
-Found async reset \rst_n in `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:44$45'.
-Found async reset \rst_n in `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:39$42'.
-Found async reset \pfd_clr in `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
-Found async reset \pfd_clr in `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
-Found async reset \rst_n in `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
-Found async reset \rst_n in `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
-Found async reset \rst_n in `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
-Found async reset \rst_n in `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:27$16'.
-Found async reset \rst_n in `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13'.
-Found async reset \rst_n in `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+Found async reset \rst_n in `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:27$48'.
+Found async reset \rst_n in `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:23$45'.
+Found async reset \rst_n in `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:19$42'.
+Found async reset \pfd_clr in `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
+Found async reset \pfd_clr in `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
+Found async reset \rst_n in `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
+Found async reset \rst_n in `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
+Found async reset \rst_n in `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
+Found async reset \rst_n in `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:27$16'.
+Found async reset \rst_n in `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13'.
+Found async reset \rst_n in `\pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
 
 8.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
 <suppressed ~3 debug messages>
 
 8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:52$51'.
+Creating decoders for process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:27$48'.
      1/1: $0\q3[0:0]
-Creating decoders for process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:48$48'.
-     1/1: $0\pre_q2[0:0]
-Creating decoders for process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:44$45'.
+Creating decoders for process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:23$45'.
      1/1: $0\pre_q1[0:0]
-Creating decoders for process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:39$42'.
+Creating decoders for process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:19$42'.
      1/1: $0\pre_q0[0:0]
-Creating decoders for process `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
+Creating decoders for process `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
      1/1: $0\pfd_fb_q[0:0]
-Creating decoders for process `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
+Creating decoders for process `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
      1/1: $0\pfd_ref_q[0:0]
-Creating decoders for process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
+Creating decoders for process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
      1/2: $0\wd_cnt[9:0]
      2/2: $0\recover[0:0]
-Creating decoders for process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
+Creating decoders for process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
      1/2: $0\lock[0:0]
      2/2: $0\lock_cnt[4:0]
-Creating decoders for process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
+Creating decoders for process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
      1/1: $0\wide_q[0:0]
-Creating decoders for process `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:27$16'.
+Creating decoders for process `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:27$16'.
      1/1: $0\fb_en[0:0]
-Creating decoders for process `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13'.
+Creating decoders for process `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13'.
      1/1: $0\div_cnt[2:0]
-Creating decoders for process `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+Creating decoders for process `\pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
      1/3: $0\cp_trim1[0:0]
      2/3: $0\cp_trim0[0:0]
      3/3: $0\pll_en[0:0]
@@ -134,61 +130,58 @@ Creating decoders for process `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl
 8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 8.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\pll_prescaler.\q3' using process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:52$51'.
-  created $adff cell `$procdff$73' with positive edge clock and positive level reset.
-Creating register for signal `\pll_prescaler.\pre_q2' using process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:48$48'.
-  created $adff cell `$procdff$78' with positive edge clock and positive level reset.
-Creating register for signal `\pll_prescaler.\pre_q1' using process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:44$45'.
+Creating register for signal `\pll_prescaler.\q3' using process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:27$48'.
+  created $adff cell `$procdff$70' with positive edge clock and positive level reset.
+Creating register for signal `\pll_prescaler.\pre_q1' using process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:23$45'.
+  created $adff cell `$procdff$75' with positive edge clock and positive level reset.
+Creating register for signal `\pll_prescaler.\pre_q0' using process `\pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:19$42'.
+  created $adff cell `$procdff$80' with positive edge clock and positive level reset.
+Creating register for signal `\pll_pfd.\pfd_fb_q' using process `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
   created $adff cell `$procdff$83' with positive edge clock and positive level reset.
-Creating register for signal `\pll_prescaler.\pre_q0' using process `\pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:39$42'.
-  created $adff cell `$procdff$88' with positive edge clock and positive level reset.
-Creating register for signal `\pll_pfd.\pfd_fb_q' using process `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
+Creating register for signal `\pll_pfd.\pfd_ref_q' using process `\pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
+  created $adff cell `$procdff$86' with positive edge clock and positive level reset.
+Creating register for signal `\pll_lock_det.\recover' using process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
   created $adff cell `$procdff$91' with positive edge clock and positive level reset.
-Creating register for signal `\pll_pfd.\pfd_ref_q' using process `\pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
-  created $adff cell `$procdff$94' with positive edge clock and positive level reset.
-Creating register for signal `\pll_lock_det.\recover' using process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
-  created $adff cell `$procdff$99' with positive edge clock and positive level reset.
-Creating register for signal `\pll_lock_det.\wd_cnt' using process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
-  created $adff cell `$procdff$104' with positive edge clock and positive level reset.
-Creating register for signal `\pll_lock_det.\lock' using process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
-  created $adff cell `$procdff$109' with positive edge clock and positive level reset.
-Creating register for signal `\pll_lock_det.\lock_cnt' using process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
-  created $adff cell `$procdff$114' with positive edge clock and positive level reset.
-Creating register for signal `\pll_lock_det.\wide_q' using process `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
-  created $adff cell `$procdff$119' with negative edge clock and positive level reset.
-Creating register for signal `\pll_divider.\fb_en' using process `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:27$16'.
-  created $adff cell `$procdff$124' with negative edge clock and positive level reset.
-Creating register for signal `\pll_divider.\div_cnt' using process `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13'.
-  created $adff cell `$procdff$129' with positive edge clock and positive level reset.
-Creating register for signal `\pll_ctrl_regs.\pll_en' using process `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
-  created $adff cell `$procdff$134' with positive edge clock and positive level reset.
-Creating register for signal `\pll_ctrl_regs.\cp_trim0' using process `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
-  created $adff cell `$procdff$139' with positive edge clock and positive level reset.
-Creating register for signal `\pll_ctrl_regs.\cp_trim1' using process `\pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
-  created $adff cell `$procdff$144' with positive edge clock and positive level reset.
+Creating register for signal `\pll_lock_det.\wd_cnt' using process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
+  created $adff cell `$procdff$96' with positive edge clock and positive level reset.
+Creating register for signal `\pll_lock_det.\lock' using process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
+  created $adff cell `$procdff$101' with positive edge clock and positive level reset.
+Creating register for signal `\pll_lock_det.\lock_cnt' using process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
+  created $adff cell `$procdff$106' with positive edge clock and positive level reset.
+Creating register for signal `\pll_lock_det.\wide_q' using process `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
+  created $adff cell `$procdff$111' with negative edge clock and positive level reset.
+Creating register for signal `\pll_divider.\fb_en' using process `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:27$16'.
+  created $adff cell `$procdff$116' with negative edge clock and positive level reset.
+Creating register for signal `\pll_divider.\div_cnt' using process `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13'.
+  created $adff cell `$procdff$121' with positive edge clock and positive level reset.
+Creating register for signal `\pll_ctrl_regs.\pll_en' using process `\pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+  created $adff cell `$procdff$126' with positive edge clock and positive level reset.
+Creating register for signal `\pll_ctrl_regs.\cp_trim0' using process `\pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+  created $adff cell `$procdff$131' with positive edge clock and positive level reset.
+Creating register for signal `\pll_ctrl_regs.\cp_trim1' using process `\pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+  created $adff cell `$procdff$136' with positive edge clock and positive level reset.
 
 8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:52$51'.
-Removing empty process `pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:48$48'.
-Removing empty process `pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:44$45'.
-Removing empty process `pll_prescaler.$proc$/work/blocks/pll/digital/rtl/pll_prescaler.v:39$42'.
-Removing empty process `pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
-Removing empty process `pll_pfd.$proc$/work/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
-Found and cleaned up 2 empty switches in `\pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
-Removing empty process `pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
-Removing empty process `pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
-Removing empty process `pll_lock_det.$proc$/work/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
-Removing empty process `pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:27$16'.
-Found and cleaned up 1 empty switch in `\pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13'.
-Removing empty process `pll_divider.$proc$/work/blocks/pll/digital/rtl/pll_divider.v:22$13'.
-Removing empty process `pll_ctrl_regs.$proc$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
+Removing empty process `pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:27$48'.
+Removing empty process `pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:23$45'.
+Removing empty process `pll_prescaler.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v:19$42'.
+Removing empty process `pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:33$41'.
+Removing empty process `pll_pfd.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v:29$40'.
+Found and cleaned up 2 empty switches in `\pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
+Removing empty process `pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:50$29'.
+Removing empty process `pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:41$26'.
+Removing empty process `pll_lock_det.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:37$23'.
+Removing empty process `pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:27$16'.
+Found and cleaned up 1 empty switch in `\pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13'.
+Removing empty process `pll_divider.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:22$13'.
+Removing empty process `pll_ctrl_regs.$proc$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12$5'.
 Cleaned up 3 empty switches.
 
 8.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module pll_prescaler.
-<suppressed ~8 debug messages>
+<suppressed ~6 debug messages>
 Optimizing module pll_pfd.
 <suppressed ~2 debug messages>
 Optimizing module pll_lock_det.
@@ -202,6 +195,6 @@ Optimizing module ihsan_sa_pll.
 9. Executing RTLIL backend.
 Output filename: database/design.il
 
-End of script. Logfile hash: 914e5f1121, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 28.53 MB peak
+End of script. Logfile hash: efb255f6c4, time: 0.01s, user: 0.01s, system: 0.00s, MEM: 28.78 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 65% 12x read_verilog (0 sec), 7% 2x write_rtlil (0 sec), ...
+Time spent: 64% 12x read_verilog (0 sec), 8% 2x write_rtlil (0 sec), ...

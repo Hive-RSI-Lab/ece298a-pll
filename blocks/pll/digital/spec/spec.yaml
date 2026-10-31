@@ -7,21 +7,21 @@ top: ihsan_sa_pll
 requirements:
   # --- prescaler / divider / observation -----------------------------------
   - id: REQ-PRE-DIV8
-    text: clk_pre rises exactly once per 8 rising edges of vco_out (three ripple toggle flops, /8 exactly, at any vco_out period down to 2.7 ns).
+    text: clk_pre rises exactly once per 4 rising edges of vco_div2, i.e. once per 8 VCO periods (vco_div2 is VCO/2 from the analog macro's TSPC stage; two ripple toggle flops, /4 exactly, at any vco_div2 period down to 5.4 ns).
     check: both
     property: prescaler_div8
   - id: REQ-OBS-SEL
-    text: obs_out (uo_out[0]) equals clk_pre (vco_out/8) when obs_sel (ui_in[7]) is 0 and equals a fourth toggle flop output at exactly vco_out/16 when obs_sel is 1.
+    text: obs_out (uo_out[0]) equals clk_pre (vco_div2/4 = VCO/8) when obs_sel (ui_in[7]) is 0 and equals a third toggle flop output at exactly vco_div2/8 = VCO/16 when obs_sel is 1.
     check: sim
   - id: REQ-DIV-N
-    text: For every legal code n_sel in 1..5, clk_fb has exactly one rising edge per N = n_sel rising edges of clk_pre, so clk_fb = vco_out/(8*N); N = 1 passes clk_pre through unchanged.
+    text: For every legal code n_sel in 1..5, clk_fb has exactly one rising edge per N = n_sel rising edges of clk_pre, so clk_fb = vco_div2/(4*N) = VCO/(8*N); N = 1 passes clk_pre through unchanged.
     check: both
     property: divider_ratio
   - id: REQ-DIV-ILLEGAL
     text: Unsupported codes n_sel = 0, 6 and 7 are treated as N = 1 (clk_fb = clk_pre), never as a stalled or undefined divider.
     check: sim
   - id: REQ-DIV-RESET-CLEAN
-    text: With vco_out already running when rst_n is released, the prescaler and divider start cleanly - the first full clk_fb period after release is exactly 8*N vco_out periods and no clk_pre, clk_fb or obs_out pulse shorter than one vco_out period appears.
+    text: With vco_div2 already running when rst_n is released, the prescaler and divider start cleanly - the first full clk_fb period after release is exactly 4*N vco_div2 periods (8*N VCO periods) and no clk_pre, clk_fb or obs_out pulse shorter than one VCO period appears.
     check: sim
   # --- PFD ------------------------------------------------------------------
   - id: REQ-PFD-UP-LEAD
@@ -100,12 +100,12 @@ requirements:
     bounds: {non_std_cells_in_netlist: {max: 0}}
   # --- bench strength -------------------------------------------------------
   - id: REQ-MUT-KILL
-    text: The bench kills all four named mutants - swapped UP/DN, missing PFD reset, divider off by one, prescaler /4 - with a kill rate of 100 percent on that set.
+    text: The bench kills all four named mutants - swapped UP/DN, missing PFD reset, divider off by one, prescaler /4 (clk_pre = VCO/4) - with a kill rate of 100 percent on that set.
     check: measure
     bounds: {named_mutant_kill_rate: {min: 1.0}}
   # --- timing and harden ----------------------------------------------------
   - id: REQ-TIM-PRE
-    text: The generated clock clk_pre (vco_out/8) constrained at 50 MHz (20 ns) is met by the divider, the PFD feedback flop and the /16 flop with non-negative worst slack at the tt corner.
+    text: The generated clock clk_pre (vco_div2/4 = VCO/8) constrained at 50 MHz (20 ns) is met by the divider, the PFD feedback flop and the /16 flop with non-negative worst slack at the tt corner.
     check: measure
     bounds: {clk_pre_wns_ns: {min: 0}}
   - id: REQ-TIM-REF
@@ -113,9 +113,9 @@ requirements:
     check: measure
     bounds: {clk_wns_ns: {min: 0}}
   - id: REQ-TIM-VCO
-    text: The three prescaler flops clocked by vco_out meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width, and every vco_out path meets setup and hold, with vco_out timed per process at the extracted VCO's ceiling on that process plus margin (harden/constraints.sdc; ceilings from analog/reports/recorded/pex_pvt.json vco_f_vdd_mhz, vctrl at the rail, any temperature, supply or resistor skew). tt and ff are timed at 2.7 ns (370 MHz, the analog spec's vco_fmax_ff_mhz ceiling), above their post-layout ceilings of 290.7 MHz (tt_pff) and 299.5 MHz (ff_m40c_vm10). ss is timed at 3.75 ns (267 MHz) against its 263.3 MHz post-layout ceiling (ss_pff, the settled ring's on the MOS-cap filter layout, 2026-10-30); vco_out's own setup uncertainty is 0.10 ns, derived in harden/constraints.sdc from the analog spec's period-jitter estimate (the only vco_out-to-vco_out path is the first stage's toggle loop on one clock pin, so no skew, and the ceiling already has vctrl at the rail and the -10% supply), in place of the flow's generic 0.25 ns, so the first stage's toggle loop (dffrnq_2 + inv_1, 3.62-3.68 ns routed at ss_125C_3v00 with the 5% derate, about 274 MHz) has to close in 3.65 ns, which leaves ss setup within 0.03 ns of zero depending on the routing. No library flop toggles at 2.7 ns at ss, so the ss VCO has to stay below the stage, and if the post-layout ss ceiling passes about 265 MHz, this bound is revisited. REQ-RECOVER covers a VCO above the stage.
+    text: The prescaler flops clocked by vco_div2 meet the Liberty minimum period (0.93 ns ff, 1.71 ns tt) and minimum pulse width, and every vco_div2 path meets setup and hold, with vco_div2 (VCO/2 from the analog macro's TSPC stage, issue #48) timed per process at twice the period of the extracted VCO's ceiling on that process plus margin (harden/constraints.sdc; ceilings from analog/reports/recorded/pex_pvt.json vco_f_vdd_mhz, vctrl at the rail, any temperature, supply or resistor skew). tt and ff are timed at 5.4 ns (2 x 2.7 ns, VCO 370 MHz, the analog spec's vco_fmax_ff_mhz ceiling), above their post-layout ceilings of 290.7 MHz (tt_pff) and 299.5 MHz (ff_m40c_vm10). ss is timed at 7.5 ns (2 x 3.75 ns, VCO 267 MHz) against its 263.3 MHz post-layout ceiling (ss_pff, the settled ring's on the MOS-cap filter layout, 2026-10-30). vco_div2's own setup uncertainty is 0.20 ns, derived in harden/constraints.sdc from the analog spec's period-jitter estimate accumulated over the two VCO periods of a vco_div2 period (the only vco_div2-to-vco_div2 path is the first stage's toggle loop on one clock pin, so no skew, and the ceiling already has vctrl at the rail and the -10% supply), in place of the flow's generic 0.25 ns. The first library stage is plain RTL (dffrnq_1 + inverter, with CTS's clkbuf_8 on its Q); routed at max_ss_125C_3v00 its toggle loop arrives at 4.80 ns against 7.5 ns, so ss setup reads +2.34..+2.39 ns (it read -0.03..+0.004 at the VCO itself), tt +2.74, ff +3.79, hold at least +0.51 at every corner (harden 2026-10-31); REQ-RECOVER still covers a VCO above what the dividers take.
     check: measure
-    bounds: {vco_out_period_ns: {min: 2.7}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
+    bounds: {vco_div2_period_ns: {min: 5.4}, prescaler_min_period_ns_tt: {max: 1.71}, prescaler_min_period_ns_ff: {max: 0.93}}
   - id: REQ-HARDEN-STANDALONE
     text: The digital side hardens alone as tt_um_ihsan_sa_pll on the TT GF180 analog-tile footprint with the pin map in tt_pins, with zero DRC errors and zero LVS mismatches; the analog macro area is reserved later by the msde integrator, not by this run.
     check: measure
@@ -127,7 +127,7 @@ ports:
   clk:        {dir: input,  width: 1}
   rst_n:      {dir: input,  width: 1}
   n_sel:      {dir: input,  width: 3}
-  vco_out:    {dir: input,  width: 1}
+  vco_div2:   {dir: input,  width: 1}
   pll_en_in:  {dir: input,  width: 1}
   obs_sel:    {dir: input,  width: 1}
   cp_trim_in: {dir: input,  width: 2}
@@ -149,7 +149,7 @@ tt_pins:
   clk:        clk
   rst_n:      rst_n
   n_sel:      ui_in[2:0]
-  vco_out:    ui_in[3]
+  vco_div2:   ui_in[3]
   pll_en_in:  ui_in[6]
   obs_sel:    ui_in[7]
   cp_trim_in: uio_in[1:0]
@@ -162,20 +162,20 @@ tt_pins:
   cp_trim0:   uo_out[6]
   cp_trim1:   uo_out[7]
 
-# Primary clock is the reference (12.5 MHz worst case). vco_out is the second
-# port clock (prescaler flops only). clk_pre and clk_fb are internal
+# Primary clock is the reference (12.5 MHz worst case). vco_div2 (VCO/2) is
+# the second port clock (prescaler flops only). clk_pre and clk_fb are internal
 # generated clocks - see timing_notes for the architect / SDC.
 clock:
   period_ns: 80
-  domains: [clk, vco_out]
+  domains: [clk, vco_div2]
   primary: clk
 
 timing_notes:
   clk:     {period_ns: 80,  note: "reference, 5-12.5 MHz, constrained at 12.5 MHz"}
-  vco_out: {period_ns: 2.7, note: "prescaler flops only; 2.7 ns at tt and ff, 3.75 ns at ss: the post-layout VCO ceiling on each process plus margin, picked per STA corner in harden/constraints.sdc (REQ-TIM-VCO)"}
-  clk_pre: {period_ns: 20,  note: "generated clock vco_out/8, constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
+  vco_div2: {period_ns: 5.4, note: "VCO/2 from the analog macro's TSPC stage; prescaler flops only; 5.4 ns at tt and ff, 7.5 ns at ss: twice the post-layout VCO ceiling's period on each process plus margin, picked per STA corner in harden/constraints.sdc (REQ-TIM-VCO)"}
+  clk_pre: {period_ns: 20,  note: "generated clock vco_div2/4 (VCO/8), constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
   clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 46 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
-  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock on the port, 2.7 ns at tt/ff, 3.75 ns at ss), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
+  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_div2 (create_clock on the port, 5.4 ns at tt/ff, 7.5 ns at ss), clk_pre and clk_fb (create_generated_clock -divide_by 4 / 4*N from vco_div2) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in harden/constraints.sdc, written against the flat netlist names"}
 
 design_choices:
   illegal_n_codes: "codes 0, 6, 7 decode as N = 1 (no hidden state, divider never stalls)"
@@ -187,16 +187,14 @@ design_choices:
   recover_why: "W x T_ref is 82 us at 12.5 MHz, past the 50 us lock-time bound, so a loop that is acquiring is never cut short; 128 periods of DN (10 us at 12.5 MHz) take Vctrl from the rail to ground at the weakest pump current (13.6 uA into 22 pF is 5.3 us)"
 
 # Instance names of the two hand-instantiated PFD reset delay cells inside
-# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1), the port clock buffers
-# and the prescaler's hand-instantiated first stage (u_pre.u_pre_ff0/inv0)
-# with the buffer that clocks stage 1 (u_pre.u_pre_ckbuf0). Everything else in the
-# design reaches a port and cannot be pruned as unused. See spec.md
-# "## Architecture" for the module and instance naming.
-must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf, u_pre_ff0, u_pre_inv0, u_pre_ckbuf0]
+# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1) and the port clock
+# buffers. Everything else in the design reaches a port and cannot be pruned
+# as unused. See spec.md "## Architecture" for the module and instance naming.
+must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf]
 
 # Formal depths (P3 property-writer): prove depth covers the 16-cycle lock
 # history window; cover_depth reaches lock (16 ref cycles) and an N=5 clk_fb
-# period (40 vco_out periods) with each clock edge taking >= 2 steps.
+# period (40 VCO periods, 20 vco_div2 periods) with each clock edge taking >= 2 steps.
 formal:
   depth: 20
   cover_depth: 300

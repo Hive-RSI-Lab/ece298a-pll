@@ -1,4 +1,4 @@
-read_rtlil /work/blocks/pll/digital/log/mutate/database/design.il
+read_rtlil /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/mutate/database/design.il
 hierarchy -auto-top
 flatten
 rename -top ref
@@ -8,9 +8,9 @@ write_json ref.json
 write_rtlil ref.il
 async2sync
 design -stash ref
-read_rtlil /work/blocks/pll/digital/log/mutate/database/design.il
+read_rtlil /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/mutate/database/design.il
 hierarchy -auto-top
-mutate -mode const1 -module pll_ctrl_regs -cell $auto$proc_dff.cc:220:proc_dff$130 -port Y -portbit 0
+mutate -mode const0 -module pll_ctrl_regs -cell $auto$proc_dff.cc:220:proc_dff$122 -port Y -portbit 0
 flatten
 rename -top uut
 hierarchy -top uut
