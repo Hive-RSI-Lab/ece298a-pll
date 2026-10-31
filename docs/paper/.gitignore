@@ -1,0 +1,5 @@
+sims/run/
+*.aux
+*.log
+*.out
+figs/*.png
