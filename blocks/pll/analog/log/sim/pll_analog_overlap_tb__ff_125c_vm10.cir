@@ -27,7 +27,7 @@
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
 C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
 .ends cap_nmos_03v3_b
-.include '/work/blocks/pll/analog/netlist/pll_analog.cir'
+.include '/home/hive2/projects/ece298a-pll/blocks/pll/analog/netlist/pll_analog.cir'
 .param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=3.5e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='4e-05' l_cl='2e-06'
 
 .temp 125
@@ -44,8 +44,8 @@ vdn      pfd_dn   0 pulse(0 {vddp} 20n 100p 100p 1n 40n)
 vt0      cp_trim0 0 0
 vt1      cp_trim1 0 0
 vvc      vctrl    0 {vddp/2}
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit

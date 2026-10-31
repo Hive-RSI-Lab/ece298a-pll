@@ -16,9 +16,9 @@ module ihsan_sa_pll (
     output wire pll_en,
     input  wire pll_en_in,
     input  wire rst_n,
-    input  wire vco_out
+    input  wire vco_div2
 );
-  wire [7:0] tt_ui_in = {obs_sel, pll_en_in, 1'b0, 1'b0, vco_out, n_sel[2], n_sel[1], n_sel[0]};
+  wire [7:0] tt_ui_in = {obs_sel, pll_en_in, 1'b0, 1'b0, vco_div2, n_sel[2], n_sel[1], n_sel[0]};
   wire [7:0] tt_uio_in = {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, cp_trim_in[1], cp_trim_in[0]};
   wire [7:0] tt_uo_out;
   wire [7:0] tt_uio_out;

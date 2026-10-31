@@ -89,8 +89,8 @@ vt1      cp_trim1 0 dc 0
 vvc      vctrl    vk dc 1.65
 vkick    vk       vr dc 0 pulse(0 0.3 1n 100p 100p 2n 1)
 vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit
@@ -129,7 +129,7 @@ foreach pt 0 1
   let nx = length(time)
   let nx1 = nx - 1
   let nx2 = nx - 2
-  let hv = (v(vco_out) gt 1.65)
+  let hv = (v(xdut.vco_out) gt 1.65)
   let late = time[1,$&nx1] gt $tdx
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   let fk = 0
@@ -139,8 +139,8 @@ foreach pt 0 1
     if nr gt nmax
       let nr = nmax
     end
-    meas tran tra when v(vco_out)=1.65 rise=1 td=$tdx
-    meas tran trb when v(vco_out)=1.65 rise=$&nr td=$tdx
+    meas tran tra when v(xdut.vco_out)=1.65 rise=1 td=$tdx
+    meas tran trb when v(xdut.vco_out)=1.65 rise=$&nr td=$tdx
     let fk = (nr - 1)/(trb - tra)
   end
   set fks = "$&fk"

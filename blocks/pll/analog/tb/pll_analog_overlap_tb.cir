@@ -44,8 +44,8 @@ vdn      pfd_dn   0 pulse(0 {vddp} 20n 100p 100p 1n 40n)
 vt0      cp_trim0 0 0
 vt1      cp_trim1 0 0
 vvc      vctrl    0 {vddp/2}
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit

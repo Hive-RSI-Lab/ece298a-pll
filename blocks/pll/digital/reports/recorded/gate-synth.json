@@ -3,7 +3,7 @@
  "gate": "synth",
  "phase": "P5",
  "tool": "synth",
- "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -33,15 +33,12 @@
    "gf180mcu_fd_sc_mcu7t5v0__and4_1": 3,
    "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 2,
    "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 7,
-   "gf180mcu_fd_sc_mcu7t5v0__clkbuf_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8": 2,
    "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 11,
    "gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 28,
-   "gf180mcu_fd_sc_mcu7t5v0__dffrnq_2": 1,
    "gf180mcu_fd_sc_mcu7t5v0__dlya_1": 2,
-   "gf180mcu_fd_sc_mcu7t5v0__inv_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__mux2_1": 2,
    "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 2,
    "gf180mcu_fd_sc_mcu7t5v0__nand3_1": 2,
@@ -55,13 +52,13 @@
    "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 3
   },
-  "area": 3810.8672,
+  "area": 3709.888,
   "netlist": "synth/ihsan_sa_pll.v"
  },
  "inputs_at_start": {
-  "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
  },
- "recorded_ts": "2026-10-29T11:01:51",
- "attempts": 8
+ "recorded_ts": "2026-10-31T15:36:50",
+ "attempts": 10
 }

@@ -63,14 +63,16 @@ class Monitor:
 
 
 async def vco_clock(dut, period_ns, stop=None):
-    """Free-running vco_out, exact period (ps rounding with no drift)."""
+    """Free-running VCO of period period_ns, seen as the macro delivers it:
+    vco_div2 = VCO/2 (the analog macro's TSPC stage, issue #48), which
+    toggles once per VCO period. Exact period (ps rounding with no drift)."""
     t = now()
     v = 0
     while stop is None or not stop.get("stop"):
-        t += period_ns / 2
+        t += period_ns
         await wait_until(t)
         v ^= 1
-        dut.vco_out.value = v
+        dut.vco_div2.value = v
 
 
 async def ref_clock(dut, rises):

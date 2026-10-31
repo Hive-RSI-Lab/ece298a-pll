@@ -39,7 +39,7 @@ CORNERS = {
     "ss_pff": ("ss", "res_ff", "mimcap_ff", 125, 2.97),
 }
 
-DUT = ("xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref "
+DUT = ("xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref "
        "vdd vss pll_analog")
 
 
@@ -66,11 +66,11 @@ def vco_point(corner: str, vc: float, tmp: Path) -> float:
     vdd = CORNERS[corner][4]
     lines = header(corner) + [
         "vup pfd_up 0 0", "vdn pfd_dn 0 0", "vt0 cp_trim0 0 0",
-        "vt1 cp_trim1 0 0", f"vvc vctrl 0 {vc}", "cload vco_out 0 15f", DUT,
+        "vt1 cp_trim1 0 0", f"vvc vctrl 0 {vc}", "cload vco_div2 0 30f", DUT,
         "ikick 0 xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)",
         ".control", "set noaskquit", f"tran {step} {stop} 0 {step}",
-        f"meas tran ta when v(vco_out)={vdd / 2} rise=2 td={settle}",
-        f"meas tran tb when v(vco_out)={vdd / 2} rise=7 td={settle}",
+        f"meas tran ta when v(xdut.vco_out)={vdd / 2} rise=2 td={settle}",
+        f"meas tran tb when v(xdut.vco_out)={vdd / 2} rise=7 td={settle}",
         "let f = 5/(tb-ta)", 'echo "FREQ $&f"', ".endc"]
     out = run_deck(lines, tmp, f"vco_{vc:.2f}")
     for ln in out.splitlines():
@@ -86,7 +86,7 @@ def pump(corner: str, tmp: Path) -> dict:
     vdd = CORNERS[corner][4]
     lines = header(corner) + [
         "vup pfd_up 0 0", "vdn pfd_dn 0 0", "vt0 cp_trim0 0 0",
-        "vt1 cp_trim1 0 0", f"vvc vctrl 0 {vdd / 2}", "cload vco_out 0 15f",
+        "vt1 cp_trim1 0 0", f"vvc vctrl 0 {vdd / 2}", "cload vco_div2 0 30f",
         DUT, ".control", "set noaskquit",
         f"alter vup dc = {vdd}", f"dc vvc 0 {vdd} 0.05",
         "wrdata iup.txt i(vvc)",
@@ -128,7 +128,7 @@ def filt(corner: str, tmp: Path) -> dict:
     lines = header(corner) + [
         "vup pfd_up 0 0", "vdn pfd_dn 0 0", "vt0 cp_trim0 0 0",
         "vt1 cp_trim1 0 0", f"vvc vfeed 0 {vdd / 2}", "lfeed vfeed vctrl 1e9",
-        "iac 0 vctrl dc 0 ac 1", "cload vco_out 0 15f", DUT,
+        "iac 0 vctrl dc 0 ac 1", "cload vco_div2 0 30f", DUT,
         ".control", "set noaskquit", "ac dec 50 100 1e9",
         "wrdata zac.txt v(vctrl)", ".endc"]
     run_deck(lines, tmp, "filt")
@@ -212,11 +212,12 @@ def write_ideal(cal: dict, path: Path) -> None:
 *  - filter: R1 = {flt['r1_ohm']:.4g} ohm, C1 = {flt['c1_f']:.4g} F,
 *    C2 = {flt['c2_f']:.4g} F, fitted to the cell's own vctrl impedance
 *  - VCO: phase integrator (1 F cap, 1 V = 1 cycle) driven by the measured
-*    f(vctrl) table, 0 Hz with pll_en low; vco_out = vdd/2*(1+tanh(8 sin))
-*    (edges ~2 % of a period)
+*    f(vctrl) table, 0 Hz with pll_en low; the pin is the cell's TSPC /2,
+*    vco_div2 = vdd/2*(1+tanh(8 sin(pi ph))), half the VCO's rate (edges
+*    ~1 % of its period)
 * Pin order is the cocotbext-ams wrapper's: digital inputs, then outputs,
 * then vdd vss. vctrl and the phase node stay internal (x1.vctrl, x1.ph).
-.subckt pll_analog_ideal pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vco_out vdd vss
+.subckt pll_analog_ideal pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vco_div2 vdd vss
 * input conditioning: 20 ps RC so the bridge's stepped sources stay smooth
 rin_up pfd_up up_f 1k
 cin_up up_f 0 20f
@@ -233,7 +234,7 @@ c2 vctrl 0 {flt['c2_f']:.6g}
 * VCO phase (cycles) on a 1 F cap; gmin keeps it from floating at DC
 bph 0 ph i = v(en)*pwl(v(vctrl), {pwl(vco)})
 cph ph 0 1
-bout vco_out 0 v = {vdd / 2}*(1 + tanh(8*sin(6.283185307179586*v(ph))))
+bout vco_div2 0 v = {vdd / 2}*(1 + tanh(8*sin(3.141592653589793*v(ph))))
 .ends pll_analog_ideal
 """
     path.write_text(txt, encoding="ascii")

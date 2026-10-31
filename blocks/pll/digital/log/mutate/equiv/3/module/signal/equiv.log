@@ -9,7 +9,7 @@
 -- Executing script file `equiv.ys' --
 
 1. Executing RTLIL frontend.
-Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+Input filename: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/mutate/database/design.il
 
 2. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -45,12 +45,12 @@ Removed 0 unused modules.
 Output filename: ref.il
 
 8. Executing ASYNC2SYNC pass.
-Replacing ref.$procdff$134 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
-Replacing ref.$procdff$139 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
-Replacing ref.$procdff$144 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
+Replacing ref.$procdff$126 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
+Replacing ref.$procdff$131 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
+Replacing ref.$procdff$136 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
 
 9. Executing RTLIL frontend.
-Input filename: /work/blocks/pll/digital/log/mutate/database/design.il
+Input filename: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/mutate/database/design.il
 
 10. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -67,7 +67,7 @@ Removing unused module `\ihsan_sa_pll'.
 Removed 5 unused modules.
 
 11. Executing MUTATE pass.
-Add output constant 1 at pll_ctrl_regs.$auto$proc_dff.cc:220:proc_dff$130.Y[0].
+Add output constant 0 at pll_ctrl_regs.$auto$proc_dff.cc:220:proc_dff$122.Y[0].
 
 12. Executing FLATTEN pass (flatten design).
 Renaming module pll_ctrl_regs to uut.
@@ -89,9 +89,9 @@ Removed 0 unused modules.
 Output filename: uut.il
 
 17. Executing ASYNC2SYNC pass.
-Replacing uut.$procdff$134 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
-Replacing uut.$procdff$139 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
-Replacing uut.$procdff$144 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
+Replacing uut.$procdff$126 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
+Replacing uut.$procdff$131 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
+Replacing uut.$procdff$136 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
 
 18. Executing EQUIV_MAKE pass (creating equiv checking module).
 Presumably equivalent wires: clk_gold (\clk_gold), clk_gate (\clk_gate) -> clk
@@ -117,59 +117,59 @@ Using SAT solver `minisat`.
 Setting up time step 1:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Final init constraint equation: { $auto$async2sync.cc:253:execute$149_gold $auto$async2sync.cc:253:execute$145_gold $auto$async2sync.cc:253:execute$147_gold $auto$async2sync.cc:253:execute$156_gate $auto$async2sync.cc:253:execute$152_gate $auto$async2sync.cc:253:execute$154_gate } = 6'000000
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Final init constraint equation: { $auto$async2sync.cc:253:execute$141_gold $auto$async2sync.cc:253:execute$137_gold $auto$async2sync.cc:253:execute$139_gold $auto$async2sync.cc:253:execute$148_gate $auto$async2sync.cc:253:execute$144_gate $auto$async2sync.cc:253:execute$146_gate } = 6'000000
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 2:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 3:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 4:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 5:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 6:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 7:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Setting up time step 8:
 Final constraint equation: { } = { }
 Imported 26 cells to SAT database.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$165 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$162 when 1'1.
-Import proof for assert: $auto$rtlil.cc:3307:Eqx$159 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$157 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$154 when 1'1.
+Import proof for assert: $auto$rtlil.cc:3307:Eqx$151 when 1'1.
 
 Solving problem with 988 variables and 2528 clauses..
 SAT proof finished - no model found: SUCCESS!
@@ -196,6 +196,6 @@ Found 3 $equiv cells in equiv:
   Of those cells 3 are proven and 0 are unproven.
   Equivalence successfully proven!
 
-End of script. Logfile hash: 150d3bf9b2, time: 0.02s, user: 0.01s, system: 0.01s, MEM: 28.82 MB peak
+End of script. Logfile hash: 9de127d4e8, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 28.88 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 53% 1x sat (0 sec), 13% 4x read_rtlil (0 sec), ...
+Time spent: 52% 1x sat (0 sec), 13% 4x read_rtlil (0 sec), ...

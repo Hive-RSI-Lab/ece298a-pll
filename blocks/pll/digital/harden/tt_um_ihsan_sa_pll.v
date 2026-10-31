@@ -31,8 +31,8 @@ module tt_um_ihsan_sa_pll (
   assign w_pll_en_in = ui_in[6];
   wire w_rst_n;
   assign w_rst_n = rst_n;
-  wire w_vco_out;
-  assign w_vco_out = ui_in[3];
+  wire w_vco_div2;
+  assign w_vco_div2 = ui_in[3];
 
   ihsan_sa_pll u_ihsan_sa_pll (
       .clk(w_clk),
@@ -49,7 +49,7 @@ module tt_um_ihsan_sa_pll (
       .pll_en(w_pll_en),
       .pll_en_in(w_pll_en_in),
       .rst_n(w_rst_n),
-      .vco_out(w_vco_out)
+      .vco_div2(w_vco_div2)
   );
 
   assign uo_out = {w_cp_trim1, w_cp_trim0, w_pll_en, w_pfd_dn, w_pfd_up, w_lock, w_clk_fb, w_obs_out};

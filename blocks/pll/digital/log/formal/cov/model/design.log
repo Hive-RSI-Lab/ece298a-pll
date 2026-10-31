@@ -9,7 +9,7 @@
 -- Executing script file `../model/design.ys' --
 
 1. Executing RTLIL frontend.
-Input filename: /work/blocks/pll/digital/log/formal/cut.il
+Input filename: /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/cut.il
 
 2. Executing HIERARCHY pass (managing design hierarchy).
 Attribute `top' found on module `ihsan_sa_pll_formal'. Setting top module to ihsan_sa_pll_formal.
@@ -27,6 +27,6 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 4. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: e3e0280f13, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 27.09 MB peak
+End of script. Logfile hash: a8ab5c61d5, time: 0.01s, user: 0.01s, system: 0.01s, MEM: 27.42 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 37% 2x read_rtlil (0 sec), 32% 2x write_jny (0 sec), ...
+Time spent: 34% 2x read_rtlil (0 sec), 32% 2x write_jny (0 sec), ...

@@ -45,8 +45,8 @@ vdn      pfd_dn   0 0
 vt0      cp_trim0 0 0
 vt1      cp_trim1 0 0
 vvc      vctrl    0 {vddp/2}
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit
@@ -58,7 +58,7 @@ tran 50p 500n 0 50p
 let nx = length(time)
 let nx1 = nx - 1
 let nx2 = nx - 2
-let hi = (v(vco_out) gt vmid)
+let hi = (v(xdut.vco_out) gt vmid)
 let x = mean(abs(hi[1,$&nx1] - hi[0,$&nx2]))*(nx - 1)
 set tog = "$&x"
 echo

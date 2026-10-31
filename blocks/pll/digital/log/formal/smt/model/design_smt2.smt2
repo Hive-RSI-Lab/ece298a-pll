@@ -2,861 +2,839 @@
 ; yosys-smt2-module ihsan_sa_pll_formal
 (declare-sort |ihsan_sa_pll_formal_s| 0)
 (declare-fun |ihsan_sa_pll_formal_is| (|ihsan_sa_pll_formal_s|) Bool)
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\wd_cnt[9:0]#sampled$570"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 10}
-(declare-fun |ihsan_sa_pll_formal#0| (|ihsan_sa_pll_formal_s|) (_ BitVec 10)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\wd_cnt[9:0]#sampled$570
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$570 10
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$570| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#0| state))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#1| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598
-; yosys-smt2-register $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_div.$0\\div_cnt[2:0]#sampled$534"], "smtname": 2, "smtoffset": 0, "type": "reg", "width": 3}
-(declare-fun |ihsan_sa_pll_formal#2| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_div.$0\div_cnt[2:0]#sampled$534
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$534 3
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$534| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#2| state))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#3 3 $auto$clk2fflogic.cc:108:sample_data$533
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_div", "\\div_cnt"], "smtname": 3, "smtoffset": 0, "type": "init", "width": 3}
-(declare-fun |ihsan_sa_pll_formal#3| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.div_cnt#sampled$532
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$532 3
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$532| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#3| state))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#4 1 $auto$clk2fflogic.cc:108:sample_data$727
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_div.clk_pre#sampled$528"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#0| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$528
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$528 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$528| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#0| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_div.$0\\div_cnt[2:0]#sampled$526"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 3}
+(declare-fun |ihsan_sa_pll_formal#1| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_div.$0\div_cnt[2:0]#sampled$526
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$526 3
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$526| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#1| state))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#2 3 $auto$clk2fflogic.cc:108:sample_data$525
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_div", "\\div_cnt"], "smtname": 2, "smtoffset": 0, "type": "init", "width": 3}
+(declare-fun |ihsan_sa_pll_formal#2| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.div_cnt#sampled$524
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$524 3
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.div_cnt#sampled$524| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#2| state))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572"], "smtname": 3, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#3| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572
+; yosys-smt2-register $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#4 1 $auto$clk2fflogic.cc:108:sample_data$701
 ; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q0"], "smtname": 4, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#4| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q0#sampled$726
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$726 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$726| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#4| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#5 5 $auto$clk2fflogic.cc:108:sample_data$605
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\lock_cnt"], "smtname": 5, "smtoffset": 0, "type": "init", "width": 5}
-(declare-fun |ihsan_sa_pll_formal#5| (|ihsan_sa_pll_formal_s|) (_ BitVec 5)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock_cnt#sampled$604
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$604 5
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$604| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#5| state))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_div.clk_pre#sampled$518"], "smtname": 6, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#6| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$518
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$518 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$518| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#6| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_div.last#sampled$516"], "smtname": 7, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#7| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.last#sampled$516
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$516 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$516| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#7| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#8 1 $auto$clk2fflogic.cc:108:sample_data$515
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_div", "\\fb_en"], "smtname": 8, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#8| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.fb_en#sampled$514
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$514 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$514| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#8| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_lock.cnt_nxt#sampled$606"], "smtname": 9, "smtoffset": 0, "type": "reg", "width": 5}
-(declare-fun |ihsan_sa_pll_formal#9| (|ihsan_sa_pll_formal_s|) (_ BitVec 5)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.cnt_nxt#sampled$606
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$606 5
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$606| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#9| state))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#10 10 $auto$clk2fflogic.cc:108:sample_data$569
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\wd_cnt"], "smtname": 10, "smtoffset": 0, "type": "init", "width": 10}
-(declare-fun |ihsan_sa_pll_formal#10| (|ihsan_sa_pll_formal_s|) (_ BitVec 10)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wd_cnt#sampled$568
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wd_cnt#sampled$568 10
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wd_cnt#sampled$568| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#10| state))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.cp_trim_in[1]#sampled$498"], "smtname": 11, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#11| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[1]#sampled$498
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$498 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$498| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#11| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#12 1 $auto$clk2fflogic.cc:108:sample_data$497
+(declare-fun |ihsan_sa_pll_formal#4| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q0#sampled$700
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$700 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q0#sampled$700| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#4| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_div.clk_pre#sampled$510"], "smtname": 5, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#5| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$510
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$510 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$510| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#5| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_div.last#sampled$508"], "smtname": 6, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#6| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.last#sampled$508
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$508 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$508| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#6| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#7 1 $auto$clk2fflogic.cc:108:sample_data$507
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_div", "\\fb_en"], "smtname": 7, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#7| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.fb_en#sampled$506
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$506 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.fb_en#sampled$506| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#7| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#8 1 $auto$clk2fflogic.cc:108:sample_data$579
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\lock"], "smtname": 8, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#8| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock#sampled$578
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$578 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$578| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#8| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\lock[0:0]#sampled$580"], "smtname": 9, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#9| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\lock[0:0]#sampled$580
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$580 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$580| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#9| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\wd_cnt[9:0]#sampled$562"], "smtname": 10, "smtoffset": 0, "type": "reg", "width": 10}
+(declare-fun |ihsan_sa_pll_formal#10| (|ihsan_sa_pll_formal_s|) (_ BitVec 10)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\wd_cnt[9:0]#sampled$562
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$562 10
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$562| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#10| state))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.cp_trim_in[1]#sampled$490"], "smtname": 11, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#11| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[1]#sampled$490
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$490 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$490| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#11| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#12 1 $auto$clk2fflogic.cc:108:sample_data$489
 ; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_ctrl", "\\cp_trim1"], "smtname": 12, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#12| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim1#sampled$496
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$496 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$496| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#12| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\pre_q0[0:0]#sampled$728"], "smtname": 13, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#13| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q0[0:0]#sampled$728
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$728 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$728| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#13| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.cp_trim_in[0]#sampled$480"], "smtname": 14, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#14| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[0]#sampled$480
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$480 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$480| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#14| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#15 1 $auto$clk2fflogic.cc:108:sample_data$479
+(declare-fun |ihsan_sa_pll_formal#12| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim1#sampled$488
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$488 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim1#sampled$488| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#12| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\pre_q0[0:0]#sampled$702"], "smtname": 13, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#13| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q0[0:0]#sampled$702
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$702 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$702| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#13| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.cp_trim_in[0]#sampled$472"], "smtname": 14, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#14| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[0]#sampled$472
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$472 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$472| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#14| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#15 1 $auto$clk2fflogic.cc:108:sample_data$471
 ; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_ctrl", "\\cp_trim0"], "smtname": 15, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#15| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim0#sampled$478
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$478 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$478| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#15| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.pre_q0#sampled$712"], "smtname": 16, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#16| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q0#sampled$712
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$712 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$712| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#16| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#17 1 $auto$clk2fflogic.cc:108:sample_data$623
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\wide_q"], "smtname": 17, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#17| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wide_q#sampled$622
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$622 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$622| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#17| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#18 1 $auto$clk2fflogic.cc:108:sample_data$587
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\lock"], "smtname": 18, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#18| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock#sampled$586
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$586 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock#sampled$586| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#18| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.pll_en_in#sampled$462"], "smtname": 19, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#19| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en_in#sampled$462
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$462 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$462| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#19| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#20 1 $auto$clk2fflogic.cc:108:sample_data$461
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_ctrl", "\\pll_en"], "smtname": 20, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#20| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en#sampled$460
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$460 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$460| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#20| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#21 1 $auto$clk2fflogic.cc:108:sample_data$673
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\q3"], "smtname": 21, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#21| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.q3#sampled$672
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$672 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$672| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#21| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\q3[0:0]#sampled$674"], "smtname": 22, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#22| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\q3[0:0]#sampled$674
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$674 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$674| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#22| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\lock[0:0]#sampled$588"], "smtname": 23, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#23| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\lock[0:0]#sampled$588
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$588 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$588| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#23| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.pre_q2#sampled$676"], "smtname": 24, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#24| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q2#sampled$676
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q2#sampled$676 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q2#sampled$676| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#24| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.vco_out#sampled$730"], "smtname": 25, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#25| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.vco_out#sampled$730
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_out#sampled$730 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_out#sampled$730| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#25| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#26 1 $auto$clk2fflogic.cc:108:sample_data$641
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_fb_q"], "smtname": 26, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#26| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_fb_q#sampled$640
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$640 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$640| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#26| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\recover[0:0]#sampled$552"], "smtname": 27, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#27| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\recover[0:0]#sampled$552
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$552 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$552| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#27| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#28 1 $auto$clk2fflogic.cc:108:sample_data$691
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q2"], "smtname": 28, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#28| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q2#sampled$690
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q2#sampled$690 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q2#sampled$690| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#28| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\pre_q2[0:0]#sampled$692"], "smtname": 29, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#29| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q2[0:0]#sampled$692
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q2[0:0]#sampled$692 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q2[0:0]#sampled$692| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#29| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.pre_q1#sampled$694"], "smtname": 30, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#30| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q1#sampled$694
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q1#sampled$694 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q1#sampled$694| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#30| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pfd.clk_fb#sampled$644"], "smtname": 31, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#31| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk_fb#sampled$644
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$644 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$644| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#31| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#32 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_429"], "smtname": 32, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#32| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_429
-; yosys-smt2-register _witness_.anyinit_procdff_429 1
-; yosys-smt2-wire _witness_.anyinit_procdff_429 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_429| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#32| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#33 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_430"], "smtname": 33, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#33| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_430
-; yosys-smt2-register _witness_.anyinit_procdff_430 1
-; yosys-smt2-wire _witness_.anyinit_procdff_430 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_430| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#33| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#34 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_431"], "smtname": 34, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#34| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_431
-; yosys-smt2-register _witness_.anyinit_procdff_431 1
-; yosys-smt2-wire _witness_.anyinit_procdff_431 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_431| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#34| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#35 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_432"], "smtname": 35, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#35| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_432
-; yosys-smt2-register _witness_.anyinit_procdff_432 1
-; yosys-smt2-wire _witness_.anyinit_procdff_432 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_432| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#35| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#36 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_433"], "smtname": 36, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#36| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_433
-; yosys-smt2-register _witness_.anyinit_procdff_433 1
-; yosys-smt2-wire _witness_.anyinit_procdff_433 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_433| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#36| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#37 1 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_434"], "smtname": 37, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#37| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_434
-; yosys-smt2-register _witness_.anyinit_procdff_434 1
-; yosys-smt2-wire _witness_.anyinit_procdff_434 1
-(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_434| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#37| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#38 1 $auto$clk2fflogic.cc:108:sample_data$551
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\recover"], "smtname": 38, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#38| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.recover#sampled$550
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.recover#sampled$550 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.recover#sampled$550| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#38| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#39 1 $auto$clk2fflogic.cc:108:sample_data$709
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q1"], "smtname": 39, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#39| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q1#sampled$708
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$708 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$708| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#39| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pfd.clk#sampled$660"], "smtname": 40, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#40| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk#sampled$660
-; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$660 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$660| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#40| state)) #b1))
-; yosys-smt2-anyinit ihsan_sa_pll_formal#41 1 $auto$clk2fflogic.cc:108:sample_data$657
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_ref_q"], "smtname": 41, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#41| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_ref_q#sampled$656
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$656 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$656| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:75:sample_control$\\dut.u_pfd.pfd_clr$async_cut#sampled$666"], "smtname": 42, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#42| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:75:sample_control$\dut.u_pfd.pfd_clr$async_cut#sampled$666
-; yosys-smt2-register $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$666 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$666| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#42| state)) #b1))
-(declare-fun |ihsan_sa_pll_formal#43| (|ihsan_sa_pll_formal_s|) Bool) ; \clk
+(declare-fun |ihsan_sa_pll_formal#15| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim0#sampled$470
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$470 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim0#sampled$470| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#15| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#16 5 $auto$clk2fflogic.cc:108:sample_data$597
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\lock_cnt"], "smtname": 16, "smtoffset": 0, "type": "init", "width": 5}
+(declare-fun |ihsan_sa_pll_formal#16| (|ihsan_sa_pll_formal_s|) (_ BitVec 5)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock_cnt#sampled$596
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$596 5
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.lock_cnt#sampled$596| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#16| state))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_lock.cnt_nxt#sampled$598"], "smtname": 17, "smtoffset": 0, "type": "reg", "width": 5}
+(declare-fun |ihsan_sa_pll_formal#17| (|ihsan_sa_pll_formal_s|) (_ BitVec 5)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.cnt_nxt#sampled$598
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$598 5
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$598| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#17| state))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$\\dut.u_ctrl.pll_en_in#sampled$454"], "smtname": 18, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#18| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en_in#sampled$454
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$454 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$454| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#18| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#19 1 $auto$clk2fflogic.cc:108:sample_data$453
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_ctrl", "\\pll_en"], "smtname": 19, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#19| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en#sampled$452
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$452 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en#sampled$452| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#19| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#20 1 $auto$clk2fflogic.cc:108:sample_data$649
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_ref_q"], "smtname": 20, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#20| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_ref_q#sampled$648
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$648 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_ref_q#sampled$648| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#20| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_lock.$0\\recover[0:0]#sampled$544"], "smtname": 21, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#21| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\recover[0:0]#sampled$544
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$544 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$544| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#21| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#22 1 $auto$clk2fflogic.cc:108:sample_data$543
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\recover"], "smtname": 22, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#22| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.recover#sampled$542
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.recover#sampled$542 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.recover#sampled$542| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#22| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pfd.clk#sampled$652"], "smtname": 23, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#23| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk#sampled$652
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$652 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$652| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#23| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.vco_div2#sampled$704"], "smtname": 24, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#24| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.vco_div2#sampled$704
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_div2#sampled$704 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_div2#sampled$704| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#24| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#25 1 $auto$clk2fflogic.cc:108:sample_data$615
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\wide_q"], "smtname": 25, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#25| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wide_q#sampled$614
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$614 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wide_q#sampled$614| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#25| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#26 1 $auto$clk2fflogic.cc:108:sample_data$665
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\q3"], "smtname": 26, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#26| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.q3#sampled$664
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$664 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.q3#sampled$664| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#26| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\q3[0:0]#sampled$666"], "smtname": 27, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#27| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\q3[0:0]#sampled$666
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$666 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$666| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#27| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#28 10 $auto$clk2fflogic.cc:108:sample_data$561
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_lock", "\\wd_cnt"], "smtname": 28, "smtoffset": 0, "type": "init", "width": 10}
+(declare-fun |ihsan_sa_pll_formal#28| (|ihsan_sa_pll_formal_s|) (_ BitVec 10)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wd_cnt#sampled$560
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wd_cnt#sampled$560 10
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.wd_cnt#sampled$560| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#28| state))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#29 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_421"], "smtname": 29, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#29| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_421
+; yosys-smt2-register _witness_.anyinit_procdff_421 1
+; yosys-smt2-wire _witness_.anyinit_procdff_421 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_421| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#29| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#30 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_422"], "smtname": 30, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#30| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_422
+; yosys-smt2-register _witness_.anyinit_procdff_422 1
+; yosys-smt2-wire _witness_.anyinit_procdff_422 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_422| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#30| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#31 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_423"], "smtname": 31, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#31| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_423
+; yosys-smt2-register _witness_.anyinit_procdff_423 1
+; yosys-smt2-wire _witness_.anyinit_procdff_423 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_423| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#31| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#32 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_424"], "smtname": 32, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#32| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_424
+; yosys-smt2-register _witness_.anyinit_procdff_424 1
+; yosys-smt2-wire _witness_.anyinit_procdff_424 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_424| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#32| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#33 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_425"], "smtname": 33, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#33| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_425
+; yosys-smt2-register _witness_.anyinit_procdff_425 1
+; yosys-smt2-wire _witness_.anyinit_procdff_425 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_425| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#33| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#34 1 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.3-164.6
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_426"], "smtname": 34, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#34| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \_witness_.anyinit_procdff_426
+; yosys-smt2-register _witness_.anyinit_procdff_426 1
+; yosys-smt2-wire _witness_.anyinit_procdff_426 1
+(define-fun |ihsan_sa_pll_formal_n _witness_.anyinit_procdff_426| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#34| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#35 1 $auto$clk2fflogic.cc:108:sample_data$683
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q1"], "smtname": 35, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#35| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q1#sampled$682
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$682 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pre.pre_q1#sampled$682| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#35| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\pre_q1[0:0]#sampled$684"], "smtname": 36, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#36| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q1[0:0]#sampled$684
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$684 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$684| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#36| state)) #b1))
+; yosys-smt2-anyinit ihsan_sa_pll_formal#37 1 $auto$clk2fflogic.cc:108:sample_data$633
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_fb_q"], "smtname": 37, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#37| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_fb_q#sampled$632
+; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$632 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$/dut.u_pfd.pfd_fb_q#sampled$632| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#37| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pfd.clk_fb#sampled$636"], "smtname": 38, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#38| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk_fb#sampled$636
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$636 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$636| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#38| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:75:sample_control$\\dut.u_pfd.pfd_clr$async_cut#sampled$642"], "smtname": 39, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#39| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:75:sample_control$\dut.u_pfd.pfd_clr$async_cut#sampled$642
+; yosys-smt2-register $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$642 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$642| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#39| state)) #b1))
+(declare-fun |ihsan_sa_pll_formal#40| (|ihsan_sa_pll_formal_s|) Bool) ; \clk
 ; yosys-smt2-input clk 1
 ; yosys-smt2-wire clk 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\clk"], "smtname": "clk", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |ihsan_sa_pll_formal_n clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#43| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\past_valid"], "smtname": 44, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#44| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \past_valid
-(define-fun |ihsan_sa_pll_formal#45| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#43| state) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$39_Y
-(define-fun |ihsan_sa_pll_formal#46| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) (or  (|ihsan_sa_pll_formal#45| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$40_Y
-; yosys-smt2-witness {"offset": 0, "path": ["\\clk_q"], "smtname": 47, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#47| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \clk_q
-(define-fun |ihsan_sa_pll_formal#48| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#46| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#47| state)) #b1) false))) ; \clk_fall
+(define-fun |ihsan_sa_pll_formal_n clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#40| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\past_valid"], "smtname": 41, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#41| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \past_valid
+(define-fun |ihsan_sa_pll_formal#42| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#40| state) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$39_Y
+(define-fun |ihsan_sa_pll_formal#43| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) (or  (|ihsan_sa_pll_formal#42| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$40_Y
+; yosys-smt2-witness {"offset": 0, "path": ["\\clk_q"], "smtname": 44, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#44| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \clk_q
+(define-fun |ihsan_sa_pll_formal#45| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#43| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false))) ; \clk_fall
 ; yosys-smt2-wire clk_fall 1
-(define-fun |ihsan_sa_pll_formal_n clk_fall| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#48| state))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:101:sample_data$$flatten\\dut.\\u_pre.$0\\pre_q1[0:0]#sampled$710"], "smtname": 49, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#49| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q1[0:0]#sampled$710
-(declare-fun |ihsan_sa_pll_formal#50| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \vco_out
-(define-fun |ihsan_sa_pll_formal#51| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#25| state) (|ihsan_sa_pll_formal#50| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$733
-(define-fun |ihsan_sa_pll_formal#52| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#51| state) (|ihsan_sa_pll_formal#13| state) (|ihsan_sa_pll_formal#4| state))) ; $auto$rtlil.cc:3386:Mux$735
-(define-fun |ihsan_sa_pll_formal#53| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#52| state))) ; $auto$rtlil.cc:3386:Mux$741
-(declare-fun |ihsan_sa_pll_formal#54| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \rst_n
-(define-fun |ihsan_sa_pll_formal#55| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#53| state) #b0)) ; \dut.u_pre.pre_q0
-(define-fun |ihsan_sa_pll_formal#56| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#16| state) (|ihsan_sa_pll_formal#55| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$715
-(define-fun |ihsan_sa_pll_formal#57| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#56| state) (|ihsan_sa_pll_formal#49| state) (|ihsan_sa_pll_formal#39| state))) ; $auto$rtlil.cc:3386:Mux$717
-(define-fun |ihsan_sa_pll_formal#58| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#57| state))) ; $auto$rtlil.cc:3386:Mux$723
-(define-fun |ihsan_sa_pll_formal#59| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#58| state) #b0)) ; \dut.u_pre.pre_q1
-(define-fun |ihsan_sa_pll_formal#60| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#30| state) (|ihsan_sa_pll_formal#59| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$697
-(define-fun |ihsan_sa_pll_formal#61| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#60| state) (|ihsan_sa_pll_formal#29| state) (|ihsan_sa_pll_formal#28| state))) ; $auto$rtlil.cc:3386:Mux$699
-(define-fun |ihsan_sa_pll_formal#62| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#61| state))) ; $auto$rtlil.cc:3386:Mux$705
-(define-fun |ihsan_sa_pll_formal#63| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#62| state) #b0)) ; \dut.u_pre.pre_q2
-(define-fun |ihsan_sa_pll_formal#64| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#6| state) (|ihsan_sa_pll_formal#63| state)) #b10)) ; $auto$rtlil.cc:3307:Eqx$521
-(define-fun |ihsan_sa_pll_formal#65| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#64| state) (|ihsan_sa_pll_formal#7| state) (|ihsan_sa_pll_formal#8| state))) ; $auto$rtlil.cc:3386:Mux$523
-(define-fun |ihsan_sa_pll_formal#66| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#65| state))) ; $auto$rtlil.cc:3386:Mux$529
-(define-fun |ihsan_sa_pll_formal#67| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#66| state) #b0)) ; \dut.u_div.fb_en
-(define-fun |ihsan_sa_pll_formal#68| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#63| state) (|ihsan_sa_pll_formal#67| state))) ; \clk_fb
+(define-fun |ihsan_sa_pll_formal_n clk_fall| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#45| state))
+(declare-fun |ihsan_sa_pll_formal#46| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \vco_div2
+(define-fun |ihsan_sa_pll_formal#47| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#24| state) (|ihsan_sa_pll_formal#46| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$707
+(define-fun |ihsan_sa_pll_formal#48| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#47| state) (|ihsan_sa_pll_formal#13| state) (|ihsan_sa_pll_formal#4| state))) ; $auto$rtlil.cc:3386:Mux$709
+(define-fun |ihsan_sa_pll_formal#49| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#48| state))) ; $auto$rtlil.cc:3386:Mux$715
+(declare-fun |ihsan_sa_pll_formal#50| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \rst_n
+(define-fun |ihsan_sa_pll_formal#51| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#49| state) #b0)) ; \dut.u_pre.pre_q0
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:87:sample_control_edge$\\dut.u_pre.pre_q0#sampled$686"], "smtname": 52, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#52| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q0#sampled$686
+(define-fun |ihsan_sa_pll_formal#53| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#52| state) (|ihsan_sa_pll_formal#51| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$689
+(define-fun |ihsan_sa_pll_formal#54| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#53| state) (|ihsan_sa_pll_formal#36| state) (|ihsan_sa_pll_formal#35| state))) ; $auto$rtlil.cc:3386:Mux$691
+(define-fun |ihsan_sa_pll_formal#55| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#54| state))) ; $auto$rtlil.cc:3386:Mux$697
+(define-fun |ihsan_sa_pll_formal#56| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#55| state) #b0)) ; \dut.u_pre.pre_q1
+(define-fun |ihsan_sa_pll_formal#57| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#5| state) (|ihsan_sa_pll_formal#56| state)) #b10)) ; $auto$rtlil.cc:3307:Eqx$513
+(define-fun |ihsan_sa_pll_formal#58| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#57| state) (|ihsan_sa_pll_formal#6| state) (|ihsan_sa_pll_formal#7| state))) ; $auto$rtlil.cc:3386:Mux$515
+(define-fun |ihsan_sa_pll_formal#59| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#58| state))) ; $auto$rtlil.cc:3386:Mux$521
+(define-fun |ihsan_sa_pll_formal#60| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#59| state) #b0)) ; \dut.u_div.fb_en
+(define-fun |ihsan_sa_pll_formal#61| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#56| state) (|ihsan_sa_pll_formal#60| state))) ; \clk_fb
 ; yosys-smt2-output clk_fb 1
 ; yosys-smt2-wire clk_fb 1
-(define-fun |ihsan_sa_pll_formal_n clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#69| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#24| state) (|ihsan_sa_pll_formal#63| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$539
-(define-fun |ihsan_sa_pll_formal#70| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#69| state) (|ihsan_sa_pll_formal#22| state) (|ihsan_sa_pll_formal#21| state))) ; $auto$rtlil.cc:3386:Mux$681
-(define-fun |ihsan_sa_pll_formal#71| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#70| state))) ; $auto$rtlil.cc:3386:Mux$687
-(define-fun |ihsan_sa_pll_formal#72| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#71| state) #b0)) ; \dut.u_pre.q3
-(declare-fun |ihsan_sa_pll_formal#73| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \obs_sel
-(define-fun |ihsan_sa_pll_formal#74| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1) (|ihsan_sa_pll_formal#72| state) (|ihsan_sa_pll_formal#63| state))) ; \obs_out
+(define-fun |ihsan_sa_pll_formal_n clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#62| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#0| state) (|ihsan_sa_pll_formal#56| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$531
+(define-fun |ihsan_sa_pll_formal#63| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#62| state) (|ihsan_sa_pll_formal#27| state) (|ihsan_sa_pll_formal#26| state))) ; $auto$rtlil.cc:3386:Mux$673
+(define-fun |ihsan_sa_pll_formal#64| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#63| state))) ; $auto$rtlil.cc:3386:Mux$679
+(define-fun |ihsan_sa_pll_formal#65| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#64| state) #b0)) ; \dut.u_pre.q3
+(declare-fun |ihsan_sa_pll_formal#66| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \obs_sel
+(define-fun |ihsan_sa_pll_formal#67| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1) (|ihsan_sa_pll_formal#65| state) (|ihsan_sa_pll_formal#56| state))) ; \obs_out
 ; yosys-smt2-wire clk_pre_obs 1
-(define-fun |ihsan_sa_pll_formal_n clk_pre_obs| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n clk_pre_obs| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1))
 ; yosys-smt2-register clk_q 1
 ; yosys-smt2-wire clk_q 1
-(define-fun |ihsan_sa_pll_formal_n clk_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#47| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#75| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) (or  (|ihsan_sa_pll_formal#43| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$36_Y
-(define-fun |ihsan_sa_pll_formal#76| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#47| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$37_Y
-(define-fun |ihsan_sa_pll_formal#77| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#75| state) false) (or  (|ihsan_sa_pll_formal#76| state) false))) ; \clk_rise
+(define-fun |ihsan_sa_pll_formal_n clk_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#68| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) (or  (|ihsan_sa_pll_formal#40| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$36_Y
+(define-fun |ihsan_sa_pll_formal#69| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:85$37_Y
+(define-fun |ihsan_sa_pll_formal#70| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#68| state) false) (or  (|ihsan_sa_pll_formal#69| state) false))) ; \clk_rise
 ; yosys-smt2-wire clk_rise 1
-(define-fun |ihsan_sa_pll_formal_n clk_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#77| state))
-(define-fun |ihsan_sa_pll_formal#78| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#40| state) (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0)) #b01)) ; $auto$rtlil.cc:3307:Eqx$467
-(define-fun |ihsan_sa_pll_formal#79| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#14| state) (|ihsan_sa_pll_formal#15| state))) ; $auto$rtlil.cc:3386:Mux$487
-(define-fun |ihsan_sa_pll_formal#80| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#79| state))) ; $auto$rtlil.cc:3386:Mux$493
-(define-fun |ihsan_sa_pll_formal#81| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#80| state) #b0)) ; \dut.u_ctrl.cp_trim0
+(define-fun |ihsan_sa_pll_formal_n clk_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#70| state))
+(define-fun |ihsan_sa_pll_formal#71| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#23| state) (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0)) #b01)) ; $auto$rtlil.cc:3307:Eqx$459
+(define-fun |ihsan_sa_pll_formal#72| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#14| state) (|ihsan_sa_pll_formal#15| state))) ; $auto$rtlil.cc:3386:Mux$479
+(define-fun |ihsan_sa_pll_formal#73| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#72| state))) ; $auto$rtlil.cc:3386:Mux$485
+(define-fun |ihsan_sa_pll_formal#74| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#73| state) #b0)) ; \dut.u_ctrl.cp_trim0
 ; yosys-smt2-output cp_trim0 1
 ; yosys-smt2-wire cp_trim0 1
-(define-fun |ihsan_sa_pll_formal_n cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#81| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#82| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#11| state) (|ihsan_sa_pll_formal#12| state))) ; $auto$rtlil.cc:3386:Mux$505
-(define-fun |ihsan_sa_pll_formal#83| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#82| state))) ; $auto$rtlil.cc:3386:Mux$511
-(define-fun |ihsan_sa_pll_formal#84| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#83| state) #b0)) ; \dut.u_ctrl.cp_trim1
+(define-fun |ihsan_sa_pll_formal_n cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#75| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#11| state) (|ihsan_sa_pll_formal#12| state))) ; $auto$rtlil.cc:3386:Mux$497
+(define-fun |ihsan_sa_pll_formal#76| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#75| state))) ; $auto$rtlil.cc:3386:Mux$503
+(define-fun |ihsan_sa_pll_formal#77| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#76| state) #b0)) ; \dut.u_ctrl.cp_trim1
 ; yosys-smt2-output cp_trim1 1
 ; yosys-smt2-wire cp_trim1 1
-(define-fun |ihsan_sa_pll_formal_n cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#84| state)) #b1))
-(declare-fun |ihsan_sa_pll_formal#85| (|ihsan_sa_pll_formal_s|) (_ BitVec 2)) ; \cp_trim_in
+(define-fun |ihsan_sa_pll_formal_n cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#77| state)) #b1))
+(declare-fun |ihsan_sa_pll_formal#78| (|ihsan_sa_pll_formal_s|) (_ BitVec 2)) ; \cp_trim_in
 ; yosys-smt2-input cp_trim_in 2
 ; yosys-smt2-wire cp_trim_in 2
 ; yosys-smt2-witness {"offset": 0, "path": ["\\cp_trim_in"], "smtname": "cp_trim_in", "smtoffset": 0, "type": "input", "width": 2}
-(define-fun |ihsan_sa_pll_formal_n cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#85| state))
-(define-fun |ihsan_sa_pll_formal#86| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#33| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$93_Y
-; yosys-smt2-witness {"offset": 0, "path": ["\\fb_ok"], "smtname": 87, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#87| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_ok
-(define-fun |ihsan_sa_pll_formal#88| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#86| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#87| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$94_Y
-(define-fun |ihsan_sa_pll_formal#89| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:101$45_Y
-(define-fun |ihsan_sa_pll_formal#90| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#88| state) false) (or  (|ihsan_sa_pll_formal#89| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$96_Y
-(declare-fun |ihsan_sa_pll_formal#91| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_sel
-; yosys-smt2-witness {"offset": 0, "path": ["\\n_last"], "smtname": 92, "smtoffset": 0, "type": "reg", "width": 3}
-(declare-fun |ihsan_sa_pll_formal#92| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_last
-(define-fun |ihsan_sa_pll_formal#93| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#92| state))) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$97_Y
-(define-fun |ihsan_sa_pll_formal#94| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#90| state) false) (or  (|ihsan_sa_pll_formal#93| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$98_Y
-(define-fun |ihsan_sa_pll_formal#95| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#94| state) #b1 #b0)) ; $procmux$266_Y
-(define-fun |ihsan_sa_pll_formal#96| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) (|ihsan_sa_pll_formal#95| state) #b0)) ; \divider_ratio_EN
+(define-fun |ihsan_sa_pll_formal_n cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#78| state))
+(define-fun |ihsan_sa_pll_formal#79| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#30| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$93_Y
+; yosys-smt2-witness {"offset": 0, "path": ["\\fb_ok"], "smtname": 80, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#80| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_ok
+(define-fun |ihsan_sa_pll_formal#81| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#79| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#80| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$94_Y
+(define-fun |ihsan_sa_pll_formal#82| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:101$45_Y
+(define-fun |ihsan_sa_pll_formal#83| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#81| state) false) (or  (|ihsan_sa_pll_formal#82| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$96_Y
+(declare-fun |ihsan_sa_pll_formal#84| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_sel
+; yosys-smt2-witness {"offset": 0, "path": ["\\n_last"], "smtname": 85, "smtoffset": 0, "type": "reg", "width": 3}
+(declare-fun |ihsan_sa_pll_formal#85| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_last
+(define-fun |ihsan_sa_pll_formal#86| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#85| state))) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$97_Y
+(define-fun |ihsan_sa_pll_formal#87| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#83| state) false) (or  (|ihsan_sa_pll_formal#86| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$98_Y
+(define-fun |ihsan_sa_pll_formal#88| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#87| state) #b1 #b0)) ; $procmux$263_Y
+(define-fun |ihsan_sa_pll_formal#89| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) (|ihsan_sa_pll_formal#88| state) #b0)) ; \divider_ratio_EN
 ; yosys-smt2-wire divider_ratio_EN 1
-(define-fun |ihsan_sa_pll_formal_n divider_ratio_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#96| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n divider_ratio_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#89| state)) #b1))
 ; yosys-smt2-wire dut.clk 1
-(define-fun |ihsan_sa_pll_formal_n dut.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#43| state))
+(define-fun |ihsan_sa_pll_formal_n dut.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#40| state))
 ; yosys-smt2-wire dut.clk_fb 1
-(define-fun |ihsan_sa_pll_formal_n dut.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1))
 ; yosys-smt2-wire dut.clk_fb_int 1
-(define-fun |ihsan_sa_pll_formal_n dut.clk_fb_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.clk_fb_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1))
 ; yosys-smt2-wire dut.clk_pre 1
-(define-fun |ihsan_sa_pll_formal_n dut.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#56| state)) #b1))
 ; yosys-smt2-wire dut.cp_trim0 1
-(define-fun |ihsan_sa_pll_formal_n dut.cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#81| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
 ; yosys-smt2-wire dut.cp_trim1 1
-(define-fun |ihsan_sa_pll_formal_n dut.cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#84| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#77| state)) #b1))
 ; yosys-smt2-wire dut.cp_trim_in 2
-(define-fun |ihsan_sa_pll_formal_n dut.cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#85| state))
-(define-fun |ihsan_sa_pll_formal#97| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#23| state) (|ihsan_sa_pll_formal#18| state))) ; $auto$rtlil.cc:3386:Mux$595
-(define-fun |ihsan_sa_pll_formal#98| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#97| state))) ; $auto$rtlil.cc:3386:Mux$601
-(define-fun |ihsan_sa_pll_formal#99| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#98| state) #b0)) ; \dut.u_lock.lock
+(define-fun |ihsan_sa_pll_formal_n dut.cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#78| state))
+(define-fun |ihsan_sa_pll_formal#90| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#9| state) (|ihsan_sa_pll_formal#8| state))) ; $auto$rtlil.cc:3386:Mux$587
+(define-fun |ihsan_sa_pll_formal#91| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#90| state))) ; $auto$rtlil.cc:3386:Mux$593
+(define-fun |ihsan_sa_pll_formal#92| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#91| state) #b0)) ; \dut.u_lock.lock
 ; yosys-smt2-wire dut.lock 1
-(define-fun |ihsan_sa_pll_formal_n dut.lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#92| state)) #b1))
 ; yosys-smt2-wire dut.n_sel 3
-(define-fun |ihsan_sa_pll_formal_n dut.n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#91| state))
+(define-fun |ihsan_sa_pll_formal_n dut.n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#84| state))
 ; yosys-smt2-wire dut.obs_int 1
-(define-fun |ihsan_sa_pll_formal_n dut.obs_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.obs_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1))
 ; yosys-smt2-wire dut.obs_out 1
-(define-fun |ihsan_sa_pll_formal_n dut.obs_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.obs_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1))
 ; yosys-smt2-wire dut.obs_q3 1
-(define-fun |ihsan_sa_pll_formal_n dut.obs_q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#72| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.obs_q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#65| state)) #b1))
 ; yosys-smt2-wire dut.obs_sel 1
-(define-fun |ihsan_sa_pll_formal_n dut.obs_sel| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#100| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#31| state) (|ihsan_sa_pll_formal#68| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$647
-(define-fun |ihsan_sa_pll_formal#101| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#100| state) (|ihsan_sa_pll_formal#44| state) (|ihsan_sa_pll_formal#26| state))) ; $auto$rtlil.cc:3386:Mux$649
-(define-fun |ihsan_sa_pll_formal#102| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#42| state)) #b1) #b0 (|ihsan_sa_pll_formal#101| state))) ; $auto$rtlil.cc:3386:Mux$653
-(define-fun |ihsan_sa_pll_formal#103| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#54| state))) ; $auto$rtlil.cc:3251:Not$471
-; yosys-smt2-anyinit ihsan_sa_pll_formal#104 1 dut.u_pfd.pfd_ref_q$async_q_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_q_past"], "smtname": 104, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#104| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_q_past
-; yosys-smt2-anyinit ihsan_sa_pll_formal#105 1 dut.u_pfd.pfd_ref_q$async_d_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_d_past"], "smtname": 105, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#105| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_d_past
-; yosys-smt2-anyinit ihsan_sa_pll_formal#106 1 dut.u_pfd.pfd_ref_q$async_clk_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_clk_past"], "smtname": 106, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#106| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_clk_past
-(define-fun |ihsan_sa_pll_formal#107| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#106| state) (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0)) #b01)) ; \dut.u_pfd.pfd_ref_q$async_edge
-(define-fun |ihsan_sa_pll_formal#108| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#107| state) (|ihsan_sa_pll_formal#105| state) (|ihsan_sa_pll_formal#104| state))) ; \dut.u_pfd.pfd_ref_q$async_hold
-; yosys-smt2-anyinit ihsan_sa_pll_formal#109 1 dut.u_pfd.pfd_ref_q$async_arst_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_arst_past"], "smtname": 109, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#109| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_arst_past
-(define-fun |ihsan_sa_pll_formal#110| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#109| state)) #b1) #b0 (|ihsan_sa_pll_formal#108| state))) ; \dut.u_pfd.pfd_ref_q$async_pre
-; yosys-smt2-anyinit ihsan_sa_pll_formal#111 1 dut.u_pfd.pfd_fb_q$async_q_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_q_past"], "smtname": 111, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#111| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_q_past
-; yosys-smt2-anyinit ihsan_sa_pll_formal#112 1 dut.u_pfd.pfd_fb_q$async_d_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_d_past"], "smtname": 112, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#112| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_d_past
-; yosys-smt2-anyinit ihsan_sa_pll_formal#113 1 dut.u_pfd.pfd_fb_q$async_clk_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_clk_past"], "smtname": 113, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#113| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_clk_past
-(define-fun |ihsan_sa_pll_formal#114| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#113| state) (|ihsan_sa_pll_formal#68| state)) #b01)) ; \dut.u_pfd.pfd_fb_q$async_edge
-(define-fun |ihsan_sa_pll_formal#115| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#114| state) (|ihsan_sa_pll_formal#112| state) (|ihsan_sa_pll_formal#111| state))) ; \dut.u_pfd.pfd_fb_q$async_hold
-; yosys-smt2-anyinit ihsan_sa_pll_formal#116 1 dut.u_pfd.pfd_fb_q$async_arst_past_ff
-; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_arst_past"], "smtname": 116, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#116| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_arst_past
-(define-fun |ihsan_sa_pll_formal#117| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1) #b0 (|ihsan_sa_pll_formal#115| state))) ; \dut.u_pfd.pfd_fb_q$async_pre
-(define-fun |ihsan_sa_pll_formal#118| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#110| state) (|ihsan_sa_pll_formal#117| state))) ; \dut.u_pfd.pfd_rst$async_cut
-(define-fun |ihsan_sa_pll_formal#119| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#103| state) (|ihsan_sa_pll_formal#118| state))) ; \dut.u_pfd.pfd_clr$async_cut
-(define-fun |ihsan_sa_pll_formal#120| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#119| state)) #b1) #b0 (|ihsan_sa_pll_formal#102| state))) ; \dut.u_pfd.pfd_fb_q
-(define-fun |ihsan_sa_pll_formal#121| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#27| state) (|ihsan_sa_pll_formal#38| state))) ; $auto$rtlil.cc:3386:Mux$559
-(define-fun |ihsan_sa_pll_formal#122| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#121| state))) ; $auto$rtlil.cc:3386:Mux$565
-(define-fun |ihsan_sa_pll_formal#123| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#122| state) #b0)) ; \dut.u_lock.recover
-(define-fun |ihsan_sa_pll_formal#124| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#123| state))) ; \pfd_dn
+(define-fun |ihsan_sa_pll_formal_n dut.obs_sel| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#93| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#38| state) (|ihsan_sa_pll_formal#61| state)) #b01)) ; $auto$rtlil.cc:3307:Eqx$639
+(define-fun |ihsan_sa_pll_formal#94| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#93| state) (|ihsan_sa_pll_formal#41| state) (|ihsan_sa_pll_formal#37| state))) ; $auto$rtlil.cc:3386:Mux$641
+(define-fun |ihsan_sa_pll_formal#95| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#39| state)) #b1) #b0 (|ihsan_sa_pll_formal#94| state))) ; $auto$rtlil.cc:3386:Mux$645
+(define-fun |ihsan_sa_pll_formal#96| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#50| state))) ; $auto$rtlil.cc:3251:Not$463
+; yosys-smt2-anyinit ihsan_sa_pll_formal#97 1 dut.u_pfd.pfd_ref_q$async_q_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_q_past"], "smtname": 97, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#97| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_q_past
+; yosys-smt2-anyinit ihsan_sa_pll_formal#98 1 dut.u_pfd.pfd_ref_q$async_d_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_d_past"], "smtname": 98, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#98| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_d_past
+; yosys-smt2-anyinit ihsan_sa_pll_formal#99 1 dut.u_pfd.pfd_ref_q$async_clk_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_clk_past"], "smtname": 99, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#99| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_clk_past
+(define-fun |ihsan_sa_pll_formal#100| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#99| state) (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0)) #b01)) ; \dut.u_pfd.pfd_ref_q$async_edge
+(define-fun |ihsan_sa_pll_formal#101| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#100| state) (|ihsan_sa_pll_formal#98| state) (|ihsan_sa_pll_formal#97| state))) ; \dut.u_pfd.pfd_ref_q$async_hold
+; yosys-smt2-anyinit ihsan_sa_pll_formal#102 1 dut.u_pfd.pfd_ref_q$async_arst_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_arst_past"], "smtname": 102, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#102| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_ref_q$async_arst_past
+(define-fun |ihsan_sa_pll_formal#103| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#102| state)) #b1) #b0 (|ihsan_sa_pll_formal#101| state))) ; \dut.u_pfd.pfd_ref_q$async_pre
+; yosys-smt2-anyinit ihsan_sa_pll_formal#104 1 dut.u_pfd.pfd_fb_q$async_q_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_q_past"], "smtname": 104, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#104| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_q_past
+; yosys-smt2-anyinit ihsan_sa_pll_formal#105 1 dut.u_pfd.pfd_fb_q$async_d_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_d_past"], "smtname": 105, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#105| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_d_past
+; yosys-smt2-anyinit ihsan_sa_pll_formal#106 1 dut.u_pfd.pfd_fb_q$async_clk_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_clk_past"], "smtname": 106, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#106| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_clk_past
+(define-fun |ihsan_sa_pll_formal#107| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#106| state) (|ihsan_sa_pll_formal#61| state)) #b01)) ; \dut.u_pfd.pfd_fb_q$async_edge
+(define-fun |ihsan_sa_pll_formal#108| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#107| state) (|ihsan_sa_pll_formal#105| state) (|ihsan_sa_pll_formal#104| state))) ; \dut.u_pfd.pfd_fb_q$async_hold
+; yosys-smt2-anyinit ihsan_sa_pll_formal#109 1 dut.u_pfd.pfd_fb_q$async_arst_past_ff
+; yosys-smt2-witness {"offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_arst_past"], "smtname": 109, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#109| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \dut.u_pfd.pfd_fb_q$async_arst_past
+(define-fun |ihsan_sa_pll_formal#110| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#109| state)) #b1) #b0 (|ihsan_sa_pll_formal#108| state))) ; \dut.u_pfd.pfd_fb_q$async_pre
+(define-fun |ihsan_sa_pll_formal#111| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#103| state) (|ihsan_sa_pll_formal#110| state))) ; \dut.u_pfd.pfd_rst$async_cut
+(define-fun |ihsan_sa_pll_formal#112| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#96| state) (|ihsan_sa_pll_formal#111| state))) ; \dut.u_pfd.pfd_clr$async_cut
+(define-fun |ihsan_sa_pll_formal#113| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1) #b0 (|ihsan_sa_pll_formal#95| state))) ; \dut.u_pfd.pfd_fb_q
+(define-fun |ihsan_sa_pll_formal#114| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#21| state) (|ihsan_sa_pll_formal#22| state))) ; $auto$rtlil.cc:3386:Mux$551
+(define-fun |ihsan_sa_pll_formal#115| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#114| state))) ; $auto$rtlil.cc:3386:Mux$557
+(define-fun |ihsan_sa_pll_formal#116| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#115| state) #b0)) ; \dut.u_lock.recover
+(define-fun |ihsan_sa_pll_formal#117| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#113| state) (|ihsan_sa_pll_formal#116| state))) ; \pfd_dn
 ; yosys-smt2-wire dut.pfd_dn 1
-(define-fun |ihsan_sa_pll_formal_n dut.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#124| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1))
 ; yosys-smt2-wire dut.pfd_dn_q 1
-(define-fun |ihsan_sa_pll_formal_n dut.pfd_dn_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#125| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#44| state) (|ihsan_sa_pll_formal#41| state))) ; $auto$rtlil.cc:3386:Mux$665
-(define-fun |ihsan_sa_pll_formal#126| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#42| state)) #b1) #b0 (|ihsan_sa_pll_formal#125| state))) ; $auto$rtlil.cc:3386:Mux$669
-(define-fun |ihsan_sa_pll_formal#127| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#119| state)) #b1) #b0 (|ihsan_sa_pll_formal#126| state))) ; \dut.u_pfd.pfd_ref_q
-(define-fun |ihsan_sa_pll_formal#128| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#123| state))) ; $flatten\dut.$not$/work/blocks/pll/digital/rtl/ihsan_sa_pll.v:52$172_Y
-(define-fun |ihsan_sa_pll_formal#129| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#127| state) (|ihsan_sa_pll_formal#128| state))) ; \pfd_up
+(define-fun |ihsan_sa_pll_formal_n dut.pfd_dn_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#113| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#118| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#41| state) (|ihsan_sa_pll_formal#20| state))) ; $auto$rtlil.cc:3386:Mux$657
+(define-fun |ihsan_sa_pll_formal#119| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#39| state)) #b1) #b0 (|ihsan_sa_pll_formal#118| state))) ; $auto$rtlil.cc:3386:Mux$661
+(define-fun |ihsan_sa_pll_formal#120| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1) #b0 (|ihsan_sa_pll_formal#119| state))) ; \dut.u_pfd.pfd_ref_q
+(define-fun |ihsan_sa_pll_formal#121| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#116| state))) ; $flatten\dut.$not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$172_Y
+(define-fun |ihsan_sa_pll_formal#122| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#121| state))) ; \pfd_up
 ; yosys-smt2-wire dut.pfd_up 1
-(define-fun |ihsan_sa_pll_formal_n dut.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#129| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#122| state)) #b1))
 ; yosys-smt2-wire dut.pfd_up_q 1
-(define-fun |ihsan_sa_pll_formal_n dut.pfd_up_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#127| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#130| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#19| state) (|ihsan_sa_pll_formal#20| state))) ; $auto$rtlil.cc:3386:Mux$469
-(define-fun |ihsan_sa_pll_formal#131| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0 (|ihsan_sa_pll_formal#130| state))) ; $auto$rtlil.cc:3386:Mux$475
-(define-fun |ihsan_sa_pll_formal#132| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#131| state) #b0)) ; \dut.u_ctrl.pll_en
+(define-fun |ihsan_sa_pll_formal_n dut.pfd_up_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#123| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#18| state) (|ihsan_sa_pll_formal#19| state))) ; $auto$rtlil.cc:3386:Mux$461
+(define-fun |ihsan_sa_pll_formal#124| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0 (|ihsan_sa_pll_formal#123| state))) ; $auto$rtlil.cc:3386:Mux$467
+(define-fun |ihsan_sa_pll_formal#125| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#124| state) #b0)) ; \dut.u_ctrl.pll_en
 ; yosys-smt2-wire dut.pll_en 1
-(define-fun |ihsan_sa_pll_formal_n dut.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#132| state)) #b1))
-(declare-fun |ihsan_sa_pll_formal#133| (|ihsan_sa_pll_formal_s|) Bool) ; \pll_en_in
+(define-fun |ihsan_sa_pll_formal_n dut.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#125| state)) #b1))
+(declare-fun |ihsan_sa_pll_formal#126| (|ihsan_sa_pll_formal_s|) Bool) ; \pll_en_in
 ; yosys-smt2-wire dut.pll_en_in 1
-(define-fun |ihsan_sa_pll_formal_n dut.pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#133| state))
+(define-fun |ihsan_sa_pll_formal_n dut.pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#126| state))
 ; yosys-smt2-wire dut.recover 1
-(define-fun |ihsan_sa_pll_formal_n dut.recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1))
 ; yosys-smt2-wire dut.recover_fv 1
-(define-fun |ihsan_sa_pll_formal_n dut.recover_fv| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.recover_fv| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1))
 ; yosys-smt2-wire dut.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
 ; yosys-smt2-wire dut.u_ctrl.clk 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#43| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#40| state))
 ; yosys-smt2-wire dut.u_ctrl.cp_trim0 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#81| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
 ; yosys-smt2-wire dut.u_ctrl.cp_trim1 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#84| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#77| state)) #b1))
 ; yosys-smt2-wire dut.u_ctrl.cp_trim_in 2
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#85| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.cp_trim_in| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 2) (|ihsan_sa_pll_formal#78| state))
 ; yosys-smt2-wire dut.u_ctrl.pll_en 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#132| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#125| state)) #b1))
 ; yosys-smt2-wire dut.u_ctrl.pll_en_in 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#133| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#126| state))
 ; yosys-smt2-wire dut.u_ctrl.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_ctrl.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
 ; yosys-smt2-wire dut.u_div.clk_fb 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1))
 ; yosys-smt2-wire dut.u_div.clk_pre 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#134| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#69| state) (|ihsan_sa_pll_formal#2| state) (|ihsan_sa_pll_formal#3| state))) ; $auto$rtlil.cc:3386:Mux$541
-(define-fun |ihsan_sa_pll_formal#135| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b000 (|ihsan_sa_pll_formal#134| state))) ; $auto$rtlil.cc:3386:Mux$547
-(define-fun |ihsan_sa_pll_formal#136| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#135| state) #b000)) ; \dut.u_div.div_cnt
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#56| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#127| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#62| state) (|ihsan_sa_pll_formal#1| state) (|ihsan_sa_pll_formal#2| state))) ; $auto$rtlil.cc:3386:Mux$533
+(define-fun |ihsan_sa_pll_formal#128| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b000 (|ihsan_sa_pll_formal#127| state))) ; $auto$rtlil.cc:3386:Mux$539
+(define-fun |ihsan_sa_pll_formal#129| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#128| state) #b000)) ; \dut.u_div.div_cnt
 ; yosys-smt2-wire dut.u_div.div_cnt 3
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.div_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#136| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.div_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#129| state))
 ; yosys-smt2-wire dut.u_div.fb_en 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.fb_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#137| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (bvsub (|ihsan_sa_pll_formal#91| state) #b001)) ; $flatten\dut.\u_div.$sub$/work/blocks/pll/digital/rtl/pll_divider.v:18$204_Y
-(define-fun |ihsan_sa_pll_formal#138| ((state |ihsan_sa_pll_formal_s|)) Bool (bvuge (|ihsan_sa_pll_formal#91| state) #b001)) ; $flatten\dut.\u_div.$ge$/work/blocks/pll/digital/rtl/pll_divider.v:17$201_Y
-(define-fun |ihsan_sa_pll_formal#139| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#91| state) #b101)) ; $flatten\dut.\u_div.$le$/work/blocks/pll/digital/rtl/pll_divider.v:17$202_Y
-(define-fun |ihsan_sa_pll_formal#140| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#138| state) false) (or  (|ihsan_sa_pll_formal#139| state) false))) ; \dut.u_div.n_legal
-(define-fun |ihsan_sa_pll_formal#141| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#140| state) (|ihsan_sa_pll_formal#137| state) #b000)) ; \dut.u_div.n_m1
-(define-fun |ihsan_sa_pll_formal#142| ((state |ihsan_sa_pll_formal_s|)) Bool (bvuge (|ihsan_sa_pll_formal#136| state) (|ihsan_sa_pll_formal#141| state))) ; \dut.u_div.last
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.fb_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#60| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#130| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (bvsub (|ihsan_sa_pll_formal#84| state) #b001)) ; $flatten\dut.\u_div.$sub$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:18$204_Y
+(define-fun |ihsan_sa_pll_formal#131| ((state |ihsan_sa_pll_formal_s|)) Bool (bvuge (|ihsan_sa_pll_formal#84| state) #b001)) ; $flatten\dut.\u_div.$ge$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:17$201_Y
+(define-fun |ihsan_sa_pll_formal#132| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#84| state) #b101)) ; $flatten\dut.\u_div.$le$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:17$202_Y
+(define-fun |ihsan_sa_pll_formal#133| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#131| state) false) (or  (|ihsan_sa_pll_formal#132| state) false))) ; \dut.u_div.n_legal
+(define-fun |ihsan_sa_pll_formal#134| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#133| state) (|ihsan_sa_pll_formal#130| state) #b000)) ; \dut.u_div.n_m1
+(define-fun |ihsan_sa_pll_formal#135| ((state |ihsan_sa_pll_formal_s|)) Bool (bvuge (|ihsan_sa_pll_formal#129| state) (|ihsan_sa_pll_formal#134| state))) ; \dut.u_div.last
 ; yosys-smt2-wire dut.u_div.last 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.last| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#142| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.last| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#135| state))
 ; yosys-smt2-wire dut.u_div.n_legal 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_legal| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#140| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_legal| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#133| state))
 ; yosys-smt2-wire dut.u_div.n_m1 3
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_m1| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#141| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_m1| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#134| state))
 ; yosys-smt2-wire dut.u_div.n_sel 3
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#91| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#84| state))
 ; yosys-smt2-wire dut.u_div.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_div.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_div.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.clk 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#43| state))
-(define-fun |ihsan_sa_pll_formal#143| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#9| state) (|ihsan_sa_pll_formal#5| state))) ; $auto$rtlil.cc:3386:Mux$613
-(define-fun |ihsan_sa_pll_formal#144| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b00000 (|ihsan_sa_pll_formal#143| state))) ; $auto$rtlil.cc:3386:Mux$619
-(define-fun |ihsan_sa_pll_formal#145| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#144| state) #b00000)) ; \dut.u_lock.lock_cnt
-(define-fun |ihsan_sa_pll_formal#146| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (|ihsan_sa_pll_formal#145| state) #b00001)) ; $flatten\dut.\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$179_Y
-(define-fun |ihsan_sa_pll_formal#147| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#145| state) #b10000)) ; $flatten\dut.\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$178_Y
-(define-fun |ihsan_sa_pll_formal#148| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (|ihsan_sa_pll_formal#147| state) #b10000 (|ihsan_sa_pll_formal#146| state))) ; $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:35$180_Y
-; yosys-smt2-witness {"offset": 0, "path": ["\\wide_q"], "smtname": 149, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#149| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \wide_q
-(define-fun |ihsan_sa_pll_formal#150| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#47| state) (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0)) #b10)) ; $auto$rtlil.cc:3307:Eqx$629
-(define-fun |ihsan_sa_pll_formal#151| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#150| state) (|ihsan_sa_pll_formal#149| state) (|ihsan_sa_pll_formal#17| state))) ; $auto$rtlil.cc:3386:Mux$631
-(define-fun |ihsan_sa_pll_formal#152| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b1 (|ihsan_sa_pll_formal#151| state))) ; $auto$rtlil.cc:3386:Mux$637
-(define-fun |ihsan_sa_pll_formal#153| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#152| state) #b1)) ; \dut.u_lock.wide_q
-(define-fun |ihsan_sa_pll_formal#154| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#153| state)) #b1) #b00000 (|ihsan_sa_pll_formal#148| state))) ; \dut.u_lock.cnt_nxt
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#40| state))
+(define-fun |ihsan_sa_pll_formal#136| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#17| state) (|ihsan_sa_pll_formal#16| state))) ; $auto$rtlil.cc:3386:Mux$605
+(define-fun |ihsan_sa_pll_formal#137| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b00000 (|ihsan_sa_pll_formal#136| state))) ; $auto$rtlil.cc:3386:Mux$611
+(define-fun |ihsan_sa_pll_formal#138| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#137| state) #b00000)) ; \dut.u_lock.lock_cnt
+(define-fun |ihsan_sa_pll_formal#139| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (|ihsan_sa_pll_formal#138| state) #b00001)) ; $flatten\dut.\u_lock.$add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:35$179_Y
+(define-fun |ihsan_sa_pll_formal#140| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#138| state) #b10000)) ; $flatten\dut.\u_lock.$eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:35$178_Y
+(define-fun |ihsan_sa_pll_formal#141| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (|ihsan_sa_pll_formal#140| state) #b10000 (|ihsan_sa_pll_formal#139| state))) ; $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:35$180_Y
+; yosys-smt2-witness {"offset": 0, "path": ["\\wide_q"], "smtname": 142, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#142| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \wide_q
+(define-fun |ihsan_sa_pll_formal#143| ((state |ihsan_sa_pll_formal_s|)) Bool (= (concat (|ihsan_sa_pll_formal#44| state) (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0)) #b10)) ; $auto$rtlil.cc:3307:Eqx$621
+(define-fun |ihsan_sa_pll_formal#144| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#143| state) (|ihsan_sa_pll_formal#142| state) (|ihsan_sa_pll_formal#25| state))) ; $auto$rtlil.cc:3386:Mux$623
+(define-fun |ihsan_sa_pll_formal#145| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b1 (|ihsan_sa_pll_formal#144| state))) ; $auto$rtlil.cc:3386:Mux$629
+(define-fun |ihsan_sa_pll_formal#146| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#145| state) #b1)) ; \dut.u_lock.wide_q
+(define-fun |ihsan_sa_pll_formal#147| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#146| state)) #b1) #b00000 (|ihsan_sa_pll_formal#141| state))) ; \dut.u_lock.cnt_nxt
 ; yosys-smt2-wire dut.u_lock.cnt_nxt 5
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.cnt_nxt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#154| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.cnt_nxt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#147| state))
 ; yosys-smt2-wire dut.u_lock.lock 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#92| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.lock_cnt 5
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.lock_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#145| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.lock_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (|ihsan_sa_pll_formal#138| state))
 ; yosys-smt2-wire dut.u_lock.pfd_dn 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#124| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.pfd_up 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#129| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#122| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.pll_en 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#132| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#125| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.recover 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1))
 ; yosys-smt2-wire dut.u_lock.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#155| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#78| state) (|ihsan_sa_pll_formal#0| state) (|ihsan_sa_pll_formal#10| state))) ; $auto$rtlil.cc:3386:Mux$577
-(define-fun |ihsan_sa_pll_formal#156| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) #b0000000000 (|ihsan_sa_pll_formal#155| state))) ; $auto$rtlil.cc:3386:Mux$583
-(define-fun |ihsan_sa_pll_formal#157| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#156| state) #b0000000000)) ; \dut.u_lock.wd_cnt
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#148| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#71| state) (|ihsan_sa_pll_formal#10| state) (|ihsan_sa_pll_formal#28| state))) ; $auto$rtlil.cc:3386:Mux$569
+(define-fun |ihsan_sa_pll_formal#149| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) #b0000000000 (|ihsan_sa_pll_formal#148| state))) ; $auto$rtlil.cc:3386:Mux$575
+(define-fun |ihsan_sa_pll_formal#150| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#149| state) #b0000000000)) ; \dut.u_lock.wd_cnt
 ; yosys-smt2-wire dut.u_lock.wd_cnt 10
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.wd_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#157| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.wd_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (|ihsan_sa_pll_formal#150| state))
 ; yosys-smt2-wire dut.u_lock.wide_q 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_lock.wide_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#153| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_lock.wide_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#146| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.clk 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#43| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#40| state))
 ; yosys-smt2-wire dut.u_pfd.clk_fb 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#158| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#127| state) (|ihsan_sa_pll_formal#120| state))) ; \dut.u_pfd.pfd_rst
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#151| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvand (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#113| state))) ; \dut.u_pfd.pfd_rst
 ; yosys-smt2-wire dut.u_pfd.pfd_both 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_both| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$710 1
-(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$710| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#49| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_both| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#151| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$686 1
+(define-fun |ihsan_sa_pll_formal_n $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$686| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#52| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_clr$async_cut 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_clr$async_cut| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#119| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_clr$async_cut| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_dly_mid 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_dly_mid| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_dly_mid| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#151| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_dn 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#113| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#113| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_fb_q$async_arst_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_arst_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_arst_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_arst_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#109| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_fb_q$async_clk_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_clk_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_clk_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#113| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_clk_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#106| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_fb_q$async_d_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_d_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_d_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_d_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#105| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_edge 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_edge| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#114| state))
-(define-fun |ihsan_sa_pll_formal#159| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#119| state)) #b1) #b0 (|ihsan_sa_pll_formal#117| state))) ; \dut.u_pfd.pfd_fb_q$async_expect
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_edge| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#107| state))
+(define-fun |ihsan_sa_pll_formal#152| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1) #b0 (|ihsan_sa_pll_formal#110| state))) ; \dut.u_pfd.pfd_fb_q$async_expect
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_expect 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_expect| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#159| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_expect| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#152| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_hold 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_hold| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#115| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#160| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal_is| state)) ; \dut.u_pfd.pfd_fb_q$async_initstate
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_hold| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#108| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#153| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal_is| state)) ; \dut.u_pfd.pfd_fb_q$async_initstate
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_initstate 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_initstate| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#160| state))
-(define-fun |ihsan_sa_pll_formal#161| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (ite (|ihsan_sa_pll_formal#160| state) #b1 #b0))) ; \dut.u_pfd.pfd_fb_q$async_initstate_n
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_initstate| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#153| state))
+(define-fun |ihsan_sa_pll_formal#154| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (ite (|ihsan_sa_pll_formal#153| state) #b1 #b0))) ; \dut.u_pfd.pfd_fb_q$async_initstate_n
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_initstate_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_initstate_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#161| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_initstate_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#154| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_pre 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#110| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_fb_q$async_q_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_q_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_q_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#111| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#162| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#159| state))) ; \dut.u_pfd.pfd_fb_q$async_same
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_q_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#104| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#155| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#113| state) (|ihsan_sa_pll_formal#152| state))) ; \dut.u_pfd.pfd_fb_q$async_same
 ; yosys-smt2-wire dut.u_pfd.pfd_fb_q$async_same 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_same| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#162| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_fb_q$async_same| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#155| state))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#127| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_ref_q$async_arst_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_arst_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_arst_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#109| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_arst_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#102| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_ref_q$async_clk_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_clk_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_clk_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#106| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_clk_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_ref_q$async_d_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_d_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_d_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#105| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_d_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#98| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_edge 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_edge| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#107| state))
-(define-fun |ihsan_sa_pll_formal#163| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#119| state)) #b1) #b0 (|ihsan_sa_pll_formal#110| state))) ; \dut.u_pfd.pfd_ref_q$async_expect
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_edge| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#100| state))
+(define-fun |ihsan_sa_pll_formal#156| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#112| state)) #b1) #b0 (|ihsan_sa_pll_formal#103| state))) ; \dut.u_pfd.pfd_ref_q$async_expect
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_expect 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_expect| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#163| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_expect| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#156| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_hold 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_hold| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#108| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_hold| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#101| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_initstate 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_initstate| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#160| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_initstate| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#153| state))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_initstate_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_initstate_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#161| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_initstate_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#154| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_pre 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#110| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#103| state)) #b1))
 ; yosys-smt2-register dut.u_pfd.pfd_ref_q$async_q_past 1
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_q_past 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_q_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#104| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#164| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#127| state) (|ihsan_sa_pll_formal#163| state))) ; \dut.u_pfd.pfd_ref_q$async_same
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_q_past| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#97| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#157| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#156| state))) ; \dut.u_pfd.pfd_ref_q$async_same
 ; yosys-smt2-wire dut.u_pfd.pfd_ref_q$async_same 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_same| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#164| state))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_ref_q$async_same| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#157| state))
 ; yosys-smt2-wire dut.u_pfd.pfd_rst 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_rst| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_rst| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#151| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_rst$async_cut 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_rst$async_cut| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#118| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_rst$async_cut| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#111| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.pfd_up 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#127| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#120| state)) #b1))
 ; yosys-smt2-wire dut.u_pfd.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pfd.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.clk_pre 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#56| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.obs_q3 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.obs_q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#72| state)) #b1))
-; yosys-smt2-wire dut.u_pre.pre_c0 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_c0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#55| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.obs_q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#65| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.pre_q0 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_q0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#55| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_q0| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#51| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.pre_q1 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_q1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#59| state)) #b1))
-; yosys-smt2-wire dut.u_pre.pre_q2 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_q2| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.pre_q1| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#56| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.q3 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#72| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.q3| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#65| state)) #b1))
 ; yosys-smt2-wire dut.u_pre.rst_n 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
-; yosys-smt2-wire dut.u_pre.vco_out 1
-(define-fun |ihsan_sa_pll_formal_n dut.u_pre.vco_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
-; yosys-smt2-wire dut.vco_out 1
-(define-fun |ihsan_sa_pll_formal_n dut.vco_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
+; yosys-smt2-wire dut.u_pre.vco_div2 1
+(define-fun |ihsan_sa_pll_formal_n dut.u_pre.vco_div2| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#46| state)) #b1))
+; yosys-smt2-wire dut.vco_div2 1
+(define-fun |ihsan_sa_pll_formal_n dut.vco_div2| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#46| state)) #b1))
 ; yosys-smt2-register fb_ok 1
 ; yosys-smt2-wire fb_ok 1
-(define-fun |ihsan_sa_pll_formal_n fb_ok| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#87| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["\\fb_q"], "smtname": 165, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#165| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_q
+(define-fun |ihsan_sa_pll_formal_n fb_ok| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#80| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["\\fb_q"], "smtname": 158, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#158| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_q
 ; yosys-smt2-register fb_q 1
 ; yosys-smt2-wire fb_q 1
-(define-fun |ihsan_sa_pll_formal_n fb_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#165| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#166| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$33_Y
-(define-fun |ihsan_sa_pll_formal#167| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#165| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$34_Y
-(define-fun |ihsan_sa_pll_formal#168| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#166| state) false) (or  (|ihsan_sa_pll_formal#167| state) false))) ; \fb_rise
+(define-fun |ihsan_sa_pll_formal_n fb_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#159| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$33_Y
+(define-fun |ihsan_sa_pll_formal#160| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:84$34_Y
+(define-fun |ihsan_sa_pll_formal#161| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#159| state) false) (or  (|ihsan_sa_pll_formal#160| state) false))) ; \fb_rise
 ; yosys-smt2-wire fb_rise 1
-(define-fun |ihsan_sa_pll_formal_n fb_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#168| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\fb_seen"], "smtname": 169, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#169| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_seen
+(define-fun |ihsan_sa_pll_formal_n fb_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#161| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\fb_seen"], "smtname": 162, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#162| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \fb_seen
 ; yosys-smt2-register fb_seen 1
 ; yosys-smt2-wire fb_seen 1
-(define-fun |ihsan_sa_pll_formal_n fb_seen| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#169| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["\\hist"], "smtname": 170, "smtoffset": 0, "type": "reg", "width": 16}
-(declare-fun |ihsan_sa_pll_formal#170| (|ihsan_sa_pll_formal_s|) (_ BitVec 16)) ; \hist
+(define-fun |ihsan_sa_pll_formal_n fb_seen| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#162| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["\\hist"], "smtname": 163, "smtoffset": 0, "type": "reg", "width": 16}
+(declare-fun |ihsan_sa_pll_formal#163| (|ihsan_sa_pll_formal_s|) (_ BitVec 16)) ; \hist
 ; yosys-smt2-register hist 16
 ; yosys-smt2-wire hist 16
-(define-fun |ihsan_sa_pll_formal_n hist| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#170| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\wide_s"], "smtname": 171, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#171| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \wide_s
-(define-fun |ihsan_sa_pll_formal#172| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (ite (|ihsan_sa_pll_formal#77| state) (concat ((_ extract 14 0) (|ihsan_sa_pll_formal#170| state)) (|ihsan_sa_pll_formal#171| state)) (|ihsan_sa_pll_formal#170| state))) ; \hist_now
+(define-fun |ihsan_sa_pll_formal_n hist| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#163| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\wide_s"], "smtname": 164, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#164| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \wide_s
+(define-fun |ihsan_sa_pll_formal#165| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (ite (|ihsan_sa_pll_formal#70| state) (concat ((_ extract 14 0) (|ihsan_sa_pll_formal#163| state)) (|ihsan_sa_pll_formal#164| state)) (|ihsan_sa_pll_formal#163| state))) ; \hist_now
 ; yosys-smt2-wire hist_now 16
-(define-fun |ihsan_sa_pll_formal_n hist_now| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#172| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\hist_q"], "smtname": 173, "smtoffset": 0, "type": "reg", "width": 16}
-(declare-fun |ihsan_sa_pll_formal#173| (|ihsan_sa_pll_formal_s|) (_ BitVec 16)) ; \hist_q
+(define-fun |ihsan_sa_pll_formal_n hist_now| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#165| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\hist_q"], "smtname": 166, "smtoffset": 0, "type": "reg", "width": 16}
+(declare-fun |ihsan_sa_pll_formal#166| (|ihsan_sa_pll_formal_s|) (_ BitVec 16)) ; \hist_q
 ; yosys-smt2-register hist_q 16
 ; yosys-smt2-wire hist_q 16
-(define-fun |ihsan_sa_pll_formal_n hist_q| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#173| state))
+(define-fun |ihsan_sa_pll_formal_n hist_q| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (|ihsan_sa_pll_formal#166| state))
 ; yosys-smt2-output lock 1
 ; yosys-smt2-wire lock 1
-(define-fun |ihsan_sa_pll_formal_n lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#174| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) #b1 #b0)) ; $procmux$256_Y
-(define-fun |ihsan_sa_pll_formal#175| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) (|ihsan_sa_pll_formal#174| state) #b0)) ; \lock_not_while_wide_EN
+(define-fun |ihsan_sa_pll_formal_n lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#92| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#167| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) #b1 #b0)) ; $procmux$253_Y
+(define-fun |ihsan_sa_pll_formal#168| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) (|ihsan_sa_pll_formal#167| state) #b0)) ; \lock_not_while_wide_EN
 ; yosys-smt2-wire lock_not_while_wide_EN 1
-(define-fun |ihsan_sa_pll_formal_n lock_not_while_wide_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#175| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#176| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#140| state) (|ihsan_sa_pll_formal#91| state) #b001)) ; \n_eff
+(define-fun |ihsan_sa_pll_formal_n lock_not_while_wide_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#168| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#169| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#133| state) (|ihsan_sa_pll_formal#84| state) #b001)) ; \n_eff
 ; yosys-smt2-wire n_eff 3
-(define-fun |ihsan_sa_pll_formal_n n_eff| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#176| state))
+(define-fun |ihsan_sa_pll_formal_n n_eff| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#169| state))
 ; yosys-smt2-register n_last 3
 ; yosys-smt2-wire n_last 3
-(define-fun |ihsan_sa_pll_formal_n n_last| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#92| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\n_q"], "smtname": 177, "smtoffset": 0, "type": "reg", "width": 3}
-(declare-fun |ihsan_sa_pll_formal#177| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_q
+(define-fun |ihsan_sa_pll_formal_n n_last| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#85| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\n_q"], "smtname": 170, "smtoffset": 0, "type": "reg", "width": 3}
+(declare-fun |ihsan_sa_pll_formal#170| (|ihsan_sa_pll_formal_s|) (_ BitVec 3)) ; \n_q
 ; yosys-smt2-register n_q 3
 ; yosys-smt2-wire n_q 3
-(define-fun |ihsan_sa_pll_formal_n n_q| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#177| state))
+(define-fun |ihsan_sa_pll_formal_n n_q| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#170| state))
 ; yosys-smt2-input n_sel 3
 ; yosys-smt2-wire n_sel 3
 ; yosys-smt2-witness {"offset": 0, "path": ["\\n_sel"], "smtname": "n_sel", "smtoffset": 0, "type": "input", "width": 3}
-(define-fun |ihsan_sa_pll_formal_n n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#91| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\n_stab"], "smtname": 178, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#178| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \n_stab
+(define-fun |ihsan_sa_pll_formal_n n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#84| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\n_stab"], "smtname": 171, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#171| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \n_stab
 ; yosys-smt2-register n_stab 1
 ; yosys-smt2-wire n_stab 1
-(define-fun |ihsan_sa_pll_formal_n n_stab| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#178| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#179| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#177| state))) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$19_Y
-(define-fun |ihsan_sa_pll_formal#180| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#178| state)) #b1) false) (or  (|ihsan_sa_pll_formal#179| state) false))) ; \n_stab_now
+(define-fun |ihsan_sa_pll_formal_n n_stab| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#171| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#172| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#170| state))) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$19_Y
+(define-fun |ihsan_sa_pll_formal#173| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#171| state)) #b1) false) (or  (|ihsan_sa_pll_formal#172| state) false))) ; \n_stab_now
 ; yosys-smt2-wire n_stab_now 1
-(define-fun |ihsan_sa_pll_formal_n n_stab_now| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#180| state))
+(define-fun |ihsan_sa_pll_formal_n n_stab_now| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#173| state))
 ; yosys-smt2-output obs_out 1
 ; yosys-smt2-wire obs_out 1
-(define-fun |ihsan_sa_pll_formal_n obs_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["\\obs_q"], "smtname": 181, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#181| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \obs_q
+(define-fun |ihsan_sa_pll_formal_n obs_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["\\obs_q"], "smtname": 174, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#174| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \obs_q
 ; yosys-smt2-register obs_q 1
 ; yosys-smt2-wire obs_q 1
-(define-fun |ihsan_sa_pll_formal_n obs_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#181| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n obs_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#174| state)) #b1))
 ; yosys-smt2-input obs_sel 1
 ; yosys-smt2-wire obs_sel 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\obs_sel"], "smtname": "obs_sel", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |ihsan_sa_pll_formal_n obs_sel| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n obs_sel| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1))
 ; yosys-smt2-register past_valid 1
 ; yosys-smt2-wire past_valid 1
-(define-fun |ihsan_sa_pll_formal_n past_valid| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n past_valid| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1))
 ; yosys-smt2-output pfd_dn 1
 ; yosys-smt2-wire pfd_dn 1
-(define-fun |ihsan_sa_pll_formal_n pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#124| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#182| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) #b1 #b0)) ; \pfd_never_both_high_EN
+(define-fun |ihsan_sa_pll_formal_n pfd_dn| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#175| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) #b1 #b0)) ; \pfd_never_both_high_EN
 ; yosys-smt2-wire pfd_never_both_high_EN 1
-(define-fun |ihsan_sa_pll_formal_n pfd_never_both_high_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#182| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#183| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#34| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$110_Y
-(define-fun |ihsan_sa_pll_formal#184| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$111_Y
-(define-fun |ihsan_sa_pll_formal#185| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#183| state) false) (or  (|ihsan_sa_pll_formal#184| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$112_Y
-(define-fun |ihsan_sa_pll_formal#186| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#35| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$113_Y
-(define-fun |ihsan_sa_pll_formal#187| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#185| state) false) (or  (|ihsan_sa_pll_formal#186| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$114_Y
-(define-fun |ihsan_sa_pll_formal#188| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#36| state)) #b1) false) (or  (|ihsan_sa_pll_formal#168| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$115_Y
-(define-fun |ihsan_sa_pll_formal#189| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#37| state)) #b1) false) (or  (|ihsan_sa_pll_formal#77| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$116_Y
-(define-fun |ihsan_sa_pll_formal#190| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#188| state) false  (|ihsan_sa_pll_formal#189| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$117_Y
-(define-fun |ihsan_sa_pll_formal#191| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#187| state) false) (or  (|ihsan_sa_pll_formal#190| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$118_Y
-(define-fun |ihsan_sa_pll_formal#192| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#191| state) #b1 #b0)) ; $procmux$260_Y
-(define-fun |ihsan_sa_pll_formal#193| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) (|ihsan_sa_pll_formal#192| state) #b0)) ; \pfd_reset_on_both_EN
+(define-fun |ihsan_sa_pll_formal_n pfd_never_both_high_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#175| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#176| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#31| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$110_Y
+(define-fun |ihsan_sa_pll_formal#177| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$111_Y
+(define-fun |ihsan_sa_pll_formal#178| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#176| state) false) (or  (|ihsan_sa_pll_formal#177| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$112_Y
+(define-fun |ihsan_sa_pll_formal#179| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#32| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$113_Y
+(define-fun |ihsan_sa_pll_formal#180| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#178| state) false) (or  (|ihsan_sa_pll_formal#179| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$114_Y
+(define-fun |ihsan_sa_pll_formal#181| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#33| state)) #b1) false) (or  (|ihsan_sa_pll_formal#161| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$115_Y
+(define-fun |ihsan_sa_pll_formal#182| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#34| state)) #b1) false) (or  (|ihsan_sa_pll_formal#70| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$116_Y
+(define-fun |ihsan_sa_pll_formal#183| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#181| state) false  (|ihsan_sa_pll_formal#182| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:155$117_Y
+(define-fun |ihsan_sa_pll_formal#184| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#180| state) false) (or  (|ihsan_sa_pll_formal#183| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:154$118_Y
+(define-fun |ihsan_sa_pll_formal#185| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#184| state) #b1 #b0)) ; $procmux$257_Y
+(define-fun |ihsan_sa_pll_formal#186| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) (|ihsan_sa_pll_formal#185| state) #b0)) ; \pfd_reset_on_both_EN
 ; yosys-smt2-wire pfd_reset_on_both_EN 1
-(define-fun |ihsan_sa_pll_formal_n pfd_reset_on_both_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#193| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n pfd_reset_on_both_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#186| state)) #b1))
 ; yosys-smt2-output pfd_up 1
 ; yosys-smt2-wire pfd_up 1
-(define-fun |ihsan_sa_pll_formal_n pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#129| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n pfd_up| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#122| state)) #b1))
 ; yosys-smt2-output pll_en 1
 ; yosys-smt2-wire pll_en 1
-(define-fun |ihsan_sa_pll_formal_n pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#132| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n pll_en| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#125| state)) #b1))
 ; yosys-smt2-input pll_en_in 1
 ; yosys-smt2-wire pll_en_in 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\pll_en_in"], "smtname": "pll_en_in", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |ihsan_sa_pll_formal_n pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#133| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\pre_cnt"], "smtname": 194, "smtoffset": 0, "type": "reg", "width": 4}
-(declare-fun |ihsan_sa_pll_formal#194| (|ihsan_sa_pll_formal_s|) (_ BitVec 4)) ; \pre_cnt
+(define-fun |ihsan_sa_pll_formal_n pll_en_in| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#126| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\pre_cnt"], "smtname": 187, "smtoffset": 0, "type": "reg", "width": 4}
+(declare-fun |ihsan_sa_pll_formal#187| (|ihsan_sa_pll_formal_s|) (_ BitVec 4)) ; \pre_cnt
 ; yosys-smt2-register pre_cnt 4
 ; yosys-smt2-wire pre_cnt 4
-(define-fun |ihsan_sa_pll_formal_n pre_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (|ihsan_sa_pll_formal#194| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\pre_ok"], "smtname": 195, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#195| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \pre_ok
+(define-fun |ihsan_sa_pll_formal_n pre_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (|ihsan_sa_pll_formal#187| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\pre_ok"], "smtname": 188, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#188| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \pre_ok
 ; yosys-smt2-register pre_ok 1
 ; yosys-smt2-wire pre_ok 1
-(define-fun |ihsan_sa_pll_formal_n pre_ok| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#195| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#196| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$26_Y
-; yosys-smt2-witness {"offset": 0, "path": ["\\prep_q"], "smtname": 197, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#197| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \prep_q
-(define-fun |ihsan_sa_pll_formal#198| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#197| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$27_Y
-(define-fun |ihsan_sa_pll_formal#199| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#196| state) false) (or  (|ihsan_sa_pll_formal#198| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$28_Y
-(define-fun |ihsan_sa_pll_formal#200| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#199| state) false) (or  (|ihsan_sa_pll_formal#89| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$30_Y
-(define-fun |ihsan_sa_pll_formal#201| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#181| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$31_Y
-(define-fun |ihsan_sa_pll_formal#202| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#200| state) false) (or  (|ihsan_sa_pll_formal#201| state) false))) ; \pre_rise
+(define-fun |ihsan_sa_pll_formal_n pre_ok| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#188| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#189| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$26_Y
+; yosys-smt2-witness {"offset": 0, "path": ["\\prep_q"], "smtname": 190, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#190| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \prep_q
+(define-fun |ihsan_sa_pll_formal#191| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#190| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$27_Y
+(define-fun |ihsan_sa_pll_formal#192| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#189| state) false) (or  (|ihsan_sa_pll_formal#191| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$28_Y
+(define-fun |ihsan_sa_pll_formal#193| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#192| state) false) (or  (|ihsan_sa_pll_formal#82| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$30_Y
+(define-fun |ihsan_sa_pll_formal#194| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#174| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83$31_Y
+(define-fun |ihsan_sa_pll_formal#195| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#193| state) false) (or  (|ihsan_sa_pll_formal#194| state) false))) ; \pre_rise
 ; yosys-smt2-wire pre_rise 1
-(define-fun |ihsan_sa_pll_formal_n pre_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#202| state))
-; yosys-smt2-witness {"offset": 0, "path": ["\\pre_seen"], "smtname": 203, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#203| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \pre_seen
+(define-fun |ihsan_sa_pll_formal_n pre_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#195| state))
+; yosys-smt2-witness {"offset": 0, "path": ["\\pre_seen"], "smtname": 196, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#196| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \pre_seen
 ; yosys-smt2-register pre_seen 1
 ; yosys-smt2-wire pre_seen 1
-(define-fun |ihsan_sa_pll_formal_n pre_seen| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#203| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n pre_seen| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#196| state)) #b1))
 ; yosys-smt2-register prep_q 1
 ; yosys-smt2-wire prep_q 1
-(define-fun |ihsan_sa_pll_formal_n prep_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#197| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#204| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#32| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$80_Y
-(define-fun |ihsan_sa_pll_formal#205| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#204| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#195| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$81_Y
-(define-fun |ihsan_sa_pll_formal#206| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#205| state) false) (or  (|ihsan_sa_pll_formal#89| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$83_Y
-(define-fun |ihsan_sa_pll_formal#207| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#206| state) #b1 #b0)) ; $procmux$270_Y
-(define-fun |ihsan_sa_pll_formal#208| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) (|ihsan_sa_pll_formal#207| state) #b0)) ; \prescaler_div8_EN
+(define-fun |ihsan_sa_pll_formal_n prep_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#190| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#197| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#29| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$80_Y
+(define-fun |ihsan_sa_pll_formal#198| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#197| state) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#188| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$81_Y
+(define-fun |ihsan_sa_pll_formal#199| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#198| state) false) (or  (|ihsan_sa_pll_formal#82| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136$83_Y
+(define-fun |ihsan_sa_pll_formal#200| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#199| state) #b1 #b0)) ; $procmux$267_Y
+(define-fun |ihsan_sa_pll_formal#201| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) (|ihsan_sa_pll_formal#200| state) #b0)) ; \prescaler_div8_EN
 ; yosys-smt2-wire prescaler_div8_EN 1
-(define-fun |ihsan_sa_pll_formal_n prescaler_div8_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#208| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n prescaler_div8_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#201| state)) #b1))
 ; yosys-smt2-wire recover 1
-(define-fun |ihsan_sa_pll_formal_n recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#209| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) #b0 #b1)) ; $procmux$274_Y
-(define-fun |ihsan_sa_pll_formal#210| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) (|ihsan_sa_pll_formal#209| state) #b0)) ; \reset_forces_outputs_EN
+(define-fun |ihsan_sa_pll_formal_n recover| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#202| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) #b0 #b1)) ; $procmux$271_Y
+(define-fun |ihsan_sa_pll_formal#203| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) (|ihsan_sa_pll_formal#202| state) #b0)) ; \reset_forces_outputs_EN
 ; yosys-smt2-wire reset_forces_outputs_EN 1
-(define-fun |ihsan_sa_pll_formal_n reset_forces_outputs_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#210| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n reset_forces_outputs_EN| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#203| state)) #b1))
 ; yosys-smt2-input rst_n 1
 ; yosys-smt2-wire rst_n 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\rst_n"], "smtname": "rst_n", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |ihsan_sa_pll_formal_n rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["\\vco_cnt"], "smtname": 211, "smtoffset": 0, "type": "reg", "width": 4}
-(declare-fun |ihsan_sa_pll_formal#211| (|ihsan_sa_pll_formal_s|) (_ BitVec 4)) ; \vco_cnt
+(define-fun |ihsan_sa_pll_formal_n rst_n| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["\\vco_cnt"], "smtname": 204, "smtoffset": 0, "type": "reg", "width": 4}
+(declare-fun |ihsan_sa_pll_formal#204| (|ihsan_sa_pll_formal_s|) (_ BitVec 4)) ; \vco_cnt
 ; yosys-smt2-register vco_cnt 4
 ; yosys-smt2-wire vco_cnt 4
-(define-fun |ihsan_sa_pll_formal_n vco_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (|ihsan_sa_pll_formal#211| state))
-; yosys-smt2-input vco_out 1
-; yosys-smt2-wire vco_out 1
-; yosys-smt2-witness {"offset": 0, "path": ["\\vco_out"], "smtname": "vco_out", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |ihsan_sa_pll_formal_n vco_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["\\vco_q"], "smtname": 212, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |ihsan_sa_pll_formal#212| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \vco_q
+(define-fun |ihsan_sa_pll_formal_n vco_cnt| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (|ihsan_sa_pll_formal#204| state))
+; yosys-smt2-input vco_div2 1
+; yosys-smt2-wire vco_div2 1
+; yosys-smt2-witness {"offset": 0, "path": ["\\vco_div2"], "smtname": "vco_div2", "smtoffset": 0, "type": "input", "width": 1}
+(define-fun |ihsan_sa_pll_formal_n vco_div2| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#46| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["\\vco_q"], "smtname": 205, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |ihsan_sa_pll_formal#205| (|ihsan_sa_pll_formal_s|) (_ BitVec 1)) ; \vco_q
 ; yosys-smt2-register vco_q 1
 ; yosys-smt2-wire vco_q 1
-(define-fun |ihsan_sa_pll_formal_n vco_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#212| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#213| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$23_Y
-(define-fun |ihsan_sa_pll_formal#214| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#212| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$24_Y
-(define-fun |ihsan_sa_pll_formal#215| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#213| state) false) (or  (|ihsan_sa_pll_formal#214| state) false))) ; \vco_rise
+(define-fun |ihsan_sa_pll_formal_n vco_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#205| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#206| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#46| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$23_Y
+(define-fun |ihsan_sa_pll_formal#207| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#205| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$24_Y
+(define-fun |ihsan_sa_pll_formal#208| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#206| state) false) (or  (|ihsan_sa_pll_formal#207| state) false))) ; \vco_rise
 ; yosys-smt2-wire vco_rise 1
-(define-fun |ihsan_sa_pll_formal_n vco_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#215| state))
+(define-fun |ihsan_sa_pll_formal_n vco_rise| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#208| state))
 ; yosys-smt2-register wide_q 1
 ; yosys-smt2-wire wide_q 1
-(define-fun |ihsan_sa_pll_formal_n wide_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#149| state)) #b1))
+(define-fun |ihsan_sa_pll_formal_n wide_q| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#142| state)) #b1))
 ; yosys-smt2-register wide_s 1
 ; yosys-smt2-wire wide_s 1
-(define-fun |ihsan_sa_pll_formal_n wide_s| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#171| state)) #b1))
-(define-fun |ihsan_sa_pll_formal#216| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41$14_Y
-(define-fun |ihsan_sa_pll_formal#217| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) #b0 #b1)) ; $assume$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41$13_EN
-; yosys-smt2-assume 0 _witness_.check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13 /work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.44-41.59
-(define-fun |ihsan_sa_pll_formal_u 0| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#216| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#217| state)) #b1)))) ; _witness_.check_assume__work_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13
-(define-fun |ihsan_sa_pll_formal#218| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (concat #b0 (|ihsan_sa_pll_formal#194| state)) (concat #b0000 (ite (|ihsan_sa_pll_formal#202| state) #b1 #b0)))) ; $add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$99_Y
-(define-fun |ihsan_sa_pll_formal#219| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#218| state) (concat #b00 (|ihsan_sa_pll_formal#176| state)))) ; $le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$100_Y
-(define-fun |ihsan_sa_pll_formal#220| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#168| state) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$101_Y
-(define-fun |ihsan_sa_pll_formal#221| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#169| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$102_Y
-(define-fun |ihsan_sa_pll_formal#222| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#220| state) false  (|ihsan_sa_pll_formal#221| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$103_Y
-(define-fun |ihsan_sa_pll_formal#223| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#194| state) (concat #b000 (ite (|ihsan_sa_pll_formal#202| state) #b1 #b0)))) ; $add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$104_Y
-(define-fun |ihsan_sa_pll_formal#224| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#223| state) (concat #b0 (|ihsan_sa_pll_formal#176| state)))) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$105_Y
-(define-fun |ihsan_sa_pll_formal#225| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#222| state) false  (|ihsan_sa_pll_formal#224| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$106_Y
-(define-fun |ihsan_sa_pll_formal#226| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#219| state) false) (or  (|ihsan_sa_pll_formal#225| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$107_Y
+(define-fun |ihsan_sa_pll_formal_n wide_s| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#164| state)) #b1))
+(define-fun |ihsan_sa_pll_formal#209| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41$14_Y
+(define-fun |ihsan_sa_pll_formal#210| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) #b0 #b1)) ; $assume$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41$13_EN
+; yosys-smt2-assume 0 _witness_.check_assume__home_hive2_projects_ece298a_pll_digital_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13 /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:41.44-41.59
+(define-fun |ihsan_sa_pll_formal_u 0| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#209| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#210| state)) #b1)))) ; _witness_.check_assume__home_hive2_projects_ece298a_pll_digital_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_41_13
+(define-fun |ihsan_sa_pll_formal#211| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (concat #b0 (|ihsan_sa_pll_formal#187| state)) (concat #b0000 (ite (|ihsan_sa_pll_formal#195| state) #b1 #b0)))) ; $add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$99_Y
+(define-fun |ihsan_sa_pll_formal#212| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#211| state) (concat #b00 (|ihsan_sa_pll_formal#169| state)))) ; $le$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$100_Y
+(define-fun |ihsan_sa_pll_formal#213| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#161| state) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$101_Y
+(define-fun |ihsan_sa_pll_formal#214| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#162| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$102_Y
+(define-fun |ihsan_sa_pll_formal#215| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#213| state) false  (|ihsan_sa_pll_formal#214| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$103_Y
+(define-fun |ihsan_sa_pll_formal#216| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#187| state) (concat #b000 (ite (|ihsan_sa_pll_formal#195| state) #b1 #b0)))) ; $add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$104_Y
+(define-fun |ihsan_sa_pll_formal#217| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#216| state) (concat #b0 (|ihsan_sa_pll_formal#169| state)))) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$105_Y
+(define-fun |ihsan_sa_pll_formal#218| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#215| state) false  (|ihsan_sa_pll_formal#217| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$106_Y
+(define-fun |ihsan_sa_pll_formal#219| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#212| state) false) (or  (|ihsan_sa_pll_formal#218| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$107_Y
 ; yosys-smt2-assert 0 divider_ratio
-(define-fun |ihsan_sa_pll_formal_a 0| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#226| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#96| state)) #b1)))) ; divider_ratio
+(define-fun |ihsan_sa_pll_formal_a 0| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#219| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#89| state)) #b1)))) ; divider_ratio
 ; yosys-smt2-assert 1 dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic
-(define-fun |ihsan_sa_pll_formal_a 1| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#162| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#161| state)) #b1)))) ; dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic
+(define-fun |ihsan_sa_pll_formal_a 1| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#155| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#154| state)) #b1)))) ; dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic
 ; yosys-smt2-assert 2 dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic
-(define-fun |ihsan_sa_pll_formal_a 2| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#164| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#161| state)) #b1)))) ; dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic
-(define-fun |ihsan_sa_pll_formal#227| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$68_Y
-(define-fun |ihsan_sa_pll_formal#228| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 1 1) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 2 2) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 3 3) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 4 4) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 5 5) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 6 6) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 7 7) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 8 8) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 9 9) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 10 10) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 11 11) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 12 12) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 13 13) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 14 14) (|ihsan_sa_pll_formal#172| state)) #b1) (= ((_ extract 15 15) (|ihsan_sa_pll_formal#172| state)) #b1)))) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$123_Y
-(define-fun |ihsan_sa_pll_formal#229| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#227| state) false  (|ihsan_sa_pll_formal#228| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$124_Y
-(define-fun |ihsan_sa_pll_formal#230| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 1 1) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 2 2) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 3 3) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 4 4) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 5 5) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 6 6) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 7 7) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 8 8) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 9 9) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 10 10) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 11 11) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 12 12) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 13 13) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 14 14) (|ihsan_sa_pll_formal#173| state)) #b1) (= ((_ extract 15 15) (|ihsan_sa_pll_formal#173| state)) #b1)))) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$125_Y
-(define-fun |ihsan_sa_pll_formal#231| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#229| state) false  (|ihsan_sa_pll_formal#230| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$126_Y
+(define-fun |ihsan_sa_pll_formal_a 2| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#157| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#154| state)) #b1)))) ; dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic
+(define-fun |ihsan_sa_pll_formal#220| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#92| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$68_Y
+(define-fun |ihsan_sa_pll_formal#221| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 1 1) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 2 2) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 3 3) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 4 4) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 5 5) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 6 6) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 7 7) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 8 8) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 9 9) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 10 10) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 11 11) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 12 12) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 13 13) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 14 14) (|ihsan_sa_pll_formal#165| state)) #b1) (= ((_ extract 15 15) (|ihsan_sa_pll_formal#165| state)) #b1)))) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$123_Y
+(define-fun |ihsan_sa_pll_formal#222| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#220| state) false  (|ihsan_sa_pll_formal#221| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$124_Y
+(define-fun |ihsan_sa_pll_formal#223| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 1 1) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 2 2) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 3 3) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 4 4) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 5 5) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 6 6) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 7 7) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 8 8) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 9 9) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 10 10) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 11 11) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 12 12) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 13 13) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 14 14) (|ihsan_sa_pll_formal#166| state)) #b1) (= ((_ extract 15 15) (|ihsan_sa_pll_formal#166| state)) #b1)))) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$125_Y
+(define-fun |ihsan_sa_pll_formal#224| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#222| state) false  (|ihsan_sa_pll_formal#223| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$126_Y
 ; yosys-smt2-assert 3 lock_not_while_wide
-(define-fun |ihsan_sa_pll_formal_a 3| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#231| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#175| state)) #b1)))) ; lock_not_while_wide
-(define-fun |ihsan_sa_pll_formal#232| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#129| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#124| state)) #b1) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$108_Y
-(define-fun |ihsan_sa_pll_formal#233| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#232| state) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$109_Y
+(define-fun |ihsan_sa_pll_formal_a 3| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#224| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#168| state)) #b1)))) ; lock_not_while_wide
+(define-fun |ihsan_sa_pll_formal#225| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#122| state)) #b1) false) (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$108_Y
+(define-fun |ihsan_sa_pll_formal#226| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#225| state) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$109_Y
 ; yosys-smt2-assert 4 pfd_never_both_high
-(define-fun |ihsan_sa_pll_formal_a 4| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#233| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#182| state)) #b1)))) ; pfd_never_both_high
-(define-fun |ihsan_sa_pll_formal#234| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#129| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$65_Y
-(define-fun |ihsan_sa_pll_formal#235| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#124| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$66_Y
-(define-fun |ihsan_sa_pll_formal#236| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#234| state) false) (or  (|ihsan_sa_pll_formal#235| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$67_Y
+(define-fun |ihsan_sa_pll_formal_a 4| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#226| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#175| state)) #b1)))) ; pfd_never_both_high
+(define-fun |ihsan_sa_pll_formal#227| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#122| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$65_Y
+(define-fun |ihsan_sa_pll_formal#228| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#117| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$66_Y
+(define-fun |ihsan_sa_pll_formal#229| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#227| state) false) (or  (|ihsan_sa_pll_formal#228| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$67_Y
 ; yosys-smt2-assert 5 pfd_reset_on_both
-(define-fun |ihsan_sa_pll_formal_a 5| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#236| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#193| state)) #b1)))) ; pfd_reset_on_both
-(define-fun |ihsan_sa_pll_formal#237| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (concat #b0 (|ihsan_sa_pll_formal#211| state)) (concat #b0000 (ite (|ihsan_sa_pll_formal#215| state) #b1 #b0)))) ; $add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$84_Y
-(define-fun |ihsan_sa_pll_formal#238| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#237| state) #b01000)) ; $le$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$85_Y
-(define-fun |ihsan_sa_pll_formal#239| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#202| state) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$86_Y
-(define-fun |ihsan_sa_pll_formal#240| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#203| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$87_Y
-(define-fun |ihsan_sa_pll_formal#241| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#239| state) false  (|ihsan_sa_pll_formal#240| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$88_Y
-(define-fun |ihsan_sa_pll_formal#242| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#237| state) #b01000)) ; $eq$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$90_Y
-(define-fun |ihsan_sa_pll_formal#243| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#241| state) false  (|ihsan_sa_pll_formal#242| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$91_Y
-(define-fun |ihsan_sa_pll_formal#244| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#238| state) false) (or  (|ihsan_sa_pll_formal#243| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$92_Y
+(define-fun |ihsan_sa_pll_formal_a 5| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#229| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#186| state)) #b1)))) ; pfd_reset_on_both
+(define-fun |ihsan_sa_pll_formal#230| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 5) (bvadd (concat #b0 (|ihsan_sa_pll_formal#204| state)) (concat #b0000 (ite (|ihsan_sa_pll_formal#208| state) #b1 #b0)))) ; $add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$84_Y
+(define-fun |ihsan_sa_pll_formal#231| ((state |ihsan_sa_pll_formal_s|)) Bool (bvule (|ihsan_sa_pll_formal#230| state) #b00100)) ; $le$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$85_Y
+(define-fun |ihsan_sa_pll_formal#232| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (|ihsan_sa_pll_formal#195| state) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$86_Y
+(define-fun |ihsan_sa_pll_formal#233| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#196| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$87_Y
+(define-fun |ihsan_sa_pll_formal#234| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#232| state) false  (|ihsan_sa_pll_formal#233| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$88_Y
+(define-fun |ihsan_sa_pll_formal#235| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#230| state) #b00100)) ; $eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$90_Y
+(define-fun |ihsan_sa_pll_formal#236| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#234| state) false  (|ihsan_sa_pll_formal#235| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$91_Y
+(define-fun |ihsan_sa_pll_formal#237| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#231| state) false) (or  (|ihsan_sa_pll_formal#236| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137$92_Y
 ; yosys-smt2-assert 6 prescaler_div8
-(define-fun |ihsan_sa_pll_formal_a 6| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#244| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#208| state)) #b1)))) ; prescaler_div8
-(define-fun |ihsan_sa_pll_formal#245| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#236| state) false) (or  (|ihsan_sa_pll_formal#227| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$69_Y
-(define-fun |ihsan_sa_pll_formal#246| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#68| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$70_Y
-(define-fun |ihsan_sa_pll_formal#247| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#245| state) false) (or  (|ihsan_sa_pll_formal#246| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$71_Y
-(define-fun |ihsan_sa_pll_formal#248| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$72_Y
-(define-fun |ihsan_sa_pll_formal#249| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#247| state) false) (or  (|ihsan_sa_pll_formal#248| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$73_Y
-(define-fun |ihsan_sa_pll_formal#250| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#132| state)) #b1) false))) ; $flatten\dut.\u_lock.$logic_not$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$190_Y
-(define-fun |ihsan_sa_pll_formal#251| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#249| state) false) (or  (|ihsan_sa_pll_formal#250| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$75_Y
-(define-fun |ihsan_sa_pll_formal#252| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#81| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$76_Y
-(define-fun |ihsan_sa_pll_formal#253| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#251| state) false) (or  (|ihsan_sa_pll_formal#252| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$77_Y
-(define-fun |ihsan_sa_pll_formal#254| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#84| state)) #b1) false))) ; $logic_not$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$78_Y
-(define-fun |ihsan_sa_pll_formal#255| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#253| state) false) (or  (|ihsan_sa_pll_formal#254| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$79_Y
+(define-fun |ihsan_sa_pll_formal_a 6| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#237| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#201| state)) #b1)))) ; prescaler_div8
+(define-fun |ihsan_sa_pll_formal#238| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#229| state) false) (or  (|ihsan_sa_pll_formal#220| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$69_Y
+(define-fun |ihsan_sa_pll_formal#239| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#61| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$70_Y
+(define-fun |ihsan_sa_pll_formal#240| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#238| state) false) (or  (|ihsan_sa_pll_formal#239| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$71_Y
+(define-fun |ihsan_sa_pll_formal#241| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#67| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:128$72_Y
+(define-fun |ihsan_sa_pll_formal#242| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#240| state) false) (or  (|ihsan_sa_pll_formal#241| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$73_Y
+(define-fun |ihsan_sa_pll_formal#243| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#125| state)) #b1) false))) ; $flatten\dut.\u_lock.$logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:54$190_Y
+(define-fun |ihsan_sa_pll_formal#244| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#242| state) false) (or  (|ihsan_sa_pll_formal#243| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$75_Y
+(define-fun |ihsan_sa_pll_formal#245| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#74| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$76_Y
+(define-fun |ihsan_sa_pll_formal#246| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#244| state) false) (or  (|ihsan_sa_pll_formal#245| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$77_Y
+(define-fun |ihsan_sa_pll_formal#247| ((state |ihsan_sa_pll_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#77| state)) #b1) false))) ; $logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:129$78_Y
+(define-fun |ihsan_sa_pll_formal#248| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#246| state) false) (or  (|ihsan_sa_pll_formal#247| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$79_Y
 ; yosys-smt2-assert 7 reset_forces_outputs
-(define-fun |ihsan_sa_pll_formal_a 7| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#255| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#210| state)) #b1)))) ; reset_forces_outputs
-(define-fun |ihsan_sa_pll_formal#256| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#211| state) #b0001)) ; $add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$48_Y
-(define-fun |ihsan_sa_pll_formal#257| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#211| state) #b1111)) ; $ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$46_Y
-(define-fun |ihsan_sa_pll_formal#258| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#215| state) false) (or  (|ihsan_sa_pll_formal#257| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$47_Y
-(define-fun |ihsan_sa_pll_formal#259| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#258| state) (|ihsan_sa_pll_formal#256| state) (|ihsan_sa_pll_formal#211| state))) ; $procmux$340_Y
-(define-fun |ihsan_sa_pll_formal#260| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#202| state) #b0000 (|ihsan_sa_pll_formal#259| state))) ; $procmux$343_Y
-(define-fun |ihsan_sa_pll_formal#261| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#260| state) #b0000)) ; $0\vco_cnt[3:0]
-(define-fun |ihsan_sa_pll_formal#262| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#202| state) #b1 (|ihsan_sa_pll_formal#203| state))) ; $procmux$335_Y
-(define-fun |ihsan_sa_pll_formal#263| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#262| state) #b0)) ; $0\pre_seen[0:0]
-(define-fun |ihsan_sa_pll_formal#264| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1) #b0 (|ihsan_sa_pll_formal#195| state))) ; $procmux$326_Y
-(define-fun |ihsan_sa_pll_formal#265| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#202| state) (ite (|ihsan_sa_pll_formal#89| state) #b1 #b0) (|ihsan_sa_pll_formal#264| state))) ; $procmux$329_Y
-(define-fun |ihsan_sa_pll_formal#266| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#265| state) #b0)) ; $0\pre_ok[0:0]
-(define-fun |ihsan_sa_pll_formal#267| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#194| state) #b0001)) ; $add$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$53_Y
-(define-fun |ihsan_sa_pll_formal#268| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#194| state) #b1111)) ; $ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$51_Y
-(define-fun |ihsan_sa_pll_formal#269| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#202| state) false) (or  (|ihsan_sa_pll_formal#268| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$52_Y
-(define-fun |ihsan_sa_pll_formal#270| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#269| state) (|ihsan_sa_pll_formal#267| state) (|ihsan_sa_pll_formal#194| state))) ; $procmux$318_Y
-(define-fun |ihsan_sa_pll_formal#271| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#168| state) #b0000 (|ihsan_sa_pll_formal#270| state))) ; $procmux$321_Y
-(define-fun |ihsan_sa_pll_formal#272| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#271| state) #b0000)) ; $0\pre_cnt[3:0]
-(define-fun |ihsan_sa_pll_formal#273| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#177| state))) ; $ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112$56_Y
-(define-fun |ihsan_sa_pll_formal#274| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#273| state) #b0 (|ihsan_sa_pll_formal#178| state))) ; $procmux$290_Y
-(define-fun |ihsan_sa_pll_formal#275| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#168| state) #b1 (|ihsan_sa_pll_formal#274| state))) ; $procmux$293_Y
-(define-fun |ihsan_sa_pll_formal#276| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#275| state) #b1)) ; $0\n_stab[0:0]
-(define-fun |ihsan_sa_pll_formal#277| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#48| state) (|ihsan_sa_pll_formal#149| state) (|ihsan_sa_pll_formal#171| state))) ; $procmux$283_Y
-(define-fun |ihsan_sa_pll_formal#278| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#77| state) #b0 (|ihsan_sa_pll_formal#277| state))) ; $procmux$285_Y
-(define-fun |ihsan_sa_pll_formal#279| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#278| state) #b1)) ; $0\wide_s[0:0]
-(define-fun |ihsan_sa_pll_formal#280| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#172| state) #b1111111111111111)) ; $0\hist[15:0]
-(define-fun |ihsan_sa_pll_formal#281| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#168| state) #b1 (|ihsan_sa_pll_formal#169| state))) ; $procmux$313_Y
-(define-fun |ihsan_sa_pll_formal#282| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#281| state) #b0)) ; $0\fb_seen[0:0]
-(define-fun |ihsan_sa_pll_formal#283| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#129| state) (|ihsan_sa_pll_formal#124| state))) ; $0\wide_q[0:0]
-(define-fun |ihsan_sa_pll_formal#284| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#168| state) (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#92| state))) ; $procmux$299_Y
-(define-fun |ihsan_sa_pll_formal#285| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#284| state) (|ihsan_sa_pll_formal#91| state))) ; $0\n_last[2:0]
-(define-fun |ihsan_sa_pll_formal#286| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#92| state))) ; $ne$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$54_Y
-(define-fun |ihsan_sa_pll_formal#287| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#73| state)) #b1) false  (|ihsan_sa_pll_formal#286| state) false)) ; $logic_or$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$55_Y
-(define-fun |ihsan_sa_pll_formal#288| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#287| state) #b0 (|ihsan_sa_pll_formal#87| state))) ; $procmux$304_Y
-(define-fun |ihsan_sa_pll_formal#289| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#89| state) false) (or  (|ihsan_sa_pll_formal#180| state) false))) ; $logic_and$/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108$50_Y
-(define-fun |ihsan_sa_pll_formal#290| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#168| state) (ite (|ihsan_sa_pll_formal#289| state) #b1 #b0) (|ihsan_sa_pll_formal#288| state))) ; $procmux$307_Y
-(define-fun |ihsan_sa_pll_formal#291| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#54| state)) #b1) (|ihsan_sa_pll_formal#290| state) #b0)) ; $0\fb_ok[0:0]
-(define-fun |ihsan_sa_pll_formal#292| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#59| state))) ; $flatten\dut.\u_pre.$0\pre_q1[0:0]
-(define-fun |ihsan_sa_pll_formal#293| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#63| state))) ; $flatten\dut.\u_pre.$0\pre_q2[0:0]
-(define-fun |ihsan_sa_pll_formal#294| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#123| state)) #b1) #b0001111111 #b1111111111)) ; $flatten\dut.\u_lock.$ternary$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y
-(define-fun |ihsan_sa_pll_formal#295| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#157| state) (|ihsan_sa_pll_formal#294| state))) ; $flatten\dut.\u_lock.$eq$/work/blocks/pll/digital/rtl/pll_lock_det.v:57$193_Y
-(define-fun |ihsan_sa_pll_formal#296| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#295| state) (|ihsan_sa_pll_formal#128| state) (|ihsan_sa_pll_formal#123| state))) ; $flatten\dut.\u_lock.$procmux$235_Y
-(define-fun |ihsan_sa_pll_formal#297| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#250| state) false  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#99| state)) #b1) false)) ; $flatten\dut.\u_lock.$logic_or$/work/blocks/pll/digital/rtl/pll_lock_det.v:54$191_Y
-(define-fun |ihsan_sa_pll_formal#298| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#297| state) #b0 (|ihsan_sa_pll_formal#296| state))) ; $flatten\dut.\u_lock.$0\recover[0:0]
-(define-fun |ihsan_sa_pll_formal#299| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#154| state) #b10000)) ; $flatten\dut.\u_lock.$0\lock[0:0]
-(define-fun |ihsan_sa_pll_formal#300| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#72| state))) ; $flatten\dut.\u_pre.$0\q3[0:0]
-(define-fun |ihsan_sa_pll_formal#301| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#55| state))) ; $flatten\dut.\u_pre.$0\pre_q0[0:0]
-(define-fun |ihsan_sa_pll_formal#302| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (bvadd (|ihsan_sa_pll_formal#136| state) #b001)) ; $flatten\dut.\u_div.$add$/work/blocks/pll/digital/rtl/pll_divider.v:25$209_Y
-(define-fun |ihsan_sa_pll_formal#303| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#142| state) #b000 (|ihsan_sa_pll_formal#302| state))) ; $flatten\dut.\u_div.$0\div_cnt[2:0]
-(define-fun |ihsan_sa_pll_formal#304| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (bvadd (|ihsan_sa_pll_formal#157| state) #b0000000001)) ; $flatten\dut.\u_lock.$add$/work/blocks/pll/digital/rtl/pll_lock_det.v:61$195_Y
-(define-fun |ihsan_sa_pll_formal#305| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#295| state) #b0000000000 (|ihsan_sa_pll_formal#304| state))) ; $flatten\dut.\u_lock.$procmux$229_Y
-(define-fun |ihsan_sa_pll_formal#306| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#297| state) #b0000000000 (|ihsan_sa_pll_formal#305| state))) ; $flatten\dut.\u_lock.$0\wd_cnt[9:0]
+(define-fun |ihsan_sa_pll_formal_a 7| ((state |ihsan_sa_pll_formal_s|)) Bool (or (|ihsan_sa_pll_formal#248| state) (not (= ((_ extract 0 0) (|ihsan_sa_pll_formal#203| state)) #b1)))) ; reset_forces_outputs
+(define-fun |ihsan_sa_pll_formal#249| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#204| state) #b0001)) ; $add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$48_Y
+(define-fun |ihsan_sa_pll_formal#250| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#204| state) #b1111)) ; $ne$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$46_Y
+(define-fun |ihsan_sa_pll_formal#251| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#208| state) false) (or  (|ihsan_sa_pll_formal#250| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$47_Y
+(define-fun |ihsan_sa_pll_formal#252| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#251| state) (|ihsan_sa_pll_formal#249| state) (|ihsan_sa_pll_formal#204| state))) ; $procmux$337_Y
+(define-fun |ihsan_sa_pll_formal#253| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#195| state) #b0000 (|ihsan_sa_pll_formal#252| state))) ; $procmux$340_Y
+(define-fun |ihsan_sa_pll_formal#254| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#253| state) #b0000)) ; $0\vco_cnt[3:0]
+(define-fun |ihsan_sa_pll_formal#255| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#195| state) #b1 (|ihsan_sa_pll_formal#196| state))) ; $procmux$332_Y
+(define-fun |ihsan_sa_pll_formal#256| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#255| state) #b0)) ; $0\pre_seen[0:0]
+(define-fun |ihsan_sa_pll_formal#257| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1) #b0 (|ihsan_sa_pll_formal#188| state))) ; $procmux$323_Y
+(define-fun |ihsan_sa_pll_formal#258| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#195| state) (ite (|ihsan_sa_pll_formal#82| state) #b1 #b0) (|ihsan_sa_pll_formal#257| state))) ; $procmux$326_Y
+(define-fun |ihsan_sa_pll_formal#259| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#258| state) #b0)) ; $0\pre_ok[0:0]
+(define-fun |ihsan_sa_pll_formal#260| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (bvadd (|ihsan_sa_pll_formal#187| state) #b0001)) ; $add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$53_Y
+(define-fun |ihsan_sa_pll_formal#261| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#187| state) #b1111)) ; $ne$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$51_Y
+(define-fun |ihsan_sa_pll_formal#262| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#195| state) false) (or  (|ihsan_sa_pll_formal#261| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$52_Y
+(define-fun |ihsan_sa_pll_formal#263| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#262| state) (|ihsan_sa_pll_formal#260| state) (|ihsan_sa_pll_formal#187| state))) ; $procmux$315_Y
+(define-fun |ihsan_sa_pll_formal#264| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (|ihsan_sa_pll_formal#161| state) #b0000 (|ihsan_sa_pll_formal#263| state))) ; $procmux$318_Y
+(define-fun |ihsan_sa_pll_formal#265| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 4) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#264| state) #b0000)) ; $0\pre_cnt[3:0]
+(define-fun |ihsan_sa_pll_formal#266| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#170| state))) ; $ne$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:112$56_Y
+(define-fun |ihsan_sa_pll_formal#267| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#266| state) #b0 (|ihsan_sa_pll_formal#171| state))) ; $procmux$287_Y
+(define-fun |ihsan_sa_pll_formal#268| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#161| state) #b1 (|ihsan_sa_pll_formal#267| state))) ; $procmux$290_Y
+(define-fun |ihsan_sa_pll_formal#269| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#268| state) #b1)) ; $0\n_stab[0:0]
+(define-fun |ihsan_sa_pll_formal#270| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#45| state) (|ihsan_sa_pll_formal#142| state) (|ihsan_sa_pll_formal#164| state))) ; $procmux$280_Y
+(define-fun |ihsan_sa_pll_formal#271| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#70| state) #b0 (|ihsan_sa_pll_formal#270| state))) ; $procmux$282_Y
+(define-fun |ihsan_sa_pll_formal#272| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#271| state) #b1)) ; $0\wide_s[0:0]
+(define-fun |ihsan_sa_pll_formal#273| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 16) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#165| state) #b1111111111111111)) ; $0\hist[15:0]
+(define-fun |ihsan_sa_pll_formal#274| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#161| state) #b1 (|ihsan_sa_pll_formal#162| state))) ; $procmux$310_Y
+(define-fun |ihsan_sa_pll_formal#275| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#274| state) #b0)) ; $0\fb_seen[0:0]
+(define-fun |ihsan_sa_pll_formal#276| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvor (|ihsan_sa_pll_formal#122| state) (|ihsan_sa_pll_formal#117| state))) ; $0\wide_q[0:0]
+(define-fun |ihsan_sa_pll_formal#277| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#161| state) (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#85| state))) ; $procmux$296_Y
+(define-fun |ihsan_sa_pll_formal#278| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#277| state) (|ihsan_sa_pll_formal#84| state))) ; $0\n_last[2:0]
+(define-fun |ihsan_sa_pll_formal#279| ((state |ihsan_sa_pll_formal_s|)) Bool (distinct (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#85| state))) ; $ne$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$54_Y
+(define-fun |ihsan_sa_pll_formal#280| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#66| state)) #b1) false  (|ihsan_sa_pll_formal#279| state) false)) ; $logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$55_Y
+(define-fun |ihsan_sa_pll_formal#281| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#280| state) #b0 (|ihsan_sa_pll_formal#80| state))) ; $procmux$301_Y
+(define-fun |ihsan_sa_pll_formal#282| ((state |ihsan_sa_pll_formal_s|)) Bool (and (or  (|ihsan_sa_pll_formal#82| state) false) (or  (|ihsan_sa_pll_formal#173| state) false))) ; $logic_and$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108$50_Y
+(define-fun |ihsan_sa_pll_formal#283| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#161| state) (ite (|ihsan_sa_pll_formal#282| state) #b1 #b0) (|ihsan_sa_pll_formal#281| state))) ; $procmux$304_Y
+(define-fun |ihsan_sa_pll_formal#284| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#50| state)) #b1) (|ihsan_sa_pll_formal#283| state) #b0)) ; $0\fb_ok[0:0]
+(define-fun |ihsan_sa_pll_formal#285| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#56| state))) ; $flatten\dut.\u_pre.$0\pre_q1[0:0]
+(define-fun |ihsan_sa_pll_formal#286| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#65| state))) ; $flatten\dut.\u_pre.$0\q3[0:0]
+(define-fun |ihsan_sa_pll_formal#287| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (= ((_ extract 0 0) (|ihsan_sa_pll_formal#116| state)) #b1) #b0001111111 #b1111111111)) ; $flatten\dut.\u_lock.$ternary$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$192_Y
+(define-fun |ihsan_sa_pll_formal#288| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#150| state) (|ihsan_sa_pll_formal#287| state))) ; $flatten\dut.\u_lock.$eq$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:57$193_Y
+(define-fun |ihsan_sa_pll_formal#289| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#288| state) (|ihsan_sa_pll_formal#121| state) (|ihsan_sa_pll_formal#116| state))) ; $flatten\dut.\u_lock.$procmux$232_Y
+(define-fun |ihsan_sa_pll_formal#290| ((state |ihsan_sa_pll_formal_s|)) Bool (or  (|ihsan_sa_pll_formal#243| state) false  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#92| state)) #b1) false)) ; $flatten\dut.\u_lock.$logic_or$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:54$191_Y
+(define-fun |ihsan_sa_pll_formal#291| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (ite (|ihsan_sa_pll_formal#290| state) #b0 (|ihsan_sa_pll_formal#289| state))) ; $flatten\dut.\u_lock.$0\recover[0:0]
+(define-fun |ihsan_sa_pll_formal#292| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 1) (bvnot (|ihsan_sa_pll_formal#51| state))) ; $flatten\dut.\u_pre.$0\pre_q0[0:0]
+(define-fun |ihsan_sa_pll_formal#293| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (bvadd (|ihsan_sa_pll_formal#150| state) #b0000000001)) ; $flatten\dut.\u_lock.$add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v:61$195_Y
+(define-fun |ihsan_sa_pll_formal#294| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#288| state) #b0000000000 (|ihsan_sa_pll_formal#293| state))) ; $flatten\dut.\u_lock.$procmux$226_Y
+(define-fun |ihsan_sa_pll_formal#295| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 10) (ite (|ihsan_sa_pll_formal#290| state) #b0000000000 (|ihsan_sa_pll_formal#294| state))) ; $flatten\dut.\u_lock.$0\wd_cnt[9:0]
+(define-fun |ihsan_sa_pll_formal#296| ((state |ihsan_sa_pll_formal_s|)) Bool (= (|ihsan_sa_pll_formal#147| state) #b10000)) ; $flatten\dut.\u_lock.$0\lock[0:0]
+(define-fun |ihsan_sa_pll_formal#297| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (bvadd (|ihsan_sa_pll_formal#129| state) #b001)) ; $flatten\dut.\u_div.$add$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v:25$209_Y
+(define-fun |ihsan_sa_pll_formal#298| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (ite (|ihsan_sa_pll_formal#135| state) #b000 (|ihsan_sa_pll_formal#297| state))) ; $flatten\dut.\u_div.$0\div_cnt[2:0]
 (define-fun |ihsan_sa_pll_formal_a| ((state |ihsan_sa_pll_formal_s|)) Bool (and
   (|ihsan_sa_pll_formal_a 0| state)
   (|ihsan_sa_pll_formal_a 1| state)
@@ -871,121 +849,116 @@
   (|ihsan_sa_pll_formal_u 0| state)
 )
 (define-fun |ihsan_sa_pll_formal_i| ((state |ihsan_sa_pll_formal_s|)) Bool (and
-  (= (|ihsan_sa_pll_formal#0| state) #b0000000000) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$570
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#1| state)) #b1) false) ; $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598
-  (= (|ihsan_sa_pll_formal#2| state) #b000) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$534
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#6| state)) #b1) false) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$518
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#7| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$516
-  (= (|ihsan_sa_pll_formal#9| state) #b00000) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$606
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#11| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$498
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#13| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$728
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#14| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$480
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#16| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$712
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#19| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$462
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#22| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$674
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#23| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$588
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#24| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q2#sampled$676
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#25| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_out#sampled$730
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#27| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$552
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#29| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q2[0:0]#sampled$692
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#30| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q1#sampled$694
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#31| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$644
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#40| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$660
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#42| state)) #b1) false) ; $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$666
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#47| state)) #b1) false) ; clk_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#49| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$710
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#87| state)) #b1) false) ; fb_ok
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#165| state)) #b1) false) ; fb_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#169| state)) #b1) false) ; fb_seen
-  (= (|ihsan_sa_pll_formal#170| state) #b1111111111111111) ; hist
-  (= (|ihsan_sa_pll_formal#173| state) #b1111111111111111) ; hist_q
-  (= (|ihsan_sa_pll_formal#92| state) #b001) ; n_last
-  (= (|ihsan_sa_pll_formal#177| state) #b001) ; n_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#178| state)) #b1) true) ; n_stab
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#181| state)) #b1) false) ; obs_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) ; past_valid
-  (= (|ihsan_sa_pll_formal#194| state) #b0000) ; pre_cnt
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#195| state)) #b1) false) ; pre_ok
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#203| state)) #b1) false) ; pre_seen
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#197| state)) #b1) false) ; prep_q
-  (= (|ihsan_sa_pll_formal#211| state) #b0000) ; vco_cnt
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#212| state)) #b1) false) ; vco_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#149| state)) #b1) false) ; wide_q
-  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#171| state)) #b1) true) ; wide_s
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#0| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$528
+  (= (|ihsan_sa_pll_formal#1| state) #b000) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_div.$0/div_cnt[2:0]#sampled$526
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#3| state)) #b1) false) ; $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#5| state)) #b1) false) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_div.clk_pre#sampled$510
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#6| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_div.last#sampled$508
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#9| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/lock[0:0]#sampled$580
+  (= (|ihsan_sa_pll_formal#10| state) #b0000000000) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/wd_cnt[9:0]#sampled$562
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#11| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[1]#sampled$490
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#13| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q0[0:0]#sampled$702
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#14| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.cp_trim_in[0]#sampled$472
+  (= (|ihsan_sa_pll_formal#17| state) #b00000) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_lock.cnt_nxt#sampled$598
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#18| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$/dut.u_ctrl.pll_en_in#sampled$454
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#21| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_lock.$0/recover[0:0]#sampled$544
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#23| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk#sampled$652
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#24| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.vco_div2#sampled$704
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#27| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/q3[0:0]#sampled$666
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#36| state)) #b1) false) ; $auto$clk2fflogic.cc:101:sample_data$$flatten/dut./u_pre.$0/pre_q1[0:0]#sampled$684
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#38| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pfd.clk_fb#sampled$636
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#39| state)) #b1) false) ; $auto$clk2fflogic.cc:75:sample_control$/dut.u_pfd.pfd_clr$async_cut#sampled$642
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#44| state)) #b1) false) ; clk_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#52| state)) #b1) true) ; $auto$clk2fflogic.cc:87:sample_control_edge$/dut.u_pre.pre_q0#sampled$686
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#80| state)) #b1) false) ; fb_ok
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#158| state)) #b1) false) ; fb_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#162| state)) #b1) false) ; fb_seen
+  (= (|ihsan_sa_pll_formal#163| state) #b1111111111111111) ; hist
+  (= (|ihsan_sa_pll_formal#166| state) #b1111111111111111) ; hist_q
+  (= (|ihsan_sa_pll_formal#85| state) #b001) ; n_last
+  (= (|ihsan_sa_pll_formal#170| state) #b001) ; n_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#171| state)) #b1) true) ; n_stab
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#174| state)) #b1) false) ; obs_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#41| state)) #b1) false) ; past_valid
+  (= (|ihsan_sa_pll_formal#187| state) #b0000) ; pre_cnt
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#188| state)) #b1) false) ; pre_ok
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#196| state)) #b1) false) ; pre_seen
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#190| state)) #b1) false) ; prep_q
+  (= (|ihsan_sa_pll_formal#204| state) #b0000) ; vco_cnt
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#205| state)) #b1) false) ; vco_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#142| state)) #b1) false) ; wide_q
+  (= (= ((_ extract 0 0) (|ihsan_sa_pll_formal#164| state)) #b1) true) ; wide_s
 ))
 (define-fun |ihsan_sa_pll_formal_h| ((state |ihsan_sa_pll_formal_s|)) Bool true)
 (define-fun |ihsan_sa_pll_formal_t| ((state |ihsan_sa_pll_formal_s|) (next_state |ihsan_sa_pll_formal_s|)) Bool (and
-  (= (|ihsan_sa_pll_formal#50| state) (|ihsan_sa_pll_formal#212| next_state)) ; $procdff$447 \vco_q
-  (= (|ihsan_sa_pll_formal#261| state) (|ihsan_sa_pll_formal#211| next_state)) ; $procdff$435 \vco_cnt
-  (= (|ihsan_sa_pll_formal#263| state) (|ihsan_sa_pll_formal#203| next_state)) ; $procdff$436 \pre_seen
-  (= (|ihsan_sa_pll_formal#74| state) (|ihsan_sa_pll_formal#197| next_state)) ; $procdff$448 \prep_q
-  (= (|ihsan_sa_pll_formal#266| state) (|ihsan_sa_pll_formal#195| next_state)) ; $procdff$437 \pre_ok
-  (= (|ihsan_sa_pll_formal#272| state) (|ihsan_sa_pll_formal#194| next_state)) ; $procdff$438 \pre_cnt
-  (= (|ihsan_sa_pll_formal#73| state) (|ihsan_sa_pll_formal#181| next_state)) ; $procdff$451 \obs_q
-  (= (|ihsan_sa_pll_formal#276| state) (|ihsan_sa_pll_formal#178| next_state)) ; $procdff$442 \n_stab
-  (= (|ihsan_sa_pll_formal#91| state) (|ihsan_sa_pll_formal#177| next_state)) ; $procdff$446 \n_q
-  (= (|ihsan_sa_pll_formal#170| state) (|ihsan_sa_pll_formal#173| next_state)) ; $procdff$445 \hist_q
-  (= (|ihsan_sa_pll_formal#279| state) (|ihsan_sa_pll_formal#171| next_state)) ; $procdff$443 \wide_s
-  (= (|ihsan_sa_pll_formal#280| state) (|ihsan_sa_pll_formal#170| next_state)) ; $procdff$444 \hist
-  (= (|ihsan_sa_pll_formal#282| state) (|ihsan_sa_pll_formal#169| next_state)) ; $procdff$439 \fb_seen
-  (= (|ihsan_sa_pll_formal#68| state) (|ihsan_sa_pll_formal#165| next_state)) ; $procdff$449 \fb_q
-  (= (|ihsan_sa_pll_formal#283| state) (|ihsan_sa_pll_formal#149| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$625 \wide_q
-  (= (|ihsan_sa_pll_formal#119| state) (|ihsan_sa_pll_formal#116| next_state)) ; dut.u_pfd.pfd_fb_q$async_arst_past_ff \dut.u_pfd.pfd_fb_q$async_arst_past
-  (= (|ihsan_sa_pll_formal#68| state) (|ihsan_sa_pll_formal#113| next_state)) ; dut.u_pfd.pfd_fb_q$async_clk_past_ff \dut.u_pfd.pfd_fb_q$async_clk_past
-  (= #b1 (|ihsan_sa_pll_formal#112| next_state)) ; dut.u_pfd.pfd_fb_q$async_d_past_ff \dut.u_pfd.pfd_fb_q$async_d_past
-  (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#111| next_state)) ; dut.u_pfd.pfd_fb_q$async_q_past_ff \dut.u_pfd.pfd_fb_q$async_q_past
-  (= (|ihsan_sa_pll_formal#119| state) (|ihsan_sa_pll_formal#109| next_state)) ; dut.u_pfd.pfd_ref_q$async_arst_past_ff \dut.u_pfd.pfd_ref_q$async_arst_past
-  (= (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0) (|ihsan_sa_pll_formal#106| next_state)) ; dut.u_pfd.pfd_ref_q$async_clk_past_ff \dut.u_pfd.pfd_ref_q$async_clk_past
-  (= #b1 (|ihsan_sa_pll_formal#105| next_state)) ; dut.u_pfd.pfd_ref_q$async_d_past_ff \dut.u_pfd.pfd_ref_q$async_d_past
-  (= (|ihsan_sa_pll_formal#127| state) (|ihsan_sa_pll_formal#104| next_state)) ; dut.u_pfd.pfd_ref_q$async_q_past_ff \dut.u_pfd.pfd_ref_q$async_q_past
-  (= (|ihsan_sa_pll_formal#285| state) (|ihsan_sa_pll_formal#92| next_state)) ; $procdff$441 \n_last
-  (= (|ihsan_sa_pll_formal#291| state) (|ihsan_sa_pll_formal#87| next_state)) ; $procdff$440 \fb_ok
-  (= (|ihsan_sa_pll_formal#292| state) (|ihsan_sa_pll_formal#49| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$711 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q1[0:0]#sampled$710
-  (= (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0) (|ihsan_sa_pll_formal#47| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$627 \clk_q
-  (= #b1 (|ihsan_sa_pll_formal#44| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$659 \past_valid
-  (= (|ihsan_sa_pll_formal#119| state) (|ihsan_sa_pll_formal#42| next_state)) ; $auto$clk2fflogic.cc:80:sample_control$667 $auto$clk2fflogic.cc:75:sample_control$\dut.u_pfd.pfd_clr$async_cut#sampled$666
-  (= (|ihsan_sa_pll_formal#127| state) (|ihsan_sa_pll_formal#41| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$657 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_ref_q#sampled$656
-  (= (ite (|ihsan_sa_pll_formal#43| state) #b1 #b0) (|ihsan_sa_pll_formal#40| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$661 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk#sampled$660
-  (= (|ihsan_sa_pll_formal#59| state) (|ihsan_sa_pll_formal#39| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$709 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q1#sampled$708
-  (= (|ihsan_sa_pll_formal#123| state) (|ihsan_sa_pll_formal#38| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$551 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.recover#sampled$550
-  (= (|ihsan_sa_pll_formal#124| state) (|ihsan_sa_pll_formal#37| next_state)) ; $procdff$434 \_witness_.anyinit_procdff_434
-  (= (|ihsan_sa_pll_formal#129| state) (|ihsan_sa_pll_formal#36| next_state)) ; $procdff$433 \_witness_.anyinit_procdff_433
-  (= (|ihsan_sa_pll_formal#123| state) (|ihsan_sa_pll_formal#35| next_state)) ; $procdff$432 \_witness_.anyinit_procdff_432
-  (= (|ihsan_sa_pll_formal#54| state) (|ihsan_sa_pll_formal#34| next_state)) ; $procdff$431 \_witness_.anyinit_procdff_431
-  (= (|ihsan_sa_pll_formal#54| state) (|ihsan_sa_pll_formal#33| next_state)) ; $procdff$430 \_witness_.anyinit_procdff_430
-  (= (|ihsan_sa_pll_formal#54| state) (|ihsan_sa_pll_formal#32| next_state)) ; $procdff$429 \_witness_.anyinit_procdff_429
-  (= (|ihsan_sa_pll_formal#68| state) (|ihsan_sa_pll_formal#31| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$645 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk_fb#sampled$644
-  (= (|ihsan_sa_pll_formal#59| state) (|ihsan_sa_pll_formal#30| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$695 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q1#sampled$694
-  (= (|ihsan_sa_pll_formal#293| state) (|ihsan_sa_pll_formal#29| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$693 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q2[0:0]#sampled$692
-  (= (|ihsan_sa_pll_formal#63| state) (|ihsan_sa_pll_formal#28| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$691 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q2#sampled$690
-  (= (|ihsan_sa_pll_formal#298| state) (|ihsan_sa_pll_formal#27| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$553 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\recover[0:0]#sampled$552
-  (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#26| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$641 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_fb_q#sampled$640
-  (= (|ihsan_sa_pll_formal#50| state) (|ihsan_sa_pll_formal#25| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$731 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.vco_out#sampled$730
-  (= (|ihsan_sa_pll_formal#63| state) (|ihsan_sa_pll_formal#24| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$677 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q2#sampled$676
-  (= (ite (|ihsan_sa_pll_formal#299| state) #b1 #b0) (|ihsan_sa_pll_formal#23| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$589 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\lock[0:0]#sampled$588
-  (= (|ihsan_sa_pll_formal#300| state) (|ihsan_sa_pll_formal#22| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$675 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\q3[0:0]#sampled$674
-  (= (|ihsan_sa_pll_formal#72| state) (|ihsan_sa_pll_formal#21| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$673 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.q3#sampled$672
-  (= (|ihsan_sa_pll_formal#132| state) (|ihsan_sa_pll_formal#20| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$461 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en#sampled$460
-  (= (ite (|ihsan_sa_pll_formal#133| state) #b1 #b0) (|ihsan_sa_pll_formal#19| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$463 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en_in#sampled$462
-  (= (|ihsan_sa_pll_formal#99| state) (|ihsan_sa_pll_formal#18| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$587 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock#sampled$586
-  (= (|ihsan_sa_pll_formal#153| state) (|ihsan_sa_pll_formal#17| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$623 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wide_q#sampled$622
-  (= (|ihsan_sa_pll_formal#55| state) (|ihsan_sa_pll_formal#16| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$713 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q0#sampled$712
-  (= (|ihsan_sa_pll_formal#81| state) (|ihsan_sa_pll_formal#15| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$479 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim0#sampled$478
-  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#85| state)) (|ihsan_sa_pll_formal#14| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$481 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[0]#sampled$480
-  (= (|ihsan_sa_pll_formal#301| state) (|ihsan_sa_pll_formal#13| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$729 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q0[0:0]#sampled$728
-  (= (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#12| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$497 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim1#sampled$496
-  (= ((_ extract 1 1) (|ihsan_sa_pll_formal#85| state)) (|ihsan_sa_pll_formal#11| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$499 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[1]#sampled$498
-  (= (|ihsan_sa_pll_formal#157| state) (|ihsan_sa_pll_formal#10| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$569 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wd_cnt#sampled$568
-  (= (|ihsan_sa_pll_formal#154| state) (|ihsan_sa_pll_formal#9| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$607 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.cnt_nxt#sampled$606
-  (= (|ihsan_sa_pll_formal#67| state) (|ihsan_sa_pll_formal#8| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$515 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.fb_en#sampled$514
-  (= (ite (|ihsan_sa_pll_formal#142| state) #b1 #b0) (|ihsan_sa_pll_formal#7| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$517 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.last#sampled$516
-  (= (|ihsan_sa_pll_formal#63| state) (|ihsan_sa_pll_formal#6| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$519 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$518
-  (= (|ihsan_sa_pll_formal#145| state) (|ihsan_sa_pll_formal#5| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$605 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock_cnt#sampled$604
-  (= (|ihsan_sa_pll_formal#55| state) (|ihsan_sa_pll_formal#4| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$727 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q0#sampled$726
-  (= (|ihsan_sa_pll_formal#136| state) (|ihsan_sa_pll_formal#3| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$533 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.div_cnt#sampled$532
-  (= (|ihsan_sa_pll_formal#303| state) (|ihsan_sa_pll_formal#2| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$535 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_div.$0\div_cnt[2:0]#sampled$534
-  (= (|ihsan_sa_pll_formal#103| state) (|ihsan_sa_pll_formal#1| next_state)) ; $auto$clk2fflogic.cc:80:sample_control$599 $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$597#sampled$598
-  (= (|ihsan_sa_pll_formal#306| state) (|ihsan_sa_pll_formal#0| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$571 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\wd_cnt[9:0]#sampled$570
+  (= (|ihsan_sa_pll_formal#46| state) (|ihsan_sa_pll_formal#205| next_state)) ; $procdff$439 \vco_q
+  (= (|ihsan_sa_pll_formal#254| state) (|ihsan_sa_pll_formal#204| next_state)) ; $procdff$427 \vco_cnt
+  (= (|ihsan_sa_pll_formal#256| state) (|ihsan_sa_pll_formal#196| next_state)) ; $procdff$428 \pre_seen
+  (= (|ihsan_sa_pll_formal#67| state) (|ihsan_sa_pll_formal#190| next_state)) ; $procdff$440 \prep_q
+  (= (|ihsan_sa_pll_formal#259| state) (|ihsan_sa_pll_formal#188| next_state)) ; $procdff$429 \pre_ok
+  (= (|ihsan_sa_pll_formal#265| state) (|ihsan_sa_pll_formal#187| next_state)) ; $procdff$430 \pre_cnt
+  (= (|ihsan_sa_pll_formal#66| state) (|ihsan_sa_pll_formal#174| next_state)) ; $procdff$443 \obs_q
+  (= (|ihsan_sa_pll_formal#269| state) (|ihsan_sa_pll_formal#171| next_state)) ; $procdff$434 \n_stab
+  (= (|ihsan_sa_pll_formal#84| state) (|ihsan_sa_pll_formal#170| next_state)) ; $procdff$438 \n_q
+  (= (|ihsan_sa_pll_formal#163| state) (|ihsan_sa_pll_formal#166| next_state)) ; $procdff$437 \hist_q
+  (= (|ihsan_sa_pll_formal#272| state) (|ihsan_sa_pll_formal#164| next_state)) ; $procdff$435 \wide_s
+  (= (|ihsan_sa_pll_formal#273| state) (|ihsan_sa_pll_formal#163| next_state)) ; $procdff$436 \hist
+  (= (|ihsan_sa_pll_formal#275| state) (|ihsan_sa_pll_formal#162| next_state)) ; $procdff$431 \fb_seen
+  (= (|ihsan_sa_pll_formal#61| state) (|ihsan_sa_pll_formal#158| next_state)) ; $procdff$441 \fb_q
+  (= (|ihsan_sa_pll_formal#276| state) (|ihsan_sa_pll_formal#142| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$617 \wide_q
+  (= (|ihsan_sa_pll_formal#112| state) (|ihsan_sa_pll_formal#109| next_state)) ; dut.u_pfd.pfd_fb_q$async_arst_past_ff \dut.u_pfd.pfd_fb_q$async_arst_past
+  (= (|ihsan_sa_pll_formal#61| state) (|ihsan_sa_pll_formal#106| next_state)) ; dut.u_pfd.pfd_fb_q$async_clk_past_ff \dut.u_pfd.pfd_fb_q$async_clk_past
+  (= #b1 (|ihsan_sa_pll_formal#105| next_state)) ; dut.u_pfd.pfd_fb_q$async_d_past_ff \dut.u_pfd.pfd_fb_q$async_d_past
+  (= (|ihsan_sa_pll_formal#113| state) (|ihsan_sa_pll_formal#104| next_state)) ; dut.u_pfd.pfd_fb_q$async_q_past_ff \dut.u_pfd.pfd_fb_q$async_q_past
+  (= (|ihsan_sa_pll_formal#112| state) (|ihsan_sa_pll_formal#102| next_state)) ; dut.u_pfd.pfd_ref_q$async_arst_past_ff \dut.u_pfd.pfd_ref_q$async_arst_past
+  (= (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0) (|ihsan_sa_pll_formal#99| next_state)) ; dut.u_pfd.pfd_ref_q$async_clk_past_ff \dut.u_pfd.pfd_ref_q$async_clk_past
+  (= #b1 (|ihsan_sa_pll_formal#98| next_state)) ; dut.u_pfd.pfd_ref_q$async_d_past_ff \dut.u_pfd.pfd_ref_q$async_d_past
+  (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#97| next_state)) ; dut.u_pfd.pfd_ref_q$async_q_past_ff \dut.u_pfd.pfd_ref_q$async_q_past
+  (= (|ihsan_sa_pll_formal#278| state) (|ihsan_sa_pll_formal#85| next_state)) ; $procdff$433 \n_last
+  (= (|ihsan_sa_pll_formal#284| state) (|ihsan_sa_pll_formal#80| next_state)) ; $procdff$432 \fb_ok
+  (= (|ihsan_sa_pll_formal#51| state) (|ihsan_sa_pll_formal#52| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$687 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.pre_q0#sampled$686
+  (= (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0) (|ihsan_sa_pll_formal#44| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$619 \clk_q
+  (= #b1 (|ihsan_sa_pll_formal#41| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$651 \past_valid
+  (= (|ihsan_sa_pll_formal#112| state) (|ihsan_sa_pll_formal#39| next_state)) ; $auto$clk2fflogic.cc:80:sample_control$643 $auto$clk2fflogic.cc:75:sample_control$\dut.u_pfd.pfd_clr$async_cut#sampled$642
+  (= (|ihsan_sa_pll_formal#61| state) (|ihsan_sa_pll_formal#38| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$637 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk_fb#sampled$636
+  (= (|ihsan_sa_pll_formal#113| state) (|ihsan_sa_pll_formal#37| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$633 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_fb_q#sampled$632
+  (= (|ihsan_sa_pll_formal#285| state) (|ihsan_sa_pll_formal#36| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$685 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q1[0:0]#sampled$684
+  (= (|ihsan_sa_pll_formal#56| state) (|ihsan_sa_pll_formal#35| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$683 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q1#sampled$682
+  (= (|ihsan_sa_pll_formal#117| state) (|ihsan_sa_pll_formal#34| next_state)) ; $procdff$426 \_witness_.anyinit_procdff_426
+  (= (|ihsan_sa_pll_formal#122| state) (|ihsan_sa_pll_formal#33| next_state)) ; $procdff$425 \_witness_.anyinit_procdff_425
+  (= (|ihsan_sa_pll_formal#116| state) (|ihsan_sa_pll_formal#32| next_state)) ; $procdff$424 \_witness_.anyinit_procdff_424
+  (= (|ihsan_sa_pll_formal#50| state) (|ihsan_sa_pll_formal#31| next_state)) ; $procdff$423 \_witness_.anyinit_procdff_423
+  (= (|ihsan_sa_pll_formal#50| state) (|ihsan_sa_pll_formal#30| next_state)) ; $procdff$422 \_witness_.anyinit_procdff_422
+  (= (|ihsan_sa_pll_formal#50| state) (|ihsan_sa_pll_formal#29| next_state)) ; $procdff$421 \_witness_.anyinit_procdff_421
+  (= (|ihsan_sa_pll_formal#150| state) (|ihsan_sa_pll_formal#28| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$561 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wd_cnt#sampled$560
+  (= (|ihsan_sa_pll_formal#286| state) (|ihsan_sa_pll_formal#27| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$667 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\q3[0:0]#sampled$666
+  (= (|ihsan_sa_pll_formal#65| state) (|ihsan_sa_pll_formal#26| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$665 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.q3#sampled$664
+  (= (|ihsan_sa_pll_formal#146| state) (|ihsan_sa_pll_formal#25| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$615 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.wide_q#sampled$614
+  (= (|ihsan_sa_pll_formal#46| state) (|ihsan_sa_pll_formal#24| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$705 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pre.vco_div2#sampled$704
+  (= (ite (|ihsan_sa_pll_formal#40| state) #b1 #b0) (|ihsan_sa_pll_formal#23| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$653 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_pfd.clk#sampled$652
+  (= (|ihsan_sa_pll_formal#116| state) (|ihsan_sa_pll_formal#22| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$543 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.recover#sampled$542
+  (= (|ihsan_sa_pll_formal#291| state) (|ihsan_sa_pll_formal#21| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$545 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\recover[0:0]#sampled$544
+  (= (|ihsan_sa_pll_formal#120| state) (|ihsan_sa_pll_formal#20| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$649 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pfd.pfd_ref_q#sampled$648
+  (= (|ihsan_sa_pll_formal#125| state) (|ihsan_sa_pll_formal#19| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$453 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en#sampled$452
+  (= (ite (|ihsan_sa_pll_formal#126| state) #b1 #b0) (|ihsan_sa_pll_formal#18| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$455 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.pll_en_in#sampled$454
+  (= (|ihsan_sa_pll_formal#147| state) (|ihsan_sa_pll_formal#17| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$599 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.cnt_nxt#sampled$598
+  (= (|ihsan_sa_pll_formal#138| state) (|ihsan_sa_pll_formal#16| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$597 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock_cnt#sampled$596
+  (= (|ihsan_sa_pll_formal#74| state) (|ihsan_sa_pll_formal#15| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$471 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim0#sampled$470
+  (= ((_ extract 0 0) (|ihsan_sa_pll_formal#78| state)) (|ihsan_sa_pll_formal#14| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$473 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[0]#sampled$472
+  (= (|ihsan_sa_pll_formal#292| state) (|ihsan_sa_pll_formal#13| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$703 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_pre.$0\pre_q0[0:0]#sampled$702
+  (= (|ihsan_sa_pll_formal#77| state) (|ihsan_sa_pll_formal#12| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$489 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim1#sampled$488
+  (= ((_ extract 1 1) (|ihsan_sa_pll_formal#78| state)) (|ihsan_sa_pll_formal#11| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$491 $auto$clk2fflogic.cc:101:sample_data$\dut.u_ctrl.cp_trim_in[1]#sampled$490
+  (= (|ihsan_sa_pll_formal#295| state) (|ihsan_sa_pll_formal#10| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$563 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\wd_cnt[9:0]#sampled$562
+  (= (ite (|ihsan_sa_pll_formal#296| state) #b1 #b0) (|ihsan_sa_pll_formal#9| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$581 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_lock.$0\lock[0:0]#sampled$580
+  (= (|ihsan_sa_pll_formal#92| state) (|ihsan_sa_pll_formal#8| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$579 $auto$clk2fflogic.cc:101:sample_data$\dut.u_lock.lock#sampled$578
+  (= (|ihsan_sa_pll_formal#60| state) (|ihsan_sa_pll_formal#7| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$507 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.fb_en#sampled$506
+  (= (ite (|ihsan_sa_pll_formal#135| state) #b1 #b0) (|ihsan_sa_pll_formal#6| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$509 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.last#sampled$508
+  (= (|ihsan_sa_pll_formal#56| state) (|ihsan_sa_pll_formal#5| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$511 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$510
+  (= (|ihsan_sa_pll_formal#51| state) (|ihsan_sa_pll_formal#4| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$701 $auto$clk2fflogic.cc:101:sample_data$\dut.u_pre.pre_q0#sampled$700
+  (= (|ihsan_sa_pll_formal#96| state) (|ihsan_sa_pll_formal#3| next_state)) ; $auto$clk2fflogic.cc:80:sample_control$573 $auto$clk2fflogic.cc:75:sample_control$$auto$rtlil.cc:3251:Not$571#sampled$572
+  (= (|ihsan_sa_pll_formal#129| state) (|ihsan_sa_pll_formal#2| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$525 $auto$clk2fflogic.cc:101:sample_data$\dut.u_div.div_cnt#sampled$524
+  (= (|ihsan_sa_pll_formal#298| state) (|ihsan_sa_pll_formal#1| next_state)) ; $auto$clk2fflogic.cc:108:sample_data$527 $auto$clk2fflogic.cc:101:sample_data$$flatten\dut.\u_div.$0\div_cnt[2:0]#sampled$526
+  (= (|ihsan_sa_pll_formal#56| state) (|ihsan_sa_pll_formal#0| next_state)) ; $auto$clk2fflogic.cc:92:sample_control_edge$529 $auto$clk2fflogic.cc:87:sample_control_edge$\dut.u_div.clk_pre#sampled$528
 )) ; end of module ihsan_sa_pll_formal
 ; yosys-smt2-topmod ihsan_sa_pll_formal
 ; end of yosys output

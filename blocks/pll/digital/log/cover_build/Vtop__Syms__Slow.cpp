@@ -33,7 +33,7 @@ extern const VlVarTableEntry Vtop___024root__VpiVarTable0[] = {
     {"pll_en", offsetof(Vtop___024root, pll_en), VLVT_UINT8, (VLVD_OUT|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"pll_en_in", offsetof(Vtop___024root, pll_en_in), VLVT_UINT8, (VLVD_IN|VLVF_PUB_RW|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"rst_n", offsetof(Vtop___024root, rst_n), VLVT_UINT8, (VLVD_IN|VLVF_PUB_RW|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
-    {"vco_out", offsetof(Vtop___024root, vco_out), VLVT_UINT8, (VLVD_IN|VLVF_PUB_RW|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
+    {"vco_div2", offsetof(Vtop___024root, vco_div2), VLVT_UINT8, (VLVD_IN|VLVF_PUB_RW|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
 };
 extern const VlVarTableEntry Vtop___024root__VpiVarTable1[] = {
     {"clk", offsetof(Vtop___024root, ihsan_sa_pll__DOT__clk), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
@@ -57,7 +57,7 @@ extern const VlVarTableEntry Vtop___024root__VpiVarTable1[] = {
     {"pll_en_in", offsetof(Vtop___024root, ihsan_sa_pll__DOT__pll_en_in), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"recover", offsetof(Vtop___024root, ihsan_sa_pll__DOT__recover), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"rst_n", offsetof(Vtop___024root, ihsan_sa_pll__DOT__rst_n), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
-    {"vco_out", offsetof(Vtop___024root, ihsan_sa_pll__DOT__vco_out), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
+    {"vco_div2", offsetof(Vtop___024root, ihsan_sa_pll__DOT__vco_div2), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
 };
 extern const VlVarTableEntry Vtop___024root__VpiVarTable2[] = {
     {"clk", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_ctrl__DOT__clk), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
@@ -108,13 +108,11 @@ extern const VlVarTableEntry Vtop___024root__VpiVarTable5[] = {
 extern const VlVarTableEntry Vtop___024root__VpiVarTable6[] = {
     {"clk_pre", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__clk_pre), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"obs_q3", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__obs_q3), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
-    {"pre_c0", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__pre_c0), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"pre_q0", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__pre_q0), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"pre_q1", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__pre_q1), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW), 0, 0, {0, 0, 0, 0, 0, 0}},
-    {"pre_q2", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__pre_q2), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"q3", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__q3), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"rst_n", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__rst_n), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
-    {"vco_out", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__vco_out), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
+    {"vco_div2", offsetof(Vtop___024root, ihsan_sa_pll__DOT__u_pre__DOT__vco_div2), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
 };
 extern const VlScopeTableEntry Vtop__Syms__VpiScopeTable[] = {
     {offsetof(Vtop__Syms, __Vscopep_TOP), "TOP", "TOP", "<null>", 0, VerilatedScope::SCOPE_OTHER},
@@ -137,7 +135,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     , TOP{this, namep}
 {
     // Check resources
-    Verilated::stackCheck(193);
+    Verilated::stackCheck(192);
     // Setup sub module instances
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);
@@ -166,7 +164,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     __Vscopep_ihsan_sa_pll__u_lock->varInsert("M_LAST", const_cast<void*>(static_cast<const void*>(&(TOP.ihsan_sa_pll__DOT__u_lock__DOT__M_LAST))), true, VLVT_UINT16, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,9,0);
     __Vscopep_ihsan_sa_pll__u_lock->varInsert("W_LAST", const_cast<void*>(static_cast<const void*>(&(TOP.ihsan_sa_pll__DOT__u_lock__DOT__W_LAST))), true, VLVT_UINT16, VLVD_NODIR|VLVF_PUB_RW, 0, 1 ,9,0);
     __Vscopep_ihsan_sa_pll__u_pfd->varsInsertFromTable(Vtop___024root__VpiVarTable5, 11, &(TOP));
-    __Vscopep_ihsan_sa_pll__u_pre->varsInsertFromTable(Vtop___024root__VpiVarTable6, 9, &(TOP));
+    __Vscopep_ihsan_sa_pll__u_pre->varsInsertFromTable(Vtop___024root__VpiVarTable6, 7, &(TOP));
 }
 
 Vtop__Syms::~Vtop__Syms() {

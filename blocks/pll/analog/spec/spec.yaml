@@ -211,7 +211,7 @@ measures:
   - name: vco_out_duty_pct
     bounds: {min: 40.0, max: 60.0}
     corners: all
-  # --- prescaler drive (extracted dffq_1 + inv_1 toggle stage) ----------
+  # --- prescaler drive (the macro's TSPC /2 on vco_out -> vco_div2) -------
   - name: presc_div2_ratio
     bounds: {min: 0.99, max: 1.01}
     corners: [ff_m40c_vp10]

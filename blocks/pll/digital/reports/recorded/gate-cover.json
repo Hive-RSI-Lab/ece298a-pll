@@ -3,7 +3,7 @@
  "gate": "cover",
  "phase": "P4",
  "tool": "cover",
- "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -23,16 +23,16 @@
   "top": "ihsan_sa_pll",
   "line_pct": 100.0,
   "toggle_pct": 100.0,
-  "line_covered": 127,
-  "line_total": 127,
-  "toggle_covered": 192,
-  "toggle_total": 192
+  "line_covered": 122,
+  "line_total": 122,
+  "toggle_covered": 188,
+  "toggle_total": 188
  },
  "inputs_at_start": {
-  "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "tb": "dir_text:022a1f658f4693c973114db21c0e45003fd9d8abcbfad44a47e01cbeaa60b0fe",
-  "spec_yaml": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36"
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "tb": "dir_text:57f05df2383e1ccbbc4ce8aba13867434d2eb1b0defcd52e8a630ad5244bfdb3",
+  "spec_yaml": "json_canonical:6047879c86f989ed1075f56053d02d1df28eae90ded8d42e196ce02dd3da6f33"
  },
- "recorded_ts": "2026-10-29T11:00:23",
- "attempts": 13
+ "recorded_ts": "2026-10-31T15:35:17",
+ "attempts": 15
 }

@@ -1,4 +1,4 @@
-# running in /work/blocks/pll/digital/log/formal/cov/model/
+# running in /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/cov/model/
 read_rtlil design.il
 scc -select; simplemap; select -clear
 memory_nordff

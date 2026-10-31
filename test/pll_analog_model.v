@@ -8,7 +8,8 @@
 // The filter is stepped every STEP_NS (explicit Euler; R1*C2 is about
 // 58 ns). The VCO toggles at exact real-valued times,
 // so the divided clocks carry no step quantisation. pll_en low stops the
-// VCO and the pump, as the cell's power-down does.
+// VCO and the pump, as the cell's power-down does. The pin is vco_div2,
+// the VCO divided by 2 in the macro (issue #48).
 `timescale 1ns / 1ps
 `default_nettype none
 module pll_analog (
@@ -19,7 +20,7 @@ module pll_analog (
     input  wire pfd_dn,
     input  wire pfd_up,
     input  wire pll_en,
-    output reg  vco_out,
+    output reg  vco_div2,
     inout  wire bias_ref,
     inout  wire vctrl
 );
@@ -32,6 +33,7 @@ module pll_analog (
   real v1 = 0.0;                         // C1's voltage
   real v2 = 0.0;                         // vctrl
   real icp, i_in, f_mhz;
+  reg vco_out;                           // the VCO, internal to the macro
 
   initial begin
     f_tbl[0] = 9.188;
@@ -69,6 +71,7 @@ module pll_analog (
     f_tbl[32] = 260.125;
     f_tbl[33] = 260.547;
     vco_out = 1'b0;
+    vco_div2 = 1'b0;
   end
 
   function real f_of(input real v);
@@ -113,6 +116,10 @@ module pll_analog (
       vco_out = ~vco_out;
     end
   end
+
+  // the TSPC /2 (issue #48): vco_div2 toggles on every rising vco_out and
+  // holds while pll_en is low (the cell's MP_DR keeps its state node static)
+  always @(posedge vco_out) vco_div2 <= ~vco_div2;
 
   // vctrl is the filter node; a test reads it as v2 (ua[0] carries no level
   // in a digital simulator)

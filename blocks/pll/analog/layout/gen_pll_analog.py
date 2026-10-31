@@ -9,9 +9,9 @@ Floorplan, bottom to top: the VCO block, then five rows, each with a
 private routing channel above it:
 
   ring     the VCO ring block (ring_block): stages in the order
-           3 2 4 1 5, then NAND2 (r5's input first) and output
-           inverter, flush right under
-           the vco_out pin. NMOS half below one shared channel, PMOS half
+           3 2 4 1 5, then NAND2 (r5's input first), output
+           inverter and the TSPC /2 (vco_out -> vco_div2), flush right
+           under the vco_div2 pin. NMOS half below one shared channel, PMOS half
            mirrored above it. Each stage is one column: its inverter
            (2 fingers, drain in the middle) next to the channel, its
            starve device behind it, n_k/p_k joined by a metal2 strap.
@@ -20,7 +20,8 @@ private routing channel above it:
            runs further than the channel for the taller NAND/output.
            Sources tie in metal1 to a rail per half. The starve gates
            run on their own metal3 track behind the inverters, so the
-           channel carries only r1..r5, nb, vco_out and pll_en, as short
+           channel carries only r1..r5, nb, vco_out, pll_en and the
+           divider's nodes (dx, dy, dqn, dqb, vco_div2), as short
            metal3 hops between 0.3 um stubs. The rails and the
            vbn_vco/vbp_vco tracks rise in metal4 at the block's left end
            to the rows above.
@@ -61,7 +62,7 @@ spacing, even at L=0.28). A diode-connected unit (gate = right pad net)
 ties the jog to its right pad in metal1. Channel tracks are metal3, one
 net per track span (left-edge packing). A net seen in more than one
 channel gets a vertical metal4 trunk with a via3 on each of its tracks.
-Pins: digital-side pins (vco_out,
+Pins: digital-side pins (vco_div2,
 pfd_up, pfd_dn, pll_en, cp_trim0, cp_trim1) are metal3 tracks run out to
 the RIGHT edge - the edge facing the digital half and its prescaler;
 vctrl, bias_ref, vdd, vss are metal4 trunks run to the BOTTOM edge. Each
@@ -92,9 +93,9 @@ LY.update({"via2": (38, 0), "metal3": (42, 0), "via3": (40, 0),
 M1, M2, M3, M4 = (LY[k] for k in ("metal1", "metal2", "metal3", "metal4"))
 
 CELL = "pll_analog"
-PINS = ["vco_out", "pfd_up", "pfd_dn", "pll_en", "cp_trim0", "cp_trim1",
+PINS = ["vco_div2", "pfd_up", "pfd_dn", "pll_en", "cp_trim0", "cp_trim1",
         "vctrl", "bias_ref", "vdd", "vss"]
-RIGHT_PINS = ["vco_out", "pfd_up", "pfd_dn", "pll_en", "cp_trim0",
+RIGHT_PINS = ["vco_div2", "pfd_up", "pfd_dn", "pll_en", "cp_trim0",
               "cp_trim1"]
 BOTTOM_PINS = ["vctrl", "bias_ref", "vdd", "vss"]
 
@@ -186,6 +187,21 @@ DEV = {
     "MN_G2": ("n", "ng", "pll_en", "vss", W_GN, LMIN, 1),
     "MP_O": ("p", "vco_out", "nb", "vdd", W_OP, LMIN, 2),
     "MN_O": ("n", "vco_out", "nb", "vss", W_ON, LMIN, 1),
+    # (8) TSPC /2, vco_out -> vco_div2 (netlist block 8)
+    "MP_DA": ("p", "da", "dqn", "vdd", 2.0, LMIN, 1),
+    "MP_DB": ("p", "dx", "vco_out", "da", 2.0, LMIN, 1),
+    "MN_DA": ("n", "dx", "dqn", "vss", 1.0, LMIN, 1),
+    "MP_DC": ("p", "dy", "vco_out", "vdd", 2.0, LMIN, 1),
+    "MN_DB": ("n", "dy", "dx", "db", 2.0, LMIN, 1),
+    "MN_DC": ("n", "db", "vco_out", "vss", 2.0, LMIN, 1),
+    "MP_DD": ("p", "dqn", "dy", "vdd", 2.0, LMIN, 1),
+    "MN_DD": ("n", "dqn", "vco_out", "dc", 2.0, LMIN, 1),
+    "MN_DE": ("n", "dc", "dy", "vss", 2.0, LMIN, 1),
+    "MP_DR": ("p", "dqn", "pll_en", "vdd", 0.5, LMIN, 1),
+    "MP_DO1": ("p", "dqb", "dqn", "vdd", 2.0, LMIN, 1),
+    "MN_DO1": ("n", "dqb", "dqn", "vss", 1.0, LMIN, 1),
+    "MP_DO2": ("p", "vco_div2", "dqb", "vdd", 6.0, LMIN, 1),
+    "MN_DO2": ("n", "vco_div2", "dqb", "vss", 3.0, LMIN, 1),
 }
 for _k in range(1, 6):
     _prev = f"r{5 if _k == 1 else _k - 1}"
@@ -216,11 +232,18 @@ RING_ORDER = [3, 2, 4, 1, 5]   # every hop spans 1-2 stages; 5 next to NAND
 RING_COLS = (
     [("stage", k) for k in RING_ORDER]
     + [("row", ["MN_G1", "MN_G2"], ["MP_G1", "MP_G2"]),
-       ("row", ["MN_O"], ["MP_O"]), ("row", [], ["MP_O"])])
+       ("row", ["MN_O"], ["MP_O"]), ("row", [], ["MP_O"]),
+       # the TSPC /2: each series pair abuts its own strap (da, db, dc);
+       # NMOS and PMOS paired so no NMOS stub faces a PMOS stub of a net
+       # that must sit below it in the shared channel (no track cycle)
+       ("row", ["MN_DA", "MN_DC", "MN_DB", "MN_DD", "MN_DE", "MN_DO1",
+                "MN_DO2"],
+        ["MP_DA", "MP_DB", "MP_DC", "MP_DR", "MP_DD", "MP_DO1",
+         "MP_DO2"])])
 # nets that live only between a stage's (or the NAND's) own devices,
 # joined by a metal2 strap under them: no channel stub
 INTERNAL = {f"n{k}" for k in range(1, 6)} | {f"p{k}" for k in range(1, 6)} \
-    | {"ng"}
+    | {"ng", "da", "db", "dc"}
 
 # rows bottom to top: (name, kind, items). An item is a device name (its
 # next unit) or "T" (a tap). Taps are also added wherever a row runs more
@@ -503,7 +526,7 @@ S_TOP = -3.2            # starve-device COMP top (inverter COMP bottom = 0)
 # close to all of them
 RING_NF = {f"M{t}_{d}{k}": 2 for t in "NP" for d in "SI" for k in range(1, 6)}
 RING_NF.update({d: 2 for d in ("MP_G1", "MP_G2", "MN_G1", "MN_G2", "MP_O",
-                               "MN_O")})
+                               "MN_O", "MP_DO2", "MN_DO2")})
 
 
 def fet_geom_nf(cell, nf):
@@ -929,7 +952,7 @@ def generate():
         else:
             rows1.append(build_row(scratch, draw_fet, name, kind, items,
                                    0.0, used))
-    # the ring block goes flush right, under the vco_out pin's edge
+    # the ring block goes flush right, under the vco_div2 pin's edge
     x_rows0 = max(r[3] for r in rows1 if r)
     rw = ring_block(gf.Component(), draw_fet, 0.0, 0.0, 0, {})[4]
     ring_x0 = r5(max(x_rows0 - rw, 0.0))

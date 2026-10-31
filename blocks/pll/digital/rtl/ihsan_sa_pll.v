@@ -1,5 +1,6 @@
 // ihsan_sa_pll - digital core of the TT GF180 charge-pump PLL.
-// Flat top: prescaler (vco_out), divider (clk_pre), PFD (clk / clk_fb),
+// Flat top: prescaler (vco_div2, VCO/2 from the macro's TSPC stage),
+// divider (clk_pre), PFD (clk / clk_fb),
 // lock detector and recovery (clk), control registers (clk), plus the
 // obs_out mux and the recovery override on pfd_up/pfd_dn.
 // The charge pump, loop filter, VCO and bias are the analog macro.
@@ -13,7 +14,7 @@ module ihsan_sa_pll (
     input  wire       clk,
     input  wire       rst_n,
     input  wire [2:0] n_sel,
-    input  wire       vco_out,
+    input  wire       vco_div2,
     input  wire       pll_en_in,
     input  wire       obs_sel,
     input  wire [1:0] cp_trim_in,
@@ -39,7 +40,7 @@ module ihsan_sa_pll (
   wire recover;
 
   pll_prescaler u_pre (
-      .vco_out(vco_out), .rst_n(rst_n), .clk_pre(clk_pre), .obs_q3(obs_q3));
+      .vco_div2(vco_div2), .rst_n(rst_n), .clk_pre(clk_pre), .obs_q3(obs_q3));
 
   pll_divider u_div (
       .clk_pre(clk_pre), .rst_n(rst_n), .n_sel(n_sel), .clk_fb(clk_fb_int));

@@ -11,7 +11,7 @@ cells (`split_devices` is empty). Models: `nfet_03v3`, `pfet_03v3`,
 ## Subckt and pin order
 
 ```
-.subckt pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
+.subckt pll_analog vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 ```
 
 Ten pins in this order (the six interface.yaml signals, ua_pins `vctrl`
@@ -24,7 +24,9 @@ Internal nodes: `en_b`, `vbp` (PMOS bias gate), `va` (bias loop gain node), `vre
 NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 `vfilt` (R1-C1 junction),
 `vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `vcl` (ceiling drain), `r1..r5` (ring),
-`nb` (NAND output).
+`nb` (NAND output), `vco_out` (the buffered VCO clock: internal since
+2026-10-31, the benches read it as `xdut.vco_out`), and the TSPC divider's
+`dx`, `dy`, `dqn`, `dqb`, `da`, `db`, `dc`.
 
 ## Blocks and refdes
 
@@ -259,3 +261,23 @@ Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, vref, bias_ref, vcp_n,
 vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
 vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).
+
+### 8. TSPC /2: vco_out -> vco_div2 (2026-10-31, issue #48)
+The digital half clocks at vco/2, so no library flop has to toggle at the
+VCO's ceiling (digital issue 8). A true single-phase clocked flop
+(Yuan-Svensson) with D tied to its own inverted output:
+- Stage 1 (`MP_DA` gate `dqn` vdd -> `da`, `MP_DB` gate `vco_out` `da` ->
+  `dx`, `MN_DA` gate `dqn` `dx` -> vss): `dx` = NOT `dqn` while `vco_out`
+  is low.
+- Stage 2 (`MP_DC` gate `vco_out` vdd -> `dy`, `MN_DB` gate `dx` `dy` ->
+  `db`, `MN_DC` gate `vco_out` `db` -> vss): `dy` precharges high while
+  `vco_out` is low and becomes NOT `dx` on its rising edge.
+- Stage 3 (`MP_DD` gate `dy` vdd -> `dqn`, `MN_DD` gate `vco_out` `dqn` ->
+  `dc`, `MN_DE` gate `dy` `dc` -> vss): `dqn` = NOT `dy`, held while
+  `vco_out` is low. So `dqn` toggles on every rising edge of `vco_out`.
+- `MP_DR` (gate `pll_en`, vdd -> `dqn`): in standby `vco_out` sits low and
+  `dqn` would float; this holds it high so every node is static.
+- `MP_DO1`/`MN_DO1` (`dqn` -> `dqb`) and `MP_DO2`/`MN_DO2` (`dqb` ->
+  `vco_div2`): the pin's buffer.
+All L = 0.28 um. The macro's pins are the interface's, so `vco_out` is no
+longer a pin; the tile's digital half takes `vco_div2`.

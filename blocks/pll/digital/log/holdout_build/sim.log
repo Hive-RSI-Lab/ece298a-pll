@@ -2,34 +2,34 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/eda-toolchain/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793286005
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793475315
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
      0.00ns INFO     cocotb.regression                  running test_pll_holdout.test_midrun_reset_pulse (1/7)
-  5035.00ns INFO     cocotb.regression                  test_pll_holdout.test_midrun_reset_pulse passed
-  5035.00ns INFO     cocotb.regression                  running test_pll_holdout.test_live_nsel_changes (2/7)
- 21436.00ns INFO     cocotb.regression                  test_pll_holdout.test_live_nsel_changes passed
- 21436.00ns INFO     cocotb.regression                  running test_pll_holdout.test_wide_on_fifteenth_clean_cycle (3/7)
- 26270.90ns INFO     cocotb.regression                  test_pll_holdout.test_wide_on_fifteenth_clean_cycle passed
- 26270.90ns INFO     cocotb.regression                  running test_pll_holdout.test_dn_side_wide_drops_lock (4/7)
- 28865.80ns INFO     cocotb.regression                  test_pll_holdout.test_dn_side_wide_drops_lock passed
- 28865.80ns INFO     cocotb.regression                  running test_pll_holdout.test_pfd_extreme_offsets (5/7)
- 32210.80ns INFO     cocotb.regression                  test_pll_holdout.test_pfd_extreme_offsets passed
- 32210.80ns INFO     cocotb.regression                  running test_pll_holdout.test_obs_sel_live_fast_vco (6/7)
- 34574.81ns INFO     cocotb.regression                  test_pll_holdout.test_obs_sel_live_fast_vco passed
- 34574.81ns INFO     cocotb.regression                  running test_pll_holdout.test_ctrl_regs_every_cycle (7/7)
- 35511.81ns INFO     cocotb.regression                  test_pll_holdout.test_ctrl_regs_every_cycle passed
- 35511.81ns INFO     cocotb.regression                  *************************************************************************************************************
+  5030.00ns INFO     cocotb.regression                  test_pll_holdout.test_midrun_reset_pulse passed
+  5030.00ns INFO     cocotb.regression                  running test_pll_holdout.test_live_nsel_changes (2/7)
+ 21431.00ns INFO     cocotb.regression                  test_pll_holdout.test_live_nsel_changes passed
+ 21431.00ns INFO     cocotb.regression                  running test_pll_holdout.test_wide_on_fifteenth_clean_cycle (3/7)
+ 26260.90ns INFO     cocotb.regression                  test_pll_holdout.test_wide_on_fifteenth_clean_cycle passed
+ 26260.90ns INFO     cocotb.regression                  running test_pll_holdout.test_dn_side_wide_drops_lock (4/7)
+ 28930.80ns INFO     cocotb.regression                  test_pll_holdout.test_dn_side_wide_drops_lock passed
+ 28930.80ns INFO     cocotb.regression                  running test_pll_holdout.test_pfd_extreme_offsets (5/7)
+ 32260.80ns INFO     cocotb.regression                  test_pll_holdout.test_pfd_extreme_offsets passed
+ 32260.80ns INFO     cocotb.regression                  running test_pll_holdout.test_obs_sel_live_fast_vco (6/7)
+ 34624.81ns INFO     cocotb.regression                  test_pll_holdout.test_obs_sel_live_fast_vco passed
+ 34624.81ns INFO     cocotb.regression                  running test_pll_holdout.test_ctrl_regs_every_cycle (7/7)
+ 35561.81ns INFO     cocotb.regression                  test_pll_holdout.test_ctrl_regs_every_cycle passed
+ 35561.81ns INFO     cocotb.regression                  *************************************************************************************************************
                                                         ** TEST                                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *************************************************************************************************************
-                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.01     672340.05  **
-                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.02     953915.43  **
-                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.01     727139.45  **
-                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.00     752080.83  **
-                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.01     593574.70  **
-                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.01     270050.79  **
-                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00    2463559.27  **
+                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5030.00           0.01     993259.46  **
+                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.01    1801943.34  **
+                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4829.90           0.00    1120114.99  **
+                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2669.90           0.00    1176447.78  **
+                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3330.00           0.00     831764.30  **
+                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.01     456610.33  **
+                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00    2484488.56  **
                                                         *************************************************************************************************************
-                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           0.05     702597.40  **
+                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35561.81           0.03    1130342.90  **
                                                         *************************************************************************************************************

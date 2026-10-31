@@ -9,16 +9,16 @@
     {"path": ["\\obs_sel"], "width": 1, "offset": 0, "init_only": false},
     {"path": ["\\pll_en_in"], "width": 1, "offset": 0, "init_only": false},
     {"path": ["\\rst_n"], "width": 1, "offset": 0, "init_only": false},
-    {"path": ["\\vco_out"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\vco_div2"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\_witness_", "\\anyinit_procdff_418"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_419"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_420"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_421"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_422"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_423"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_424"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\_witness_", "\\anyinit_procdff_425"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\_witness_", "\\anyinit_procdff_426"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_427"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_428"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_429"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_430"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_431"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_432"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_433"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\_witness_", "\\anyinit_procdff_434"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\cp_trim0"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\cp_trim1"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_ctrl", "\\pll_en"], "width": 1, "offset": 0, "init_only": true},
@@ -33,7 +33,6 @@
     {"path": ["\\dut", "\\u_pfd", "\\pfd_ref_q"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_pre", "\\pre_q0"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_pre", "\\pre_q1"], "width": 1, "offset": 0, "init_only": true},
-    {"path": ["\\dut", "\\u_pre", "\\pre_q2"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut", "\\u_pre", "\\q3"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut.u_pfd.pfd_fb_q$async_arst_past"], "width": 1, "offset": 0, "init_only": true},
     {"path": ["\\dut.u_pfd.pfd_fb_q$async_clk_past"], "width": 1, "offset": 0, "init_only": true},
@@ -45,9 +44,9 @@
     {"path": ["\\dut.u_pfd.pfd_ref_q$async_q_past"], "width": 1, "offset": 0, "init_only": true}
   ],
   "steps": [
-    {"bits": "0000000000000000000000000000000000000000000000000000000000"},
+    {"bits": "000000000000000000000000000000000000000000000000000000000"},
     {"bits": "0100110000"},
     {"bits": "1100111000"},
-    {"bits": "0100000000"}
+    {"bits": "0100110000"}
   ]
 }

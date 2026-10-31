@@ -72,8 +72,8 @@ vvc      vfeed    0 {vddp/2}
 lfeed    vfeed    vctrl 1e9
 cpad     vctrl    0 1e-18
 iac      0        vctrl dc 0 ac 1
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 ikick    0        xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)
 
 .control
@@ -123,7 +123,7 @@ foreach vc 0.3 $&vhi
       let nx = length(time)
       let nx1 = nx - 1
       let nx2 = nx - 2
-      let hv = (v(vco_out) gt vmid)
+      let hv = (v(xdut.vco_out) gt vmid)
       let late = time[1,$&nx1] gt $tdx
       let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
       if (nrise ge 6) or ($st eq 1)
@@ -134,8 +134,8 @@ foreach vc 0.3 $&vhi
         end
         if np ge 1
           let nr = np + 1
-          meas tran ta when v(vco_out)=$&vmid rise=1 td=$tdx
-          meas tran tb when v(vco_out)=$&vmid rise=$&nr td=$tdx
+          meas tran ta when v(xdut.vco_out)=$&vmid rise=1 td=$tdx
+          meas tran tb when v(xdut.vco_out)=$&vmid rise=$&nr td=$tdx
           let x = np/(tb - ta)
           set fks = "$&x"
         end

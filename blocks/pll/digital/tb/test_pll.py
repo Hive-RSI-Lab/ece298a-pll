@@ -1,6 +1,6 @@
 """Visible tests for ihsan_sa_pll, written from spec/spec.md + spec.yaml
 before any RTL. All drive/sample is Timer-anchored to bench-scheduled edge
-times (clk and vco_out are generated here, never Clock-triggered), and
+times (clk and vco_div2 are generated here, never Clock-triggered), and
 edge timing is recorded with ValueChange monitors (pll_ref.Monitor)."""
 import cocotb
 from cocotb.triggers import Timer
@@ -8,11 +8,11 @@ from cocotb.triggers import Timer
 from pll_ref import (REF_T, LockModel, Monitor, decode_n, now, ref_clock,
                      vco_clock, wait_until)
 
-TV = 10.0  # vco_out period for open-loop tests: clk_pre = 80 ns
+TV = 10.0  # VCO period for open-loop tests (vco_div2 20 ns): clk_pre = 80 ns
 # glsim's SDF pass runs these tests on the hardened netlist, where every
 # port-observed edge carries cell and clock-tree delay and a PFD pulse
 # carries the reset delay. Both slacks stay under the smallest step an RTL
-# fault moves an edge by (a 5 ns vco half period, the 5 ns minimum dt).
+# fault moves an edge by (a 10 ns vco_div2 half period, the 5 ns minimum dt).
 GL_TOL = 1.0   # two port-observed edges or widths that are equal at RTL
 GL_SKEW = 4.0  # PFD: port-to-PFD clock skew plus the reset delay
 
@@ -20,7 +20,7 @@ GL_SKEW = 4.0  # PFD: port-to-PFD clock skew plus the reset delay
 async def init(dut, n_sel=1, obs_sel=0):
     dut.rst_n.value = 0
     dut.clk.value = 0
-    dut.vco_out.value = 0
+    dut.vco_div2.value = 0
     dut.n_sel.value = n_sel
     dut.obs_sel.value = obs_sel
     dut.pll_en_in.value = 0
@@ -37,8 +37,8 @@ _vco_task = None
 
 
 def run_vco(dut, tv):
-    """Start vco_out at period tv, stopping any vco_out driver a previous
-    loop iteration started (two drivers on vco_out corrupt its period)."""
+    """Start the VCO at period tv (vco_div2 at 2*tv), stopping any vco_div2
+    driver a previous loop iteration started (two drivers corrupt its period)."""
     global _vco_task
     if _vco_task is not None and not _vco_task.done():
         _vco_task.cancel()
@@ -70,17 +70,17 @@ async def test_prescaler_div8(dut):
     for tv in (TV, 3.0):
         await start_vco(dut, tv=tv, n_sel=1, obs_sel=0)
         m_obs = Monitor(dut.obs_out)
-        m_vco = Monitor(dut.vco_out)
+        m_vco = Monitor(dut.vco_div2)
         t0 = now()
         await Timer(int(40 * 8 * tv), unit="ns")
         r = m_obs.rises(t0 + 8 * tv)
         assert len(r) >= 30, f"tv={tv}: obs_out (clk_pre) rose {len(r)} times"
         check_period(f"clk_pre tv={tv}", r, 8 * tv)
-        # exactly 8 vco rises between consecutive clk_pre rises
+        # exactly 4 vco_div2 rises (8 VCO periods) between clk_pre rises
         vr = m_vco.rises()
         for a, b in zip(r, r[1:]):
             k = sum(1 for t in vr if a < t <= b)
-            assert k == 8, f"tv={tv}: {k} vco_out rises per clk_pre period, expected 8"
+            assert k == 4, f"tv={tv}: {k} vco_div2 rises per clk_pre period, expected 4"
         dut.rst_n.value = 0
         await Timer(20, unit="ns")
 
@@ -379,6 +379,12 @@ async def test_async_reset_outputs(dut):
     await Timer(20, unit="ns")
     for s in ("pfd_up", "pfd_dn", "lock", "clk_fb", "obs_out", "pll_en", "cp_trim0", "cp_trim1"):
         assert int(getattr(dut, s).value) == 0, f"{s}={getattr(dut, s).value} during rst_n low"
+    # obs_out is 0 in reset on either side of its mux: obs_sel = 1 shows the
+    # /16 flop, which reset holds at 0 too
+    dut.obs_sel.value = 1
+    await Timer(5, unit="ns")
+    assert int(dut.obs_out.value) == 0, f"obs_out={dut.obs_out.value} during rst_n low with obs_sel=1"
+    dut.obs_sel.value = 0
 
 
 def walk(h, depth=0):
