@@ -10,6 +10,7 @@ GF180 tile. A current-starved ring VCO is locked to the reference on `clk`, at
   you): [docs/review/README.md](docs/review/README.md). Every stage's recorded
   result, and the command to see it work yourself:
   [docs/review/stages.md](docs/review/stages.md)
+- The paper (design and results, with figures): [docs/paper/paper.pdf](docs/paper/paper.pdf)
 - The datasheet: [docs/info.md](docs/info.md)
 - Goals and their status: [GOALS.md](GOALS.md)
 
