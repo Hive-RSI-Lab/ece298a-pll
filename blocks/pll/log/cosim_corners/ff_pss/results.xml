@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="cocotb tests"><testsuite name="test_pll_cosim" errors="0" failures="1" skipped="0" tests="1" time="2496.130" timestamp="2026-10-31T21:12:51.140512+00:00" hostname="iiks2"><testcase classname="test_pll_cosim" name="test_pll_lock_nominal" time="2496.130"><failure message="vctrl moved 27.0 mV p-p in the last 10 us&#10;assert 26.96871833615111 &lt;= 20" type="AssertionError">Traceback (most recent call last):
+  File "/home/hive2/projects/ece298a-pll/blocks/pll/tb/test_pll_cosim.py", line 419, in test_pll_lock_nominal
+    assert measures["vctrl_pp_last_10us_mv"] &lt;= 20, (
+AssertionError: vctrl moved 27.0 mV p-p in the last 10 us
+assert 26.96871833615111 &lt;= 20
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793478674" /><property name="file" value="/home/hive2/projects/ece298a-pll/blocks/pll/tb/test_pll_cosim.py" /><property name="line" value="212" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="0.0" /><property name="sim_time_stop" value="30000.796" /><property name="sim_time_duration" value="30000.796" /><property name="sim_time_ratio" value="12.018921808108294" /><property name="attachment" value="/home/hive2/projects/ece298a-pll/blocks/pll/log/cosim_corners/ff_pss/build/sim.log" /></properties><system-out>[[ATTACHMENT|/home/hive2/projects/ece298a-pll/blocks/pll/log/cosim_corners/ff_pss/build/sim.log]]
+</system-out><system-err>Test failed with COCOTB_RANDOM_SEED=1793478674
+</system-err></testcase></testsuite></testsuites>

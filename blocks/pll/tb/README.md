@@ -129,8 +129,51 @@ everything in it but the kicks is flat. These corrections come from the
 bench's zero-delay PFD (its dead zone, see the bench notes) and from edges
 quantised to the 1 ns sync grid. At ff_m40c_vm10 (Kvco about 118 MHz/V)
 a kick moves the VCO by about 2 MHz for tens of ns: a jitter question, not
-a lock one. Still open: whether a finer sync grid or the gate-level PFD's
-reset pulse removes them, and other (f_ref, N) points at these corners.
+a lock one. The gate-level PFD's reset pulse removes them (next section);
+other (f_ref, N) points at these corners are still open.
+
+## With the hardened gate-level digital in the loop (issue #47, 2026-10-31)
+
+`cosim_gl.py` is `cosim_corners.py` with one change: in place of the RTL, the
+digital half is the vde harden's gate-level netlist with the PDK's cell
+models and the harden's SDF (ff corners read `nom_ff_n40C_3v60`, ss
+`nom_ss_125C_3v00`). Same bench, operating point, bounds, extracted analog
+cell, PDK corner and 0.25 ns sync. The harden's `runs/` is not in git, so run
+the vde harden gate first:
+
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_gl.py   # ~40 min, 4 corners side by side
+
+Both runs below are on the TSPC /2 macro (#48) and its extraction, at 0.25 ns
+sync. In each pair the RTL comes first and the gate-level run second:
+
+| Corner | Lock | f_vco, GL (MHz) | vctrl p-p, RTL (5 ns / ref edges, mV) | vctrl p-p, GL (5 ns / ref edges, mV) | static phase offset (ns) |
+|---|---|---|---|---|---|
+| ff_pss | 6.72 / 6.72 us | 99.9998 | **27.0** / 1.88 | 2.4 / 0.35 | 0.15 / 0.87 |
+| ff_m40c_vm10 | 4.00 / 4.00 us | 100.0009 | **20.3** / 8.37 | 7.2 / 0.91 | 0.10 / 0.89 |
+| ff_125c_vp10 | 4.48 / 4.48 us | 100.0005 | 16.9 / 0.03 | 3.5 / 0.38 | 0.15 / 0.85 |
+| ss_m40c_vm10 | 4.96 / 5.12 us | 100.0006 | 14.9 / 7.45 | 15.9 / 13.69 | 0.06 / 2.99 |
+
+With the gate-level digital, every corner locks, holds and settles within
+REQ-LOOP-VCTRL's 20 mV (`../reports/recorded/cosim_corners_gl.json`, 4/4).
+The RTL run on the same cell and the same 0.25 ns grid still misses at
+ff_pss and ff_m40c_vm10. So the finer grid H1 found was not enough on its own
+after #48. What removes the kicks is the gate-level PFD: its reset path
+has a real delay, so both pumps are on together for a short pulse every
+cycle (the ~0.9 ns static phase offset is that pulse and the pump mismatch).
+With the RTL's zero-delay reset there is no overlap and no reset pulse. One
+pump fires alone for whatever phase error is left, rounded to the sync grid,
+and that lone current through R1 is the 20-27 mV spike. Sampled at the
+reference edges, the RTL's vctrl moves only 0.03-8 mV. The gate-level run is
+the one that matches the chip. `tests/score.py` reads it for the "vctrl
+settles" line and the RTL run for the lock line. Its freshness check covers
+the same tracked inputs plus `cosim_gl.py`, and the netlist and SDF hashes
+where `runs/` is present.
+
+At ss_m40c_vm10 the gate-level run has 15.9 mV p-p, with 13.7 mV of it at
+the reference edges. That is not a spike through R1. Its trace steps about
+7 mV down near 21 us and back up near 24.5 us, and is flat in between: two
+corrections that each move the filter capacitor. It passes the bound with
+4 mV to spare. It is the corner to watch if the pump or the filter changes.
 
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 

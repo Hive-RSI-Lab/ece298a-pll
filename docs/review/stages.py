@@ -211,6 +211,9 @@ STAGES = [
          "bound its post-layout range (lowest and highest VCO ceiling and phase margin)", h_cosim_corners,
          "`blocks/pll/tb/README.md`; every corner's measures and vctrl trace: "
          "`blocks/pll/reports/recorded/cosim_corners.json`"),
+        ("top", "cosim_corners_gl", "the same corners with the hardened gate-level digital and its SDF "
+         "in place of the RTL, so the PFD's reset pulse is in the loop (issue #47)", h_cosim_corners,
+         "`blocks/pll/tb/README.md`; `blocks/pll/reports/recorded/cosim_corners_gl.json`"),
     ]),
     ("Analog layout", [
         ("analog", "drc", "the analog layout is DRC clean", h_drc,
@@ -234,7 +237,7 @@ STAGES = [
 
 def recorded(ws: str, gate: str):
     d = BLOCK if ws == "top" else BLOCK / ws
-    if gate in ("pex_pvt", "cosim_corners"):
+    if gate in ("pex_pvt", "cosim_corners", "cosim_corners_gl"):
         return load(d / "reports" / "recorded" / f"{gate}.json"), d
     return load(d / "reports" / "recorded" / f"gate-{gate}.json"), d
 
@@ -281,6 +284,8 @@ def row(ws: str, gate: str, shows: str, head, see) -> tuple[str, str]:
             "--workspace blocks/pll/analog --out blocks/pll/analog/reports/recorded/pex_pvt.json`"
     elif gate == "cosim_corners":
         rerun = "`chip-flow eda python blocks/pll/tb/cosim_corners.py`"
+    elif gate == "cosim_corners_gl":
+        rerun = "`chip-flow eda python blocks/pll/tb/cosim_gl.py` (after the vde harden)"
     how = "<br>".join(x for x in [see or "", rerun] if x)
     return status, f"| {gate} ({ws}) | {shows} | {mark} | {line} | {when} | {how} |"
 
