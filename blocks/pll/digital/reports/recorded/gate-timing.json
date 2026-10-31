@@ -3,8 +3,8 @@
  "gate": "timing",
  "phase": "P6",
  "tool": "timing",
- "input_digest": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
- "status": "fail",
+ "input_digest": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,178 +12,58 @@
   "max_count": 0
  },
  "counts": {
-  "total": 3,
-  "by_severity": {
-   "error": 3
-  },
-  "by_source": {
-   "opensta": 3
-  }
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
  },
- "failing_count": 3,
- "failing": [
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "max_ss_125C_3v00"
-  },
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "min_ss_125C_3v00"
-  },
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "nom_ss_125C_3v00"
-  }
- ],
- "violations": [
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner max_ss_125C_3v00: worst setup slack -0.1500ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "max_ss_125C_3v00"
-  },
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner min_ss_125C_3v00: worst setup slack -0.1100ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "min_ss_125C_3v00"
-  },
-  {
-   "check": "timing",
-   "severity": "error",
-   "file": null,
-   "module": "tt_um_ihsan_sa_pll",
-   "line": null,
-   "kind": "setup_violation",
-   "refs": [],
-   "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
-   "source": "opensta",
-   "items": [
-    {
-     "msg": "corner nom_ss_125C_3v00: worst setup slack -0.1300ns",
-     "file": null,
-     "line": null
-    }
-   ],
-   "corner": "nom_ss_125C_3v00"
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
  "facts": {
   "top": "tt_um_ihsan_sa_pll",
   "corners": {
    "max_ff_n40C_3v60": {
-    "setup_ws": 1.43,
-    "hold_ws": 0.43
+    "setup_ws": 3.79,
+    "hold_ws": 0.52
    },
    "max_ss_125C_3v00": {
-    "setup_ws": -0.15,
-    "hold_ws": 2.36
+    "setup_ws": 2.34,
+    "hold_ws": 2.46
    },
    "max_tt_025C_3v30": {
-    "setup_ws": 0.65,
-    "hold_ws": 0.99
+    "setup_ws": 2.74,
+    "hold_ws": 1.1
    },
    "min_ff_n40C_3v60": {
-    "setup_ws": 1.44,
-    "hold_ws": 0.42
+    "setup_ws": 3.8,
+    "hold_ws": 0.51
    },
    "min_ss_125C_3v00": {
-    "setup_ws": -0.11,
-    "hold_ws": 2.33
+    "setup_ws": 2.39,
+    "hold_ws": 2.43
    },
    "min_tt_025C_3v30": {
-    "setup_ws": 0.67,
-    "hold_ws": 0.97
+    "setup_ws": 2.77,
+    "hold_ws": 1.09
    },
    "nom_ff_n40C_3v60": {
-    "setup_ws": 1.43,
-    "hold_ws": 0.43
+    "setup_ws": 3.79,
+    "hold_ws": 0.52
    },
    "nom_ss_125C_3v00": {
-    "setup_ws": -0.13,
-    "hold_ws": 2.34
+    "setup_ws": 2.36,
+    "hold_ws": 2.44
    },
    "nom_tt_025C_3v30": {
-    "setup_ws": 0.66,
-    "hold_ws": 0.98
+    "setup_ws": 2.76,
+    "hold_ws": 1.09
    }
   }
  },
  "inputs_at_start": {
-  "harden": "harden_signoff:7905f725fc1f0dcdc5cddde748f8d336d22c1335250bfc7ff2e9c766d23599ac",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:6bd05ab4ed97c2f403f8c1d3174f88760ae31e31dd0fb9dc06f0b2c42fef506f"
+  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
  },
- "recorded_ts": "2026-10-30T07:23:15",
- "attempts": 12
+ "recorded_ts": "2026-10-31T15:37:50",
+ "attempts": 15
 }

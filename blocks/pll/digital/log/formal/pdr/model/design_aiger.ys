@@ -1,4 +1,4 @@
-# running in /work/blocks/pll/digital/log/formal/pdr/model/
+# running in /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/model/
 read_rtlil design_prep.il
 delete */t:$print
 hierarchy -simcheck

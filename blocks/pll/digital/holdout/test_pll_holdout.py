@@ -1,7 +1,7 @@
 """Held-out tests for ihsan_sa_pll (spec only, never run by the visible
 suite): mid-run reset pulse, live n_sel changes through illegal codes, a
 wide pulse on the 15th clean cycle, DN-side wide pulses, PFD extremes,
-live obs_sel at 3.0 ns vco_out, back-to-back control register changes."""
+live obs_sel at a 3.0 ns VCO (6 ns vco_div2), back-to-back control register changes."""
 import sys
 from pathlib import Path
 

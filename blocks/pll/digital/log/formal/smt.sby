@@ -7,14 +7,14 @@ multiclock on
 smtbmc yices
 
 [script]
-read_rtlil /work/blocks/pll/digital/log/formal/cut.il
+read_rtlil /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/cut.il
 
 
 [files]
-/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
-/work/blocks/pll/digital/rtl/ihsan_sa_pll.v
-/work/blocks/pll/digital/rtl/pll_ctrl_regs.v
-/work/blocks/pll/digital/rtl/pll_divider.v
-/work/blocks/pll/digital/rtl/pll_lock_det.v
-/work/blocks/pll/digital/rtl/pll_pfd.v
-/work/blocks/pll/digital/rtl/pll_prescaler.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v
+/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v

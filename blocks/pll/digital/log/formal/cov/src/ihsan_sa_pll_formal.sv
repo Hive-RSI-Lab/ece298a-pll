@@ -2,14 +2,14 @@
 // Written from spec/spec.md + spec/spec.yaml only, before RTL exists.
 // Plain structural wrapper, procedural assert/cover only (no bind, no SVA
 // `assert property`, no hierarchical refs). The design has four clock
-// domains (clk, vco_out, clk_pre, clk_fb) and an asynchronous reset, so
+// domains (clk, vco_div2, clk_pre, clk_fb) and an asynchronous reset, so
 // every monitor runs on the formal global clock ($global_clock, one solver
 // step) and sees each clock as a sampled signal: edges are $rose/$fell.
 module ihsan_sa_pll_formal (
     input  wire       clk,
     input  wire       rst_n,
     input  wire [2:0] n_sel,
-    input  wire       vco_out,
+    input  wire       vco_div2,   // VCO/2 from the macro's TSPC stage
     input  wire       pll_en_in,
     input  wire       obs_sel,
     input  wire [1:0] cp_trim_in,
@@ -27,7 +27,7 @@ module ihsan_sa_pll_formal (
   wire recover;
 
   ihsan_sa_pll dut (
-      .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_out(vco_out),
+      .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_div2(vco_div2),
       .pll_en_in(pll_en_in), .obs_sel(obs_sel), .cp_trim_in(cp_trim_in),
       .obs_out(obs_out), .clk_fb(clk_fb), .lock(lock), .pfd_up(pfd_up),
       .pfd_dn(pfd_dn), .pll_en(pll_en), .cp_trim0(cp_trim0),
@@ -40,14 +40,14 @@ module ihsan_sa_pll_formal (
   // Every run starts in reset, as on silicon (the flops have no init value).
   always @($global_clock) if (!past_valid) assume (!rst_n);
 
-  // clk_pre (vco_out/8) is internal; with obs_sel = 0 obs_out is clk_pre
-  // (REQ-OBS-SEL), so the /8 check observes it through obs_out.
+  // clk_pre (vco_div2/4 = VCO/8) is internal; with obs_sel = 0 obs_out is
+  // clk_pre (REQ-OBS-SEL), so the /8 check observes it through obs_out.
   wire clk_pre_obs = obs_out;
 
   // N decode per spec: 1..5 as is, 0/6/7 -> 1.
   wire [2:0] n_eff = (n_sel >= 3'd1 && n_sel <= 3'd5) ? n_sel : 3'd1;
 
-  // ---- prescaler shadow: vco_out rises since the last clk_pre rise ----
+  // ---- prescaler shadow: vco_div2 rises since the last clk_pre rise ----
   reg [3:0] vco_cnt  = 4'd0;
   reg       pre_seen = 1'b0;   // one clk_pre rise seen since reset
   reg       pre_ok   = 1'b0;   // obs_sel held 0 since that rise
@@ -73,11 +73,11 @@ module ihsan_sa_pll_formal (
   // flop does: a pulse that starts in the edge's own step is not sampled.
   reg wide_q = 1'b0;
   always @($global_clock) begin
-    vco_q <= vco_out; prep_q <= clk_pre_obs; fb_q <= clk_fb; clk_q <= clk;
+    vco_q <= vco_div2; prep_q <= clk_pre_obs; fb_q <= clk_fb; clk_q <= clk;
     obs_q <= obs_sel; wide_q <= pfd_up | pfd_dn;
     n_q <= n_sel;
   end
-  wire vco_rise = past_valid && vco_out && !vco_q;
+  wire vco_rise = past_valid && vco_div2 && !vco_q;
   // obs_out only shows clk_pre while obs_sel is 0; a rise in the step
   // obs_sel returns to 0 is the mux switching, not a clk_pre edge.
   wire pre_rise = past_valid && clk_pre_obs && !prep_q && !obs_sel && !obs_q;
@@ -128,15 +128,15 @@ module ihsan_sa_pll_formal (
                                       !clk_fb && !obs_out && !pll_en &&
                                       !cp_trim0 && !cp_trim1);
 
-      // REQ-PRE-DIV8: clk_pre rises exactly once per 8 vco_out rises -
-      // never more than 8 rises between clk_pre rises, and exactly 8 at
-      // each clk_pre rise after the first. The 8th vco_out rise lands in
+      // REQ-PRE-DIV8: clk_pre rises exactly once per 4 vco_div2 rises (8
+      // VCO periods) - never more than 4 rises between clk_pre rises, and
+      // exactly 4 at each clk_pre rise after the first. The 4th rise lands in
       // the same step as the clk_pre rise it causes, so it is counted as
       // vco_rise on top of vco_cnt (N = 1 in divider_ratio is the same).
       if (rst_n && $past(rst_n) && pre_ok && !obs_sel)
-        prescaler_div8: assert (({1'b0, vco_cnt} + {4'd0, vco_rise} <= 5'd8) &&
+        prescaler_div8: assert (({1'b0, vco_cnt} + {4'd0, vco_rise} <= 5'd4) &&
                                 (!pre_rise || !pre_seen ||
-                                 {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd8));
+                                 {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd4));
 
       // REQ-DIV-N: clk_fb rises exactly once per N clk_pre rises (N = 1
       // passes clk_pre through: clk_fb rises in the same step).
@@ -169,7 +169,7 @@ module ihsan_sa_pll_formal (
       COVER_PFD_DN:     cover (pfd_dn);
       COVER_PFD_RESET:  cover ($past(pfd_up) && fb_rise && !pfd_up && !pfd_dn);
       COVER_PRE_PERIOD: cover (pre_rise && pre_seen && pre_ok &&
-                               {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd8);
+                               {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd4);
       COVER_FB_N5:      cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd5);
       COVER_FB_ILLEGAL: cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd0);
       COVER_LOCK:       cover (lock);

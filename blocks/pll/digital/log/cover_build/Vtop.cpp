@@ -12,7 +12,7 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , m_evalLoop{*this, /*convergeLimit:*/ 10000}
     , clk{vlSymsp->TOP.clk}
     , rst_n{vlSymsp->TOP.rst_n}
-    , vco_out{vlSymsp->TOP.vco_out}
+    , vco_div2{vlSymsp->TOP.vco_div2}
     , n_sel{vlSymsp->TOP.n_sel}
     , pll_en_in{vlSymsp->TOP.pll_en_in}
     , obs_sel{vlSymsp->TOP.obs_sel}

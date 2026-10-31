@@ -1,5 +1,5 @@
 read_liberty /opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__ss_125C_3v00.lib
-read_verilog /work/blocks/pll/digital/harden/runs/run/final/nl/tt_um_ihsan_sa_pll.nl.v
+read_verilog /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/runs/run/final/nl/tt_um_ihsan_sa_pll.nl.v
 link_design tt_um_ihsan_sa_pll
 set ::env(STD_CELL_LIBRARY) gf180mcu_fd_sc_mcu7t5v0
 set ::env(PAD_CELL_LIBRARY) gf180mcu_fd_io
@@ -42,7 +42,7 @@ set ::env(CELL_PAD_EXCLUDE) "gf180mcu_fd_sc_mcu7t5v0__filltie \"gf180mcu_fd_sc_m
 set ::env(DIODE_CELL) gf180mcu_fd_sc_mcu7t5v0__antenna/I
 set ::env(WELLTAP_CELL) gf180mcu_fd_sc_mcu7t5v0__filltie
 set ::env(ENDCAP_CELL) gf180mcu_fd_sc_mcu7t5v0__endcap
-set ::env(DESIGN_DIR) /work/blocks/pll/digital/harden
+set ::env(DESIGN_DIR) /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden
 set ::env(PDK_ROOT) /opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks
 set ::env(DESIGN_NAME) tt_um_ihsan_sa_pll
 set ::env(PDK) gf180mcuD
@@ -88,7 +88,7 @@ set ::env(RUN_MAGIC_DRC) 1
 set ::env(RUN_KLAYOUT_DRC) 0
 set ::env(RUN_EQY) 0
 set ::env(RUN_LINTER) 1
-set ::env(VERILOG_FILES) "/work/blocks/pll/digital/rtl/ihsan_sa_pll.v /work/blocks/pll/digital/rtl/pll_ctrl_regs.v /work/blocks/pll/digital/rtl/pll_divider.v /work/blocks/pll/digital/rtl/pll_lock_det.v /work/blocks/pll/digital/rtl/pll_pfd.v /work/blocks/pll/digital/rtl/pll_prescaler.v /work/blocks/pll/digital/harden/tt_um_ihsan_sa_pll.v"
+set ::env(VERILOG_FILES) "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/tt_um_ihsan_sa_pll.v"
 set ::env(VERILOG_POWER_DEFINE) USE_POWER_PINS
 set ::env(LINTER_INCLUDE_PDK_MODELS) 1
 set ::env(LINTER_RELATIVE_INCLUDES) 1
@@ -128,8 +128,8 @@ set ::env(SYNTH_ARITH_TREE) 1
 set ::env(ERROR_ON_UNMAPPED_CELLS) 1
 set ::env(ERROR_ON_SYNTH_CHECKS) 1
 set ::env(ERROR_ON_NL_ASSIGN_STATEMENTS) 1
-set ::env(PNR_SDC_FILE) /work/blocks/pll/digital/harden/flow.sdc
-set ::env(SIGNOFF_SDC_FILE) /work/blocks/pll/digital/harden/flow.sdc
+set ::env(PNR_SDC_FILE) /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/flow.sdc
+set ::env(SIGNOFF_SDC_FILE) /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/flow.sdc
 set ::env(SET_RC_VERBOSE) 0
 set ::env(LAYERS_RC) "\"*\" \"Metal2 \\\"res 0.000385861 cap 0.000135357\\\" Metal3 \\\"res 0.000206673 cap 0.000146141\\\" Metal4 \\\"res 0.000168609 cap 0.000150688\\\" Metal5 \\\"res 7.92778e-05 cap 0.000155595\\\"\""
 set ::env(VIAS_R) "\"*\" \"Via1 \\\"res 4.23\\\" Via2 \\\"res 4.23\\\" Via3 \\\"res 4.23\\\" Via4 \\\"res 4.23\\\"\" \"max_*\" \"Via1 \\\"res 16.845\\\" Via2 \\\"res 16.845\\\" Via3 \\\"res 16.845\\\" Via4 \\\"res 16.845\\\"\""
@@ -186,7 +186,7 @@ set ::env(PL_OPTIMIZE_MIRRORING) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 500
 set ::env(PL_MAX_DISPLACEMENT_Y) 100
 set ::env(DPL_CELL_PADDING) 0
-set ::env(RSZ_DONT_TOUCH_RX) "^(uo_out\\\[\[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs)_obuf|u_ihsan_sa_pll\\.u_pre\\.(u_pre_(ff0|inv0|ckbuf0)(_\[0-9]+)?|pre_(q0|d0)))\$"
+set ::env(RSZ_DONT_TOUCH_RX) "^(uo_out\\\[\[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs)_obuf)\$"
 set ::env(PL_TARGET_DENSITY_PCT) 60
 set ::env(PL_SKIP_INITIAL_PLACEMENT) 0
 set ::env(PL_WIRE_LENGTH_COEF) 0.25
@@ -194,7 +194,7 @@ set ::env(GPL_CELL_PADDING) 0
 set ::env(PL_GENERATE_GIF) 0
 set ::env(PL_GENERATE_GIF_PAUSE) 100000
 set ::env(IO_PIN_PLACEMENT_MODE) matching
-set ::env(FP_DEF_TEMPLATE) /work/blocks/pll/digital/harden/tt_block_1x1_pgvdd.def
+set ::env(FP_DEF_TEMPLATE) /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/tt_block_1x1_pgvdd.def
 set ::env(IO_PIN_H_LAYER) Metal3
 set ::env(IO_PIN_V_LAYER) Metal2
 set ::env(IO_PIN_V_EXTENSION) 0
@@ -314,7 +314,7 @@ set ::env(HOLD_VIOLATION_CORNERS) "\"*\""
 set ::env(MAX_SLEW_VIOLATION_CORNERS) "\"\""
 set ::env(MAX_CAP_VIOLATION_CORNERS) "\"\""
 set ::env(SCRIPTS_DIR) /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/librelane/scripts
-set ::env(_SDC_IN) /work/blocks/pll/digital/harden/flow.sdc
+set ::env(_SDC_IN) /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/flow.sdc
 set ::env(OPENLANE_SDC_IDEAL_CLOCKS) 0
 set ::env(IO_PCT) [expr $::env(IO_DELAY_CONSTRAINT) / 100.0]
 set ::env(SYNTH_TIMING_DERATE) [expr $::env(TIME_DERATING_CONSTRAINT) / 100.0]
@@ -326,8 +326,8 @@ if { [info exists ::env(MAX_TRANSITION_CONSTRAINT)] } {
     set ::env(SYNTH_MAX_TRAN) $::env(MAX_TRANSITION_CONSTRAINT)
 }
 set ::env(_CURRENT_CORNER_NAME) min_ss_125C_3v00
-read_sdc /work/blocks/pll/digital/harden/flow.sdc
-read_spef /work/blocks/pll/digital/harden/runs/run/final/spef/min/tt_um_ihsan_sa_pll.min.spef
+read_sdc /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/flow.sdc
+read_spef /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/harden/runs/run/final/spef/min/tt_um_ihsan_sa_pll.min.spef
 report_worst_slack -max
 report_worst_slack -min
 report_check_types -max_slew -max_capacitance -max_fanout -violators

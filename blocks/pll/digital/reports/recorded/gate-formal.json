@@ -3,7 +3,7 @@
  "gate": "formal",
  "phase": "P4",
  "tool": "formal",
- "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -197,7 +197,7 @@
   "frontend": "native",
   "frontend_why": null,
   "multiclock": true,
-  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$374, $flatten\\dut.\\u_lock.$procdff$410; async reset/latch cell(s) $adff",
+  "multiclock_why": "5 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\vco_div2); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$366, $flatten\\dut.\\u_lock.$procdff$402; async reset/latch cell(s) $adff",
   "proven": [],
   "bounded": [
    "REQ-DIV-N",
@@ -236,10 +236,10 @@
   "async_reset_cuts_note": "smt/pdr's proven/bounded verdicts above hold for a model in which each cut flop's async clear (formal.async_reset_cuts) reads the cut flops' PRE-RESET values instead of their Q - the clear lands in the same step the flop sets, and every other reset input (rst_n) is unchanged - so they show the settled zero-delay behaviour, not the delta-cycle glitch (both flops briefly both-set before the clear catches up) or the reset pulse's width, which stay sim's job"
  },
  "inputs_at_start": {
-  "rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "formal": "dir_text:ee443899a179eea94a88d755ecda4737c8b3dbc3b09fe22f0510dcbe837462fd",
-  "spec_yaml": "json_canonical:a757fc1c7b8e08b8cc83ae92b67008c4729da5fc5bf5b77958a34aab450daf36"
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "formal": "dir_text:5318ffa82294adba234a0b5607be55ec399f213273318f37d0b8d59e80b29aee",
+  "spec_yaml": "json_canonical:6047879c86f989ed1075f56053d02d1df28eae90ded8d42e196ce02dd3da6f33"
  },
- "recorded_ts": "2026-10-29T11:43:05",
- "attempts": 9
+ "recorded_ts": "2026-10-31T15:36:49",
+ "attempts": 11
 }

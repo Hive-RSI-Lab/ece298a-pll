@@ -1,5 +1,5 @@
-# running in /work/blocks/pll/digital/log/formal/smt/src/
-read_rtlil /work/blocks/pll/digital/log/formal/cut.il
+# running in /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/smt/src/
+read_rtlil /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/cut.il
 
 
 hierarchy -smtcheck

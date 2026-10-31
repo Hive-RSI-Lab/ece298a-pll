@@ -1,556 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-10-29T10:59:58" hostname="iiks2" package="pdr" id="0" name="default" tests="1" errors="0" failures="0" time="5" skipped="0">
+<testsuite timestamp="2026-10-31T15:35:25" hostname="iiks2" package="pdr" id="0" name="default" tests="1" errors="0" failures="0" time="1" skipped="0">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
 <property name="status" value="PASS"/>
 </properties>
-<testcase classname="default" name="default" time="5">
+<testcase classname="default" name="default" time="1">
 </testcase>
-<system-out>SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Removing directory '/work/blocks/pll/digital/log/formal/pdr'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/work/blocks/pll/digital/log/formal/pdr/src/ihsan_sa_pll_formal.sv'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/work/blocks/pll/digital/log/formal/pdr/src/ihsan_sa_pll.v'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/work/blocks/pll/digital/log/formal/pdr/src/pll_ctrl_regs.v'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/pll_divider.v' to '/work/blocks/pll/digital/log/formal/pdr/src/pll_divider.v'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/pll_lock_det.v' to '/work/blocks/pll/digital/log/formal/pdr/src/pll_lock_det.v'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/pll_pfd.v' to '/work/blocks/pll/digital/log/formal/pdr/src/pll_pfd.v'.
-SBY 10:59:40 [/work/blocks/pll/digital/log/formal/pdr] Copy '/work/blocks/pll/digital/rtl/pll_prescaler.v' to '/work/blocks/pll/digital/log/formal/pdr/src/pll_prescaler.v'.
-SBY 10:59:50 [/work/blocks/pll/digital/log/formal/pdr] engine_0: abc pdr
-SBY 10:59:50 [/work/blocks/pll/digital/log/formal/pdr] base: starting process &quot;cd /work/blocks/pll/digital/log/formal/pdr/src; yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] base: finished (returncode=0)
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] prep: starting process &quot;cd /work/blocks/pll/digital/log/formal/pdr/model; yosys -ql design_prep.log design_prep.ys&quot;
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] prep: finished (returncode=0)
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: starting process &quot;cd /work/blocks/pll/digital/log/formal/pdr/model; yosys -ql design_aiger.log design_aiger.ys&quot;
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\clk like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\vco_out like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\rst_n like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\pll_en_in like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\obs_sel like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [0] like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [1] like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [2] like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [0] like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [1] like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating a total of 10 undriven bits in ihsan_sa_pll_formal like $anyseq.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] aig: finished (returncode=0)
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: starting process &quot;cd /work/blocks/pll/digital/log/formal/pdr; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw'&quot;
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: ======== ABC command line &quot;read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw&quot;
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Warning: The last output is interpreted as a constraint.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 259. MonoCNF = no. SkipGen = no. SolveAll = no.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 32                                                                1    32      0.01 sec  T/O =  0  PRV =  0
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 1 in frame 1.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 2 in frame 1.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 4 in frame 1.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 5 in frame 1.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 7 in frame 1.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 11 18 ~21                                                          4    42      0.02 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 7 12 16 ~23                                                        2    49      0.02 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 11 23 16 29 ~28                                                   12    57      0.03 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 9 13 12 10 28 ~33                                                  6    58      0.04 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 9 13 7 6 8 24 ~37                                                  1    58      0.04 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 9 13 7 6 8 13 21 ~38                                               3    58      0.05 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 9 14 8 7 11 15 17 42 ~38                                          12    59      0.06 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 9 13 6 6 8 10 4 8 30 ~45                                           1    59      0.06 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 9 13 6 6 8 10 4 7 7 31 ~45                                         2    59      0.07 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 9 14 6 7 8 10 4 7 16 9 34 ~45                                     16    59      0.08 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 10 15 7 5 8 8 8 10 9 11 11 37 ~45                                 18    59      0.09 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 10 15 7 5 8 8 8 9 7 8 4 10 32 ~51                                  1    59      0.09 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 10 16 7 5 9 9 8 10 8 9 4 12 25 19 ~51                             14    59      0.10 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 10 16 7 5 8 8 8 9 7 8 3 13 27 22 21 ~54                           14    59      0.11 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 10 16 7 5 8 7 7 10 7 8 3 13 7 8 20 22 ~55                         12    59      0.12 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 10 16 7 5 8 13 8 10 7 8 3 12 7 7 23 20 18 ~60                     20    59      0.14 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 10 16 7 5 8 13 8 10 7 8 3 12 7 7 25 23 32 ~60                      5    59      0.14 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 10 16 7 5 6 7 7 5 9 9 4 12 7 7 21 17 21 14 ~65                     2    59      0.15 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 10 16 7 5 6 7 7 5 7 9 4 12 7 7 21 24 42 21 21 ~66                 23    59      0.17 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 11 18 7 5 6 7 7 5 7 10 4 12 7 7 22 31 52 40 25 ~66                57    61      0.18 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 11 18 8 6 7 8 8 6 8 11 5 13 8 8 23 33 54 42 32 ~66                56    61      0.18 sec  T/O =  0  PRV =  5
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 6 in frame 19.
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 20 : 0 10 16 7 5 6 7 7 5 7 7 6 3 12 7 4 20 19 29 22 32 ~80               14    65      0.20 sec  T/O =  0  PRV =  6
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 21 : 0 10 16 7 5 6 7 7 5 7 7 6 3 12 7 4 20 18 24 15 14 17 ~75             1    65      0.20 sec  T/O =  0  PRV =  6
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 22 : 0 10 16 7 5 6 7 7 5 7 7 6 3 12 7 4 20 18 29 22 21 13 10 ~73         18    67      0.22 sec  T/O =  0  PRV =  6
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 10 16 7 5 6 7 7 5 7 7 6 3 12 7 4 20 16 22 13 15 13 15 5 ~75      4    67      0.23 sec  T/O =  0  PRV =  6
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 16 7 5 6 7 7 5 7 7 6 3 12 7 4 20 16 22 13 15 11 13 9 1 ~75       1    67      0.23 sec  T/O =  0  PRV =  6
-SBY 10:59:52 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 5 6 7 7 5 7 7 6 3 12 8 4 22 17 24 14 16 15 19 20 10 10 ~75      25    75      0.25 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 7 5 6 7 7 5 7 7 6 3 12 7 4 4 20 18 25 13 11 11 10 6 5 6 ~80      0    75      0.26 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 7 7 5 7 7 6 3 12 7 4 4 20 18 25 13 11 10 13 11 11 10 8 ~80      15    75      0.27 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 6 7 7 5 7 7 6 3 12 7 4 4 20 18 25 13 11 10 10 6 5 6 6 5 ~83      1    75      0.28 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 7 6 3 12 7 4 4 24 20 27 13 11 13 13 16 16 20 22 11 19 ~83     34    75      0.32 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 7 6 3 12 7 4 4 24 20 27 13 13 21 24 34 26 22 23 11 20 ~83     53    75      0.33 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 7 6 3 12 7 4 4 24 22 35 20 27 30 31 38 26 22 23 11 20 ~83     85    75      0.34 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 7 6 3 12 7 4 4 24 27 44 32 29 30 31 38 26 22 23 11 21 ~83    100    75      0.35 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 7 6 3 12 7 4 4 24 27 47 45 53 37 31 38 26 22 23 11 21 ~83    125    76      0.36 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 8 8 7 4 13 8 5 5 26 28 48 46 54 38 32 39 27 23 23 11 21 ~83    126    77      0.37 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 8 8 7 4 13 8 5 5 26 28 48 46 54 38 32 39 27 23 25 12 25 ~83     41    77      0.37 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 7 6 3 12 7 4 4 21 20 22 13 19 24 16 19 11 8 10 10 10 11 ~93      1    77      0.38 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 6 3 12 7 4 4 20 19 22 13 18 23 16 19 11 7 10 9 10 9 10 ~92       4    77      0.39 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 3 12 7 4 4 22 20 23 13 18 23 16 19 11 7 10 10 12 8 9 13 ~92     25    77      0.41 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 12 7 4 4 22 20 22 13 18 21 16 19 11 7 10 9 10 9 14 13 1 ~95     11    77      0.43 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 7 4 4 22 21 23 15 20 23 17 20 12 7 10 9 10 8 11 12 7 2 ~95      25    77      0.45 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 4 22 20 22 13 18 18 16 19 10 10 10 9 10 6 10 12 9 12 9 ~98       7    77      0.48 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 20 22 13 18 18 16 19 10 10 10 9 10 6 10 12 7 10 13 1 ~100        1    77      0.50 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 22 13 18 18 16 19 10 10 10 9 10 6 10 13 22 34 33 19 5 ~100      22    77      0.57 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 22 13 18 18 16 19 10 10 10 9 10 6 10 13 25 48 45 28 10 ~100     24    77      0.64 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 37 (retrying in next anytime pass).
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 22 13 18 18 16 19 10 10 10 9 10 6 10 13 25 48 45 28 10 ~100      0    77      0.64 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 13 18 18 16 19 10 10 10 9 10 6 10 13 9 10 16 20 14 14 ~103       0    77      0.66 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 13 18 18 16 19 10 10 10 9 10 6 10 13 9 10 16 20 14 9 6 ~103      1    77      0.68 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 18 18 16 19 10 10 10 9 10 6 10 13 9 10 16 22 19 14 9 2 ~103     13    77      0.69 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 18 16 19 10 10 10 9 10 6 10 13 9 10 16 20 14 10 7 4 0 ~104       1    77      0.71 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 18 16 19 10 10 10 9 10 6 10 13 9 10 16 20 14 10 7 4 4 -1 ~104      1    77      0.72 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 9 10 6 10 14 10 10 16 20 14 10 12 12 15 8 -3 ~104       45    77      0.74 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 10 11 10 9 10 6 10 14 11 11 17 21 15 11 14 18 20 16 10 ~104     30    77      0.75 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 19 10 11 10 9 10 6 10 7 11 7 15 16 14 9 6 8 7 7 10 12 ~106       1    77      0.77 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 10 11 15 11 12 10 18 15 16 7 15 17 14 9 7 8 7 9 12 6 8 ~106     36    77      0.79 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 15 11 12 10 19 21 20 8 19 19 16 10 7 8 10 11 14 8 15 ~106       32    77      0.80 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 46 : ... 11 10 9 10 6 14 10 15 9 14 16 15 9 6 7 9 8 11 6 6 11 ~107        1    77      0.82 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 10 6 14 10 17 10 15 17 16 11 8 9 12 11 13 6 6 4 13 ~107       41    77      0.85 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 10 6 14 10 17 10 15 17 16 11 8 9 12 12 15 14 14 13 23 ~107      10    77      0.86 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 48 : ... 10 9 10 6 14 10 12 9 13 16 14 4 5 4 10 5 3 7 6 6 13 6 ~113       1    77      0.87 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 49 : ... 9 10 6 14 10 12 9 13 16 14 4 5 4 10 5 3 7 6 6 11 8 1 ~109        1    77      0.89 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 9 10 6 14 10 12 9 13 16 14 4 5 4 10 5 3 7 6 6 11 8 7 0 ~109      1    77      0.90 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 12 9 13 16 14 4 5 4 10 5 3 7 6 6 11 8 7 5 -5 ~109        1    77      0.91 sec  T/O =  1  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 0 in frame 51 (retrying in next anytime pass).
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 12 9 13 16 14 4 5 4 10 5 3 7 6 6 11 8 7 5 -5 ~109        0    77      0.91 sec  T/O =  2  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 52 : ... 12 9 13 16 14 4 5 4 10 5 3 7 6 6 11 8 7 5 7 -12 ~109      0    77      0.93 sec  T/O =  2  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: All outputs solved or timed out in frame 52.
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 478 ~109                                                           0     0      0.04 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 10 468 ~109                                                        0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 10 16 452 ~109                                                     0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 10 16 7 445 ~109                                                   0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 10 16 7 4 441 ~109                                                 0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 10 16 7 4 5 436 ~109                                               0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 10 16 7 4 5 6 430 ~109                                             0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 10 16 7 4 5 6 7 423 ~109                                           0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 10 16 7 4 5 6 7 5 418 ~109                                         0     0      0.05 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 10 16 7 4 5 6 7 5 7 411 ~109                                       0     0      0.06 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 10 16 7 4 5 6 7 5 7 7 404 ~109                                     0     0      0.06 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 10 16 7 4 5 6 7 5 7 7 6 398 ~109                                   0     0      0.06 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 10 16 7 4 5 6 7 5 7 7 6 3 395 ~109                                 0     0      0.06 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 383 ~109                              0     0      0.06 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 376 ~109                            0     0      0.07 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 372 ~109                          0     0      0.07 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 368 ~109                        0     0      0.07 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 345 ~109                     0     0      0.07 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 325 ~109                  0     0      0.08 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 20 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 303 ~109               0     0      0.08 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 21 : 0 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 290 ~109            0     0      0.08 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 22 : ... 10 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 272 ~109       0     0      0.09 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 16 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 18 254 ~109       0     0      0.09 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 7 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 18 16 238 ~109       0     0      0.09 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 4 5 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 18 16 19 219 ~109      0     0      0.10 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 6 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 18 16 19 10 209 ~109       0     0      0.10 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 7 5 7 7 6 3 12 7 4 4 23 20 22 13 18 18 16 19 10 10 199 ~109      0     0      0.11 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 7 7 6 3 12 7 4 4 23 20 22 13 18 18 16 19 10 10 10 189 ~109       0     0      0.12 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 7 6 3 12 7 4 4 23 20 22 13 18 18 16 19 10 10 10 9 180 ~109       0     0      0.12 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 6 3 12 7 4 4 23 20 22 13 18 18 16 19 10 10 10 9 10 170 ~109      0     0      0.13 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 3 12 7 4 4 23 20 22 13 18 18 16 19 10 10 10 9 10 6 164 ~109      0     0      0.13 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 7 4 4 23 20 22 13 18 18 16 19 10 10 10 9 10 6 14 150 ~109        0     0      0.14 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 4 4 23 20 22 13 18 18 16 19 10 10 10 9 10 6 14 10 140 ~109       0     0      0.15 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 4 23 20 22 13 18 18 16 19 10 10 10 9 10 6 14 10 12 128 ~109      0     0      0.15 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 23 20 22 13 18 18 16 19 10 10 10 9 10 6 14 10 12 9 119 ~109      0     0      0.16 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 20 22 13 18 18 16 19 10 10 10 9 10 6 14 10 12 9 13 106 ~109      0     0      0.17 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 22 13 18 18 16 19 10 10 10 9 10 6 14 10 12 9 13 17 92 ~109       2     7      0.18 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 13 18 18 16 19 10 10 10 9 10 6 14 15 19 18 25 22 22 81 ~109     34    26      0.20 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 13 18 18 16 19 10 10 10 9 11 8 17 26 32 27 32 25 22 81 ~109     49    28      0.22 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 13 18 18 16 19 10 10 10 9 11 8 17 26 32 27 32 26 24 85 ~109     32    28      0.22 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 18 18 16 19 10 10 10 9 9 5 13 12 13 10 11 16 24 19 67 ~110       0    28      0.24 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 18 16 19 10 10 10 9 9 5 13 12 13 10 11 16 24 19 11 56 ~110       0    28      0.25 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 16 19 10 10 10 9 9 5 13 12 13 10 11 16 24 19 11 10 52 ~110       4    28      0.26 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 16 19 10 10 10 9 9 5 13 12 13 10 11 16 24 19 10 7 7 47 ~110      0    28      0.27 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 19 10 10 10 9 9 5 13 12 13 10 11 16 24 19 10 7 7 7 41 ~110       1    28      0.28 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 10 10 10 9 9 5 13 12 13 10 11 16 24 19 10 7 7 8 6 40 ~110        3    28      0.30 sec  T/O =  0  PRV =  6
-SBY 10:59:53 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 10 10 10 9 9 5 13 12 13 10 11 16 24 19 10 7 7 5 4 4 38 ~110      0    28      0.31 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 46 : ... 10 10 9 9 5 13 12 13 10 11 16 24 19 10 7 7 5 4 4 6 33 ~110       1    28      0.33 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 9 5 13 12 13 10 11 16 24 19 10 7 7 6 8 22 23 18 28 ~110       24    29      0.35 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 5 13 12 13 10 11 16 24 19 10 8 13 24 23 28 26 18 28 ~110      51    29      0.37 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 5 13 12 13 10 11 16 24 19 13 21 36 37 28 28 26 18 28 ~110     80    29      0.39 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 5 13 12 16 16 16 23 29 22 21 30 42 37 28 28 26 18 28 ~110    114    29      0.40 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 9 8 18 19 29 32 20 24 31 22 21 30 42 37 28 28 26 18 29 ~110    149    29      0.42 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 22 38 29 32 32 20 24 31 22 21 30 42 37 28 28 26 18 29 ~110     168    29      0.43 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 29 ~110     197    30      0.45 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 32 ~110     226    30      0.46 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 32 ~110     261    30      0.47 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 32 ~110     292    30      0.48 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 34 ~110     318    33      0.49 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 39 ~110     317    34      0.49 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 33 45 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 42 ~110     263    36      0.50 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 40 49 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 44 ~110     212    37      0.51 sec  T/O =  0  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 47 (retrying in next anytime pass).
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 40 49 31 32 32 20 24 31 22 21 30 42 37 28 28 26 18 44 ~110       0    37      0.51 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 48 : ... 25 14 22 23 20 23 20 19 17 15 14 10 13 14 12 14 18 16 ~126       0    37      0.54 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 49 : ... 25 14 22 22 20 22 20 18 17 15 14 10 13 14 12 14 18 8 8 ~126      0    37      0.55 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 14 22 22 20 22 20 18 17 15 14 10 13 14 12 14 18 8 7 1 ~126       0    37      0.57 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 22 23 23 23 23 19 17 15 15 10 13 15 13 15 22 14 12 6 4 ~126     39    49      0.60 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 22 23 23 23 23 19 17 15 15 10 13 15 13 15 23 15 15 8 8 ~126     17    50      0.60 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 52 : ... 22 22 20 19 19 15 14 10 13 14 12 12 19 11 15 18 14 17 ~131      14    51      0.64 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 53 : ... 22 22 22 20 19 19 15 14 10 13 14 12 12 13 4 3 4 3 6 19 ~130      0    51      0.66 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 22 22 20 19 19 15 14 10 13 14 12 12 13 4 3 4 3 6 6 13 ~130       0    51      0.68 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 55 : ... 22 20 19 19 15 14 10 13 14 12 12 13 4 3 4 3 6 6 10 9 ~130        1    52      0.70 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 56 : ... 20 19 19 15 14 10 13 14 12 12 13 5 3 5 4 6 7 10 11 4 ~130        9    52      0.73 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 57 : ... 20 19 19 15 14 10 13 14 12 12 13 4 2 4 2 4 6 10 11 5 0 ~130      1    52      0.75 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 58 : ... 19 19 15 14 10 13 14 12 12 13 4 2 4 2 4 6 10 11 5 6 -1 ~130        1    52      0.77 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 16 14 10 14 15 12 13 14 4 2 4 2 4 8 14 23 23 22 13 8 ~130       41    53      0.81 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 16 14 10 14 15 12 13 14 7 3 5 3 5 9 15 24 24 25 16 9 ~130       60    53      0.81 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 17 15 10 14 15 13 13 14 8 5 6 3 5 9 16 25 26 29 19 16 ~130      36    53      0.82 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 60 : ... 20 14 14 10 15 14 12 10 14 5 2 6 2 3 6 6 8 3 4 5 3 16 ~137       1    53      0.85 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 14 10 15 14 12 10 14 5 2 6 2 3 6 9 15 10 7 9 7 6 20 ~137     23    53      0.88 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 62 : ... 14 14 10 15 14 12 10 14 5 2 6 2 3 6 2 2 4 4 4 5 7 9 15 ~137      1    53      0.90 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 63 : ... 14 10 14 15 12 10 14 5 2 6 2 3 6 2 2 4 4 4 5 7 9 3 15 ~137       1    53      0.92 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 64 : ... 10 14 15 12 10 14 5 2 6 2 3 6 2 2 4 4 4 5 8 16 12 7 18 ~137     10    53      0.95 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 65 : ... 9 13 14 12 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 7 7 5 17 ~137      1    53      0.97 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 14 12 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 11 16 15 8 17 ~137     14    53      1.00 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 67 : ... 14 12 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 7 7 8 7 9 17 ~137       1    53      1.02 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 12 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 7 7 8 7 9 4 15 ~137        1    53      1.04 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 69 : ... 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 9 8 9 8 12 7 6 18 ~137       16    53      1.07 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 70 : ... 11 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 7 8 6 9 8 9 10 7 21 ~139     17    53      1.10 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 71 : ... 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 5 6 6 7 6 5 3 5 6 23 ~139        1    53      1.13 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 14 5 2 6 2 3 6 2 2 4 4 4 5 3 11 5 6 6 7 6 5 3 5 6 5 20 ~139      1    53      1.15 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 73 : ... 2 7 4 4 7 2 2 4 4 4 5 4 13 6 7 7 9 6 7 6 10 12 10 5 17 ~139     53    53      1.18 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 73 : ... 7 4 4 7 3 3 5 5 5 6 5 14 7 8 9 11 8 9 8 13 18 16 10 21 ~139     45    53      1.19 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 73 : ... 7 4 4 7 3 3 5 5 5 6 5 14 7 8 9 11 8 9 8 13 18 16 10 22 ~139      0    53      1.19 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 74 : ... 5 2 6 2 3 5 3 2 4 4 4 5 2 6 2 2 2 6 1 3 5 4 2 4 1 2 0 ~175       0    53      1.21 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 75 : ... 5 2 6 2 3 5 3 2 4 4 4 5 2 6 2 2 2 6 1 3 5 4 2 4 1 2 1 -1 ~175      0    53      1.23 sec  T/O =  1  PRV =  6
-SBY 10:59:54 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 76 : ... 2 6 2 3 5 3 2 4 4 4 5 2 6 2 2 2 6 1 3 5 4 2 4 1 2 1 0 -1 ~175      0    53      1.24 sec  T/O =  1  PRV =  6
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 0 in frame 1488837664 (converged).
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 527 ~184                                                           0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 8 519 ~184                                                         0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 8 16 503 ~184                                                      0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 8 16 6 497 ~184                                                    0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 8 16 6 3 494 ~184                                                  0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 8 16 6 3 5 489 ~184                                                0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 8 16 6 3 5 4 485 ~184                                              0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 8 16 6 3 5 4 3 482 ~184                                            0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 8 16 6 3 5 4 3 4 478 ~184                                          0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 8 16 6 3 5 4 3 4 3 475 ~184                                        0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 8 16 6 3 5 4 3 4 3 4 471 ~184                                      0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 8 16 6 3 5 4 3 4 3 4 4 467 ~184                                    0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 8 16 6 3 5 4 3 4 3 4 4 3 464 ~184                                  0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 456 ~184                                0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 449 ~184                              0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 446 ~184                            0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 443 ~184                          0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 425 ~184                       0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 408 ~184                    0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 20 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 390 ~184                 0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 21 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 377 ~184              0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 22 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 365 ~184           0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 352 ~184      0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 14 338 ~184        0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 14 12 326 ~184       0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 5 4 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 14 12 11 315 ~184      0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 3 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 14 12 11 15 300 ~184       0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 4 3 4 4 3 8 7 3 3 18 17 18 13 12 13 14 12 11 15 12 288 ~184      0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 4 4 3 8 7 3 3 18 17 18 13 12 13 14 12 11 15 12 10 278 ~184       0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 4 3 8 7 3 3 18 17 18 13 12 13 14 12 11 15 12 10 14 264 ~184      0     0      0.16 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 8 7 3 3 18 17 18 13 12 13 14 12 11 15 12 10 14 20 244 ~184       0     0      0.16 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 7 3 3 18 17 18 13 12 13 14 12 11 15 12 10 14 20 18 226 ~184      0     0      0.17 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 3 18 17 18 13 12 13 14 12 11 15 12 10 14 20 18 10 216 ~184       0     0      0.18 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 18 17 18 13 12 13 14 12 11 15 12 10 14 20 18 10 14 202 ~184      0     0      0.18 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 17 18 13 12 13 14 12 11 15 12 10 14 20 18 10 14 17 185 ~184      0     0      0.19 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 18 13 12 13 14 12 11 15 12 10 14 20 18 10 14 17 15 170 ~184      0     0      0.20 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 13 12 13 14 12 11 15 12 10 14 20 18 10 14 17 15 12 158 ~184      0     0      0.21 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 12 13 14 12 11 15 12 10 14 20 18 10 14 17 15 12 14 144 ~184      0     0      0.21 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 13 14 12 11 15 12 10 14 20 18 10 14 17 15 12 14 12 132 ~184      0     0      0.22 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 14 12 11 15 12 10 14 20 18 10 14 17 15 12 14 12 11 121 ~184      0     0      0.23 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 12 11 15 12 10 14 20 18 10 14 17 15 12 14 12 11 10 111 ~184      0     0      0.24 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 11 15 12 10 14 20 18 10 14 17 15 12 14 12 11 10 11 100 ~184      0     0      0.25 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 15 12 10 14 20 18 10 14 17 15 12 14 12 11 10 11 9 91 ~184        0     0      0.26 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 12 10 14 20 18 10 14 17 15 12 14 12 11 10 11 9 11 80 ~184        0     0      0.26 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 10 14 20 18 10 14 17 15 12 14 12 11 10 11 9 11 12 68 ~184        0     0      0.27 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 46 : ... 14 20 18 10 14 17 15 12 14 12 11 10 11 9 11 12 11 57 ~184        0     0      0.28 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 20 18 10 14 17 15 12 14 12 11 10 11 9 11 12 11 16 54 ~184        6    20      0.30 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 48 : ... 18 10 14 17 15 12 14 12 11 10 11 9 11 12 11 12 13 45 ~172        3    22      0.32 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 49 : ... 18 10 14 17 15 12 14 12 11 10 11 9 11 12 11 11 11 7 38 ~172      0    22      0.34 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 14 17 15 12 14 12 11 10 11 9 12 20 23 19 15 19 11 34 ~172       34    28      0.36 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 14 17 15 12 14 12 11 10 11 13 23 34 41 24 15 19 11 34 ~172      63    28      0.38 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 14 17 15 18 20 12 15 14 18 21 30 36 43 26 15 19 11 34 ~172      97    28      0.39 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 14 17 17 20 29 40 23 14 18 21 30 36 43 26 15 19 11 34 ~172     122    28      0.40 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 27 30 27 25 29 40 23 14 18 21 30 36 43 26 15 19 11 34 ~172     151    28      0.42 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 33 44 32 25 29 40 23 14 18 21 30 36 43 26 15 19 11 34 ~172     165    29      0.43 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 37 47 39 25 29 40 23 14 18 21 30 36 43 26 15 19 11 37 ~172     185    30      0.44 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 29 40 23 14 18 21 30 36 43 26 15 19 11 39 ~172     168    32      0.45 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 28 19 25 26 37 37 43 26 15 19 11 41 ~172     127    35      0.45 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 28 19 25 28 43 44 51 31 21 22 12 44 ~172      77    38      0.47 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 28 19 25 28 43 44 58 53 35 29 22 60 ~172      37    39      0.49 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 28 19 25 28 44 45 63 62 57 34 22 61 ~172      48    39      0.50 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 29 20 35 36 57 57 64 63 57 34 22 61 ~172      75    39      0.51 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 27 31 40 30 27 45 59 69 59 66 63 57 34 22 61 ~172      88    39      0.53 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 28 33 53 40 38 49 62 71 63 66 63 57 34 22 61 ~172     116    39      0.54 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 46 53 44 38 53 69 47 39 49 62 71 63 66 63 57 34 22 61 ~172     140    39      0.56 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 48 65 60 48 57 71 47 39 49 62 71 63 66 63 57 34 22 61 ~172     169    39      0.57 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 52 65 60 48 57 71 47 39 49 62 71 63 66 63 57 34 22 61 ~172     187    39      0.58 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 52 65 60 48 57 71 47 39 49 62 71 63 66 63 57 34 22 62 ~172     206    39      0.60 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 52 65 60 48 57 71 47 39 49 62 71 63 66 63 57 34 22 66 ~172     216    42      0.61 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 55 67 61 50 57 72 47 39 49 62 71 63 66 63 57 34 22 74 ~172     189    44      0.61 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 55 67 61 51 59 74 48 42 50 68 76 66 66 63 57 34 22 74 ~172     134    44      0.62 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 55 67 61 51 59 74 48 42 50 68 76 67 77 71 63 47 22 78 ~172      91    44      0.63 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 55 67 61 51 59 74 48 42 50 68 76 68 80 73 66 50 28 90 ~172      55    44      0.64 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 17 14 9 25 14 16 9 16 20 22 12 17 20 16 21 12 8 17 24 ~212       0    44      0.68 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 52 : ... 11 9 23 14 11 9 15 18 19 12 17 18 16 18 10 8 16 10 21 ~212       4    44      0.70 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 53 : ... 11 9 23 14 11 9 15 18 19 12 17 18 16 18 10 8 16 5 8 16 ~201      1    44      0.72 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 23 14 11 9 15 18 19 12 17 18 16 18 10 8 17 21 40 25 26 ~201     31    44      0.77 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 18 12 15 25 30 42 25 27 ~201       53    44      0.78 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 18 12 15 25 30 42 25 27 ~201       53    44      0.78 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 19 12 15 25 30 42 25 27 ~201       53    44      0.78 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 19 12 15 25 30 42 25 27 ~201       51    44      0.78 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 19 12 15 25 30 42 25 27 ~201       51    44      0.79 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 18 19 12 15 25 30 42 25 27 ~201       51    44      0.79 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 18 19 12 17 18 19 25 36 27 33 30 42 25 27 ~201       71    44      0.80 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 11 9 15 19 20 22 29 24 22 35 40 29 33 30 42 25 27 ~201      112    44      0.81 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 16 23 21 23 20 22 26 30 27 23 35 40 29 33 30 42 25 27 ~201     131    44      0.83 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 20 24 27 31 34 29 26 30 27 23 35 40 29 33 30 42 25 28 ~201     140    44      0.84 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 20 25 33 36 38 30 26 30 27 23 35 40 29 33 30 42 25 28 ~201     149    44      0.84 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 54 (retrying in next anytime pass).
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 20 25 33 36 38 30 26 30 27 23 35 40 29 33 30 42 25 28 ~201       0    44      0.84 sec  T/O =  1  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 55 : ... 7 17 10 6 9 8 23 18 6 5 5 15 11 18 16 8 14 13 16 11 19 ~202      0    44      0.87 sec  T/O =  1  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: All outputs solved or timed out in frame 55.
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 579 ~201                                                           0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 8 571 ~201                                                         0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 8 16 555 ~201                                                      0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 8 16 6 549 ~201                                                    0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 8 16 6 3 546 ~201                                                  0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 8 16 6 3 5 541 ~201                                                0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 8 16 6 3 5 4 537 ~201                                              0     0      0.07 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 8 16 6 3 5 4 3 534 ~201                                            0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 8 16 6 3 5 4 3 4 530 ~201                                          0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 8 16 6 3 5 4 3 4 3 527 ~201                                        0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 8 16 6 3 5 4 3 4 3 4 523 ~201                                      0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 8 16 6 3 5 4 3 4 3 4 4 519 ~201                                    0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 8 16 6 3 5 4 3 4 3 4 4 3 516 ~201                                  0     0      0.08 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 508 ~201                                0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 501 ~201                              0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 498 ~201                            0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 495 ~201                          0     0      0.09 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 477 ~201                       0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 460 ~201                    0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 20 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 444 ~201                 0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 21 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 431 ~201              0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 22 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 419 ~201           0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 406 ~201      0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 393 ~201        0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 380 ~201       0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 12 368 ~201      0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 12 16 352 ~201       0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 12 16 11 341 ~201      0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 12 16 11 7 332 ~201      0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 4 3 8 7 3 3 18 17 16 13 12 13 13 13 12 16 11 7 10 318 ~201       0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:55 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 3 8 7 3 3 18 17 16 13 12 13 13 13 12 16 11 7 10 16 302 ~201      0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 7 3 3 18 17 16 13 12 13 13 13 12 16 11 7 10 16 19 283 ~201       0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 3 3 18 17 16 13 12 13 13 13 12 16 11 7 10 16 19 10 273 ~201      0     0      0.16 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 18 17 16 13 12 13 13 13 12 16 11 7 10 16 19 10 17 256 ~201       0     0      0.17 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 17 16 13 12 13 13 13 12 16 11 7 10 16 19 10 17 11 245 ~201       0     0      0.17 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 16 13 12 13 13 13 12 16 11 7 10 16 19 10 17 11 7 238 ~201        0     0      0.18 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 13 12 13 13 13 12 16 11 7 10 16 19 10 17 11 7 17 221 ~201        0     0      0.19 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 12 13 13 13 12 16 11 7 10 16 19 10 17 11 7 17 10 211 ~201        0     0      0.19 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 12 13 13 13 12 16 11 7 10 16 19 10 17 11 7 17 10 6 205 ~201      0     0      0.20 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 13 13 13 12 16 11 7 10 16 19 10 17 11 7 17 10 6 9 196 ~201       0     0      0.21 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 13 13 12 16 11 7 10 16 19 10 17 11 7 17 10 6 9 8 188 ~201        0     0      0.22 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 13 12 16 11 7 10 16 19 10 17 11 7 17 10 6 9 8 21 167 ~201        0     0      0.22 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 12 16 11 7 10 16 19 10 17 11 7 17 10 6 9 8 21 16 151 ~201        0     0      0.23 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 12 16 11 7 10 16 19 10 17 11 7 17 10 6 9 8 21 16 5 146 ~201      0     0      0.24 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 16 11 7 10 16 19 10 17 11 7 17 10 6 9 8 21 16 5 5 141 ~201       0     0      0.25 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 46 : ... 11 7 10 16 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 136 ~201        0     0      0.26 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 7 10 16 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 122 ~201        0     0      0.27 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 48 : ... 10 16 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 111 ~201       0     0      0.28 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 49 : ... 16 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 96 ~201        0     0      0.29 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 80 ~201        0     0      0.30 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 19 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 8 72 ~201      0     0      0.31 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 52 : ... 10 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 8 14 58 ~201      0     0      0.32 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 53 : ... 17 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 8 14 13 45 ~201      0     0      0.33 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 11 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 8 14 13 16 29 ~201      0     0      0.34 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 55 : ... 7 17 10 6 9 8 21 16 5 5 5 14 11 15 16 8 14 13 16 16 26 ~201      7    23      0.35 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 56 : ... 10 6 9 8 21 16 5 5 5 14 11 15 16 8 14 13 16 11 15 12 ~201        1    23      0.37 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 57 : ... 6 9 8 21 16 5 5 5 14 11 15 16 8 14 13 16 13 25 30 32 ~201       11    30      0.40 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 58 : ... 9 8 21 16 5 5 5 14 11 15 16 8 14 13 16 12 19 17 22 15 ~201       4    32      0.42 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 8 21 16 5 5 5 14 11 15 16 8 14 17 29 27 26 23 20 15 4 ~201      41    32      0.46 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 8 21 16 5 5 5 14 12 23 28 22 24 21 31 27 26 23 20 15 4 ~201     70    35      0.47 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 21 17 8 10 8 26 22 28 31 26 25 23 31 27 26 23 20 15 4 ~201     104    37      0.48 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 26 19 17 18 33 25 29 31 26 25 23 31 27 26 23 20 15 4 ~201      125    37      0.50 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 32 34 28 24 33 25 29 31 26 25 23 31 27 26 23 20 15 4 ~201      155    37      0.51 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 32 34 28 24 33 25 29 31 26 25 23 31 27 26 23 20 15 5 ~201      191    39      0.52 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 32 34 28 24 33 25 29 31 26 25 23 31 27 26 23 20 15 8 ~201      213    40      0.53 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 36 29 24 33 25 29 31 26 25 23 31 27 26 23 20 15 15 ~201     165    42      0.54 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 41 32 30 36 29 29 31 26 25 23 31 27 26 23 20 15 16 ~201     157    43      0.55 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 36 44 38 41 33 26 25 23 31 27 26 23 20 15 18 ~201     113    44      0.56 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 46 40 43 38 28 29 25 32 29 26 24 20 15 25 ~201     107    44      0.57 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 46 40 43 38 29 31 26 33 31 36 30 22 16 29 ~201      59    44      0.58 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 46 40 43 38 29 31 26 33 37 49 45 28 23 35 ~201      31    44      0.59 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 46 40 43 38 34 33 34 39 40 53 53 35 27 35 ~201      63    44      0.61 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 46 41 50 54 50 42 37 39 40 53 53 35 27 35 ~201      83    44      0.62 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 35 42 33 37 51 51 54 58 54 51 46 41 40 53 53 35 27 35 ~201     102    44      0.64 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 36 49 41 52 60 55 58 58 54 51 46 41 40 53 53 35 27 35 ~201     132    44      0.65 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 36 50 43 55 62 55 61 61 58 52 49 41 40 53 53 35 27 41 ~201     132    44      0.66 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 36 50 43 55 62 55 61 61 59 53 51 47 49 57 58 36 27 46 ~201      73    44      0.67 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 36 50 43 55 62 55 61 61 59 53 51 47 49 57 58 39 30 52 ~201      33    44      0.67 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 60 : ... 16 11 11 15 13 11 19 11 14 12 15 20 28 13 -11 ~245        0    44      0.70 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 10 9 11 13 11 10 13 12 10 18 11 13 12 14 20 33 43 30 3 ~245     30    44      0.75 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 10 9 11 13 11 10 13 12 10 21 13 18 20 21 26 38 54 30 5 ~245     61    44      0.76 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 10 9 11 13 11 10 13 12 11 28 29 41 23 21 26 38 54 30 5 ~245     89    44      0.77 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 10 9 11 14 16 18 29 25 19 29 29 41 23 21 26 38 54 30 5 ~245    119    44      0.79 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 12 14 17 20 22 31 25 19 29 29 41 23 21 26 38 54 30 5 ~245      167    44      0.80 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 12 14 17 20 22 31 25 19 29 29 41 23 21 26 38 54 30 10 ~245     188    45      0.82 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 14 17 20 22 32 26 19 29 29 41 23 21 26 38 54 30 16 ~245     189    45      0.83 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 36 30 22 29 29 41 23 21 26 38 54 30 17 ~245     143    45      0.83 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 39 34 23 31 37 44 25 21 27 42 55 30 19 ~245     120    45      0.84 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 39 34 23 31 38 44 27 22 30 49 61 36 27 ~245      73    45      0.85 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 39 34 23 31 38 44 27 25 37 57 69 52 46 ~245      30    45      0.87 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 39 34 23 33 42 55 45 26 39 63 73 53 46 ~245      50    45      0.89 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 40 39 26 41 56 65 51 28 40 63 73 53 46 ~245      84    45      0.90 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 28 27 40 40 33 60 76 75 53 28 40 63 73 53 46 ~245     107    45      0.92 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 31 30 48 50 40 64 77 76 53 28 40 63 73 53 49 ~245     131    45      0.93 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 31 30 48 50 40 66 79 82 55 34 41 63 73 53 49 ~245     112    45      0.93 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 14 15 21 31 30 48 50 40 66 79 82 55 34 46 69 76 59 63 ~245      48    45      0.94 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 62 : ... 12 11 10 10 10 7 9 15 16 16 11 8 9 12 13 12 -3 ~258      0    45      0.97 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 63 : ... 9 10 10 10 7 9 13 16 15 11 8 8 12 13 11 16 -19 ~258       0    45      0.99 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 64 : ... 10 10 10 7 9 13 16 15 11 8 8 12 13 11 16 24 -32 ~258      7    45      1.01 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 65 : ... 10 10 7 9 13 16 15 11 8 8 12 13 11 16 20 16 -46 ~234      1    45      1.04 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 13 14 21 33 28 18 -52 ~234     33    45      1.07 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 13 14 21 33 28 18 -52 ~234     33    45      1.07 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 13 14 21 33 28 18 -52 ~234     33    45      1.08 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 14 24 30 42 30 21 -52 ~234     48    45      1.09 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 15 28 39 50 32 26 -47 ~234     57    45      1.09 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 10 7 9 13 16 15 11 8 8 12 15 28 39 50 32 28 -41 ~234     15    45      1.10 sec  T/O =  0  PRV =  7
-SBY 10:59:56 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 67 : ... 7 9 13 16 15 11 8 8 9 11 10 20 25 23 24 15 -47 ~234       4    45      1.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 9 13 16 15 11 8 8 9 11 10 20 26 34 49 32 25 -35 ~234     29    47      1.17 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 9 13 16 15 11 8 8 9 11 10 20 29 46 69 44 30 -33 ~234     43    47      1.19 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 9 13 16 15 11 8 8 9 11 10 21 46 58 88 45 31 -17 ~234     47    50      1.21 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 13 16 15 11 8 8 11 13 12 22 51 61 91 50 38 -16 ~234      45    50      1.22 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 10 7 9 13 16 15 11 8 8 11 13 13 24 66 78 100 53 48 -1 ~234     29    53      1.24 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 10 7 9 13 16 15 11 8 8 11 14 18 25 67 88 112 68 53 -1 ~234     42    53      1.26 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 7 9 13 16 15 11 12 20 29 26 21 25 67 88 112 68 53 -1 ~234      66    53      1.27 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 7 9 13 16 18 16 22 32 32 27 22 25 67 88 112 68 53 -1 ~234      88    53      1.28 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 7 9 13 16 18 19 28 39 37 28 22 25 67 88 112 68 53 -1 ~234      90    53      1.29 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 11 16 21 24 29 37 46 39 30 23 25 67 88 112 68 53 0 ~234      131    53      1.31 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 12 18 29 26 30 40 47 40 30 23 25 67 88 112 68 53 5 ~234      130    53      1.31 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 12 18 29 26 30 44 54 45 32 24 26 67 88 112 68 53 15 ~234     101    53      1.32 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 12 18 29 26 30 44 54 45 32 24 31 68 90 117 73 59 26 ~234      44    53      1.33 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 12 18 29 26 30 44 54 45 32 24 31 69 91 127 80 77 49 ~234      16    54      1.35 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 7 12 18 29 26 30 44 54 45 32 24 31 69 91 127 81 78 57 ~234       9    54      1.35 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 69 : ... 12 15 14 15 11 13 21 15 12 14 18 15 20 18 -42 ~268        0    54      1.38 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 70 : ... 15 14 15 11 13 17 14 12 14 17 13 18 18 26 -68 ~268        0    54      1.41 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 71 : ... 14 15 11 13 17 14 12 14 17 13 18 18 25 10 -77 ~268        1    54      1.43 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 15 11 13 17 14 12 14 17 13 18 18 29 24 28 -69 ~249       19    54      1.47 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 15 11 14 22 23 26 23 21 15 20 22 31 26 28 -69 ~249       48    54      1.49 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 15 11 14 25 34 42 35 33 16 20 22 31 26 28 -69 ~249       72    54      1.50 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 14 24 38 44 45 38 33 16 20 22 31 26 28 -69 ~249      104    54      1.52 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 14 24 38 44 45 38 33 16 20 22 31 26 28 -68 ~249      122    54      1.53 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 14 24 38 44 45 38 33 16 20 22 31 26 28 -68 ~249      122    54      1.53 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 18 24 38 44 45 38 33 16 20 22 31 26 28 -63 ~249      123    54      1.53 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 18 25 38 44 46 38 33 18 20 22 31 26 28 -54 ~249       93    54      1.54 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 18 25 38 44 46 38 33 18 20 22 33 32 30 -52 ~249       16    54      1.54 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 72 (retrying in next anytime pass).
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 20 18 25 38 44 46 38 33 18 20 22 33 32 30 -52 ~249        0    54      1.54 sec  T/O =  1  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 73 : ... 13 9 11 15 16 11 9 7 8 2 11 10 14 11 9 17 -97 ~258        0    54      1.57 sec  T/O =  1  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: All outputs solved or timed out in frame 73.
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 537 ~246                                                           0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 8 529 ~246                                                         0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 8 16 513 ~246                                                      0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 8 16 6 507 ~246                                                    0     0      0.10 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 8 16 6 3 504 ~246                                                  0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 8 16 6 3 5 499 ~246                                                0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 8 16 6 3 5 4 495 ~246                                              0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 8 16 6 3 5 4 3 492 ~246                                            0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 8 16 6 3 5 4 3 4 488 ~246                                          0     0      0.11 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 8 16 6 3 5 4 3 4 3 485 ~246                                        0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 8 16 6 3 5 4 3 4 3 4 481 ~246                                      0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 8 16 6 3 5 4 3 4 3 4 4 477 ~246                                    0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 8 16 6 3 5 4 3 4 3 4 4 3 474 ~246                                  0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 466 ~246                                0     0      0.12 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 459 ~246                              0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 456 ~246                            0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 453 ~246                          0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 435 ~246                       0     0      0.13 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 418 ~246                    0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 20 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 402 ~246                 0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 21 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 389 ~246              0     0      0.14 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 22 : 0 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 377 ~246           0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 8 16 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 364 ~246      0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 6 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 351 ~246        0     0      0.15 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 3 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 338 ~246       0     0      0.16 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 5 4 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 11 327 ~246      0     0      0.16 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 3 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 11 14 313 ~246       0     0      0.17 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 4 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 11 14 11 302 ~246      0     0      0.17 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 3 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 11 14 11 6 296 ~246      0     0      0.18 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 4 4 3 8 7 3 3 18 17 16 13 12 13 13 13 11 14 11 6 9 287 ~246      0     0      0.18 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 3 8 7 3 3 18 17 16 13 12 13 13 13 11 14 11 6 9 15 272 ~246       0     0      0.19 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 8 7 3 3 18 17 16 13 12 13 13 13 11 14 11 6 9 15 17 255 ~246      0     0      0.19 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 7 3 3 18 17 16 13 12 13 13 13 11 14 11 6 9 15 17 8 247 ~246      0     0      0.20 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 3 18 17 16 13 12 13 13 13 11 14 11 6 9 15 17 8 14 233 ~246       0     0      0.20 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 18 17 16 13 12 13 13 13 11 14 11 6 9 15 17 8 14 8 225 ~246       0     0      0.21 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 17 16 13 12 13 13 13 11 14 11 6 9 15 17 8 14 8 11 214 ~246       0     0      0.22 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 16 13 12 13 13 13 11 14 11 6 9 15 17 8 14 8 11 12 202 ~246       0     0      0.22 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 13 12 13 13 13 11 14 11 6 9 15 17 8 14 8 11 12 16 186 ~246       0     0      0.23 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 12 13 13 13 11 14 11 6 9 15 17 8 14 8 11 12 16 14 172 ~246       0     0      0.24 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 13 13 13 11 14 11 6 9 15 17 8 14 8 11 12 16 14 13 159 ~246       0     0      0.25 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 13 13 11 14 11 6 9 15 17 8 14 8 11 12 16 14 13 10 149 ~246       0     0      0.25 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 13 11 14 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 142 ~246        0     0      0.26 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 13 11 14 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 134 ~246      0     0      0.27 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 11 14 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 127 ~246       0     0      0.28 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 45 : ... 14 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 116 ~246       0     0      0.29 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 46 : ... 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 108 ~246        0     0      0.29 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 47 : ... 11 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 97 ~246      0     0      0.30 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 48 : ... 6 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 88 ~246       0     0      0.31 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 49 : ... 9 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 81 ~246       0     0      0.32 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 50 : ... 15 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 72 ~246       0     0      0.33 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 51 : ... 17 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 62 ~246       0     0      0.34 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 52 : ... 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 56 ~246        0     0      0.35 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 53 : ... 8 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 48 ~246      0     0      0.36 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 54 : ... 14 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 7 41 ~246      0     0      0.37 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 55 : ... 8 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 7 9 32 ~246       0     0      0.38 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 56 : ... 11 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 7 9 8 24 ~246       0     0      0.39 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 57 : ... 12 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 7 9 8 11 13 ~246       0     0      0.40 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 58 : ... 16 14 13 10 7 8 7 11 8 11 9 7 9 10 6 8 7 9 8 11 11 2 ~246        0     0      0.41 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 59 : ... 10 7 8 7 11 8 11 9 7 9 10 6 8 7 9 8 11 11 6 -4 ~246      0     0      0.42 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 60 : ... 7 8 7 11 8 11 9 7 9 10 6 8 7 9 8 11 11 6 11 -15 ~246      0     0      0.43 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 61 : ... 7 11 8 11 9 7 9 10 6 8 7 9 8 11 11 6 11 15 -30 ~246       0     0      0.45 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 62 : ... 11 8 11 9 7 9 10 6 8 7 9 8 11 11 6 11 15 15 -45 ~246      0     0      0.46 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 63 : ... 8 11 9 7 9 10 6 8 7 9 8 11 11 6 11 15 15 10 -55 ~246      0     0      0.47 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 64 : ... 11 9 7 9 10 6 8 7 9 8 11 11 6 11 15 15 10 8 -63 ~246      0     0      0.48 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 65 : ... 9 7 9 10 6 8 7 9 8 11 11 6 11 15 15 10 8 6 -69 ~246       0     0      0.49 sec  T/O =  0  PRV =  7
-SBY 10:59:57 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 66 : ... 7 9 10 6 8 7 9 8 11 11 6 11 15 15 10 8 6 7 -76 ~246       0     0      0.51 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 67 : ... 9 10 6 8 7 9 8 11 11 6 11 15 15 10 8 6 7 2 -78 ~246       0     0      0.52 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 68 : ... 10 6 8 7 9 8 11 11 6 11 15 15 10 8 6 7 2 8 -86 ~246       0     0      0.53 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 69 : ... 6 8 7 9 8 11 11 6 11 15 15 10 8 6 7 2 8 10 -96 ~246       0     0      0.55 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 70 : ... 8 7 9 8 11 11 6 11 15 15 10 8 6 7 2 8 10 11 -107 ~246      0     0      0.56 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 71 : ... 9 8 11 11 6 11 15 15 10 8 6 7 2 8 10 11 11 -118 ~246       0     0      0.57 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 72 : ... 8 11 11 6 11 15 15 10 8 6 7 2 8 10 11 11 8 -126 ~246       0     0      0.58 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 73 : ... 11 11 6 11 15 15 10 8 6 7 2 8 10 11 11 8 9 -130 ~246       4     6      0.60 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 74 : ... 11 6 11 15 15 10 8 6 7 2 8 10 11 11 7 5 9 -138 ~227        0     6      0.61 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 75 : ... 11 6 11 15 15 10 8 6 7 2 8 10 11 11 7 5 9 5 -129 ~227      1    20      0.63 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 76 : ... 6 11 15 15 10 8 6 7 2 8 10 11 11 7 5 9 5 16 -115 ~227      1    23      0.65 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 77 : ... 15 15 10 8 6 7 2 8 10 11 11 7 5 9 5 27 31 -66 ~228        5    43      0.68 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: 78 : ... 15 15 10 8 6 7 2 8 10 11 11 7 5 9 5 2 2 0 -73 ~234        0    43      0.70 sec  T/O =  0  PRV =  7
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 3 in frame 1488837676 (converged).
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Block =  442  Oblig = 17361  Clause =  6996  Call =199161 (sat=81.3%)  Cex =   0  Start = 492
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: SAT solving =     3.92 sec ( 72.33 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: unsat     =     0.20 sec (  3.70 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: sat       =     3.72 sec ( 68.63 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Generalize  =     1.39 sec ( 25.71 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Push clause =     2.56 sec ( 47.31 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Ternary sim =     0.09 sec (  1.60 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Containment =     0.02 sec (  0.34 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: CNF compute =     0.09 sec (  1.64 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Refinement  =     0.00 sec (  0.00 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: TOTAL       =     5.42 sec (100.00 %)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Property proved.  Time =     5.45 sec
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Counter-example is not available.
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: finished (returncode=0)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] engine_0: Status returned by engine: PASS
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:17 (17)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:05 (5)
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] summary: engine_0 (abc pdr) returned PASS
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] summary: engine_0 did not produce any traces
-SBY 10:59:58 [/work/blocks/pll/digital/log/formal/pdr] DONE (PASS, rc=0)
+<system-out>SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Removing directory '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/ihsan_sa_pll_formal.sv'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/ihsan_sa_pll.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/pll_ctrl_regs.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_divider.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/pll_divider.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_lock_det.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/pll_lock_det.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_pfd.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/pll_pfd.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] Copy '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_prescaler.v' to '/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src/pll_prescaler.v'.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: abc pdr
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] base: starting process &quot;cd /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] base: finished (returncode=0)
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] prep: starting process &quot;cd /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] prep: finished (returncode=0)
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: starting process &quot;cd /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr/model; yosys -ql design_aiger.log design_aiger.ys&quot;
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\clk like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\vco_div2 like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\rst_n like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\pll_en_in like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\obs_sel like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [0] like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [1] like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\n_sel [2] like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [0] like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [1] like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: Warning: Treating a total of 10 undriven bits in ihsan_sa_pll_formal like $anyseq.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] aig: finished (returncode=0)
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: starting process &quot;cd /home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw'&quot;
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: ======== ABC command line &quot;read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw&quot;
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Warning: The last output is interpreted as a constraint.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 259. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 32                                                                1    33      0.00 sec  T/O =  0  PRV =  0
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 1 in frame 1.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 2 in frame 1.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 4 in frame 1.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 5 in frame 1.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 7 in frame 1.
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 10 18 ~20                                                          5    40      0.01 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 6 12 19 ~22                                                        3    49      0.01 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 10 21 18 27 ~30                                                   11    66      0.02 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 10 25 23 17 28 ~41                                                10    67      0.03 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 10 24 16 14 14 23 ~49                                              3    67      0.04 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 10 24 17 12 13 13 22 ~51                                           6    67      0.04 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 13 31 32 30 26 19 18 35 ~53                                       30    70      0.07 sec  T/O =  0  PRV =  5
+SBY 15:35:23 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 14 33 34 32 28 23 21 46 ~53                                        9    70      0.07 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 13 29 29 24 20 21 17 17 24 ~73                                    13    72      0.09 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 13 29 29 23 18 21 19 18 18 21 ~73                                 13    72      0.10 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 13 29 29 23 17 17 15 11 12 14 17 ~76                               1    72      0.11 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 13 29 29 23 18 18 14 11 13 18 14 21 ~77                           13    72      0.12 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 13 29 29 23 15 19 14 11 10 13 14 15 14 ~82                         6    72      0.13 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 13 29 29 23 15 19 14 11 10 13 10 12 11 10 ~81                      2    72      0.14 sec  T/O =  0  PRV =  5
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 6 in frame 14.
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 13 29 29 23 15 19 14 11 10 13 13 15 14 12 11 ~84                   8    72      0.16 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 13 29 29 23 15 19 20 23 17 16 19 26 19 14 18 18 ~86               39    72      0.19 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 14 30 33 34 27 22 22 27 18 16 19 26 19 14 18 18 ~86               67    74      0.20 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 14 30 33 34 27 22 22 27 18 17 20 27 20 15 20 22 ~86               44    74      0.20 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 13 29 28 26 20 20 17 13 14 15 10 13 17 16 10 8 14 ~94              0    74      0.21 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 18 : 0 13 29 28 25 20 20 17 13 14 15 9 12 14 16 10 8 17 11 ~94            7    74      0.22 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 19 : 0 13 29 28 25 20 20 17 13 14 15 9 12 14 16 10 8 13 7 10 ~96          1    74      0.23 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 20 : ... 29 28 25 20 20 17 13 14 15 9 12 15 19 13 9 18 21 20 21 ~96      17    74      0.25 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 21 : ... 28 25 20 20 18 13 14 15 9 12 16 17 12 12 7 17 28 23 34 ~99     21    74      0.28 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 22 : ... 28 24 20 19 17 13 14 15 9 12 12 16 8 8 5 11 6 11 10 28 ~105      5    74      0.30 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 24 20 19 17 13 14 15 9 12 12 14 8 8 5 11 4 6 7 19 14 ~103        1    74      0.31 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 20 19 17 13 14 15 9 12 12 14 8 8 6 14 13 15 23 24 14 7 ~103     31    75      0.33 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 19 17 13 14 15 9 12 12 14 8 8 6 14 13 15 23 25 15 11 ~103       22    75      0.33 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 19 17 13 14 15 9 12 12 14 8 8 5 13 9 8 13 24 17 16 12 ~105       8    75      0.35 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 17 13 14 15 9 12 12 14 8 8 5 13 9 8 10 19 18 13 10 12 ~105       4    75      0.36 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 13 14 15 9 12 12 14 8 8 5 13 9 8 10 19 22 22 26 28 29 ~105      18    75      0.39 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 14 15 9 12 12 14 8 8 5 13 9 8 10 19 10 17 12 18 14 34 ~107      17    75      0.41 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 14 15 9 12 12 14 8 8 5 13 9 8 10 19 7 10 9 11 8 8 21 ~125        0    75      0.43 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 15 9 12 12 14 8 8 5 13 9 8 10 19 7 10 9 11 8 8 16 11 ~125        4    75      0.44 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 15 9 12 12 14 8 8 5 13 9 8 10 19 7 10 9 11 8 8 13 15 6 ~123      1    75      0.45 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 12 14 8 8 5 13 9 8 10 19 11 16 10 14 19 19 21 22 11 3 ~126      45    75      0.48 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 12 14 12 15 12 11 17 26 20 18 12 14 19 19 21 22 11 3 ~126       91    75      0.50 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 16 17 13 15 12 11 17 26 20 18 12 14 19 19 21 22 11 3 ~126      132    75      0.51 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 16 17 13 15 12 11 17 26 20 18 12 14 19 19 21 22 11 8 ~126      148    78      0.52 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 17 21 20 19 12 11 17 26 20 18 12 14 19 19 21 22 11 15 ~126     133    84      0.53 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 17 23 20 23 16 14 19 30 25 23 18 19 19 19 21 22 11 19 ~126      97    88      0.54 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 17 23 20 23 16 14 19 30 25 23 22 29 28 28 38 39 28 35 ~126      46    91      0.57 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 17 24 21 28 24 22 21 35 29 27 29 31 28 28 38 39 28 35 ~126      83    91      0.59 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 21 36 27 28 24 22 21 35 29 27 29 31 28 28 38 39 28 35 ~126     122    91      0.60 sec  T/O =  0  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 32 (retrying in next anytime pass).
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 21 36 27 28 24 22 21 35 29 27 29 31 28 28 38 39 28 35 ~126       0    91      0.60 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 17 14 14 9 16 13 18 15 16 17 16 17 20 26 25 20 21 10 ~157       33    91      0.64 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 17 14 14 9 16 13 18 15 16 17 16 17 20 26 25 20 22 15 ~157       10    91      0.64 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 13 12 8 14 13 16 14 15 11 17 13 18 19 16 14 18 19 16 ~158       24    91      0.67 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 10 12 8 14 13 16 14 15 11 16 13 18 15 13 8 13 9 8 16 ~158        1    91      0.69 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 10 12 8 14 13 16 14 15 11 16 13 18 15 13 7 13 9 8 8 10 ~158      1    91      0.70 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 12 8 14 13 16 14 15 11 16 13 18 15 13 7 13 9 8 8 11 2 ~158       1    91      0.72 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 8 14 13 16 14 15 11 16 13 18 15 13 7 13 9 8 11 19 18 9 ~158      8    91      0.75 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 13 16 14 15 11 16 13 18 15 13 7 13 9 8 12 16 15 18 11 ~159      16    91      0.77 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 16 14 15 11 16 13 18 15 13 7 13 9 8 9 13 10 12 16 11 ~159        8    91      0.79 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 13 16 14 15 11 16 13 18 15 13 7 13 9 8 3 6 5 3 8 7 22 ~159       1    91      0.81 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 16 14 15 11 16 13 18 15 13 7 13 9 8 3 6 5 3 8 7 8 15 ~159        1    91      0.83 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 43 : ... 14 15 11 16 13 18 15 13 7 13 9 8 3 6 6 5 9 11 13 9 13 ~159      17    91      0.85 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 44 : ... 14 15 11 16 13 18 15 13 7 13 9 6 2 5 2 3 4 1 0 0 0 33 ~159       0    91      0.86 sec  T/O =  1  PRV =  6
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 0 in frame -1911133360 (converged).
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 379 ~199                                                           0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 13 366 ~199                                                        0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 13 25 341 ~199                                                     0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 13 25 22 319 ~199                                                  0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 13 25 22 19 300 ~199                                               0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 13 25 22 19 14 286 ~199                                            0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 13 25 22 19 14 17 269 ~199                                         0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 13 25 22 19 14 17 16 253 ~199                                      0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 13 25 22 19 14 17 16 17 236 ~199                                   0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 13 25 22 19 14 17 16 17 16 220 ~199                                0     0      0.07 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 13 25 22 19 14 17 16 17 16 11 209 ~199                             0     0      0.07 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 13 25 22 19 14 17 16 17 16 11 10 199 ~199                          0     0      0.08 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 13 25 22 19 14 17 16 17 16 11 10 11 188 ~199                       0     0      0.08 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 13 25 22 19 14 17 16 17 16 11 10 11 10 178 ~199                    0     0      0.09 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 13 25 22 19 14 17 16 17 16 11 10 11 10 10 168 ~199                 0     0      0.09 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 13 25 22 19 14 17 16 17 16 11 10 11 10 10 14 154 ~199              0     0      0.09 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 13 25 22 19 14 17 16 17 16 11 10 11 10 10 14 12 142 ~199           0     0      0.10 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 18 : ... 13 25 22 19 14 17 16 17 16 11 10 11 10 10 14 12 7 135 ~199       0     0      0.10 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 19 : ... 25 22 19 14 17 16 17 16 11 10 11 10 10 14 12 7 7 128 ~199        0     0      0.11 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 20 : ... 25 22 19 14 17 16 17 16 11 10 11 10 10 14 12 7 7 7 121 ~199      0     0      0.12 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 21 : ... 22 19 14 17 16 17 16 11 10 11 10 10 14 12 7 7 7 9 112 ~199       0     0      0.12 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 22 : ... 19 14 17 16 17 16 11 10 11 10 10 14 12 7 7 7 9 10 102 ~199       0     0      0.13 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 19 14 17 16 17 16 11 10 11 10 10 14 12 7 7 7 9 10 8 94 ~199      0     0      0.13 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 14 17 16 17 16 11 10 11 10 10 14 12 7 7 7 9 10 8 11 83 ~199      0     0      0.14 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 17 16 17 16 11 10 11 10 10 14 12 7 7 7 9 10 8 11 10 73 ~199      0     0      0.15 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 16 17 16 11 10 11 10 10 14 12 7 7 7 9 10 8 11 10 8 65 ~199       0     0      0.15 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 17 16 11 10 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 55 ~199       0     0      0.16 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 16 11 10 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 45 ~199       0     0      0.17 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 11 10 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 13 32 ~199       0     0      0.18 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 10 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 13 12 20 ~199       0     0      0.18 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 13 12 8 12 ~199        0     0      0.19 sec  T/O =  0  PRV =  7
+SBY 15:35:24 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 11 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 13 12 8 4 8 ~199       0     0      0.20 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 10 10 14 12 7 7 7 9 10 8 11 10 8 10 10 13 12 8 4 7 1 ~199        0     0      0.21 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 12 7 7 7 9 10 8 11 10 8 10 10 13 12 8 4 7 4 -2 ~199      1     3      0.21 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 7 9 10 8 11 11 13 17 15 18 14 12 7 13 10 6 -3 ~183      44    25      0.24 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 16 20 11 12 19 17 19 15 18 14 12 7 13 10 6 -3 ~183      91    27      0.25 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 16 20 11 12 19 17 19 15 18 14 12 7 13 10 6 -3 ~183     129    28      0.26 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 16 10 8 9 16 20 11 12 19 17 19 15 18 14 12 7 13 10 6 2 ~183    143    30      0.27 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 14 12 11 20 22 14 12 20 17 19 15 18 14 12 7 13 10 6 10 ~183    112    35      0.28 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 14 12 11 22 23 14 14 23 20 23 25 25 16 12 7 13 10 6 12 ~183     77    38      0.29 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 12 11 22 23 14 14 23 20 23 26 28 22 19 15 22 20 13 17 ~183      41    40      0.30 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 12 11 22 23 14 14 23 20 23 27 36 31 33 26 29 24 14 27 ~183      36    42      0.32 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 12 11 25 39 25 23 24 21 27 30 39 31 33 26 29 24 14 27 ~183      74    42      0.34 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 19 18 25 39 25 23 24 21 27 30 39 31 33 26 29 24 14 28 ~183     104    42      0.35 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 19 18 25 40 29 28 27 23 30 32 39 31 33 26 29 24 14 35 ~183      97    42      0.36 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 19 18 25 40 29 28 27 23 30 36 44 36 38 36 40 24 14 40 ~183      54    42      0.37 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 19 18 25 40 29 28 27 23 30 36 44 36 38 37 42 29 21 54 ~183      41    42      0.38 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 20 11 17 22 6 11 16 26 31 20 24 11 -23 ~236     41    42      0.42 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 20 11 17 22 6 11 16 26 31 20 24 11 -23 ~236     41    42      0.42 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 20 11 17 22 7 11 16 26 31 20 24 11 -23 ~236     41    42      0.42 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 20 11 17 22 7 11 16 26 31 20 24 11 -23 ~236     41    42      0.42 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 21 15 18 22 8 12 17 26 31 20 24 11 -23 ~236     54    42      0.43 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 21 15 18 22 8 12 17 26 31 20 24 11 -23 ~236     54    42      0.43 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 21 15 18 22 8 12 17 26 31 20 24 11 -23 ~236     54    42      0.43 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 21 15 18 22 8 12 17 26 31 20 24 11 -23 ~236     54    42      0.43 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 17 21 15 18 22 8 12 17 26 31 20 24 11 -23 ~236     54    42      0.44 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 14 13 20 22 20 23 26 9 12 17 26 31 20 24 11 -23 ~236     55    42      0.44 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 15 22 23 25 28 28 10 12 17 26 31 20 24 11 -21 ~236       69    42      0.45 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Timing out on output 3 in frame 36 (retrying in next anytime pass).
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 15 22 23 25 28 28 10 12 17 26 31 20 24 11 -21 ~236        0    42      0.45 sec  T/O =  1  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 9 10 9 10 11 11 11 17 16 19 18 18 21 14 4 -35 ~217        0    42      0.47 sec  T/O =  1  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: All outputs solved or timed out in frame 37.
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Starting new anytime pass, reusing clauses.
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Frame Clauses                                                     Max Queue Flops Time
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 1 : 0 463 ~214                                                           0     0      0.03 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 2 : 0 13 450 ~214                                                        0     0      0.03 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 3 : 0 13 25 425 ~214                                                     0     0      0.04 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 4 : 0 13 25 22 403 ~214                                                  0     0      0.04 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 5 : 0 13 25 22 20 383 ~214                                               0     0      0.04 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 6 : 0 13 25 22 20 15 368 ~214                                            0     0      0.04 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 7 : 0 13 25 22 20 15 17 351 ~214                                         0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 8 : 0 13 25 22 20 15 17 13 338 ~214                                      0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 9 : 0 13 25 22 20 15 17 13 14 324 ~214                                   0     0      0.05 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 10 : 0 13 25 22 20 15 17 13 14 14 310 ~214                                0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 11 : 0 13 25 22 20 15 17 13 14 14 12 298 ~214                             0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 12 : 0 13 25 22 20 15 17 13 14 14 12 13 285 ~214                          0     0      0.06 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 13 : 0 13 25 22 20 15 17 13 14 14 12 13 10 275 ~214                       0     0      0.07 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 14 : 0 13 25 22 20 15 17 13 14 14 12 13 10 11 264 ~214                    0     0      0.07 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 15 : 0 13 25 22 20 15 17 13 14 14 12 13 10 11 10 254 ~214                 0     0      0.08 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 16 : 0 13 25 22 20 15 17 13 14 14 12 13 10 11 10 13 241 ~214              0     0      0.08 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 17 : 0 13 25 22 20 15 17 13 14 14 12 13 10 11 10 13 17 224 ~214           0     0      0.09 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 18 : ... 13 25 22 20 15 17 13 14 14 12 13 10 11 10 13 17 10 214 ~214      0     0      0.09 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 19 : ... 25 22 20 15 17 13 14 14 12 13 10 11 10 13 17 10 10 204 ~214      0     0      0.10 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 20 : ... 22 20 15 17 13 14 14 12 13 10 11 10 13 17 10 10 15 189 ~214      0     0      0.10 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 21 : ... 20 15 17 13 14 14 12 13 10 11 10 13 17 10 10 15 14 175 ~214      0     0      0.11 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 22 : ... 15 17 13 14 14 12 13 10 11 10 13 17 10 10 15 14 16 159 ~214      0     0      0.12 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 23 : ... 17 13 14 14 12 13 10 11 10 13 17 10 10 15 14 16 9 150 ~214       0     0      0.12 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 24 : ... 13 14 14 12 13 10 11 10 13 17 10 10 15 14 16 9 10 140 ~214       0     0      0.13 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 25 : ... 14 14 12 13 10 11 10 13 17 10 10 15 14 16 9 10 9 131 ~214        0     0      0.14 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 26 : ... 14 14 12 13 10 11 10 13 17 10 10 15 14 16 9 10 9 9 122 ~214      0     0      0.14 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 27 : ... 14 12 13 10 11 10 13 17 10 10 15 14 16 9 10 9 9 10 112 ~214      0     0      0.15 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 28 : ... 12 13 10 11 10 13 17 10 10 15 14 16 9 10 9 9 10 11 101 ~214      0     0      0.16 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 29 : ... 13 10 11 10 13 17 10 10 15 14 16 9 10 9 9 10 11 10 91 ~214       0     0      0.17 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 30 : ... 10 11 10 13 17 10 10 15 14 16 9 10 9 9 10 11 10 16 75 ~214       0     0      0.17 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 31 : ... 11 10 13 17 10 10 15 14 16 9 10 9 9 10 11 10 16 16 59 ~214       0     0      0.18 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 32 : ... 10 13 17 10 10 15 14 16 9 10 9 9 10 11 10 16 16 19 40 ~214       0     0      0.19 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 33 : ... 13 17 10 10 15 14 16 9 10 9 9 10 11 10 16 16 19 18 22 ~214       0     0      0.20 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 34 : ... 17 10 10 15 14 16 9 10 9 9 10 11 10 16 16 19 18 18 4 ~214        0     0      0.21 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 35 : ... 14 16 9 10 9 9 10 11 10 16 16 19 18 18 21 -17 ~214        0     0      0.22 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 36 : ... 16 9 10 9 9 10 11 10 16 16 19 18 18 21 14 -31 ~214        0     0      0.23 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 16 9 10 9 9 10 11 10 16 18 21 27 26 38 27 6 -30 ~214     38    33      0.26 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 9 10 12 14 15 13 17 23 28 30 28 26 38 27 6 -30 ~214      81    33      0.27 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 10 11 12 14 15 13 17 23 28 30 28 26 38 27 6 -26 ~214    117    38      0.28 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 10 11 14 14 18 19 21 26 30 30 28 26 38 27 6 -22 ~214     99    40      0.29 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 11 14 14 18 19 21 28 32 34 33 31 44 30 12 -13 ~214       70    41      0.30 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 37 : ... 11 14 14 18 19 21 28 32 34 33 31 44 30 14 -4 ~214       10    42      0.30 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 9 10 9 7 7 9 14 14 23 24 23 19 23 24 26 13 -37 ~232      43    42      0.34 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 9 10 9 9 9 15 21 19 25 32 25 19 23 24 26 13 -30 ~232     70    42      0.35 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 10 9 10 9 15 21 20 29 33 26 19 23 24 27 14 -18 ~232      67    42      0.35 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 38 : ... 10 9 10 9 15 21 20 29 33 26 19 23 24 27 14 -4 ~232       3    42      0.36 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 39 : ... 9 10 9 5 6 11 8 7 10 12 10 11 15 14 13 5 18 -29 ~240      1    44      0.38 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 40 : ... 10 9 5 6 11 8 7 10 12 8 11 15 14 13 5 28 32 -11 ~235      4    60      0.41 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 41 : ... 10 9 5 6 11 8 7 10 12 8 11 15 14 13 5 3 3 1 -18 ~226      0    60      0.42 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: 42 : ... 9 5 6 11 8 7 10 12 8 11 15 14 13 5 3 3 1 0 -18 ~226       0    60      0.43 sec  T/O =  0  PRV =  7
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Proved output 3 in frame -1911133348 (converged).
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Block =  309  Oblig =  6871  Clause =  2733  Call = 67859 (sat=78.1%)  Cex =   0  Start = 167
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: SAT solving =     1.31 sec ( 72.87 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: unsat     =     0.07 sec (  4.10 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: sat       =     1.24 sec ( 68.77 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Generalize  =     0.48 sec ( 26.88 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Push clause =     0.82 sec ( 45.74 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Ternary sim =     0.03 sec (  1.59 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Containment =     0.01 sec (  0.36 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: CNF compute =     0.03 sec (  1.48 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Refinement  =     0.00 sec (  0.00 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: TOTAL       =     1.80 sec (100.00 %)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Property proved.  Time =     1.81 sec
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Counter-example is not available.
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: finished (returncode=0)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] engine_0: Status returned by engine: PASS
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:01 (1)
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] summary: engine_0 (abc pdr) returned PASS
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] summary: engine_0 did not produce any traces
+SBY 15:35:25 [/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/log/formal/pdr] DONE (PASS, rc=0)
 </system-out>
 <system-err>
 </system-err>

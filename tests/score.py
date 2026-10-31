@@ -299,14 +299,15 @@ def pex_pvt(ws: Path, logs: Path) -> dict:
 
 
 def vco_periods_ns(sdc: Path) -> dict[str, float]:
-    """vco_out's period per process (ss, tt, ff) from the design SDC: its
-    pll_vco_period_ns table, or one literal create_clock period for all."""
+    """vco_div2's period per process (ss, tt, ff) from the design SDC: its
+    pll_vco_div2_period_ns table, or one literal create_clock period for
+    all. vco_div2 is VCO/2 (the analog macro's TSPC stage, issue #48)."""
     text = sdc.read_text()
-    m = re.search(r"set\s+pll_vco_period_ns\s+\{([^}]*)\}", text)
+    m = re.search(r"set\s+pll_vco_div2_period_ns\s+\{([^}]*)\}", text)
     if m:
         tok = m.group(1).split()
         return {k: float(v) for k, v in zip(tok[::2], tok[1::2])}
-    m = re.search(r"create_clock\s+-name\s+vco_out\s+-period\s+([0-9.]+)", text)
+    m = re.search(r"create_clock\s+-name\s+vco_div2\s+-period\s+([0-9.]+)", text)
     return {p: float(m.group(1)) for p in ("ss", "tt", "ff")} if m else {}
 
 
@@ -399,20 +400,21 @@ def main() -> int:
              "; ".join(bad_pvt))
         passed("analog bench_strength", a["bench_strength"])
 
-        # --- Close digital issue 8: timing with vco_out at the post-layout
-        # VCO ceiling of each process. The SDC's period on a process must
-        # cover the extracted VCO's fastest on it; tt and ff never looser
-        # than the analog spec's 2.7 ns.
+        # --- Close digital issue 8: timing with vco_div2 (VCO/2, issue #48)
+        # at twice the post-layout VCO ceiling's period on each process. The
+        # SDC's vco_div2 period on a process must be at most 2x the period of
+        # the extracted VCO's fastest on it; tt and ff never looser than 2x
+        # the analog spec's 2.7 ns.
         t = d["timing"]
         periods = vco_periods_ns(BLOCK / "digital" / "harden" / "constraints.sdc")
         ceil = vco_ceilings_mhz(l["pex_pvt"])
-        name = "digital timing with vco_out at the post-layout VCO ceiling"
-        short = [f"{p} {periods.get(p)} ns vs {ceil.get(p, 0):.1f} MHz"
+        name = "digital timing with vco_div2 at 2x the post-layout VCO ceiling period"
+        short = [f"{p} {periods.get(p)} ns vs 2 x 1/{ceil.get(p, 0):.1f} MHz"
                  for p in ("ss", "tt", "ff")
-                 if p not in periods or p not in ceil or 1000 / periods[p] < ceil[p]
-                 or (p != "ss" and periods[p] > 2.7)]
+                 if p not in periods or p not in ceil or 2000 / periods[p] < ceil[p]
+                 or (p != "ss" and periods[p] > 2 * 2.7)]
         if short:
-            line(name, 0.0, "vco_out period misses the ceiling: " + "; ".join(short))
+            line(name, 0.0, "vco_div2 period misses 2x the ceiling period: " + "; ".join(short))
         elif t.get("status") not in ("pass", "fail"):
             line(name, 0.0, why(t))
         else:

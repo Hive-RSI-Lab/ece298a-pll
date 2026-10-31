@@ -1,10 +1,10 @@
 {
   "creator": "Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)",
   "modules": {
-    "ref": {
+    "uut": {
       "attributes": {
         "top": "00000000000000000000000000000001",
-        "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:3.1-22.10"
+        "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:3.1-22.10"
       },
       "ports": {
         "clk": {
@@ -37,7 +37,7 @@
         }
       },
       "cells": {
-        "$auto$proc_dff.cc:220:proc_dff$130": {
+        "$auto$proc_dff.cc:220:proc_dff$122": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -56,7 +56,7 @@
             "Y": [ 10 ]
           }
         },
-        "$auto$proc_dff.cc:220:proc_dff$135": {
+        "$auto$proc_dff.cc:220:proc_dff$127": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -75,7 +75,7 @@
             "Y": [ 11 ]
           }
         },
-        "$auto$proc_dff.cc:220:proc_dff$140": {
+        "$auto$proc_dff.cc:220:proc_dff$132": {
           "hide_name": 1,
           "type": "$not",
           "parameters": {
@@ -94,7 +94,7 @@
             "Y": [ 12 ]
           }
         },
-        "$logic_not$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6": {
+        "$logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6": {
           "hide_name": 1,
           "type": "$logic_not",
           "parameters": {
@@ -103,7 +103,7 @@
             "Y_WIDTH": "00000000000000000000000000000001"
           },
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
           },
           "port_directions": {
             "A": "input",
@@ -114,7 +114,7 @@
             "Y": [ 13 ]
           }
         },
-        "$procdff$134": {
+        "$procdff$126": {
           "hide_name": 1,
           "type": "$adff",
           "parameters": {
@@ -124,7 +124,7 @@
             "WIDTH": "00000000000000000000000000000001"
           },
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           },
           "port_directions": {
             "ARST": "input",
@@ -139,7 +139,7 @@
             "Q": [ 7 ]
           }
         },
-        "$procdff$139": {
+        "$procdff$131": {
           "hide_name": 1,
           "type": "$adff",
           "parameters": {
@@ -149,7 +149,7 @@
             "WIDTH": "00000000000000000000000000000001"
           },
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           },
           "port_directions": {
             "ARST": "input",
@@ -164,7 +164,7 @@
             "Q": [ 8 ]
           }
         },
-        "$procdff$144": {
+        "$procdff$136": {
           "hide_name": 1,
           "type": "$adff",
           "parameters": {
@@ -174,7 +174,7 @@
             "WIDTH": "00000000000000000000000000000001"
           },
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           },
           "port_directions": {
             "ARST": "input",
@@ -195,113 +195,119 @@
           "hide_name": 1,
           "bits": [ 5 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           }
         },
         "$0\\cp_trim1[0:0]": {
           "hide_name": 1,
           "bits": [ 6 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           }
         },
         "$0\\pll_en[0:0]": {
           "hide_name": 1,
           "bits": [ 4 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
           }
         },
-        "$auto$rtlil.cc:3251:Not$131": {
+        "$auto$mutate.cc:690:mutate_const$143": {
           "hide_name": 1,
           "bits": [ 10 ],
           "attributes": {
           }
         },
-        "$auto$rtlil.cc:3251:Not$136": {
+        "$auto$rtlil.cc:3251:Not$123": {
+          "hide_name": 1,
+          "bits": [ "0" ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3251:Not$128": {
           "hide_name": 1,
           "bits": [ 11 ],
           "attributes": {
           }
         },
-        "$auto$rtlil.cc:3251:Not$141": {
+        "$auto$rtlil.cc:3251:Not$133": {
           "hide_name": 1,
           "bits": [ 12 ],
           "attributes": {
           }
         },
-        "$auto$rtlil.cc:3255:ReduceOr$133": {
+        "$auto$rtlil.cc:3255:ReduceOr$125": {
           "hide_name": 1,
-          "bits": [ 10 ],
+          "bits": [ "0" ],
           "attributes": {
           }
         },
-        "$auto$rtlil.cc:3255:ReduceOr$138": {
+        "$auto$rtlil.cc:3255:ReduceOr$130": {
           "hide_name": 1,
           "bits": [ 11 ],
           "attributes": {
           }
         },
-        "$auto$rtlil.cc:3255:ReduceOr$143": {
+        "$auto$rtlil.cc:3255:ReduceOr$135": {
           "hide_name": 1,
           "bits": [ 12 ],
           "attributes": {
           }
         },
-        "$logic_not$/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6_Y": {
+        "$logic_not$/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:13$6_Y": {
           "hide_name": 1,
           "bits": [ 13 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:13.9-13.15"
           }
         },
         "clk": {
           "hide_name": 0,
           "bits": [ 2 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:4.23-4.26"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:4.23-4.26"
           }
         },
         "cp_trim0": {
           "hide_name": 0,
           "bits": [ 8 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:9.23-9.31"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:9.23-9.31"
           }
         },
         "cp_trim1": {
           "hide_name": 0,
           "bits": [ 9 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:10.23-10.31"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:10.23-10.31"
           }
         },
         "cp_trim_in": {
           "hide_name": 0,
           "bits": [ 5, 6 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:7.23-7.33"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:7.23-7.33"
           }
         },
         "pll_en": {
           "hide_name": 0,
           "bits": [ 7 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:8.23-8.29"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:8.23-8.29"
           }
         },
         "pll_en_in": {
           "hide_name": 0,
           "bits": [ 4 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:6.23-6.32"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:6.23-6.32"
           }
         },
         "rst_n": {
           "hide_name": 0,
           "bits": [ 3 ],
           "attributes": {
-            "src": "/work/blocks/pll/digital/rtl/pll_ctrl_regs.v:5.23-5.28"
+            "src": "/home/hive2/projects/ece298a-pll-digital/blocks/pll/digital/rtl/pll_ctrl_regs.v:5.23-5.28"
           }
         }
       }

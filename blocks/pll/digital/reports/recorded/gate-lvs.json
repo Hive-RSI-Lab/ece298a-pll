@@ -3,7 +3,7 @@
  "gate": "lvs",
  "phase": "P6",
  "tool": "lvs",
- "input_digest": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
+ "input_digest": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -24,9 +24,9 @@
   "matched": true
  },
  "inputs_at_start": {
-  "harden": "harden_signoff:04fa97823ac4c3b617e7eab318b4313722ba89c3ae80a79b3e41e364b80be02c",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:0d4f4df02ec4e9e126b142d27d8677203998d22be647a17a60f3717dd16355e7"
+  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
  },
- "recorded_ts": "2026-10-29T11:03:53",
- "attempts": 8
+ "recorded_ts": "2026-10-31T15:38:16",
+ "attempts": 11
 }
