@@ -9,7 +9,7 @@ Setup: `export EDA_TOOLCHAIN=/opt/eda-toolchain/iic-osic-tools-2026.09 CHIP_FLOW
 - **Done when:** the digital timing gate passes with vco_out at each process's post-layout ceiling plus margin (`tests/score.py` checks it), with setup and hold met at every STA corner.
 
 ## 2. System verification on the extracted netlist at the bounding corners
-- **Status:** open. In `blocks/pll/reports/recorded/cosim_corners.json` all 4 corners lock, but vctrl p-p is 20.9 mV at ff_pss and 27.4 mV at ff_m40c_vm10, against a 20 mV limit. The excess comes from isolated pump kicks. Next step: find out whether a finer sync grid or the gate-level PFD's reset pulse removes them (see `blocks/pll/tb/README.md`). Each corner takes about 25 minutes of wall time: `$CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py`.
+- **Status:** done on h1/main (2026-10-31). The 1 ns bridge sync grid caused the vctrl excess (20.9 mV at ff_pss, 27.4 mV at ff_m40c_vm10): PFD edges quantised to the grid fired isolated pump kicks. `cosim_corners.py` now runs the extracted netlist at a 0.25 ns sync; the layer-3 gate keeps 1 ns. All 4 bounding corners lock and hold, with vctrl p-p over the last 10 us of 15.5 / 0.6 / 11.3 / 0.2 mV (ff_pss, ff_m40c_vm10, ff_125c_vp10, ss_m40c_vm10). The recorded result is fresh (`score.cosim_corners_fresh()`). A run takes about 90 min of wall time with 4 corners side by side.
 - **Done when:** the recorded cosim_corners.json shows lock at every corner `bounding_corners()` picks, vctrl within 20 mV p-p over the last 10 us, and inputs unchanged.
 
 ## 3. Harden the tile and pass the Tiny Tapeout precheck
