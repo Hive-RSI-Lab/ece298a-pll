@@ -67,7 +67,8 @@ DURATION_NS = float(os.environ.get("PLL_COSIM_DURATION_NS", "30000"))
 # Bridge fallback sync: bounds both the D->A latency of a reference-edge
 # PFD transition (applied at the next sync) and how early the bridge forces
 # a vco_out edge (at the previous sync) to 1 ns, 0.6 % of T_ref.
-MAX_SYNC_NS = 1.0
+# PLL_COSIM_MAX_SYNC_NS overrides it; cosim_corners.py sets it, the gate never does.
+MAX_SYNC_NS = float(os.environ.get("PLL_COSIM_MAX_SYNC_NS", "1.0"))
 # A sync point this long after every clk rising edge (SyncSafeNgspice).
 REF_SYNC_LAG_NS = 0.002
 

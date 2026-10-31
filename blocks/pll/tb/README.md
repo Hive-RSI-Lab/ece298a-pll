@@ -102,35 +102,35 @@ reads the move from `PLL_COSIM_SETUP` and the gate never sets it. The
 corners are the ones that bound the post-layout sweep
 (`analog/reports/recorded/pex_pvt.json`; `bounding_corners()`):
 
-    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py   # ~25-30 min, 4 corners side by side
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py   # ~90 min, 4 corners side by side
 
-A corner takes 25-30 minutes of wall time on a loaded machine (about 50 s
-per simulated us, against 3 s for the schematic cell). The result is
+A corner takes about 90 minutes of wall time with four side by side at the
+0.25 ns sync (about 180 s per simulated us, against 3 s for the schematic cell). The result is
 recorded in `../reports/recorded/cosim_corners.json` with a hash of every
 input. `tests/score.py` counts it only while those hashes hold, as it does
 bench_strength's. `--from-logs` rewrites that report from the last run's
 `log/cosim_corners/<corner>/result.json` without running anything.
 
-| Corner | Why it bounds the range | Lock | f_vco (MHz) | vctrl (V) | vctrl p-p, last 10 us (5 ns samples / at ref edges, mV) |
+| Corner | Why it bounds the range | Lock | f_vco (MHz) | vctrl (V) | vctrl p-p, last 10 us, 5 ns samples (mV) |
 |---|---|---|---|---|---|
-| ff_pss | lowest ceiling 126.4 MHz, lowest Kvco 39.9 MHz/V, lowest Icp 13.6 uA | 6.72 us, held | 100.0000 | 2.206 | **20.9** / 0.0007 |
-| ff_m40c_vm10 | highest ceiling 299.5 MHz | 4.00 us, held | 100.0041 | 1.448 | **27.4** / 20.1 |
-| ff_125c_vp10 | lowest phase margin 34.5 deg | 4.48 us, held | 100.0000 | 1.776 | 16.2 / 0.0007 |
-| ss_m40c_vm10 | highest phase margin 52.9 deg | 4.96 us, held | 100.0005 | 1.805 | 17.4 / 11.4 |
+| ff_pss | lowest ceiling 126.4 MHz, lowest Kvco 39.9 MHz/V, lowest Icp 13.6 uA | 6.72 us, held | 100.0000 | 2.207 | 15.5 (0.25 ns sync; 1 ns: **20.9**) |
+| ff_m40c_vm10 | highest ceiling 299.5 MHz | 4.00 us, held | 100.0000 | 1.445 | 0.6 (0.25 ns sync; 1 ns: **27.4**) |
+| ff_125c_vp10 | lowest phase margin 34.5 deg | 4.48 us, held | 100.0000 | 1.775 | 11.3 (0.25 ns sync; 1 ns: 16.2) |
+| ss_m40c_vm10 | highest phase margin 52.9 deg | 4.96 us, held | 99.9999 | 1.804 | 0.2 (0.25 ns sync; 1 ns: 17.4) |
 
 The loop locks and holds at all four corners: lock rises within 7 us, never
-falls, and f_fb and f_vco are within 4.1e-5 of their targets (bound 1e-3).
-Two corners miss REQ-LOOP-VCTRL's 20 mV p-p, which this bench keeps as it
-is. That is not drift. At ff_pss vctrl sampled at each reference edge moves
-less than 1 uV over the window. At ff_m40c_vm10 its 100 ns trace sits at
-1.4439 V within about 1 mV between isolated kicks of +-15-20 mV, one every
-0.8-2.4 us. Each kick is a pump correction pulse seen through R1, and
-everything in it but the kicks is flat. These corrections come from the
-bench's zero-delay PFD (its dead zone, see the bench notes) and from edges
-quantised to the 1 ns sync grid. At ff_m40c_vm10 (Kvco about 118 MHz/V)
-a kick moves the VCO by about 2 MHz for tens of ns: a jitter question, not
-a lock one. Still open: whether a finer sync grid or the gate-level PFD's
-reset pulse removes them, and other (f_ref, N) points at these corners.
+falls, f_fb and f_vco are within 5e-7 of their targets (bound 1e-3), and
+vctrl stays within REQ-LOOP-VCTRL's 20 mV p-p at every corner (15.5 mV worst,
+ff_pss). These runs use a 0.25 ns bridge fallback sync (`MAX_SYNC_NS` in
+`cosim_corners.py`, passed to the bench as `PLL_COSIM_MAX_SYNC_NS`). The cosim
+gate keeps 1 ns. At 1 ns two corners missed the limit (20.9 mV at ff_pss,
+27.4 mV at ff_m40c_vm10). There vctrl was flat apart from isolated
++-15-20 mV kicks, one every 0.8-2.4 us: pump correction pulses seen through
+R1, fired by PFD edges quantised to the 1 ns grid. At 0.25 ns those kicks go
+(ff_m40c_vm10: 27.4 -> 0.6 mV), so they came from the bench, not the loop.
+A corner now takes about 90 minutes of wall time with 4 side by side.
+Still open: other (f_ref, N) points at these corners, and the gate-level PFD's
+reset pulse.
 
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 
