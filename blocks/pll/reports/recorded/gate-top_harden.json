@@ -49,7 +49,7 @@
   "top": "ihsan_sa_pll",
   "run_tag": "run",
   "resumed": false,
-  "wall_s": 376.21,
+  "wall_s": 59.96,
   "run_dir": "top/harden/runs/run",
   "metrics": {
    "design__instance__count": 2363,
@@ -106,8 +106,8 @@
   "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
   "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
   "top_sdc": null,
-  "digital_sdc": "text_eol:1f83c464b69394bbddc89288dfdf7aa426cc47e6643760c1880dc27dddb2aedc"
+  "digital_sdc": "text_eol:2cc8f62c31d9f1daad212ee532bc4b1ae6e6e784cda23b5e5c9c2a362668bbc9"
  },
- "recorded_ts": "2026-10-30T16:08:34",
- "attempts": 7
+ "recorded_ts": "2026-10-31T15:19:17",
+ "attempts": 9
 }
