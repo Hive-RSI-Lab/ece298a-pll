@@ -20,6 +20,10 @@
 #      and any warning fails the check.
 #   3. tests/check_netlists.py: the analog netlist, testbenches, bounds and
 #      spec files are well formed (no PDK or simulator needed).
+#   4. tests/check_tile.py: the tile's recorded harden (top_harden, top_drc,
+#      top_lvs, precheck) still holds for the current RTL, analog layout and
+#      SDCs, and gds/ is the GDS those gates checked. A change to what the
+#      harden reads fails here until the tile is re-hardened and committed.
 #   Then docs/review/stages.py --check says whether the review page's stage
 #   table matches the recorded gate reports. A stale page is a note, not a
 #   failure; a crash in the script fails the check.
@@ -50,7 +54,7 @@ else
   echo "check: no iverilog on PATH, so running it through ${iverilog[0]}"
 fi
 
-echo "== 1/3 info.yaml"
+echo "== 1/4 info.yaml"
 python3 tests/check_info.py
 # in the analog-project shape, src/, test/, info.yaml and the gds workflow are
 # blocks/pll/tt/assemble.py's copies, src/ of the digital RTL the harden used
@@ -58,7 +62,7 @@ if grep -q '^ *analog_pins:' info.yaml; then
   python3 blocks/pll/tt/assemble.py --check
 fi
 
-echo "== 2/3 lint (iverilog -Wall)"
+echo "== 2/4 lint (iverilog -Wall)"
 lint() {
   local name=$1; shift
   local out
@@ -80,8 +84,11 @@ if [ ${#rtl[@]} -eq 0 ]; then
 fi
 lint "the PLL digital RTL" "${rtl[@]}" blocks/pll/digital/harden/tt_um_ihsan_sa_pll.v
 
-echo "== 3/3 analog netlists and specs"
+echo "== 3/4 analog netlists and specs"
 python3 tests/check_netlists.py
+
+echo "== 4/4 the tile's recorded harden"
+python3 tests/check_tile.py
 
 rc=0
 python3 docs/review/stages.py --check || rc=$?

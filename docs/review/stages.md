@@ -74,10 +74,10 @@ tools. Run them from the repository's root.
 
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
-| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.18 ns | 2026-10-30 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
-| top_drc (top) | the whole tile is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-30 | `chip-flow gate --gate top_drc --skill msde --workspace blocks/pll` |
-| top_lvs (top) | the whole tile matches its netlist, analog macro included | pass | layout matches the netlist | 2026-10-30 | `blocks/pll/log/top_lvs/top_lvs.rpt` after a run<br>`chip-flow gate --gate top_lvs --skill msde --workspace blocks/pll` |
-| precheck (top) | the tile passes Tiny Tapeout's precheck | pass | 12 Tiny Tapeout checks run | 2026-10-30 | `chip-flow gate --gate precheck --skill msde --workspace blocks/pll` |
+| top_harden (top) | the digital half hardens around the analog macro into one tile | pass | 2363 instances around the analog macro, setup WNS 2.18 ns | 2026-10-31 | `chip-flow gate --gate top_harden --skill msde --workspace blocks/pll` |
+| top_drc (top) | the whole tile is DRC clean | pass | magic 0, klayout 0 violations | 2026-10-31 | `chip-flow gate --gate top_drc --skill msde --workspace blocks/pll` |
+| top_lvs (top) | the whole tile matches its netlist, analog macro included | pass | layout matches the netlist | 2026-10-31 | `blocks/pll/log/top_lvs/top_lvs.rpt` after a run<br>`chip-flow gate --gate top_lvs --skill msde --workspace blocks/pll` |
+| precheck (top) | the tile passes Tiny Tapeout's precheck | pass | 12 Tiny Tapeout checks run | 2026-10-31 | `chip-flow gate --gate precheck --skill msde --workspace blocks/pll` |
 
 ## Your sign-offs
 
