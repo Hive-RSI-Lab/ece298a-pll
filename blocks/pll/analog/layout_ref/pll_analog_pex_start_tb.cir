@@ -61,22 +61,22 @@ vdn      pfd_dn   0 dc 0
 vt0      cp_trim0 0 dc 0
 vt1      cp_trim1 0 dc 0
 vvc      vctrl    0 dc 0.3
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit
 alter vvc dc = $&vhi
 tran 50p 1u 0 50p
-meas tran vx max v(vco_out) from=800n to=1u
-meas tran vn min v(vco_out) from=800n to=1u
+meas tran vx max v(xdut.vco_out) from=800n to=1u
+meas tran vn min v(xdut.vco_out) from=800n to=1u
 let x = (vx - vn)/vddp*100
 set shi = "$&x"
 destroy all
 alter vvc dc = 0.3
 tran 250p 3u 0 250p
-meas tran vx max v(vco_out) from=2.2u to=3u
-meas tran vn min v(vco_out) from=2.2u to=3u
+meas tran vx max v(xdut.vco_out) from=2.2u to=3u
+meas tran vn min v(xdut.vco_out) from=2.2u to=3u
 let x = (vx - vn)/vddp*100
 set slo = "$&x"
 echo

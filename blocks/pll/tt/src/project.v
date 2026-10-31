@@ -26,13 +26,13 @@ module tt_um_ihsan_sa_pll (
     input  wire       rst_n
 );
   wire clk_fb, lock, obs_out;
-  wire pfd_up, pfd_dn, pll_en, cp_trim0, cp_trim1, vco_out;
+  wire pfd_up, pfd_dn, pll_en, cp_trim0, cp_trim1, vco_div2;
 
   ihsan_sa_pll u_ihsan_sa_pll (
       .clk(clk),
       .rst_n(rst_n),
       .n_sel(ui_in[2:0]),
-      .vco_out(vco_out),
+      .vco_div2(vco_div2),
       .pll_en_in(ui_in[6]),
       .obs_sel(ui_in[7]),
       .cp_trim_in(uio_in[1:0]),
@@ -54,7 +54,7 @@ module tt_um_ihsan_sa_pll (
       .pfd_dn(pfd_dn),
       .pfd_up(pfd_up),
       .pll_en(pll_en),
-      .vco_out(vco_out),
+      .vco_div2(vco_div2),
       .bias_ref(ua[1]),
       .vctrl(ua[0])
   );

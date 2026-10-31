@@ -3,7 +3,7 @@
  "gate": "top_lvs",
  "phase": "P3",
  "tool": "top_lvs",
- "input_digest": "dir_text:ce22c6e331e1bc929846f08cea132c01a12f52c9da9a180e2c1f0ed3dc8cbc7d",
+ "input_digest": "dir_text:4751b38ce921d92aa3de273e3ae0b1381ce67ddd0fdcd670943e08a12e4d09f9",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -24,21 +24,21 @@
   "matched": true,
   "final": "Circuits match uniquely.",
   "macro_devices_extracted": {
-   "fet": 144,
    "res": 22,
+   "fet": 160,
    "cap": 13
   },
   "macro_devices_wanted": {
-   "fet": 85,
+   "fet": 99,
    "res": 4,
    "cap": 2
   },
   "report": "log/top_lvs/top_lvs.rpt"
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:ce22c6e331e1bc929846f08cea132c01a12f52c9da9a180e2c1f0ed3dc8cbc7d",
-  "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df"
+  "top_gds": "dir_text:4751b38ce921d92aa3de273e3ae0b1381ce67ddd0fdcd670943e08a12e4d09f9",
+  "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d"
  },
- "recorded_ts": "2026-10-31T15:19:50",
- "attempts": 8
+ "recorded_ts": "2026-10-31T16:06:42",
+ "attempts": 7
 }

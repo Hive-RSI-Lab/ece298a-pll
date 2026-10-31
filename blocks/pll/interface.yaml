@@ -4,17 +4,18 @@
 # level: cmos_3v3 = full-swing logic at 3.3 V.
 # domain: clk_ref = tile clk (5-12.5 MHz); clk_fb = feedback divider output
 # (<= 46 MHz); clk_free = asynchronous, no clock.
-# Digital side: PFD, /8 prescaler, /N divider, lock detector, observation,
+# Digital side: PFD, /4 prescaler on vco_div2 (vco/8 overall), /N divider, lock detector, observation,
 # control registers. Analog side (hard macro pll_analog): charge pump, loop
-# filter, current-starved ring VCO, bias.
+# filter, current-starved ring VCO, bias, and the TSPC /2 (vco_out ->
+# vco_div2, 2026-10-31: the digital half clocks at vco/2, issue #48).
 version: 1
 signals:
-  - name: vco_out
+  - name: vco_div2
     direction: a2d
     level: cmos_3v3
     domain: clk_free
     width: 1
-    load: "prescaler first toggle flop clock (dffq_1 CLK) plus one buffer, up to 370 MHz (the VCO's ceiling at every corner, ~363 MHz at ff, -40 C, 2.97 V)"
+    load: "prescaler first toggle flop clock (one async-reset flop CLK); VCO/2 from the macro's TSPC divider, full swing, ~50% duty, held at a fixed level while pll_en=0, up to 185 MHz (half the VCO's 370 MHz ceiling)"
   - name: pfd_up
     direction: d2a
     level: cmos_3v3

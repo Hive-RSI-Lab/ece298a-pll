@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-30T07:06:35",
+ "updated": "2026-10-31T16:27:46",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -208,14 +208,14 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 13,
+   "attempts": 14,
    "last": {
-    "ts": "2026-10-30T06:17:17",
+    "ts": "2026-10-31T15:26:33",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null
@@ -363,21 +363,32 @@
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-31T15:26:33",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+     },
+     "job": null
     }
    ]
   },
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 17,
+   "attempts": 18,
    "last": {
-    "ts": "2026-10-30T06:19:07",
+    "ts": "2026-10-31T15:27:17",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
-     "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+     "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
@@ -694,21 +705,39 @@
        "tt"
       ]
      }
+    },
+    {
+     "ts": "2026-10-31T15:27:17",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
     }
    ]
   },
   "sim_pvt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 11,
+   "attempts": 13,
    "last": {
-    "ts": "2026-10-30T07:04:54",
+    "ts": "2026-10-31T16:27:46",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
-     "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
@@ -1265,6 +1294,102 @@
        "tt_pff"
       ]
      }
+    },
+    {
+     "ts": "2026-10-31T15:54:28",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
+    },
+    {
+     "ts": "2026-10-31T16:27:46",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
     }
    ]
   },
@@ -1494,14 +1619,14 @@
   "drc": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 7,
+   "attempts": 9,
    "last": {
-    "ts": "2026-10-30T06:18:06",
+    "ts": "2026-10-31T15:29:32",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+     "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null
@@ -1592,21 +1717,46 @@
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-31T15:29:22",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:03c01da85e69ae3085b8fd21f47b86a9b3ca2749ac203bef41d51297386c13aa",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+     },
+     "job": null,
+     "inputs_changed_during_run": [
+      "layout"
+     ]
+    },
+    {
+     "ts": "2026-10-31T15:29:32",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+     },
+     "job": null
     }
    ]
   },
   "lvs": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-30T06:17:52",
+    "ts": "2026-10-31T15:29:24",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
-     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+     "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
     },
@@ -1693,23 +1843,36 @@
       "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-31T15:29:24",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+     },
+     "job": null
     }
    ]
   },
   "pex_sim": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-30T07:06:35",
+    "ts": "2026-10-31T15:29:55",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
-     "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
-     "layout_ref": "dir_text:0325b066915bb70c8cbdcc5d5c0bd48b9734517aebcf958df5ad208062fee316",
-     "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+     "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+     "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
+     "layout_ref": "dir_text:14d9d8e26a895652326c7b4f8504e92d58125b963f82a411239fb0e3278ee6f4",
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
     },
     "job": null
@@ -1798,6 +1961,20 @@
       "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-31T15:29:55",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
+      "layout_ref": "dir_text:14d9d8e26a895652326c7b4f8504e92d58125b963f82a411239fb0e3278ee6f4",
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+     },
+     "job": null
     }
    ]
   }
@@ -1829,25 +2006,25 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-   "hashed": "2026-10-30T07:06:35"
+   "hashed": "2026-10-31T16:27:46"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
-   "hashed": "2026-10-30T07:06:35"
+   "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+   "hashed": "2026-10-31T16:27:46"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
-   "hashed": "2026-10-30T07:06:35"
+   "sha256": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
+   "hashed": "2026-10-31T16:27:46"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-10-30T07:04:54"
+   "hashed": "2026-10-31T16:27:46"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -1858,14 +2035,14 @@
   "layout": {
    "path": "layout",
    "kind": "layout",
-   "sha256": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
-   "hashed": "2026-10-30T07:06:35"
+   "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+   "hashed": "2026-10-31T15:29:55"
   },
   "layout_ref": {
    "path": "layout_ref",
    "kind": "layout_ref",
-   "sha256": "dir_text:0325b066915bb70c8cbdcc5d5c0bd48b9734517aebcf958df5ad208062fee316",
-   "hashed": "2026-10-30T07:06:35"
+   "sha256": "dir_text:14d9d8e26a895652326c7b4f8504e92d58125b963f82a411239fb0e3278ee6f4",
+   "hashed": "2026-10-31T15:29:55"
   }
  },
  "open_issues": [
@@ -4028,6 +4205,73 @@
    "gate": "pex_sim",
    "status": "pass",
    "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:26:33",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 14,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:27:17",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 18,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:29:22",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 8,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-10-31T15:29:24",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:29:32",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 9,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:29:55",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-31T15:54:28",
+   "event": "gate",
+   "gate": "sim_pvt",
+   "status": "fail",
+   "attempt": 12,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-10-31T16:27:46",
+   "event": "gate",
+   "gate": "sim_pvt",
+   "status": "pass",
+   "attempt": 13,
    "failing_count": 0
   }
  ]

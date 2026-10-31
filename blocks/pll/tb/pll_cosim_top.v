@@ -5,7 +5,7 @@
 // The analog side is a SPICE subcircuit run by ngspice through
 // cocotbext-ams's MixedSignalBridge (test_pll_cosim.py). The crossing nets
 // carry their interface.yaml names at this top level, so the bridge binds
-// them by name: vco_out (a2d) is a reg nothing in Verilog assigns - the
+// them by name: vco_div2 (a2d, the VCO divided by 2 in the cell) is a reg nothing in Verilog assigns - the
 // bench writes it with the digitized ngspice waveform at each sync point
 // where it changes (test_pll_cosim.py, Bridge); pfd_up, pfd_dn, pll_en,
 // cp_trim0, cp_trim1 (d2a) are driven by the RTL and read by the bridge
@@ -17,7 +17,7 @@ module pll_cosim_top (
     input  wire       pll_en_in,
     input  wire       obs_sel,
     input  wire [1:0] cp_trim_in,
-    output reg        vco_out,
+    output reg        vco_div2,
     output wire       pfd_up,
     output wire       pfd_dn,
     output wire       pll_en,
@@ -28,7 +28,7 @@ module pll_cosim_top (
     output wire       obs_out
 );
   ihsan_sa_pll u_dig (
-      .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_out(vco_out),
+      .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_div2(vco_div2),
       .pll_en_in(pll_en_in), .obs_sel(obs_sel), .cp_trim_in(cp_trim_in),
       .obs_out(obs_out), .clk_fb(clk_fb), .lock(lock),
       .pfd_up(pfd_up), .pfd_dn(pfd_dn), .pll_en(pll_en),

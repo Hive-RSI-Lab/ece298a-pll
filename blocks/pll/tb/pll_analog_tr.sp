@@ -1,10 +1,10 @@
 * pll_analog_tr.sp - transistor-level wrapper for the cosim bridge.
 * Re-orders the real cell's pins (analog/netlist/pll_analog.cir, .subckt
-* pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref
+* pll_analog vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref
 * vdd vss) into the cocotbext-ams wrapper order: digital inputs, digital
 * outputs, vdd, vss. The cell itself, the PDK models and sizing/sizing.yaml
 * come in through the bench's extra_lines (absolute paths resolved at run
-* time), so this file carries no device of its own beyond the vco_out load.
+* time), so this file carries no device of its own beyond the vco_div2 load.
 * vctrl stays internal (x1.vctrl, the loop filter node; no pad capacitance,
 * the analog spec's nominal loop condition, ol_pm_pn16_nopad). bias_ref is
 * the tile pad ua[1], left open (the internal default bias) but with the
@@ -17,10 +17,10 @@
 * benches never see this because each solves its DC point with pll_en
 * already high. A pad node is never zero capacitance; the bare-node case is
 * reported to the analog side as a finding, not hidden here.
-.subckt pll_analog_cosim pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vco_out vdd vss
-xpll vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
-* prescaler first flop CLK + one buffer (the analog benches' 15 fF)
-cload vco_out vss 15f
+.subckt pll_analog_cosim pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vco_div2 vdd vss
+xpll vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+* the digital half's first flop CLK + route (the analog benches' 30 fF)
+cload vco_div2 vss 30f
 * ua[1] pad capacitance on bias_ref
 cpad_bias bias_ref vss 5p
 .ends pll_analog_cosim

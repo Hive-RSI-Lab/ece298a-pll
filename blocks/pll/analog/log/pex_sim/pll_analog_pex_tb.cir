@@ -68,15 +68,15 @@
 * 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
 * PDK form under Gear). Its corner factor follows the MIM corner's
 * (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
-* ln(cosh(x)) is written as |x| + ln(1 + exp(-2|x|)) - ln 2, the same
-* value and slope (tanh x) that can't overflow: a gmin-stepping trial point
-* reached cosh(-3268) on the extracted netlist and ngspice called it an error.
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
+* overflowed on a wild Newton iterate in the op search ('Error: -10030.2 out
+* of range for cosh', which the engine reads as an ngspice error; ff_27c_vm10).
 C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
 .ends cap_nmos_03v3_b
-.include '/work/blocks/pll/analog/log/pex_sim/pll_analog.pex.ordered.spice'
+.include '/home/hive2/projects/ece298a-pll/blocks/pll/analog/log/pex_sim/pll_analog.pex.ordered.spice'
 
 .temp 27
 vdd_src  vdd      0 dc 3.3
@@ -89,8 +89,8 @@ vt1      cp_trim1 0 dc 0
 vvc      vctrl    vk dc 1.65
 vkick    vk       vr dc 0 pulse(0 0.3 1n 100p 100p 2n 1)
 vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
-cload    vco_out  0 15f
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 
 .control
 set noaskquit
@@ -129,7 +129,7 @@ foreach pt 0 1
   let nx = length(time)
   let nx1 = nx - 1
   let nx2 = nx - 2
-  let hv = (v(vco_out) gt 1.65)
+  let hv = (v(xdut.vco_out) gt 1.65)
   let late = time[1,$&nx1] gt $tdx
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   let fk = 0
@@ -139,8 +139,8 @@ foreach pt 0 1
     if nr gt nmax
       let nr = nmax
     end
-    meas tran tra when v(vco_out)=1.65 rise=1 td=$tdx
-    meas tran trb when v(vco_out)=1.65 rise=$&nr td=$tdx
+    meas tran tra when v(xdut.vco_out)=1.65 rise=1 td=$tdx
+    meas tran trb when v(xdut.vco_out)=1.65 rise=$&nr td=$tdx
     let fk = (nr - 1)/(trb - tra)
   end
   set fks = "$&fk"

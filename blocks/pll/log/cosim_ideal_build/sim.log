@@ -2,137 +2,46 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /opt/eda-toolchain/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793359287
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1793478522
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
      0.00ns INFO     cocotb.regression                  running test_pll_cosim.test_pll_lock_nominal (1/1)
      1.00ns WARNING  cocotbext.ams._ngspice             ngspice: Warning: can't find the initialization file spinit.
-Exception ignored on calling ctypes callback function: <bound method SyncSafeNgspice._on_get_sync_data of <test_pll_cosim.SyncSafeNgspice object at 0x79edd0d47e30>>
-Traceback (most recent call last):
-  File "/work/blocks/pll/tb/test_pll_cosim.py", line 114, in _on_get_sync_data
-    return super()._on_get_sync_data(ckttime, p_delta, old_delta,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_ngspice.py", line 327, in _on_get_sync_data
-    self._on_sync_point()
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 66, in wrapper
-    return queue_function(func(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 237, in queue_function
-    return outcome.get()
-           ^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_outcomes.py", line 55, in get
-    raise self.error
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 211, in wrapper
-    outcome = Value(await task)
-                    ^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_bridge.py", line 389, in _on_sync_point_resume
-    await Timer(round(elapsed_ns * 1000), "ps")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_gpi_triggers.py", line 143, in __init__
-    raise ValueError("Timer argument time must be positive")
-ValueError: Timer argument time must be positive
-Exception ignored on calling ctypes callback function: <bound method SyncSafeNgspice._on_get_sync_data of <test_pll_cosim.SyncSafeNgspice object at 0x79edd0d47e30>>
-Traceback (most recent call last):
-  File "/work/blocks/pll/tb/test_pll_cosim.py", line 114, in _on_get_sync_data
-    return super()._on_get_sync_data(ckttime, p_delta, old_delta,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_ngspice.py", line 327, in _on_get_sync_data
-    self._on_sync_point()
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 66, in wrapper
-    return queue_function(func(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 237, in queue_function
-    return outcome.get()
-           ^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_outcomes.py", line 55, in get
-    raise self.error
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 211, in wrapper
-    outcome = Value(await task)
-                    ^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_bridge.py", line 389, in _on_sync_point_resume
-    await Timer(round(elapsed_ns * 1000), "ps")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_gpi_triggers.py", line 143, in __init__
-    raise ValueError("Timer argument time must be positive")
-ValueError: Timer argument time must be positive
-Exception ignored on calling ctypes callback function: <bound method SyncSafeNgspice._on_get_sync_data of <test_pll_cosim.SyncSafeNgspice object at 0x79edd0d47e30>>
-Traceback (most recent call last):
-  File "/work/blocks/pll/tb/test_pll_cosim.py", line 114, in _on_get_sync_data
-    return super()._on_get_sync_data(ckttime, p_delta, old_delta,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_ngspice.py", line 327, in _on_get_sync_data
-    self._on_sync_point()
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 66, in wrapper
-    return queue_function(func(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 237, in queue_function
-    return outcome.get()
-           ^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_outcomes.py", line 55, in get
-    raise self.error
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 211, in wrapper
-    outcome = Value(await task)
-                    ^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_bridge.py", line 389, in _on_sync_point_resume
-    await Timer(round(elapsed_ns * 1000), "ps")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_gpi_triggers.py", line 143, in __init__
-    raise ValueError("Timer argument time must be positive")
-ValueError: Timer argument time must be positive
-Exception ignored on calling ctypes callback function: <bound method SyncSafeNgspice._on_get_sync_data of <test_pll_cosim.SyncSafeNgspice object at 0x79edd0d47e30>>
-Traceback (most recent call last):
-  File "/work/blocks/pll/tb/test_pll_cosim.py", line 114, in _on_get_sync_data
-    return super()._on_get_sync_data(ckttime, p_delta, old_delta,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_ngspice.py", line 327, in _on_get_sync_data
-    self._on_sync_point()
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 66, in wrapper
-    return queue_function(func(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 237, in queue_function
-    return outcome.get()
-           ^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_outcomes.py", line 55, in get
-    raise self.error
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 211, in wrapper
-    outcome = Value(await task)
-                    ^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_bridge.py", line 389, in _on_sync_point_resume
-    await Timer(round(elapsed_ns * 1000), "ps")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_gpi_triggers.py", line 143, in __init__
-    raise ValueError("Timer argument time must be positive")
-ValueError: Timer argument time must be positive
-Exception ignored on calling ctypes callback function: <bound method SyncSafeNgspice._on_get_sync_data of <test_pll_cosim.SyncSafeNgspice object at 0x79edd0d47e30>>
-Traceback (most recent call last):
-  File "/work/blocks/pll/tb/test_pll_cosim.py", line 114, in _on_get_sync_data
-    return super()._on_get_sync_data(ckttime, p_delta, old_delta,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_ngspice.py", line 327, in _on_get_sync_data
-    self._on_sync_point()
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 66, in wrapper
-    return queue_function(func(*args, **kwargs))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 237, in queue_function
-    return outcome.get()
-           ^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_outcomes.py", line 55, in get
-    raise self.error
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_bridge.py", line 211, in wrapper
-    outcome = Value(await task)
-                    ^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotbext/ams/_bridge.py", line 389, in _on_sync_point_resume
-    await Timer(round(elapsed_ns * 1000), "ps")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/eda-toolchain/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/_gpi_triggers.py", line 143, in __init__
-    raise ValueError("Timer argument time must be positive")
-ValueError: Timer argument time must be positive
+  1001.00ns INFO     cocotb.pll_cosim_top               progress: 1001 ns simulated, 0 s wall, vctrl 0.9795 V, lock 0
+  2001.00ns INFO     cocotb.pll_cosim_top               progress: 2001 ns simulated, 0 s wall, vctrl 1.5830 V, lock 0
+  3001.00ns INFO     cocotb.pll_cosim_top               progress: 3001 ns simulated, 1 s wall, vctrl 1.6934 V, lock 0
+  4001.00ns INFO     cocotb.pll_cosim_top               progress: 4001 ns simulated, 1 s wall, vctrl 1.6373 V, lock 0
+  5001.00ns INFO     cocotb.pll_cosim_top               progress: 5001 ns simulated, 1 s wall, vctrl 1.6334 V, lock 0
+  6001.00ns INFO     cocotb.pll_cosim_top               progress: 6001 ns simulated, 1 s wall, vctrl 1.6340 V, lock 1
+  7001.00ns INFO     cocotb.pll_cosim_top               progress: 7001 ns simulated, 1 s wall, vctrl 1.6338 V, lock 1
+  8001.00ns INFO     cocotb.pll_cosim_top               progress: 8001 ns simulated, 2 s wall, vctrl 1.6337 V, lock 1
+  9001.00ns INFO     cocotb.pll_cosim_top               progress: 9001 ns simulated, 2 s wall, vctrl 1.6297 V, lock 1
+ 10001.00ns INFO     cocotb.pll_cosim_top               progress: 10001 ns simulated, 2 s wall, vctrl 1.6363 V, lock 1
+ 11001.00ns INFO     cocotb.pll_cosim_top               progress: 11001 ns simulated, 2 s wall, vctrl 1.6347 V, lock 1
+ 12001.00ns INFO     cocotb.pll_cosim_top               progress: 12001 ns simulated, 2 s wall, vctrl 1.6337 V, lock 1
+ 13001.00ns INFO     cocotb.pll_cosim_top               progress: 13001 ns simulated, 3 s wall, vctrl 1.6347 V, lock 1
+ 14001.00ns INFO     cocotb.pll_cosim_top               progress: 14001 ns simulated, 3 s wall, vctrl 1.6338 V, lock 1
+ 15001.00ns INFO     cocotb.pll_cosim_top               progress: 15001 ns simulated, 3 s wall, vctrl 1.6338 V, lock 1
+ 16001.00ns INFO     cocotb.pll_cosim_top               progress: 16001 ns simulated, 3 s wall, vctrl 1.6344 V, lock 1
+ 17001.00ns INFO     cocotb.pll_cosim_top               progress: 17001 ns simulated, 3 s wall, vctrl 1.6294 V, lock 1
+ 18001.00ns INFO     cocotb.pll_cosim_top               progress: 18001 ns simulated, 3 s wall, vctrl 1.6368 V, lock 1
+ 19001.00ns INFO     cocotb.pll_cosim_top               progress: 19001 ns simulated, 4 s wall, vctrl 1.6329 V, lock 1
+ 20001.00ns INFO     cocotb.pll_cosim_top               progress: 20001 ns simulated, 4 s wall, vctrl 1.6347 V, lock 1
+ 21001.00ns INFO     cocotb.pll_cosim_top               progress: 21001 ns simulated, 4 s wall, vctrl 1.6338 V, lock 1
+ 22001.00ns INFO     cocotb.pll_cosim_top               progress: 22001 ns simulated, 4 s wall, vctrl 1.6338 V, lock 1
+ 23001.00ns INFO     cocotb.pll_cosim_top               progress: 23001 ns simulated, 5 s wall, vctrl 1.6338 V, lock 1
+ 24001.00ns INFO     cocotb.pll_cosim_top               progress: 24001 ns simulated, 5 s wall, vctrl 1.6341 V, lock 1
+ 25001.00ns INFO     cocotb.pll_cosim_top               progress: 25001 ns simulated, 5 s wall, vctrl 1.6341 V, lock 1
+ 26001.00ns INFO     cocotb.pll_cosim_top               progress: 26001 ns simulated, 5 s wall, vctrl 1.6341 V, lock 1
+ 27001.00ns INFO     cocotb.pll_cosim_top               progress: 27001 ns simulated, 5 s wall, vctrl 1.6341 V, lock 1
+ 28001.00ns INFO     cocotb.pll_cosim_top               progress: 28001 ns simulated, 6 s wall, vctrl 1.6341 V, lock 1
+ 29001.00ns INFO     cocotb.pll_cosim_top               progress: 29001 ns simulated, 6 s wall, vctrl 1.6336 V, lock 1
  30000.60ns INFO     cocotb.regression                  test_pll_cosim.test_pll_lock_nominal passed
  30000.60ns INFO     cocotb.regression                  **********************************************************************************************
                                                         ** TEST                                  STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         **********************************************************************************************
-                                                        ** test_pll_cosim.test_pll_lock_nominal   PASS       30000.60           6.23       4814.84  **
+                                                        ** test_pll_cosim.test_pll_lock_nominal   PASS       30000.60           5.93       5062.89  **
                                                         **********************************************************************************************
-                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                      30000.60           6.24       4811.34  **
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                      30000.60           5.93       5062.06  **
                                                         **********************************************************************************************

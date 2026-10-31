@@ -66,7 +66,12 @@ INPUTS = ["tb/test_pll_cosim.py", "tb/pll_tb_common.py", "tb/cosim_corners.py",
 RANGE = [("vco_f_vdd_mhz", min), ("vco_f_vdd_mhz", max),
          ("ol_pm_pn16_nopad_pvt_deg", min), ("ol_pm_pn16_nopad_pvt_deg", max),
          ("vco_kvco_mhz_per_v", min), ("icp_dn_code00_ua", min)]
-TIMEOUT_S = 1800.0
+TIMEOUT_S = 7200.0
+# The bench's fallback sync (PLL_COSIM_MAX_SYNC_NS) on the extracted netlist.
+# At the bench's 1 ns, edges quantised to the grid fire isolated pump kicks of
+# +-15-20 mV through R1 (27.4 mV p-p at ff_m40c_vm10); at 0.25 ns they go
+# (0.6 mV). Found by H1 (h1/sync-grid, 211de65).
+MAX_SYNC_NS = 0.25
 
 
 def input_hashes(ws: Path = C.WS) -> dict[str, str]:
@@ -149,6 +154,7 @@ def run_one(corner: str, extracted: Path, work: Path, timeout_s: float) -> dict:
     meas_path = work / "measures.json"
     meas_path.unlink(missing_ok=True)
     os.environ["PLL_COSIM_SETUP"] = json.dumps(setup_for(corner, extracted, meas_path))
+    os.environ["PLL_COSIM_MAX_SYNC_NS"] = str(MAX_SYNC_NS)
     meta = check_cosim.load_bench_meta(HERE)
     build = work / "build"
     t0 = time.monotonic()

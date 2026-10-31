@@ -3,7 +3,7 @@
  "gate": "sim_pvt",
  "phase": "P4",
  "tool": "sim_pvt",
- "input_digest": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+ "input_digest": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -873,7 +873,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.7946
+     "ol_pm_pn16_nopad_pvt_deg": 52.7933
     },
     "engine_errors": [],
     "violations": [],
@@ -891,7 +891,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.318
+     "ol_pm_pn16_nopad_pvt_deg": 51.3161
     },
     "engine_errors": [],
     "violations": [],
@@ -909,7 +909,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.401
+     "ol_pm_pn16_nopad_pvt_deg": 48.4126
     },
     "engine_errors": [],
     "violations": [],
@@ -927,7 +927,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.7648
+     "ol_pm_pn16_nopad_pvt_deg": 51.7646
     },
     "engine_errors": [],
     "violations": [],
@@ -945,12 +945,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.812,
-     "ol_pm_pn16_nopad_deg": 49.812,
-     "ol_pm_pn16_pad5p_deg": 34.0916,
-     "ol_fc_pn16_nopad_khz": 484.378,
-     "ol_pm_pn8_nopad_deg": 55.473,
-     "ol_pm_pn40_nopad_deg": 36.2328
+     "ol_pm_pn16_nopad_pvt_deg": 49.7382,
+     "ol_pm_pn16_nopad_deg": 49.7382,
+     "ol_pm_pn16_pad5p_deg": 34.0561,
+     "ol_fc_pn16_nopad_khz": 482.166,
+     "ol_pm_pn8_nopad_deg": 55.459,
+     "ol_pm_pn40_nopad_deg": 36.1455
     },
     "engine_errors": [],
     "violations": [],
@@ -968,7 +968,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 45.5555
+     "ol_pm_pn16_nopad_pvt_deg": 46.1882
     },
     "engine_errors": [],
     "violations": [],
@@ -986,7 +986,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.8394
+     "ol_pm_pn16_nopad_pvt_deg": 49.7294
     },
     "engine_errors": [],
     "violations": [],
@@ -1004,7 +1004,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 46.8488
+     "ol_pm_pn16_nopad_pvt_deg": 46.8855
     },
     "engine_errors": [],
     "violations": [],
@@ -1022,7 +1022,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.293
+     "ol_pm_pn16_nopad_pvt_deg": 43.2094
     },
     "engine_errors": [],
     "violations": [],
@@ -1040,7 +1040,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 54.1368
+     "ol_pm_pn16_nopad_pvt_deg": 54.2149
     },
     "engine_errors": [],
     "violations": [],
@@ -1058,7 +1058,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.4078
+     "ol_pm_pn16_nopad_pvt_deg": 53.3759
     },
     "engine_errors": [],
     "violations": [],
@@ -1076,7 +1076,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.2227
+     "ol_pm_pn16_nopad_pvt_deg": 52.2396
     },
     "engine_errors": [],
     "violations": [],
@@ -1094,7 +1094,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 53.566
+     "ol_pm_pn16_nopad_pvt_deg": 53.5594
     },
     "engine_errors": [],
     "violations": [],
@@ -1112,7 +1112,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.6252
+     "ol_pm_pn16_nopad_pvt_deg": 52.5106
     },
     "engine_errors": [],
     "violations": [],
@@ -1130,7 +1130,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.8622
+     "ol_pm_pn16_nopad_pvt_deg": 50.7912
     },
     "engine_errors": [],
     "violations": [],
@@ -1148,7 +1148,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 52.2362
+     "ol_pm_pn16_nopad_pvt_deg": 52.3052
     },
     "engine_errors": [],
     "violations": [],
@@ -1166,7 +1166,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 51.5501
+     "ol_pm_pn16_nopad_pvt_deg": 51.0352
     },
     "engine_errors": [],
     "violations": [],
@@ -1184,7 +1184,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.4752
+     "ol_pm_pn16_nopad_pvt_deg": 48.441
     },
     "engine_errors": [],
     "violations": [],
@@ -1202,7 +1202,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.2651
+     "ol_pm_pn16_nopad_pvt_deg": 50.2636
     },
     "engine_errors": [],
     "violations": [],
@@ -1220,7 +1220,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 46.8913
+     "ol_pm_pn16_nopad_pvt_deg": 46.8925
     },
     "engine_errors": [],
     "violations": [],
@@ -1238,7 +1238,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.1013
+     "ol_pm_pn16_nopad_pvt_deg": 43.1343
     },
     "engine_errors": [],
     "violations": [],
@@ -1256,7 +1256,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 48.5224
+     "ol_pm_pn16_nopad_pvt_deg": 48.5252
     },
     "engine_errors": [],
     "violations": [],
@@ -1274,7 +1274,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 44.6553
+     "ol_pm_pn16_nopad_pvt_deg": 44.6574
     },
     "engine_errors": [],
     "violations": [],
@@ -1292,7 +1292,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.8406
+     "ol_pm_pn16_nopad_pvt_deg": 40.7874
     },
     "engine_errors": [],
     "violations": [],
@@ -1310,7 +1310,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 45.2358
+     "ol_pm_pn16_nopad_pvt_deg": 45.2389
     },
     "engine_errors": [],
     "violations": [],
@@ -1328,7 +1328,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 40.9984
+     "ol_pm_pn16_nopad_pvt_deg": 40.9633
     },
     "engine_errors": [],
     "violations": [],
@@ -1346,7 +1346,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 37.2635
+     "ol_pm_pn16_nopad_pvt_deg": 37.2982
     },
     "engine_errors": [],
     "violations": [],
@@ -1364,7 +1364,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.129
+     "ol_pm_pn16_nopad_pvt_deg": 50.1325
     },
     "engine_errors": [],
     "violations": [],
@@ -1382,7 +1382,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 43.5046
+     "ol_pm_pn16_nopad_pvt_deg": 43.5257
     },
     "engine_errors": [],
     "violations": [],
@@ -1400,12 +1400,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 50.0119,
-     "ol_pm_pn16_nopad_deg": 50.0119,
-     "ol_pm_pn16_pad5p_deg": 35.2131,
-     "ol_fc_pn16_nopad_khz": 371.082,
-     "ol_pm_pn8_nopad_deg": 55.5486,
-     "ol_pm_pn40_nopad_deg": 36.4523
+     "ol_pm_pn16_nopad_pvt_deg": 50.0252,
+     "ol_pm_pn16_nopad_deg": 50.0252,
+     "ol_pm_pn16_pad5p_deg": 35.2199,
+     "ol_fc_pn16_nopad_khz": 371.386,
+     "ol_pm_pn8_nopad_deg": 55.5511,
+     "ol_pm_pn40_nopad_deg": 36.4682
     },
     "engine_errors": [],
     "violations": [],
@@ -1423,12 +1423,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.3504,
-     "ol_pm_pn16_nopad_deg": 49.3504,
-     "ol_pm_pn16_pad5p_deg": 32.702,
-     "ol_fc_pn16_nopad_khz": 655.243,
-     "ol_pm_pn8_nopad_deg": 55.3358,
-     "ol_pm_pn40_nopad_deg": 35.7116
+     "ol_pm_pn16_nopad_pvt_deg": 49.3485,
+     "ol_pm_pn16_nopad_deg": 49.3485,
+     "ol_pm_pn16_pad5p_deg": 32.7011,
+     "ol_fc_pn16_nopad_khz": 655.17,
+     "ol_pm_pn8_nopad_deg": 55.3354,
+     "ol_pm_pn40_nopad_deg": 35.7094
     },
     "engine_errors": [],
     "violations": [],
@@ -1446,7 +1446,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.29194
+     "cp_overlap_net_charge_fc": 2.29141
     },
     "engine_errors": [],
     "violations": [],
@@ -1464,7 +1464,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31633
+     "cp_overlap_net_charge_fc": 2.31764
     },
     "engine_errors": [],
     "violations": [],
@@ -1482,7 +1482,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.67928
+     "cp_overlap_net_charge_fc": 2.67424
     },
     "engine_errors": [],
     "violations": [],
@@ -1500,7 +1500,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31816
+     "cp_overlap_net_charge_fc": 2.32053
     },
     "engine_errors": [],
     "violations": [],
@@ -1518,7 +1518,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.3891
+     "cp_overlap_net_charge_fc": 2.38183
     },
     "engine_errors": [],
     "violations": [],
@@ -1536,7 +1536,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53039
+     "cp_overlap_net_charge_fc": 2.53248
     },
     "engine_errors": [],
     "violations": [],
@@ -1554,7 +1554,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27553
+     "cp_overlap_net_charge_fc": 2.27516
     },
     "engine_errors": [],
     "violations": [],
@@ -1572,7 +1572,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.34309
+     "cp_overlap_net_charge_fc": 2.34269
     },
     "engine_errors": [],
     "violations": [],
@@ -1590,7 +1590,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.53372
+     "cp_overlap_net_charge_fc": 2.53418
     },
     "engine_errors": [],
     "violations": [],
@@ -1608,7 +1608,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.22364
+     "cp_overlap_net_charge_fc": 2.21698
     },
     "engine_errors": [],
     "violations": [],
@@ -1626,7 +1626,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.06629
+     "cp_overlap_net_charge_fc": 2.07137
     },
     "engine_errors": [],
     "violations": [],
@@ -1644,7 +1644,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.54978
+     "cp_overlap_net_charge_fc": 2.54638
     },
     "engine_errors": [],
     "violations": [],
@@ -1662,7 +1662,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.31471
+     "cp_overlap_net_charge_fc": 2.32399
     },
     "engine_errors": [],
     "violations": [],
@@ -1680,7 +1680,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14934
+     "cp_overlap_net_charge_fc": 2.14898
     },
     "engine_errors": [],
     "violations": [],
@@ -1698,7 +1698,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.17172
+     "cp_overlap_net_charge_fc": 2.17898
     },
     "engine_errors": [],
     "violations": [],
@@ -1716,7 +1716,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.14373
+     "cp_overlap_net_charge_fc": 2.14357
     },
     "engine_errors": [],
     "violations": [],
@@ -1734,7 +1734,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.25257
+     "cp_overlap_net_charge_fc": 2.25501
     },
     "engine_errors": [],
     "violations": [],
@@ -1752,7 +1752,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.27116
+     "cp_overlap_net_charge_fc": 2.27101
     },
     "engine_errors": [],
     "violations": [],
@@ -1770,7 +1770,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.52914
+     "cp_overlap_net_charge_fc": 2.52702
     },
     "engine_errors": [],
     "violations": [],
@@ -1788,7 +1788,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.63295
+     "cp_overlap_net_charge_fc": 2.63519
     },
     "engine_errors": [],
     "violations": [],
@@ -1806,7 +1806,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.92125
+     "cp_overlap_net_charge_fc": 2.92539
     },
     "engine_errors": [],
     "violations": [],
@@ -1824,7 +1824,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.5787
+     "cp_overlap_net_charge_fc": 2.56555
     },
     "engine_errors": [],
     "violations": [],
@@ -1842,7 +1842,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.69218
+     "cp_overlap_net_charge_fc": 2.69125
     },
     "engine_errors": [],
     "violations": [],
@@ -1860,7 +1860,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.97601
+     "cp_overlap_net_charge_fc": 2.9713
     },
     "engine_errors": [],
     "violations": [],
@@ -1878,7 +1878,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.51422
+     "cp_overlap_net_charge_fc": 2.51389
     },
     "engine_errors": [],
     "violations": [],
@@ -1896,7 +1896,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.5762
+     "cp_overlap_net_charge_fc": 2.57626
     },
     "engine_errors": [],
     "violations": [],
@@ -1914,7 +1914,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.84641
+     "cp_overlap_net_charge_fc": 2.84398
     },
     "engine_errors": [],
     "violations": [],
@@ -1932,7 +1932,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.59719
+     "cp_overlap_net_charge_fc": 3.59346
     },
     "engine_errors": [],
     "violations": [],
@@ -1950,7 +1950,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.19722
+     "cp_overlap_net_charge_fc": 2.19691
     },
     "engine_errors": [],
     "violations": [],
@@ -1968,7 +1968,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 1.97023
+     "cp_overlap_net_charge_fc": 1.97022
     },
     "engine_errors": [],
     "violations": [],
@@ -1986,7 +1986,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 3.03891
+     "cp_overlap_net_charge_fc": 3.04336
     },
     "engine_errors": [],
     "violations": [],
@@ -2004,7 +2004,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "presc_div2_ratio": 0.999993
+     "presc_div2_ratio": 1.00003
     },
     "engine_errors": [],
     "violations": [],
@@ -2022,7 +2022,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000105028,
+     "standby_current_ua": 0.000124159,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2041,7 +2041,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000119927,
+     "standby_current_ua": 0.00014138,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2060,7 +2060,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00013836,
+     "standby_current_ua": 0.00016231,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2079,7 +2079,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000112001,
+     "standby_current_ua": 0.000134452,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2098,7 +2098,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.000153298,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2117,7 +2117,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000147255,
+     "standby_current_ua": 0.000176808,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2136,7 +2136,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000964237,
+     "standby_current_ua": 0.00188638,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2155,7 +2155,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00111058,
+     "standby_current_ua": 0.00225074,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2174,7 +2174,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.0013079,
+     "standby_current_ua": 0.00274273,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2193,7 +2193,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00010188,
+     "standby_current_ua": 0.000120733,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2212,7 +2212,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000115853,
+     "standby_current_ua": 0.000136979,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2231,7 +2231,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000132028,
+     "standby_current_ua": 0.000155533,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2250,7 +2250,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00010597,
+     "standby_current_ua": 0.000125311,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2269,7 +2269,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000120008,
+     "standby_current_ua": 0.000141677,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2288,7 +2288,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000136277,
+     "standby_current_ua": 0.000160401,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2307,7 +2307,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224722,
+     "standby_current_ua": 0.000344723,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2326,7 +2326,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000253984,
+     "standby_current_ua": 0.000397764,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2345,7 +2345,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000290456,
+     "standby_current_ua": 0.000465077,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2364,7 +2364,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000108765,
+     "standby_current_ua": 0.000128371,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2383,7 +2383,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.0001253,
+     "standby_current_ua": 0.00014739,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2402,7 +2402,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00014813,
+     "standby_current_ua": 0.000173034,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2421,7 +2421,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000160833,
+     "standby_current_ua": 0.000236646,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2440,7 +2440,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000190077,
+     "standby_current_ua": 0.000288453,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2459,7 +2459,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000231492,
+     "standby_current_ua": 0.000362103,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2478,7 +2478,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00809559,
+     "standby_current_ua": 0.0168766,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2497,7 +2497,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00950214,
+     "standby_current_ua": 0.0206247,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2516,7 +2516,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.011452,
+     "standby_current_ua": 0.0258301,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2535,7 +2535,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000224722,
+     "standby_current_ua": 0.000344723,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2554,7 +2554,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.00014813,
+     "standby_current_ua": 0.000173034,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2573,7 +2573,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.000153298,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2592,7 +2592,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000127579,
+     "standby_current_ua": 0.000153298,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -2611,7 +2611,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.719971
+     "startup_time_us": 0.719985
     },
     "engine_errors": [],
     "violations": [],
@@ -2629,7 +2629,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.690578
+     "startup_time_us": 0.690544
     },
     "engine_errors": [],
     "violations": [],
@@ -2647,7 +2647,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.718482
+     "startup_time_us": 0.718462
     },
     "engine_errors": [],
     "violations": [],
@@ -2665,7 +2665,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.732884
+     "startup_time_us": 0.732856
     },
     "engine_errors": [],
     "violations": [],
@@ -2683,7 +2683,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.676188
+     "startup_time_us": 0.676231
     },
     "engine_errors": [],
     "violations": [],
@@ -2701,7 +2701,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.689799
+     "startup_time_us": 0.6898
     },
     "engine_errors": [],
     "violations": [],
@@ -2737,7 +2737,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.589661
+     "startup_time_us": 0.589639
     },
     "engine_errors": [],
     "violations": [],
@@ -2755,7 +2755,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.572205
+     "startup_time_us": 0.572177
     },
     "engine_errors": [],
     "violations": [],
@@ -2773,7 +2773,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.920454
+     "startup_time_us": 0.92047
     },
     "engine_errors": [],
     "violations": [],
@@ -2827,7 +2827,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.861521
+     "startup_time_us": 0.861516
     },
     "engine_errors": [],
     "violations": [],
@@ -2845,7 +2845,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.879539
+     "startup_time_us": 0.879546
     },
     "engine_errors": [],
     "violations": [],
@@ -2863,7 +2863,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.804102
+     "startup_time_us": 0.80412
     },
     "engine_errors": [],
     "violations": [],
@@ -2881,7 +2881,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.84315
+     "startup_time_us": 0.843181
     },
     "engine_errors": [],
     "violations": [],
@@ -2899,7 +2899,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.816617
+     "startup_time_us": 0.81662
     },
     "engine_errors": [],
     "violations": [],
@@ -2917,7 +2917,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.822947
+     "startup_time_us": 0.822987
     },
     "engine_errors": [],
     "violations": [],
@@ -2935,7 +2935,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.552274
+     "startup_time_us": 0.552284
     },
     "engine_errors": [],
     "violations": [],
@@ -2953,7 +2953,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.58603
+     "startup_time_us": 0.586033
     },
     "engine_errors": [],
     "violations": [],
@@ -2971,7 +2971,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.587599
+     "startup_time_us": 0.587625
     },
     "engine_errors": [],
     "violations": [],
@@ -2989,7 +2989,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.549842
+     "startup_time_us": 0.549915
     },
     "engine_errors": [],
     "violations": [],
@@ -3007,7 +3007,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.473436
+     "startup_time_us": 0.473455
     },
     "engine_errors": [],
     "violations": [],
@@ -3025,7 +3025,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.560756
+     "startup_time_us": 0.560783
     },
     "engine_errors": [],
     "violations": [],
@@ -3043,7 +3043,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.477906
+     "startup_time_us": 0.477899
     },
     "engine_errors": [],
     "violations": [],
@@ -3061,7 +3061,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.467569
+     "startup_time_us": 0.467562
     },
     "engine_errors": [],
     "violations": [],
@@ -3079,7 +3079,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.435058
+     "startup_time_us": 0.435046
     },
     "engine_errors": [],
     "violations": [],
@@ -3097,7 +3097,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.55308
+     "startup_time_us": 0.553064
     },
     "engine_errors": [],
     "violations": [],
@@ -3115,7 +3115,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.911327
+     "startup_time_us": 0.911348
     },
     "engine_errors": [],
     "violations": [],
@@ -3133,7 +3133,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.854239
+     "startup_time_us": 0.854269
     },
     "engine_errors": [],
     "violations": [],
@@ -3151,7 +3151,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.509211
+     "startup_time_us": 0.509206
     },
     "engine_errors": [],
     "violations": [],
@@ -3169,15 +3169,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 114.951,
-     "vco_df_dv_min_mhz_per_v": 3.27291,
-     "vco_fmin_tt_mhz": 13.2764,
-     "vco_fmax_tt_mhz": 285.71,
-     "vco_out_swing_pct_vdd": 100.748,
-     "vco_out_duty_pct": 54.1509,
-     "vco_fmax_ff_mhz": 319.911,
-     "vco_out_tr_ns": 0.043293,
-     "vco_out_tf_ns": 0.04229
+     "vco_kvco_mhz_per_v": 114.939,
+     "vco_df_dv_min_mhz_per_v": 3.27316,
+     "vco_fmin_tt_mhz": 13.2754,
+     "vco_fmax_tt_mhz": 285.681,
+     "vco_out_swing_pct_vdd": 100.755,
+     "vco_out_duty_pct": 54.1349,
+     "vco_fmax_ff_mhz": 319.902,
+     "vco_out_tr_ns": 0.042237,
+     "vco_out_tf_ns": 0.03709
     },
     "engine_errors": [],
     "violations": [],
@@ -3195,15 +3195,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 98.8975,
-     "vco_df_dv_min_mhz_per_v": 6.15311,
-     "vco_fmin_tt_mhz": 11.9518,
-     "vco_fmax_tt_mhz": 278.975,
-     "vco_out_swing_pct_vdd": 100.574,
-     "vco_out_duty_pct": 53.9635,
-     "vco_fmax_ff_mhz": 286.594,
-     "vco_out_tr_ns": 0.043422,
-     "vco_out_tf_ns": 0.04137
+     "vco_kvco_mhz_per_v": 98.8873,
+     "vco_df_dv_min_mhz_per_v": 6.15,
+     "vco_fmin_tt_mhz": 11.9512,
+     "vco_fmax_tt_mhz": 278.947,
+     "vco_out_swing_pct_vdd": 100.58,
+     "vco_out_duty_pct": 53.9773,
+     "vco_fmax_ff_mhz": 286.586,
+     "vco_out_tr_ns": 0.042701,
+     "vco_out_tf_ns": 0.0365
     },
     "engine_errors": [],
     "violations": [],
@@ -3221,15 +3221,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 77.8787,
-     "vco_df_dv_min_mhz_per_v": 13.9836,
-     "vco_fmin_tt_mhz": 8.96447,
-     "vco_fmax_tt_mhz": 244.937,
-     "vco_out_swing_pct_vdd": 100.428,
-     "vco_out_duty_pct": 53.8018,
-     "vco_fmax_ff_mhz": 246.398,
-     "vco_out_tr_ns": 0.04499,
-     "vco_out_tf_ns": 0.042065
+     "vco_kvco_mhz_per_v": 77.8923,
+     "vco_df_dv_min_mhz_per_v": 13.9772,
+     "vco_fmin_tt_mhz": 8.9643,
+     "vco_fmax_tt_mhz": 244.978,
+     "vco_out_swing_pct_vdd": 100.431,
+     "vco_out_duty_pct": 53.8048,
+     "vco_fmax_ff_mhz": 246.427,
+     "vco_out_tr_ns": 0.04185,
+     "vco_out_tf_ns": 0.037321
     },
     "engine_errors": [],
     "violations": [],
@@ -3247,15 +3247,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 109.001,
-     "vco_df_dv_min_mhz_per_v": 11.5316,
-     "vco_fmin_tt_mhz": 12.1908,
-     "vco_fmax_tt_mhz": 270.524,
-     "vco_out_swing_pct_vdd": 100.633,
-     "vco_out_duty_pct": 54.1043,
-     "vco_fmax_ff_mhz": 295.853,
-     "vco_out_tr_ns": 0.051106,
-     "vco_out_tf_ns": 0.048756
+     "vco_kvco_mhz_per_v": 108.996,
+     "vco_df_dv_min_mhz_per_v": 11.5362,
+     "vco_fmin_tt_mhz": 12.1902,
+     "vco_fmax_tt_mhz": 270.511,
+     "vco_out_swing_pct_vdd": 100.64,
+     "vco_out_duty_pct": 54.0795,
+     "vco_fmax_ff_mhz": 295.822,
+     "vco_out_tr_ns": 0.049942,
+     "vco_out_tf_ns": 0.045524
     },
     "engine_errors": [],
     "violations": [],
@@ -3273,15 +3273,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.9244,
-     "vco_df_dv_min_mhz_per_v": 14.1394,
-     "vco_fmin_tt_mhz": 9.55305,
-     "vco_fmax_tt_mhz": 257.749,
-     "vco_out_swing_pct_vdd": 100.452,
-     "vco_out_duty_pct": 53.9346,
-     "vco_fmax_ff_mhz": 260.525,
-     "vco_out_tr_ns": 0.05168,
-     "vco_out_tf_ns": 0.04836
+     "vco_kvco_mhz_per_v": 91.914,
+     "vco_df_dv_min_mhz_per_v": 14.1418,
+     "vco_fmin_tt_mhz": 9.55208,
+     "vco_fmax_tt_mhz": 257.72,
+     "vco_out_swing_pct_vdd": 100.454,
+     "vco_out_duty_pct": 53.9465,
+     "vco_fmax_ff_mhz": 260.498,
+     "vco_out_tr_ns": 0.0509,
+     "vco_out_tf_ns": 0.045355
     },
     "engine_errors": [],
     "violations": [],
@@ -3299,15 +3299,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 71.0836,
-     "vco_df_dv_min_mhz_per_v": 16.8899,
-     "vco_fmin_tt_mhz": 8.60161,
-     "vco_fmax_tt_mhz": 223.985,
-     "vco_out_swing_pct_vdd": 100.333,
-     "vco_out_duty_pct": 53.79,
-     "vco_fmax_ff_mhz": 225.03,
-     "vco_out_tr_ns": 0.05348,
-     "vco_out_tf_ns": 0.049202
+     "vco_kvco_mhz_per_v": 71.0767,
+     "vco_df_dv_min_mhz_per_v": 16.8878,
+     "vco_fmin_tt_mhz": 8.60155,
+     "vco_fmax_tt_mhz": 223.964,
+     "vco_out_swing_pct_vdd": 100.335,
+     "vco_out_duty_pct": 53.7953,
+     "vco_fmax_ff_mhz": 225.008,
+     "vco_out_tr_ns": 0.04986,
+     "vco_out_tf_ns": 0.043566
     },
     "engine_errors": [],
     "violations": [],
@@ -3325,15 +3325,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 99.1503,
-     "vco_df_dv_min_mhz_per_v": 22.4751,
-     "vco_fmin_tt_mhz": 9.93872,
-     "vco_fmax_tt_mhz": 244.925,
-     "vco_out_swing_pct_vdd": 100.408,
-     "vco_out_duty_pct": 53.9513,
-     "vco_fmax_ff_mhz": 258.621,
-     "vco_out_tr_ns": 0.06451,
-     "vco_out_tf_ns": 0.059366
+     "vco_kvco_mhz_per_v": 99.1651,
+     "vco_df_dv_min_mhz_per_v": 22.4774,
+     "vco_fmin_tt_mhz": 9.93863,
+     "vco_fmax_tt_mhz": 244.96,
+     "vco_out_swing_pct_vdd": 100.409,
+     "vco_out_duty_pct": 53.9658,
+     "vco_fmax_ff_mhz": 258.666,
+     "vco_out_tr_ns": 0.05948,
+     "vco_out_tf_ns": 0.05237
     },
     "engine_errors": [],
     "violations": [],
@@ -3351,15 +3351,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 79.481,
-     "vco_df_dv_min_mhz_per_v": 23.9414,
-     "vco_fmin_tt_mhz": 8.76728,
-     "vco_fmax_tt_mhz": 223.366,
-     "vco_out_swing_pct_vdd": 100.298,
-     "vco_out_duty_pct": 53.8016,
-     "vco_fmax_ff_mhz": 224.58,
-     "vco_out_tr_ns": 0.06598,
-     "vco_out_tf_ns": 0.059554
+     "vco_kvco_mhz_per_v": 79.4711,
+     "vco_df_dv_min_mhz_per_v": 23.9353,
+     "vco_fmin_tt_mhz": 8.767,
+     "vco_fmax_tt_mhz": 223.339,
+     "vco_out_swing_pct_vdd": 100.309,
+     "vco_out_duty_pct": 53.7807,
+     "vco_fmax_ff_mhz": 224.554,
+     "vco_out_tr_ns": 0.06129,
+     "vco_out_tf_ns": 0.052868
     },
     "engine_errors": [],
     "violations": [],
@@ -3377,15 +3377,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 61.4975,
+     "vco_kvco_mhz_per_v": 61.4909,
      "vco_df_dv_min_mhz_per_v": 8.14257,
-     "vco_fmin_tt_mhz": 8.00944,
-     "vco_fmax_tt_mhz": 194.347,
-     "vco_out_swing_pct_vdd": 100.198,
-     "vco_out_duty_pct": 53.6697,
-     "vco_fmax_ff_mhz": 195.04,
-     "vco_out_tr_ns": 0.06821,
-     "vco_out_tf_ns": 0.06075
+     "vco_fmin_tt_mhz": 8.0097,
+     "vco_fmax_tt_mhz": 194.327,
+     "vco_out_swing_pct_vdd": 100.066,
+     "vco_out_duty_pct": 53.6435,
+     "vco_fmax_ff_mhz": 195.017,
+     "vco_out_tr_ns": 0.06377,
+     "vco_out_tf_ns": 0.05423
     },
     "engine_errors": [],
     "violations": [],
@@ -3403,15 +3403,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 93.5612,
-     "vco_df_dv_min_mhz_per_v": 0.245063,
-     "vco_fmin_tt_mhz": 13.3709,
-     "vco_fmax_tt_mhz": 235.111,
-     "vco_out_swing_pct_vdd": 101.221,
-     "vco_out_duty_pct": 54.6222,
-     "vco_fmax_ff_mhz": 266.85,
-     "vco_out_tr_ns": 0.05128,
-     "vco_out_tf_ns": 0.05202
+     "vco_kvco_mhz_per_v": 93.5583,
+     "vco_df_dv_min_mhz_per_v": 0.244051,
+     "vco_fmin_tt_mhz": 13.3698,
+     "vco_fmax_tt_mhz": 235.103,
+     "vco_out_swing_pct_vdd": 101.097,
+     "vco_out_duty_pct": 53.9497,
+     "vco_fmax_ff_mhz": 266.833,
+     "vco_out_tr_ns": 0.04966,
+     "vco_out_tf_ns": 0.048612
     },
     "engine_errors": [],
     "violations": [],
@@ -3429,15 +3429,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 83.7818,
-     "vco_df_dv_min_mhz_per_v": 0.952,
-     "vco_fmin_tt_mhz": 11.2492,
-     "vco_fmax_tt_mhz": 237.46,
-     "vco_out_swing_pct_vdd": 101.002,
-     "vco_out_duty_pct": 54.1969,
-     "vco_fmax_ff_mhz": 264.268,
-     "vco_out_tr_ns": 0.0484,
-     "vco_out_tf_ns": 0.048176
+     "vco_kvco_mhz_per_v": 83.775,
+     "vco_df_dv_min_mhz_per_v": 0.952889,
+     "vco_fmin_tt_mhz": 11.2486,
+     "vco_fmax_tt_mhz": 237.441,
+     "vco_out_swing_pct_vdd": 100.71,
+     "vco_out_duty_pct": 54.2725,
+     "vco_fmax_ff_mhz": 264.255,
+     "vco_out_tr_ns": 0.04759,
+     "vco_out_tf_ns": 0.045491
     },
     "engine_errors": [],
     "violations": [],
@@ -3455,15 +3455,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 72.8666,
-     "vco_df_dv_min_mhz_per_v": 2.68101,
-     "vco_fmin_tt_mhz": 9.92629,
-     "vco_fmax_tt_mhz": 230.712,
-     "vco_out_swing_pct_vdd": 100.815,
-     "vco_out_duty_pct": 53.2533,
-     "vco_fmax_ff_mhz": 235.761,
-     "vco_out_tr_ns": 0.04877,
-     "vco_out_tf_ns": 0.047416
+     "vco_kvco_mhz_per_v": 72.8764,
+     "vco_df_dv_min_mhz_per_v": 2.6795,
+     "vco_fmin_tt_mhz": 9.92565,
+     "vco_fmax_tt_mhz": 230.741,
+     "vco_out_swing_pct_vdd": 100.553,
+     "vco_out_duty_pct": 53.5433,
+     "vco_fmax_ff_mhz": 235.74,
+     "vco_out_tr_ns": 0.04842,
+     "vco_out_tf_ns": 0.044924
     },
     "engine_errors": [],
     "violations": [],
@@ -3481,15 +3481,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 89.6247,
-     "vco_df_dv_min_mhz_per_v": 0.780759,
-     "vco_fmin_tt_mhz": 12.3854,
-     "vco_fmax_tt_mhz": 224.796,
-     "vco_out_swing_pct_vdd": 101.159,
-     "vco_out_duty_pct": 54.087,
-     "vco_fmax_ff_mhz": 250.605,
-     "vco_out_tr_ns": 0.05932,
-     "vco_out_tf_ns": 0.05872
+     "vco_kvco_mhz_per_v": 89.6394,
+     "vco_df_dv_min_mhz_per_v": 0.784304,
+     "vco_fmin_tt_mhz": 12.3836,
+     "vco_fmax_tt_mhz": 224.829,
+     "vco_out_swing_pct_vdd": 101.162,
+     "vco_out_duty_pct": 54.1926,
+     "vco_fmax_ff_mhz": 250.593,
+     "vco_out_tr_ns": 0.05783,
+     "vco_out_tf_ns": 0.055053
     },
     "engine_errors": [],
     "violations": [],
@@ -3507,15 +3507,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 79.9042,
-     "vco_df_dv_min_mhz_per_v": 3.39511,
-     "vco_fmin_tt_mhz": 10.5737,
-     "vco_fmax_tt_mhz": 226.315,
-     "vco_out_swing_pct_vdd": 100.923,
-     "vco_out_duty_pct": 53.9494,
-     "vco_fmax_ff_mhz": 245.705,
-     "vco_out_tr_ns": 0.0568,
-     "vco_out_tf_ns": 0.055229
+     "vco_kvco_mhz_per_v": 79.9213,
+     "vco_df_dv_min_mhz_per_v": 3.396,
+     "vco_fmin_tt_mhz": 10.5735,
+     "vco_fmax_tt_mhz": 226.361,
+     "vco_out_swing_pct_vdd": 100.526,
+     "vco_out_duty_pct": 53.9113,
+     "vco_fmax_ff_mhz": 245.683,
+     "vco_out_tr_ns": 0.05599,
+     "vco_out_tf_ns": 0.052141
     },
     "engine_errors": [],
     "violations": [],
@@ -3533,15 +3533,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 67.3255,
-     "vco_df_dv_min_mhz_per_v": 4.10812,
-     "vco_fmin_tt_mhz": 10.3576,
-     "vco_fmax_tt_mhz": 214.354,
-     "vco_out_swing_pct_vdd": 100.705,
-     "vco_out_duty_pct": 54.1237,
-     "vco_fmax_ff_mhz": 216.428,
-     "vco_out_tr_ns": 0.05763,
-     "vco_out_tf_ns": 0.05489
+     "vco_kvco_mhz_per_v": 67.3351,
+     "vco_df_dv_min_mhz_per_v": 4.10733,
+     "vco_fmin_tt_mhz": 10.3575,
+     "vco_fmax_tt_mhz": 214.383,
+     "vco_out_swing_pct_vdd": 100.519,
+     "vco_out_duty_pct": 54.3651,
+     "vco_fmax_ff_mhz": 216.466,
+     "vco_out_tr_ns": 0.05717,
+     "vco_out_tf_ns": 0.05208
     },
     "engine_errors": [],
     "violations": [],
@@ -3559,15 +3559,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 82.9599,
-     "vco_df_dv_min_mhz_per_v": 8.8962,
-     "vco_fmin_tt_mhz": 10.798,
-     "vco_fmax_tt_mhz": 207.413,
-     "vco_out_swing_pct_vdd": 100.93,
-     "vco_out_duty_pct": 53.6882,
-     "vco_fmax_ff_mhz": 226.896,
-     "vco_out_tr_ns": 0.07237,
-     "vco_out_tf_ns": 0.06948
+     "vco_kvco_mhz_per_v": 82.9543,
+     "vco_df_dv_min_mhz_per_v": 8.89468,
+     "vco_fmin_tt_mhz": 10.7983,
+     "vco_fmax_tt_mhz": 207.4,
+     "vco_out_swing_pct_vdd": 100.834,
+     "vco_out_duty_pct": 54.5175,
+     "vco_fmax_ff_mhz": 226.875,
+     "vco_out_tr_ns": 0.06649,
+     "vco_out_tf_ns": 0.06133
     },
     "engine_errors": [],
     "violations": [],
@@ -3585,15 +3585,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 76.6148,
-     "vco_df_dv_min_mhz_per_v": 32.6867,
-     "vco_fmin_tt_mhz": 0.0,
-     "vco_fmax_tt_mhz": 206.86,
-     "vco_out_swing_pct_vdd": 100.3,
-     "vco_out_duty_pct": 54.0776,
-     "vco_fmax_ff_mhz": 216.449,
-     "vco_out_tr_ns": 0.07083,
-     "vco_out_tf_ns": 0.06659
+     "vco_kvco_mhz_per_v": 73.5755,
+     "vco_df_dv_min_mhz_per_v": 14.4794,
+     "vco_fmin_tt_mhz": 8.19218,
+     "vco_fmax_tt_mhz": 206.846,
+     "vco_out_swing_pct_vdd": 100.408,
+     "vco_out_duty_pct": 53.3432,
+     "vco_fmax_ff_mhz": 216.438,
+     "vco_out_tr_ns": 0.06593,
+     "vco_out_tf_ns": 0.05921
     },
     "engine_errors": [],
     "violations": [],
@@ -3611,15 +3611,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 59.766,
-     "vco_df_dv_min_mhz_per_v": 12.0791,
-     "vco_fmin_tt_mhz": 7.39313,
-     "vco_fmax_tt_mhz": 188.484,
-     "vco_out_swing_pct_vdd": 100.323,
-     "vco_out_duty_pct": 53.823,
-     "vco_fmax_ff_mhz": 189.479,
-     "vco_out_tr_ns": 0.0724,
-     "vco_out_tf_ns": 0.06676
+     "vco_kvco_mhz_per_v": 59.7605,
+     "vco_df_dv_min_mhz_per_v": 12.0787,
+     "vco_fmin_tt_mhz": 7.39377,
+     "vco_fmax_tt_mhz": 188.468,
+     "vco_out_swing_pct_vdd": 100.445,
+     "vco_out_duty_pct": 54.1147,
+     "vco_fmax_ff_mhz": 189.472,
+     "vco_out_tr_ns": 0.06787,
+     "vco_out_tf_ns": 0.05946
     },
     "engine_errors": [],
     "violations": [],
@@ -3637,15 +3637,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 141.9,
-     "vco_df_dv_min_mhz_per_v": 25.9478,
-     "vco_fmin_tt_mhz": 12.7834,
-     "vco_fmax_tt_mhz": 349.086,
-     "vco_out_swing_pct_vdd": 100.543,
-     "vco_out_duty_pct": 54.0247,
-     "vco_fmax_ff_mhz": 362.873,
-     "vco_out_tr_ns": 0.038602,
-     "vco_out_tf_ns": 0.036378
+     "vco_kvco_mhz_per_v": 141.887,
+     "vco_df_dv_min_mhz_per_v": 25.9357,
+     "vco_fmin_tt_mhz": 12.7808,
+     "vco_fmax_tt_mhz": 349.052,
+     "vco_out_swing_pct_vdd": 100.547,
+     "vco_out_duty_pct": 54.0503,
+     "vco_fmax_ff_mhz": 362.846,
+     "vco_out_tr_ns": 0.03767,
+     "vco_out_tf_ns": 0.031772
     },
     "engine_errors": [],
     "violations": [],
@@ -3663,15 +3663,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 109.293,
-     "vco_df_dv_min_mhz_per_v": 24.5524,
-     "vco_fmin_tt_mhz": 11.3741,
-     "vco_fmax_tt_mhz": 306.465,
-     "vco_out_swing_pct_vdd": 100.383,
-     "vco_out_duty_pct": 53.861,
-     "vco_fmax_ff_mhz": 308.217,
-     "vco_out_tr_ns": 0.040221,
-     "vco_out_tf_ns": 0.037001
+     "vco_kvco_mhz_per_v": 109.301,
+     "vco_df_dv_min_mhz_per_v": 24.558,
+     "vco_fmin_tt_mhz": 11.3723,
+     "vco_fmax_tt_mhz": 306.485,
+     "vco_out_swing_pct_vdd": 100.384,
+     "vco_out_duty_pct": 53.838,
+     "vco_fmax_ff_mhz": 308.227,
+     "vco_out_tr_ns": 0.03703,
+     "vco_out_tf_ns": 0.034477
     },
     "engine_errors": [],
     "violations": [],
@@ -3689,15 +3689,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 83.9779,
-     "vco_df_dv_min_mhz_per_v": 8.33861,
-     "vco_fmin_tt_mhz": 10.325,
-     "vco_fmax_tt_mhz": 264.778,
-     "vco_out_swing_pct_vdd": 100.283,
-     "vco_out_duty_pct": 53.718,
-     "vco_fmax_ff_mhz": 265.977,
-     "vco_out_tr_ns": 0.041984,
-     "vco_out_tf_ns": 0.038125
+     "vco_kvco_mhz_per_v": 83.9046,
+     "vco_df_dv_min_mhz_per_v": 8.29109,
+     "vco_fmin_tt_mhz": 10.3232,
+     "vco_fmax_tt_mhz": 264.554,
+     "vco_out_swing_pct_vdd": 100.285,
+     "vco_out_duty_pct": 53.6937,
+     "vco_fmax_ff_mhz": 265.729,
+     "vco_out_tr_ns": 0.038952,
+     "vco_out_tf_ns": 0.033576
     },
     "engine_errors": [],
     "violations": [],
@@ -3715,15 +3715,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 130.689,
-     "vco_df_dv_min_mhz_per_v": 32.1916,
-     "vco_fmin_tt_mhz": 12.2779,
-     "vco_fmax_tt_mhz": 322.011,
-     "vco_out_swing_pct_vdd": 100.404,
-     "vco_out_duty_pct": 54.0135,
-     "vco_fmax_ff_mhz": 326.997,
-     "vco_out_tr_ns": 0.04657,
-     "vco_out_tf_ns": 0.04269
+     "vco_kvco_mhz_per_v": 130.721,
+     "vco_df_dv_min_mhz_per_v": 32.2046,
+     "vco_fmin_tt_mhz": 12.2787,
+     "vco_fmax_tt_mhz": 322.087,
+     "vco_out_swing_pct_vdd": 100.406,
+     "vco_out_duty_pct": 54.0169,
+     "vco_fmax_ff_mhz": 327.066,
+     "vco_out_tr_ns": 0.042609,
+     "vco_out_tf_ns": 0.039972
     },
     "engine_errors": [],
     "violations": [],
@@ -3741,15 +3741,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 98.9397,
-     "vco_df_dv_min_mhz_per_v": 34.3689,
-     "vco_fmin_tt_mhz": 10.9068,
-     "vco_fmax_tt_mhz": 278.044,
-     "vco_out_swing_pct_vdd": 100.302,
-     "vco_out_duty_pct": 53.8595,
-     "vco_fmax_ff_mhz": 279.211,
-     "vco_out_tr_ns": 0.048166,
-     "vco_out_tf_ns": 0.04361
+     "vco_kvco_mhz_per_v": 98.952,
+     "vco_df_dv_min_mhz_per_v": 34.3727,
+     "vco_fmin_tt_mhz": 10.9065,
+     "vco_fmax_tt_mhz": 278.077,
+     "vco_out_swing_pct_vdd": 100.303,
+     "vco_out_duty_pct": 53.8793,
+     "vco_fmax_ff_mhz": 279.247,
+     "vco_out_tr_ns": 0.044432,
+     "vco_out_tf_ns": 0.04076
     },
     "engine_errors": [],
     "violations": [],
@@ -3767,15 +3767,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 76.3148,
-     "vco_df_dv_min_mhz_per_v": 5.25941,
-     "vco_fmin_tt_mhz": 9.96126,
-     "vco_fmax_tt_mhz": 241.195,
+     "vco_kvco_mhz_per_v": 76.3028,
+     "vco_df_dv_min_mhz_per_v": 5.26733,
+     "vco_fmin_tt_mhz": 9.9615,
+     "vco_fmax_tt_mhz": 241.159,
      "vco_out_swing_pct_vdd": 100.246,
-     "vco_out_duty_pct": 53.7263,
-     "vco_fmax_ff_mhz": 242.074,
-     "vco_out_tr_ns": 0.05023,
-     "vco_out_tf_ns": 0.044925
+     "vco_out_duty_pct": 53.7438,
+     "vco_fmax_ff_mhz": 242.054,
+     "vco_out_tr_ns": 0.04913,
+     "vco_out_tf_ns": 0.04226
     },
     "engine_errors": [],
     "violations": [],
@@ -3793,15 +3793,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 112.096,
-     "vco_df_dv_min_mhz_per_v": 50.2671,
+     "vco_kvco_mhz_per_v": 112.121,
+     "vco_df_dv_min_mhz_per_v": 50.2387,
      "vco_fmin_tt_mhz": 10.0724,
-     "vco_fmax_tt_mhz": 275.739,
+     "vco_fmax_tt_mhz": 275.798,
      "vco_out_swing_pct_vdd": 100.285,
-     "vco_out_duty_pct": 53.8743,
-     "vco_fmax_ff_mhz": 277.296,
-     "vco_out_tr_ns": 0.060548,
-     "vco_out_tf_ns": 0.05363
+     "vco_out_duty_pct": 53.8789,
+     "vco_fmax_ff_mhz": 277.354,
+     "vco_out_tr_ns": 0.055782,
+     "vco_out_tf_ns": 0.047272
     },
     "engine_errors": [],
     "violations": [],
@@ -3819,15 +3819,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 84.7158,
-     "vco_df_dv_min_mhz_per_v": 9.94667,
-     "vco_fmin_tt_mhz": 9.05721,
-     "vco_fmax_tt_mhz": 237.79,
+     "vco_kvco_mhz_per_v": 84.7009,
+     "vco_df_dv_min_mhz_per_v": 9.78889,
+     "vco_fmin_tt_mhz": 9.05745,
+     "vco_fmax_tt_mhz": 237.75,
      "vco_out_swing_pct_vdd": 100.245,
-     "vco_out_duty_pct": 53.7394,
-     "vco_fmax_ff_mhz": 238.576,
-     "vco_out_tr_ns": 0.06267,
-     "vco_out_tf_ns": 0.054641
+     "vco_out_duty_pct": 53.7463,
+     "vco_fmax_ff_mhz": 238.543,
+     "vco_out_tr_ns": 0.06127,
+     "vco_out_tf_ns": 0.051549
     },
     "engine_errors": [],
     "violations": [],
@@ -3845,15 +3845,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 65.6728,
-     "vco_df_dv_min_mhz_per_v": 3.31881,
-     "vco_fmin_tt_mhz": 8.2904,
-     "vco_fmax_tt_mhz": 207.279,
+     "vco_kvco_mhz_per_v": 65.6791,
+     "vco_df_dv_min_mhz_per_v": 3.30891,
+     "vco_fmin_tt_mhz": 8.29022,
+     "vco_fmax_tt_mhz": 207.298,
      "vco_out_swing_pct_vdd": 100.22,
-     "vco_out_duty_pct": 53.6179,
-     "vco_fmax_ff_mhz": 207.894,
-     "vco_out_tr_ns": 0.06531,
-     "vco_out_tf_ns": 0.056481
+     "vco_out_duty_pct": 53.6252,
+     "vco_fmax_ff_mhz": 207.917,
+     "vco_out_tr_ns": 0.06375,
+     "vco_out_tf_ns": 0.053311
     },
     "engine_errors": [],
     "violations": [],
@@ -3871,15 +3871,15 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 115.239,
-     "vco_df_dv_min_mhz_per_v": 11.8365,
-     "vco_fmin_tt_mhz": 16.9314,
-     "vco_fmax_tt_mhz": 290.047,
-     "vco_out_swing_pct_vdd": 100.885,
-     "vco_out_duty_pct": 54.1058,
-     "vco_fmax_ff_mhz": 310.393,
-     "vco_out_tr_ns": 0.065958,
-     "vco_out_tf_ns": 0.064048
+     "vco_kvco_mhz_per_v": 115.269,
+     "vco_df_dv_min_mhz_per_v": 11.8468,
+     "vco_fmin_tt_mhz": 16.9312,
+     "vco_fmax_tt_mhz": 290.118,
+     "vco_out_swing_pct_vdd": 100.894,
+     "vco_out_duty_pct": 54.122,
+     "vco_fmax_ff_mhz": 310.454,
+     "vco_out_tr_ns": 0.059964,
+     "vco_out_tf_ns": 0.056063
     },
     "engine_errors": [],
     "violations": [],
@@ -3897,15 +3897,15 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 49.7066,
-     "vco_df_dv_min_mhz_per_v": 3.4297,
-     "vco_fmin_tt_mhz": 7.51488,
-     "vco_fmax_tt_mhz": 158.126,
-     "vco_out_swing_pct_vdd": 100.196,
-     "vco_out_duty_pct": 53.687,
-     "vco_fmax_ff_mhz": 158.952,
-     "vco_out_tr_ns": 0.051717,
-     "vco_out_tf_ns": 0.04609
+     "vco_kvco_mhz_per_v": 49.7124,
+     "vco_df_dv_min_mhz_per_v": 3.44356,
+     "vco_fmin_tt_mhz": 7.51332,
+     "vco_fmax_tt_mhz": 158.142,
+     "vco_out_swing_pct_vdd": 100.111,
+     "vco_out_duty_pct": 53.6941,
+     "vco_fmax_ff_mhz": 158.962,
+     "vco_out_tr_ns": 0.050792,
+     "vco_out_tf_ns": 0.04094
     },
     "engine_errors": [],
     "violations": [],
@@ -3923,15 +3923,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 72.533,
-     "vco_df_dv_min_mhz_per_v": 12.1689,
-     "vco_fmin_tt_mhz": 8.0419,
-     "vco_fmax_tt_mhz": 203.881,
-     "vco_out_swing_pct_vdd": 100.568,
-     "vco_out_duty_pct": 53.1887,
-     "vco_fmax_ff_mhz": 205.284,
-     "vco_out_tr_ns": 0.05592,
-     "vco_out_tf_ns": 0.05194
+     "vco_kvco_mhz_per_v": 72.5448,
+     "vco_df_dv_min_mhz_per_v": 12.1748,
+     "vco_fmin_tt_mhz": 8.04096,
+     "vco_fmax_tt_mhz": 203.912,
+     "vco_out_swing_pct_vdd": 100.33,
+     "vco_out_duty_pct": 53.6747,
+     "vco_fmax_ff_mhz": 205.305,
+     "vco_out_tr_ns": 0.0553,
+     "vco_out_tf_ns": 0.04918
     },
     "engine_errors": [],
     "violations": [],
@@ -3949,15 +3949,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 118.308,
-     "vco_df_dv_min_mhz_per_v": 21.2602,
-     "vco_fmin_tt_mhz": 12.318,
-     "vco_fmax_tt_mhz": 331.75,
-     "vco_out_swing_pct_vdd": 100.551,
-     "vco_out_duty_pct": 53.9786,
-     "vco_fmax_ff_mhz": 346.034,
-     "vco_out_tr_ns": 0.047151,
-     "vco_out_tf_ns": 0.044654
+     "vco_kvco_mhz_per_v": 118.291,
+     "vco_df_dv_min_mhz_per_v": 21.2618,
+     "vco_fmin_tt_mhz": 12.3183,
+     "vco_fmax_tt_mhz": 331.703,
+     "vco_out_swing_pct_vdd": 100.555,
+     "vco_out_duty_pct": 53.9508,
+     "vco_fmax_ff_mhz": 345.977,
+     "vco_out_tr_ns": 0.04613,
+     "vco_out_tf_ns": 0.039178
     },
     "engine_errors": [],
     "violations": [],
@@ -4119,11 +4119,11 @@
   "scoped_out": []
  },
  "inputs_at_start": {
-  "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
-  "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
+  "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+  "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
   "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
   "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
  },
- "recorded_ts": "2026-10-30T07:04:54",
- "attempts": 11
+ "recorded_ts": "2026-10-31T16:27:46",
+ "attempts": 13
 }

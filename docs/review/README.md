@@ -22,7 +22,7 @@ Regenerate the figures after any result changes:
 | Analog schematic, 31 PVT corners | signed off by you (H1-ada9eb); the loop filter's caps changed since (decision 0), resimulated at all 31 corners | `blocks/pll/analog/log/H1-signoff.md`, `blocks/pll/analog/reports/recorded/gate-sim_pvt.json` |
 | Digital RTL: PFD, /8 prescaler, /N divider, lock detector, registers | done; sim, formal, coverage, mutation, holdout, standalone harden, DRC, LVS, precheck and gate-level sim pass | `blocks/pll/digital/state.json` |
 | Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us; all three layers pass with the MOS caps | `blocks/pll/tb/README.md`, figure below |
-| Digital timing with the VCO clock at each process's post-layout ceiling plus margin (ss 3.75 ns, tt and ff 2.7 ns) | tt and ff meet; ss_125C misses by 0.15 ns, waived (decision 2), recorded in `digital/reports/waivers.json` | `blocks/pll/digital/state.json` issue 8 |
+| Digital timing with the VCO clock at each process's post-layout ceiling plus margin | met at every corner since 2026-10-31: the digital half clocks at vco/2 from a TSPC divider in the analog macro (decision 7); ss setup slack +2.34 ns, no waiver | `blocks/pll/digital/state.json` issue 8 |
 | Analog layout | DRC clean, LVS unique match | `blocks/pll/analog/layout/` |
 | Post-layout benches on the extracted netlist | 30 of 31 corners pass; ff_pss does not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
@@ -168,7 +168,9 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    not recorded as approved. The tile is built on this layout, and
    `blocks/pll/analog/log/H2-proceed.md` records that this was done pending
    your review. If you reject it, the layout is redone and the tile rebuilt.
-2. **Digital issue 8, the ss_125C timing waiver.** The VCO clock is
+2. **Digital issue 8, the ss_125C timing waiver (superseded 2026-10-31 by
+   decision 7: the digital half now clocks at vco/2 and meets timing with
+   margin, no waiver).** The VCO clock was
    constrained per process at its post-layout ceiling plus margin: 3.75 ns
    (267 MHz) at ss, 2.7 ns (370 MHz) at tt and ff. At ss_125C the /2
    prescaler stage misses setup by 0.15 ns, inside the 0.25 ns clock
@@ -204,6 +206,31 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    pulses. In the tile, chip-flow wires each crossing signal to the analog
    macro only, so `uo[3:7]` read 0. Keeping UP/DN visible needs a chip-flow
    change (a crossing signal that also goes to a pad). Say if you want it.
+
+7. **A TSPC divide-by-2 inside the analog macro (a change to the netlist you
+   signed off at H1; 2026-10-31, issue #48).** Digital issue 8 (decision 2)
+   closed at the slow corner only by a few ps, with no margin, because a
+   library flop had to toggle at the VCO's ceiling. Now a 9-transistor TSPC
+   flop with D tied to its own output divides the VCO by 2 inside the macro,
+   and the digital half clocks at vco/2 through a /4 prescaler. The overall
+   ratio (/8) is unchanged.
+   - Netlist: block 8 of `blocks/pll/analog/netlist/pll_analog.cir` (14
+     devices, all L = 0.28 um), described in `analog/spec/topology.md`
+     section 8. `MP_DR` holds the divider's state node high while `pll_en`
+     is low, so standby stays static (standby current unchanged, about
+     0.15 nA at tt).
+   - Pins: the macro's output pin is `vco_div2`; `vco_out` is now an internal
+     node, since chip-flow's tile harden requires the macro's pins to be
+     exactly the interface's. The analog benches read it as `xdut.vco_out`.
+   - Layout: the divider sits in the ring block, right of the output
+     inverter. DRC clean, LVS unique match. Post-layout VCO ceilings moved
+     at most 0.9% (296.9 MHz at ff_m40c_vm10, was 299.5), and all 31
+     post-layout corners pass.
+   - Digital timing (PR #50): setup slack at ss is +2.34 ns (it was -0.03
+     to +0.004); the first stage would keep up with a VCO near 388 MHz at
+     ss. The ss waiver is gone.
+   - Cost of undoing it: revert block 8, the layout columns and the
+     digital prescaler, and go back to decision 2's waiver.
 
 ## What is left
 

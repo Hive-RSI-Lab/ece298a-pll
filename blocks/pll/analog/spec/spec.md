@@ -42,9 +42,11 @@ control decoding are digital and outside this cell.
    every corner, about 50-200 MHz at typical, up to about 363 MHz at the
    fast/cold/low-supply corner with `vctrl` at the rail (370 MHz ceiling,
    the 2.7 ns the digital side is timed at), Kvco about 100 MHz/V (estimate). Output
-   buffered to a full-swing 3.3 V CMOS clock `vco_out` driving one `dffq_1`
-   clock pin plus one buffer (about 15 fF) with rise/fall <= 0.15 ns at
-   333 MHz (the Liberty condition the prescaler was checked at).
+   buffered to a full-swing 3.3 V CMOS clock `vco_out` with rise/fall
+   <= 0.15 ns at 333 MHz. Since 2026-10-31 (issue #48) `vco_out` is
+   internal: it clocks the macro's TSPC /2, whose output `vco_div2` is the
+   pin the digital half takes, so the digital side is timed at half the
+   VCO's ceiling (section 8 of topology.md).
 4. **Bias.** One reference current for pump mirror and VCO. `bias_ref` goes
    to pad `ua[1]` for an optional external resistor to ground; the cell must
    work with `ua[1]` floating (internal default bias) and survive probe /
@@ -57,12 +59,12 @@ control decoding are digital and outside this cell.
 
 Supply: one `vdd` at 3.3 V nominal (+-10 % over corners), one `vss`. The
 `.subckt pll_analog` pins are exactly the six `interface.yaml` signals, the
-two `ua_pins`, `vdd` and `vss` - ten pins, no other. Renaming, widening or
+two `ua_pins`, `vdd` and `vss` - ten pins, no other (`vco_div2` took `vco_out`'s place on 2026-10-31, issue #48). Renaming, widening or
 adding one goes back through the msde `split` step.
 
 | Pin | Dir | Level | Domain | Meaning |
 |---|---|---|---|---|
-| `vco_out` | a2d out | cmos_3v3 | clk_free | buffered VCO clock to the /8 prescaler, up to 370 MHz |
+| `vco_div2` | a2d out | cmos_3v3 | clk_free | the VCO clock divided by 2 (TSPC /2 on the internal `vco_out`, 2026-10-31, issue #48), to the digital /4 prescaler, up to 185 MHz |
 | `pfd_up` | d2a in | cmos_3v3 | clk_ref | UP pulse, active high, source Icp into `vctrl` |
 | `pfd_dn` | d2a in | cmos_3v3 | clk_fb | DN pulse, active high, sink Icp from `vctrl` |
 | `pll_en` | d2a in | cmos_3v3 | clk_ref | 1 = run, 0 = pump, bias, VCO off |
@@ -74,7 +76,7 @@ adding one goes back through the msde `split` step.
 | `vss` | ground | 0 V | - | the one ground pin |
 
 Digital inputs present a CMOS-gate load (no DC current); the inversion for
-the PMOS UP switch is inside the cell. `vco_out` is the only logic output.
+the PMOS UP switch is inside the cell. `vco_div2` is the only logic output.
 `vctrl` and `bias_ref` go straight to the pads and never to the digital
 side. No split (standard-cell) devices live in this macro.
 
@@ -92,7 +94,9 @@ poly resistors and MIM caps: 31 corners. Names follow `corners.py`: `tt_27c`,
 ### Measures (ngspice)
 
 Conditions unless stated: `pll_en` = 1, `cp_trim` = 00, `bias_ref`
-floating (internal default), `vco_out` loaded with 15 fF. The `vctrl`
+floating (internal default), `vco_div2` loaded with 30 fF; the benches read
+the internal `vco_out` as `xdut.vco_out` (until 2026-10-31 it was the pin,
+loaded with 15 fF). The `vctrl`
 tuning range for the pump measures is 0.3 V to (vdd - 0.3 V): the brief's
 "0.3-3.0 V" cannot be met at vdd - 10 % = 2.97 V, so the upper end tracks
 the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
@@ -120,11 +124,11 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 | `vco_fmin_tt_mhz` | <= 50 | tt_27c | frequency at the low end of the range |
 | `vco_fmax_tt_mhz` | >= 200 | tt_27c | frequency at the high end of the range |
 | `vco_fmax_ff_mhz` | 150..370 | all | frequency at `vctrl` = vdd: the VCO's ceiling, held under the 370 MHz (2.7 ns) the digital timing is closed at, and over the 150 MHz lock point every corner keeps |
-| `vco_out_swing_pct_vdd` | >= 90 | all | (Vhigh - Vlow)/vdd on `vco_out` into 15 fF |
-| `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency into 15 fF |
+| `vco_out_swing_pct_vdd` | >= 90 | all | (Vhigh - Vlow)/vdd on the internal `vco_out` |
+| `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency, internal `vco_out` into the TSPC |
 | `vco_out_tf_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | fall, same |
 | `vco_out_duty_pct` | 40..60 | all | duty at mid-range `vctrl` |
-| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10 | `vco_out` driving the extracted `gf180mcu_fd_sc_mcu7t5v0__dffq_1` + `inv_1` toggle stage: f_toggle / (f_vco/2) |
+| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10 | the macro's TSPC /2 (vco_out -> vco_div2, loaded by one `inv_1` and 30 fF): f(vco_div2) / (f_vco/2) |
 | `standby_current_ua` | <= 1 | all | vdd current with `pll_en` = 0 |
 | `vco_out_off_toggles` | 0 | all | `vco_out` transitions with `pll_en` = 0 (held static) |
 | `startup_time_us` | <= 5 | all | `pll_en` rise to a running, full-swing `vco_out`, with 5 pF on `vctrl` and on `bias_ref` |
@@ -232,7 +236,7 @@ run, so it is replaced by this note rather than kept as a permanent miss.
 
 Generator-based; Magic and KLayout DRC clean; netgen LVS clean against the
 sized netlist; C1 area reported. The footprint must leave room for the
-digital side on the two-tile analog footprint, and the `vco_out` pin sits
+digital side on the two-tile analog footprint, and the `vco_div2` pin sits
 on the edge nearest the prescaler.
 
 ### Out of scope here

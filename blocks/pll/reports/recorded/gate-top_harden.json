@@ -3,7 +3,7 @@
  "gate": "top_harden",
  "phase": "P3",
  "tool": "top_harden",
- "input_digest": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -30,7 +30,7 @@
     ],
     "size_um": [
      122.02,
-     255.13
+     256.96
     ],
     "pins": {
      "cp_trim0": "cp_trim0",
@@ -38,7 +38,7 @@
      "pfd_dn": "pfd_dn",
      "pfd_up": "pfd_up",
      "pll_en": "pll_en",
-     "vco_out": "vco_out"
+     "vco_div2": "vco_div2"
     },
     "ua": {
      "bias_ref": 1,
@@ -49,65 +49,63 @@
   "top": "ihsan_sa_pll",
   "run_tag": "run",
   "resumed": false,
-  "wall_s": 59.96,
+  "wall_s": 50.62,
   "run_dir": "top/harden/runs/run",
   "metrics": {
-   "design__instance__count": 2363,
-   "design__instance__area": 99474.1,
+   "design__instance__count": 2350,
+   "design__instance__area": 99139.8,
    "design__instance_unmapped__count": 0,
-   "timing__hold__ws": 0.5055425110514379,
-   "timing__setup__ws": 2.1806059797279933,
+   "timing__hold__ws": 0.525923985913934,
+   "timing__setup__ws": 6.967839835669224,
    "timing__hold__tns": 0,
    "timing__setup__tns": 0,
    "timing__hold__wns": 0,
    "timing__setup__wns": 0,
    "timing__hold_vio__count": 0,
-   "timing__hold_r2r__ws": 0.505543,
+   "timing__hold_r2r__ws": 0.525924,
    "timing__hold_r2r_vio__count": 0,
    "timing__setup_vio__count": 0,
-   "timing__setup_r2r__ws": 2.180606,
+   "timing__setup_r2r__ws": 6.96784,
    "timing__setup_r2r_vio__count": 0,
    "design__die__bbox": "0.0 0.0 346.64 325.36",
    "design__core__bbox": "3.36 3.92 343.28 321.44",
    "design__die__area": 112783,
    "design__core__area": 107931,
-   "design__instance__count__stdcell": 928,
-   "design__instance__area__stdcell": 8923.49,
+   "design__instance__count__stdcell": 926,
+   "design__instance__area__stdcell": 8888.36,
    "design__instance__count__macros": 1,
-   "design__instance__area__macros": 31131,
+   "design__instance__area__macros": 31354.3,
    "design__instance__count__padcells": 0,
    "design__instance__area__padcells": 0,
    "design__instance__count__cover": 0,
    "design__instance__area__cover": 0,
-   "design__instance__utilization": 0.37111,
-   "design__instance__utilization__stdcell": 0.116191,
-   "design__instance__displacement__total": 54.88,
-   "design__instance__displacement__mean": 0.059,
-   "design__instance__displacement__max": 19.04,
+   "design__instance__utilization": 0.372854,
+   "design__instance__utilization__stdcell": 0.116071,
+   "design__instance__displacement__total": 0,
+   "design__instance__displacement__mean": 0,
+   "design__instance__displacement__max": 0,
    "design__instance__count__setup_buffer": 0,
    "design__instance__count__hold_buffer": 0
   },
   "power_ports_to_obs": [
-   "VGND Metal4 99.920 3.620 101.520 81.810",
-   "VGND Metal4 99.920 204.260 101.520 321.740",
+   "VGND Metal4 99.920 3.620 101.520 83.640",
+   "VGND Metal4 99.920 206.090 101.520 321.740",
    "VGND Metal4 138.790 3.620 140.390 25.000",
-   "VGND Metal4 138.790 299.890 140.390 321.740",
+   "VGND Metal4 138.790 301.720 140.390 321.740",
    "VGND Metal4 177.660 3.620 179.260 27.500",
-   "VGND Metal4 177.660 208.260 179.260 321.740",
+   "VGND Metal4 177.660 206.890 179.260 321.740",
    "VPWR Metal4 135.490 3.620 137.090 25.000",
-   "VPWR Metal4 135.490 300.690 137.090 321.740",
+   "VPWR Metal4 135.490 302.520 137.090 321.740",
    "VPWR Metal4 174.360 3.620 175.960 27.500",
-   "VPWR Metal4 174.360 209.060 175.960 321.740",
-   "VPWR Metal4 213.230 3.620 214.830 36.810",
-   "VPWR Metal4 213.230 167.340 214.830 321.740"
+   "VPWR Metal4 174.360 210.890 175.960 321.740"
   ]
  },
  "inputs_at_start": {
-  "digital_rtl": "dir_text:d57e8def30c23cb7654bbd9d72b98e3c18d24c5ee8934cf63e6d13031be58a3a",
-  "analog_layout": "dir_text:6ba4adfca0797274560fa76e2bf12f133ec595942061dfeb8d41241b9092f8df",
+  "digital_rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
   "top_sdc": null,
-  "digital_sdc": "text_eol:2cc8f62c31d9f1daad212ee532bc4b1ae6e6e784cda23b5e5c9c2a362668bbc9"
+  "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee"
  },
- "recorded_ts": "2026-10-31T15:19:17",
- "attempts": 9
+ "recorded_ts": "2026-10-31T16:06:20",
+ "attempts": 8
 }
