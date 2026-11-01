@@ -2,35 +2,34 @@
 * presc_div2_ratio, scored at ff_m40c_vp10 only, so computed and printed only
 * at that corner: process ff, -40 C, vdd above nominal). Written from spec/.
 *
-* vco_out drives the first /2 stage of the digital prescaler: a
-* gf180mcu_fd_sc_mcu7t5v0__dffq_1 clocked by vco_out with Q fed back to D
-* through gf180mcu_fd_sc_mcu7t5v0__inv_1 (toggle), plus one inv_1 input as
-* the "one buffer" spec.md puts on vco_out. vctrl = vdd, the maximum VCO
-* frequency (the 333 MHz condition). Cells run from the same vdd.
-* presc_div2_ratio = f(Q) / (f(vco_out)/2) = 2*T_vco/T_q, with T_vco the mean
-* of 20 vco_out periods and T_q the mean of the 10 Q periods spanning them,
-* both from rising vdd/2 crossings after 10 ns (the ring starts from its DC
-* point within a few ns). Two runs, the second only when the first is too
+* Since 2026-10-31 (issue #48) the first /2 is the macro's own TSPC divider:
+* vco_div2 = vco_out / 2 is the clock the digital half takes. This bench
+* checks that divider keeps up at the VCO's fastest corner: vctrl = vdd, the
+* maximum VCO frequency, vco_div2 loaded by one inv_1 (the digital side's
+* first gate) plus 30 fF of route, vco_out by 15 fF.
+* presc_div2_ratio = f(vco_div2) / (f(vco_out)/2) = 2*T_vco/T_q, with T_vco the mean
+* of 20 vco_out periods and T_q the mean of the 10 vco_div2 periods spanning them,
+* both from rising vdd/2 crossings after 25 ns. The ring starts from its DC
+* point within a few ns but can leave a runt pulse on vco_out near 22 ns
+* (ff_m40c_vp10, 2026-10-31), which a 10 ns start counted as a VCO period and
+* read the ratio 0.969 with the divider exact (7.52 ns = 2 x 3.76 ns). Two runs, the second only when the first is too
 * short for 20 VCO periods: 40 ns at a 5 ps max step (fast VCO, >~ 730 MHz),
 * then 130 ns at a 10 ps max step (down to ~190 MHz, under the 200 MHz
-* fmax_ff floor). A single 300 ns run at 5 ps (60000 steps) timed out at
-* 600 s (wo-4). Fewer Q edges than 11 (a stage that cannot follow), or
+* fmax_ff floor). Fewer vco_div2 edges than 11 (a divider that cannot follow), or
 * fewer VCO edges after both runs: the count ratio 2*nq/nv (as before).
 * At every corner other than ff_m40c_vp10 the bench runs a DC op only and
 * prints nothing: presc_div2_ratio is not scored there, and a deck with no
 * analysis at all reads to the gate as "no simulations run".
 *
-* Cell netlist: the PDK's own libs.ref/.../spice/gf180mcu_fd_sc_mcu7t5v0.spice
-* (transistor-level cell netlist, NOT a parasitic-extracted view; spec.md
-* says "extracted" and no extracted cell view exists under the PDK). Its
-* nfet_05v0/pfet_05v0 devices resolve through sm141064.spice's own fets_mm
+* Load cell netlist: the PDK's own libs.ref/.../spice/gf180mcu_fd_sc_mcu7t5v0.spice.
+* Its nfet_05v0/pfet_05v0 devices resolve through sm141064.spice's own fets_mm
 * section, which the typical section already pulls in.
 * sim_timeout_s: 1800
 
-.include '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
 * the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
 * moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
 * + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
@@ -44,8 +43,8 @@
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
 C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
 .ends cap_nmos_03v3_b
-.include '/work/blocks/pll/analog/log/bench_strength/baseline__pll_analog.cir'
-.include '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
+.include '/home/hive2/projects/ece298a-pll/blocks/pll/analog/log/bench_strength/baseline__pll_analog.cir'
+.include '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
 .param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=3.5e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='4e-05' l_cl='2e-06'
 
 
@@ -66,10 +65,9 @@ vdn      pfd_dn   0 0
 vt0      cp_trim0 0 0
 vt1      cp_trim1 0 0
 vvc      vctrl    0 {vddp}
-xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
-xdff  d   vco_out q   vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__dffq_1
-xtog  q   d           vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
-xbuf  vco_out nbuf    vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
+xdut q pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+xbuf  q nbuf   vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
+cload2   q 0 30f
 
 .control
 set noaskquit
@@ -89,14 +87,14 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
       let nx = length(time)
       let nx1 = nx - 1
       let nx2 = nx - 2
-      let late = time[1,$&nx1] gt 10n
-      let hv = (v(vco_out) gt vmid)
+      let late = time[1,$&nx1] gt 25n
+      let hv = (v(xdut.vco_out) gt vmid)
       let hq = (v(q) gt vmid)
       let nv = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
       let nq = mean(((hq[1,$&nx1] - hq[0,$&nx2]) gt 0.5) and late)*length(late)
       if (nv ge 22) and (nq ge 11)
-        meas tran va when v(vco_out)=$&vmid rise=1 td=10n
-        meas tran vb when v(vco_out)=$&vmid rise=21 td=10n
+        meas tran va when v(xdut.vco_out)=$&vmid rise=1 td=25n
+        meas tran vb when v(xdut.vco_out)=$&vmid rise=21 td=25n
         meas tran qa when v(q)=$&vmid rise=1 td=$&va
         meas tran qb when v(q)=$&vmid rise=11 td=$&va
         let x = 2*((vb - va)/20)/((qb - qa)/10)

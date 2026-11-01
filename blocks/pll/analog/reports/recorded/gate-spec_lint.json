@@ -3,7 +3,7 @@
  "gate": "spec_lint",
  "phase": "P1",
  "tool": "spec_lint_ade",
- "input_digest": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
+ "input_digest": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -19,9 +19,17 @@
  "failing_count": 0,
  "failing": [],
  "violations": [],
- "inputs_at_start": {
-  "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+ "facts": {
+  "mc_waived": [
+   {
+    "measure": "presc_div2_ratio",
+    "why": "a divide ratio counted in edges: a flop divides by 2 or stops, and mismatch moves no fraction of it. The VCO benches and the closed loop see one that stops."
+   }
+  ]
  },
- "recorded_ts": "2026-10-30T00:01:50",
- "attempts": 18
+ "inputs_at_start": {
+  "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71"
+ },
+ "recorded_ts": "2026-11-01T12:18:02",
+ "attempts": 22
 }

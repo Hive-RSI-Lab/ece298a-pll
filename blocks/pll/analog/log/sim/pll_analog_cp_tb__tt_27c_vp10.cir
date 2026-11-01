@@ -18,10 +18,10 @@
 *  - icp_up_code00_tt_ua is the same UP code-00 current, bound only at tt_27c.
 * sim_timeout_s: 300
 
-.include '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
-.lib '/opt/eda-toolchain/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
 * the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
 * moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
 * + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep

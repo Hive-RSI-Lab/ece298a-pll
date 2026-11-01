@@ -140,12 +140,14 @@ extracted netlist at typical hold the same bounds. Since 2026-10-30 the
 post-layout bounds also hold `ol_pm_pn16_nopad_pvt_deg` (>= 30 at every
 corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30).
 Both are in the post-layout bench's `.bounds.json`, which pex_pvt scores;
-`spec.yaml`'s `post_layout_bounds` keeps Kvco at 40 and has no margin key
-until bench_strength is next re-run (changing it stales that gate's
-recorded pass, which reads no post-layout bound). No Monte Carlo gate: the brief asks for no yield number. GF180 poly models
-have no per-instance mismatch, but the MOS models do (`.lib fets_mm`, off by
-default through `sw_stat_mismatch`). This note said otherwise until
-2026-11-01. A Monte Carlo outside the gates is in `mc/README.md`.
+`spec.yaml`'s `post_layout_bounds` holds Kvco at 30 since 2026-11-01, and has
+no margin key. Monte Carlo gate since 2026-11-01 (`mc` in `spec.yaml`, H2's ruling
+on the person's "H2 decides"): 30 samples per bench at typical, device mismatch
+on. It does not see the corners where `cp_updn_mismatch_pct` goes over its bound
+(ff_pss, ff_m40c_vp10); those rates are in `mc/README.md`, which also has what
+the outside runs cover. GF180 poly models have no per-instance mismatch; the MOS
+models do (`.lib fets_mm`, off by default through `sw_stat_mismatch`). This note
+said otherwise until 2026-11-01.
 
 ### Revision 2026-10-10 (H1)
 

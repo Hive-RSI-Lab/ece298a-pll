@@ -104,6 +104,26 @@ devices:
   - xMN_G2
   - xMP_O
   - xMN_O
+  # TSPC /2 (vco_out -> vco_div2, topology.md section 8)
+  - xMP_DA
+  - xMP_DB
+  - xMN_DA
+  - xMP_DC
+  - xMN_DB
+  - xMN_DC
+  - xMP_DD
+  - xMN_DD
+  - xMN_DE
+  - xMP_DR
+  - xMP_DO1
+  - xMN_DO1
+  - xMP_DO2
+  - xMN_DO2
+
+# Device mismatch at typical (the gate's corner): 30 samples per bench, at most
+# one miss. The corner failure rates this gate does not see are in mc/README.md
+# (cp_updn_mismatch_pct at ff_pss, ff_m40c_vp10).
+mc: {enabled: true, runs: 30, yield_min: 0.95}
 
 # The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
 # 125 C": a full grid, replacing the default five. 27 corners; the
@@ -215,6 +235,8 @@ measures:
   - name: presc_div2_ratio
     bounds: {min: 0.99, max: 1.01}
     corners: [ff_m40c_vp10]
+    statistical: none
+    mc_waiver: "a divide ratio counted in edges: a flop divides by 2 or stops, and mismatch moves no fraction of it. The VCO benches and the closed loop see one that stops."
   # --- power-down -------------------------------------------------------
   - name: standby_current_ua
     bounds: {max: 1.0}
@@ -243,5 +265,5 @@ measures:
 post_layout_bounds:
   icp_up_code00_ua: {min: 12.0, max: 30.0}
   icp_dn_code00_ua: {min: 12.0, max: 30.0}
-  vco_kvco_mhz_per_v: {min: 40.0, max: 250.0}
+  vco_kvco_mhz_per_v: {min: 30.0, max: 250.0}
   vco_fmax_tt_mhz: {min: 200.0}

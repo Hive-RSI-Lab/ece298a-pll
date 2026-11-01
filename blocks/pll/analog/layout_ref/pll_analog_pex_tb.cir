@@ -1,8 +1,9 @@
-* pll_analog_pex_tb.cir - the post-layout bench for pll_analog, typical
-* corner, 27 C, vdd = 3.3 V (pex_sim runs typical only). It runs on the
+* pll_analog_pex_tb.cir - the post-layout bench for pll_analog, at the corner
+* pex_sim gives it through {{corner}}, {{res_corner}}, {{mim_corner}}, {{temp_c}}
+* and {{vdd}}; whatever follows the supply follows {{vdd}}. It runs on the
 * magic-extracted, parasitic-annotated netlist of this run's own GDS;
-* check_pex_sim.py fills in the pdk and extracted tokens through
-* str.format(), so this file carries no other curly brace at all.
+* check_pex_sim.py fills in the tokens through str.format(), so any other
+* curly brace in this file is doubled.
 * Written from spec/ only (post_layout_bounds), before any layout exists.
 *
 * Measures (spec.yaml post_layout_bounds, same bounds as pre-layout):
@@ -26,11 +27,11 @@
 * r1 directly, but that is a net internal to the cell, and the extracted
 * netlist keeps it only if the layout labels it - a kick into an unlabelled
 * node would silently hit a dangling node and the ring could sit on its DC
-* balance point. Here vkick, a 0.3 V, 2 ns pulse in series with the vctrl
-* source at t = 1 ns (zero at the operating point, so the op and the pump
-* currents are untouched), steps the starve current; the ring nodes, loaded
-* unequally (r5 also drives the NAND), leave the balance point. A ring whose
-* DC point is stable still decays and stalls.
+* balance point. Here ikick, 200 uA for 1 ns on r1 at t = 1 ns (zero at the
+* operating point, so the op and the pump currents are untouched), is a
+* large-signal start. Until 2026-11-01 this was a 0.3 V pulse on vctrl, which
+* left the ring on that point at ff_pss. A ring whose DC point is stable
+* still decays and stalls.
 *
 * Both frequency runs start from the operating point at vctrl = 3.0 V,
 * where the ring's small-signal gain is high and the kick grows to full
@@ -45,21 +46,18 @@
 * crossings of vco_out after the settle time, n capped. Fewer than 2 rises:
 * f = 0, a stalled ring, printed as a real value so Kvco fails its bound,
 * never skipped.
-*   fast end (vctrl = 3.0 V, ~258 MHz pre-layout): 20 ps max step, 45 ns,
-*     rises after 10 ns, up to 8 periods - the bias answers the ring's own
-*     start with a damped ~25 ns period wobble of about +-2 %, which 8
-*     periods average out.
-*   slow end (vctrl = 0.3 V, ~9.2 MHz pre-layout): 250 ps max step,
-*     650 ns, rises after 200 ns (80 ns after the ramp ends), up to 3
-*     periods.
+*   fast end (vctrl = vdd-0.3 V): 20 ps max step, 250 ns, rises after 100 ns,
+*     up to 30 periods, once the bias has settled (pex_pvt_tb's reasoning).
+*   slow end (vctrl = 0.3 V): 250 ps max step, 1 us, rises after 200 ns,
+*     up to 4 periods.
 * vco_fmax_tt_mhz is f at vctrl = vdd - 0.3 V (= vco_f_hi_mhz), the
 * pre-layout measure of the same name, bounded post-layout too: wire
 * capacitance on the ring slows the top of the range, and the 200 MHz lock
 * point lives there. vco_f_lo_mhz is printed for the layout-fixer, unbounded.
 .include '{pdk}/libs.tech/ngspice/design.spice'
-.lib '{pdk}/libs.tech/ngspice/sm141064.spice' typical
-.lib '{pdk}/libs.tech/ngspice/sm141064.spice' res_typical
-.lib '{pdk}/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {res_corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {mim_corner}
 * the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
 * moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
 * + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
@@ -78,29 +76,38 @@ C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs
 .ends cap_nmos_03v3_b
 .include '{extracted}'
 
-.temp 27
-vdd_src  vdd      0 dc 3.3
+.temp {temp_c}
+.param vddp={vdd}
+.csparam vddp={{vddp}}
+.csparam vmid={{vddp/2}}
+.csparam vhi={{vddp-0.3}}
+.csparam vrng={{vddp-0.6}}
+.csparam vdrop={{0.6-vddp}}
+vdd_src  vdd      0 dc {{vddp}}
 vss_src  vss      0 dc 0
-ven      pll_en   0 dc 3.3
+ven      pll_en   0 dc {{vddp}}
 vup      pfd_up   0 dc 0
 vdn      pfd_dn   0 dc 0
 vt0      cp_trim0 0 dc 0
 vt1      cp_trim1 0 dc 0
-vvc      vctrl    vk dc 1.65
-vkick    vk       vr dc 0 pulse(0 0.3 1n 100p 100p 2n 1)
+vvc      vctrl    vk dc {{vddp/2}}
+vkick    vk       vr dc 0
 vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
 cload2   vco_div2 0 30f
 xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+* 2026-11-01: as pex_pvt_tb, the 200 uA, 1 ns kick on r1 and its settle times; at
+* ff_pss the 0.3 V pin kick left the ring on its DC balance point (f = 0)
+ikick    0        xdut.r1 pulse(0 200u 1n 50p 50p 1n 1)
 
 .control
 set noaskquit
 * --- pump currents, code 00, vctrl = vdd/2
-alter vup dc = 3.3
+alter vup dc = $&vddp
 op
 let x = i(vvc)*1e6
 set iup = "$&x"
 alter vup dc = 0
-alter vdn dc = 3.3
+alter vdn dc = $&vddp
 op
 let x = -i(vvc)*1e6
 set idn = "$&x"
@@ -110,26 +117,26 @@ setplot new
 set rp = $curplot
 let fhi = 0
 let flo = 0
-alter vvc dc = 3.0
+alter vvc dc = $&vhi
 foreach pt 0 1
   if $pt eq 0
     set tsx = "20p"
-    set tex = "45n"
-    set tdx = "10n"
-    set nmx = "9"
+    set tex = "250n"
+    set tdx = "100n"
+    set nmx = "31"
   else
-    alter @vramp[pulse] = [ 0 -2.7 20n 100n 100n 1 1 ]
+    alter @vramp[pulse] = [ 0 $&vdrop 20n 100n 100n 1 1 ]
     set tsx = "250p"
-    set tex = "650n"
+    set tex = "1000n"
     set tdx = "200n"
-    set nmx = "4"
+    set nmx = "5"
   end
   tran $tsx $tex 0 $tsx
   set tp = $curplot
   let nx = length(time)
   let nx1 = nx - 1
   let nx2 = nx - 2
-  let hv = (v(xdut.vco_out) gt 1.65)
+  let hv = (v(xdut.vco_out) gt $&vmid)
   let late = time[1,$&nx1] gt $tdx
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   let fk = 0
@@ -139,8 +146,8 @@ foreach pt 0 1
     if nr gt nmax
       let nr = nmax
     end
-    meas tran tra when v(xdut.vco_out)=1.65 rise=1 td=$tdx
-    meas tran trb when v(xdut.vco_out)=1.65 rise=$&nr td=$tdx
+    meas tran tra when v(xdut.vco_out)=$&vmid rise=1 td=$tdx
+    meas tran trb when v(xdut.vco_out)=$&vmid rise=$&nr td=$tdx
     let fk = (nr - 1)/(trb - tra)
   end
   set fks = "$&fk"
@@ -152,7 +159,11 @@ foreach pt 0 1
   end
   destroy $tp
 end
-let kv = (fhi - flo)/2.7/1e6
+let kv = (fhi - flo)/$&vrng/1e6
+* a stalled end is not a Kvco: print 0, which fails the bound
+if (fhi eq 0) or (flo eq 0)
+  let kv = 0
+end
 let fhm = fhi/1e6
 let flm = flo/1e6
 set kvs = "$&kv"

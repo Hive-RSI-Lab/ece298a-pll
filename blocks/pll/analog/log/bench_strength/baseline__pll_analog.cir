@@ -17,7 +17,10 @@
 * and standby clamps, (3) trimmed, current-steered charge pump, (4) R1-C1 ||
 * C2 loop filter, (3b) vdump = vctrl rail-to-rail buffer, (5) degenerated V-to-I with floor current and
 * current ceiling, (6) 5-stage
-* current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer.
+* current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer,
+* (8) TSPC /2 on vco_out -> vco_div2, the digital half's clock (2026-10-31,
+* issue #48: the digital half clocks at vco/2, so no library flop has to
+* toggle at the VCO's ceiling).
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
 .param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
@@ -33,7 +36,7 @@
 .param w_bufln=4e-06 w_buflp=8e-06 l_bufl=2e-06
 .param w_cl=4e-05 l_cl=2e-06
 
-.subckt pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
+.subckt pll_analog vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
 * (1) enable inverter: pll_en -> en_b
 XMP_ENI en_b pll_en vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
@@ -167,5 +170,29 @@ XMN_G1 nb r5 ng vss nfet_03v3 w=w_gn l=2.8e-7
 XMN_G2 ng pll_en vss vss nfet_03v3 w=w_gn l=2.8e-7
 XMP_O vco_out nb vdd vdd pfet_03v3 w=w_op l=2.8e-7
 XMN_O vco_out nb vss vss nfet_03v3 w=w_on l=2.8e-7
+
+* (8) TSPC /2: vco_div2 = vco_out / 2, the clock the digital half takes.
+* True single-phase clocked flop (Yuan-Svensson): stage 1 (MP_DA, MP_DB,
+* MN_DA) is transparent while vco_out is low, dx = NOT dqn; stage 2 (MP_DC,
+* MN_DB, MN_DC) precharges dy high while vco_out is low and evaluates
+* dy = NOT dx on the rising edge; stage 3 (MP_DD, MN_DD, MN_DE) then sets
+* dqn = NOT dy and holds while vco_out is low. D = dqn, so dqn toggles once
+* per rising edge of vco_out. MP_DR holds dqn high in standby (pll_en low:
+* vco_out sits low, so every node is then static and no buffer crowbars).
+* MP_DO1/MN_DO1 and MP_DO2/MN_DO2 buffer dqn onto the pin.
+XMP_DA da dqn vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
+XMP_DB dx vco_out da vdd pfet_03v3 w=2e-6 l=2.8e-7
+XMN_DA dx dqn vss vss nfet_03v3 w=1e-6 l=2.8e-7
+XMP_DC dy vco_out vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
+XMN_DB dy dx db vss nfet_03v3 w=2e-6 l=2.8e-7
+XMN_DC db vco_out vss vss nfet_03v3 w=2e-6 l=2.8e-7
+XMP_DD dqn dy vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
+XMN_DD dqn vco_out dc vss nfet_03v3 w=2e-6 l=2.8e-7
+XMN_DE dc dy vss vss nfet_03v3 w=2e-6 l=2.8e-7
+XMP_DR dqn pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7
+XMP_DO1 dqb dqn vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
+XMN_DO1 dqb dqn vss vss nfet_03v3 w=1e-6 l=2.8e-7
+XMP_DO2 vco_div2 dqb vdd vdd pfet_03v3 w=6e-6 l=2.8e-7
+XMN_DO2 vco_div2 dqb vss vss nfet_03v3 w=3e-6 l=2.8e-7
 
 .ends pll_analog
