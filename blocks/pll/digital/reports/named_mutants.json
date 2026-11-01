@@ -1,0 +1,196 @@
+{
+  "requirement": "REQ-MUT-KILL",
+  "date": "2026-11-01T17:24:38+00:00",
+  "top": "ihsan_sa_pll",
+  "suite": "tb/test_pll.py",
+  "control": {
+    "passed": true,
+    "tests_run": 18,
+    "tests_passed": 18,
+    "failing_tests": [],
+    "error": null,
+    "wall_s": 2.9
+  },
+  "mutants": [
+    {
+      "name": "swapped_up_dn",
+      "description": "Swapped UP/DN: the PFD drives pfd_up from the feedback flop and pfd_dn from the reference flop.",
+      "patches": [
+        {
+          "file": "rtl/pll_pfd.v",
+          "old": "assign pfd_up = pfd_ref_q;",
+          "new": "assign pfd_up = pfd_fb_q;"
+        },
+        {
+          "file": "rtl/pll_pfd.v",
+          "old": "assign pfd_dn = pfd_fb_q;",
+          "new": "assign pfd_dn = pfd_ref_q;"
+        }
+      ],
+      "killed": true,
+      "status": "killed",
+      "failing_tests": [
+        "test_lock_deassert_dn",
+        "test_pfd_dn_lead",
+        "test_pfd_frequency",
+        "test_pfd_up_lead",
+        "test_recover_pll_en",
+        "test_recover_unlocked"
+      ],
+      "failure_messages": {
+        "test_lock_deassert_dn": "cycle 24: expected a DN-only wide sample, got pfd_up=1 pfd_dn=0\nassert (0 == 1)",
+        "test_pfd_dn_lead": "dt=5.0: pfd_dn width 0.0, expected 5.0\nassert 5.0 <= 4.0\n +  where 5.0 = abs(-5.0)",
+        "test_pfd_frequency": "clk_fb slower: UP 0.0 ns should exceed DN 906.0 ns\nassert 0.0 > 906.0",
+        "test_pfd_up_lead": "dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 4.0\n +  where 5.0 = abs(-5.0)",
+        "test_recover_pll_en": "change at 548219.717 ns is on no reference edge\nassert 20.0 <= 4.0\n +  where 20.0 = abs((548239.717 - 548219.717))",
+        "test_recover_unlocked": "recovery lasted 10300.0 ns, expected 128 reference periods\nassert 60.0 <= 1.0\n +  where 60.0 = abs((10300.0 - (128 * 80.0)))"
+      },
+      "non_assertion_failures": {},
+      "error": null,
+      "tests_run": 18,
+      "wall_s": 2.8
+    },
+    {
+      "name": "missing_pfd_reset",
+      "description": "Missing PFD reset: the delayed AND of up and dn (pfd_rst) no longer reaches the async clear, so pfd_clr is inactive whenever rst_n is high. The global rst_n term stays, so the flops still initialise and the fault is the missing PFD reset, not X propagation.",
+      "patches": [
+        {
+          "file": "rtl/pll_pfd.v",
+          "old": "wire pfd_clr = ~rst_n | pfd_rst;",
+          "new": "wire pfd_clr = ~rst_n;"
+        }
+      ],
+      "killed": true,
+      "status": "killed",
+      "failing_tests": [
+        "test_lock_assert",
+        "test_lock_deassert",
+        "test_lock_deassert_dn",
+        "test_pfd_dn_lead",
+        "test_pfd_frequency",
+        "test_pfd_up_lead",
+        "test_recover_lock_clears",
+        "test_recover_pll_en",
+        "test_recover_unlocked"
+      ],
+      "failure_messages": {
+        "test_lock_assert": "10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7302d101d700>)",
+        "test_lock_deassert": "lock not asserted before the wide cycle\nassert 0 == 1",
+        "test_lock_deassert_dn": "cycle 24: expected a DN-only wide sample, got pfd_up=1 pfd_dn=1\nassert (1 == 1 and 1 == 0)",
+        "test_pfd_dn_lead": "dt=5.0: pfd_dn pulsed 0 times\nassert 0 >= 8\n +  where 0 = len([])",
+        "test_pfd_frequency": "clk_fb faster: DN 1600.0 ns should exceed UP 1600.0 ns\nassert 1600.0 > 1600.0",
+        "test_pfd_up_lead": "dt=5.0: pfd_up pulsed 0 times\nassert 0 >= 8\n +  where 0 = len([])",
+        "test_recover_lock_clears": "lock never rose and fell\nassert ([])\n +  where [] = rises()\n +    where rises = <pll_ref.Monitor object at 0x7302d0db23c0>.rises",
+        "test_recover_pll_en": "expected one recovery, got []\nassert 0 == 1\n +  where 0 = len([])",
+        "test_recover_unlocked": "expected two recoveries in 2334 cycles, got []\nassert 0 == 2\n +  where 0 = len([])"
+      },
+      "non_assertion_failures": {},
+      "error": null,
+      "tests_run": 18,
+      "wall_s": 2.6
+    },
+    {
+      "name": "divider_off_by_one",
+      "description": "Divider off by one: legal codes 1..5 divide by N+1 (2..6). Illegal codes still give N = 1.",
+      "patches": [
+        {
+          "file": "rtl/pll_divider.v",
+          "old": "n_m1    = n_legal ? (n_sel - 3'd1) : 3'd0;",
+          "new": "n_m1    = n_legal ? n_sel : 3'd0;"
+        }
+      ],
+      "killed": true,
+      "status": "killed",
+      "failing_tests": [
+        "test_divider_ratio",
+        "test_lock_assert",
+        "test_lock_deassert",
+        "test_lock_deassert_dn",
+        "test_pfd_dn_lead",
+        "test_pfd_frequency",
+        "test_pfd_up_lead",
+        "test_recover_lock_clears",
+        "test_recover_unlocked",
+        "test_reset_release_clean"
+      ],
+      "failure_messages": {
+        "test_divider_ratio": "n_sel=1: clk_fb rose only 5 times (stalled?)\nassert 5 >= 8\n +  where 5 = len([12063.002, 12223.002, 12383.002, 12543.002, 12703.002])",
+        "test_lock_assert": "10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7152b9faa8e0>)",
+        "test_lock_deassert": "lock not asserted before the wide cycle\nassert 0 == 1",
+        "test_lock_deassert_dn": "cycle 24: expected a DN-only wide sample, got pfd_up=1 pfd_dn=0\nassert (0 == 1)",
+        "test_pfd_dn_lead": "dt=5.0: pfd_dn pulsed 5 times\nassert 5 >= 8\n +  where 5 = len([(18781.006, 0.0), (18941.006, 0.0), (19101.006, 0.0), (19261.006, 0.0), (19421.006, 0.0)])",
+        "test_pfd_frequency": "clk_fb faster: DN 0.0 ns should exceed UP 1160.0 ns\nassert 0.0 > 1160.0",
+        "test_pfd_up_lead": "dt=5.0: pfd_up pulsed 4 times\nassert 4 >= 8\n +  where 4 = len([(17606.005, 85.0), (17766.005, 85.0), (17926.005, 85.0), (18086.005, 85.0)])",
+        "test_recover_lock_clears": "lock never rose and fell\nassert ([])\n +  where [] = rises()\n +    where rises = <pll_ref.Monitor object at 0x7152b99f0080>.rises",
+        "test_recover_unlocked": "pfd_up before recovery: [(118391.715, 140.0), (118551.715, 140.0), (118711.715, 140.0)]\nassert (5 >= 8)\n +  where 5 = len([(118391.715, 140.0), (118551.715, 140.0), (118711.715, 140.0), (118871.715, 140.0), (119031.715, 140.0)])",
+        "test_reset_release_clean": "N=3: first full clk_fb period 320.0 ns, expected 240.0\nassert 80.0 <= 0.01\n +  where 80.0 = abs(((16667.004 - 16347.004) - ((8 * 3) * 10.0)))"
+      },
+      "non_assertion_failures": {},
+      "error": null,
+      "tests_run": 18,
+      "wall_s": 2.7
+    },
+    {
+      "name": "prescaler_one_stage_short",
+      "description": "Prescaler one stage short: clk_pre is taken from the first stage, vco_div2/2 = VCO/4 instead of vco_div2/4 = VCO/8. obs_q3 is untouched.",
+      "patches": [
+        {
+          "file": "rtl/pll_prescaler.v",
+          "old": "assign clk_pre = pre_q1;",
+          "new": "assign clk_pre = pre_q0;"
+        }
+      ],
+      "killed": true,
+      "status": "killed",
+      "failing_tests": [
+        "test_divider_illegal_codes",
+        "test_divider_ratio",
+        "test_lock_assert",
+        "test_lock_deassert",
+        "test_lock_deassert_dn",
+        "test_obs_sel",
+        "test_pfd_dn_lead",
+        "test_pfd_frequency",
+        "test_pfd_up_lead",
+        "test_prescaler_div8",
+        "test_recover_lock_clears",
+        "test_recover_pll_en",
+        "test_recover_unlocked",
+        "test_reset_release_clean"
+      ],
+      "failure_messages": {
+        "test_divider_illegal_codes": "clk_fb n_sel=0: period 0 = 40.000 ns, expected 80.000 ns\nassert 40.0 <= 0.01\n +  where 40.0 = abs((40.0 - 80.0))",
+        "test_divider_ratio": "clk_fb n_sel=1: period 0 = 40.000 ns, expected 80.000 ns\nassert 40.0 <= 0.01\n +  where 40.0 = abs((40.0 - 80.0))",
+        "test_lock_assert": "10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x74446a9f5cb0>)",
+        "test_lock_deassert": "lock not asserted before the wide cycle\nassert 0 == 1",
+        "test_lock_deassert_dn": "wide samples at cycles [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49], expected only [24]\nassert [0, 1, 2, 3, 4, 5, ...] == [24]",
+        "test_obs_sel": "obs_out obs_sel=0: period 0 = 40.000 ns, expected 80.000 ns\nassert 40.0 <= 0.01\n +  where 40.0 = abs((40.0 - 80.0))",
+        "test_pfd_dn_lead": "dt=5.0: pfd_dn width 45.0, expected 5.0\nassert 40.0 <= 4.0\n +  where 40.0 = abs(40.0)",
+        "test_pfd_frequency": "clk_fb slower: UP 10.0 ns should exceed DN 1048.0 ns\nassert 10.0 > 1048.0",
+        "test_pfd_up_lead": "dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 4.0\n +  where 5.0 = abs(-5.0)",
+        "test_prescaler_div8": "clk_pre tv=10.0: period 0 = 40.000 ns, expected 80.000 ns\nassert 40.0 <= 0.01\n +  where 40.0 = abs((40.0 - 80.0))",
+        "test_recover_lock_clears": "lock never rose and fell\nassert ([])\n +  where [] = rises()\n +    where rises = <pll_ref.Monitor object at 0x74446ac74b00>.rises",
+        "test_recover_pll_en": "change at 522228.717 ns is on no reference edge\nassert 20.0 <= 4.0\n +  where 20.0 = abs((522208.717 - 522228.717))",
+        "test_recover_unlocked": "change at 108948.715 ns is on no reference edge\nassert 20.0 <= 4.0\n +  where 20.0 = abs((108928.715 - 108948.715))",
+        "test_reset_release_clean": "N=3: first full clk_fb period 120.0 ns, expected 240.0\nassert 120.0 <= 0.01\n +  where 120.0 = abs(((8184.004 - 8064.004) - ((8 * 3) * 10.0)))"
+      },
+      "non_assertion_failures": {},
+      "error": null,
+      "tests_run": 18,
+      "wall_s": 2.7
+    }
+  ],
+  "killed": 4,
+  "total": 4,
+  "rate": 1.0,
+  "sha256": {
+    "rtl/ihsan_sa_pll.v": "cbaa7a466896b7455d8603ce044e23472706ee59ec42b9e393eb2bef9227293a",
+    "rtl/pll_ctrl_regs.v": "48652f247f7f2e906d3ca37e7a5027e15b7fa798f820691a9ef5377cdeff7828",
+    "rtl/pll_divider.v": "5ec53ed9eb189dd3c5ccf8e8d59f0106b013bf440a4f389c793b88e0e062f318",
+    "rtl/pll_lock_det.v": "a7786865ee12a9206ee8eb330b626080f02c58358c1deeb08494796f4c6c6ab2",
+    "rtl/pll_pfd.v": "89510871eae079078b12087d0db6401760b9e0ca4efbde83d9a4da83ac515b62",
+    "rtl/pll_prescaler.v": "a6943d2b6e027e20683e78101af0414b37e61d86d1a73f7d8871098c33752df3",
+    "tb/test_pll.py": "af382dca9ed60ff7dba1b5ada6f560474b7a181783e7c6790a10a521e29a2989"
+  },
+  "wall_s": 13.8
+}

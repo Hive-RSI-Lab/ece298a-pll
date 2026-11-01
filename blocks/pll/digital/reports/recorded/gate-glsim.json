@@ -88,13 +88,18 @@
     "u_ihsan_sa_pll.u_clk_fb_obuf": "u_ihsan_sa_pll__u_clk_fb_obuf",
     "u_ihsan_sa_pll.u_pfd.pfd_dly1": "u_ihsan_sa_pll__u_pfd__pfd_dly1"
    }
+  },
+  "netlists": {
+   "nl_sha256": "85945ba2bdd3b21e6d37f099aa724092db03be74efd166fb599051edd0317581",
+   "pnl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
   }
  },
  "inputs_at_start": {
   "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
-  "tb": "dir_text:57f05df2383e1ccbbc4ce8aba13867434d2eb1b0defcd52e8a630ad5244bfdb3",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
+  "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
  },
- "recorded_ts": "2026-10-31T15:38:20",
- "attempts": 11
+ "recorded_ts": "2026-11-01T12:36:58",
+ "attempts": 12
 }

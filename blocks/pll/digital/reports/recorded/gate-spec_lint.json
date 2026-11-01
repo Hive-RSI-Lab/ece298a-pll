@@ -3,7 +3,7 @@
  "gate": "spec_lint",
  "phase": "P1",
  "tool": "spec_lint",
- "input_digest": "json_canonical:6047879c86f989ed1075f56053d02d1df28eae90ded8d42e196ce02dd3da6f33",
+ "input_digest": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -20,8 +20,8 @@
  "failing": [],
  "violations": [],
  "inputs_at_start": {
-  "spec_yaml": "json_canonical:6047879c86f989ed1075f56053d02d1df28eae90ded8d42e196ce02dd3da6f33"
+  "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
  },
- "recorded_ts": "2026-10-31T15:35:13",
- "attempts": 17
+ "recorded_ts": "2026-11-01T12:27:02",
+ "attempts": 21
 }

@@ -1,0 +1,66 @@
+{
+ "script": "gate",
+ "gate": "lec",
+ "phase": "P6",
+ "tool": "lec",
+ "input_digest": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "top": "ihsan_sa_pll",
+  "links": {
+   "rtl_vs_synth": {
+    "key_points": 30,
+    "unmatched": {
+     "gold": [],
+     "gate": []
+    },
+    "proved": 144,
+    "partitions": 144,
+    "rtl_init": false
+   },
+   "synth_vs_final": {
+    "key_points": 30,
+    "unmatched": {
+     "gold": [],
+     "gate": []
+    },
+    "proved": 144,
+    "partitions": 144,
+    "rtl_init": false
+   }
+  },
+  "cross_check": {
+   "tool": "kepler-formal",
+   "verdict": "equal",
+   "eqy": "equal"
+  },
+  "not_checked": [
+   "power-up values (no initial state exists in silicon)",
+   "timing",
+   "retiming and FSM recoding (they fail, not pass)"
+  ]
+ },
+ "inputs_at_start": {
+  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+ },
+ "recorded_ts": "2026-11-01T12:43:42",
+ "attempts": 1
+}

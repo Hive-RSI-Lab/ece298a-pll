@@ -1,0 +1,118 @@
+# CDC / RDC rulings for the PLL digital side. H2 ruling 2026-11-01, ade7b,
+# thread h0-pll-digital, from a fresh read of the RTL. No finding needs an RTL
+# fix. None of this is measured: no metastability tau is available, so nothing
+# here is an MTBF claim, and gate-level cosim has no metastability model.
+#
+# Not visible to this gate:
+# - pfd_up -> u_lock.wide_q: reported as same-domain, but pfd_up falls from the
+#   clk_fb-launched clear, so it is the same crossing as pfd_dn -> wide_q and
+#   the same ruling applies.
+# - pll_en -> macro -> vco_div2: an analog path; reset ordering below relies on it.
+# - TT's rst_n is treated as asynchronous; the mux in front of it is not in this repo.
+# Also not established: rst_n -> clk recovery slack (constraints.sdc makes clk and
+# the VCO clocks asynchronous, and the recorded timing facts hold setup and hold
+# only), PFD clear min pulse width in the recorded facts, and whether the delay
+# cells filter glitches.
+
+# These are raw tile pins with no relation to clk. The default (clock.primary)
+# would call them synchronous to clk, which is not true.
+ports:
+  n_sel: async
+  pll_en_in: async
+  cp_trim_in: async
+  obs_sel: async
+
+waivers:
+  - from: "*n_sel"
+    to: "u_div.div_cnt"
+    reason: >-
+      Not quasi-static: n_sel is a raw pin that REQ-LOOP-RELOCK changes live. A
+      change between the clk_pre edges, or an intermediate code or bounce, can
+      give one extra or missing clk_fb edge per transition without any
+      metastability. Accepted because no div_cnt state stalls (the >= compare
+      wraps from every state, n_m1 <= 4) and exact N returns within N clk_pre
+      periods; the worst effect at the outputs is a lock drop and a relock.
+      Cosim changes n_sel on clk falling edges only and only a few times.
+  - from: "*n_sel"
+    to: "u_div.fb_en"
+    reason: >-
+      Same pin. n_sel reaches clk_fb only through fb_en, which is clocked on
+      the falling edge of clk_pre. A runt on clk_fb needs metastability that
+      outlasts the clk_pre low phase (at least 10.8 ns at the 5.4 ns vco_div2
+      period), and it costs one bad edge that the PFD then corrects like any
+      other phase error. Qualitative: no MTBF is computed.
+  - from: "pfd_dn_q"
+    to: "u_lock.wide_q"
+    reason: >-
+      A single-flop sample on purpose: wide_q is the half-period threshold of a
+      lock indicator. It has half a reference period to resolve (40 ns at
+      12.5 MHz, assuming 50% duty on clk). In lock the pulses sit far from the
+      sample point, so an ambiguous sample means the pulse is about T/2, the
+      threshold itself, and either answer is right. Even unresolved it only
+      masks count+1 in lock_cnt, so the count cannot inflate: the worst effect
+      is a late or dropped lock, not a false one.
+  - from: "pfd_dn_q"
+    to: "u_pfd.pfd_ref_q"
+    reason: >-
+      The PFD's function (REQ-PFD-RESET): both flops high clear each other
+      through two delay cells. Every state is legal and 11 self-clears, so
+      there is no lock-up. A recovery violation or an edge lost to the clear
+      costs one reference cycle of phase error. Formal cuts these flops
+      (spec.yaml async_reset_cuts); the evidence is gate-level cosim, with no
+      metastability model.
+  - from: "u_pfd.pfd_ref_q"
+    to: "pfd_dn_q"
+    reason: >-
+      The same mutual clear in the other direction (REQ-PFD-RESET); same
+      reasoning and the same limit on the evidence.
+  - clock: obs_int
+    reason: >-
+      Observation only: obs_int drives uo_out[0] and clocks no flop, and
+      spec.md declares that obs_sel changes are not glitch-protected. The worst
+      effect is a runt pulse on an observation pin when obs_sel changes.
+  - reset: rst_n
+    domain: clk
+    reason: >-
+      Accepted with no synchroniser. At the first edge after release the
+      multi-bit registers' D equals their reset value (wide_q = 1 forces
+      lock_cnt's next value to 0, pll_en = 0 clears wd_cnt), so only wide_q,
+      pll_en, cp_trim0/1 and pfd_ref_q can slip, each by one cycle and
+      independently of the others, and each of those is a state that resolves
+      on the next clk edge. rst_n -> clk recovery slack is not established.
+  - reset: rst_n
+    domain: vco_div2
+    reason: >-
+      Accepted with no synchroniser. In the final tile pll_en = 0 holds
+      vco_div2, so release after a long enough reset sees a quiet clock; the
+      window exists on the standalone tile and after a short reset. In it a
+      pre_q0 runt can toggle pre_q1, giving a clk_pre/obs_out pulse of about
+      one vco_div2 period minus settling, under one VCO period if settling
+      exceeds 2.7 ns. It clears inside the first clk_pre period, since toggle
+      flops have no illegal state and fb_en cannot be hit until clk_pre has
+      risen and fallen. REQ-DIV-RESET-CLEAN is narrowed to say so, and no test
+      exercises this window. constraints.sdc does not time rst_n recovery to
+      the VCO clocks.
+  - reset: u_pfd.pfd_clr
+    reason: >-
+      The PFD's clear, combinational by design (REQ-PFD-RESET). rst_n releases
+      with both Qs at 0, so pfd_rst is low and that release is clean.
+      pfd_both glitches only on a metastable Q or a clear's tail, and a
+      spurious clear means state 00 and one truncated pulse, corrected on the
+      next reference cycle. Whether the delay cells filter such a glitch is
+      not established.
+  - from: "*pll_en_in"
+    to: "u_ctrl.pll_en"
+    reason: >-
+      A raw pin into one clk flop, with no synchroniser. There are at least
+      80 ns to the next edge for an output to resolve before anything reads it,
+      and pll_en is a slow enable (REQ-CTRL-REG). If it did not resolve in time
+      it could mis-set wd_cnt, stretching a recovery to at most about 1024
+      reference cycles, which then ends on its own. Qualitative: no MTBF.
+  - from: "*cp_trim_in"
+    to: "u_ctrl.cp_trim*"
+    reason: >-
+      Raw pins into one clk flop each, with no synchroniser. cp_trim0/1 only set
+      the pump current in the macro and feed no digital state, and each bit
+      resolves on its own, so the worst effect is a brief wrong pump trim when
+      a pin changes: a phase disturbance the loop corrects. Nothing assumes the
+      two bits change together. Qualitative: no MTBF.
