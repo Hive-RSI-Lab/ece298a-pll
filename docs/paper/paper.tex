@@ -58,7 +58,7 @@ All of this is pre-silicon simulation: no chip has been measured. Tests
 added after an outside review found the limits reported here: with the pad,
 phase margin falls to \SI{23.9}{\degree}; near a corner's VCO ceiling a
 divider step takes about \SI{25}{\micro s} to settle; free-running period jitter
-is about \SI{10}{ps} rms, not the \SI{1.2}{ps} first estimated; and under
+is 10--\SI{14}{ps} rms across the corners run, not the \SI{1.2}{ps} first estimated; and under
 device mismatch the charge pump's UP/DN bound fails in a quarter of samples
 at its worst corner.
 \end{abstract}
@@ -565,16 +565,25 @@ corner sets the top.
 
 \textbf{Jitter} is estimated, not measured. ngspice has no device transient
 noise, so noise sources sized from each device's model at its bias
-(white and $1/f$) are injected into the extracted cell. At the \SI{100}{MHz}
-point, over three seeds of 520 periods, free-running period jitter is
-\SI{9.7}{ps} rms at \code{tt\_27c} and \SI{10.2}{ps} at
-\code{ss\_125c\_vm10}, plus a deterministic alternation of about
-$\pm\SI{6.8}{ps}$ on the output. This replaces a first estimate of
+(white and $1/f$) are injected into the extracted cell, except the output
+buffer and divider. At the \SI{100}{MHz} point, over two or three seeds of 520
+periods, free-running period jitter is \SI{9.7}{ps} rms at \code{tt\_27c},
+\SI{10.2}{ps} at \code{ss\_125c\_vm10} and \SI{13.5}{ps} at
+\code{ff\_125c\_vm10}, the highest of the nine corners run (six of them
+in shorter screening runs; the other 22 were not run). A deterministic
+alternation of up to $\pm\SI{6.8}{ps}$ on the output is separate from these
+figures. They replace a first estimate of
 1.2--\SI{2.5}{ps}, which came from 30--36 periods at the top of the VCO's range
-with less of the noise included. This is the free-running VCO; the locked output's jitter is not established here. The STA's
-\SI{0.20}{ns} setup uncertainty was derived from the first estimate; it still
-covers $7\sigma$ of the new figure across the two VCO periods of
-\code{vco\_div2} (about \SI{100}{ps}), but with far less room. Nothing here
+with less of the noise included. For the locked output we have only a linear
+model, not a simulation: from the simulated VCO phase noise and $R_1$'s thermal
+noise it gives 44--\SI{61}{ps} rms from \SI{10}{kHz} to \SI{50}{MHz} at those
+three corners, or 35--\SI{43}{ps} without the VCO's $1/f$ term, whose level is
+uncertain by a factor of 2--4 in power. It leaves out reference, PFD,
+charge-pump and supply noise, so it does not bound the jitter of a real chip.
+The STA's \SI{0.20}{ns} setup uncertainty was derived from the first estimate;
+it still covers $7\sigma$ of the worst figure across the two VCO periods of
+\code{vco\_div2} (about \SI{155}{ps}), but with far less room, and jitter at the
+faster clock the STA is constrained to was not simulated. Nothing here
 measures reference spurs or supply noise.
 
 \textbf{Device mismatch.} The specification had excluded Monte Carlo on the
