@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites name="cocotb tests"><testsuite name="test_pll_cov" errors="0" failures="1" skipped="0" tests="1" time="9977.372" timestamp="2026-11-01T11:27:22.318837+00:00" hostname="iiks2"><testcase classname="test_pll_cov" name="test_pll_cov" time="9977.372"><failure message="not locked at the right frequency: segment 1 (N=3)&#10;assert not ['segment 1 (N=3)']" type="AssertionError">Traceback (most recent call last):
+  File "/home/hive2/projects/ece298a-pll/blocks/pll/tb/cov/test_pll_cov.py", line 165, in test_pll_cov
+    assert not bad, "not locked at the right frequency: " + ", ".join(bad)
+AssertionError: not locked at the right frequency: segment 1 (N=3)
+assert not ['segment 1 (N=3)']
+</failure><properties><property name="cocotb" value="True" /><property name="random_seed" value="1793522462" /><property name="file" value="/home/hive2/projects/ece298a-pll/blocks/pll/tb/cov/test_pll_cov.py" /><property name="line" value="43" /><property name="sim_time_unit" value="ns" /><property name="sim_time_start" value="0.0" /><property name="sim_time_stop" value="60000.88" /><property name="sim_time_duration" value="60000.88" /><property name="sim_time_ratio" value="6.01369598482527" /><property name="attachment" value="/home/hive2/projects/ece298a-pll/blocks/pll/log/cosim_cov/ff_pss/build/sim.log" /></properties><system-out>[[ATTACHMENT|/home/hive2/projects/ece298a-pll/blocks/pll/log/cosim_cov/ff_pss/build/sim.log]]
+</system-out><system-err>Test failed with COCOTB_RANDOM_SEED=1793522462
+</system-err></testcase></testsuite></testsuites>

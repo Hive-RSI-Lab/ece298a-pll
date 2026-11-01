@@ -3,3 +3,12 @@ cosim_corners/*/build/
 cosim_corners_try.*
 cosim_corners_gl/*/build/
 cosim_corners_gl/*/gl/
+cosim_corners_gl_pad*/*/build/
+cosim_corners_gl_pad*/*/gl/
+cosim_corners_gl_pad*/*.spice
+cosim_cov*/*/build/
+cosim_cov*/*/gl/
+cosim_cov*/*.spice
+cosim_cov_cases/*/build/
+cosim_cov_cases/*/gl/
+cosim_cov_cases/*.spice

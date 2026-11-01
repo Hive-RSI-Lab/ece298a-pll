@@ -2,7 +2,7 @@
  "corner": "ff_pss",
  "status": "pass",
  "why": [],
- "wall_s": 2491.1,
+ "wall_s": 7035.3,
  "measures": {
   "lock_time_us": 6.719817999999999,
   "lock_drops_after_lock": 0,

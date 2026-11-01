@@ -2,7 +2,7 @@
  "corner": "ff_m40c_vm10",
  "status": "pass",
  "why": [],
- "wall_s": 2442.9,
+ "wall_s": 6866.9,
  "measures": {
   "lock_time_us": 3.999818,
   "lock_drops_after_lock": 0,
