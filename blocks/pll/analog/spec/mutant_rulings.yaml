@@ -230,3 +230,10 @@ below_spread:
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
     evidence: "xMP_STL: w doubled: largest move on a non-near-zero tt measure is -0.59% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-10-31 on the TSPC /2 netlist (#48)."
+  - id: xMN_UPI_size_doubled_w
+    netlist_line: "XMN_UPI up_b pfd_up vss vss nfet_03v3 w=1e-6 l=2.8e-7"
+    measure: cp_overlap_net_charge_fc
+    delta: 0.019901
+    sigma: 0
+    ruling: "a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01"
+    evidence: "xMN_UPI: w doubled: largest move on a non-near-zero tt measure is 1.99% (cp_overlap_net_charge_fc), under the 2% floor on the re-run with the TSPC declared. Margin 0.01%: thin."
