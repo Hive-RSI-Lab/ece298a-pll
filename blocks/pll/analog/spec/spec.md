@@ -110,7 +110,7 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 | `icp_up_code10_ua` | 18..45 | all | code 10 (30 uA nominal, -40/+50 %) |
 | `icp_up_code11_ua` | 24..60 | all | code 11 (40 uA nominal, -40/+50 %) |
 | `icp_code11_over_code00_ratio` | 1.8..2.2 | all | the codes reach 2x |
-| `cp_updn_mismatch_pct` | <= 10 | all | max of 100*abs(Iup-Idn)/Icp over the `vctrl` range (systematic; GF180 models carry no per-instance mismatch) |
+| `cp_updn_mismatch_pct` | <= 10 | all | max of 100*abs(Iup-Idn)/Icp over the `vctrl` range (systematic: sim_pvt runs with the statistics off. GF180 MOS models do carry per-instance mismatch, which this bound does not hold under at every corner: `mc/README.md`) |
 | `cp_overlap_net_charge_fc` | <= 10 | all | abs net charge into `vctrl` per event with both inputs high for 1 ns, incl. charge sharing |
 | `vctrl_leak_off_na` | <= 1 | all | abs current into `vctrl` with both inputs low, over the range |
 | `ol_pm_pn16_nopad_deg` | >= 45 | tt_27c | open-loop phase margin, pump-filter-VCO with ideal 1/16 divider, no pad |
@@ -142,8 +142,10 @@ corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30).
 Both are in the post-layout bench's `.bounds.json`, which pex_pvt scores;
 `spec.yaml`'s `post_layout_bounds` keeps Kvco at 40 and has no margin key
 until bench_strength is next re-run (changing it stales that gate's
-recorded pass, which reads no post-layout bound). No Monte Carlo: the brief asks for no yield number, and GF180
-poly models have no per-instance mismatch to draw from anyway.
+recorded pass, which reads no post-layout bound). No Monte Carlo gate: the brief asks for no yield number. GF180 poly models
+have no per-instance mismatch, but the MOS models do (`.lib fets_mm`, off by
+default through `sw_stat_mismatch`). This note said otherwise until
+2026-11-01. A Monte Carlo outside the gates is in `mc/README.md`.
 
 ### Revision 2026-10-10 (H1)
 

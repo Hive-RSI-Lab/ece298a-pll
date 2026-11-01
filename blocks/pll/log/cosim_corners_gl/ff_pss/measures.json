@@ -35,7 +35,7 @@
  "lock_rises": 1,
  "duration_ns": 30000.0,
  "max_sync_interval_ns": 0.25,
- "wall_time_s": 2490.066390795997,
+ "wall_time_s": 7032.831255404977,
  "bridge_error": null,
  "digital_toggles": 176,
  "edge_times_ns": [

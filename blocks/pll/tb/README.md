@@ -136,15 +136,19 @@ other (f_ref, N) points at these corners are still open.
 
 `cosim_gl.py` is `cosim_corners.py` with one change: in place of the RTL, the
 digital half is the vde harden's gate-level netlist with the PDK's cell
-models and the harden's SDF (ff corners read `nom_ff_n40C_3v60`, ss
-`nom_ss_125C_3v00`). Same bench, operating point, bounds, extracted analog
-cell, PDK corner and 0.25 ns sync. The harden's `runs/` is not in git, so run
-the vde harden gate first:
+models and an SDF of the corner's process at the nearest characterised
+temperature (`sdf_corner_for`). Same bench, operating point, bounds, extracted
+analog cell, PDK corner and 0.25 ns sync. The netlist, SDC, SPEF and SDFs it
+reads are committed in `gl/`; `--snapshot` refreshes them from a new harden.
+`*.gen.sdf` are written by `gl/gen_sdf.tcl`, which LibreLane does not cover.
 
-    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_gl.py   # ~40 min, 4 corners side by side
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_gl.py   # ~40 min idle, 4 corners side by side
 
 Both runs below are on the TSPC /2 macro (#48) and its extraction, at 0.25 ns
-sync. In each pair the RTL comes first and the gate-level run second:
+sync. In each pair the RTL comes first and the gate-level run second. The
+gate-level column is the first run, SDF by process only
+(`../reports/recorded/cosim_corners_gl_sdf_by_process.json`); the matched-temperature
+results are under "Outside review follow-ups" below:
 
 | Corner | Lock | f_vco, GL (MHz) | vctrl p-p, RTL (5 ns / ref edges, mV) | vctrl p-p, GL (5 ns / ref edges, mV) | static phase offset (ns) |
 |---|---|---|---|---|---|
@@ -174,6 +178,33 @@ the reference edges. That is not a spike through R1. Its trace steps about
 7 mV down near 21 us and back up near 24.5 us, and is flat in between: two
 corrections that each move the filter capacitor. It passes the bound with
 4 mV to spare. It is the corner to watch if the pump or the filter changes.
+
+## Outside review follow-ups (2026-11-01)
+
+From an outside review of the paper (`docs/paper/`). All on the extracted cell
+with the gate-level digital. Numbers are recorded in `../reports/recorded/`.
+
+**SDF matched on temperature** (`cosim_corners_gl.json`, 4/4 pass). ff_pss and
+ff_m40c_vm10 read the same SDF as before and reproduce exactly. ff_125c_vp10
+goes from 3.5 to 13.5 mV p-p and ss_m40c_vm10 from 15.9 to 9.1 mV, so the ripple
+depends on the digital delays. ff_pss (27 C) still uses -40 C delays, the
+nearest, and the libraries tie voltage to process.
+
+**5 pF on vctrl** (`cosim_gl.py --vctrl-pad-pf 5`,
+`cosim_corners_gl_pad5pf.json`, 5/5 pass): lock 4.16-7.52 us, ripple 0.8-4.5 mV.
+Small-signal, `layout/pex_pvt.py --extracted <the pad netlist>`
+(`pex_pvt_pad5pf.json`; its "fails" are that bench's no-pad 30 deg floor, which
+it was not written for): minimum 23.9 deg at ff_125c_vp10, 9 of 31 under 30.
+
+**Divider steps** (`cosim_cov.py`, bench `cov/test_pll_cov.py`, `cosim_cov.json`):
+f_ref 5 MHz, N 1->3->2, 20 us each. 4/5 corners pass. ff_pss misses at 120 MHz,
+near its 125.6 MHz ceiling: vctrl winds up to 3.5 V and LOCK pulses before it
+settles. `cosim_cov_cases.py` (`cosim_cov_cases.json`) gives it longer: within
+20 mV about 25 us after the step, with or without the pad, and when
+acquiring 120 MHz directly. No 20 mV bound is applied to these segments, and
+some would miss it (24.8 mV at tt_27c).
+N=4 (160 MHz) with the pad at ff_125c_vp10 misses in 30 us and settles with time
+(`cosim_cov_pn32_pad5p_long.json`, 80 us: within 20 mV by 27 us).
 
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 

@@ -329,8 +329,82 @@ def fig_sta():
     save(fig, "sta")
 
 
+# ---------------------------------------------------------------- review follow-ups
+CORNERS5 = CORNERS4 + ["tt_27c"]
+
+
+def fig_pad():
+    """The 5 pF ua[0] pad on vctrl: traces with the pad, and p-p/lock with and without."""
+    fig, (a, b) = plt.subplots(2, 1, figsize=(W1, 3.9))
+    for c in CORNERS5:
+        m = ms("cosim_corners_gl_pad5pf", c)
+        tr = np.array(m["vctrl_trace_us_v"])
+        a.plot(tr[:, 0], tr[:, 1], color=CCOL[c], lw=1.0, label=c)
+        if m.get("lock_rise_ns"):
+            a.plot(m["lock_rise_ns"] / 1e3, np.interp(m["lock_rise_ns"] / 1e3, tr[:, 0], tr[:, 1]),
+                   "v", color=CCOL[c], ms=5, mec="white")
+    a.set_ylabel("vctrl (V)")
+    a.set_xlabel("time (us)")
+    a.legend(loc="lower right", fontsize=6)
+    a.set_title("(a) with 5 pF on vctrl; triangles: LOCK rises", loc="left")
+    x = np.arange(len(CORNERS4))
+    for j, (kind, lab, col) in enumerate([("cosim_corners_gl", "no pad", MUTED),
+                                          ("cosim_corners_gl_pad5pf", "5 pF pad", S[0])]):
+        v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS4]
+        lt = [ms(kind, c)["lock_time_us"] for c in CORNERS4]
+        b.bar(x + (j - 0.5) * 0.38, v, 0.36, color=col, label=lab)
+        for xi, vi, li in zip(x, v, lt):
+            b.text(xi + (j - 0.5) * 0.38, vi + 0.6, f"{vi:.1f}\n{li:.1f}us", ha="center", fontsize=5,
+                   color=INK2)
+    b.axhline(20, color=S[7], ls="--", lw=0.8)
+    b.set_xticks(x)
+    b.set_xticklabels(CORNERS4, fontsize=6)
+    b.set_ylabel("vctrl p-p, last 10 us (mV)")
+    b.set_ylim(0, 30)
+    b.legend(loc="upper right", fontsize=6, ncol=2)
+    b.set_title("(b) ripple (label: p-p and lock time)", loc="left")
+    fig.tight_layout()
+    save(fig, "pad")
+
+
+def fig_cov():
+    """Divider steps at f_ref = 5 MHz: all corners, then ff_pss's 120 MHz step given longer."""
+    fig, (ax, b) = plt.subplots(2, 1, figsize=(W1, 3.9))
+    rep = load("blocks/pll/reports/recorded/cosim_cov.json")
+    for r in rep["facts"]["results"]:
+        c, m = r["corner"], r.get("measures") or {}
+        tr = np.array(m["vctrl_trace_us_v"])
+        ax.plot(tr[:, 0], tr[:, 1], color=CCOL.get(c, INK2), lw=1.0, label=c)
+        for t in m.get("lock_rises_ns") or []:
+            if t > 1:
+                ax.plot(t / 1e3, np.interp(t / 1e3, tr[:, 0], tr[:, 1]), "v", color=CCOL.get(c, INK2),
+                        ms=4, mec="white")
+    plan = rep["facts"]["plan"]
+    for (t, n) in plan["segments"]:
+        f = 8 * n * plan["f_ref_hz"] / 1e6
+        ax.axvline(t / 1e3, color=MUTED, ls=":", lw=0.8)
+        ax.text(t / 1e3 + 0.4, 0.15, f"N={n}, {f:.0f} MHz", fontsize=6, color=INK2)
+    ax.set_ylabel("vctrl (V)")
+    ax.set_xlabel("time (us)")
+    ax.set_ylim(0, 4.8)
+    ax.legend(loc="upper center", fontsize=5, ncol=3)
+    ax.set_title("(a) N = 1, 3, 2 at five corners", loc="left")
+    cases = {r["case"]: r for r in load("blocks/pll/reports/recorded/cosim_cov_cases.json")["facts"]["results"]}
+    for name, lab, col in (("ff_pss_step_120_long", "no pad", CCOL["ff_pss"]),
+                           ("ff_pss_step_120_pad5p", "5 pF pad", S[6])):
+        tr = np.array(cases[name]["measures"]["vctrl_trace_us_v"])
+        b.plot(tr[:, 0], tr[:, 1], color=col, lw=1.0, label=lab)
+    b.axvline(20, color=MUTED, ls=":", lw=0.8)
+    b.set_ylabel("vctrl (V)")
+    b.set_xlabel("time (us)")
+    b.legend(loc="lower right", fontsize=6)
+    b.set_title("(b) ff_pss, step to 120 MHz at 20 us", loc="left")
+    fig.tight_layout()
+    save(fig, "cov")
+
+
 if __name__ == "__main__":
     for f in (fig_corners, fig_cp, fig_bode, fig_lock, fig_settle, fig_sta, fig_vco,
-              fig_tspc, fig_layout):
+              fig_tspc, fig_layout, fig_pad, fig_cov):
         f()
         print("ok", f.__name__)
