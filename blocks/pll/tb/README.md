@@ -206,6 +206,27 @@ some would miss it (24.8 mV at tt_27c).
 N=4 (160 MHz) with the pad at ff_125c_vp10 misses in 30 us and settles with time
 (`cosim_cov_pn32_pad5p_long.json`, 80 us: within 20 mV by 27 us).
 
+### Closed loop with a mismatched pump (`cosim_pump.py`)
+
+The Monte Carlo (`../analog/mc/README.md`) puts UP/DN mismatch over its 10 % bound at
+ff_pss and ff_m40c_vp10. Here one pump source is widened by about 3 sigma in a copy of the
+extracted netlist, and the gate-level closed loop runs at 100 MHz. `dc` is the cp bench's
+sweep on that copy (Monte Carlo worst: 14.55, 12.38).
+
+| Case | dc mismatch (%) | Lock (us) | vctrl p-p, last 10 us (mV) | Static phase offset (ns) |
+|---|---|---|---|---|
+| ff_pss, unskewed (`cosim_corners_gl.json`) | 8.69 (schematic) | 6.72 | 2.43 | 0.87 |
+| ff_pss, UP +6 % | 14.21 | 6.56 | 0.98 | 0.44 |
+| ff_pss, DN +6 % | 5.59 | 6.72 | 2.54 | 0.65 |
+| ff_m40c_vp10, unskewed | 7.30 | 4.16 | 5.41 | 0.85 |
+| ff_m40c_vp10, UP +5 % | 12.08 | 4.00 | 3.29 | 0.60 |
+| ff_m40c_vp10, DN +5 % | 5.68 | 4.16 | 6.26 | 0.98 |
+
+All lock and hold, inside the 20 mV bound. UP-heavy skew lowers the ripple: the natural direction
+at these corners reads worst on the DC sweep and does the loop no harm at this operating point. Ruling: the 10 % bound
+stays as written and the pump is not resized. Not covered: a drawn sample (this is one widened device
+pair), other divider settings, N steps, and the pad with skew.
+
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 
 `prescaler_margin.py` is not a layer and not a gate. It asks how fast the
