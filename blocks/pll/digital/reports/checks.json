@@ -1,0 +1,367 @@
+{
+ "skill": "vde",
+ "block": "pll",
+ "ts": "2026-11-01T12:43:42",
+ "pdk": {
+  "name": "gf180mcuD",
+  "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "ciel": "1689ac3f2dc763876eaf967227c7dfe831b031ae"
+ },
+ "checks": [
+  {
+   "gate": "cdc",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "cdc",
+   "version": 1,
+   "status": "pass",
+   "attempts": 3,
+   "ts": "2026-11-01T12:27:19",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "cdc_waivers": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+   },
+   "reason": null
+  },
+  {
+   "gate": "cover",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "cover",
+   "version": 1,
+   "status": "pass",
+   "attempts": 17,
+   "ts": "2026-11-01T12:27:31",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+    "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
+   },
+   "reason": null
+  },
+  {
+   "gate": "drc",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "drc",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:36:46",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+   },
+   "reason": null
+  },
+  {
+   "gate": "formal",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "formal",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:31:39",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "formal": "dir_text:5318ffa82294adba234a0b5607be55ec399f213273318f37d0b8d59e80b29aee",
+    "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
+   },
+   "reason": null
+  },
+  {
+   "gate": "glsim",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "glsim",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:36:58",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+   },
+   "reason": null
+  },
+  {
+   "gate": "harden",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "harden",
+   "version": 1,
+   "status": "pass",
+   "attempts": 17,
+   "ts": "2026-11-01T12:35:48",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "harden_config": "json_canonical_sans_roots:411d18c883dc30aebf05692ed7f32eb62a4cc304054c343cca1b8186b0af1fff",
+    "harden_override": "json_canonical:c3bc9abe461e2007aa0ac46fae625ca705fc8efffad48d123466951b8bfad7f0",
+    "harden_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+    "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+    "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+    "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+   },
+   "reason": null
+  },
+  {
+   "gate": "holdout",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "holdout",
+   "version": 1,
+   "status": "pass",
+   "attempts": 15,
+   "ts": "2026-11-01T12:27:28",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "holdout": "dir_text:5e1112744e33009723c99d3ca3066e3b562e46f8593959accbf32520714fec8b",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2"
+   },
+   "reason": null
+  },
+  {
+   "gate": "lec",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "lec",
+   "version": 1,
+   "status": "pass",
+   "attempts": 1,
+   "ts": "2026-11-01T12:43:42",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+   },
+   "reason": null
+  },
+  {
+   "gate": "lint",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "lint",
+   "version": 1,
+   "status": "pass",
+   "attempts": 19,
+   "ts": "2026-11-01T12:27:25",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2"
+   },
+   "reason": null
+  },
+  {
+   "gate": "lvs",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "lvs",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:36:48",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+   },
+   "reason": null
+  },
+  {
+   "gate": "mutate",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "mutate",
+   "version": 1,
+   "status": "pass",
+   "attempts": 17,
+   "ts": "2026-11-01T12:34:22",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "mutant_rulings": "json_canonical:30b8625c1521d5497e8ef85eb8b44a835e832e6c69dab69203c31cf3c5e727c0"
+   },
+   "reason": null
+  },
+  {
+   "gate": "precheck",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "precheck",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:38:08",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+   },
+   "reason": null
+  },
+  {
+   "gate": "sim",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "sim",
+   "version": 1,
+   "status": "pass",
+   "attempts": 24,
+   "ts": "2026-11-01T12:27:27",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2"
+   },
+   "reason": null
+  },
+  {
+   "gate": "spec_lint",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "spec_lint",
+   "version": 1,
+   "status": "pass",
+   "attempts": 21,
+   "ts": "2026-11-01T12:27:02",
+   "inputs": {
+    "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
+   },
+   "reason": null
+  },
+  {
+   "gate": "synth",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "synth",
+   "version": 1,
+   "status": "pass",
+   "attempts": 12,
+   "ts": "2026-11-01T12:27:03",
+   "inputs": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+   },
+   "reason": null
+  },
+  {
+   "gate": "timing",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "timing",
+   "version": 1,
+   "status": "pass",
+   "attempts": 16,
+   "ts": "2026-11-01T12:35:58",
+   "inputs": {
+    "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+   },
+   "reason": null
+  }
+ ],
+ "tt_submission": {
+  "repo": "release/tt",
+  "staged": [
+   "gds/tt_um_ihsan_sa_pll.gds",
+   "gl/tt_um_ihsan_sa_pll.v",
+   "info.yaml",
+   "lef/tt_um_ihsan_sa_pll.lef",
+   "src/config.json",
+   "src/constraints.sdc",
+   "src/flow.sdc",
+   "src/flow.sdc",
+   "src/ihsan_sa_pll.v",
+   "src/pll_ctrl_regs.v",
+   "src/pll_divider.v",
+   "src/pll_lock_det.v",
+   "src/pll_pfd.v",
+   "src/pll_prescaler.v",
+   "src/tt_block_1x1_pgvdd.def",
+   "src/tt_um_ihsan_sa_pll.v",
+   "test/Makefile",
+   "test/glsim_harness.v",
+   "test/named_mutants.py",
+   "test/pll_ref.py",
+   "test/requirements.txt",
+   "test/test_pll.py"
+  ],
+  "signoff": {
+   "top_module": "tt_um_ihsan_sa_pll",
+   "librelane": "3.1.0.dev3",
+   "pdk": "gf180mcuD",
+   "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+   "librelane_pdk": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
+   "tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
+   "gds": "harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
+   "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+   "lef": "harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
+   "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+   "gl": "harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+   "gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+   "gl_is_shipped": true,
+   "glsim_gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+  },
+  "shipped": [
+   {
+    "workflow": ".github/workflows/gds.yaml",
+    "mode": "custom_gds",
+    "ref": "ttgf26c",
+    "top_module": "tt_um_ihsan_sa_pll",
+    "pdk": "gf180mcuD",
+    "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
+    "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+    "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
+    "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+    "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
+    "verilog_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+    "glsim_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+   }
+  ],
+  "manifest": "release/manifest.json",
+  "manifest_sha256": "eb0fc06a3489fff5213342c96d988e793d446c7009217696bc1fffcc8d84bd0c"
+ },
+ "attestation_sha256": "ec3d9535d7186d45700f97b46fb03d2d5f5316d45d6f054015172f6b94116421"
+}

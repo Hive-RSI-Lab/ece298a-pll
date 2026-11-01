@@ -85,7 +85,10 @@ the model is synthesised. (REQ-LOOP-*)
 ### Bench strength
 
 The bench must kill: swapped UP/DN, missing PFD reset, divider off by one,
-prescaler /4 (`clk_pre` = VCO/4). (REQ-MUT-KILL)
+prescaler /4 (`clk_pre` = VCO/4). The gate-read number is the mutate gate's
+sampled kill rate; the four named here are checked by `tb/named_mutants.py`
+and recorded in `reports/named_mutants.json`, which no gate reads until
+chip-flow #155. (REQ-MUT-KILL)
 
 ## Architecture
 
@@ -99,7 +102,7 @@ pulse reset.
 | Instance | Module | Domain | Responsibility |
 |---|---|---|---|
 | `u_pre` | `pll_prescaler` | `vco_div2` | two ripple toggle flops `pre_q0`, `pre_q1`; `pre_q1` is `clk_pre` = `vco_div2`/4 = VCO/8. Stage k+1 is clocked by the rising edge of stage k's Q. Flops carry an asynchronous active-low reset (a `dffrnq`-type cell, the reset requirement overrides the `dffq_1` cell hint in Behaviour 2) and each stage's toggle loop is one flop plus one inverter, nothing else (REQ-TIM-VCO). All plain RTL: the VCO's first /2 is the macro's TSPC stage, so no stage here needs a hand-picked cell. Also holds the third toggle flop `obs_q3` (`clk_pre`/2 = VCO/16, clocked by `clk_pre`). |
-| `u_div` | `pll_divider` | `clk_pre` | mod-N counter `div_cnt[2:0]` on the rising edge of `clk_pre`, N decoded from `n_sel` (0,6,7 -> 1). A single enable flop `fb_en` is clocked on the FALLING edge of `clk_pre` and is 1 for exactly one `clk_pre` cycle out of N (constant 1 when N = 1). `clk_fb` = `clk_pre` AND `fb_en`: glitch-free because `fb_en` only changes while `clk_pre` is low, and N = 1 is a pure pass-through with no clock mux. `n_sel` is quasi-static and is not synchronised. |
+| `u_div` | `pll_divider` | `clk_pre` | mod-N counter `div_cnt[2:0]` on the rising edge of `clk_pre`, N decoded from `n_sel` (0,6,7 -> 1). A single enable flop `fb_en` is clocked on the FALLING edge of `clk_pre` and is 1 for exactly one `clk_pre` cycle out of N (constant 1 when N = 1). `clk_fb` = `clk_pre` AND `fb_en`: glitch-free because `fb_en` only changes while `clk_pre` is low, and N = 1 is a pure pass-through with no clock mux. `n_sel` is a raw pin, not synchronised, and may change while running (REQ-LOOP-RELOCK): a change can cost one extra or missing `clk_fb` edge per transition and bounce, and the loop then relocks; the `>=` wrap means no code or count state stalls the divider, so exact N returns within N `clk_pre` periods (spec/cdc.yaml). |
 | `u_pfd` | `pll_pfd` | `clk` and `clk_fb` (one flop each) | reference flop `pfd_ref_q` (clocked by `clk`, D = 1) and feedback flop `pfd_fb_q` (clocked by `clk_fb`, D = 1), both with an asynchronous clear driven by `~rst_n OR pfd_rst`. `pfd_rst` = AND(`pfd_ref_q`, `pfd_fb_q`) passed through two hand-instantiated, `(* keep *)` delay cells `pfd_dly0`, `pfd_dly1` (`must_keep`). `pfd_up` = `pfd_ref_q`, `pfd_dn` = `pfd_fb_q`. |
 | `u_lock` | `pll_lock_det` | `clk` | recovery: `wd_cnt[9:0]` counts reference edges with `pll_en` = 1 and `lock` = 0, and `recover` (registered) rises when it reaches W - 1 = 1023, then counts the M = 128 periods of the recovery; `pll_en` = 0 or `lock` = 1 clears both. `wide_q` samples (`pfd_up` OR `pfd_dn`) on the FALLING edge of `clk` (the half-period threshold); `lock_cnt[4:0]` counts reference edges with `wide_q` = 0, saturating at 16, cleared to 0 by `wide_q` = 1; `lock` = (`lock_cnt` == 16), registered. `pfd_dn` comes from the `clk_fb` domain and is sampled by one flop only (a lock indicator tolerates a rare metastable sample; no synchroniser). |
 | `u_ctrl` | `pll_ctrl_regs` | `clk` | three D flops: `pll_en` <- `pll_en_in`, `cp_trim0` <- `cp_trim_in[0]`, `cp_trim1` <- `cp_trim_in[1]` on the rising edge of `clk`. |

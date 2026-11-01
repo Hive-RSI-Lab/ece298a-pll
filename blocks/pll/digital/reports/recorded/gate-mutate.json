@@ -99,14 +99,14 @@
    "17": "accepted by owner ruling: agent ruling under the owner's standing sign-off (2026-10-28 13:18, 'yea just do it all i signoff we can always go back'), 2026-10-31, not the owner's own ruling on this mutant; the same kind as the 2026-10-29 ruling on the then-id-17 mutant"
   },
   "unproven_survivors": {},
-  "wall_s": 4.73
+  "wall_s": 8.78
  },
  "inputs_at_start": {
   "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
-  "tb": "dir_text:57f05df2383e1ccbbc4ce8aba13867434d2eb1b0defcd52e8a630ad5244bfdb3",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d",
+  "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
   "mutant_rulings": "json_canonical:30b8625c1521d5497e8ef85eb8b44a835e832e6c69dab69203c31cf3c5e727c0"
  },
- "recorded_ts": "2026-10-31T15:35:22",
- "attempts": 16
+ "recorded_ts": "2026-11-01T12:34:22",
+ "attempts": 17
 }

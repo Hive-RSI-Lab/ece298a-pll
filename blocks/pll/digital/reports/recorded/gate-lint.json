@@ -32,8 +32,8 @@
  },
  "inputs_at_start": {
   "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2"
  },
- "recorded_ts": "2026-10-31T15:35:13",
- "attempts": 17
+ "recorded_ts": "2026-11-01T12:27:25",
+ "attempts": 19
 }
