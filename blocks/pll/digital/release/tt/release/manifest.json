@@ -1,0 +1,2223 @@
+{
+ "schema": 1,
+ "block": "pll",
+ "skill": "vde",
+ "ts": "2026-11-01T12:43:43",
+ "released": true,
+ "refused": [],
+ "tree": "release/tt",
+ "versions": {
+  "librelane": "3.1.0.dev3",
+  "yosys": "0.69",
+  "pdk": "gf180mcuD",
+  "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "ciel": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "precheck_tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
+  "checker_version": 1,
+  "toolchain": {
+   "image": "iic-osic-tools-2026.09",
+   "klayout": "0.30.12",
+   "magic": "8.3.684",
+   "netgen": "1.5.323"
+  }
+ },
+ "shipped": [
+  {
+   "workflow": ".github/workflows/gds.yaml",
+   "mode": "custom_gds",
+   "ref": "ttgf26c",
+   "top_module": "tt_um_ihsan_sa_pll",
+   "pdk": "gf180mcuD",
+   "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
+   "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+   "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
+   "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+   "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
+   "verilog_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+   "glsim_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+  }
+ ],
+ "waivers": {
+  "gates": [],
+  "deliverables": []
+ },
+ "deliverables": [
+  {
+   "path": ".github/workflows/gds.yaml",
+   "source": null,
+   "sha256": "b20cf9e6ccf8b161cb2f9ae02c2342af4aca8d388c473c4389ffc15f841bf213",
+   "gates": [
+    {
+     "gate": "release",
+     "relation": "checked",
+     "check": "ttship.ship_problems"
+    }
+   ]
+  },
+  {
+   "path": "gds/tt_um_ihsan_sa_pll.gds",
+   "source": "harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
+   "sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "gl/tt_um_ihsan_sa_pll.v",
+   "source": "harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+   "sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "info.yaml",
+   "source": "harden/info.yaml",
+   "sha256": "c49f611ff64829b159f2cf6c213966763dff3870369b4b4307f31af8bffd5b1e",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "harden_info",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "lef/tt_um_ihsan_sa_pll.lef",
+   "source": "harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
+   "sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "src/config.json",
+   "source": "harden/config.json",
+   "sha256": "0732356b9b710389f953caa7efdaf371d4d4c94e82ee2359e32d5b7402e1e669",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "harden_config",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "src/constraints.sdc",
+   "source": "harden/constraints.sdc",
+   "sha256": "ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "harden_sdc",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "src/flow.sdc",
+   "source": "harden/flow.sdc",
+   "sha256": "5a3ff75324f756c4ce47cd4e7761eaeba13b59fafa0d537f9ffaa903dbc46078",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "src/ihsan_sa_pll.v",
+   "source": "rtl/ihsan_sa_pll.v",
+   "sha256": "cbaa7a466896b7455d8603ce044e23472706ee59ec42b9e393eb2bef9227293a",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_ctrl_regs.v",
+   "source": "rtl/pll_ctrl_regs.v",
+   "sha256": "48652f247f7f2e906d3ca37e7a5027e15b7fa798f820691a9ef5377cdeff7828",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_divider.v",
+   "source": "rtl/pll_divider.v",
+   "sha256": "5ec53ed9eb189dd3c5ccf8e8d59f0106b013bf440a4f389c793b88e0e062f318",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_lock_det.v",
+   "source": "rtl/pll_lock_det.v",
+   "sha256": "a7786865ee12a9206ee8eb330b626080f02c58358c1deeb08494796f4c6c6ab2",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_pfd.v",
+   "source": "rtl/pll_pfd.v",
+   "sha256": "89510871eae079078b12087d0db6401760b9e0ca4efbde83d9a4da83ac515b62",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_prescaler.v",
+   "source": "rtl/pll_prescaler.v",
+   "sha256": "a6943d2b6e027e20683e78101af0414b37e61d86d1a73f7d8871098c33752df3",
+   "gates": [
+    {
+     "gate": "cdc",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:19",
+     "inputs_sha256": "bb7e827893e8236b12bd639debe2cd44e0ddd03a50acfdf35ffc8360df0324c2"
+    },
+    {
+     "gate": "cover",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:31",
+     "inputs_sha256": "f1b97c4f03c308518ff358aa8f2e1b99571af38f8faf2e1d6bf893c7b1ce3f78"
+    },
+    {
+     "gate": "formal",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:31:39",
+     "inputs_sha256": "8323d9968283be7ecef12194aaa34faa903051dee270fdaed75618ce25aa47b5"
+    },
+    {
+     "gate": "harden",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "holdout",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:28",
+     "inputs_sha256": "1ea767400e7d2f3bf335977d0bf3841100f4a3625513ac256d24d4b441aa681f"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lint",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:25",
+     "inputs_sha256": "19b87a816d4c3a9e70e75c4f1f37e3e14d3ab036c14922bf3d9f9022b0fbc42f"
+    },
+    {
+     "gate": "mutate",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:34:22",
+     "inputs_sha256": "ad47855ca91767bb7cba5f62da568bdf9f0f1851a4b5a102659b97c95e410f96"
+    },
+    {
+     "gate": "sim",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:27",
+     "inputs_sha256": "138e0e18210d2c6ac022199f300b71c7295341ea6294906a5d712e51d155c096"
+    },
+    {
+     "gate": "synth",
+     "relation": "read",
+     "kind": "rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:27:03",
+     "inputs_sha256": "9946213b30c7c13439032d6fb0677bfd9b16e0d11b97e5affe5b65ed87b55304"
+    }
+   ]
+  },
+  {
+   "path": "src/tt_block_1x1_pgvdd.def",
+   "source": "harden/tt_block_1x1_pgvdd.def",
+   "sha256": "2bcac1ecfc10f26e6251f2709333f8d24db14fa1ec7cfbf8db2968f78fc3710d",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "src/tt_um_ihsan_sa_pll.v",
+   "source": "harden/tt_um_ihsan_sa_pll.v",
+   "sha256": "857a213b88d34aeb7d753a2cb05409739bff1b51008ff5f1e97f040f4f4ac245",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": "test/Makefile",
+   "source": null,
+   "sha256": "250e5ac8cd1002b1af02fd4680ec3cbdc51f949fbe9c4b14a159f185f940f232",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/glsim_harness.v",
+   "source": null,
+   "sha256": "c59631edb7c2e140e57a0a958372b76bcc7f00b267c3835df7c10604dc0110a7",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/named_mutants.py",
+   "source": "tb/named_mutants.py",
+   "sha256": "59572b401a1e3c6b0733ecd0d68dbd6ca9f9312884cc4b62df687b916528db81",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/pll_ref.py",
+   "source": "tb/pll_ref.py",
+   "sha256": "0229cefa785426e7e24a479572379ed0dd66d767f0592ef1ccb1bcf1dfdde7bf",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/requirements.txt",
+   "source": null,
+   "sha256": "c1ba8e1b931e68c3ff600bb849f20975435fedbb7e5f83932095a05d2dca1372",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/test_pll.py",
+   "source": "tb/test_pll.py",
+   "sha256": "af382dca9ed60ff7dba1b5ada6f560474b7a181783e7c6790a10a521e29a2989",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+   "sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/max_ff_n40C_3v60/tt_um_ihsan_sa_pll__max_ff_n40C_3v60.sdf",
+   "sha256": "d2fd3c3d70f2eae23d95b455d1dd1c265e99d5b80c73338780bb14e2972aa7b5",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/max_ss_125C_3v00/tt_um_ihsan_sa_pll__max_ss_125C_3v00.sdf",
+   "sha256": "83d338ac37512f1dd5bdb6bc4a902c1c49b7bf346193d2c5e8b9a9d01a1637d3",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/max_tt_025C_3v30/tt_um_ihsan_sa_pll__max_tt_025C_3v30.sdf",
+   "sha256": "4af6a50f1255dc9f213b111cfa8512bc46ab05945c5acc7412a15148d5e0f0f7",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/min_ff_n40C_3v60/tt_um_ihsan_sa_pll__min_ff_n40C_3v60.sdf",
+   "sha256": "0431b8a5b5bdcf305174c15b345da172d4a16f66156d4bf798169503539202a9",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/min_ss_125C_3v00/tt_um_ihsan_sa_pll__min_ss_125C_3v00.sdf",
+   "sha256": "980dd6739b22e1609ad68f5b20cd7a02b5ba0c0a3ee404f659ce04109925a7d9",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/min_tt_025C_3v30/tt_um_ihsan_sa_pll__min_tt_025C_3v30.sdf",
+   "sha256": "43709b45c823fc815a94e8fa158853572981982db0b6b9f2779ffb3afe758212",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/nom_ff_n40C_3v60/tt_um_ihsan_sa_pll__nom_ff_n40C_3v60.sdf",
+   "sha256": "c7d5e39d2bcc495b91c68f472a0401d6d7c53e6d52b15678424d29f2cf02141c",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/nom_ss_125C_3v00/tt_um_ihsan_sa_pll__nom_ss_125C_3v00.sdf",
+   "sha256": "f1d187ee1848cf5e7c36a8f10a61b2b7b1af43a0c149710969acce389d2afb5e",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/sdf/nom_tt_025C_3v30/tt_um_ihsan_sa_pll__nom_tt_025C_3v30.sdf",
+   "sha256": "74d1a6cbf1c06602871cfc86ca74b050852b356affd85c7ad34e226864440b96",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/spef/max/tt_um_ihsan_sa_pll.max.spef",
+   "sha256": "e4f18b2411a87f450a13d1d601b1977ae97244ca58a36606fb16461cb0e20a1a",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/spef/min/tt_um_ihsan_sa_pll.min.spef",
+   "sha256": "db8506adca5542acbafe878527ec754633535f242db89a97ed6bca39aaa3c7c7",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "harden/runs/run/final/spef/nom/tt_um_ihsan_sa_pll.nom.spef",
+   "sha256": "39acb1342a71298eb8690a5a80ee4fcd17d5898be750845e12f04d1052f9f634",
+   "gates": [
+    {
+     "gate": "drc",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:46",
+     "inputs_sha256": "2214d10c86a23e00d2d98c9ac595ab655a2c2888e6c34f32533110e33a17968b"
+    },
+    {
+     "gate": "glsim",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:58",
+     "inputs_sha256": "9b381a2ab74f0133f9ed50f002014579521fe73c8833989e62a93193d728e8e1"
+    },
+    {
+     "gate": "harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:48",
+     "inputs_sha256": "f4b247c42c390fc19202dacfe685336adcf048aa041174db54b50d0f2a326c23"
+    },
+    {
+     "gate": "lec",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:43:42",
+     "inputs_sha256": "49d0f5df9ae6c37087d5ee45585cb01d13b4e32727510ab13897033a91b49886"
+    },
+    {
+     "gate": "lvs",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:36:48",
+     "inputs_sha256": "6cad959a84fce72f1ef96d13196a3e8c97c290f6c18c1e156edce5f94f7b7966"
+    },
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:38:08",
+     "inputs_sha256": "b81833683501c5a861c4f078faff41df905363e3a2e4a8990eaaab18bc04fc29"
+    },
+    {
+     "gate": "timing",
+     "relation": "read",
+     "kind": "harden",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-01T12:35:58",
+     "inputs_sha256": "284b6e289d78ecd4213d834c3010b216e6e43efe6bfae146cf9b53f95dfe92ad"
+    }
+   ]
+  }
+ ],
+ "manifest_sha256": "eb0fc06a3489fff5213342c96d988e793d446c7009217696bc1fffcc8d84bd0c"
+}

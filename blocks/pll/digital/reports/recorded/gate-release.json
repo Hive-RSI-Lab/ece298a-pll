@@ -1,0 +1,260 @@
+{
+ "script": "gate",
+ "gate": "release",
+ "phase": "P8",
+ "tool": "release",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "attestation": "reports/checks.json",
+  "attestation_sha256": "ec3d9535d7186d45700f97b46fb03d2d5f5316d45d6f054015172f6b94116421",
+  "disposition": "gates-green",
+  "waived": [],
+  "tt_submission": {
+   "repo": "release/tt",
+   "staged": [
+    "gds/tt_um_ihsan_sa_pll.gds",
+    "gl/tt_um_ihsan_sa_pll.v",
+    "info.yaml",
+    "lef/tt_um_ihsan_sa_pll.lef",
+    "src/config.json",
+    "src/constraints.sdc",
+    "src/flow.sdc",
+    "src/flow.sdc",
+    "src/ihsan_sa_pll.v",
+    "src/pll_ctrl_regs.v",
+    "src/pll_divider.v",
+    "src/pll_lock_det.v",
+    "src/pll_pfd.v",
+    "src/pll_prescaler.v",
+    "src/tt_block_1x1_pgvdd.def",
+    "src/tt_um_ihsan_sa_pll.v",
+    "test/Makefile",
+    "test/glsim_harness.v",
+    "test/named_mutants.py",
+    "test/pll_ref.py",
+    "test/requirements.txt",
+    "test/test_pll.py"
+   ],
+   "signoff": {
+    "top_module": "tt_um_ihsan_sa_pll",
+    "librelane": "3.1.0.dev3",
+    "pdk": "gf180mcuD",
+    "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+    "librelane_pdk": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
+    "tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
+    "gds": "harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
+    "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+    "lef": "harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
+    "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+    "gl": "harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+    "gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+    "gl_is_shipped": true,
+    "glsim_gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+   },
+   "shipped": [
+    {
+     "workflow": ".github/workflows/gds.yaml",
+     "mode": "custom_gds",
+     "ref": "ttgf26c",
+     "top_module": "tt_um_ihsan_sa_pll",
+     "pdk": "gf180mcuD",
+     "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
+     "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+     "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
+     "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+     "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
+     "verilog_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+     "glsim_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+    }
+   ]
+  },
+  "manifest": "release/manifest.json",
+  "manifest_released": true,
+  "measures": [
+   {
+    "req": "REQ-PFD-DELAY-KEEP",
+    "name": "kept_pfd_delay_cells",
+    "source": "synth.cells.gf180mcu_fd_sc_mcu7t5v0__dlya_1",
+    "min": 2,
+    "value": 2,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-LOOP-LOCK",
+    "name": "lock_time_us",
+    "source": "msde:cosim.measures.lock_time_us",
+    "max": 50,
+    "note": "partial: the top cosim's one operating point (6.25 MHz, N=2, tt_27c) with the transistor macro, not the whole lock table and not the real-number model; other corners are in blocks/pll/tb/README.md",
+    "value": null,
+    "status": "deferred",
+    "why": "checked by the enclosing msde release"
+   },
+   {
+    "req": "REQ-LOOP-FREQ",
+    "name": "fb_period_rel_err",
+    "source": "msde:cosim.measures.fb_period_rel_err",
+    "max": 0.001,
+    "note": "partial: the top cosim's one operating point, not the whole lock table",
+    "value": null,
+    "status": "deferred",
+    "why": "checked by the enclosing msde release"
+   },
+   {
+    "req": "REQ-LOOP-FREQ",
+    "name": "vco_period_rel_err",
+    "source": "msde:cosim.measures.vco_period_rel_err",
+    "max": 0.001,
+    "note": "partial: the top cosim's one operating point, not the whole lock table",
+    "value": null,
+    "status": "deferred",
+    "why": "checked by the enclosing msde release"
+   },
+   {
+    "req": "REQ-LOOP-VCTRL",
+    "name": "vctrl_pp_last_10us_mv",
+    "source": "msde:cosim.measures.vctrl_pp_last_10us_mv",
+    "max": 20,
+    "note": "partial: the top cosim's one operating point at tt_27c. Other corners on the transistor macro read over 20 mV (blocks/pll/tb/README.md: ff_pss 20.9, ff_m40c_vm10 27.4), so this row passing does not show the requirement at every corner",
+    "value": null,
+    "status": "deferred",
+    "why": "checked by the enclosing msde release"
+   },
+   {
+    "req": "REQ-LOOP-RELOCK",
+    "name": "relock_time_us",
+    "source": "msde:cosim.measures.relock_time_us",
+    "max": 50,
+    "note": "the top cosim gate does not record this yet, so the msde release reads it missing and refuses until it does. Evidence today, not gate-read: blocks/pll/reports/recorded/cosim_cov.json (f_ref 5 MHz, N 1->3->2, gate level + SDF, 5 corners, no vctrl pad): last lock rise after a step 3.9-5.1 us, worst 15.1 us at ff_pss. ff_pss at N=3 (120 MHz, near its 125.6 ceiling) fails that bench's own at-end check: LOCK falls twice, vctrl overshoots to 3.5 V and still moves 229 mV p-p 20 us after the step, settling within 20 mV about 25 us after it (cosim_cov_cases.json). N=4 and N=5 steps and f_ref other than 5 MHz are not run",
+    "value": null,
+    "status": "deferred",
+    "why": "checked by the enclosing msde release"
+   },
+   {
+    "req": "REQ-LOOP-MODEL-BENCH-ONLY",
+    "name": "non_std_cells_in_netlist",
+    "source": "synth.non_liberty_cells",
+    "max": 0,
+    "value": 0,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-MUT-KILL",
+    "name": "sampled_mutant_kill_rate",
+    "source": "mutate.kill_rate",
+    "min": 1.0,
+    "note": "the sampled set only; a 100 percent rate here does not show the four named mutants are killed, since the sample need not contain them. Those are in reports/named_mutants.json, a script's record no gate reads, until chip-flow #155",
+    "value": 1.0,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-PRE",
+    "name": "clk_pre_wns_ns",
+    "source": "timing.corners.max_tt_025C_3v30.setup_ws",
+    "min": 0,
+    "note": "worst slack over every clock, a lower bound on this one",
+    "value": 2.74,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-REF",
+    "name": "clk_wns_ns",
+    "source": "timing.corners.max_ss_125C_3v00.setup_ws",
+    "min": 0,
+    "note": "worst slack over every clock at the slowest corner, a lower bound on this one",
+    "value": 2.34,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-VCO",
+    "name": "setup_ws_ss",
+    "source": "timing.corners.max_ss_125C_3v00.setup_ws",
+    "min": 0,
+    "note": "worst slack over every clock; the ss worst path is the first stage's toggle loop. The 2x-ceiling period itself is checked by tests/score.py against constraints.sdc, and min period and min pulse width by the timing gate's own pass",
+    "value": 2.34,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-VCO",
+    "name": "setup_ws_tt",
+    "source": "timing.corners.max_tt_025C_3v30.setup_ws",
+    "min": 0,
+    "value": 2.74,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-VCO",
+    "name": "setup_ws_ff",
+    "source": "timing.corners.max_ff_n40C_3v60.setup_ws",
+    "min": 0,
+    "value": 3.79,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-TIM-VCO",
+    "name": "hold_ws_ff",
+    "source": "timing.corners.min_ff_n40C_3v60.hold_ws",
+    "min": 0,
+    "value": 0.51,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-HARDEN-STANDALONE",
+    "name": "drc_errors_magic",
+    "source": "drc.magic_count",
+    "max": 0,
+    "value": 0,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-HARDEN-STANDALONE",
+    "name": "drc_errors_klayout",
+    "source": "drc.klayout_count",
+    "max": 0,
+    "value": 0,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-HARDEN-STANDALONE",
+    "name": "lvs_matched",
+    "source": "lvs.matched",
+    "equals": true,
+    "value": true,
+    "status": "pass",
+    "why": ""
+   }
+  ]
+ },
+ "inputs_at_start": {
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+ },
+ "recorded_ts": "2026-11-01T12:43:44",
+ "attempts": 2
+}

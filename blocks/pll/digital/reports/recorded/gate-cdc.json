@@ -1,0 +1,793 @@
+{
+ "script": "gate",
+ "gate": "cdc",
+ "phase": "P5",
+ "tool": "cdc",
+ "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "top": "ihsan_sa_pll",
+  "applicable": true,
+  "checked": true,
+  "domains": [
+   "clk",
+   "vco_div2"
+  ],
+  "clocks": [
+   {
+    "net": "u_ctrl.clk",
+    "aliases": [
+     "clk",
+     "u_ctrl.clk",
+     "u_lock.clk",
+     "u_pfd.clk"
+    ],
+    "domain": [
+     "clk"
+    ],
+    "kind": "port",
+    "flops": 22,
+    "edges": [
+     "neg",
+     "pos"
+    ]
+   },
+   {
+    "net": "u_div.clk_fb",
+    "aliases": [
+     "clk_fb_int",
+     "u_div.clk_fb",
+     "u_pfd.clk_fb"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "kind": "gated",
+    "flops": 1,
+    "edges": [
+     "pos"
+    ]
+   },
+   {
+    "net": "u_div.clk_pre",
+    "aliases": [
+     "clk_pre",
+     "u_div.clk_pre",
+     "u_pre.clk_pre",
+     "u_pre.pre_q1"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "kind": "divided",
+    "flops": 5,
+    "edges": [
+     "neg",
+     "pos"
+    ]
+   },
+   {
+    "net": "u_pre.pre_q0",
+    "aliases": [
+     "u_pre.pre_q0"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "kind": "divided",
+    "flops": 1,
+    "edges": [
+     "pos"
+    ]
+   },
+   {
+    "net": "u_pre.vco_div2",
+    "aliases": [
+     "u_pre.vco_div2",
+     "vco_div2"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "kind": "port",
+    "flops": 1,
+    "edges": [
+     "pos"
+    ]
+   }
+  ],
+  "crossings": [
+   {
+    "status": "unsynchronized",
+    "from": "u_ctrl.cp_trim_in",
+    "to": "u_ctrl.cp_trim0",
+    "from_aliases": [
+     "cp_trim_in",
+     "u_ctrl.cp_trim_in"
+    ],
+    "to_aliases": [
+     "cp_trim0",
+     "u_ctrl.cp_trim0"
+    ],
+    "from_domain": [
+     "async:cp_trim_in"
+    ],
+    "to_domain": [
+     "clk"
+    ],
+    "bits": 1,
+    "stages": 1
+   },
+   {
+    "status": "unsynchronized",
+    "from": "u_ctrl.cp_trim_in",
+    "to": "u_ctrl.cp_trim1",
+    "from_aliases": [
+     "cp_trim_in",
+     "u_ctrl.cp_trim_in"
+    ],
+    "to_aliases": [
+     "cp_trim1",
+     "u_ctrl.cp_trim1"
+    ],
+    "from_domain": [
+     "async:cp_trim_in"
+    ],
+    "to_domain": [
+     "clk"
+    ],
+    "bits": 1,
+    "stages": 1
+   },
+   {
+    "status": "unsynchronized",
+    "from": "u_ctrl.pll_en_in",
+    "to": "u_ctrl.pll_en",
+    "from_aliases": [
+     "pll_en_in",
+     "u_ctrl.pll_en_in"
+    ],
+    "to_aliases": [
+     "pll_en",
+     "u_ctrl.pll_en",
+     "u_lock.pll_en"
+    ],
+    "from_domain": [
+     "async:pll_en_in"
+    ],
+    "to_domain": [
+     "clk"
+    ],
+    "bits": 1,
+    "stages": 1
+   },
+   {
+    "status": "unsynchronized",
+    "from": "u_div.n_sel",
+    "to": "u_div.div_cnt",
+    "from_aliases": [
+     "n_sel",
+     "u_div.n_sel"
+    ],
+    "to_aliases": [
+     "u_div.div_cnt"
+    ],
+    "from_domain": [
+     "async:n_sel"
+    ],
+    "to_domain": [
+     "vco_div2"
+    ],
+    "bits": 9,
+    "stages": 1
+   },
+   {
+    "status": "unsynchronized",
+    "from": "u_div.n_sel",
+    "to": "u_div.fb_en",
+    "from_aliases": [
+     "n_sel",
+     "u_div.n_sel"
+    ],
+    "to_aliases": [
+     "u_div.fb_en"
+    ],
+    "from_domain": [
+     "async:n_sel"
+    ],
+    "to_domain": [
+     "vco_div2"
+    ],
+    "bits": 3,
+    "stages": 1
+   },
+   {
+    "status": "unsynchronized",
+    "from": "u_pfd.pfd_dn",
+    "to": "u_lock.wide_q",
+    "from_aliases": [
+     "pfd_dn_q",
+     "u_pfd.pfd_dn",
+     "u_pfd.pfd_fb_q"
+    ],
+    "to_aliases": [
+     "u_lock.wide_q"
+    ],
+    "from_domain": [
+     "vco_div2"
+    ],
+    "to_domain": [
+     "clk"
+    ],
+    "bits": 1,
+    "stages": 1
+   },
+   {
+    "status": "async_reset",
+    "from": "u_pfd.pfd_dn",
+    "to": "u_pfd.pfd_ref_q",
+    "from_aliases": [
+     "pfd_dn_q",
+     "u_pfd.pfd_dn",
+     "u_pfd.pfd_fb_q"
+    ],
+    "to_aliases": [
+     "pfd_up_q",
+     "u_pfd.pfd_ref_q",
+     "u_pfd.pfd_up"
+    ],
+    "from_domain": [
+     "vco_div2"
+    ],
+    "to_domain": [
+     "clk"
+    ],
+    "bits": 1,
+    "stages": 0
+   },
+   {
+    "status": "async_reset",
+    "from": "u_pfd.pfd_ref_q",
+    "to": "u_pfd.pfd_dn",
+    "from_aliases": [
+     "pfd_up_q",
+     "u_pfd.pfd_ref_q",
+     "u_pfd.pfd_up"
+    ],
+    "to_aliases": [
+     "pfd_dn_q",
+     "u_pfd.pfd_dn",
+     "u_pfd.pfd_fb_q"
+    ],
+    "from_domain": [
+     "clk"
+    ],
+    "to_domain": [
+     "vco_div2"
+    ],
+    "bits": 1,
+    "stages": 0
+   }
+  ],
+  "clock_gates": [
+   {
+    "net": "obs_int",
+    "aliases": [
+     "obs_int"
+    ],
+    "kind": "mux",
+    "safe": false,
+    "why": "a clock mux: nothing in the netlist shows the select changes only while both clocks are safe",
+    "clocks": [
+     "u_div.clk_pre",
+     "u_pre.obs_q3"
+    ],
+    "enables": [
+     "obs_sel"
+    ]
+   },
+   {
+    "net": "u_div.clk_fb",
+    "aliases": [
+     "clk_fb_int",
+     "u_div.clk_fb",
+     "u_pfd.clk_fb"
+    ],
+    "kind": "and",
+    "safe": true,
+    "why": "AND gate with its enable on the opposite edge of the same clock, no logic between",
+    "clocks": [
+     "u_div.clk_pre"
+    ],
+    "enables": [
+     "u_div.fb_en"
+    ]
+   }
+  ],
+  "reset_trees": [
+   {
+    "net": "rst_n",
+    "aliases": [
+     "rst_n",
+     "u_ctrl.rst_n",
+     "u_div.rst_n",
+     "u_lock.rst_n",
+     "u_pfd.rst_n",
+     "u_pre.rst_n"
+    ],
+    "domain": [
+     "clk"
+    ],
+    "flops": 22,
+    "clock_nets": [
+     "u_ctrl.clk"
+    ],
+    "status": "unsynced",
+    "through_logic": true
+   },
+   {
+    "net": "rst_n",
+    "aliases": [
+     "rst_n",
+     "u_ctrl.rst_n",
+     "u_div.rst_n",
+     "u_lock.rst_n",
+     "u_pfd.rst_n",
+     "u_pre.rst_n"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "flops": 8,
+    "clock_nets": [
+     "u_div.clk_fb",
+     "u_div.clk_pre",
+     "u_pre.pre_q0",
+     "u_pre.vco_div2"
+    ],
+    "status": "unsynced",
+    "through_logic": true
+   },
+   {
+    "net": "u_pfd.pfd_dn",
+    "aliases": [
+     "pfd_dn_q",
+     "u_pfd.pfd_dn",
+     "u_pfd.pfd_fb_q"
+    ],
+    "domain": [
+     "clk"
+    ],
+    "flops": 1,
+    "clock_nets": [
+     "u_ctrl.clk"
+    ],
+    "status": "crossing",
+    "through_logic": true
+   },
+   {
+    "net": "u_pfd.pfd_dn",
+    "aliases": [
+     "pfd_dn_q",
+     "u_pfd.pfd_dn",
+     "u_pfd.pfd_fb_q"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "flops": 1,
+    "clock_nets": [
+     "u_div.clk_fb"
+    ],
+    "status": "same_domain_flop",
+    "through_logic": true
+   },
+   {
+    "net": "u_pfd.pfd_ref_q",
+    "aliases": [
+     "pfd_up_q",
+     "u_pfd.pfd_ref_q",
+     "u_pfd.pfd_up"
+    ],
+    "domain": [
+     "clk"
+    ],
+    "flops": 1,
+    "clock_nets": [
+     "u_ctrl.clk"
+    ],
+    "status": "same_domain_flop",
+    "through_logic": true
+   },
+   {
+    "net": "u_pfd.pfd_ref_q",
+    "aliases": [
+     "pfd_up_q",
+     "u_pfd.pfd_ref_q",
+     "u_pfd.pfd_up"
+    ],
+    "domain": [
+     "vco_div2"
+    ],
+    "flops": 1,
+    "clock_nets": [
+     "u_div.clk_fb"
+    ],
+    "status": "crossing",
+    "through_logic": true
+   }
+  ],
+  "reset_syncs": [],
+  "waived": [
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_ctrl.cp_trim_in (async:cp_trim_in) -> u_ctrl.cp_trim0 (clk): unsynchronized, 1 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_ctrl.cp_trim_in",
+     "to": "u_ctrl.cp_trim0",
+     "from_aliases": [
+      "cp_trim_in",
+      "u_ctrl.cp_trim_in"
+     ],
+     "to_aliases": [
+      "cp_trim0",
+      "u_ctrl.cp_trim0"
+     ],
+     "from_domain": [
+      "async:cp_trim_in"
+     ],
+     "to_domain": [
+      "clk"
+     ],
+     "bits": 1,
+     "stages": 1
+    },
+    "reason": "Raw pins into one clk flop each, with no synchroniser. cp_trim0/1 only set the pump current in the macro and feed no digital state, and each bit resolves on its own, so the worst effect is a brief wrong pump trim when a pin changes: a phase disturbance the loop corrects. Nothing assumes the two bits change together. Qualitative: no MTBF."
+   },
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_ctrl.cp_trim_in (async:cp_trim_in) -> u_ctrl.cp_trim1 (clk): unsynchronized, 1 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_ctrl.cp_trim_in",
+     "to": "u_ctrl.cp_trim1",
+     "from_aliases": [
+      "cp_trim_in",
+      "u_ctrl.cp_trim_in"
+     ],
+     "to_aliases": [
+      "cp_trim1",
+      "u_ctrl.cp_trim1"
+     ],
+     "from_domain": [
+      "async:cp_trim_in"
+     ],
+     "to_domain": [
+      "clk"
+     ],
+     "bits": 1,
+     "stages": 1
+    },
+    "reason": "Raw pins into one clk flop each, with no synchroniser. cp_trim0/1 only set the pump current in the macro and feed no digital state, and each bit resolves on its own, so the worst effect is a brief wrong pump trim when a pin changes: a phase disturbance the loop corrects. Nothing assumes the two bits change together. Qualitative: no MTBF."
+   },
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_ctrl.pll_en_in (async:pll_en_in) -> u_ctrl.pll_en (clk): unsynchronized, 1 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_ctrl.pll_en_in",
+     "to": "u_ctrl.pll_en",
+     "from_aliases": [
+      "pll_en_in",
+      "u_ctrl.pll_en_in"
+     ],
+     "to_aliases": [
+      "pll_en",
+      "u_ctrl.pll_en",
+      "u_lock.pll_en"
+     ],
+     "from_domain": [
+      "async:pll_en_in"
+     ],
+     "to_domain": [
+      "clk"
+     ],
+     "bits": 1,
+     "stages": 1
+    },
+    "reason": "A raw pin into one clk flop, with no synchroniser. There are at least 80 ns to the next edge for an output to resolve before anything reads it, and pll_en is a slow enable (REQ-CTRL-REG). If it did not resolve in time it could mis-set wd_cnt, stretching a recovery to at most about 1024 reference cycles, which then ends on its own. Qualitative: no MTBF."
+   },
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_div.n_sel (async:n_sel) -> u_div.div_cnt (vco_div2): unsynchronized, 9 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_div.n_sel",
+     "to": "u_div.div_cnt",
+     "from_aliases": [
+      "n_sel",
+      "u_div.n_sel"
+     ],
+     "to_aliases": [
+      "u_div.div_cnt"
+     ],
+     "from_domain": [
+      "async:n_sel"
+     ],
+     "to_domain": [
+      "vco_div2"
+     ],
+     "bits": 9,
+     "stages": 1
+    },
+    "reason": "Not quasi-static: n_sel is a raw pin that REQ-LOOP-RELOCK changes live. A change between the clk_pre edges, or an intermediate code or bounce, can give one extra or missing clk_fb edge per transition without any metastability. Accepted because no div_cnt state stalls (the >= compare wraps from every state, n_m1 <= 4) and exact N returns within N clk_pre periods; the worst effect at the outputs is a lock drop and a relock. Cosim changes n_sel on clk falling edges only and only a few times."
+   },
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_div.n_sel (async:n_sel) -> u_div.fb_en (vco_div2): unsynchronized, 3 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_div.n_sel",
+     "to": "u_div.fb_en",
+     "from_aliases": [
+      "n_sel",
+      "u_div.n_sel"
+     ],
+     "to_aliases": [
+      "u_div.fb_en"
+     ],
+     "from_domain": [
+      "async:n_sel"
+     ],
+     "to_domain": [
+      "vco_div2"
+     ],
+     "bits": 3,
+     "stages": 1
+    },
+    "reason": "Same pin. n_sel reaches clk_fb only through fb_en, which is clocked on the falling edge of clk_pre. A runt on clk_fb needs metastability that outlasts the clk_pre low phase (at least 10.8 ns at the 5.4 ns vco_div2 period), and it costs one bad edge that the PFD then corrects like any other phase error. Qualitative: no MTBF is computed."
+   },
+   {
+    "kind": "cdc_unsynchronized",
+    "msg": "u_pfd.pfd_dn (vco_div2) -> u_lock.wide_q (clk): unsynchronized, 1 bit path(s)",
+    "crossing": {
+     "status": "unsynchronized",
+     "from": "u_pfd.pfd_dn",
+     "to": "u_lock.wide_q",
+     "from_aliases": [
+      "pfd_dn_q",
+      "u_pfd.pfd_dn",
+      "u_pfd.pfd_fb_q"
+     ],
+     "to_aliases": [
+      "u_lock.wide_q"
+     ],
+     "from_domain": [
+      "vco_div2"
+     ],
+     "to_domain": [
+      "clk"
+     ],
+     "bits": 1,
+     "stages": 1
+    },
+    "reason": "A single-flop sample on purpose: wide_q is the half-period threshold of a lock indicator. It has half a reference period to resolve (40 ns at 12.5 MHz, assuming 50% duty on clk). In lock the pulses sit far from the sample point, so an ambiguous sample means the pulse is about T/2, the threshold itself, and either answer is right. Even unresolved it only masks count+1 in lock_cnt, so the count cannot inflate: the worst effect is a late or dropped lock, not a false one."
+   },
+   {
+    "kind": "cdc_async_reset_crossing",
+    "msg": "u_pfd.pfd_dn (vco_div2) -> u_pfd.pfd_ref_q (clk): async reset, 1 bit path(s)",
+    "crossing": {
+     "status": "async_reset",
+     "from": "u_pfd.pfd_dn",
+     "to": "u_pfd.pfd_ref_q",
+     "from_aliases": [
+      "pfd_dn_q",
+      "u_pfd.pfd_dn",
+      "u_pfd.pfd_fb_q"
+     ],
+     "to_aliases": [
+      "pfd_up_q",
+      "u_pfd.pfd_ref_q",
+      "u_pfd.pfd_up"
+     ],
+     "from_domain": [
+      "vco_div2"
+     ],
+     "to_domain": [
+      "clk"
+     ],
+     "bits": 1,
+     "stages": 0
+    },
+    "reason": "The PFD's function (REQ-PFD-RESET): both flops high clear each other through two delay cells. Every state is legal and 11 self-clears, so there is no lock-up. A recovery violation or an edge lost to the clear costs one reference cycle of phase error. Formal cuts these flops (spec.yaml async_reset_cuts); the evidence is gate-level cosim, with no metastability model."
+   },
+   {
+    "kind": "cdc_async_reset_crossing",
+    "msg": "u_pfd.pfd_ref_q (clk) -> u_pfd.pfd_dn (vco_div2): async reset, 1 bit path(s)",
+    "crossing": {
+     "status": "async_reset",
+     "from": "u_pfd.pfd_ref_q",
+     "to": "u_pfd.pfd_dn",
+     "from_aliases": [
+      "pfd_up_q",
+      "u_pfd.pfd_ref_q",
+      "u_pfd.pfd_up"
+     ],
+     "to_aliases": [
+      "pfd_dn_q",
+      "u_pfd.pfd_dn",
+      "u_pfd.pfd_fb_q"
+     ],
+     "from_domain": [
+      "clk"
+     ],
+     "to_domain": [
+      "vco_div2"
+     ],
+     "bits": 1,
+     "stages": 0
+    },
+    "reason": "The same mutual clear in the other direction (REQ-PFD-RESET); same reasoning and the same limit on the evidence."
+   },
+   {
+    "kind": "cdc_glitchy_clock_mux",
+    "msg": "clock net obs_int: a clock mux: nothing in the netlist shows the select changes only while both clocks are safe",
+    "gate": {
+     "net": "obs_int",
+     "aliases": [
+      "obs_int"
+     ],
+     "kind": "mux",
+     "safe": false,
+     "why": "a clock mux: nothing in the netlist shows the select changes only while both clocks are safe",
+     "clocks": [
+      "u_div.clk_pre",
+      "u_pre.obs_q3"
+     ],
+     "enables": [
+      "obs_sel"
+     ]
+    },
+    "reason": "Observation only: obs_int drives uo_out[0] and clocks no flop, and spec.md declares that obs_sel changes are not glitch-protected. The worst effect is a runt pulse on an observation pin when obs_sel changes."
+   },
+   {
+    "kind": "rdc_unsynced_release",
+    "msg": "reset rst_n releases 22 flop(s) in domain clk (clock nets u_ctrl.clk) with no reset synchroniser in that domain",
+    "reset": {
+     "net": "rst_n",
+     "aliases": [
+      "rst_n",
+      "u_ctrl.rst_n",
+      "u_div.rst_n",
+      "u_lock.rst_n",
+      "u_pfd.rst_n",
+      "u_pre.rst_n"
+     ],
+     "domain": [
+      "clk"
+     ],
+     "flops": 22,
+     "clock_nets": [
+      "u_ctrl.clk"
+     ],
+     "status": "unsynced",
+     "through_logic": true,
+     "kind": "unsynced"
+    },
+    "reason": "Accepted with no synchroniser. At the first edge after release the multi-bit registers' D equals their reset value (wide_q = 1 forces lock_cnt's next value to 0, pll_en = 0 clears wd_cnt), so only wide_q, pll_en, cp_trim0/1 and pfd_ref_q can slip, each by one cycle and independently of the others, and each of those is a state that resolves on the next clk edge. rst_n -> clk recovery slack is not established."
+   },
+   {
+    "kind": "rdc_unsynced_release",
+    "msg": "reset rst_n releases 8 flop(s) in domain vco_div2 (clock nets u_div.clk_fb, u_div.clk_pre, u_pre.pre_q0, u_pre.vco_div2) with no reset synchroniser in that domain",
+    "reset": {
+     "net": "rst_n",
+     "aliases": [
+      "rst_n",
+      "u_ctrl.rst_n",
+      "u_div.rst_n",
+      "u_lock.rst_n",
+      "u_pfd.rst_n",
+      "u_pre.rst_n"
+     ],
+     "domain": [
+      "vco_div2"
+     ],
+     "flops": 8,
+     "clock_nets": [
+      "u_div.clk_fb",
+      "u_div.clk_pre",
+      "u_pre.pre_q0",
+      "u_pre.vco_div2"
+     ],
+     "status": "unsynced",
+     "through_logic": true,
+     "kind": "unsynced"
+    },
+    "reason": "Accepted with no synchroniser. In the final tile pll_en = 0 holds vco_div2, so release after a long enough reset sees a quiet clock; the window exists on the standalone tile and after a short reset. In it a pre_q0 runt can toggle pre_q1, giving a clk_pre/obs_out pulse of about one vco_div2 period minus settling, under one VCO period if settling exceeds 2.7 ns. It clears inside the first clk_pre period, since toggle flops have no illegal state and fb_en cannot be hit until clk_pre has risen and fallen. REQ-DIV-RESET-CLEAN is narrowed to say so, and no test exercises this window. constraints.sdc does not time rst_n recovery to the VCO clocks."
+   },
+   {
+    "kind": "rdc_comb_reset",
+    "msg": "reset net u_pfd.pfd_clr is driven by combinational logic and resets 1 flop(s) in domain clk: a glitch on it resets them",
+    "reset": {
+     "net": "u_pfd.pfd_clr",
+     "aliases": [
+      "u_pfd.pfd_clr"
+     ],
+     "domain": [
+      "clk"
+     ],
+     "flops": 1,
+     "clock_nets": [
+      "u_ctrl.clk"
+     ],
+     "kind": "comb"
+    },
+    "reason": "The PFD's clear, combinational by design (REQ-PFD-RESET). rst_n releases with both Qs at 0, so pfd_rst is low and that release is clean. pfd_both glitches only on a metastable Q or a clear's tail, and a spurious clear means state 00 and one truncated pulse, corrected on the next reference cycle. Whether the delay cells filter such a glitch is not established."
+   },
+   {
+    "kind": "rdc_comb_reset",
+    "msg": "reset net u_pfd.pfd_clr is driven by combinational logic and resets 1 flop(s) in domain vco_div2: a glitch on it resets them",
+    "reset": {
+     "net": "u_pfd.pfd_clr",
+     "aliases": [
+      "u_pfd.pfd_clr"
+     ],
+     "domain": [
+      "vco_div2"
+     ],
+     "flops": 1,
+     "clock_nets": [
+      "u_div.clk_fb"
+     ],
+     "kind": "comb"
+    },
+    "reason": "The PFD's clear, combinational by design (REQ-PFD-RESET). rst_n releases with both Qs at 0, so pfd_rst is low and that release is clean. pfd_both glitches only on a metastable Q or a clear's tail, and a spurious clear means state 00 and one truncated pulse, corrected on the next reference cycle. Whether the delay cells filter such a glitch is not established."
+   }
+  ],
+  "crosscheck": {
+   "tool": "opensta",
+   "ran": true,
+   "sta": {
+    "clk": 22,
+    "vco_div2": 1
+   },
+   "cdclib": {
+    "clk": 22,
+    "vco_div2": 1
+   },
+   "match": true
+  },
+  "not_checked": [
+   "bus coherence (gray, handshake, multi-cycle)",
+   "reconvergence of separately synchronised bits",
+   "reset release order between domains",
+   "recovery/removal timing of a synchronised release (STA's)",
+   "a data path from a flop with no reset into a flop with one",
+   "a raw reset read synchronously (a data input: declare it `async` in ports to check it)"
+  ]
+ },
+ "inputs_at_start": {
+  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+  "cdc_waivers": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+ },
+ "recorded_ts": "2026-11-01T12:27:19",
+ "attempts": 3
+}

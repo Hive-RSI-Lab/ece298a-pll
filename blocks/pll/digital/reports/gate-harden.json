@@ -1,12 +1,305 @@
 {
   "script": "gate",
   "gate": "harden",
-  "status": "error",
-  "error": "Traceback (most recent call last):\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/gate.py\", line 487, in main\n    report = run_report_for_gate(\n             ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/gate.py\", line 152, in run_report_for_gate\n    payload, _out = mod.run([\"--workspace\", str(workspace)])\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/check_harden.py\", line 134, in run\n    config = ttlib.harden_config(spec, rtl_files, wrapper_path, pdk_root,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/lib/ttlib.py\", line 792, in harden_config\n    port = clock_port(spec)\n           ^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/lib/ttlib.py\", line 724, in clock_port\n    raise TTError(f\"clock.domains {domains} names more than one clock; \"\nttlib.TTError: clock.domains ['clk', 'vco_out'] names more than one clock; harden constrains exactly one clock port - keep the one the block's flops run on\n",
-  "remediation": "TTError: clock.domains ['clk', 'vco_out'] names more than one clock; harden constrains exactly one clock port - keep the one the block's flops run on",
-  "stale_mark": {
+  "phase": "P6",
+  "tool": "harden",
+  "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "status": "pass",
+  "criteria": {
+    "fail_severities": [
+      "error"
+    ],
+    "max_count": 0
+  },
+  "counts": {
+    "total": 0,
+    "by_severity": {},
+    "by_source": {}
+  },
+  "failing_count": 0,
+  "failing": [],
+  "violations": [],
+  "facts": {
+    "top": "ihsan_sa_pll",
+    "run_tag": "run",
+    "resumed": false,
+    "wall_s": 85.14,
+    "run_dir": "harden/runs/run",
+    "metrics": {
+      "design__instance__count": 1510,
+      "design__instance__area": 51967,
+      "design__instance_unmapped__count": 0,
+      "timing__hold__ws": 0.5124265601326228,
+      "timing__setup__ws": 2.336559456496964,
+      "timing__hold__tns": 0,
+      "timing__setup__tns": 0,
+      "timing__hold__wns": 0,
+      "timing__setup__wns": 0,
+      "timing__hold_vio__count": 0,
+      "timing__hold_r2r__ws": 0.512427,
+      "timing__hold_r2r_vio__count": 0,
+      "timing__setup_vio__count": 0,
+      "timing__setup_r2r__ws": 2.33656,
+      "timing__setup_r2r_vio__count": 0,
+      "design__die__bbox": "0.0 0.0 346.64 160.72",
+      "design__core__bbox": "3.36 3.92 343.28 156.8",
+      "design__die__area": 55712,
+      "design__core__area": 51967,
+      "design__instance__count__stdcell": 600,
+      "design__instance__area__stdcell": 7972.97,
+      "design__instance__count__macros": 0,
+      "design__instance__area__macros": 0,
+      "design__instance__count__padcells": 0,
+      "design__instance__area__padcells": 0,
+      "design__instance__count__cover": 0,
+      "design__instance__area__cover": 0,
+      "design__instance__utilization": 0.153424,
+      "design__instance__utilization__stdcell": 0.153424,
+      "design__instance__displacement__total": 0,
+      "design__instance__displacement__mean": 0,
+      "design__instance__displacement__max": 0,
+      "design__instance__count__setup_buffer": 0,
+      "design__instance__count__hold_buffer": 0
+    },
+    "qor": {
+      "metrics": {
+        "die_area": 55712,
+        "core_area": 51967,
+        "stdcell_area": 7972.97,
+        "utilization": 0.153424,
+        "instance_count": 1510,
+        "stdcell_count": 600,
+        "setup_buffer_count": 0,
+        "hold_buffer_count": 0,
+        "setup_ws": 2.336559456496964,
+        "setup_tns": 0,
+        "setup_vio_count": 0,
+        "hold_ws": 0.5124265601326228,
+        "hold_tns": 0,
+        "hold_vio_count": 0,
+        "skew_setup": 0.47832916759138994,
+        "skew_hold": -0.9599938893322997,
+        "power_total": 0.0017725294455885887,
+        "power_leakage": 5.407580516703092e-08,
+        "power_switching": 0.0004685799649450928,
+        "power_internal": 0.0013038953766226768,
+        "route_drc_errors": 0,
+        "magic_drc_errors": 0,
+        "lvs_errors": 0,
+        "antenna_nets": 0,
+        "antenna_pins": 0,
+        "route_antenna_violations": 0,
+        "max_slew_violations": 0,
+        "max_cap_violations": 0,
+        "max_fanout_violations": 0,
+        "floating_nets": 2,
+        "wirelength": 4890,
+        "grt_wirelength": 8173,
+        "vias": 950,
+        "ir_drop_worst": 0.000292
+      },
+      "corners": {
+        "max_ff_n40C_3v60": {
+          "setup_ws": 3.7859352280325993,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 0.5219049229399728,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.48462391027443713,
+          "skew_hold": -0.9697651844929817,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "max_ss_125C_3v00": {
+          "setup_ws": 2.336559456496964,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 2.4600073785424303,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 1.1737438020410118,
+          "skew_hold": -2.7116469837071437,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "max_tt_025C_3v30": {
+          "setup_ws": 2.7438458948225746,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 1.1036385451237394,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.6809069056873286,
+          "skew_hold": -1.4867556495643097,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "min_ff_n40C_3v60": {
+          "setup_ws": 3.801985500708933,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 0.5124265601326228,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.47832916759138994,
+          "skew_hold": -0.9599938893322997,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "min_ss_125C_3v00": {
+          "setup_ws": 2.3870364138729476,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 2.4297204935740844,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 1.1523085034537375,
+          "skew_hold": -2.681575037922444,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "min_tt_025C_3v30": {
+          "setup_ws": 2.7702310118828284,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 1.0872210106604727,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.6705178824182746,
+          "skew_hold": -1.4706680733932935,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "nom_ff_n40C_3v60": {
+          "setup_ws": 3.794781929432224,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 0.5177243780225129,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.4812028689496035,
+          "skew_hold": -0.9644068039353855,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "nom_ss_125C_3v00": {
+          "setup_ws": 2.364379869924046,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 2.4436142689863964,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 1.1620909008449796,
+          "skew_hold": -2.6951659444850726,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        },
+        "nom_tt_025C_3v30": {
+          "setup_ws": 2.7583875964103823,
+          "setup_tns": 0,
+          "setup_vio_count": 0,
+          "hold_ws": 1.0947527638725425,
+          "hold_tns": 0,
+          "hold_vio_count": 0,
+          "skew_setup": 0.675141739402005,
+          "skew_hold": -1.4779369257856965,
+          "max_slew_violations": 0,
+          "max_cap_violations": 0
+        }
+      },
+      "missing": [],
+      "versions": {
+        "librelane": "3.1.0.dev3",
+        "yosys": "0.69",
+        "openroad": "26Q3-2443-g50432012f",
+        "pdk": {
+          "name": "gf180mcuD",
+          "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+          "ciel": "1689ac3f2dc763876eaf967227c7dfe831b031ae"
+        }
+      },
+      "config_sha256": "411d18c883dc30aebf05692ed7f32eb62a4cc304054c343cca1b8186b0af1fff",
+      "resolved_sha256": "ed7c0f7b3c245c25d9c300ce5f94aff9d5b04fc7f0947ce8f91a6034dfbd7884",
+      "wall_s": 85.14
+    },
+    "signoff_metrics": {
+      "antenna__violating__nets": {
+        "value": 0,
+        "limit": 0,
+        "status": "ok"
+      },
+      "route__antenna_violation__count": {
+        "value": 0,
+        "limit": 0,
+        "status": "ok"
+      },
+      "timing__drv__floating__nets": {
+        "value": 2,
+        "limit": 0,
+        "nets": [
+          "VGND",
+          "VPWR"
+        ],
+        "power_nets": [
+          "VGND",
+          "VPWR"
+        ],
+        "waived": [],
+        "unused_waivers": [],
+        "status": "ok"
+      },
+      "timing__unannotated_net_filtered__count": {
+        "value": 0,
+        "limit": 0,
+        "status": "ok"
+      },
+      "design__power_grid_violation__count": {
+        "value": 0,
+        "limit": 0,
+        "status": "ok"
+      },
+      "ir__drop__worst": {
+        "value": 0.000292,
+        "limit": 0.16501459999999998,
+        "status": "ok"
+      }
+    }
+  },
+  "inputs_at_start": {
+    "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+    "harden_config": "json_canonical_sans_roots:411d18c883dc30aebf05692ed7f32eb62a4cc304054c343cca1b8186b0af1fff",
+    "harden_override": "json_canonical:c3bc9abe461e2007aa0ac46fae625ca705fc8efffad48d123466951b8bfad7f0",
+    "harden_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+    "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
+    "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+    "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+    "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+  },
+  "record_result": {
     "ok": true,
-    "marked": false,
-    "reason": "no earlier recorded result to distrust"
+    "recorded": true,
+    "workspace": ".",
+    "gate": "harden",
+    "status": "pass",
+    "attempts": 17,
+    "inputs": {
+      "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+      "harden_config": "json_canonical_sans_roots:411d18c883dc30aebf05692ed7f32eb62a4cc304054c343cca1b8186b0af1fff",
+      "harden_override": "json_canonical:c3bc9abe461e2007aa0ac46fae625ca705fc8efffad48d123466951b8bfad7f0",
+      "harden_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "harden_info": "json_canonical:9ecb304f904f41c8a2def236b1d232e86b2691564dd312d1cdd01fed3c0c796c",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+    }
   }
 }

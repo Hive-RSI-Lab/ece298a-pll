@@ -53,12 +53,16 @@
    "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 3
   },
   "area": 3709.888,
+  "cell_count": 110,
+  "non_liberty_cells": 0,
   "netlist": "synth/ihsan_sa_pll.v"
  },
  "inputs_at_start": {
   "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:d065d1c3567fcc18055569a5038c3c3c705c728c38c8f9cca492104888c7440d"
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
  },
- "recorded_ts": "2026-10-31T15:36:50",
- "attempts": 10
+ "recorded_ts": "2026-11-01T12:27:03",
+ "attempts": 12
 }

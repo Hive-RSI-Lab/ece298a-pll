@@ -12,144 +12,17 @@
   "max_count": 0
  },
  "counts": {
-  "total": 8,
+  "total": 2,
   "by_severity": {
-   "info": 8
+   "info": 2
   },
   "by_source": {
-   "sby-smtbmc": 6,
    "check_formal": 2
   }
  },
  "failing_count": 0,
  "failing": [],
  "violations": [
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-DIV-N"
-   ],
-   "msg": "requirement REQ-DIV-N (property divider_ratio): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-DIV-N (property divider_ratio): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-LOCK-NO-WIDE"
-   ],
-   "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-PFD-NO-OVERLAP"
-   ],
-   "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-PFD-RESET"
-   ],
-   "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-PRE-DIV8"
-   ],
-   "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
-  {
-   "check": "formal",
-   "severity": "info",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "bounded_not_proven",
-   "refs": [
-    "REQ-RST-ASYNC"
-   ],
-   "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-   "source": "sby-smtbmc",
-   "items": [
-    {
-     "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): no counterexample found to depth 20 (spec.yaml formal.depth), but induction did not converge - recorded as bounded, never as proven",
-     "file": null,
-     "line": null
-    }
-   ],
-   "depth": 20
-  },
   {
    "check": "formal",
    "severity": "info",
@@ -198,8 +71,7 @@
   "frontend_why": null,
   "multiclock": true,
   "multiclock_why": "5 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\vco_div2); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$366, $flatten\\dut.\\u_lock.$procdff$402; async reset/latch cell(s) $adff",
-  "proven": [],
-  "bounded": [
+  "proven": [
    "REQ-DIV-N",
    "REQ-LOCK-NO-WIDE",
    "REQ-PFD-NO-OVERLAP",
@@ -207,6 +79,15 @@
    "REQ-PRE-DIV8",
    "REQ-RST-ASYNC"
   ],
+  "proven_by": {
+   "REQ-DIV-N": "pdr",
+   "REQ-LOCK-NO-WIDE": "pdr",
+   "REQ-PFD-NO-OVERLAP": "pdr",
+   "REQ-PFD-RESET": "pdr",
+   "REQ-PRE-DIV8": "pdr",
+   "REQ-RST-ASYNC": "pdr"
+  },
+  "bounded": [],
   "failed": [],
   "vacuous": [],
   "smt_status": "UNKNOWN",
@@ -238,8 +119,8 @@
  "inputs_at_start": {
   "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
   "formal": "dir_text:5318ffa82294adba234a0b5607be55ec399f213273318f37d0b8d59e80b29aee",
-  "spec_yaml": "json_canonical:6047879c86f989ed1075f56053d02d1df28eae90ded8d42e196ce02dd3da6f33"
+  "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
  },
- "recorded_ts": "2026-10-31T15:36:49",
- "attempts": 11
+ "recorded_ts": "2026-11-01T12:31:39",
+ "attempts": 12
 }
