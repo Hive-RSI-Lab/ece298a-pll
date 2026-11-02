@@ -96,6 +96,30 @@
     "deck": "log/sim/pll_analog_overlap_tb__tt.cir"
    },
    {
+    "bench": "pll_analog_presc_tb.cir",
+    "corner": "tt",
+    "names": [
+     "tt",
+     "tt_27c"
+    ],
+    "process": "typical",
+    "passive": "typical",
+    "temp_c": 27,
+    "vdd": "3.3",
+    "returncode": 0,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26161,
+     "presc_ckq_f_ns": 0.18942,
+     "presc_tr_ns": 0.07463,
+     "presc_tf_ns": 0.06829,
+     "presc_duty_pct": 48.9859
+    },
+    "engine_errors": [],
+    "violations": [],
+    "deck": "log/sim/pll_analog_presc_tb__tt.cir"
+   },
+   {
     "bench": "pll_analog_pwr_tb.cir",
     "corner": "tt",
     "names": [
@@ -147,45 +171,32 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.914,
-     "vco_df_dv_min_mhz_per_v": 14.1418,
-     "vco_fmin_tt_mhz": 9.55208,
-     "vco_fmax_tt_mhz": 257.72,
-     "vco_out_swing_pct_vdd": 100.454,
-     "vco_out_duty_pct": 53.9465,
-     "vco_fmax_ff_mhz": 260.498,
-     "vco_out_tr_ns": 0.0509,
-     "vco_out_tf_ns": 0.045355
+     "vco_kvco_mhz_per_v": 92.0717,
+     "vco_df_dv_min_mhz_per_v": 14.5759,
+     "vco_fmin_tt_mhz": 9.18854,
+     "vco_fmax_tt_mhz": 257.782,
+     "vco_out_swing_pct_vdd": 100.455,
+     "vco_out_duty_pct": 53.9462,
+     "vco_fmax_ff_mhz": 260.547,
+     "vco_out_tr_ns": 0.047903,
+     "vco_out_tf_ns": 0.042638
     },
     "engine_errors": [],
     "violations": [],
     "deck": "log/sim/pll_analog_vco_tb__tt.cir"
    }
   ],
-  "not_scored": [
-   {
-    "bench": "pll_analog_presc_tb.cir",
-    "corner": "tt",
-    "reason": "no bound in the sidecar is scored at this corner"
-   }
-  ],
-  "out_of_scope": [
-   {
-    "bench": "pll_analog_presc_tb.cir",
-    "scored_at": [
-     "ff_m40c_vp10"
-    ]
-   }
-  ]
+  "not_scored": [],
+  "out_of_scope": []
  },
  "inputs_at_start": {
   "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-  "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+  "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+  "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e",
   "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-11-01T12:21:01",
- "attempts": 19
+ "recorded_ts": "2026-11-02T12:11:56",
+ "attempts": 20
 }

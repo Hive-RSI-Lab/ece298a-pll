@@ -4,21 +4,21 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-11-01T15:14:32",
+ "updated": "2026-11-02T12:11:56",
  "phase": "P5",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 22,
+   "attempts": 23,
    "last": {
-    "ts": "2026-11-01T12:18:02",
+    "ts": "2026-11-02T12:08:07",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71"
+     "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e"
     },
     "job": null
    },
@@ -242,21 +242,31 @@
       "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-02T12:08:07",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e"
+     },
+     "job": null
     }
    ]
   },
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 15,
+   "attempts": 16,
    "last": {
-    "ts": "2026-11-01T12:19:28",
+    "ts": "2026-11-02T12:09:50",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71"
+     "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e"
     },
     "job": null
    },
@@ -425,22 +435,33 @@
       "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-02T12:09:50",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e"
+     },
+     "job": null
     }
    ]
   },
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 19,
+   "attempts": 20,
    "last": {
-    "ts": "2026-11-01T12:21:01",
+    "ts": "2026-11-02T12:11:56",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+     "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+     "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
@@ -786,6 +807,26 @@
       "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
       "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
       "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-02T12:11:56",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+      "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e",
       "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
       "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
       "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
@@ -2306,26 +2347,26 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
-   "hashed": "2026-11-01T15:14:32"
+   "sha256": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e",
+   "hashed": "2026-11-02T12:11:56"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-01T15:14:32"
+   "hashed": "2026-11-02T12:11:56"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-   "hashed": "2026-11-01T15:14:32"
+   "sha256": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+   "hashed": "2026-11-02T12:11:56"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-01T15:14:32"
+   "hashed": "2026-11-02T12:11:56"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -2349,7 +2390,7 @@
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-01T15:14:32"
+   "hashed": "2026-11-02T12:11:56"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
@@ -2373,7 +2414,7 @@
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-01T15:14:32"
+   "hashed": "2026-11-02T12:11:56"
   }
  },
  "open_issues": [
@@ -4762,6 +4803,30 @@
    "gate": "mc",
    "status": "pass",
    "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T12:08:07",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 23,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T12:09:50",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 16,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T12:11:56",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 20,
    "failing_count": 0
   }
  ]

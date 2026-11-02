@@ -234,9 +234,34 @@ measures:
   # --- prescaler drive (the macro's TSPC /2 on vco_out -> vco_div2) -------
   - name: presc_div2_ratio
     bounds: {min: 0.99, max: 1.01}
-    corners: [ff_m40c_vp10]
+    corners: [ff_m40c_vp10, tt_27c]
     statistical: none
     mc_waiver: "a divide ratio counted in edges: a flop divides by 2 or stops, and mismatch moves no fraction of it. The VCO benches and the closed loop see one that stops."
+  - name: presc_ckq_r_ns
+    bounds: {max: 0.5}
+    corners: [tt_27c]
+    statistical: none
+    mc_waiver: "a sanity bound on an edge of the /2, scored at tt so bench_strength can see the divider devices; no spec number rests on its spread. presc_div2_ratio and the closed loop see a divider that stops."
+  - name: presc_ckq_f_ns
+    bounds: {max: 0.5}
+    corners: [tt_27c]
+    statistical: none
+    mc_waiver: "a sanity bound on an edge of the /2, scored at tt so bench_strength can see the divider devices; no spec number rests on its spread. presc_div2_ratio and the closed loop see a divider that stops."
+  - name: presc_tr_ns
+    bounds: {max: 0.15}
+    corners: [tt_27c]
+    statistical: none
+    mc_waiver: "a sanity bound on an edge of the /2, scored at tt so bench_strength can see the divider devices; no spec number rests on its spread. presc_div2_ratio and the closed loop see a divider that stops."
+  - name: presc_tf_ns
+    bounds: {max: 0.15}
+    corners: [tt_27c]
+    statistical: none
+    mc_waiver: "a sanity bound on an edge of the /2, scored at tt so bench_strength can see the divider devices; no spec number rests on its spread. presc_div2_ratio and the closed loop see a divider that stops."
+  - name: presc_duty_pct
+    bounds: {min: 40.0, max: 60.0}
+    corners: [tt_27c]
+    statistical: none
+    mc_waiver: "a sanity bound on an edge of the /2, scored at tt so bench_strength can see the divider devices; no spec number rests on its spread. presc_div2_ratio and the closed loop see a divider that stops."
   # --- power-down -------------------------------------------------------
   - name: standby_current_ua
     bounds: {max: 1.0}
@@ -267,3 +292,33 @@ post_layout_bounds:
   icp_dn_code00_ua: {min: 12.0, max: 30.0}
   vco_kvco_mhz_per_v: {min: 30.0, max: 250.0}
   vco_fmax_tt_mhz: {min: 200.0}
+
+# The macro's timing abstract for the digital top (engine/lib/macrolib.py,
+# gate macro_lib). Limits are this spec's own statements:
+# - pfd_up/pfd_dn 0.5 ns: the pump's reset overlap is about 1 ns wide and the
+#   overlap bench drives 100 ps edges; a 0.5 ns edge still leaves that pulse.
+# - pll_en, cp_trim*: quasi-static, the 3 ns library limit.
+# - vco_div2 0.5 ns / 0.1 pF: it drives one flop clock or a clock buffer; it reads
+#   0.07 ns into one inv_1 + 30 fF at tt (presc_tr_ns). Limits, not measurements.
+# bias_ref: macrolib forces every undriven pin, so it holds the pad's floating
+# tt level, 0.615 V (op, pll_analog_presc_tb); the arc reads the output stage's
+# edges and no delay, so this level is not a bias claim.
+# period_margin 0.25: tt and ff are timed at 5.4 ns, the 370 MHz the digital side
+# closes at and vco_fmax_ff_mhz holds the VCO under, deliberately 20-22% under
+# their post-layout ceilings (6.935, 6.737 ns); ss is 2.3% under its own.
+macro_timing:
+  static: {pll_en: vdd, pfd_up: 0, pfd_dn: 0, cp_trim0: 0, cp_trim1: 0, vctrl: vdd, bias_ref: 0.615}
+  pins:
+    pfd_up: {max_transition_ns: 0.5}
+    pfd_dn: {max_transition_ns: 0.5}
+    pll_en: {max_transition_ns: 3.0}
+    cp_trim0: {max_transition_ns: 3.0}
+    cp_trim1: {max_transition_ns: 3.0}
+    vco_div2: {max_transition_ns: 0.5, max_capacitance_pf: 0.1}
+  arcs:
+    # 120 ns: on the extracted netlist at ss_125C_3v00 the first vco_div2 rise is 95 ns after pll_en, then 9.84 ns periods (measured 2026-11-02); 60 ns was too short there. 5 ps resolves its 70 ps edges; 240 ns at 2 ps timed out at 900 s on ff.
+    - {to: vco_div2, source: true, enable: pll_en, settle_ns: 120, window_ns: 40, step_ns: 0.005}
+  clocks:
+    vco_div2: {record: reports/recorded/pex_pvt.json, measure: vco_f_vdd_mhz, divide: 2, period_margin: 0.25}
+  extracted: log/pex_pvt/pll_analog.pex.ordered.spice
+  includes: [spec/moscap.spice]
