@@ -1,0 +1,110 @@
+/* macrolib (ngspice): pll_analog at ff_n40C_3v60, 3.6 V, -40 C, process ff, extracted netlist. Timing and input capacitance only. */
+library(pll_analog__ff_n40C_3v60) {
+  delay_model : table_lookup ;
+  library_features(report_delay_calculation, report_power_calculation);
+  time_unit : 1ns ;
+  voltage_unit : 1V ;
+  current_unit : 1mA ;
+  capacitive_load_unit(1, pf);
+  pulling_resistance_unit : 1ohm ;
+  leakage_power_unit : 1uW ;
+  input_threshold_pct_fall : 50 ;
+  input_threshold_pct_rise : 50 ;
+  output_threshold_pct_fall : 50 ;
+  output_threshold_pct_rise : 50 ;
+  slew_derate_from_library : 0.5 ;
+  slew_lower_threshold_pct_fall : 30 ;
+  slew_lower_threshold_pct_rise : 30 ;
+  slew_upper_threshold_pct_fall : 70 ;
+  slew_upper_threshold_pct_rise : 70 ;
+  default_fanout_load : 1.0000000000 ;
+  nom_process : 1 ;
+  nom_temperature : -40 ;
+  nom_voltage : 3.6 ;
+  voltage_map(VNW, 3.6);
+  voltage_map(VDD, 3.6);
+  voltage_map(VSS, 0);
+  voltage_map(VPW, 0);
+  operating_conditions(pll_analog__ff_n40C_3v60) {
+    process : 1 ;
+    temperature : -40 ;
+    voltage : 3.6 ;
+  }
+  input_voltage(default) {
+    vil : 0 ;
+    vih : 3.6 ;
+    vimin : 0 ;
+    vimax : 3.6 ;
+  }
+  output_voltage(default) {
+    vol : 0 ;
+    voh : 3.6 ;
+    vomin : 0 ;
+    vomax : 3.6 ;
+  }
+  lu_table_template (macro_slew_load) {
+    variable_1 : input_net_transition;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("1, 2");
+    index_2 ("1, 2, 3");
+  }
+  lu_table_template (macro_load) {
+    variable_1 : total_output_net_capacitance;
+    index_1 ("1, 2, 3");
+  }
+  cell (pll_analog) {
+    is_macro_cell : true;
+    pin ("cp_trim0") {
+      direction : input;
+      capacitance : 0.01254;
+      rise_capacitance : 0.011916;
+      fall_capacitance : 0.01254;
+      max_transition : 3;
+    }
+    pin ("cp_trim1") {
+      direction : input;
+      capacitance : 0.013532;
+      rise_capacitance : 0.013532;
+      fall_capacitance : 0.013458;
+      max_transition : 3;
+    }
+    pin ("pfd_dn") {
+      direction : input;
+      capacitance : 0.028344;
+      rise_capacitance : 0.028343;
+      fall_capacitance : 0.028344;
+      max_transition : 0.5;
+    }
+    pin ("pfd_up") {
+      direction : input;
+      capacitance : 0.033341;
+      rise_capacitance : 0.033332;
+      fall_capacitance : 0.033341;
+      max_transition : 0.5;
+    }
+    pin ("pll_en") {
+      direction : input;
+      capacitance : 0.057772;
+      rise_capacitance : 0.056214;
+      fall_capacitance : 0.057772;
+      max_transition : 3;
+    }
+    pin ("vco_div2") {
+      direction : output;
+      max_capacitance : 0.1;
+      max_transition : 0.5;
+      timing () {
+        related_pin : "pll_en";
+        timing_type : combinational;
+        rise_transition (macro_load) {
+          index_1 ("0.005, 0.02236, 0.1");
+          values ("0.04, 0.066, 0.19");
+        }
+        fall_transition (macro_load) {
+          index_1 ("0.005, 0.02236, 0.1");
+          values ("0.038, 0.062, 0.174");
+        }
+      }
+    }
+  }
+}

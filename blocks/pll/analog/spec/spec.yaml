@@ -300,14 +300,18 @@ post_layout_bounds:
 # - pll_en, cp_trim*: quasi-static, the 3 ns library limit.
 # - vco_div2 0.5 ns / 0.1 pF: it drives one flop clock or a clock buffer; it reads
 #   0.07 ns into one inv_1 + 30 fF at tt (presc_tr_ns). Limits, not measurements.
-# bias_ref: macrolib forces every undriven pin, so it holds the pad's floating
-# tt level, 0.615 V (op, pll_analog_presc_tb); the arc reads the output stage's
-# edges and no delay, so this level is not a bias claim.
+# bias_ref: left open on pad ua[1] with the pad's 5 pF, as the cosim and startup
+# benches. A bare node never settles after pll_en: vref relaxes about 0.5..1.35 V and
+# the ring bursts (tb/pll_analog_tr.sp; 2026-11-02 on the extracted cell, tt and ff,
+# schematic too, and with bias_ref forced to 0.615 V). 0.5 pF settles to 0.93 V by
+# 150 ns at tt; 5 pF has no bursts and slides to 0.94 V over 600 ns. vco_div2's
+# edges are read while that slide runs, at the settle_ns below.
 # period_margin 0.25: tt and ff are timed at 5.4 ns, the 370 MHz the digital side
 # closes at and vco_fmax_ff_mhz holds the VCO under, deliberately 20-22% under
 # their post-layout ceilings (6.935, 6.737 ns); ss is 2.3% under its own.
 macro_timing:
-  static: {pll_en: vdd, pfd_up: 0, pfd_dn: 0, cp_trim0: 0, cp_trim1: 0, vctrl: vdd, bias_ref: 0.615}
+  static: {pll_en: vdd, pfd_up: 0, pfd_dn: 0, cp_trim0: 0, cp_trim1: 0, vctrl: vdd}
+  pad_caps_pf: {bias_ref: 5}
   pins:
     pfd_up: {max_transition_ns: 0.5}
     pfd_dn: {max_transition_ns: 0.5}
