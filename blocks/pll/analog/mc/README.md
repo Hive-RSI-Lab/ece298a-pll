@@ -68,6 +68,28 @@ no spec bound failed (< 3.6 % each):
 - Static phase offset: negative means DN leads. It is the overlap bench's charge at vdd/2,
   with its 1 ns overlap, divided by Icp. The mean is systematic; sigma is the mismatch part.
 
+## mc gate: the two VCO misses at tt (seeds 2, 14) are the bench's kick, not a start failure
+
+The chip-flow mc gate (30 seeds, mismatch on, tt) passes 178/180 overall but 28/30 (93 %) on
+`pll_analog_vco_tb.cir`. Both misses (seed 2 = deck mc1, seed 14 = deck mc13) fail only at the
+sweep's lowest point, vctrl = 0.3 V: `vco_fmin_tt_mhz` 0 and swing ~0, while the ring runs at
+every other point (fmax 259.7 and 262.6 MHz). Re-run at that point only, 800 ns, f from rises
+2..4 after 100 ns (decks and output in `vco_start_seeds/`, `run.sh`), 2026-11-02:
+
+| deck | 1 fC kick (bench as is) | 200 fC kick (as the pex benches) | no kick, pll_en rising at 5 ns |
+|---|---|---|---|
+| mc1 (seed 2, miss) | stalled, swing 11 uV | runs, 9.94 MHz, rail to rail | runs, 14.6 MHz |
+| mc13 (seed 14, miss) | stalled | runs, 9.82 MHz | runs, 15.0 MHz |
+| mc2 (seed 3, passed, control) | runs, 9.22 MHz | - | runs, 17.6 MHz |
+
+So under mismatch the ring at vctrl = 0.3 V still starts from pll_en alone, the way it starts on
+silicon; the 1 fC kick is too small to move these two samples off the op's balance point, the same
+failure as the extracted ring (layout_ref/pll_analog_pex_tb.cir START-UP KICK note). The higher f
+from pll_en alone is the same in the control seed, so it is the bench's start-up transient in a
+800 ns window, not the mismatch. Not done: the vco bench's kick is unchanged (raising it to 200 uA
+re-stales sim_tt, sim_pvt, mc and bench_strength), so the mc gate's 93 % on that bench stays on
+record with this note as its reason. Only the 0.3 V point was re-run.
+
 ## Not covered
 
 - Schematic only: no extracted parasitics, and no layout gradients.
