@@ -30,7 +30,7 @@ module tt_um_ihsan_sa_pll (clk,
  wire _012_;
  wire _013_;
  wire _014_;
- wire net30;
+ wire net31;
  wire \u_ihsan_sa_pll.clk_pre_regs ;
  wire _017_;
  wire _018_;
@@ -80,8 +80,8 @@ module tt_um_ihsan_sa_pll (clk,
  wire _062_;
  wire _063_;
  wire _064_;
- wire net28;
  wire net29;
+ wire net30;
  wire net1;
  wire \u_ihsan_sa_pll.clk_fb ;
  wire \u_ihsan_sa_pll.clk_fb_int ;
@@ -93,8 +93,10 @@ module tt_um_ihsan_sa_pll (clk,
  wire \u_ihsan_sa_pll.obs_out ;
  wire \u_ihsan_sa_pll.obs_q3 ;
  wire \u_ihsan_sa_pll.pfd_dn ;
+ wire \u_ihsan_sa_pll.pfd_dn_int ;
  wire \u_ihsan_sa_pll.pfd_dn_q ;
  wire \u_ihsan_sa_pll.pfd_up ;
+ wire \u_ihsan_sa_pll.pfd_up_int ;
  wire \u_ihsan_sa_pll.pfd_up_q ;
  wire \u_ihsan_sa_pll.pll_en ;
  wire \u_ihsan_sa_pll.recover ;
@@ -135,7 +137,6 @@ module tt_um_ihsan_sa_pll (clk,
  wire net6;
  wire net7;
  wire net8;
- wire net12;
  wire net13;
  wire net14;
  wire net15;
@@ -151,19 +152,22 @@ module tt_um_ihsan_sa_pll (clk,
  wire net25;
  wire net26;
  wire net27;
+ wire net28;
  wire net9;
  wire net10;
  wire net11;
+ wire net12;
  wire net;
- wire net31;
+ wire net32;
  wire \u_ihsan_sa_pll.clk_fb_int_regs ;
  wire clknet_0_clk;
  wire clknet_2_0__leaf_clk;
  wire clknet_2_1__leaf_clk;
  wire clknet_2_2__leaf_clk;
  wire clknet_2_3__leaf_clk;
+ wire \clknet_0_u_ihsan_sa_pll.u_pre.pre_q0 ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ;
- wire \clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ;
+ wire net33;
  wire \clknet_0_u_ihsan_sa_pll.clk_pre ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre ;
  wire \clknet_0_u_ihsan_sa_pll.clk_pre_regs ;
@@ -174,8 +178,6 @@ module tt_um_ihsan_sa_pll (clk,
  wire \clknet_0_u_ihsan_sa_pll.clk_fb_int_regs ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int_regs ;
  wire delaynet_0_clk_pre;
- wire net32;
- wire net33;
  wire net34;
 
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_0_104 ();
@@ -460,15 +462,16 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_241 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_247 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_311 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_22_317 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_22_333 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_317 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_22_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_341 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_379 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_22_383 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_451 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_381 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_22_387 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_22_395 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_22_397 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_22_406 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_22_438 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_22_454 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_457 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_22_521 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_22_527 ();
@@ -480,17 +483,14 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_23_212 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_276 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_286 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_23_336 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_344 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_348 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_23_352 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_23_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_346 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_23_360 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_368 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_372 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_23_382 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_414 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_418 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_23_372 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_23_407 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_415 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_23_419 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_23_422 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_486 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_23_492 ();
@@ -507,18 +507,14 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_24_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_24_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_263 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_305 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_313 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_317 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_321 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_311 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_380 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_384 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_451 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_387 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_24_434 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_450 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_454 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_457 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_521 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_527 ();
@@ -530,17 +526,16 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_25_212 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_276 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_304 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_25_335 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_343 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_25_347 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_25_349 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_25_352 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_25_360 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_25_362 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_25_408 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_416 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_25_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_336 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_25_366 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_374 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_25_378 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_25_380 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_25_389 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_414 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_25_418 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_25_422 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_486 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_25_492 ();
@@ -557,24 +552,27 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_26_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_26_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_26_279 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_295 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_308 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_312 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_314 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_325 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_311 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_317 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_333 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_26_352 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_368 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_341 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_343 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_353 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_370 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_379 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_383 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_451 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_457 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_521 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_381 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_387 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_389 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_406 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_414 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_418 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_420 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_457 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_26_467 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_26_499 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_515 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_523 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_527 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_591 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_597 ();
@@ -582,25 +580,26 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_142 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_206 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_27_212 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_27_244 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_260 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_268 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_272 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_27_294 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_310 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_312 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_27_324 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_340 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_212 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_276 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_27_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_314 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_324 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_332 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_336 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_338 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_344 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_348 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_352 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_356 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_27_391 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_407 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_415 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_352 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_27_361 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_377 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_413 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_417 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_419 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_422 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_486 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_422 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_430 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_440 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_442 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_492 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_556 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_27_562 ();
@@ -615,21 +614,18 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_28_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_28_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_28_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_323 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_325 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_28_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_28_279 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_295 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_303 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_307 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_28_329 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_360 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_28_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_380 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_384 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_391 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_28_427 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_443 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_451 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_28_457 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_521 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_28_479 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_511 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_519 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_523 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_28_527 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_591 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_597 ();
@@ -639,14 +635,17 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_29_212 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_276 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_346 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_422 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_424 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_467 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_483 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_487 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_489 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_397 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_413 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_417 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_419 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_422 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_431 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_435 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_437 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_474 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_29_492 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_556 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_29_562 ();
@@ -680,24 +679,30 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_263 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_279 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_295 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_303 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_317 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_319 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_376 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_384 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_395 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_399 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_401 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_408 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_448 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_452 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_395 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_430 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_454 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_457 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_473 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_505 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_521 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_527 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_591 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_527 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_529 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_536 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_538 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_544 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_576 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_592 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_594 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_597 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_136 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_31_142 ();
@@ -705,28 +710,19 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_31_212 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_276 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_290 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_294 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_296 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_305 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_309 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_319 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_327 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_329 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_348 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_352 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_356 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_391 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_417 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_419 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_435 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_31_455 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_487 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_489 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_31_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_336 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_338 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_31_358 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_374 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_384 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_492 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_526 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_557 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_500 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_504 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_506 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_547 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_555 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_559 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_31_562 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_594 ();
@@ -742,53 +738,55 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_241 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_32_247 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_311 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_317 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_317 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_326 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_328 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_333 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_337 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_339 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_34 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_348 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_32_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_380 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_384 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_387 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_391 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_449 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_453 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_457 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_465 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_469 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_471 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_506 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_510 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_512 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_527 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_32_554 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_586 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_475 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_510 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_514 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_516 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_523 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_561 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_588 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_592 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_594 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_597 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_136 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_33_142 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_33_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_206 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_33_212 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_244 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_260 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_268 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_272 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_274 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_279 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_318 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_322 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_402 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_418 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_422 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_426 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_445 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_461 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_463 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_33_212 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_276 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_33_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_314 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_330 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_352 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_380 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_384 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_386 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_395 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_411 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_419 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_422 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_439 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_474 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_492 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_508 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_562 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_578 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_594 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_602 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_604 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_542 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_550 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_570 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_572 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_599 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_603 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_66 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_33_72 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_101 ();
@@ -797,29 +795,25 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_34_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_34_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_34_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_263 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_267 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_325 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_34_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_279 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_306 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_314 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_34_317 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_333 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_335 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_364 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_368 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_34_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_373 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_381 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_395 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_399 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_452 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_454 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_370 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_380 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_384 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_34_406 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_422 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_426 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_428 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_491 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_527 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_529 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_556 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_560 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_588 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_592 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_594 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_583 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_591 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_597 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_136 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_35_142 ();
@@ -827,22 +821,19 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_35_212 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_276 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_35_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_290 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_294 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_296 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_323 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_418 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_422 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_438 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_442 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_485 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_282 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_325 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_341 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_416 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_35_422 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_430 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_468 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_489 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_492 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_553 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_557 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_492 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_559 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_588 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_35_570 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_602 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_604 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_66 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_35_72 ();
@@ -852,45 +843,42 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_36_177 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_36_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_241 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_247 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_300 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_308 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_312 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_247 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_255 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_259 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_287 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_314 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_317 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_321 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_331 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_317 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_36_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_387 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_395 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_399 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_401 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_436 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_444 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_446 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_457 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_466 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_439 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_451 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_457 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_459 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_524 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_527 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_590 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_594 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_597 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_136 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_37_142 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_37_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_206 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_37_212 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_244 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_252 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_244 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_274 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_278 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_282 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_360 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_368 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_372 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_408 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_416 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_298 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_302 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_330 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_412 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_422 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_37_424 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_37_489 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_534 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_550 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_484 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_488 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_492 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_500 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_37_502 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_558 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_588 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_37_604 ();
@@ -924,19 +912,16 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_240 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_38_252 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_268 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_38_274 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_274 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_301 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_305 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_308 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_312 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_38_36 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_368 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_372 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_402 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_406 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_436 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_440 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_470 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_474 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_504 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_475 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_508 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_52 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_57 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_572 ();
@@ -1602,7 +1587,7 @@ module tt_um_ihsan_sa_pll (clk,
     .A3(\u_ihsan_sa_pll.u_lock.wd_cnt[8] ),
     .A4(\u_ihsan_sa_pll.u_lock.wd_cnt[9] ),
     .Z(_035_));
- gf180mcu_fd_sc_mcu7t5v0__nor4_2 _091_ (.A1(_047_),
+ gf180mcu_fd_sc_mcu7t5v0__nor4_4 _091_ (.A1(_047_),
     .A2(\u_ihsan_sa_pll.u_lock.wd_cnt[7] ),
     .A3(\u_ihsan_sa_pll.u_lock.wd_cnt[8] ),
     .A4(\u_ihsan_sa_pll.u_lock.wd_cnt[9] ),
@@ -1662,7 +1647,7 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__nand2_1 _106_ (.A1(\u_ihsan_sa_pll.obs_q3 ),
     .A2(net6),
     .ZN(_045_));
- gf180mcu_fd_sc_mcu7t5v0__oai21_1 _107_ (.A1(net31),
+ gf180mcu_fd_sc_mcu7t5v0__oai21_1 _107_ (.A1(net32),
     .A2(net6),
     .B(_045_),
     .ZN(\u_ihsan_sa_pll.obs_int ));
@@ -1683,12 +1668,12 @@ module tt_um_ihsan_sa_pll (clk,
     .ZN(_019_));
  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _112_ (.I(\u_ihsan_sa_pll.recover ),
     .ZN(_047_));
- gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _113_ (.I(net32),
+ gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _113_ (.I(net33),
     .ZN(_048_));
- gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _114__30 (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
-    .ZN(net30));
  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _114__31 (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .ZN(net31));
+ gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _114__32 (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
+    .ZN(net32));
  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _115_ (.I(\u_ihsan_sa_pll.u_div.div_cnt[1] ),
     .ZN(_049_));
  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _116_ (.I(\u_ihsan_sa_pll.lock ),
@@ -1699,8 +1684,8 @@ module tt_um_ihsan_sa_pll (clk,
     .ZN(_052_));
  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _119_ (.I(\u_ihsan_sa_pll.obs_q3 ),
     .ZN(_017_));
- gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _120__29 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
-    .ZN(net29));
+ gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _120__30 (.I(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q0 ),
+    .ZN(net30));
  gf180mcu_fd_sc_mcu7t5v0__and3_1 _121_ (.A1(\u_ihsan_sa_pll.u_lock.lock_cnt[1] ),
     .A2(\u_ihsan_sa_pll.u_lock.lock_cnt[2] ),
     .A3(\u_ihsan_sa_pll.u_lock.lock_cnt[0] ),
@@ -1716,12 +1701,12 @@ module tt_um_ihsan_sa_pll (clk,
     .ZN(\u_ihsan_sa_pll.u_lock.cnt_nxt[4] ));
  gf180mcu_fd_sc_mcu7t5v0__and2_1 _125_ (.A1(\u_ihsan_sa_pll.pfd_up_q ),
     .A2(_047_),
-    .Z(\u_ihsan_sa_pll.pfd_up ));
+    .Z(\u_ihsan_sa_pll.pfd_up_int ));
  gf180mcu_fd_sc_mcu7t5v0__or2_1 _126_ (.A1(\u_ihsan_sa_pll.recover ),
     .A2(\u_ihsan_sa_pll.pfd_dn_q ),
-    .Z(\u_ihsan_sa_pll.pfd_dn ));
+    .Z(\u_ihsan_sa_pll.pfd_dn_int ));
  gf180mcu_fd_sc_mcu7t5v0__or2_1 _127_ (.A1(\u_ihsan_sa_pll.pfd_up_q ),
-    .A2(\u_ihsan_sa_pll.pfd_dn ),
+    .A2(\u_ihsan_sa_pll.pfd_dn_int ),
     .Z(_014_));
  gf180mcu_fd_sc_mcu7t5v0__and2_1 _128_ (.A1(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre ),
     .A2(\u_ihsan_sa_pll.u_div.fb_en ),
@@ -1740,7 +1725,7 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _132_ (.A1(net3),
     .A2(net4),
     .ZN(_058_));
- gf180mcu_fd_sc_mcu7t5v0__aoi211_1 _133_ (.A1(\u_ihsan_sa_pll.u_div.div_cnt[0] ),
+ gf180mcu_fd_sc_mcu7t5v0__aoi211_2 _133_ (.A1(\u_ihsan_sa_pll.u_div.div_cnt[0] ),
     .A2(_057_),
     .B(_058_),
     .C(\u_ihsan_sa_pll.u_div.div_cnt[2] ),
@@ -1779,99 +1764,99 @@ module tt_um_ihsan_sa_pll (clk,
     .A3(_063_),
     .ZN(\u_ihsan_sa_pll.u_lock.cnt_nxt[3] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _143_ (.D(_020_),
-    .RN(net9),
+    .RN(net33),
     .CLK(clknet_2_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.recover ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _144_ (.D(net7),
-    .RN(net33),
+    .RN(net34),
     .CLK(clknet_2_3__leaf_clk),
     .Q(\u_ihsan_sa_pll.cp_trim0 ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _145_ (.D(net5),
-    .RN(net33),
+    .RN(net34),
     .CLK(clknet_2_3__leaf_clk),
     .Q(\u_ihsan_sa_pll.pll_en ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _146_ (.D(net8),
-    .RN(net9),
+    .RN(net34),
     .CLK(clknet_2_3__leaf_clk),
     .Q(\u_ihsan_sa_pll.cp_trim1 ));
  gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _147_ (.D(_014_),
-    .SETN(net9),
+    .SETN(net33),
     .CLKN(clknet_2_3__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wide_q ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _148_ (.D(\u_ihsan_sa_pll.u_lock.cnt_nxt[0] ),
-    .RN(net33),
+    .RN(net11),
     .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.lock_cnt[0] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _149_ (.D(\u_ihsan_sa_pll.u_lock.cnt_nxt[1] ),
-    .RN(net34),
+    .RN(net11),
     .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.lock_cnt[1] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _150_ (.D(\u_ihsan_sa_pll.u_lock.cnt_nxt[2] ),
-    .RN(net34),
+    .RN(net9),
     .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.lock_cnt[2] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _151_ (.D(\u_ihsan_sa_pll.u_lock.cnt_nxt[3] ),
-    .RN(net10),
+    .RN(net9),
     .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.lock_cnt[3] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _152_ (.D(\u_ihsan_sa_pll.u_lock.cnt_nxt[4] ),
-    .RN(net33),
-    .CLK(clknet_2_2__leaf_clk),
+    .RN(net34),
+    .CLK(clknet_2_3__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.lock_cnt[4] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _153_ (.D(_004_),
-    .RN(net34),
-    .CLK(clknet_2_1__leaf_clk),
+    .RN(net10),
+    .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[0] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _154_ (.D(_005_),
-    .RN(net34),
+    .RN(net10),
     .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[1] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _155_ (.D(_006_),
-    .RN(net34),
+    .RN(net10),
     .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[2] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _156_ (.D(_007_),
-    .RN(net34),
+    .RN(net10),
     .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[3] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _157_ (.D(_008_),
-    .RN(net32),
+    .RN(net9),
     .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[4] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _158_ (.D(_009_),
-    .RN(net32),
+    .RN(net33),
     .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[5] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _159_ (.D(_010_),
-    .RN(net32),
+    .RN(net33),
     .CLK(clknet_2_0__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[6] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _160_ (.D(_011_),
-    .RN(net32),
+    .RN(net33),
     .CLK(clknet_2_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[7] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _161_ (.D(_012_),
-    .RN(net32),
+    .RN(net33),
     .CLK(clknet_2_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[8] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _162_ (.D(_013_),
-    .RN(net32),
-    .CLK(clknet_2_0__leaf_clk),
+    .RN(net10),
+    .CLK(clknet_2_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.u_lock.wd_cnt[9] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _163_ (.D(_003_),
-    .RN(net34),
-    .CLK(clknet_2_3__leaf_clk),
+    .RN(net10),
+    .CLK(clknet_2_2__leaf_clk),
     .Q(\u_ihsan_sa_pll.lock ));
- gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _164_ (.D(net28),
+ gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _164_ (.D(net29),
     .RN(_018_),
     .CLK(clknet_2_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.pfd_up_q ));
- gf180mcu_fd_sc_mcu7t5v0__tieh _164__28 (.Z(net28));
- gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _165_ (.D(net27),
+ gf180mcu_fd_sc_mcu7t5v0__tieh _164__29 (.Z(net29));
+ gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _165_ (.D(net28),
     .RN(_019_),
     .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int_regs ),
     .Q(\u_ihsan_sa_pll.pfd_dn_q ));
- gf180mcu_fd_sc_mcu7t5v0__tieh _165__27 (.Z(net27));
+ gf180mcu_fd_sc_mcu7t5v0__tieh _165__28 (.Z(net28));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _166_ (.D(_000_),
     .RN(net11),
     .CLK(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
@@ -1881,23 +1866,23 @@ module tt_um_ihsan_sa_pll (clk,
     .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.div_cnt[1] ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _168_ (.D(_002_),
-    .RN(net11),
+    .RN(net12),
     .CLK(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.div_cnt[2] ));
  gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _169_ (.D(\u_ihsan_sa_pll.u_div.last ),
-    .RN(net33),
+    .RN(net11),
     .CLKN(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.fb_en ));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _170_ (.D(_017_),
-    .RN(net33),
+    .RN(net34),
     .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.obs_q3 ));
- gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _171_ (.D(net29),
-    .RN(net11),
+ gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _171_ (.D(net30),
+    .RN(net12),
     .CLK(ui_in[3]),
     .Q(\u_ihsan_sa_pll.u_pre.pre_q0 ));
- gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _172_ (.D(net30),
-    .RN(net1),
+ gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _172_ (.D(net31),
+    .RN(net12),
     .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
     .Q(\u_ihsan_sa_pll.clk_pre ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _191_ (.I(\u_ihsan_sa_pll.obs_out ),
@@ -1926,6 +1911,8 @@ module tt_um_ihsan_sa_pll (clk,
     .Z(\clknet_0_u_ihsan_sa_pll.clk_pre ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.clk_pre_regs  (.I(\u_ihsan_sa_pll.clk_pre_regs ),
     .Z(\clknet_0_u_ihsan_sa_pll.clk_pre_regs ));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\u_ihsan_sa_pll.u_pre.pre_q0 ),
+    .Z(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q0 ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb_int ),
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb_int_regs ),
@@ -1934,12 +1921,10 @@ module tt_um_ihsan_sa_pll (clk,
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_pre_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_pre_regs ),
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\u_ihsan_sa_pll.u_pre.pre_q0 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q0 ),
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.clk_pre_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_pre_regs ),
     .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\u_ihsan_sa_pll.u_pre.pre_q0 ),
-    .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 clkbuf_2_0__f_clk (.I(clknet_0_clk),
     .Z(clknet_2_0__leaf_clk));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 clkbuf_2_1__f_clk (.I(clknet_0_clk),
@@ -1958,11 +1943,13 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 clkload3 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 delaybuf_0_clk_pre (.I(\u_ihsan_sa_pll.clk_pre ),
     .Z(delaynet_0_clk_pre));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 fanout10 (.I(net1),
+ gf180mcu_fd_sc_mcu7t5v0__dlyb_1 fanout10 (.I(net12),
     .Z(net10));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 fanout11 (.I(net1),
+ gf180mcu_fd_sc_mcu7t5v0__buf_2 fanout11 (.I(net12),
     .Z(net11));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 fanout9 (.I(net1),
+ gf180mcu_fd_sc_mcu7t5v0__dlyb_1 fanout12 (.I(net1),
+    .Z(net12));
+ gf180mcu_fd_sc_mcu7t5v0__buf_2 fanout9 (.I(net12),
     .Z(net9));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input1 (.I(rst_n),
     .Z(net1));
@@ -1980,14 +1967,9 @@ module tt_um_ihsan_sa_pll (clk,
     .Z(net7));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input8 (.I(uio_in[1]),
     .Z(net8));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 load_slew32 (.I(net9),
-    .Z(net32));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 load_slew33 (.I(net11),
-    .Z(net33));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 load_slew34 (.I(net10),
+ gf180mcu_fd_sc_mcu7t5v0__buf_2 load_slew34 (.I(net11),
     .Z(net34));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll (.ZN(net));
- gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_12 (.ZN(net12));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_13 (.ZN(net13));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_14 (.ZN(net14));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_15 (.ZN(net15));
@@ -2002,6 +1984,7 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_24 (.ZN(net24));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_25 (.ZN(net25));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_26 (.ZN(net26));
+ gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_27 (.ZN(net27));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_clk_fb_obuf  (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int ),
     .Z(\u_ihsan_sa_pll.clk_fb ));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_obs_obuf  (.I(\u_ihsan_sa_pll.obs_int ),
@@ -2010,20 +1993,26 @@ module tt_um_ihsan_sa_pll (clk,
     .Z(\u_ihsan_sa_pll.u_pfd.pfd_dly_mid ));
  gf180mcu_fd_sc_mcu7t5v0__dlya_1 \u_ihsan_sa_pll.u_pfd.pfd_dly1  (.I(\u_ihsan_sa_pll.u_pfd.pfd_dly_mid ),
     .Z(\u_ihsan_sa_pll.u_pfd.pfd_rst ));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_pfd_dn_obuf  (.I(\u_ihsan_sa_pll.pfd_dn_int ),
+    .Z(\u_ihsan_sa_pll.pfd_dn ));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_pfd_up_obuf  (.I(\u_ihsan_sa_pll.pfd_up_int ),
+    .Z(\u_ihsan_sa_pll.pfd_up ));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 wire33 (.I(net9),
+    .Z(net33));
  assign uio_oe[0] = net;
- assign uio_oe[1] = net12;
- assign uio_oe[2] = net13;
- assign uio_oe[3] = net14;
- assign uio_oe[4] = net15;
- assign uio_oe[5] = net16;
- assign uio_oe[6] = net17;
- assign uio_oe[7] = net18;
- assign uio_out[0] = net19;
- assign uio_out[1] = net20;
- assign uio_out[2] = net21;
- assign uio_out[3] = net22;
- assign uio_out[4] = net23;
- assign uio_out[5] = net24;
- assign uio_out[6] = net25;
- assign uio_out[7] = net26;
+ assign uio_oe[1] = net13;
+ assign uio_oe[2] = net14;
+ assign uio_oe[3] = net15;
+ assign uio_oe[4] = net16;
+ assign uio_oe[5] = net17;
+ assign uio_oe[6] = net18;
+ assign uio_oe[7] = net19;
+ assign uio_out[0] = net20;
+ assign uio_out[1] = net21;
+ assign uio_out[2] = net22;
+ assign uio_out[3] = net23;
+ assign uio_out[4] = net24;
+ assign uio_out[5] = net25;
+ assign uio_out[6] = net26;
+ assign uio_out[7] = net27;
 endmodule
