@@ -106,5 +106,13 @@ library(pll_analog__ff_n40C_3v60) {
         }
       }
     }
+    pin ("vctrl") {
+      direction : inout;
+      capacitance : 0;
+    }
+    pin ("bias_ref") {
+      direction : inout;
+      capacitance : 0;
+    }
   }
 }

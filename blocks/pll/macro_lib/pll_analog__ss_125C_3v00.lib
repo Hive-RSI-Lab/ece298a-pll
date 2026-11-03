@@ -106,5 +106,13 @@ library(pll_analog__ss_125C_3v00) {
         }
       }
     }
+    pin ("vctrl") {
+      direction : inout;
+      capacitance : 0;
+    }
+    pin ("bias_ref") {
+      direction : inout;
+      capacitance : 0;
+    }
   }
 }

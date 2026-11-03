@@ -106,5 +106,13 @@ library(pll_analog__tt_025C_3v30) {
         }
       }
     }
+    pin ("vctrl") {
+      direction : inout;
+      capacitance : 0;
+    }
+    pin ("bias_ref") {
+      direction : inout;
+      capacitance : 0;
+    }
   }
 }
