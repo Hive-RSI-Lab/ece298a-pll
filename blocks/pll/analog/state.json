@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-11-02T12:11:56",
+ "updated": "2026-11-03T00:46:57",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -843,16 +843,16 @@
   "sim_pvt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 14,
+   "attempts": 15,
    "last": {
-    "ts": "2026-11-01T13:01:28",
+    "ts": "2026-11-02T18:11:58",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+     "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
@@ -1556,6 +1556,56 @@
        "tt_pff"
       ]
      }
+    },
+    {
+     "ts": "2026-11-02T18:11:58",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
     }
    ]
   },
@@ -1807,6 +1857,15 @@
       "equivalent": 0,
       "below_spread": 33
      }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-11-02T21:51:31",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "CheckError: spec/mutant_rulings.yaml below_spread 'xMP_G2_size_doubled_w': recorded delta 0.018829 does not match the measured 0.0153384 - rewrite it from this run's mutants facts"
     }
    ]
   },
@@ -2094,18 +2153,18 @@
   "pex_sim": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 9,
+   "attempts": 10,
    "last": {
-    "ts": "2026-11-01T14:10:47",
+    "ts": "2026-11-03T00:46:57",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-     "layout_ref": "dir_text:c4214f90c0a171e1a5f8d9adcea692248dd6a8a3c65495c54e6c506716e69e59",
+     "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+     "layout_ref": "dir_text:e6882e5448e86f560e7e4d7f2d38685651407a53cf3a65acba2d5ca7ea624599",
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
@@ -2268,31 +2327,56 @@
        "ff_pss"
       ]
      }
+    },
+    {
+     "ts": "2026-11-03T00:46:57",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+      "layout_ref": "dir_text:e6882e5448e86f560e7e4d7f2d38685651407a53cf3a65acba2d5ca7ea624599",
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_27c",
+       "ss_125c_vm10",
+       "ff_pss"
+      ]
+     }
     }
    ]
   },
   "mc": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-11-01T15:14:32",
+    "ts": "2026-11-02T23:12:02",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+     "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
     },
     "job": null,
     "facts": {
-     "runs": 180,
-     "hits": 178,
-     "yield_frac": 0.9889,
+     "runs": 210,
+     "hits": 210,
+     "yield_frac": 1.0,
      "yield_min": 0.95
     }
    },
@@ -2315,6 +2399,27 @@
       "runs": 180,
       "hits": 178,
       "yield_frac": 0.9889,
+      "yield_min": 0.95
+     }
+    },
+    {
+     "ts": "2026-11-02T23:12:02",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "job": null,
+     "facts": {
+      "runs": 210,
+      "hits": 210,
+      "yield_frac": 1.0,
       "yield_min": 0.95
      }
     }
@@ -2347,26 +2452,26 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e",
-   "hashed": "2026-11-02T12:11:56"
+   "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+   "hashed": "2026-11-03T00:46:57"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-02T12:11:56"
+   "hashed": "2026-11-03T00:46:57"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
-   "hashed": "2026-11-02T12:11:56"
+   "hashed": "2026-11-03T00:46:57"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-02T12:11:56"
+   "hashed": "2026-11-02T23:12:02"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -2378,31 +2483,31 @@
    "path": "layout",
    "kind": "layout",
    "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-   "hashed": "2026-11-01T14:10:47"
+   "hashed": "2026-11-03T00:46:57"
   },
   "layout_ref": {
    "path": "layout_ref",
    "kind": "layout_ref",
-   "sha256": "dir_text:c4214f90c0a171e1a5f8d9adcea692248dd6a8a3c65495c54e6c506716e69e59",
-   "hashed": "2026-11-01T14:10:47"
+   "sha256": "dir_text:e6882e5448e86f560e7e4d7f2d38685651407a53cf3a65acba2d5ca7ea624599",
+   "hashed": "2026-11-03T00:46:57"
   },
   "pdk_version": {
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-02T12:11:56"
+   "hashed": "2026-11-03T00:46:57"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
    "kind": "pdk_magic",
    "sha256": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-   "hashed": "2026-11-01T14:10:47"
+   "hashed": "2026-11-03T00:46:57"
   },
   "pdk_klayout": {
    "path": "${PDK_ROOT}/libs.tech/klayout",
    "kind": "pdk_klayout",
    "sha256": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
-   "hashed": "2026-11-01T14:10:47"
+   "hashed": "2026-11-03T00:46:57"
   },
   "pdk_netgen": {
    "path": "${PDK_ROOT}/libs.tech/netgen",
@@ -2414,7 +2519,7 @@
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-02T12:11:56"
+   "hashed": "2026-11-03T00:46:57"
   }
  },
  "open_issues": [
@@ -4827,6 +4932,42 @@
    "gate": "sim_tt",
    "status": "pass",
    "attempt": 20,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T18:11:58",
+   "event": "gate",
+   "gate": "sim_pvt",
+   "status": "pass",
+   "attempt": 15,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T21:51:31",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "CheckError: spec/mutant_rulings.yaml below_spread 'xMP_G2_size_doubled_w': recorded delta 0.018829 does not match the measured 0.0153384 - rewrite it from this run's mutants facts"
+  },
+  {
+   "ts": "2026-11-02T23:12:02",
+   "event": "gate",
+   "gate": "mc",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-02T23:14:13",
+   "event": "gate_error",
+   "gate": "pex_sim",
+   "error": "CheckError: at corner tt_27c: pex_sim's ngspice run hit its 120 s limit. If the bench is just slow, raise it in spec/spec.yaml with 'sim_timeout_s: {pex_sim: <seconds>}' (at most 3600), or pass --time"
+  },
+  {
+   "ts": "2026-11-03T00:46:57",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 10,
    "failing_count": 0
   }
  ]

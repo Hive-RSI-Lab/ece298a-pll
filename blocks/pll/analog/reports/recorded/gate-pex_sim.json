@@ -24,14 +24,14 @@
   "gds": "layout/pll_analog.gds",
   "extracted": "log/pex_sim/pll_analog.pex.ordered.spice",
   "parasitics": {
-   "r": 1304,
-   "c": 1496
+   "r": 1300,
+   "c": 1492
   },
   "measured": {
    "icp_up_code00_ua": 18.8398,
    "icp_dn_code00_ua": 18.4936,
-   "vco_kvco_mhz_per_v": 76.9653,
-   "vco_fmax_tt_mhz": 215.242
+   "vco_kvco_mhz_per_v": 76.965,
+   "vco_fmax_tt_mhz": 215.241
   },
   "corners": [
    "tt_27c",
@@ -43,33 +43,22 @@
    "tt_27c": {
     "icp_up_code00_ua": 18.8398,
     "icp_dn_code00_ua": 18.4936,
-    "vco_kvco_mhz_per_v": 76.9653,
-    "vco_fmax_tt_mhz": 215.242
+    "vco_kvco_mhz_per_v": 76.965,
+    "vco_fmax_tt_mhz": 215.241
    },
    "ss_125c_vm10": {
     "icp_up_code00_ua": 16.3999,
     "icp_dn_code00_ua": 16.2286,
-    "vco_kvco_mhz_per_v": 72.0461
+    "vco_kvco_mhz_per_v": 72.0458
    },
    "ff_pss": {
     "icp_up_code00_ua": 14.1289,
     "icp_dn_code00_ua": 13.5573,
-    "vco_kvco_mhz_per_v": 39.8381
+    "vco_kvco_mhz_per_v": 39.8106
    }
   },
   "not_scored": []
  },
- "inputs_at_start": {
-  "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-  "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-  "layout_ref": "dir_text:c4214f90c0a171e1a5f8d9adcea692248dd6a8a3c65495c54e6c506716e69e59",
-  "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
-  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-  "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-  "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-  "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
- },
- "recorded_ts": "2026-11-01T14:10:47",
- "attempts": 9
+ "recorded_ts": "2026-11-03T00:46:57",
+ "attempts": 10
 }

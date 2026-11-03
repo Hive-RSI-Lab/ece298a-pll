@@ -22,9 +22,9 @@
  "facts": {
   "top": "pll_analog",
   "applicable": true,
-  "runs": 180,
-  "hits": 178,
-  "yield_frac": 0.9889,
+  "runs": 210,
+  "hits": 210,
+  "yield_frac": 1.0,
   "yield_min": 0.95,
   "seeds": [
    1,
@@ -80,9 +80,7 @@
     "m": "m_buft"
    }
   ],
-  "not_scored": [
-   "pll_analog_presc_tb.cir"
-  ],
+  "not_scored": [],
   "results": [
    {
     "bench": "pll_analog_cp_tb.cir",
@@ -1285,6 +1283,426 @@
     }
    },
    {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 0,
+    "seed": 1,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999959,
+     "presc_ckq_r_ns": 0.26206,
+     "presc_ckq_f_ns": 0.18976,
+     "presc_tr_ns": 0.07461,
+     "presc_tf_ns": 0.0681,
+     "presc_duty_pct": 49.0064
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 1,
+    "seed": 2,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999961,
+     "presc_ckq_r_ns": 0.26143,
+     "presc_ckq_f_ns": 0.18943,
+     "presc_tr_ns": 0.0748,
+     "presc_tf_ns": 0.06871,
+     "presc_duty_pct": 49.0038
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 2,
+    "seed": 3,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26195,
+     "presc_ckq_f_ns": 0.1893,
+     "presc_tr_ns": 0.07491,
+     "presc_tf_ns": 0.06797,
+     "presc_duty_pct": 48.9636
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 3,
+    "seed": 4,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999972,
+     "presc_ckq_r_ns": 0.26333,
+     "presc_ckq_f_ns": 0.18953,
+     "presc_tr_ns": 0.07477,
+     "presc_tf_ns": 0.06839,
+     "presc_duty_pct": 49.0082
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 4,
+    "seed": 5,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999967,
+     "presc_ckq_r_ns": 0.26122,
+     "presc_ckq_f_ns": 0.18897,
+     "presc_tr_ns": 0.07488,
+     "presc_tf_ns": 0.06802,
+     "presc_duty_pct": 49.0027
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 5,
+    "seed": 6,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999959,
+     "presc_ckq_r_ns": 0.26275,
+     "presc_ckq_f_ns": 0.18972,
+     "presc_tr_ns": 0.07457,
+     "presc_tf_ns": 0.0684,
+     "presc_duty_pct": 48.9626
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 6,
+    "seed": 7,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999973,
+     "presc_ckq_r_ns": 0.26174,
+     "presc_ckq_f_ns": 0.18841,
+     "presc_tr_ns": 0.07438,
+     "presc_tf_ns": 0.0683,
+     "presc_duty_pct": 49.014
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 7,
+    "seed": 8,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26309,
+     "presc_ckq_f_ns": 0.18968,
+     "presc_tr_ns": 0.07476,
+     "presc_tf_ns": 0.06835,
+     "presc_duty_pct": 48.9633
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 8,
+    "seed": 9,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999999,
+     "presc_ckq_r_ns": 0.26294,
+     "presc_ckq_f_ns": 0.18925,
+     "presc_tr_ns": 0.07477,
+     "presc_tf_ns": 0.06835,
+     "presc_duty_pct": 48.9745
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 9,
+    "seed": 10,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26121,
+     "presc_ckq_f_ns": 0.18919,
+     "presc_tr_ns": 0.0745,
+     "presc_tf_ns": 0.06862,
+     "presc_duty_pct": 48.9915
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 10,
+    "seed": 11,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26297,
+     "presc_ckq_f_ns": 0.1897,
+     "presc_tr_ns": 0.07502,
+     "presc_tf_ns": 0.06849,
+     "presc_duty_pct": 48.9841
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 11,
+    "seed": 12,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999973,
+     "presc_ckq_r_ns": 0.26268,
+     "presc_ckq_f_ns": 0.18953,
+     "presc_tr_ns": 0.07489,
+     "presc_tf_ns": 0.06861,
+     "presc_duty_pct": 48.9977
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 12,
+    "seed": 13,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999968,
+     "presc_ckq_r_ns": 0.26241,
+     "presc_ckq_f_ns": 0.18924,
+     "presc_tr_ns": 0.07453,
+     "presc_tf_ns": 0.06811,
+     "presc_duty_pct": 49.0142
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 13,
+    "seed": 14,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999957,
+     "presc_ckq_r_ns": 0.26056,
+     "presc_ckq_f_ns": 0.18929,
+     "presc_tr_ns": 0.07461,
+     "presc_tf_ns": 0.06864,
+     "presc_duty_pct": 48.9874
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 14,
+    "seed": 15,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999964,
+     "presc_ckq_r_ns": 0.26186,
+     "presc_ckq_f_ns": 0.18846,
+     "presc_tr_ns": 0.07466,
+     "presc_tf_ns": 0.06815,
+     "presc_duty_pct": 48.9964
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 15,
+    "seed": 16,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999956,
+     "presc_ckq_r_ns": 0.26462,
+     "presc_ckq_f_ns": 0.18874,
+     "presc_tr_ns": 0.07489,
+     "presc_tf_ns": 0.06783,
+     "presc_duty_pct": 48.8935
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 16,
+    "seed": 17,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999973,
+     "presc_ckq_r_ns": 0.2652,
+     "presc_ckq_f_ns": 0.18841,
+     "presc_tr_ns": 0.07517,
+     "presc_tf_ns": 0.0682,
+     "presc_duty_pct": 48.9391
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 17,
+    "seed": 18,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26152,
+     "presc_ckq_f_ns": 0.18899,
+     "presc_tr_ns": 0.07462,
+     "presc_tf_ns": 0.06803,
+     "presc_duty_pct": 48.9787
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 18,
+    "seed": 19,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26334,
+     "presc_ckq_f_ns": 0.18888,
+     "presc_tr_ns": 0.0748,
+     "presc_tf_ns": 0.06839,
+     "presc_duty_pct": 48.9897
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 19,
+    "seed": 20,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.99997,
+     "presc_ckq_r_ns": 0.2614,
+     "presc_ckq_f_ns": 0.18925,
+     "presc_tr_ns": 0.07467,
+     "presc_tf_ns": 0.06831,
+     "presc_duty_pct": 48.9751
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 20,
+    "seed": 21,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999999,
+     "presc_ckq_r_ns": 0.26059,
+     "presc_ckq_f_ns": 0.18947,
+     "presc_tr_ns": 0.07459,
+     "presc_tf_ns": 0.06834,
+     "presc_duty_pct": 48.9954
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 21,
+    "seed": 22,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26036,
+     "presc_ckq_f_ns": 0.1896,
+     "presc_tr_ns": 0.07449,
+     "presc_tf_ns": 0.06829,
+     "presc_duty_pct": 49.0319
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 22,
+    "seed": 23,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.25969,
+     "presc_ckq_f_ns": 0.18896,
+     "presc_tr_ns": 0.07437,
+     "presc_tf_ns": 0.06807,
+     "presc_duty_pct": 49.013
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 23,
+    "seed": 24,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999999,
+     "presc_ckq_r_ns": 0.26246,
+     "presc_ckq_f_ns": 0.18881,
+     "presc_tr_ns": 0.07526,
+     "presc_tf_ns": 0.0681,
+     "presc_duty_pct": 48.9518
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 24,
+    "seed": 25,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999963,
+     "presc_ckq_r_ns": 0.26154,
+     "presc_ckq_f_ns": 0.18984,
+     "presc_tr_ns": 0.07462,
+     "presc_tf_ns": 0.06867,
+     "presc_duty_pct": 48.9944
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 25,
+    "seed": 26,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26264,
+     "presc_ckq_f_ns": 0.1896,
+     "presc_tr_ns": 0.07453,
+     "presc_tf_ns": 0.06836,
+     "presc_duty_pct": 48.9902
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 26,
+    "seed": 27,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999964,
+     "presc_ckq_r_ns": 0.26285,
+     "presc_ckq_f_ns": 0.19008,
+     "presc_tr_ns": 0.07471,
+     "presc_tf_ns": 0.06843,
+     "presc_duty_pct": 49.0421
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 27,
+    "seed": 28,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999964,
+     "presc_ckq_r_ns": 0.26223,
+     "presc_ckq_f_ns": 0.19078,
+     "presc_tr_ns": 0.07493,
+     "presc_tf_ns": 0.06832,
+     "presc_duty_pct": 49.012
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 28,
+    "seed": 29,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 0.999965,
+     "presc_ckq_r_ns": 0.26186,
+     "presc_ckq_f_ns": 0.18825,
+     "presc_tr_ns": 0.07462,
+     "presc_tf_ns": 0.06781,
+     "presc_duty_pct": 48.9883
+    }
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "run": 29,
+    "seed": 30,
+    "passed": true,
+    "measures": {
+     "presc_div2_ratio": 1.0,
+     "presc_ckq_r_ns": 0.26188,
+     "presc_ckq_f_ns": 0.18947,
+     "presc_tr_ns": 0.07445,
+     "presc_tf_ns": 0.06839,
+     "presc_duty_pct": 48.9811
+    }
+   },
+   {
     "bench": "pll_analog_pwr_tb.cir",
     "run": 0,
     "seed": 1,
@@ -1860,32 +2278,32 @@
     "seed": 1,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.7297,
-     "vco_df_dv_min_mhz_per_v": 13.304,
-     "vco_fmin_tt_mhz": 10.1519,
-     "vco_fmax_tt_mhz": 257.822,
-     "vco_out_swing_pct_vdd": 100.466,
-     "vco_out_duty_pct": 53.4635,
-     "vco_fmax_ff_mhz": 260.442,
-     "vco_out_tr_ns": 0.050822,
-     "vco_out_tf_ns": 0.045775
+     "vco_kvco_mhz_per_v": 91.9537,
+     "vco_df_dv_min_mhz_per_v": 14.4938,
+     "vco_fmin_tt_mhz": 9.61799,
+     "vco_fmax_tt_mhz": 257.893,
+     "vco_out_swing_pct_vdd": 100.465,
+     "vco_out_duty_pct": 53.4675,
+     "vco_fmax_ff_mhz": 260.487,
+     "vco_out_tr_ns": 0.047912,
+     "vco_out_tf_ns": 0.042823
     }
    },
    {
     "bench": "pll_analog_vco_tb.cir",
     "run": 1,
     "seed": 2,
-    "passed": false,
+    "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 96.1781,
-     "vco_df_dv_min_mhz_per_v": 37.0764,
-     "vco_fmin_tt_mhz": 0.0,
-     "vco_fmax_tt_mhz": 259.681,
-     "vco_out_swing_pct_vdd": 0.00123393,
-     "vco_out_duty_pct": 54.3336,
-     "vco_fmax_ff_mhz": 262.144,
-     "vco_out_tr_ns": 0.050729,
-     "vco_out_tf_ns": 0.045371
+     "vco_kvco_mhz_per_v": 92.5174,
+     "vco_df_dv_min_mhz_per_v": 14.6905,
+     "vco_fmin_tt_mhz": 9.94396,
+     "vco_fmax_tt_mhz": 259.741,
+     "vco_out_swing_pct_vdd": 100.472,
+     "vco_out_duty_pct": 54.3367,
+     "vco_fmax_ff_mhz": 262.196,
+     "vco_out_tr_ns": 0.047792,
+     "vco_out_tf_ns": 0.042484
     }
    },
    {
@@ -1894,15 +2312,15 @@
     "seed": 3,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 92.8208,
-     "vco_df_dv_min_mhz_per_v": 14.1248,
-     "vco_fmin_tt_mhz": 9.22082,
-     "vco_fmax_tt_mhz": 259.837,
+     "vco_kvco_mhz_per_v": 92.8442,
+     "vco_df_dv_min_mhz_per_v": 14.129,
+     "vco_fmin_tt_mhz": 9.21953,
+     "vco_fmax_tt_mhz": 259.899,
      "vco_out_swing_pct_vdd": 100.459,
-     "vco_out_duty_pct": 54.2942,
-     "vco_fmax_ff_mhz": 264.543,
-     "vco_out_tr_ns": 0.05015,
-     "vco_out_tf_ns": 0.045582
+     "vco_out_duty_pct": 54.2937,
+     "vco_fmax_ff_mhz": 264.659,
+     "vco_out_tr_ns": 0.047209,
+     "vco_out_tf_ns": 0.042777
     }
    },
    {
@@ -1911,15 +2329,15 @@
     "seed": 4,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 87.8968,
-     "vco_df_dv_min_mhz_per_v": 13.2208,
-     "vco_fmin_tt_mhz": 9.60272,
-     "vco_fmax_tt_mhz": 246.924,
-     "vco_out_swing_pct_vdd": 100.43,
-     "vco_out_duty_pct": 54.2875,
-     "vco_fmax_ff_mhz": 249.625,
-     "vco_out_tr_ns": 0.05117,
-     "vco_out_tf_ns": 0.046459
+     "vco_kvco_mhz_per_v": 88.3871,
+     "vco_df_dv_min_mhz_per_v": 13.1822,
+     "vco_fmin_tt_mhz": 8.34789,
+     "vco_fmax_tt_mhz": 246.993,
+     "vco_out_swing_pct_vdd": 100.435,
+     "vco_out_duty_pct": 54.2531,
+     "vco_fmax_ff_mhz": 249.669,
+     "vco_out_tr_ns": 0.04821,
+     "vco_out_tf_ns": 0.043564
     }
    },
    {
@@ -1928,15 +2346,15 @@
     "seed": 5,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 93.2265,
-     "vco_df_dv_min_mhz_per_v": 14.8576,
-     "vco_fmin_tt_mhz": 9.96348,
-     "vco_fmax_tt_mhz": 261.675,
+     "vco_kvco_mhz_per_v": 93.3101,
+     "vco_df_dv_min_mhz_per_v": 14.6859,
+     "vco_fmin_tt_mhz": 9.79484,
+     "vco_fmax_tt_mhz": 261.732,
      "vco_out_swing_pct_vdd": 100.462,
-     "vco_out_duty_pct": 54.1429,
-     "vco_fmax_ff_mhz": 264.953,
-     "vco_out_tr_ns": 0.050735,
-     "vco_out_tf_ns": 0.045032
+     "vco_out_duty_pct": 54.1731,
+     "vco_fmax_ff_mhz": 265.078,
+     "vco_out_tr_ns": 0.047692,
+     "vco_out_tf_ns": 0.042251
     }
    },
    {
@@ -1945,15 +2363,15 @@
     "seed": 6,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 94.4676,
-     "vco_df_dv_min_mhz_per_v": 15.4582,
-     "vco_fmin_tt_mhz": 10.3684,
-     "vco_fmax_tt_mhz": 265.431,
+     "vco_kvco_mhz_per_v": 94.6003,
+     "vco_df_dv_min_mhz_per_v": 14.9738,
+     "vco_fmin_tt_mhz": 10.0901,
+     "vco_fmax_tt_mhz": 265.511,
      "vco_out_swing_pct_vdd": 100.455,
-     "vco_out_duty_pct": 53.6573,
-     "vco_fmax_ff_mhz": 269.628,
-     "vco_out_tr_ns": 0.049895,
-     "vco_out_tf_ns": 0.04542
+     "vco_out_duty_pct": 53.6626,
+     "vco_fmax_ff_mhz": 269.754,
+     "vco_out_tr_ns": 0.046982,
+     "vco_out_tf_ns": 0.04253
     }
    },
    {
@@ -1962,15 +2380,15 @@
     "seed": 7,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 88.2465,
-     "vco_df_dv_min_mhz_per_v": 13.2487,
-     "vco_fmin_tt_mhz": 9.04148,
-     "vco_fmax_tt_mhz": 247.307,
+     "vco_kvco_mhz_per_v": 88.5234,
+     "vco_df_dv_min_mhz_per_v": 13.6732,
+     "vco_fmin_tt_mhz": 8.35095,
+     "vco_fmax_tt_mhz": 247.364,
      "vco_out_swing_pct_vdd": 100.449,
-     "vco_out_duty_pct": 53.8416,
-     "vco_fmax_ff_mhz": 249.433,
-     "vco_out_tr_ns": 0.05191,
-     "vco_out_tf_ns": 0.046225
+     "vco_out_duty_pct": 53.8426,
+     "vco_fmax_ff_mhz": 249.481,
+     "vco_out_tr_ns": 0.04891,
+     "vco_out_tf_ns": 0.043358
     }
    },
    {
@@ -1979,15 +2397,15 @@
     "seed": 8,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 92.2143,
-     "vco_df_dv_min_mhz_per_v": 14.0802,
-     "vco_fmin_tt_mhz": 10.2223,
-     "vco_fmax_tt_mhz": 259.201,
-     "vco_out_swing_pct_vdd": 100.468,
-     "vco_out_duty_pct": 53.8657,
-     "vco_fmax_ff_mhz": 262.164,
-     "vco_out_tr_ns": 0.05053,
-     "vco_out_tf_ns": 0.04551
+     "vco_kvco_mhz_per_v": 92.497,
+     "vco_df_dv_min_mhz_per_v": 14.6455,
+     "vco_fmin_tt_mhz": 9.53103,
+     "vco_fmax_tt_mhz": 259.273,
+     "vco_out_swing_pct_vdd": 100.469,
+     "vco_out_duty_pct": 53.8736,
+     "vco_fmax_ff_mhz": 262.219,
+     "vco_out_tr_ns": 0.0475,
+     "vco_out_tf_ns": 0.042605
     }
    },
    {
@@ -1996,15 +2414,15 @@
     "seed": 9,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.356,
-     "vco_df_dv_min_mhz_per_v": 14.4663,
-     "vco_fmin_tt_mhz": 8.72987,
-     "vco_fmax_tt_mhz": 255.391,
-     "vco_out_swing_pct_vdd": 100.423,
-     "vco_out_duty_pct": 54.2189,
-     "vco_fmax_ff_mhz": 258.429,
-     "vco_out_tr_ns": 0.05074,
-     "vco_out_tf_ns": 0.04541
+     "vco_kvco_mhz_per_v": 91.4424,
+     "vco_df_dv_min_mhz_per_v": 14.2542,
+     "vco_fmin_tt_mhz": 8.56042,
+     "vco_fmax_tt_mhz": 255.455,
+     "vco_out_swing_pct_vdd": 100.449,
+     "vco_out_duty_pct": 54.245,
+     "vco_fmax_ff_mhz": 258.479,
+     "vco_out_tr_ns": 0.047857,
+     "vco_out_tf_ns": 0.04263
     }
    },
    {
@@ -2013,15 +2431,15 @@
     "seed": 10,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.3116,
-     "vco_df_dv_min_mhz_per_v": 14.2798,
-     "vco_fmin_tt_mhz": 10.6228,
-     "vco_fmax_tt_mhz": 257.164,
+     "vco_kvco_mhz_per_v": 91.8099,
+     "vco_df_dv_min_mhz_per_v": 15.3226,
+     "vco_fmin_tt_mhz": 9.34331,
+     "vco_fmax_tt_mhz": 257.23,
      "vco_out_swing_pct_vdd": 100.459,
-     "vco_out_duty_pct": 53.9789,
-     "vco_fmax_ff_mhz": 259.467,
-     "vco_out_tr_ns": 0.0508,
-     "vco_out_tf_ns": 0.045726
+     "vco_out_duty_pct": 53.9732,
+     "vco_fmax_ff_mhz": 259.52,
+     "vco_out_tr_ns": 0.047809,
+     "vco_out_tf_ns": 0.042854
     }
    },
    {
@@ -2030,15 +2448,15 @@
     "seed": 11,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 90.8261,
-     "vco_df_dv_min_mhz_per_v": 14.3987,
-     "vco_fmin_tt_mhz": 9.0554,
-     "vco_fmax_tt_mhz": 254.286,
+     "vco_kvco_mhz_per_v": 90.9616,
+     "vco_df_dv_min_mhz_per_v": 14.626,
+     "vco_fmin_tt_mhz": 8.74868,
+     "vco_fmax_tt_mhz": 254.345,
      "vco_out_swing_pct_vdd": 100.458,
-     "vco_out_duty_pct": 53.9793,
-     "vco_fmax_ff_mhz": 257.278,
-     "vco_out_tr_ns": 0.05005,
-     "vco_out_tf_ns": 0.045845
+     "vco_out_duty_pct": 54.0137,
+     "vco_fmax_ff_mhz": 257.308,
+     "vco_out_tr_ns": 0.047225,
+     "vco_out_tf_ns": 0.043104
     }
    },
    {
@@ -2047,15 +2465,15 @@
     "seed": 12,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 93.6261,
-     "vco_df_dv_min_mhz_per_v": 15.0173,
-     "vco_fmin_tt_mhz": 9.43642,
-     "vco_fmax_tt_mhz": 262.227,
+     "vco_kvco_mhz_per_v": 93.6544,
+     "vco_df_dv_min_mhz_per_v": 15.015,
+     "vco_fmin_tt_mhz": 9.43613,
+     "vco_fmax_tt_mhz": 262.303,
      "vco_out_swing_pct_vdd": 100.471,
-     "vco_out_duty_pct": 54.0651,
-     "vco_fmax_ff_mhz": 265.181,
-     "vco_out_tr_ns": 0.050777,
-     "vco_out_tf_ns": 0.044869
+     "vco_out_duty_pct": 54.062,
+     "vco_fmax_ff_mhz": 265.301,
+     "vco_out_tr_ns": 0.04785,
+     "vco_out_tf_ns": 0.042081
     }
    },
    {
@@ -2064,32 +2482,32 @@
     "seed": 13,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 88.7555,
-     "vco_df_dv_min_mhz_per_v": 15.3835,
-     "vco_fmin_tt_mhz": 8.99804,
-     "vco_fmax_tt_mhz": 248.638,
+     "vco_kvco_mhz_per_v": 88.7757,
+     "vco_df_dv_min_mhz_per_v": 15.1072,
+     "vco_fmin_tt_mhz": 8.99864,
+     "vco_fmax_tt_mhz": 248.693,
      "vco_out_swing_pct_vdd": 100.468,
-     "vco_out_duty_pct": 54.0636,
-     "vco_fmax_ff_mhz": 250.241,
-     "vco_out_tr_ns": 0.05159,
-     "vco_out_tf_ns": 0.045885
+     "vco_out_duty_pct": 54.09,
+     "vco_fmax_ff_mhz": 250.286,
+     "vco_out_tr_ns": 0.0486,
+     "vco_out_tf_ns": 0.042995
     }
    },
    {
     "bench": "pll_analog_vco_tb.cir",
     "run": 13,
     "seed": 14,
-    "passed": false,
+    "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 97.2748,
-     "vco_df_dv_min_mhz_per_v": 39.0904,
-     "vco_fmin_tt_mhz": 0.0,
-     "vco_fmax_tt_mhz": 262.642,
-     "vco_out_swing_pct_vdd": 0.000405197,
-     "vco_out_duty_pct": 53.2931,
-     "vco_fmax_ff_mhz": 266.03,
-     "vco_out_tr_ns": 0.050567,
-     "vco_out_tf_ns": 0.045178
+     "vco_kvco_mhz_per_v": 93.6728,
+     "vco_df_dv_min_mhz_per_v": 15.1244,
+     "vco_fmin_tt_mhz": 9.81444,
+     "vco_fmax_tt_mhz": 262.731,
+     "vco_out_swing_pct_vdd": 100.462,
+     "vco_out_duty_pct": 53.2914,
+     "vco_fmax_ff_mhz": 266.147,
+     "vco_out_tr_ns": 0.0477,
+     "vco_out_tf_ns": 0.042284
     }
    },
    {
@@ -2098,15 +2516,15 @@
     "seed": 15,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 92.2676,
-     "vco_df_dv_min_mhz_per_v": 15.1836,
-     "vco_fmin_tt_mhz": 9.99947,
-     "vco_fmax_tt_mhz": 259.122,
+     "vco_kvco_mhz_per_v": 92.3441,
+     "vco_df_dv_min_mhz_per_v": 15.4946,
+     "vco_fmin_tt_mhz": 9.85992,
+     "vco_fmax_tt_mhz": 259.189,
      "vco_out_swing_pct_vdd": 100.469,
-     "vco_out_duty_pct": 53.182,
-     "vco_fmax_ff_mhz": 261.14,
-     "vco_out_tr_ns": 0.051399,
-     "vco_out_tf_ns": 0.044877
+     "vco_out_duty_pct": 53.1781,
+     "vco_fmax_ff_mhz": 261.187,
+     "vco_out_tr_ns": 0.048321,
+     "vco_out_tf_ns": 0.042243
     }
    },
    {
@@ -2115,15 +2533,15 @@
     "seed": 16,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 96.5787,
-     "vco_df_dv_min_mhz_per_v": 15.0686,
-     "vco_fmin_tt_mhz": 9.90945,
-     "vco_fmax_tt_mhz": 270.672,
+     "vco_kvco_mhz_per_v": 96.6116,
+     "vco_df_dv_min_mhz_per_v": 15.0665,
+     "vco_fmin_tt_mhz": 9.90967,
+     "vco_fmax_tt_mhz": 270.761,
      "vco_out_swing_pct_vdd": 100.488,
-     "vco_out_duty_pct": 53.3778,
-     "vco_fmax_ff_mhz": 277.173,
-     "vco_out_tr_ns": 0.050048,
-     "vco_out_tf_ns": 0.044213
+     "vco_out_duty_pct": 53.3775,
+     "vco_fmax_ff_mhz": 277.327,
+     "vco_out_tr_ns": 0.047068,
+     "vco_out_tf_ns": 0.041578
     }
    },
    {
@@ -2132,15 +2550,15 @@
     "seed": 17,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 90.6586,
-     "vco_df_dv_min_mhz_per_v": 14.3527,
-     "vco_fmin_tt_mhz": 8.6219,
-     "vco_fmax_tt_mhz": 253.4,
-     "vco_out_swing_pct_vdd": 100.206,
-     "vco_out_duty_pct": 53.9927,
-     "vco_fmax_ff_mhz": 256.818,
-     "vco_out_tr_ns": 0.05079,
-     "vco_out_tf_ns": 0.046022
+     "vco_kvco_mhz_per_v": 90.6781,
+     "vco_df_dv_min_mhz_per_v": 13.8238,
+     "vco_fmin_tt_mhz": 8.62421,
+     "vco_fmax_tt_mhz": 253.455,
+     "vco_out_swing_pct_vdd": 100.443,
+     "vco_out_duty_pct": 53.9936,
+     "vco_fmax_ff_mhz": 256.851,
+     "vco_out_tr_ns": 0.047721,
+     "vco_out_tf_ns": 0.043296
     }
    },
    {
@@ -2149,15 +2567,15 @@
     "seed": 18,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.9604,
-     "vco_df_dv_min_mhz_per_v": 13.7858,
-     "vco_fmin_tt_mhz": 9.27188,
-     "vco_fmax_tt_mhz": 257.565,
+     "vco_kvco_mhz_per_v": 91.9828,
+     "vco_df_dv_min_mhz_per_v": 13.7884,
+     "vco_fmin_tt_mhz": 9.27043,
+     "vco_fmax_tt_mhz": 257.624,
      "vco_out_swing_pct_vdd": 100.47,
-     "vco_out_duty_pct": 54.6277,
-     "vco_fmax_ff_mhz": 261.727,
-     "vco_out_tr_ns": 0.04977,
-     "vco_out_tf_ns": 0.045538
+     "vco_out_duty_pct": 54.6319,
+     "vco_fmax_ff_mhz": 261.768,
+     "vco_out_tr_ns": 0.046771,
+     "vco_out_tf_ns": 0.042708
     }
    },
    {
@@ -2166,15 +2584,15 @@
     "seed": 19,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 89.0193,
-     "vco_df_dv_min_mhz_per_v": 14.9962,
-     "vco_fmin_tt_mhz": 10.0308,
-     "vco_fmax_tt_mhz": 250.383,
+     "vco_kvco_mhz_per_v": 89.393,
+     "vco_df_dv_min_mhz_per_v": 14.7679,
+     "vco_fmin_tt_mhz": 9.08796,
+     "vco_fmax_tt_mhz": 250.449,
      "vco_out_swing_pct_vdd": 100.455,
-     "vco_out_duty_pct": 54.6371,
-     "vco_fmax_ff_mhz": 252.164,
-     "vco_out_tr_ns": 0.05132,
-     "vco_out_tf_ns": 0.046067
+     "vco_out_duty_pct": 54.67,
+     "vco_fmax_ff_mhz": 252.212,
+     "vco_out_tr_ns": 0.0483,
+     "vco_out_tf_ns": 0.043149
     }
    },
    {
@@ -2183,15 +2601,15 @@
     "seed": 20,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 95.4656,
-     "vco_df_dv_min_mhz_per_v": 14.4064,
-     "vco_fmin_tt_mhz": 11.764,
-     "vco_fmax_tt_mhz": 269.521,
-     "vco_out_swing_pct_vdd": 100.479,
-     "vco_out_duty_pct": 53.7443,
-     "vco_fmax_ff_mhz": 273.724,
-     "vco_out_tr_ns": 0.049963,
-     "vco_out_tf_ns": 0.04439
+     "vco_kvco_mhz_per_v": 96.002,
+     "vco_df_dv_min_mhz_per_v": 15.6064,
+     "vco_fmin_tt_mhz": 10.4165,
+     "vco_fmax_tt_mhz": 269.622,
+     "vco_out_swing_pct_vdd": 100.48,
+     "vco_out_duty_pct": 53.7446,
+     "vco_fmax_ff_mhz": 273.857,
+     "vco_out_tr_ns": 0.047026,
+     "vco_out_tf_ns": 0.041554
     }
    },
    {
@@ -2200,15 +2618,15 @@
     "seed": 21,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 95.4604,
-     "vco_df_dv_min_mhz_per_v": 33.8013,
-     "vco_fmin_tt_mhz": 0.0,
-     "vco_fmax_tt_mhz": 257.743,
-     "vco_out_swing_pct_vdd": 100.447,
-     "vco_out_duty_pct": 53.873,
-     "vco_fmax_ff_mhz": 262.934,
-     "vco_out_tr_ns": 0.04989,
-     "vco_out_tf_ns": 0.045554
+     "vco_kvco_mhz_per_v": 92.1551,
+     "vco_df_dv_min_mhz_per_v": 13.8388,
+     "vco_fmin_tt_mhz": 8.98214,
+     "vco_fmax_tt_mhz": 257.801,
+     "vco_out_swing_pct_vdd": 100.445,
+     "vco_out_duty_pct": 53.8715,
+     "vco_fmax_ff_mhz": 262.964,
+     "vco_out_tr_ns": 0.046936,
+     "vco_out_tf_ns": 0.042633
     }
    },
    {
@@ -2217,15 +2635,15 @@
     "seed": 22,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 89.4759,
-     "vco_df_dv_min_mhz_per_v": 14.1528,
-     "vco_fmin_tt_mhz": 9.21202,
-     "vco_fmax_tt_mhz": 250.797,
-     "vco_out_swing_pct_vdd": 100.473,
-     "vco_out_duty_pct": 54.2849,
-     "vco_fmax_ff_mhz": 252.992,
-     "vco_out_tr_ns": 0.05125,
-     "vco_out_tf_ns": 0.0457
+     "vco_kvco_mhz_per_v": 89.7593,
+     "vco_df_dv_min_mhz_per_v": 14.2739,
+     "vco_fmin_tt_mhz": 8.50594,
+     "vco_fmax_tt_mhz": 250.856,
+     "vco_out_swing_pct_vdd": 100.451,
+     "vco_out_duty_pct": 54.2567,
+     "vco_fmax_ff_mhz": 253.034,
+     "vco_out_tr_ns": 0.04827,
+     "vco_out_tf_ns": 0.042979
     }
    },
    {
@@ -2234,15 +2652,15 @@
     "seed": 23,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 91.0897,
-     "vco_df_dv_min_mhz_per_v": 14.1078,
-     "vco_fmin_tt_mhz": 8.90788,
-     "vco_fmax_tt_mhz": 254.85,
-     "vco_out_swing_pct_vdd": 100.446,
-     "vco_out_duty_pct": 55.1577,
-     "vco_fmax_ff_mhz": 258.742,
-     "vco_out_tr_ns": 0.05027,
-     "vco_out_tf_ns": 0.046383
+     "vco_kvco_mhz_per_v": 91.1116,
+     "vco_df_dv_min_mhz_per_v": 13.6877,
+     "vco_fmin_tt_mhz": 8.91663,
+     "vco_fmax_tt_mhz": 254.918,
+     "vco_out_swing_pct_vdd": 100.445,
+     "vco_out_duty_pct": 55.1526,
+     "vco_fmax_ff_mhz": 258.791,
+     "vco_out_tr_ns": 0.047252,
+     "vco_out_tf_ns": 0.043414
     }
    },
    {
@@ -2251,15 +2669,15 @@
     "seed": 24,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 93.0648,
-     "vco_df_dv_min_mhz_per_v": 14.3731,
-     "vco_fmin_tt_mhz": 10.9231,
-     "vco_fmax_tt_mhz": 262.198,
+     "vco_kvco_mhz_per_v": 93.4864,
+     "vco_df_dv_min_mhz_per_v": 15.1394,
+     "vco_fmin_tt_mhz": 9.78778,
+     "vco_fmax_tt_mhz": 262.201,
      "vco_out_swing_pct_vdd": 100.478,
-     "vco_out_duty_pct": 52.8283,
-     "vco_fmax_ff_mhz": 265.204,
-     "vco_out_tr_ns": 0.047906,
-     "vco_out_tf_ns": 0.04451
+     "vco_out_duty_pct": 52.8607,
+     "vco_fmax_ff_mhz": 265.193,
+     "vco_out_tr_ns": 0.050872,
+     "vco_out_tf_ns": 0.044528
     }
    },
    {
@@ -2268,15 +2686,15 @@
     "seed": 25,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 93.6081,
-     "vco_df_dv_min_mhz_per_v": 13.9394,
-     "vco_fmin_tt_mhz": 9.87219,
-     "vco_fmax_tt_mhz": 262.614,
-     "vco_out_swing_pct_vdd": 100.476,
-     "vco_out_duty_pct": 53.9445,
-     "vco_fmax_ff_mhz": 267.392,
-     "vco_out_tr_ns": 0.050211,
-     "vco_out_tf_ns": 0.045047
+     "vco_kvco_mhz_per_v": 93.8496,
+     "vco_df_dv_min_mhz_per_v": 14.3966,
+     "vco_fmin_tt_mhz": 9.29212,
+     "vco_fmax_tt_mhz": 262.686,
+     "vco_out_swing_pct_vdd": 100.477,
+     "vco_out_duty_pct": 53.9744,
+     "vco_fmax_ff_mhz": 267.504,
+     "vco_out_tr_ns": 0.047113,
+     "vco_out_tf_ns": 0.042114
     }
    },
    {
@@ -2285,15 +2703,15 @@
     "seed": 26,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 90.7212,
-     "vco_df_dv_min_mhz_per_v": 13.8045,
-     "vco_fmin_tt_mhz": 8.87167,
-     "vco_fmax_tt_mhz": 253.819,
+     "vco_kvco_mhz_per_v": 90.7442,
+     "vco_df_dv_min_mhz_per_v": 13.8118,
+     "vco_fmin_tt_mhz": 8.86958,
+     "vco_fmax_tt_mhz": 253.879,
      "vco_out_swing_pct_vdd": 100.433,
-     "vco_out_duty_pct": 55.6313,
-     "vco_fmax_ff_mhz": 256.949,
-     "vco_out_tr_ns": 0.05054,
-     "vco_out_tf_ns": 0.046083
+     "vco_out_duty_pct": 55.6657,
+     "vco_fmax_ff_mhz": 256.998,
+     "vco_out_tr_ns": 0.047681,
+     "vco_out_tf_ns": 0.043258
     }
    },
    {
@@ -2302,15 +2720,15 @@
     "seed": 27,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 86.888,
-     "vco_df_dv_min_mhz_per_v": 13.0595,
-     "vco_fmin_tt_mhz": 8.68533,
-     "vco_fmax_tt_mhz": 243.283,
-     "vco_out_swing_pct_vdd": 100.598,
-     "vco_out_duty_pct": 54.9932,
-     "vco_fmax_ff_mhz": 245.213,
-     "vco_out_tr_ns": 0.05146,
-     "vco_out_tf_ns": 0.046688
+     "vco_kvco_mhz_per_v": 86.9746,
+     "vco_df_dv_min_mhz_per_v": 13.4783,
+     "vco_fmin_tt_mhz": 8.50868,
+     "vco_fmax_tt_mhz": 243.34,
+     "vco_out_swing_pct_vdd": 100.447,
+     "vco_out_duty_pct": 54.6038,
+     "vco_fmax_ff_mhz": 245.261,
+     "vco_out_tr_ns": 0.04856,
+     "vco_out_tf_ns": 0.043689
     }
    },
    {
@@ -2319,15 +2737,15 @@
     "seed": 28,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 90.8149,
-     "vco_df_dv_min_mhz_per_v": 14.7398,
-     "vco_fmin_tt_mhz": 9.33367,
-     "vco_fmax_tt_mhz": 254.534,
+     "vco_kvco_mhz_per_v": 90.8333,
+     "vco_df_dv_min_mhz_per_v": 15.1937,
+     "vco_fmin_tt_mhz": 9.34303,
+     "vco_fmax_tt_mhz": 254.593,
      "vco_out_swing_pct_vdd": 100.467,
-     "vco_out_duty_pct": 54.5671,
-     "vco_fmax_ff_mhz": 256.655,
-     "vco_out_tr_ns": 0.05067,
-     "vco_out_tf_ns": 0.045654
+     "vco_out_duty_pct": 54.6043,
+     "vco_fmax_ff_mhz": 256.705,
+     "vco_out_tr_ns": 0.047745,
+     "vco_out_tf_ns": 0.042882
     }
    },
    {
@@ -2336,15 +2754,15 @@
     "seed": 29,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 90.0836,
-     "vco_df_dv_min_mhz_per_v": 13.8447,
-     "vco_fmin_tt_mhz": 9.23827,
-     "vco_fmax_tt_mhz": 252.464,
+     "vco_kvco_mhz_per_v": 90.1056,
+     "vco_df_dv_min_mhz_per_v": 13.8488,
+     "vco_fmin_tt_mhz": 9.23775,
+     "vco_fmax_tt_mhz": 252.523,
      "vco_out_swing_pct_vdd": 100.445,
-     "vco_out_duty_pct": 53.996,
-     "vco_fmax_ff_mhz": 255.391,
-     "vco_out_tr_ns": 0.05108,
-     "vco_out_tf_ns": 0.046025
+     "vco_out_duty_pct": 53.9971,
+     "vco_fmax_ff_mhz": 255.438,
+     "vco_out_tr_ns": 0.04801,
+     "vco_out_tf_ns": 0.043051
     }
    },
    {
@@ -2353,71 +2771,28 @@
     "seed": 30,
     "passed": true,
     "measures": {
-     "vco_kvco_mhz_per_v": 92.2526,
-     "vco_df_dv_min_mhz_per_v": 15.0854,
-     "vco_fmin_tt_mhz": 9.56297,
-     "vco_fmax_tt_mhz": 258.645,
-     "vco_out_swing_pct_vdd": 100.446,
-     "vco_out_duty_pct": 53.7119,
-     "vco_fmax_ff_mhz": 261.229,
-     "vco_out_tr_ns": 0.05083,
-     "vco_out_tf_ns": 0.045651
+     "vco_kvco_mhz_per_v": 92.2736,
+     "vco_df_dv_min_mhz_per_v": 14.51,
+     "vco_fmin_tt_mhz": 9.5692,
+     "vco_fmax_tt_mhz": 258.708,
+     "vco_out_swing_pct_vdd": 100.447,
+     "vco_out_duty_pct": 53.7461,
+     "vco_fmax_ff_mhz": 261.285,
+     "vco_out_tr_ns": 0.047861,
+     "vco_out_tf_ns": 0.042801
     }
    }
   ],
-  "sample_violations": [
-   {
-    "check": "mc",
-    "severity": "error",
-    "file": "pll_analog_vco_tb__mc1",
-    "module": null,
-    "line": null,
-    "kind": "sim_bound_fail",
-    "refs": [
-     "tt",
-     "vco_out_swing_pct_vdd"
-    ],
-    "msg": "vco_out_swing_pct_vdd @ tt = 0.00123393 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on the internal vco_out)",
-    "source": "ngspice",
-    "items": [
-     {
-      "msg": "vco_out_swing_pct_vdd @ tt = 0.00123393 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on the internal vco_out)",
-      "file": "pll_analog_vco_tb__mc1",
-      "line": null
-     }
-    ]
-   },
-   {
-    "check": "mc",
-    "severity": "error",
-    "file": "pll_analog_vco_tb__mc13",
-    "module": null,
-    "line": null,
-    "kind": "sim_bound_fail",
-    "refs": [
-     "tt",
-     "vco_out_swing_pct_vdd"
-    ],
-    "msg": "vco_out_swing_pct_vdd @ tt = 0.000405197 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on the internal vco_out)",
-    "source": "ngspice",
-    "items": [
-     {
-      "msg": "vco_out_swing_pct_vdd @ tt = 0.000405197 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on the internal vco_out)",
-      "file": "pll_analog_vco_tb__mc13",
-      "line": null
-     }
-    ]
-   }
-  ]
+  "sample_violations": []
  },
  "inputs_at_start": {
   "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-  "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+  "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
   "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-11-01T15:14:32",
- "attempts": 1
+ "recorded_ts": "2026-11-02T23:12:02",
+ "attempts": 2
 }
