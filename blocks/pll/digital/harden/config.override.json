@@ -1,5 +1,5 @@
 {
   "RUN_POST_GRT_RESIZER_TIMING": 1,
-  "RSZ_DONT_TOUCH_RX": "^(uo_out\\[[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs)_obuf)$",
+  "RSZ_DONT_TOUCH_RX": "^(uo_out\\[[01]\\]|u_ihsan_sa_pll\\.u_(clk_fb|obs|pfd_up|pfd_dn)_obuf)$",
   "SYNTH_BUFFER_CELL": "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8/I/Z"
 }

@@ -3,7 +3,7 @@
  "gate": "cover",
  "phase": "P4",
  "tool": "cover",
- "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+ "input_digest": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -23,16 +23,16 @@
   "top": "ihsan_sa_pll",
   "line_pct": 100.0,
   "toggle_pct": 100.0,
-  "line_covered": 122,
-  "line_total": 122,
-  "toggle_covered": 188,
-  "toggle_total": 188
+  "line_covered": 124,
+  "line_total": 124,
+  "toggle_covered": 192,
+  "toggle_total": 192
  },
  "inputs_at_start": {
-  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
   "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
-  "spec_yaml": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225"
+  "spec_yaml": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4"
  },
- "recorded_ts": "2026-11-01T12:27:31",
- "attempts": 17
+ "recorded_ts": "2026-11-03T05:20:48",
+ "attempts": 18
 }
