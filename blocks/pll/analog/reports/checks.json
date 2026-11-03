@@ -1,0 +1,189 @@
+{
+ "skill": "ade",
+ "block": "pll_analog",
+ "ts": "2026-11-03T06:15:47",
+ "pdk": {
+  "name": "gf180mcuD",
+  "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "ciel": "1689ac3f2dc763876eaf967227c7dfe831b031ae"
+ },
+ "checks": [
+  {
+   "gate": "bench_strength",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "bench_strength",
+   "version": 1,
+   "status": "pass",
+   "attempts": 10,
+   "ts": "2026-11-03T02:52:31",
+   "inputs": {
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+    "mutant_rulings": "json_canonical:f601d3fedeb68887dbdeefe51cf09d2cdd92b9c412e7b759a45032d01d8f5c0e",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+   },
+   "reason": null
+  },
+  {
+   "gate": "drc",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "analog_drc",
+   "version": 1,
+   "status": "pass",
+   "attempts": 11,
+   "ts": "2026-11-03T02:56:37",
+   "inputs": {
+    "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+   },
+   "reason": null
+  },
+  {
+   "gate": "lvs",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "analog_lvs",
+   "version": 1,
+   "status": "pass",
+   "attempts": 9,
+   "ts": "2026-11-03T02:56:48",
+   "inputs": {
+    "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+   },
+   "reason": null
+  },
+  {
+   "gate": "mc",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "mc",
+   "version": 1,
+   "status": "pass",
+   "attempts": 2,
+   "ts": "2026-11-02T23:12:02",
+   "inputs": {
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+   },
+   "reason": null
+  },
+  {
+   "gate": "netlist_lint",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "netlist_lint",
+   "version": 1,
+   "status": "pass",
+   "attempts": 17,
+   "ts": "2026-11-03T02:56:11",
+   "inputs": {
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+   },
+   "reason": null
+  },
+  {
+   "gate": "pex_sim",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "pex_sim",
+   "version": 1,
+   "status": "pass",
+   "attempts": 10,
+   "ts": "2026-11-03T00:46:57",
+   "inputs": {
+    "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+    "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+    "layout_ref": "dir_text:e6882e5448e86f560e7e4d7f2d38685651407a53cf3a65acba2d5ca7ea624599",
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+    "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+    "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+   },
+   "reason": null
+  },
+  {
+   "gate": "sim_pvt",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "sim_pvt",
+   "version": 1,
+   "status": "pass",
+   "attempts": 15,
+   "ts": "2026-11-02T18:11:58",
+   "inputs": {
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+   },
+   "reason": null
+  },
+  {
+   "gate": "sim_tt",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "sim_tt",
+   "version": 1,
+   "status": "pass",
+   "attempts": 21,
+   "ts": "2026-11-03T03:00:16",
+   "inputs": {
+    "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+    "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+    "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+    "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+    "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+   },
+   "reason": null
+  },
+  {
+   "gate": "spec_lint",
+   "applies": true,
+   "ran": true,
+   "ok": true,
+   "tool": "spec_lint_ade",
+   "version": 1,
+   "status": "pass",
+   "attempts": 24,
+   "ts": "2026-11-03T02:53:02",
+   "inputs": {
+    "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+   },
+   "reason": null
+  }
+ ],
+ "attestation_sha256": "9b52f6fed9def4797ea94c7efbe6694c792a895b9b81aa6c796bf6d81562fb52"
+}

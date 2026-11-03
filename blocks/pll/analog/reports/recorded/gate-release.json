@@ -1,0 +1,37 @@
+{
+ "script": "gate",
+ "gate": "release",
+ "phase": "P6",
+ "tool": "release",
+ "input_digest": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "attestation": "reports/checks.json",
+  "attestation_sha256": "9b52f6fed9def4797ea94c7efbe6694c792a895b9b81aa6c796bf6d81562fb52",
+  "disposition": "gates-green",
+  "waived": []
+ },
+ "inputs_at_start": {
+  "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+  "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+  "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+ },
+ "recorded_ts": "2026-11-03T06:15:48",
+ "attempts": 1
+}

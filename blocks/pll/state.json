@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-11-03T05:08:15",
+ "updated": "2026-11-03T06:15:47",
  "phase": "P2",
  "toolchain": null,
  "gates": {
@@ -187,9 +187,9 @@
   "top_harden": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 10,
+   "attempts": 13,
    "last": {
-    "ts": "2026-11-03T05:03:52",
+    "ts": "2026-11-03T05:17:18",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -203,6 +203,7 @@
      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "macro_lib": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
      "top_sdc": null,
+     "top_override": "text_eol:a5fa733c3a4070ec7383a6355b05701f529b4f4572578f689779446a5a3d685a",
      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
@@ -213,7 +214,7 @@
     },
     "job": null,
     "facts": {
-     "wall_s": 122.64
+     "wall_s": 127.18
     }
    },
    "history": [
@@ -399,6 +400,91 @@
      "job": null,
      "facts": {
       "wall_s": 122.64
+     }
+    },
+    {
+     "ts": "2026-11-03T05:13:30",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225",
+      "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
+      "top_sdc": "text_eol:505b52dfba5fa1190b76b631deaa4314741293b851507c151215514aa11cfebb",
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 139.75
+     }
+    },
+    {
+     "ts": "2026-11-03T05:13:53",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225",
+      "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
+      "top_sdc": "text_eol:60576884c7c8c6190fde51b98c5a4beb63aef554580e707ea34c8cf4cb2b1dc8",
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 5.21
+     }
+    },
+    {
+     "ts": "2026-11-03T05:17:18",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225",
+      "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
+      "top_sdc": null,
+      "top_override": "text_eol:a5fa733c3a4070ec7383a6355b05701f529b4f4572578f689779446a5a3d685a",
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 127.18
      }
     }
    ]
@@ -844,6 +930,281 @@
      }
     }
    ]
+  },
+  "macro_lib": {
+   "phase": "P3",
+   "status": "pass",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-11-03T06:15:47",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+     "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+     "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+     "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+    },
+    "job": null,
+    "facts": {
+     "corners": {
+      "tt_025C_3v30": {
+       "lib": "pll_analog__tt_025C_3v30.lib",
+       "vdd": 3.3,
+       "input_cap_pf": {
+        "cp_trim0": {
+         "capacitance": 0.012682,
+         "rise_capacitance": 0.012099181818181818,
+         "fall_capacitance": 0.012682
+        },
+        "cp_trim1": {
+         "capacitance": 0.013496333333333332,
+         "rise_capacitance": 0.013496333333333332,
+         "fall_capacitance": 0.013418242424242423
+        },
+        "pfd_dn": {
+         "capacitance": 0.028648000000000003,
+         "rise_capacitance": 0.0286249696969697,
+         "fall_capacitance": 0.028648000000000003
+        },
+        "pfd_up": {
+         "capacitance": 0.03311454545454545,
+         "rise_capacitance": 0.033100000000000004,
+         "fall_capacitance": 0.03311454545454545
+        },
+        "pll_en": {
+         "capacitance": 0.059432727272727276,
+         "rise_capacitance": 0.05777787878787879,
+         "fall_capacitance": 0.059432727272727276
+        }
+       },
+       "running_mhz_by_load": {
+        "vco_div2": [
+         147.28,
+         147.21,
+         147.02
+        ]
+       }
+      },
+      "ss_125C_3v00": {
+       "lib": "pll_analog__ss_125C_3v00.lib",
+       "vdd": 3.0,
+       "input_cap_pf": {
+        "cp_trim0": {
+         "capacitance": 0.012831333333333333,
+         "rise_capacitance": 0.012302766666666668,
+         "fall_capacitance": 0.012831333333333333
+        },
+        "cp_trim1": {
+         "capacitance": 0.013464466666666666,
+         "rise_capacitance": 0.013464466666666666,
+         "fall_capacitance": 0.013382066666666668
+        },
+        "pfd_dn": {
+         "capacitance": 0.028954166666666666,
+         "rise_capacitance": 0.028943233333333332,
+         "fall_capacitance": 0.028954166666666666
+        },
+        "pfd_up": {
+         "capacitance": 0.03291476666666667,
+         "rise_capacitance": 0.03287133333333333,
+         "fall_capacitance": 0.03291476666666667
+        },
+        "pll_en": {
+         "capacitance": 0.06095966666666666,
+         "rise_capacitance": 0.05945233333333333,
+         "fall_capacitance": 0.06095966666666666
+        }
+       },
+       "running_mhz_by_load": {
+        "vco_div2": [
+         109.97,
+         109.94,
+         109.78
+        ]
+       }
+      },
+      "ff_n40C_3v60": {
+       "lib": "pll_analog__ff_n40C_3v60.lib",
+       "vdd": 3.6,
+       "input_cap_pf": {
+        "cp_trim0": {
+         "capacitance": 0.012539611111111112,
+         "rise_capacitance": 0.011916222222222222,
+         "fall_capacitance": 0.012539611111111112
+        },
+        "cp_trim1": {
+         "capacitance": 0.013531833333333333,
+         "rise_capacitance": 0.013531833333333333,
+         "fall_capacitance": 0.01345825
+        },
+        "pfd_dn": {
+         "capacitance": 0.02834361111111111,
+         "rise_capacitance": 0.028343055555555555,
+         "fall_capacitance": 0.02834361111111111
+        },
+        "pfd_up": {
+         "capacitance": 0.03334111111111111,
+         "rise_capacitance": 0.03333166666666666,
+         "fall_capacitance": 0.03334111111111111
+        },
+        "pll_en": {
+         "capacitance": 0.05777222222222221,
+         "rise_capacitance": 0.05621361111111111,
+         "fall_capacitance": 0.05777222222222221
+        }
+       },
+       "running_mhz_by_load": {
+        "vco_div2": [
+         180.44,
+         180.34,
+         179.92
+        ]
+       }
+      }
+     }
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-11-03T06:15:47",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+     },
+     "job": null,
+     "facts": {
+      "corners": {
+       "tt_025C_3v30": {
+        "lib": "pll_analog__tt_025C_3v30.lib",
+        "vdd": 3.3,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012682,
+          "rise_capacitance": 0.012099181818181818,
+          "fall_capacitance": 0.012682
+         },
+         "cp_trim1": {
+          "capacitance": 0.013496333333333332,
+          "rise_capacitance": 0.013496333333333332,
+          "fall_capacitance": 0.013418242424242423
+         },
+         "pfd_dn": {
+          "capacitance": 0.028648000000000003,
+          "rise_capacitance": 0.0286249696969697,
+          "fall_capacitance": 0.028648000000000003
+         },
+         "pfd_up": {
+          "capacitance": 0.03311454545454545,
+          "rise_capacitance": 0.033100000000000004,
+          "fall_capacitance": 0.03311454545454545
+         },
+         "pll_en": {
+          "capacitance": 0.059432727272727276,
+          "rise_capacitance": 0.05777787878787879,
+          "fall_capacitance": 0.059432727272727276
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          147.28,
+          147.21,
+          147.02
+         ]
+        }
+       },
+       "ss_125C_3v00": {
+        "lib": "pll_analog__ss_125C_3v00.lib",
+        "vdd": 3.0,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012831333333333333,
+          "rise_capacitance": 0.012302766666666668,
+          "fall_capacitance": 0.012831333333333333
+         },
+         "cp_trim1": {
+          "capacitance": 0.013464466666666666,
+          "rise_capacitance": 0.013464466666666666,
+          "fall_capacitance": 0.013382066666666668
+         },
+         "pfd_dn": {
+          "capacitance": 0.028954166666666666,
+          "rise_capacitance": 0.028943233333333332,
+          "fall_capacitance": 0.028954166666666666
+         },
+         "pfd_up": {
+          "capacitance": 0.03291476666666667,
+          "rise_capacitance": 0.03287133333333333,
+          "fall_capacitance": 0.03291476666666667
+         },
+         "pll_en": {
+          "capacitance": 0.06095966666666666,
+          "rise_capacitance": 0.05945233333333333,
+          "fall_capacitance": 0.06095966666666666
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          109.97,
+          109.94,
+          109.78
+         ]
+        }
+       },
+       "ff_n40C_3v60": {
+        "lib": "pll_analog__ff_n40C_3v60.lib",
+        "vdd": 3.6,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012539611111111112,
+          "rise_capacitance": 0.011916222222222222,
+          "fall_capacitance": 0.012539611111111112
+         },
+         "cp_trim1": {
+          "capacitance": 0.013531833333333333,
+          "rise_capacitance": 0.013531833333333333,
+          "fall_capacitance": 0.01345825
+         },
+         "pfd_dn": {
+          "capacitance": 0.02834361111111111,
+          "rise_capacitance": 0.028343055555555555,
+          "fall_capacitance": 0.02834361111111111
+         },
+         "pfd_up": {
+          "capacitance": 0.03334111111111111,
+          "rise_capacitance": 0.03333166666666666,
+          "fall_capacitance": 0.03334111111111111
+         },
+         "pll_en": {
+          "capacitance": 0.05777222222222221,
+          "rise_capacitance": 0.05621361111111111,
+          "fall_capacitance": 0.05777222222222221
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          180.44,
+          180.34,
+          179.92
+         ]
+        }
+       }
+      }
+     }
+    }
+   ]
   }
  },
  "jobs": {},
@@ -855,7 +1216,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-   "hashed": "2026-11-03T05:08:15"
+   "hashed": "2026-11-03T06:15:47"
   },
   "tb": {
    "path": "tb",
@@ -867,37 +1228,37 @@
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "analog_netlist": {
    "path": "analog/netlist",
    "kind": "analog_netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-03T05:05:51"
+   "hashed": "2026-11-03T06:15:47"
   },
   "analog_sizing": {
    "path": "analog/sizing/sizing.yaml",
    "kind": "analog_sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-03T05:05:51"
+   "hashed": "2026-11-03T06:15:47"
   },
   "analog_layout": {
    "path": "analog/layout",
    "kind": "analog_layout",
    "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-   "hashed": "2026-11-03T05:05:51"
+   "hashed": "2026-11-03T05:17:18"
   },
   "top_sdc": {
    "path": "top.sdc",
    "kind": "top_sdc",
    "sha256": null,
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "digital_sdc": {
    "path": "digital/harden/constraints.sdc",
    "kind": "digital_sdc",
    "sha256": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "top_gds": {
    "path": "top/harden/runs/run/final/gds",
@@ -909,13 +1270,13 @@
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-03T05:08:15"
+   "hashed": "2026-11-03T06:15:47"
   },
   "pdk_models": {
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-03T03:33:52"
+   "hashed": "2026-11-03T06:15:47"
   },
   "digital_side_spec": {
    "path": "digital_spec.yaml",
@@ -933,49 +1294,49 @@
    "path": "digital/spec/spec.yaml",
    "kind": "digital_spec",
    "sha256": "json_canonical:d15b4ee099797898779e7addb60b6c931d54bccb75498dc898ec01fc0b60f225",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "analog_spec": {
    "path": "analog/spec/spec.yaml",
    "kind": "analog_spec",
    "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T06:15:47"
   },
   "macro_lib": {
    "path": "macro_lib",
    "kind": "macro_lib",
    "sha256": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "pdk_liberty": {
    "path": "${PDK_ROOT}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib",
    "kind": "pdk_liberty",
    "sha256": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T06:15:47"
   },
   "pdk_librelane": {
    "path": "${PDK_ROOT}/libs.tech/librelane",
    "kind": "pdk_librelane",
    "sha256": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
-   "hashed": "2026-11-03T05:03:52"
+   "hashed": "2026-11-03T05:17:18"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
    "kind": "pdk_magic",
    "sha256": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-   "hashed": "2026-11-03T05:08:15"
+   "hashed": "2026-11-03T05:17:18"
   },
   "pdk_klayout": {
    "path": "${PDK_ROOT}/libs.tech/klayout",
    "kind": "pdk_klayout",
    "sha256": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
-   "hashed": "2026-11-03T05:08:15"
+   "hashed": "2026-11-03T05:17:18"
   },
   "pdk_netgen": {
    "path": "${PDK_ROOT}/libs.tech/netgen",
    "kind": "pdk_netgen",
    "sha256": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
-   "hashed": "2026-11-03T05:05:51"
+   "hashed": "2026-11-03T05:17:18"
   },
   "top_spec": {
    "path": "top/spec/spec.yaml",
@@ -994,6 +1355,12 @@
    "kind": "top_pnl",
    "sha256": "dir_text:3a1c6014987e4a5f31bf5267af1850cd1adeccadec5a4b91572f84f2fd0b6fca",
    "hashed": "2026-11-03T05:05:51"
+  },
+  "top_override": {
+   "path": "top.config.override.json",
+   "kind": "top_override",
+   "sha256": "text_eol:a5fa733c3a4070ec7383a6355b05701f529b4f4572578f689779446a5a3d685a",
+   "hashed": "2026-11-03T05:17:18"
   }
  },
  "open_issues": [],
@@ -1467,6 +1834,44 @@
    "gate": "precheck",
    "status": "pass",
    "attempt": 8,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-03T05:13:30",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 11,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-03T05:13:53",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 12,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-03T05:14:53",
+   "event": "gate_error",
+   "gate": "top_harden",
+   "error": "CheckError: /home/hive2/projects/ece298a-pll/blocks/pll/top/harden/config.override.json sets ['DEFAULT_CORNER'], which the engine or the TT template owns (tile/PDK keys, the design's own file list, th"
+  },
+  {
+   "ts": "2026-11-03T05:17:18",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 13,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-03T06:15:47",
+   "event": "gate",
+   "gate": "macro_lib",
+   "status": "pass",
+   "attempt": 1,
    "failing_count": 0
   }
  ]

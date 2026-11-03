@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-11-03T03:00:16",
+ "updated": "2026-11-03T06:15:48",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -2515,6 +2515,41 @@
      }
     }
    ]
+  },
+  "release": {
+   "phase": "P6",
+   "status": "pass",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-11-03T06:15:48",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+     "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+     "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+     "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+    },
+    "job": null
+   },
+   "history": [
+    {
+     "ts": "2026-11-03T06:15:48",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+     },
+     "job": null
+    }
+   ]
   }
  },
  "jobs": {},
@@ -2544,13 +2579,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-03T03:00:16"
+   "hashed": "2026-11-03T06:15:48"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-03T03:00:16"
+   "hashed": "2026-11-03T06:15:48"
   },
   "tb": {
    "path": "tb",
@@ -2562,7 +2597,7 @@
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-03T03:00:16"
+   "hashed": "2026-11-03T06:15:48"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -2574,7 +2609,7 @@
    "path": "layout",
    "kind": "layout",
    "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-   "hashed": "2026-11-03T02:56:48"
+   "hashed": "2026-11-03T06:15:48"
   },
   "layout_ref": {
    "path": "layout_ref",
@@ -2586,7 +2621,7 @@
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-03T03:00:16"
+   "hashed": "2026-11-03T06:15:48"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
@@ -5113,6 +5148,14 @@
    "gate": "sim_tt",
    "status": "pass",
    "attempt": 21,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-03T06:15:48",
+   "event": "gate",
+   "gate": "release",
+   "status": "pass",
+   "attempt": 1,
    "failing_count": 0
   }
  ]
