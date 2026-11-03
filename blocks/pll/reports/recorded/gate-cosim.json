@@ -72,7 +72,7 @@
    "lock_rises": 2,
    "duration_ns": 30000.0,
    "max_sync_interval_ns": 1.0,
-   "wall_time_s": 992.985478104034,
+   "wall_time_s": 888.6818100720411,
    "bridge_error": null,
    "digital_toggles": 308,
    "edge_times_ns": [
@@ -2397,13 +2397,13 @@
  },
  "inputs_at_start": {
   "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-  "tb": "dir_text:061bffb87db11f11b5bb15e0d887ec6da7957b545300ebf66b086541d4ff3d2e",
-  "digital_rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "tb": "dir_text:25293049ab73c77399f8e981267c802896925e179b96260193786c41db5582d4",
+  "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
   "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
   "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-11-03T03:33:52",
- "attempts": 4
+ "recorded_ts": "2026-11-03T08:16:50",
+ "attempts": 5
 }
