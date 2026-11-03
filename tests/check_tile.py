@@ -12,8 +12,9 @@ matches the sources. This check catches that without any EDA tool:
 
 1. top_harden, top_drc, top_lvs and precheck each last passed, in state.json
    and in their recorded report;
-2. every input top_harden recorded hashes as it does now (the same hashes
-   chip-flow's statelib takes: dir_text for a directory, text_eol for a file);
+2. every input top_harden recorded that is in the repo hashes as it does now
+   (the same hashes chip-flow's statelib takes: dir_text for a directory,
+   text_eol for a file); the PDK and generated inputs only with CHIP_FLOW_HOME;
 3. top_drc, top_lvs and precheck ran after that top_harden, so they judged what
    it built, and their own other inputs hash as they did;
 4. gds/<top>.gds hashes as the GDS those three judged (top_gds), so the GDS
@@ -47,7 +48,17 @@ KINDS = {
     "top_sdc": ("top.sdc", "text_eol"),
     "digital_sdc": ("digital/harden/constraints.sdc", "text_eol"),
     "interface": ("interface.yaml", "json_canonical"),
+    "digital_spec": ("digital/spec/spec.yaml", "json_canonical"),
+    "analog_netlist": ("analog/netlist", "dir_text"),
+    "analog_sizing": ("analog/sizing/sizing.yaml", "json_canonical"),
+    "analog_spec": ("analog/spec/spec.yaml", "json_canonical"),
+    "macro_lib": ("macro_lib", "dir_text"),
 }
+# Kinds that live outside the repo: the PDK, and the tree top_harden generates
+# (gitignored, so CI hasn't got it). Only statelib can hash these, so they're
+# compared below when CHIP_FLOW_HOME is set; the GDS itself is pinned by top_gds.
+TOOL_ONLY = {"pdk_version", "pdk_liberty", "pdk_librelane", "pdk_magic", "pdk_klayout",
+             "pdk_netgen", "top_spec", "top_macros", "top_pnl"}
 
 
 def _text(data: bytes) -> str:
@@ -111,6 +122,8 @@ def main() -> int:
                 if want != gds_hash:
                     bad.append(f"{g}: gds/{TOP}.gds is not the GDS it checked "
                                "(run blocks/pll/tt/assemble.py after the harden)")
+                continue
+            if kind in TOOL_ONLY:
                 continue
             if kind not in KINDS:
                 bad.append(f"{g}: input {kind} is not one this check knows how to hash")

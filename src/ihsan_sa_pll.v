@@ -8,7 +8,12 @@
 // cells (must_keep u_clk_fb_obuf/u_obs_obuf): both are clock nets the
 // resizer never repairs, and a buf_1 port buffer left them at 3.48 ns slew
 // at ss. The PFD's clk_fb pin has its own net (clk_fb_int), off the port
-// load. In simulation the buffers are plain assigns.
+// load. pfd_up and pfd_dn leave the same way (u_pfd_up_obuf/u_pfd_dn_obuf):
+// they drive the macro's pump pins, about 34 fF, and read 0.84/0.78 ns at ss
+// behind what repair inserts, against the macro's 0.5 ns limit. Their buffers
+// sit after the recovery override, outside the PFD's reset loop (which reads
+// the flop outputs), and the lock detector stays on the unbuffered nets. In
+// simulation the buffers are plain assigns.
 `default_nettype none
 module ihsan_sa_pll (
     input  wire       clk,
@@ -38,6 +43,8 @@ module ihsan_sa_pll (
   wire pfd_up_q;
   wire pfd_dn_q;
   wire recover;
+  wire pfd_up_int;
+  wire pfd_dn_int;
 
   pll_prescaler u_pre (
       .vco_div2(vco_div2), .rst_n(rst_n), .clk_pre(clk_pre), .obs_q3(obs_q3));
@@ -50,12 +57,12 @@ module ihsan_sa_pll (
       .pfd_up(pfd_up_q), .pfd_dn(pfd_dn_q));
 
   // recovery holds the pump in DN (REQ-RECOVER)
-  assign pfd_up = pfd_up_q & ~recover;
-  assign pfd_dn = pfd_dn_q | recover;
+  assign pfd_up_int = pfd_up_q & ~recover;
+  assign pfd_dn_int = pfd_dn_q | recover;
 
   pll_lock_det u_lock (
-      .clk(clk), .rst_n(rst_n), .pll_en(pll_en), .pfd_up(pfd_up),
-      .pfd_dn(pfd_dn), .lock(lock), .recover(recover));
+      .clk(clk), .rst_n(rst_n), .pll_en(pll_en), .pfd_up(pfd_up_int),
+      .pfd_dn(pfd_dn_int), .lock(lock), .recover(recover));
 
   pll_ctrl_regs u_ctrl (
       .clk(clk), .rst_n(rst_n), .pll_en_in(pll_en_in),
@@ -67,16 +74,22 @@ module ihsan_sa_pll (
 
 `ifdef FORMAL
   // yosys defines SYNTHESIS for formal too; a blackbox buffer there would
-  // leave clk_fb and obs_out as free outputs
+  // leave the buffered outputs free
   assign clk_fb  = clk_fb_int;
   assign obs_out = obs_int;
+  assign pfd_up  = pfd_up_int;
+  assign pfd_dn  = pfd_dn_int;
   assign recover_fv = recover;
 `elsif SYNTHESIS
   (* keep *) gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 u_clk_fb_obuf (.I(clk_fb_int), .Z(clk_fb));
   (* keep *) gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 u_obs_obuf    (.I(obs_int),    .Z(obs_out));
+  (* keep *) gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 u_pfd_up_obuf (.I(pfd_up_int), .Z(pfd_up));
+  (* keep *) gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 u_pfd_dn_obuf (.I(pfd_dn_int), .Z(pfd_dn));
 `else
   assign clk_fb  = clk_fb_int;
   assign obs_out = obs_int;
+  assign pfd_up  = pfd_up_int;
+  assign pfd_dn  = pfd_dn_int;
 `endif
 endmodule
 `default_nettype wire
