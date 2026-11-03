@@ -25,8 +25,8 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "spec_yaml": "json_canonical:a41e316030dd3123f204a82ec9d3aa85d86f6101f2b4480d6e352d55959f3e1e"
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
  },
- "recorded_ts": "2026-11-02T12:09:50",
- "attempts": 16
+ "recorded_ts": "2026-11-03T02:56:11",
+ "attempts": 17
 }

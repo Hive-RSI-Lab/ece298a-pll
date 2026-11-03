@@ -65,6 +65,11 @@ WINDOW_NS = 10_000.0                             # final settling window
 # small-signal + slewing), the bound is 50 us; the run must leave a full
 # 10 us window after lock. Overridable for exploration only.
 DURATION_NS = float(os.environ.get("PLL_COSIM_DURATION_NS", "30000"))
+# REQ-LOOP-RELOCK: at DURATION_NS the gate's own run steps N 2 -> 3 (100 -> 150 MHz
+# at the same f_ref) and runs this much longer. Every other measure stays on the
+# run before the step. The corner runs (PLL_COSIM_SETUP) don't step.
+RELOCK_NS = 20_000.0
+RELOCK_N_SEL = 3
 # Bridge fallback sync: bounds both the D->A latency of a reference-edge
 # PFD transition (applied at the next sync) and how early the bridge forces
 # a vco_div2 edge (at the previous sync) to 1 ns, 0.6 % of T_ref.
@@ -319,23 +324,40 @@ async def test_pll_lock_nominal(dut):
     cocotb.start_soon(sample_vctrl_at_ref())
     cocotb.start_soon(release())
 
+    relock_ns = 0.0 if setup else RELOCK_NS
+
+    async def step_n():
+        await Timer(DURATION_NS - cocotb.utils.get_sim_time(unit="ns"), unit="ns")
+        dut.n_sel.value = RELOCK_N_SEL
+
+    if relock_ns:
+        cocotb.start_soon(step_n())
+
     wall0 = time.monotonic()
     err = None
     try:
         vcd = os.environ.get("PLL_COSIM_ANALOG_VCD")  # debug only
-        await bridge.start(duration_ns=DURATION_NS, analog_vcd=vcd or None,
+        await bridge.start(duration_ns=DURATION_NS + relock_ns, analog_vcd=vcd or None,
                            vcd_nodes=["x1.vctrl"] + DEBUG_NODES if vcd else None)
     except Exception as exc:  # noqa: BLE001 - recorded, re-raised below
         err = exc
     finally:
         wall_s = time.monotonic() - wall0
         spice_ns = bridge._last_sync_spice_time * 1e9
-        t_end = min(spice_ns, cocotb.utils.get_sim_time(unit="ns"))
+        t_reached = min(spice_ns, cocotb.utils.get_sim_time(unit="ns"))
+        t_end = min(t_reached, DURATION_NS)
+        # a drop, then the last rise, then still high at the end of the run
+        drop_after = [t for t in lock.falls if t > DURATION_NS]
+        rise_after = [t for t in lock.rises if t > DURATION_NS]
+        relocked = (relock_ns and t_reached >= DURATION_NS + relock_ns - MAX_SYNC_NS
+                    and drop_after
+                    and rise_after and rise_after[-1] > drop_after[-1])
+        relock_time_us = ((rise_after[-1] - DURATION_NS) / 1000.0 if relocked else None)
         t_en = en.rises[0] if en.rises else None
         t_lock = lock.rises[0] if lock.rises else None
         lock_time_us = ((t_lock - t_en) / 1000.0
                         if t_lock is not None and t_en is not None else None)
-        drops = (sum(1 for t in lock.falls if t > t_lock)
+        drops = (sum(1 for t in lock.falls if t_lock < t <= DURATION_NS)
                  if t_lock is not None else None)
         # final window: the last 10 us, never reaching back before lock
         w0 = t_end - WINDOW_NS
@@ -365,6 +387,10 @@ async def test_pll_lock_nominal(dut):
                                 "cp_trim": "00", "corner": corner, "vdd": vdd},
             "lock_time_us": lock_time_us,
             "lock_drops_after_lock": drops,
+            "relock_time_us": relock_time_us,
+            "relock_n_sel": [C.N_SEL, RELOCK_N_SEL] if relock_ns else None,
+            "lock_rises_ns": list(lock.rises),
+            "lock_falls_ns": list(lock.falls),
             "fb_period_rel_err": rel_err(fb_t, T_REF_NS),
             "vco_period_rel_err": rel_err(vco_t, T_VCO_NS),
             "vctrl_pp_last_10us_mv": ((max(vc_w) - min(vc_w)) * 1000.0
@@ -411,6 +437,9 @@ async def test_pll_lock_nominal(dut):
     assert lock_time_us is not None, "lock never asserted"
     assert lock_time_us <= 50, f"lock took {lock_time_us:.2f} us (> 50 us)"
     assert drops == 0, f"lock dropped {drops} time(s) after it first rose"
+    if relock_ns:
+        assert relock_time_us is not None, "lock did not drop and rise again after the N step"
+        assert relock_time_us <= 50, f"relock took {relock_time_us:.2f} us (> 50 us)"
     assert locked_window, "the final 10 us window does not start after lock"
     assert measures["fb_period_rel_err"] <= 1e-3, (
         f"clk_fb period off by {measures['fb_period_rel_err']:.2e}")
