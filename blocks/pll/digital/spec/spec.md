@@ -111,7 +111,9 @@ Top-level glue (no module): `obs_out` = `obs_sel` ? `obs_q3` : `clk_pre`
 (a plain mux on a quasi-static select; `obs_sel` changes are not
 glitch-protected), the recovery override `pfd_up` = `pfd_ref_q` AND NOT
 `recover`, `pfd_dn` = `pfd_fb_q` OR `recover` (the lock detector samples
-these, so a recovery is never clean), and the port fan-out of `clk_fb`, `pfd_up`, `pfd_dn`,
+these, so a recovery is never clean; it reads them before the port drivers
+`u_pfd_up_obuf`/`u_pfd_dn_obuf`, kept `clkbuf_8` cells that drive the pump pins,
+outside the PFD's reset loop), and the port fan-out of `clk_fb`, `pfd_up`, `pfd_dn`,
 `lock` and the control registers.
 
 Signals crossing between instances:

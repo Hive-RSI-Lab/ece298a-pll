@@ -3,7 +3,7 @@
  "gate": "release",
  "phase": "P8",
  "tool": "release",
- "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+ "input_digest": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -21,7 +21,7 @@
  "violations": [],
  "facts": {
   "attestation": "reports/checks.json",
-  "attestation_sha256": "ec3d9535d7186d45700f97b46fb03d2d5f5316d45d6f054015172f6b94116421",
+  "attestation_sha256": "95199ed349742dc69913a0b5b57d51260c522fe6ff82ea9bdf72dd3450d87b05",
   "disposition": "gates-green",
   "waived": [],
   "tt_submission": {
@@ -58,13 +58,13 @@
     "librelane_pdk": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
     "tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
     "gds": "harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
-    "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+    "gds_sha256": "d4f4fdcd8c80324fb28877bfb5e4ba00ace8815b9283c9349b467a8aaf5f8f58",
     "lef": "harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
-    "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+    "lef_sha256": "9d9462a8a5d101553e31ba535ea066f7b1d6c86ecbafa5ca250d6ecf20a0179c",
     "gl": "harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
-    "gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
+    "gl_sha256": "6fa4214d8ebbaa78eed8ded3b39ac1dc1c812aec98e277b20c104a724d8a095e",
     "gl_is_shipped": true,
-    "glsim_gl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+    "glsim_gl_sha256": "6fa4214d8ebbaa78eed8ded3b39ac1dc1c812aec98e277b20c104a724d8a095e"
    },
    "shipped": [
     {
@@ -74,12 +74,12 @@
      "top_module": "tt_um_ihsan_sa_pll",
      "pdk": "gf180mcuD",
      "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
-     "gds_sha256": "9a2d5802944235ae36068220488dcf12fe1dbecf2465a60a733eff38dc28ebc5",
+     "gds_sha256": "d4f4fdcd8c80324fb28877bfb5e4ba00ace8815b9283c9349b467a8aaf5f8f58",
      "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
-     "lef_sha256": "82a89fdc8d1efa024f3232517be4485cef0835fc7386093c2fab05b3eb5ff592",
+     "lef_sha256": "9d9462a8a5d101553e31ba535ea066f7b1d6c86ecbafa5ca250d6ecf20a0179c",
      "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
-     "verilog_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606",
-     "glsim_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+     "verilog_sha256": "6fa4214d8ebbaa78eed8ded3b39ac1dc1c812aec98e277b20c104a724d8a095e",
+     "glsim_sha256": "6fa4214d8ebbaa78eed8ded3b39ac1dc1c812aec98e277b20c104a724d8a095e"
     }
    ]
   },
@@ -170,7 +170,7 @@
     "source": "timing.corners.max_tt_025C_3v30.setup_ws",
     "min": 0,
     "note": "worst slack over every clock, a lower bound on this one",
-    "value": 2.74,
+    "value": 2.96,
     "status": "pass",
     "why": ""
    },
@@ -180,7 +180,7 @@
     "source": "timing.corners.max_ss_125C_3v00.setup_ws",
     "min": 0,
     "note": "worst slack over every clock at the slowest corner, a lower bound on this one",
-    "value": 2.34,
+    "value": 2.75,
     "status": "pass",
     "why": ""
    },
@@ -190,7 +190,7 @@
     "source": "timing.corners.max_ss_125C_3v00.setup_ws",
     "min": 0,
     "note": "worst slack over every clock; the ss worst path is the first stage's toggle loop. The 2x-ceiling period itself is checked by tests/score.py against constraints.sdc, and min period and min pulse width by the timing gate's own pass",
-    "value": 2.34,
+    "value": 2.75,
     "status": "pass",
     "why": ""
    },
@@ -199,7 +199,7 @@
     "name": "setup_ws_tt",
     "source": "timing.corners.max_tt_025C_3v30.setup_ws",
     "min": 0,
-    "value": 2.74,
+    "value": 2.96,
     "status": "pass",
     "why": ""
    },
@@ -208,7 +208,7 @@
     "name": "setup_ws_ff",
     "source": "timing.corners.max_ff_n40C_3v60.setup_ws",
     "min": 0,
-    "value": 3.79,
+    "value": 3.92,
     "status": "pass",
     "why": ""
    },
@@ -217,7 +217,7 @@
     "name": "hold_ws_ff",
     "source": "timing.corners.min_ff_n40C_3v60.hold_ws",
     "min": 0,
-    "value": 0.51,
+    "value": 0.49,
     "status": "pass",
     "why": ""
    },
@@ -251,10 +251,10 @@
   ]
  },
  "inputs_at_start": {
-  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
-  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+  "harden": "harden_signoff:2889c1d1f8c2eaa94228ac92026ed131df8b2cb79b736a47f3194d655aab0961",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
  },
- "recorded_ts": "2026-11-01T12:43:44",
- "attempts": 2
+ "recorded_ts": "2026-11-03T07:53:15",
+ "attempts": 3
 }

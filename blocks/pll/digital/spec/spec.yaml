@@ -196,10 +196,11 @@ design_choices:
   recover_why: "W x T_ref is 82 us at 12.5 MHz, past the 50 us lock-time bound, so a loop that is acquiring is never cut short; 128 periods of DN (10 us at 12.5 MHz) take Vctrl from the rail to ground at the weakest pump current (13.6 uA into 22 pF is 5.3 us)"
 
 # Instance names of the two hand-instantiated PFD reset delay cells inside
-# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1) and the port clock
-# buffers. Everything else in the design reaches a port and cannot be pruned
+# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1), the port clock
+# buffers and the pump-pin drivers on pfd_up/pfd_dn. Everything else in the
+# design reaches a port and cannot be pruned
 # as unused. See spec.md "## Architecture" for the module and instance naming.
-must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf]
+must_keep: [pfd_dly0, pfd_dly1, u_clk_fb_obuf, u_obs_obuf, u_pfd_up_obuf, u_pfd_dn_obuf]
 
 # Formal depths (P3 property-writer): prove depth covers the 16-cycle lock
 # history window; cover_depth reaches lock (16 ref cycles) and an N=5 clk_fb

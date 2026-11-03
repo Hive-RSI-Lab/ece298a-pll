@@ -3,7 +3,7 @@
  "gate": "holdout",
  "phase": "P4",
  "tool": "holdout",
- "input_digest": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+ "input_digest": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -33,10 +33,10 @@
   "tests_passed": 7
  },
  "inputs_at_start": {
-  "rtl": "dir_text:8ab713834709240157f344d159d8f815e1e799bfaee2816c5c2ee7e46c3361ee",
+  "rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
   "holdout": "dir_text:5e1112744e33009723c99d3ca3066e3b562e46f8593959accbf32520714fec8b",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2"
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:eb5c9843c0cc6ab34ab5dcb4b60a0f10b368d6bf90b0f5b61970bd3cf8468200"
  },
- "recorded_ts": "2026-11-01T12:27:28",
- "attempts": 15
+ "recorded_ts": "2026-11-03T05:20:40",
+ "attempts": 16
 }
