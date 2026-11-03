@@ -4,7 +4,7 @@
  "phase": "P4",
  "tool": "bench_strength",
  "input_digest": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
- "status": "fail",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,479 +12,16 @@
   "max_count": 0
  },
  "counts": {
-  "total": 56,
+  "total": 39,
   "by_severity": {
-   "info": 33,
-   "error": 23
+   "info": 39
   },
   "by_source": {
-   "mutant_rulings": 33,
-   "netlistlib": 23
+   "mutant_rulings": 39
   }
  },
- "failing_count": 23,
- "failing": [
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DA"
-   ],
-   "msg": "mutant xMN_DA_size_doubled_w (xMN_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DA_size_doubled_w (xMN_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DB"
-   ],
-   "msg": "mutant xMN_DB_connection_removed (xMN_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DB_connection_removed (xMN_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DB"
-   ],
-   "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DC"
-   ],
-   "msg": "mutant xMN_DC_connection_removed (xMN_DC: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DC_connection_removed (xMN_DC: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DD"
-   ],
-   "msg": "mutant xMN_DD_connection_removed (xMN_DD: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DD_connection_removed (xMN_DD: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DE"
-   ],
-   "msg": "mutant xMN_DE_size_doubled_w (xMN_DE: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DE_size_doubled_w (xMN_DE: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMN_DE"
-   ],
-   "msg": "mutant xMN_DE_type_flipped (xMN_DE: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DE_type_flipped (xMN_DE: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_connection_removed (xMN_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_connection_removed (xMN_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_size_doubled_w (xMN_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_size_doubled_w (xMN_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_type_flipped (xMN_DO1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_type_flipped (xMN_DO1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DO2"
-   ],
-   "msg": "mutant xMN_DO2_connection_removed (xMN_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO2_connection_removed (xMN_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DO2"
-   ],
-   "msg": "mutant xMN_DO2_size_doubled_w (xMN_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO2_size_doubled_w (xMN_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_UPI"
-   ],
-   "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DA"
-   ],
-   "msg": "mutant xMP_DA_size_doubled_w (xMP_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DA_size_doubled_w (xMP_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DB"
-   ],
-   "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMP_DC"
-   ],
-   "msg": "mutant xMP_DC_type_flipped (xMP_DC: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DC_type_flipped (xMP_DC: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DD"
-   ],
-   "msg": "mutant xMP_DD_connection_removed (xMP_DD: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DD_connection_removed (xMP_DD: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DO1"
-   ],
-   "msg": "mutant xMP_DO1_connection_removed (xMP_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO1_connection_removed (xMP_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DO1"
-   ],
-   "msg": "mutant xMP_DO1_size_doubled_w (xMP_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO1_size_doubled_w (xMP_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_connection_removed (xMP_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_connection_removed (xMP_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_size_doubled_w (xMP_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_size_doubled_w (xMP_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_type_flipped (xMP_DO2: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_type_flipped (xMP_DO2: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DR"
-   ],
-   "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
  "violations": [
   {
    "check": "bench_strength",
@@ -528,239 +65,19 @@
   },
   {
    "check": "bench_strength",
-   "severity": "error",
+   "severity": "info",
    "file": null,
    "module": null,
    "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DA"
-   ],
-   "msg": "mutant xMN_DA_size_doubled_w (xMN_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DA_size_doubled_w (xMN_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
+   "kind": "below_spread_size_doubled",
    "refs": [
     "xMN_DB"
    ],
-   "msg": "mutant xMN_DB_connection_removed (xMN_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
+   "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_r_ns moved +0.01024 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_DB_connection_removed (xMN_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DB"
-   ],
-   "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DC"
-   ],
-   "msg": "mutant xMN_DC_connection_removed (xMN_DC: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DC_connection_removed (xMN_DC: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DD"
-   ],
-   "msg": "mutant xMN_DD_connection_removed (xMN_DD: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DD_connection_removed (xMN_DD: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DE"
-   ],
-   "msg": "mutant xMN_DE_size_doubled_w (xMN_DE: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DE_size_doubled_w (xMN_DE: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMN_DE"
-   ],
-   "msg": "mutant xMN_DE_type_flipped (xMN_DE: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DE_type_flipped (xMN_DE: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_connection_removed (xMN_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_connection_removed (xMN_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_size_doubled_w (xMN_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_size_doubled_w (xMN_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMN_DO1"
-   ],
-   "msg": "mutant xMN_DO1_type_flipped (xMN_DO1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO1_type_flipped (xMN_DO1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMN_DO2"
-   ],
-   "msg": "mutant xMN_DO2_connection_removed (xMN_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO2_connection_removed (xMN_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMN_DO2"
-   ],
-   "msg": "mutant xMN_DO2_size_doubled_w (xMN_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMN_DO2_size_doubled_w (xMN_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+     "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_r_ns moved +0.01024 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -961,6 +278,26 @@
    "items": [
     {
      "msg": "mutant xMN_ENV_size_doubled_w (xMN_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001854 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_connection_removed",
+   "refs": [
+    "xMN_I4"
+   ],
+   "msg": "mutant xMN_I4_connection_removed (xMN_I4: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01251 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMN_I4_connection_removed (xMN_I4: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01251 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1188,19 +525,19 @@
   },
   {
    "check": "bench_strength",
-   "severity": "error",
+   "severity": "info",
    "file": null,
    "module": null,
    "line": null,
-   "kind": "survivor_size_doubled",
+   "kind": "below_spread_size_doubled",
    "refs": [
     "xMN_UPI"
    ],
-   "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
+   "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived and is accepted as below process spread by ruling (a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01): cp_overlap_net_charge_fc moved +0.0199 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+     "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived and is accepted as below process spread by ruling (a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01): cp_overlap_net_charge_fc moved +0.0199 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1208,39 +545,19 @@
   },
   {
    "check": "bench_strength",
-   "severity": "error",
+   "severity": "info",
    "file": null,
    "module": null,
    "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DA"
-   ],
-   "msg": "mutant xMP_DA_size_doubled_w (xMP_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DA_size_doubled_w (xMP_DA: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
+   "kind": "below_spread_connection_removed",
    "refs": [
     "xMP_DB"
    ],
-   "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
+   "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_out_tf_ns moved -0.007622 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+     "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_out_tf_ns moved -0.007622 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1248,159 +565,19 @@
   },
   {
    "check": "bench_strength",
-   "severity": "error",
+   "severity": "info",
    "file": null,
    "module": null,
    "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMP_DC"
-   ],
-   "msg": "mutant xMP_DC_type_flipped (xMP_DC: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DC_type_flipped (xMP_DC: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DD"
-   ],
-   "msg": "mutant xMP_DD_connection_removed (xMP_DD: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DD_connection_removed (xMP_DD: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DO1"
-   ],
-   "msg": "mutant xMP_DO1_connection_removed (xMP_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO1_connection_removed (xMP_DO1: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DO1"
-   ],
-   "msg": "mutant xMP_DO1_size_doubled_w (xMP_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO1_size_doubled_w (xMP_DO1: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_connection_removed",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_connection_removed (xMP_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_connection_removed (xMP_DO2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_size_doubled_w (xMP_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_size_doubled_w (xMP_DO2: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_type_flipped",
-   "refs": [
-    "xMP_DO2"
-   ],
-   "msg": "mutant xMP_DO2_type_flipped (xMP_DO2: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
-   "items": [
-    {
-     "msg": "mutant xMP_DO2_type_flipped (xMP_DO2: pfet_03v3 -> nfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "bench_strength",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "survivor_size_doubled",
+   "kind": "below_spread_size_doubled",
    "refs": [
     "xMP_DR"
    ],
-   "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
-   "source": "netlistlib",
+   "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_f_ns moved +0.006018 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+     "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_f_ns moved +0.006018 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1556,11 +733,11 @@
    "refs": [
     "xMP_G2"
    ],
-   "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01671 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.017 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01671 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.017 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1576,11 +753,31 @@
    "refs": [
     "xMP_G2"
    ],
-   "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01883 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01534 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01883 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01534 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_connection_removed",
+   "refs": [
+    "xMP_I3"
+   ],
+   "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01554 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01554 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -1610,22 +807,24 @@
  "facts": {
   "top": "pll_analog",
   "total_mutants": 295,
-  "killed": 239,
-  "survived": 56,
+  "killed": 256,
+  "survived": 39,
+  "reused_mutants": 295,
   "devices_total": 101,
   "devices_mutated": 101,
   "unmutated": [],
-  "killed_by_sensitivity": 90,
+  "killed_by_sensitivity": 89,
   "killed_by_sensitivity_kind": {
-   "relative": 90,
+   "relative": 89,
    "absolute": 0
   },
   "equivalent": 0,
-  "below_spread": 33,
+  "below_spread": 39,
   "equivalent_ids": [],
   "below_spread_ids": [
    "xMN_B2_size_doubled_w",
    "xMN_BUFT_size_doubled_w",
+   "xMN_DB_size_doubled_w",
    "xMN_ENA_size_doubled_w",
    "xMN_ENB_connection_removed",
    "xMN_ENB_size_doubled_w",
@@ -1636,6 +835,7 @@
    "xMN_ENS_size_doubled_w",
    "xMN_ENV_connection_removed",
    "xMN_ENV_size_doubled_w",
+   "xMN_I4_connection_removed",
    "xMN_STD_size_doubled_w",
    "xMN_STE_size_doubled_w",
    "xMN_ST_size_doubled_w",
@@ -1647,6 +847,9 @@
    "xMN_SW1B_size_doubled_w",
    "xMN_SW1_connection_removed",
    "xMN_SW1_size_doubled_w",
+   "xMN_UPI_size_doubled_w",
+   "xMP_DB_connection_removed",
+   "xMP_DR_size_doubled_w",
    "xMP_ENB_connection_removed",
    "xMP_ENB_size_doubled_w",
    "xMP_ENI_size_doubled_w",
@@ -1656,13 +859,14 @@
    "xMP_ENV_size_doubled_w",
    "xMP_G2_connection_removed",
    "xMP_G2_size_doubled_w",
+   "xMP_I3_connection_removed",
    "xMP_STL_size_doubled_w"
   ],
   "bench_order": [
-   "pll_analog_presc_tb.cir",
    "pll_analog_cp_tb.cir",
    "pll_analog_pwr_tb.cir",
    "pll_analog_ol_tb.cir",
+   "pll_analog_presc_tb.cir",
    "pll_analog_overlap_tb.cir",
    "pll_analog_vco_tb.cir",
    "pll_analog_startup_tb.cir"
@@ -1672,13 +876,13 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xC1: last terminal disconnected",
-    "killed_by": "pll_analog_presc_tb.cir"
+    "killed_by": "pll_analog_cp_tb.cir"
    },
    "xC2_connection_removed": {
     "kind": "connection_removed",
     "killed": true,
     "describe": "xC2: last terminal disconnected",
-    "killed_by": "pll_analog_presc_tb.cir"
+    "killed_by": "pll_analog_cp_tb.cir"
    },
    "xMN_B1_connection_removed": {
     "kind": "connection_removed",
@@ -1731,17 +935,23 @@
      "ol_pm_pn16_pad5p_deg": 0.001409,
      "ol_pm_pn40_nopad_deg": 0.00327,
      "ol_pm_pn8_nopad_deg": 0.000343,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -3.6e-05,
+     "presc_duty_pct": 0.000359,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000402,
      "standby_current_ua": 0.00015,
      "startup_time_us": -0.011298,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
-     "vco_fmax_ff_mhz": 0.001559,
-     "vco_fmax_tt_mhz": 0.001199,
-     "vco_fmin_tt_mhz": 0.00135,
-     "vco_kvco_mhz_per_v": 0.001194,
-     "vco_out_duty_pct": 3.7e-05,
-     "vco_out_swing_pct_vdd": 6e-05,
-     "vco_out_tf_ns": -0.000154,
-     "vco_out_tr_ns": -0.001965,
+     "vco_df_dv_min_mhz_per_v": 0.000206,
+     "vco_fmax_ff_mhz": 0.001481,
+     "vco_fmax_tt_mhz": 0.001237,
+     "vco_fmin_tt_mhz": 0.00127,
+     "vco_kvco_mhz_per_v": 0.001236,
+     "vco_out_duty_pct": 5.9e-05,
+     "vco_out_swing_pct_vdd": 5e-05,
+     "vco_out_tf_ns": 0.000751,
+     "vco_out_tr_ns": -0.001232,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1903,17 +1113,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000623,
      "ol_pm_pn40_nopad_deg": 0.00145,
      "ol_pm_pn8_nopad_deg": 0.000135,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -0.000145,
+     "presc_tf_ns": -0.000732,
+     "presc_tr_ns": 0.000134,
      "standby_current_ua": 3.9e-05,
      "startup_time_us": 0.011458,
-     "vco_df_dv_min_mhz_per_v": 7.1e-05,
-     "vco_fmax_ff_mhz": 0.000123,
-     "vco_fmax_tt_mhz": 1.9e-05,
-     "vco_fmin_tt_mhz": 4e-06,
-     "vco_kvco_mhz_per_v": 2.1e-05,
-     "vco_out_duty_pct": 6e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -8.8e-05,
-     "vco_out_tr_ns": -0.000393,
+     "vco_df_dv_min_mhz_per_v": 0.000364,
+     "vco_fmax_ff_mhz": -8e-06,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 3.7e-05,
+     "vco_kvco_mhz_per_v": -2e-06,
+     "vco_out_duty_pct": 4e-06,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": -0.000188,
+     "vco_out_tr_ns": 0.000104,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2000,104 +1216,38 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_DA: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tf_ns",
-     "delta": -0.043766,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DA_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DA: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000617,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 1e-05,
-     "ol_pm_pn16_nopad_deg": 4e-06,
-     "ol_pm_pn16_nopad_pvt_deg": 4e-06,
-     "ol_pm_pn16_pad5p_deg": 3e-06,
-     "ol_pm_pn40_nopad_deg": 6e-06,
-     "ol_pm_pn8_nopad_deg": 0.0,
-     "standby_current_ua": 0.0,
-     "startup_time_us": -3.4e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000276,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 8.2e-05,
-     "vco_kvco_mhz_per_v": -2e-06,
-     "vco_out_duty_pct": 2e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -0.000794,
-     "vco_out_tr_ns": 0.000786,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.0,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.031834,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMN_DA_type_flipped": {
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMN_DA: nfet_03v3 -> pfet_03v3",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.032809,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DB_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DB: bulk disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": -1.3e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.003335,
-     "ol_pm_pn16_nopad_deg": 0.00108,
-     "ol_pm_pn16_nopad_pvt_deg": 0.00108,
-     "ol_pm_pn16_pad5p_deg": 0.000758,
-     "ol_pm_pn40_nopad_deg": 0.001757,
-     "ol_pm_pn8_nopad_deg": 0.000184,
-     "standby_current_ua": -0.011514,
-     "startup_time_us": -5.2e-05,
-     "vco_df_dv_min_mhz_per_v": -7.1e-05,
-     "vco_fmax_ff_mhz": 4e-06,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1.9e-05,
-     "vco_kvco_mhz_per_v": 0.0,
-     "vco_out_duty_pct": -3.2e-05,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.002161,
-     "vco_out_tr_ns": 0.004322,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -1.765e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.021979,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMN_DB_size_doubled_w": {
@@ -2120,17 +1270,23 @@
      "ol_pm_pn16_pad5p_deg": -0.000576,
      "ol_pm_pn40_nopad_deg": -0.001298,
      "ol_pm_pn8_nopad_deg": -0.000135,
+     "presc_ckq_f_ns": 0.000264,
+     "presc_ckq_r_ns": 0.010244,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.000702,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": 0.000134,
      "standby_current_ua": 0.00028,
      "startup_time_us": -8.9e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000198,
-     "vco_fmax_ff_mhz": 4e-06,
-     "vco_fmax_tt_mhz": 8e-06,
-     "vco_fmin_tt_mhz": 6.1e-05,
-     "vco_kvco_mhz_per_v": 7e-06,
+     "vco_df_dv_min_mhz_per_v": 0.000151,
+     "vco_fmax_ff_mhz": 0.0,
+     "vco_fmax_tt_mhz": -4e-06,
+     "vco_fmin_tt_mhz": 6.9e-05,
+     "vco_kvco_mhz_per_v": -8e-06,
      "vco_out_duty_pct": 7e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -0.000485,
-     "vco_out_tr_ns": -0.003143,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": 4.7e-05,
+     "vco_out_tr_ns": -0.002067,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2147,52 +1303,19 @@
    },
    "xMN_DC_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DC: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000155,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.00489,
-     "ol_pm_pn16_nopad_deg": 0.001582,
-     "ol_pm_pn16_nopad_pvt_deg": 0.001582,
-     "ol_pm_pn16_pad5p_deg": 0.00111,
-     "ol_pm_pn40_nopad_deg": 0.002576,
-     "ol_pm_pn8_nopad_deg": 0.00027,
-     "standby_current_ua": -0.000705,
-     "startup_time_us": -3.3e-05,
-     "vco_df_dv_min_mhz_per_v": -0.00024,
-     "vco_fmax_ff_mhz": 0.000142,
-     "vco_fmax_tt_mhz": 0.000144,
-     "vco_fmin_tt_mhz": 5.9e-05,
-     "vco_kvco_mhz_per_v": 0.000147,
-     "vco_out_duty_pct": -0.000148,
-     "vco_out_swing_pct_vdd": -2e-05,
-     "vco_out_tf_ns": 0.001543,
-     "vco_out_tr_ns": -0.019646,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -1.08e-07,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DC_size_doubled_w": {
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMN_DC: w doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_presc_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": 0.074263,
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.058408,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2201,63 +1324,30 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMN_DC: nfet_03v3 -> pfet_03v3",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.05776,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DD_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DD: bulk disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.002074,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002839,
-     "ol_pm_pn16_nopad_deg": 0.000919,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000919,
-     "ol_pm_pn16_pad5p_deg": 0.000646,
-     "ol_pm_pn40_nopad_deg": 0.001494,
-     "ol_pm_pn8_nopad_deg": 0.000157,
-     "standby_current_ua": 0.020796,
-     "startup_time_us": 1e-06,
-     "vco_df_dv_min_mhz_per_v": -0.000141,
-     "vco_fmax_ff_mhz": 1.2e-05,
-     "vco_fmax_tt_mhz": 1.2e-05,
-     "vco_fmin_tt_mhz": 3e-06,
-     "vco_kvco_mhz_per_v": 1.2e-05,
-     "vco_out_duty_pct": 1.7e-05,
-     "vco_out_swing_pct_vdd": -0.0022,
-     "vco_out_tf_ns": -0.00194,
-     "vco_out_tr_ns": 0.002947,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 3.188e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.031612,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMN_DD_size_doubled_w": {
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMN_DD: w doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_presc_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tf_ns",
-     "delta": 0.052034,
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.066855,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2272,92 +1362,26 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_DE: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DE_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DE: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.089587,
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.084936,
      "sensitivity": 0.02,
      "kind": "relative"
     }
    },
-   "xMN_DE_size_doubled_w": {
-    "kind": "size_doubled",
-    "killed": false,
-    "describe": "xMN_DE: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": -0.000285,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002209,
-     "ol_pm_pn16_nopad_deg": 0.000714,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000714,
-     "ol_pm_pn16_pad5p_deg": 0.000502,
-     "ol_pm_pn40_nopad_deg": 0.001162,
-     "ol_pm_pn8_nopad_deg": 0.000123,
-     "standby_current_ua": 0.0,
-     "startup_time_us": -8.3e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000106,
-     "vco_fmax_ff_mhz": 2.7e-05,
-     "vco_fmax_tt_mhz": 8e-06,
-     "vco_fmin_tt_mhz": 9e-06,
-     "vco_kvco_mhz_per_v": 9e-06,
-     "vco_out_duty_pct": 7e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -0.00022,
-     "vco_out_tr_ns": -0.000393,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.0,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
-   },
    "xMN_DE_type_flipped": {
     "kind": "type_flipped",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DE: nfet_03v3 -> pfet_03v3",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.00039,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002153,
-     "ol_pm_pn16_nopad_deg": 0.000696,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000696,
-     "ol_pm_pn16_pad5p_deg": 0.000487,
-     "ol_pm_pn40_nopad_deg": 0.001134,
-     "ol_pm_pn8_nopad_deg": 0.000119,
-     "standby_current_ua": -0.008004,
-     "startup_time_us": -2.4e-05,
-     "vco_df_dv_min_mhz_per_v": -2.1e-05,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": -4e-06,
-     "vco_fmin_tt_mhz": 2.7e-05,
-     "vco_kvco_mhz_per_v": -4e-06,
-     "vco_out_duty_pct": -1.7e-05,
-     "vco_out_swing_pct_vdd": -2e-05,
-     "vco_out_tf_ns": -0.011178,
-     "vco_out_tr_ns": -0.010216,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -1.227e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DND_connection_removed": {
     "kind": "connection_removed",
@@ -2468,197 +1492,46 @@
    },
    "xMN_DO1_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DO1: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 8.4e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.000458,
-     "ol_pm_pn16_nopad_deg": 0.000149,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000149,
-     "ol_pm_pn16_pad5p_deg": 0.000106,
-     "ol_pm_pn40_nopad_deg": 0.000241,
-     "ol_pm_pn8_nopad_deg": 2.5e-05,
-     "standby_current_ua": -0.035147,
-     "startup_time_us": -5.3e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000255,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 7.9e-05,
-     "vco_kvco_mhz_per_v": -2e-06,
-     "vco_out_duty_pct": 2e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -5.388e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DO1_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DO1: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000139,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000628,
-     "ol_pm_pn16_nopad_deg": -0.000203,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000203,
-     "ol_pm_pn16_pad5p_deg": -0.000144,
-     "ol_pm_pn40_nopad_deg": -0.000332,
-     "ol_pm_pn8_nopad_deg": -3.4e-05,
-     "standby_current_ua": 0.0,
-     "startup_time_us": -1.6e-05,
-     "vco_df_dv_min_mhz_per_v": -1.4e-05,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": -4e-06,
-     "vco_fmin_tt_mhz": 1.3e-05,
-     "vco_kvco_mhz_per_v": -4e-06,
-     "vco_out_duty_pct": 6e-06,
-     "vco_out_swing_pct_vdd": 1e-05,
-     "vco_out_tf_ns": 0.00011,
-     "vco_out_tr_ns": -0.000196,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.0,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.125492,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMN_DO1_type_flipped": {
     "kind": "type_flipped",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DO1: nfet_03v3 -> pfet_03v3",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.0,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000966,
-     "ol_pm_pn16_nopad_deg": -0.000312,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000312,
-     "ol_pm_pn16_pad5p_deg": -0.000226,
-     "ol_pm_pn40_nopad_deg": -0.000509,
-     "ol_pm_pn8_nopad_deg": -5.2e-05,
-     "standby_current_ua": 0.93754,
-     "startup_time_us": -4.3e-05,
-     "vco_df_dv_min_mhz_per_v": -9.9e-05,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 4.5e-05,
-     "vco_kvco_mhz_per_v": -1e-06,
-     "vco_out_duty_pct": 4e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.000143723,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DO2_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DO2: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 8.4e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.00545,
-     "ol_pm_pn16_nopad_deg": 0.001763,
-     "ol_pm_pn16_nopad_pvt_deg": 0.001763,
-     "ol_pm_pn16_pad5p_deg": 0.001236,
-     "ol_pm_pn40_nopad_deg": 0.002872,
-     "ol_pm_pn8_nopad_deg": 0.000301,
-     "standby_current_ua": -0.036856,
-     "startup_time_us": -2.4e-05,
-     "vco_df_dv_min_mhz_per_v": -4.9e-05,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1e-06,
-     "vco_kvco_mhz_per_v": 0.0,
-     "vco_out_duty_pct": 0.0,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -5.65e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMN_DO2_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMN_DO2: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.0,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001842,
-     "ol_pm_pn16_nopad_deg": 0.000595,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000595,
-     "ol_pm_pn16_pad5p_deg": 0.000417,
-     "ol_pm_pn40_nopad_deg": 0.000971,
-     "ol_pm_pn8_nopad_deg": 0.000101,
-     "standby_current_ua": 0.018206,
-     "startup_time_us": -6.4e-05,
-     "vco_df_dv_min_mhz_per_v": 0.000177,
-     "vco_fmax_ff_mhz": 4.2e-05,
-     "vco_fmax_tt_mhz": -1.6e-05,
-     "vco_fmin_tt_mhz": -3.2e-05,
-     "vco_kvco_mhz_per_v": -1.4e-05,
-     "vco_out_duty_pct": -1.3e-05,
-     "vco_out_swing_pct_vdd": 6e-05,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 2.791e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_tf_ns",
+     "delta": -0.265485,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMN_DO2_type_flipped": {
@@ -2693,17 +1566,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000226,
      "ol_pm_pn40_nopad_deg": 0.000526,
      "ol_pm_pn8_nopad_deg": 5.6e-05,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -6e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.000277,
-     "vco_df_dv_min_mhz_per_v": 0.000134,
-     "vco_fmax_ff_mhz": 1.9e-05,
-     "vco_fmax_tt_mhz": 4e-06,
-     "vco_fmin_tt_mhz": -2.7e-05,
-     "vco_kvco_mhz_per_v": 5e-06,
-     "vco_out_duty_pct": 0.0,
+     "vco_df_dv_min_mhz_per_v": 6.2e-05,
+     "vco_fmax_ff_mhz": 1.2e-05,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": -1e-06,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 2e-06,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tf_ns": -0.000305,
+     "vco_out_tr_ns": 4.2e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2738,17 +1617,23 @@
      "ol_pm_pn16_pad5p_deg": -0.000159,
      "ol_pm_pn40_nopad_deg": -0.00036,
      "ol_pm_pn8_nopad_deg": -3.8e-05,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -1.6e-05,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.000189,
-     "vco_df_dv_min_mhz_per_v": 0.000212,
-     "vco_fmax_ff_mhz": 0.0,
+     "vco_df_dv_min_mhz_per_v": 0.000295,
+     "vco_fmax_ff_mhz": 4e-06,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -3.5e-05,
-     "vco_kvco_mhz_per_v": 2e-06,
+     "vco_fmin_tt_mhz": -1e-06,
+     "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000196,
+     "vco_out_tf_ns": 2.3e-05,
+     "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2777,17 +1662,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000499,
      "ol_pm_pn40_nopad_deg": 0.001159,
      "ol_pm_pn8_nopad_deg": 0.000121,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -2.2e-05,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": 0.0,
      "startup_time_us": -6.5e-05,
-     "vco_df_dv_min_mhz_per_v": 6.4e-05,
+     "vco_df_dv_min_mhz_per_v": 1.4e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -3.1e-05,
-     "vco_kvco_mhz_per_v": 2e-06,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000196,
+     "vco_out_tf_ns": -2.3e-05,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2828,15 +1719,21 @@
      "ol_pm_pn16_pad5p_deg": 0.000349,
      "ol_pm_pn40_nopad_deg": 0.000811,
      "ol_pm_pn8_nopad_deg": 8.5e-05,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2.4e-05,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.005153,
      "startup_time_us": -0.000228,
-     "vco_df_dv_min_mhz_per_v": -2.1e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -6e-06,
-     "vco_kvco_mhz_per_v": 1e-06,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
-     "vco_out_swing_pct_vdd": -0.000995,
+     "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
      "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
@@ -2873,9 +1770,15 @@
      "ol_pm_pn16_pad5p_deg": 0.000843,
      "ol_pm_pn40_nopad_deg": 0.001953,
      "ol_pm_pn8_nopad_deg": 0.000206,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": -3.3e-05,
+     "presc_duty_pct": 0.000672,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.00067,
      "standby_current_ua": 0.146832,
      "startup_time_us": -3.3e-05,
-     "vco_df_dv_min_mhz_per_v": 7.8e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2912,9 +1815,15 @@
      "ol_pm_pn16_pad5p_deg": 0.00054,
      "ol_pm_pn40_nopad_deg": 0.001256,
      "ol_pm_pn8_nopad_deg": 0.000132,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -8e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000268,
      "standby_current_ua": 0.0,
      "startup_time_us": 9e-06,
-     "vco_df_dv_min_mhz_per_v": -7.8e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2957,17 +1866,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000417,
      "ol_pm_pn40_nopad_deg": 0.000963,
      "ol_pm_pn8_nopad_deg": 0.000101,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": -3.9e-05,
+     "presc_duty_pct": 0.000504,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": -0.010124,
      "startup_time_us": 0.005205,
-     "vco_df_dv_min_mhz_per_v": 0.001329,
-     "vco_fmax_ff_mhz": 0.000303,
-     "vco_fmax_tt_mhz": 0.000132,
-     "vco_fmin_tt_mhz": 0.001125,
-     "vco_kvco_mhz_per_v": 9.5e-05,
-     "vco_out_duty_pct": 0.000124,
+     "vco_df_dv_min_mhz_per_v": 0.001434,
+     "vco_fmax_ff_mhz": 0.000276,
+     "vco_fmax_tt_mhz": 0.000155,
+     "vco_fmin_tt_mhz": 0.00108,
+     "vco_kvco_mhz_per_v": 0.000121,
+     "vco_out_duty_pct": 0.000143,
      "vco_out_swing_pct_vdd": 6e-05,
-     "vco_out_tf_ns": 0.004608,
-     "vco_out_tr_ns": -0.000786,
+     "vco_out_tf_ns": 0.000868,
+     "vco_out_tr_ns": -0.00142,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2996,17 +1911,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000972,
      "ol_pm_pn40_nopad_deg": 0.002252,
      "ol_pm_pn8_nopad_deg": 0.000238,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": -3.5e-05,
+     "presc_duty_pct": 0.000643,
+     "presc_tf_ns": -0.000146,
+     "presc_tr_ns": 0.000134,
      "standby_current_ua": 0.000528,
      "startup_time_us": 0.001627,
-     "vco_df_dv_min_mhz_per_v": 0.00111,
-     "vco_fmax_ff_mhz": 0.000207,
-     "vco_fmax_tt_mhz": -5e-05,
-     "vco_fmin_tt_mhz": 0.000401,
-     "vco_kvco_mhz_per_v": -6.7e-05,
-     "vco_out_duty_pct": -0.000473,
-     "vco_out_swing_pct_vdd": 5e-05,
-     "vco_out_tf_ns": 0.003947,
-     "vco_out_tr_ns": -0.002554,
+     "vco_df_dv_min_mhz_per_v": 0.000679,
+     "vco_fmax_ff_mhz": 0.000238,
+     "vco_fmax_tt_mhz": -3.9e-05,
+     "vco_fmin_tt_mhz": 0.000538,
+     "vco_kvco_mhz_per_v": -6.1e-05,
+     "vco_out_duty_pct": -0.000569,
+     "vco_out_swing_pct_vdd": 2e-05,
+     "vco_out_tf_ns": -0.000164,
+     "vco_out_tr_ns": -0.001712,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3041,17 +1962,23 @@
      "ol_pm_pn16_pad5p_deg": 9e-06,
      "ol_pm_pn40_nopad_deg": 1.7e-05,
      "ol_pm_pn8_nopad_deg": 2e-06,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -3.8e-05,
+     "presc_duty_pct": 0.000504,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.045278,
      "startup_time_us": 0.000223,
-     "vco_df_dv_min_mhz_per_v": -0.000156,
-     "vco_fmax_ff_mhz": 1.5e-05,
+     "vco_df_dv_min_mhz_per_v": -6.9e-05,
+     "vco_fmax_ff_mhz": 2.3e-05,
      "vco_fmax_tt_mhz": 1.9e-05,
-     "vco_fmin_tt_mhz": 1.2e-05,
+     "vco_fmin_tt_mhz": -1.4e-05,
      "vco_kvco_mhz_per_v": 2.1e-05,
      "vco_out_duty_pct": 4e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 6.6e-05,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": -0.000305,
+     "vco_out_tr_ns": 6.3e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3080,17 +2007,23 @@
      "ol_pm_pn16_pad5p_deg": -0.000435,
      "ol_pm_pn40_nopad_deg": -0.000977,
      "ol_pm_pn8_nopad_deg": -0.000103,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": -3.6e-05,
+     "presc_duty_pct": 0.000586,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 0.0,
      "startup_time_us": -0.000566,
-     "vco_df_dv_min_mhz_per_v": 5.7e-05,
-     "vco_fmax_ff_mhz": -8e-06,
+     "vco_df_dv_min_mhz_per_v": 0.000213,
+     "vco_fmax_ff_mhz": -3.1e-05,
      "vco_fmax_tt_mhz": -1.9e-05,
-     "vco_fmin_tt_mhz": -6e-06,
+     "vco_fmin_tt_mhz": -3.3e-05,
      "vco_kvco_mhz_per_v": -2e-05,
      "vco_out_duty_pct": -4e-06,
-     "vco_out_swing_pct_vdd": 1e-05,
-     "vco_out_tf_ns": -6.6e-05,
-     "vco_out_tr_ns": 0.000196,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": 0.000469,
+     "vco_out_tr_ns": -0.00023,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3119,7 +2052,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.17169,
+     "delta": 0.046844,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3137,8 +2070,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.279526,
+     "measure": "vco_out_tr_ns",
+     "delta": 0.0496,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3175,8 +2108,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.272681,
+     "measure": "vco_out_tr_ns",
+     "delta": -0.041334,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3194,8 +2127,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.064637,
+     "measure": "vco_out_tf_ns",
+     "delta": 0.070712,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3223,11 +2156,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_I2: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.299099,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.035532,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3255,11 +2188,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_I3: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.021221,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": -0.057019,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3285,15 +2218,47 @@
    },
    "xMN_I4_connection_removed": {
     "kind": "connection_removed",
-    "killed": true,
+    "killed": false,
     "describe": "xMN_I4: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.283033,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": -0.004329,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": 0.011871,
+     "ol_pm_pn16_nopad_deg": 0.003838,
+     "ol_pm_pn16_nopad_pvt_deg": 0.003838,
+     "ol_pm_pn16_pad5p_deg": 0.002696,
+     "ol_pm_pn40_nopad_deg": 0.006253,
+     "ol_pm_pn8_nopad_deg": 0.000655,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -0.000208,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.000402,
+     "standby_current_ua": -0.034606,
+     "startup_time_us": 0.00737,
+     "vco_df_dv_min_mhz_per_v": 0.011629,
+     "vco_fmax_ff_mhz": 0.009058,
+     "vco_fmax_tt_mhz": 0.009097,
+     "vco_fmin_tt_mhz": 0.012508,
+     "vco_kvco_mhz_per_v": 0.00897,
+     "vco_out_duty_pct": 0.001294,
+     "vco_out_swing_pct_vdd": 2e-05,
+     "vco_out_tf_ns": 0.001337,
+     "vco_out_tr_ns": 0.001273,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": -5.305e-06,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMN_I4_size_doubled_w": {
@@ -3322,8 +2287,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.296002,
+     "measure": "vco_out_tf_ns",
+     "delta": -0.033116,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3361,7 +2326,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_out_tf_ns",
-     "delta": 0.152508,
+     "delta": 0.180098,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3558,17 +2523,23 @@
      "ol_pm_pn16_pad5p_deg": -0.001063,
      "ol_pm_pn40_nopad_deg": -0.002388,
      "ol_pm_pn8_nopad_deg": -0.000249,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.000139,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.00067,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.014344,
-     "vco_df_dv_min_mhz_per_v": -4.9e-05,
-     "vco_fmax_ff_mhz": 7.3e-05,
-     "vco_fmax_tt_mhz": 1.2e-05,
-     "vco_fmin_tt_mhz": -2.7e-05,
-     "vco_kvco_mhz_per_v": 1.4e-05,
-     "vco_out_duty_pct": 4e-06,
+     "vco_df_dv_min_mhz_per_v": -1.4e-05,
+     "vco_fmax_ff_mhz": -3.1e-05,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": -2e-06,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 2e-06,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -6.6e-05,
-     "vco_out_tr_ns": -0.000196,
+     "vco_out_tf_ns": -0.000305,
+     "vco_out_tr_ns": 0.000104,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3609,9 +2580,15 @@
      "ol_pm_pn16_pad5p_deg": -0.000211,
      "ol_pm_pn40_nopad_deg": -0.000481,
      "ol_pm_pn8_nopad_deg": -5e-05,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2e-05,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.000402,
-     "vco_df_dv_min_mhz_per_v": 1.4e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3660,10 +2637,16 @@
      "ol_pm_pn16_pad5p_deg": 0.000966,
      "ol_pm_pn40_nopad_deg": 0.002241,
      "ol_pm_pn8_nopad_deg": 0.000234,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2.4e-05,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 7e-06,
      "startup_time_us": -0.001059,
-     "vco_df_dv_min_mhz_per_v": 4.9e-05,
-     "vco_fmax_ff_mhz": 0.0,
+     "vco_df_dv_min_mhz_per_v": -1.4e-05,
+     "vco_fmax_ff_mhz": 4e-06,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
@@ -3705,6 +2688,12 @@
      "ol_pm_pn16_pad5p_deg": 0.000484,
      "ol_pm_pn40_nopad_deg": 0.001123,
      "ol_pm_pn8_nopad_deg": 0.000117,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": -4e-05,
+     "presc_duty_pct": 0.000463,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": -0.003823,
      "startup_time_us": -2.4e-05,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -3714,7 +2703,7 @@
      "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
+     "vco_out_tf_ns": 0.0,
      "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
     },
@@ -3744,6 +2733,12 @@
      "ol_pm_pn16_pad5p_deg": 0.000678,
      "ol_pm_pn40_nopad_deg": 0.001571,
      "ol_pm_pn8_nopad_deg": 0.000164,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -6e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 0.000137,
      "startup_time_us": -2.2e-05,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -3754,7 +2749,7 @@
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3789,9 +2784,15 @@
      "ol_pm_pn16_pad5p_deg": 0.001045,
      "ol_pm_pn40_nopad_deg": 0.002426,
      "ol_pm_pn8_nopad_deg": 0.000254,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": 2.4e-05,
+     "presc_tf_ns": -0.000732,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.001096,
      "startup_time_us": -1e-06,
-     "vco_df_dv_min_mhz_per_v": -6.4e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3828,6 +2829,12 @@
      "ol_pm_pn16_pad5p_deg": 0.000396,
      "ol_pm_pn40_nopad_deg": 0.000919,
      "ol_pm_pn8_nopad_deg": 9.6e-05,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -4e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.001024,
      "startup_time_us": -3.7e-05,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -3838,7 +2845,7 @@
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3873,9 +2880,15 @@
      "ol_pm_pn16_pad5p_deg": 0.000963,
      "ol_pm_pn40_nopad_deg": 0.002235,
      "ol_pm_pn8_nopad_deg": 0.000234,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": -3.4e-05,
+     "presc_duty_pct": 0.000704,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": -2e-05,
      "startup_time_us": -1e-06,
-     "vco_df_dv_min_mhz_per_v": -7.8e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3912,6 +2925,12 @@
      "ol_pm_pn16_pad5p_deg": 0.00094,
      "ol_pm_pn40_nopad_deg": 0.00218,
      "ol_pm_pn8_nopad_deg": 0.000229,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 9.8e-05,
      "startup_time_us": 0.0,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -3957,9 +2976,15 @@
      "ol_pm_pn16_pad5p_deg": 0.000875,
      "ol_pm_pn40_nopad_deg": 0.002031,
      "ol_pm_pn8_nopad_deg": 0.000213,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": -7.6e-05,
+     "presc_div2_ratio": -3.9e-05,
+     "presc_duty_pct": 0.00047,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000268,
      "standby_current_ua": 0.002779,
      "startup_time_us": 1.2e-05,
-     "vco_df_dv_min_mhz_per_v": 4.9e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3996,6 +3021,12 @@
      "ol_pm_pn16_pad5p_deg": 0.00059,
      "ol_pm_pn40_nopad_deg": 0.001372,
      "ol_pm_pn8_nopad_deg": 0.000144,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
      "standby_current_ua": 0.002159,
      "startup_time_us": -2.4e-05,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -4006,7 +3037,7 @@
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -4047,6 +3078,12 @@
      "ol_pm_pn16_pad5p_deg": 0.000341,
      "ol_pm_pn40_nopad_deg": 0.000788,
      "ol_pm_pn8_nopad_deg": 8.3e-05,
+     "presc_ckq_f_ns": -0.000158,
+     "presc_ckq_r_ns": 0.000115,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -8e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.005153,
      "startup_time_us": 0.0,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -4098,7 +3135,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": -0.563312,
+     "delta": -0.579519,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -4111,7 +3148,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.6953,
+     "delta": 0.350599,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -4319,52 +3356,19 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_DA: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.048527,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DA_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DA: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000315,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.000736,
-     "ol_pm_pn16_nopad_deg": 0.000239,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000239,
-     "ol_pm_pn16_pad5p_deg": 0.000167,
-     "ol_pm_pn40_nopad_deg": 0.000387,
-     "ol_pm_pn8_nopad_deg": 4.1e-05,
-     "standby_current_ua": 7.2e-05,
-     "startup_time_us": -5e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000219,
-     "vco_fmax_ff_mhz": -8e-06,
-     "vco_fmax_tt_mhz": -8e-06,
-     "vco_fmin_tt_mhz": -9e-06,
-     "vco_kvco_mhz_per_v": -8e-06,
-     "vco_out_duty_pct": 2.6e-05,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.007033,
-     "vco_out_tr_ns": -0.000786,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 1.1e-08,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.057016,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMP_DA_type_flipped": {
@@ -4393,17 +3397,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000605,
      "ol_pm_pn40_nopad_deg": 0.0014,
      "ol_pm_pn8_nopad_deg": 0.000146,
+     "presc_ckq_f_ns": 0.001584,
+     "presc_ckq_r_ns": 0.001758,
+     "presc_div2_ratio": -3.8e-05,
+     "presc_duty_pct": 0.000429,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000268,
      "standby_current_ua": -0.034077,
      "startup_time_us": -1.8e-05,
-     "vco_df_dv_min_mhz_per_v": -3.5e-05,
-     "vco_fmax_ff_mhz": -8e-06,
-     "vco_fmax_tt_mhz": -8e-06,
-     "vco_fmin_tt_mhz": -1.7e-05,
-     "vco_kvco_mhz_per_v": -7e-06,
-     "vco_out_duty_pct": 7e-06,
-     "vco_out_swing_pct_vdd": 1e-05,
-     "vco_out_tf_ns": 0.000706,
-     "vco_out_tr_ns": 0.001179,
+     "vco_df_dv_min_mhz_per_v": 1.4e-05,
+     "vco_fmax_ff_mhz": 8e-06,
+     "vco_fmax_tt_mhz": 8e-06,
+     "vco_fmin_tt_mhz": 4.6e-05,
+     "vco_kvco_mhz_per_v": 5e-06,
+     "vco_out_duty_pct": 6e-06,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": -0.007622,
+     "vco_out_tr_ns": -0.002902,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -4419,8 +3429,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": 0.04224,
+     "measure": "vco_out_tf_ns",
+     "delta": 0.025283,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -4435,115 +3445,42 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_DC: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.091159,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DC_size_doubled_w": {
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMP_DC: w doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_presc_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tf_ns",
-     "delta": 0.05856,
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.031841,
      "sensitivity": 0.02,
      "kind": "relative"
     }
    },
    "xMP_DC_type_flipped": {
     "kind": "type_flipped",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DC: pfet_03v3 -> nfet_03v3",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000298,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.003918,
-     "ol_pm_pn16_nopad_deg": 0.001267,
-     "ol_pm_pn16_nopad_pvt_deg": 0.001267,
-     "ol_pm_pn16_pad5p_deg": 0.00089,
-     "ol_pm_pn40_nopad_deg": 0.002061,
-     "ol_pm_pn8_nopad_deg": 0.000216,
-     "standby_current_ua": -0.001037,
-     "startup_time_us": -3.5e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000424,
-     "vco_fmax_ff_mhz": 0.000134,
-     "vco_fmax_tt_mhz": 0.000113,
-     "vco_fmin_tt_mhz": 0.000149,
-     "vco_kvco_mhz_per_v": 0.000112,
-     "vco_out_duty_pct": -0.000132,
-     "vco_out_swing_pct_vdd": -2e-05,
-     "vco_out_tf_ns": 0.011245,
-     "vco_out_tr_ns": -0.016896,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -1.59e-07,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DD_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DD: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.000374,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.00027,
-     "ol_pm_pn16_nopad_deg": -8.6e-05,
-     "ol_pm_pn16_nopad_pvt_deg": -8.6e-05,
-     "ol_pm_pn16_pad5p_deg": -6.2e-05,
-     "ol_pm_pn40_nopad_deg": -0.000144,
-     "ol_pm_pn8_nopad_deg": -1.4e-05,
-     "standby_current_ua": 0.0,
-     "startup_time_us": 1.2e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000191,
-     "vco_fmax_ff_mhz": 0.000134,
-     "vco_fmax_tt_mhz": 0.000124,
-     "vco_fmin_tt_mhz": 5.3e-05,
-     "vco_kvco_mhz_per_v": 0.000127,
-     "vco_out_duty_pct": -0.00038,
-     "vco_out_swing_pct_vdd": -2e-05,
-     "vco_out_tf_ns": 0.003594,
-     "vco_out_tr_ns": -0.003733,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.0,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DD_size_doubled_w": {
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMP_DD: w doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_presc_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.059921,
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.10164,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -4552,14 +3489,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMP_DD: pfet_03v3 -> nfet_03v3",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.06444,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DNI_connection_removed": {
     "kind": "connection_removed",
@@ -4588,80 +3518,21 @@
    },
    "xMP_DO1_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DO1: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 8.4e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.004946,
-     "ol_pm_pn16_nopad_deg": -0.001598,
-     "ol_pm_pn16_nopad_pvt_deg": -0.001598,
-     "ol_pm_pn16_pad5p_deg": -0.00116,
-     "ol_pm_pn40_nopad_deg": -0.002603,
-     "ol_pm_pn8_nopad_deg": -0.000272,
-     "standby_current_ua": -0.022486,
-     "startup_time_us": -7.1e-05,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 5.2e-05,
-     "vco_kvco_mhz_per_v": -1e-06,
-     "vco_out_duty_pct": 0.0,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 2.2e-05,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -3.447e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DO1_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DO1: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 4e-06,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.001203,
-     "ol_pm_pn16_nopad_deg": -0.000388,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000388,
-     "ol_pm_pn16_pad5p_deg": -0.000282,
-     "ol_pm_pn40_nopad_deg": -0.000634,
-     "ol_pm_pn8_nopad_deg": -6.7e-05,
-     "standby_current_ua": 0.000855,
-     "startup_time_us": -7.5e-05,
-     "vco_df_dv_min_mhz_per_v": -0.00017,
-     "vco_fmax_ff_mhz": -4e-06,
-     "vco_fmax_tt_mhz": -4e-06,
-     "vco_fmin_tt_mhz": 8.4e-05,
-     "vco_kvco_mhz_per_v": -7e-06,
-     "vco_out_duty_pct": 6e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.000331,
-     "vco_out_tr_ns": -0.000589,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 1.31e-07,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": -0.138211,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMP_DO1_type_flipped": {
@@ -4672,120 +3543,28 @@
    },
    "xMP_DO2_connection_removed": {
     "kind": "connection_removed",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DO2: drain (bulk tied to its own source) disconnected",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 8.4e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.005013,
-     "ol_pm_pn16_nopad_deg": 0.00162,
-     "ol_pm_pn16_nopad_pvt_deg": 0.00162,
-     "ol_pm_pn16_pad5p_deg": 0.001139,
-     "ol_pm_pn40_nopad_deg": 0.002639,
-     "ol_pm_pn8_nopad_deg": 0.000276,
-     "standby_current_ua": -0.036856,
-     "startup_time_us": -3e-06,
-     "vco_df_dv_min_mhz_per_v": -0.000127,
-     "vco_fmax_ff_mhz": 8e-06,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -1e-05,
-     "vco_kvco_mhz_per_v": 1e-06,
-     "vco_out_duty_pct": 0.0,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -5.65e-06,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DO2_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DO2: w doubled",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 6.7e-05,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.005894,
-     "ol_pm_pn16_nopad_deg": 0.001906,
-     "ol_pm_pn16_nopad_pvt_deg": 0.001906,
-     "ol_pm_pn16_pad5p_deg": 0.001339,
-     "ol_pm_pn40_nopad_deg": 0.003104,
-     "ol_pm_pn8_nopad_deg": 0.000325,
-     "standby_current_ua": 0.0,
-     "startup_time_us": -2.4e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000134,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1.8e-05,
-     "vco_kvco_mhz_per_v": 0.0,
-     "vco_out_duty_pct": 2e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": 0.0,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.293,
+     "sensitivity": 0.02,
+     "kind": "relative"
     }
    },
    "xMP_DO2_type_flipped": {
     "kind": "type_flipped",
-    "killed": false,
+    "killed": true,
     "describe": "xMP_DO2: pfet_03v3 -> nfet_03v3",
-    "deltas": {
-     "cp_overlap_net_charge_fc": 0.0,
-     "cp_updn_mismatch_pct": 0.0,
-     "icp_code11_over_code00_ratio": 0.0,
-     "icp_dn_code00_ua": 0.0,
-     "icp_up_code00_tt_ua": 0.0,
-     "icp_up_code00_ua": 0.0,
-     "icp_up_code01_ua": 0.0,
-     "icp_up_code10_ua": 0.0,
-     "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.003354,
-     "ol_pm_pn16_nopad_deg": -0.001084,
-     "ol_pm_pn16_nopad_pvt_deg": -0.001084,
-     "ol_pm_pn16_pad5p_deg": -0.000787,
-     "ol_pm_pn40_nopad_deg": -0.001765,
-     "ol_pm_pn8_nopad_deg": -0.000184,
-     "standby_current_ua": -0.003066,
-     "startup_time_us": -2.4e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000106,
-     "vco_fmax_ff_mhz": 0.0,
-     "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -3.1e-05,
-     "vco_kvco_mhz_per_v": 2e-06,
-     "vco_out_duty_pct": 0.0,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
-     "vco_out_tr_ns": 0.0,
-     "vctrl_leak_off_na": 0.0
-    },
-    "abs_deltas": {
-     "standby_current_ua": -4.7e-07,
-     "vco_out_off_toggles": 0.0,
-     "vctrl_leak_off_na": 0.0
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_DR_connection_removed": {
     "kind": "connection_removed",
@@ -4813,17 +3592,23 @@
      "ol_pm_pn16_pad5p_deg": -0.000849,
      "ol_pm_pn40_nopad_deg": -0.001906,
      "ol_pm_pn8_nopad_deg": -0.0002,
+     "presc_ckq_f_ns": 0.006018,
+     "presc_ckq_r_ns": 0.004702,
+     "presc_div2_ratio": -3.9e-05,
+     "presc_duty_pct": 0.000531,
+     "presc_tf_ns": 0.000439,
+     "presc_tr_ns": 0.00067,
      "standby_current_ua": 0.0,
      "startup_time_us": -1.2e-05,
-     "vco_df_dv_min_mhz_per_v": -1.4e-05,
+     "vco_df_dv_min_mhz_per_v": -6.2e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -1e-05,
-     "vco_kvco_mhz_per_v": 1e-06,
-     "vco_out_duty_pct": 2e-06,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
-     "vco_out_tr_ns": 0.0,
+     "vco_fmin_tt_mhz": 2.5e-05,
+     "vco_kvco_mhz_per_v": -1e-06,
+     "vco_out_duty_pct": 4e-06,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": -9.4e-05,
+     "vco_out_tr_ns": -0.000292,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -4836,14 +3621,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMP_DR: pfet_03v3 -> nfet_03v3",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_out_tr_ns",
-     "delta": -0.065226,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_presc_tb.cir"
    },
    "xMP_ENB_connection_removed": {
     "kind": "connection_removed",
@@ -4865,17 +3643,23 @@
      "ol_pm_pn16_pad5p_deg": -0.000361,
      "ol_pm_pn40_nopad_deg": -0.000813,
      "ol_pm_pn8_nopad_deg": -8.5e-05,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -3.6e-05,
+     "presc_duty_pct": 0.000627,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": 0.0,
      "standby_current_ua": 0.376919,
      "startup_time_us": -0.003981,
-     "vco_df_dv_min_mhz_per_v": 7.1e-05,
+     "vco_df_dv_min_mhz_per_v": -6.2e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -4e-06,
-     "vco_kvco_mhz_per_v": 1e-06,
-     "vco_out_duty_pct": 0.0,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 2e-06,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -4904,17 +3688,23 @@
      "ol_pm_pn16_pad5p_deg": 5.3e-05,
      "ol_pm_pn40_nopad_deg": 0.000119,
      "ol_pm_pn8_nopad_deg": 1.3e-05,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -3.5e-05,
+     "presc_duty_pct": 0.000657,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000268,
      "standby_current_ua": 0.0,
      "startup_time_us": -5.9e-05,
-     "vco_df_dv_min_mhz_per_v": 6.4e-05,
-     "vco_fmax_ff_mhz": 0.0,
+     "vco_df_dv_min_mhz_per_v": 6.2e-05,
+     "vco_fmax_ff_mhz": 4e-06,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -3.1e-05,
-     "vco_kvco_mhz_per_v": 2e-06,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tf_ns": -2.3e-05,
+     "vco_out_tr_ns": -2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -4955,9 +3745,15 @@
      "ol_pm_pn16_pad5p_deg": -0.000452,
      "ol_pm_pn40_nopad_deg": -0.001018,
      "ol_pm_pn8_nopad_deg": -0.000106,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2.2e-05,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000402,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.000112,
-     "vco_df_dv_min_mhz_per_v": 6.4e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -5000,9 +3796,15 @@
      "ol_pm_pn16_pad5p_deg": 0.000834,
      "ol_pm_pn40_nopad_deg": 0.001934,
      "ol_pm_pn8_nopad_deg": 0.000202,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": 0.000268,
      "standby_current_ua": 0.013418,
      "startup_time_us": -4.1e-05,
-     "vco_df_dv_min_mhz_per_v": -9.2e-05,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -5039,6 +3841,12 @@
      "ol_pm_pn16_pad5p_deg": 0.000558,
      "ol_pm_pn40_nopad_deg": 0.001289,
      "ol_pm_pn8_nopad_deg": 0.000135,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.0,
      "vco_df_dv_min_mhz_per_v": 0.0,
@@ -5084,17 +3892,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000775,
      "ol_pm_pn40_nopad_deg": 0.001798,
      "ol_pm_pn8_nopad_deg": 0.000188,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2.4e-05,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.000134,
      "standby_current_ua": 0.089127,
      "startup_time_us": -0.012889,
-     "vco_df_dv_min_mhz_per_v": -6.4e-05,
-     "vco_fmax_ff_mhz": 4e-06,
+     "vco_df_dv_min_mhz_per_v": -5.5e-05,
+     "vco_fmax_ff_mhz": 8e-06,
      "vco_fmax_tt_mhz": 4e-06,
-     "vco_fmin_tt_mhz": -7e-06,
-     "vco_kvco_mhz_per_v": 4e-06,
-     "vco_out_duty_pct": 1.3e-05,
+     "vco_fmin_tt_mhz": 1.7e-05,
+     "vco_kvco_mhz_per_v": 3e-06,
+     "vco_out_duty_pct": 1.5e-05,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 2.2e-05,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tf_ns": -0.000399,
+     "vco_out_tr_ns": 4.2e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -5123,17 +3937,23 @@
      "ol_pm_pn16_pad5p_deg": 0.00133,
      "ol_pm_pn40_nopad_deg": 0.00309,
      "ol_pm_pn8_nopad_deg": 0.000323,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -1e-05,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": -0.000402,
      "standby_current_ua": 0.0,
      "startup_time_us": 0.000621,
-     "vco_df_dv_min_mhz_per_v": -2.1e-05,
+     "vco_df_dv_min_mhz_per_v": 0.000213,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": -4e-06,
-     "vco_fmin_tt_mhz": -3.9e-05,
-     "vco_kvco_mhz_per_v": -2e-06,
-     "vco_out_duty_pct": -1.3e-05,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -2.2e-05,
-     "vco_out_tr_ns": 0.000196,
+     "vco_fmin_tt_mhz": -2.1e-05,
+     "vco_kvco_mhz_per_v": -3e-06,
+     "vco_out_duty_pct": -1.5e-05,
+     "vco_out_swing_pct_vdd": -1e-05,
+     "vco_out_tf_ns": 0.000281,
+     "vco_out_tr_ns": -0.000104,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -5193,17 +4013,23 @@
      "ol_pm_pn16_pad5p_deg": 0.000487,
      "ol_pm_pn40_nopad_deg": 0.001134,
      "ol_pm_pn8_nopad_deg": 0.000119,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 0.000153,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -2e-05,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.0,
      "startup_time_us": -4.7e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000361,
-     "vco_fmax_ff_mhz": -0.000484,
-     "vco_fmax_tt_mhz": -0.000543,
-     "vco_fmin_tt_mhz": -2e-05,
-     "vco_kvco_mhz_per_v": -0.000562,
-     "vco_out_duty_pct": 0.000317,
-     "vco_out_swing_pct_vdd": 0.000119,
-     "vco_out_tf_ns": -0.016713,
-     "vco_out_tr_ns": -0.010413,
+     "vco_df_dv_min_mhz_per_v": 0.000123,
+     "vco_fmax_ff_mhz": -0.000476,
+     "vco_fmax_tt_mhz": -0.000493,
+     "vco_fmin_tt_mhz": 5.4e-05,
+     "vco_kvco_mhz_per_v": -0.000514,
+     "vco_out_duty_pct": 0.000252,
+     "vco_out_swing_pct_vdd": 0.00011,
+     "vco_out_tf_ns": -0.017004,
+     "vco_out_tr_ns": -0.01002,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -5232,17 +4058,23 @@
      "ol_pm_pn16_pad5p_deg": 0.00148,
      "ol_pm_pn40_nopad_deg": 0.003431,
      "ol_pm_pn8_nopad_deg": 0.000359,
+     "presc_ckq_f_ns": 0.000264,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2.2e-05,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.000402,
      "standby_current_ua": 0.0,
      "startup_time_us": -7e-06,
-     "vco_df_dv_min_mhz_per_v": 0.000148,
-     "vco_fmax_ff_mhz": 0.000534,
-     "vco_fmax_tt_mhz": 0.00052,
-     "vco_fmin_tt_mhz": 4.8e-05,
-     "vco_kvco_mhz_per_v": 0.000539,
-     "vco_out_duty_pct": -0.000261,
+     "vco_df_dv_min_mhz_per_v": 0.000213,
+     "vco_fmax_ff_mhz": 0.00051,
+     "vco_fmax_tt_mhz": 0.000551,
+     "vco_fmin_tt_mhz": 3.4e-05,
+     "vco_kvco_mhz_per_v": 0.000569,
+     "vco_out_duty_pct": -0.000248,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.018829,
-     "vco_out_tr_ns": 0.008448,
+     "vco_out_tf_ns": 0.015338,
+     "vco_out_tr_ns": 0.00883,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -5261,11 +4093,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I1: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.035307,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.03875,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -5293,11 +4125,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I2: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.028377,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": -0.030698,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -5323,15 +4155,47 @@
    },
    "xMP_I3_connection_removed": {
     "kind": "connection_removed",
-    "killed": true,
+    "killed": false,
     "describe": "xMP_I3: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.026948,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": 0.001511,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": 0.007734,
+     "ol_pm_pn16_nopad_deg": 0.002501,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002501,
+     "ol_pm_pn16_pad5p_deg": 0.001756,
+     "ol_pm_pn40_nopad_deg": 0.004072,
+     "ol_pm_pn8_nopad_deg": 0.000426,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.000817,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": -0.032884,
+     "startup_time_us": 0.014578,
+     "vco_df_dv_min_mhz_per_v": 0.014942,
+     "vco_fmax_ff_mhz": 0.011111,
+     "vco_fmax_tt_mhz": 0.011122,
+     "vco_fmin_tt_mhz": 0.015541,
+     "vco_kvco_mhz_per_v": 0.010958,
+     "vco_out_duty_pct": -0.004542,
+     "vco_out_swing_pct_vdd": 5e-05,
+     "vco_out_tf_ns": 0.001079,
+     "vco_out_tr_ns": 0.00023,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": -5.041e-06,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMP_I3_size_doubled_w": {
@@ -5357,11 +4221,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I4: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.037039,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.071337,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -5392,8 +4256,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.031333,
+     "measure": "vco_out_tr_ns",
+     "delta": -0.024633,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -5431,7 +4295,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_out_tr_ns",
-     "delta": 0.125167,
+     "delta": 0.14903,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -5628,17 +4492,23 @@
      "ol_pm_pn16_pad5p_deg": -0.00025,
      "ol_pm_pn40_nopad_deg": -0.000567,
      "ol_pm_pn8_nopad_deg": -6e-05,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -2.4e-05,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000268,
      "standby_current_ua": 0.000196,
      "startup_time_us": -0.005889,
-     "vco_df_dv_min_mhz_per_v": -0.000156,
+     "vco_df_dv_min_mhz_per_v": 0.0,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000196,
+     "vco_out_tf_ns": -2.3e-05,
+     "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -5865,7 +4735,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xR1: first terminal (a resistor's body carries only parasitics) disconnected",
-    "killed_by": "pll_analog_presc_tb.cir"
+    "killed_by": "pll_analog_cp_tb.cir"
    },
    "xR1_size_doubled_r_width": {
     "kind": "size_doubled",
@@ -5920,13 +4790,13 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-  "mutant_rulings": "json_canonical:68d2411ffdfc22471ea50b67d22e19362aeeec839ad7b3ba4d5334387398785c",
-  "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+  "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+  "mutant_rulings": "json_canonical:f601d3fedeb68887dbdeefe51cf09d2cdd92b9c412e7b759a45032d01d8f5c0e",
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
   "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-11-01T14:48:33",
- "attempts": 9
+ "recorded_ts": "2026-11-03T02:52:31",
+ "attempts": 10
 }

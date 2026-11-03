@@ -212,14 +212,14 @@ below_spread:
   - id: xMP_G2_connection_removed
     netlist_line: "XMP_G2 nb pll_en vdd vdd pfet_03v3 w=w_gp l=2.8e-7"
     measure: vco_out_tf_ns
-    delta: -0.016713
+    delta: -0.017004
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
     evidence: "xMP_G2: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -1.67% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-10-31 on the TSPC /2 netlist (#48)."
   - id: xMP_G2_size_doubled_w
     netlist_line: "XMP_G2 nb pll_en vdd vdd pfet_03v3 w=w_gp l=2.8e-7"
     measure: vco_out_tf_ns
-    delta: 0.018829
+    delta: 0.015338
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
     evidence: "xMP_G2: w doubled: largest move on a non-near-zero tt measure is 1.88% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-10-31 on the TSPC /2 netlist (#48)."
@@ -237,3 +237,38 @@ below_spread:
     sigma: 0
     ruling: "a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01"
     evidence: "xMN_UPI: w doubled: largest move on a non-near-zero tt measure is 1.99% (cp_overlap_net_charge_fc), under the 2% floor on the re-run with the TSPC declared. Margin 0.01%: thin."
+  - id: xMN_DB_size_doubled_w
+    netlist_line: "XMN_DB dy dx db vss nfet_03v3 w=2e-6 l=2.8e-7"
+    measure: presc_ckq_r_ns
+    delta: 0.010244
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMN_DB: w doubled: largest move on any non-near-zero tt measure is 1.02% (presc_ckq_r_ns, the TSPC's clock-to-q), under the 2% floor; no mc sigma, since the divider's edges are waived from mc. The divider keeps dividing (presc_div2_ratio 1.00)."
+  - id: xMP_DR_size_doubled_w
+    netlist_line: "XMP_DR dqn pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7"
+    measure: presc_ckq_f_ns
+    delta: 0.006018
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_DR: w doubled: the reset pull-up is off while running (pll_en = 1), and the largest move is 0.60% (presc_ckq_f_ns), under the 2% floor."
+  - id: xMP_DB_connection_removed
+    netlist_line: "XMP_DB dx vco_out da vdd pfet_03v3 w=2e-6 l=2.8e-7"
+    measure: vco_out_tf_ns
+    delta: -0.007622
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_DB: bulk disconnected: the stacked pfet's bulk floats near vdd. Largest move on a non-near-zero tt measure is 0.76% (vco_out_tf_ns, its load on vco_out), divider edges 0.18%, under the 2% floor."
+  - id: xMN_I4_connection_removed
+    netlist_line: "XMN_I4 r4 r3 n4 vss nfet_03v3 w=w_rn l=l_r"
+    measure: vco_fmin_tt_mhz
+    delta: 0.012508
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMN_I4: bulk disconnected: largest move on a non-near-zero tt measure is 1.25% (vco_fmin_tt_mhz), under the 2% floor. Killed until 2026-11-02 by a 28% move on vco_df_dv_min_mhz_per_v, which was the 1 fC kick's start at 0.3 V, not the device: at 200 fC that measure moves 1.16%."
+  - id: xMP_I3_connection_removed
+    netlist_line: "XMP_I3 r3 r2 p3 vdd pfet_03v3 w=w_rp l=l_r"
+    measure: vco_fmin_tt_mhz
+    delta: 0.015541
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_I3: bulk disconnected: largest move on a non-near-zero tt measure is 1.55% (vco_fmin_tt_mhz), under the 2% floor. Killed until 2026-11-02 by 2.7% on vco_df_dv_min_mhz_per_v under the 1 fC kick; at 200 fC that measure moves 1.49%."

@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-11-03T00:46:57",
+ "updated": "2026-11-03T02:52:31",
  "phase": "P5",
  "toolchain": null,
  "gates": {
@@ -1611,18 +1611,18 @@
   },
   "bench_strength": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 9,
+   "status": "pass",
+   "attempts": 10,
    "last": {
-    "ts": "2026-11-01T14:48:33",
-    "status": "fail",
-    "failing_count": 23,
-    "total": 56,
+    "ts": "2026-11-03T02:52:31",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 39,
     "inputs": {
      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "tb": "dir_text:cf9afc385d28f34e6e7ce2986644626b479f2497da7c305032c0df2842b22292",
-     "mutant_rulings": "json_canonical:68d2411ffdfc22471ea50b67d22e19362aeeec839ad7b3ba4d5334387398785c",
-     "spec_yaml": "json_canonical:cfc1dcf5a23a8c12e61b97474fc17577a041624596bf97c78da659cd0555ad71",
+     "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+     "mutant_rulings": "json_canonical:f601d3fedeb68887dbdeefe51cf09d2cdd92b9c412e7b759a45032d01d8f5c0e",
+     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
@@ -1630,13 +1630,14 @@
     "job": null,
     "facts": {
      "total_mutants": 295,
-     "killed": 239,
-     "survived": 56,
+     "killed": 256,
+     "survived": 39,
+     "reused_mutants": 295,
      "devices_total": 101,
      "devices_mutated": 101,
-     "killed_by_sensitivity": 90,
+     "killed_by_sensitivity": 89,
      "equivalent": 0,
-     "below_spread": 33
+     "below_spread": 39
     }
    },
    "history": [
@@ -1857,15 +1858,33 @@
       "equivalent": 0,
       "below_spread": 33
      }
-    }
-   ],
-   "stale": [
+    },
     {
-     "ts": "2026-11-02T21:51:31",
-     "edit_class": "gate_error",
-     "refs": [],
-     "human_hold": 0,
-     "error": "CheckError: spec/mutant_rulings.yaml below_spread 'xMP_G2_size_doubled_w': recorded delta 0.018829 does not match the measured 0.0153384 - rewrite it from this run's mutants facts"
+     "ts": "2026-11-03T02:52:31",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 39,
+     "inputs": {
+      "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "tb": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
+      "mutant_rulings": "json_canonical:f601d3fedeb68887dbdeefe51cf09d2cdd92b9c412e7b759a45032d01d8f5c0e",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "job": null,
+     "facts": {
+      "total_mutants": 295,
+      "killed": 256,
+      "survived": 39,
+      "reused_mutants": 295,
+      "devices_total": 101,
+      "devices_mutated": 101,
+      "killed_by_sensitivity": 89,
+      "equivalent": 0,
+      "below_spread": 39
+     }
     }
    ]
   },
@@ -2453,31 +2472,31 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-03T00:46:57"
+   "hashed": "2026-11-03T02:52:30"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-03T00:46:57"
+   "hashed": "2026-11-03T02:52:30"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:243cfb83ec35f7392b78f3fed710d337680c54d65f31386f6f955a0567836cfc",
-   "hashed": "2026-11-03T00:46:57"
+   "hashed": "2026-11-03T02:52:30"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-02T23:12:02"
+   "hashed": "2026-11-03T02:52:30"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
    "kind": "mutant_rulings",
-   "sha256": "json_canonical:68d2411ffdfc22471ea50b67d22e19362aeeec839ad7b3ba4d5334387398785c",
-   "hashed": "2026-11-01T14:48:32"
+   "sha256": "json_canonical:f601d3fedeb68887dbdeefe51cf09d2cdd92b9c412e7b759a45032d01d8f5c0e",
+   "hashed": "2026-11-03T02:52:30"
   },
   "layout": {
    "path": "layout",
@@ -2495,7 +2514,7 @@
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-03T00:46:57"
+   "hashed": "2026-11-03T02:52:31"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
@@ -2519,7 +2538,7 @@
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-03T00:46:57"
+   "hashed": "2026-11-03T02:52:31"
   }
  },
  "open_issues": [
@@ -4966,6 +4985,20 @@
    "ts": "2026-11-03T00:46:57",
    "event": "gate",
    "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 10,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-03T02:48:25",
+   "event": "gate_error",
+   "gate": "bench_strength",
+   "error": "CheckError: spec/mutant_rulings.yaml below_spread 'xMP_G2_size_doubled_w': recorded delta 0.018829 does not match the measured 0.0153384 - rewrite it from this run's mutants facts"
+  },
+  {
+   "ts": "2026-11-03T02:52:31",
+   "event": "gate",
+   "gate": "bench_strength",
    "status": "pass",
    "attempt": 10,
    "failing_count": 0
