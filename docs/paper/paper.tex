@@ -410,8 +410,10 @@ capacitance) and the phase margin by \SIrange{1.5}{3.1}{\degree}.
 \code{ff\_pss} (fast transistors with slow resistors) still has the least
 bias, $I_{cp}=\SI{13.9}{\micro A}$, but the final V-to-I resize
 ($R_\text{V2I}$ length \SI{35}{}$\to$\SI{43}{\micro m}, a larger clamp and
-ceiling device) lifted its ceiling from \SI{125.6}{MHz} on the previous
-revision to \SI{168.2}{MHz}, with $K_\text{vco}=\SI{54.2}{MHz/V}$ and
+ceiling device) lifted its ceiling at $v_\text{ctrl}=V_{DD}$ from
+\SI{125.6}{MHz} on the previous revision to \SI{190.0}{MHz} (\SI{168.2}{MHz}
+at the bench's top point, $V_{DD}-\SI{0.3}{V}$), with
+$K_\text{vco}=\SI{54.2}{MHz/V}$ and
 \SI{44.9}{\degree} of margin. The lowest ceiling is now at
 \code{ss\_125c\_vm10} (\SI{183}{MHz} at $v_\text{ctrl}=V_{DD}$), the lowest
 $K_\text{vco}$ at \code{ss\_125c\_vp10} (\SI{53.8}{MHz/V}), and the lowest
@@ -555,8 +557,9 @@ frequency ends within about $10^{-4}$ of target (worst
 \SI{150}{MHz} with $v_\text{ctrl}$ at \SI{3.09}{V}, well below its
 \SI{168}{MHz} ceiling. Segment ripple is 2.5--\SI{20.2}{mV}; these segments
 are not held to the \SI{100}{MHz} point's \SI{20}{mV} bound, and at
-\SI{150}{MHz} two slightly exceed it (\SI{20.2}{mV} at
-\code{ff\_m40c\_vm10}, \SI{20.0}{mV} at \code{tt\_27c}).
+\SI{150}{MHz} one slightly exceeds it (\SI{20.2}{mV} at
+\code{ff\_m40c\_vm10}); \code{tt\_27c} reads \SI{20.0}{mV} at
+\SI{150}{MHz} and \SI{20.1}{mV} on the return to \SI{100}{MHz}.
 
 On the previous cell revision, whose \code{ff\_pss} ceiling was only
 \SI{125.6}{MHz}, a step to \SI{120}{MHz} at $f_\text{ref}=\SI{5}{MHz}$
@@ -597,7 +600,7 @@ periods, free-running period jitter is \SI{9.7}{ps} rms at \code{tt\_27c},
 \SI{10.2}{ps} at \code{ss\_125c\_vm10} and \SI{13.5}{ps} at
 \code{ff\_125c\_vm10}, the highest of the nine corners run (six of them
 in shorter screening runs; the other 22 were not run). A deterministic
-alternation of up to $\pm\SI{6.8}{ps}$ on the output is separate from these
+alternation of up to $\pm\SI{7.0}{ps}$ on the output is separate from these
 figures. They replace a first estimate of
 1.2--\SI{2.5}{ps}, which came from 30--36 periods at the top of the VCO's range
 with less of the noise included. For the locked output we have only a linear
