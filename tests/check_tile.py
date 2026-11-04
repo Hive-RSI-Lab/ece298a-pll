@@ -53,6 +53,8 @@ KINDS = {
     "analog_sizing": ("analog/sizing/sizing.yaml", "json_canonical"),
     "analog_spec": ("analog/spec/spec.yaml", "json_canonical"),
     "macro_lib": ("macro_lib", "dir_text"),
+    "top_override": ("top.override.json", "json_canonical"),
+    "digital_override": ("digital/harden/config.override.json", "json_canonical"),
 }
 # Kinds that live outside the repo: the PDK, and the tree top_harden generates
 # (gitignored, so CI hasn't got it). Only statelib can hash these, so they're
