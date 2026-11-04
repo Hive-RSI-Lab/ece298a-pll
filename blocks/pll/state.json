@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-11-04T01:28:39",
+ "updated": "2026-11-04T01:31:57",
  "phase": "P2",
  "toolchain": null,
  "gates": {
@@ -1330,6 +1330,49 @@
      }
     }
    ]
+  },
+  "release": {
+   "phase": "P4",
+   "status": "pass",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-11-04T01:31:57",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+     "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+     "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
+     "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+     "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+    },
+    "job": null
+   },
+   "history": [
+    {
+     "ts": "2026-11-04T01:31:57",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+      "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+      "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
+      "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+     },
+     "job": null
+    }
+   ]
   }
  },
  "jobs": {},
@@ -1341,7 +1384,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T01:31:57"
   },
   "tb": {
    "path": "tb",
@@ -1353,25 +1396,25 @@
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T01:31:57"
   },
   "analog_netlist": {
    "path": "analog/netlist",
    "kind": "analog_netlist",
    "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T01:31:57"
   },
   "analog_sizing": {
    "path": "analog/sizing/sizing.yaml",
    "kind": "analog_sizing",
    "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T01:31:57"
   },
   "analog_layout": {
    "path": "analog/layout",
    "kind": "analog_layout",
    "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-   "hashed": "2026-11-03T08:00:13"
+   "hashed": "2026-11-04T01:31:57"
   },
   "top_sdc": {
    "path": "top.sdc",
@@ -1395,7 +1438,7 @@
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T01:31:57"
   },
   "pdk_models": {
    "path": "${PDK_ROOT}/libs.tech/ngspice",
@@ -1407,19 +1450,19 @@
    "path": "digital_spec.yaml",
    "kind": "digital_side_spec",
    "sha256": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
-   "hashed": "2026-11-03T07:54:48"
+   "hashed": "2026-11-04T01:31:57"
   },
   "analog_side_spec": {
    "path": "analog_spec.yaml",
    "kind": "analog_side_spec",
    "sha256": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
-   "hashed": "2026-11-03T07:54:48"
+   "hashed": "2026-11-04T01:31:57"
   },
   "digital_spec": {
    "path": "digital/spec/spec.yaml",
    "kind": "digital_spec",
    "sha256": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T01:31:57"
   },
   "analog_spec": {
    "path": "analog/spec/spec.yaml",
@@ -2053,6 +2096,14 @@
    "gate": "cosim",
    "status": "pass",
    "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T01:31:57",
+   "event": "gate",
+   "gate": "release",
+   "status": "pass",
+   "attempt": 1,
    "failing_count": 0
   }
  ]

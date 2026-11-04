@@ -1,0 +1,588 @@
+{
+ "schema": 1,
+ "block": "pll",
+ "skill": "msde",
+ "ts": "2026-11-04T01:31:56",
+ "released": true,
+ "refused": [],
+ "tree": "release/tt",
+ "versions": {
+  "librelane": "3.1.0.dev3",
+  "yosys": "0.69",
+  "pdk": "gf180mcuD",
+  "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "ciel": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+  "precheck_tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
+  "checker_version": 1,
+  "toolchain": {
+   "image": "iic-osic-tools-2026.09",
+   "klayout": "0.30.12",
+   "magic": "8.3.684",
+   "netgen": "1.5.323"
+  }
+ },
+ "shipped": [
+  {
+   "workflow": ".github/workflows/gds.yaml",
+   "mode": "custom_gds",
+   "ref": "ttgf26c",
+   "top_module": "tt_um_ihsan_sa_pll",
+   "pdk": "gf180mcuD",
+   "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
+   "gds_sha256": "782ab211d8c873026623c9e8d7d1984136c191490a8dc6234dda0cd28aad9d65",
+   "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
+   "lef_sha256": "5dea19e9e170875c172d585178ef449d180563f1303b03ae011bc9880e480ab8",
+   "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
+   "verilog_sha256": "df2a0bfab94fa4b9e435c82279c04297ea2ad3153bbd7126afbc997274b63beb"
+  }
+ ],
+ "waivers": {
+  "gates": [],
+  "deliverables": []
+ },
+ "deliverables": [
+  {
+   "path": ".github/workflows/gds.yaml",
+   "source": null,
+   "sha256": "5cc7e9c9cc60e5c45132c0569e7de6636f2c2e14fe9a9cccd4b21e0fd7445b53",
+   "gates": [
+    {
+     "gate": "release",
+     "relation": "checked",
+     "check": "ttship.ship_problems"
+    }
+   ]
+  },
+  {
+   "path": "gds/tt_um_ihsan_sa_pll.gds",
+   "source": "top/harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
+   "sha256": "782ab211d8c873026623c9e8d7d1984136c191490a8dc6234dda0cd28aad9d65",
+   "gates": [
+    {
+     "gate": "precheck",
+     "relation": "read",
+     "kind": "top_gds",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:01:55",
+     "inputs_sha256": "d204e83c68f77d00cc3f59143d3d69ccd5f1cbb8be887f9c8f40e17194547f63"
+    },
+    {
+     "gate": "top_drc",
+     "relation": "read",
+     "kind": "top_gds",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:00:09",
+     "inputs_sha256": "bf4dd11a03686dba9c7cca43160e8aec16258e49e9542d2ef6631dfd64d34d7f"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    },
+    {
+     "gate": "top_lvs",
+     "relation": "read",
+     "kind": "top_gds",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:00:13",
+     "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
+    }
+   ]
+  },
+  {
+   "path": "gl/tt_um_ihsan_sa_pll.v",
+   "source": "top/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+   "sha256": "df2a0bfab94fa4b9e435c82279c04297ea2ad3153bbd7126afbc997274b63beb",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    },
+    {
+     "gate": "top_lvs",
+     "relation": "read",
+     "kind": "top_pnl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:00:13",
+     "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
+    }
+   ]
+  },
+  {
+   "path": "info.yaml",
+   "source": "tt/info.yaml",
+   "sha256": "d7673e15945223e005f395c33e1a8f1fac976d62f66a7fbf503d5a2ba2c43adf",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ],
+   "agrees_with": "top/harden/info.yaml"
+  },
+  {
+   "path": "lef/tt_um_ihsan_sa_pll.lef",
+   "source": "top/harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
+   "sha256": "5dea19e9e170875c172d585178ef449d180563f1303b03ae011bc9880e480ab8",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/ihsan_sa_pll.v",
+   "source": "digital/rtl/ihsan_sa_pll.v",
+   "sha256": "6a5c8e86dd1651a86db90b40e0d2c6c8699509b927ab0a239638c77b4e817453",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_analog.v",
+   "source": "tt/src/pll_analog.v",
+   "sha256": "33b63b7beceba4e8ea4b48749e0f8284ce4e4d070295ea088e8b796453ff9e0f",
+   "gates": [
+    {
+     "gate": "top_lvs",
+     "relation": "read",
+     "kind": "top_macros",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:00:13",
+     "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
+    }
+   ],
+   "agrees_with": "top/macros/pll_analog.v"
+  },
+  {
+   "path": "src/pll_ctrl_regs.v",
+   "source": "digital/rtl/pll_ctrl_regs.v",
+   "sha256": "48652f247f7f2e906d3ca37e7a5027e15b7fa798f820691a9ef5377cdeff7828",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_divider.v",
+   "source": "digital/rtl/pll_divider.v",
+   "sha256": "5ec53ed9eb189dd3c5ccf8e8d59f0106b013bf440a4f389c793b88e0e062f318",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_lock_det.v",
+   "source": "digital/rtl/pll_lock_det.v",
+   "sha256": "a7786865ee12a9206ee8eb330b626080f02c58358c1deeb08494796f4c6c6ab2",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_pfd.v",
+   "source": "digital/rtl/pll_pfd.v",
+   "sha256": "89510871eae079078b12087d0db6401760b9e0ca4efbde83d9a4da83ac515b62",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/pll_prescaler.v",
+   "source": "digital/rtl/pll_prescaler.v",
+   "sha256": "a6943d2b6e027e20683e78101af0414b37e61d86d1a73f7d8871098c33752df3",
+   "gates": [
+    {
+     "gate": "cosim",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-04T01:28:39",
+     "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
+    },
+    {
+     "gate": "top_harden",
+     "relation": "read",
+     "kind": "digital_rtl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": "src/project.v",
+   "source": "tt/src/project.v",
+   "sha256": "3234b0fe05841cf9de9436dacbe3a107a0ca05d321c5264d0bd46ad0f841ea00",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ],
+   "agrees_with": "top/harden/tt_um_ihsan_sa_pll.v"
+  },
+  {
+   "path": "test/Makefile",
+   "source": "tt/test/Makefile",
+   "sha256": "d3fc942309c32b843c5b082d39702a563ecd4ec4c92f057a7bcf2baa39e64476",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/pll_analog_model.v",
+   "source": "tt/test/pll_analog_model.v",
+   "sha256": "1c9061bf64f7265314991589cb12855390a31b7eea94a6a49938cd40d955693c",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/tb.v",
+   "source": "tt/test/tb.v",
+   "sha256": "0a9e0ba8358413cd5f04d95c3bfc49285619228c2e852edfde35eb884c5cde97",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": "test/test.py",
+   "source": "tt/test/test.py",
+   "sha256": "99a55a4d696c58b6237434c279f1ab6403e69ad592b4a2d0b0aa8f73955f8046",
+   "gates": [],
+   "unsigned": "test bench: not silicon, no gate reads it here"
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+   "sha256": "df2a0bfab94fa4b9e435c82279c04297ea2ad3153bbd7126afbc997274b63beb",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    },
+    {
+     "gate": "top_lvs",
+     "relation": "read",
+     "kind": "top_pnl",
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T08:00:13",
+     "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/max_ff_n40C_3v60/tt_um_ihsan_sa_pll__max_ff_n40C_3v60.sdf",
+   "sha256": "052b531ccc56a27cee16cd7fe6d236faf1395a6b769ef82fc87084226aae2a2e",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/max_ss_125C_3v00/tt_um_ihsan_sa_pll__max_ss_125C_3v00.sdf",
+   "sha256": "ac127246b730685bfd07763b013eac74e239a8dcc60f9c5502a8efcc602a664f",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/max_tt_025C_3v30/tt_um_ihsan_sa_pll__max_tt_025C_3v30.sdf",
+   "sha256": "037ce8dccb8ca6b6024b6910564cfe4ba18a3393f34f342299aa40ed5c874042",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/min_ff_n40C_3v60/tt_um_ihsan_sa_pll__min_ff_n40C_3v60.sdf",
+   "sha256": "99976cad94193376199589561e934017d8dd429794cb408e4417906c1bba2ea7",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/min_ss_125C_3v00/tt_um_ihsan_sa_pll__min_ss_125C_3v00.sdf",
+   "sha256": "d0077fdfab3e25687fdd9439bb6cde53b3cb2886f0faae2dc9103d732ef04765",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/min_tt_025C_3v30/tt_um_ihsan_sa_pll__min_tt_025C_3v30.sdf",
+   "sha256": "2f3b26e83615de110e05537959fae9625d0ec289352afbeaf1cb33243d2535e0",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/nom_ff_n40C_3v60/tt_um_ihsan_sa_pll__nom_ff_n40C_3v60.sdf",
+   "sha256": "8ecffa648dc5f25016ebdb23d39b220be163f3abf25edd870c941a0e29e62367",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/nom_ss_125C_3v00/tt_um_ihsan_sa_pll__nom_ss_125C_3v00.sdf",
+   "sha256": "ae69959f9dc7dab8f968f14e85a9445e42f65e55a34dc93e2bc43f30670950e1",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/sdf/nom_tt_025C_3v30/tt_um_ihsan_sa_pll__nom_tt_025C_3v30.sdf",
+   "sha256": "00524ff248374b5550bb15745e1c27cebf67383ccbbfbbcccd554f94e9098f5f",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/spef/max/tt_um_ihsan_sa_pll.max.spef",
+   "sha256": "9d93b1520559124c016cc94fa257dd9da6a52303bd6c5158f344b3659776a369",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/spef/min/tt_um_ihsan_sa_pll.min.spef",
+   "sha256": "aba035cc223bf9614c75a579fc0b9457add338ddb6e3d5a2611098c9987ebbd1",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  },
+  {
+   "path": null,
+   "source": "top/harden/runs/run/final/spef/nom/tt_um_ihsan_sa_pll.nom.spef",
+   "sha256": "a811ae25b6bbf8639f1daa0db760e8c74db104619a89285c00d84b45104282b5",
+   "gates": [
+    {
+     "gate": "top_harden",
+     "relation": "produced",
+     "kind": null,
+     "verdict": "pass",
+     "fresh": true,
+     "ts": "2026-11-03T07:58:20",
+     "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
+    }
+   ]
+  }
+ ],
+ "manifest_sha256": "f09a22319afa30e13f5ca69175f23e76d5882b9d4afa9aa4d7c1f535e7251920"
+}
