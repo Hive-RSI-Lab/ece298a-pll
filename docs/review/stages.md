@@ -12,7 +12,7 @@ $CHIP_FLOW_HOME/engine/scripts/gate.py` in place of `chip-flow gate`. The
 commands without chip-flow (the RTL test, klayout, gtkwave) need only those
 tools. Run them from the repository's root.
 
-**30 of 31 gates pass on their last recorded run.** 1 fail.
+**29 of 31 gates pass on their last recorded run.** 2 fail.
 
 ## Spec and split
 
@@ -58,9 +58,9 @@ tools. Run them from the repository's root.
 
 | gate | shows | result | what it found | run | see it yourself |
 |---|---|---|---|---|---|
-| cosim (top) | the digital RTL and the transistor-level analog lock together | pass | locks in 4.48 us at 100.000 MHz (P*N=16), 0 lock drops, VCO period error 0.0000 | 2026-11-03 | `blocks/pll/tb/README.md`; all three layers: `chip-flow eda python blocks/pll/tb/run_layers.py` (about 2.5 min)<br>`chip-flow gate --gate cosim --skill msde --workspace blocks/pll` |
-| cosim_corners (top) | the same loop locks on the extracted analog netlist at the corners that bound its post-layout range (lowest and highest VCO ceiling and phase margin) | **FAIL** | locks at 4 of 4 bounding corners on the extracted netlist (ff_pss 6.72 us, ff_m40c_vm10 4.00 us, ff_125c_vp10 4.48 us, ss_m40c_vm10 4.96 us); vctrl within 20 mV p-p at 2 of them; measure_out_of_bounds: 'vctrl_pp_last_10us_mv' = 26.96871833615111 is outside its bound [None, 20]; test failed: test_pll_lock_nominal | 2026-10-31 | `blocks/pll/tb/README.md`; every corner's measures and vctrl trace: `blocks/pll/reports/recorded/cosim_corners.json`<br>`chip-flow eda python blocks/pll/tb/cosim_corners.py` |
-| cosim_corners_gl (top) | the same corners with the hardened gate-level digital and its SDF in place of the RTL, so the PFD's reset pulse is in the loop (issue #47) | pass | locks at 4 of 4 bounding corners on the extracted netlist (ff_pss 6.72 us, ff_m40c_vm10 4.00 us, ff_125c_vp10 4.96 us, ss_m40c_vm10 5.12 us); vctrl within 20 mV p-p at 4 of them | 2026-11-01 | `blocks/pll/tb/README.md`; `blocks/pll/reports/recorded/cosim_corners_gl.json`<br>`chip-flow eda python blocks/pll/tb/cosim_gl.py` (after the vde harden) |
+| cosim (top) | the digital RTL and the transistor-level analog lock together | pass | locks in 4.48 us at 100.000 MHz (P*N=16), 0 lock drops, VCO period error 0.0000 | 2026-11-04 | `blocks/pll/tb/README.md`; all three layers: `chip-flow eda python blocks/pll/tb/run_layers.py` (about 2.5 min)<br>`chip-flow gate --gate cosim --skill msde --workspace blocks/pll` |
+| cosim_corners (top) | the same loop locks on the extracted analog netlist at the corners that bound its post-layout range (lowest and highest VCO ceiling and phase margin) | **FAIL** | locks at 2 of 4 bounding corners on the extracted netlist (ff_125c_vp10 4.48 us, ss_m40c_vm10 4.96 us); vctrl within 20 mV p-p at 2 of them; measure_missing: 'relock_time_us' has a bound but no recorded value; measure_out_of_bounds: 'vctrl_pp_last_10us_mv' = 26.96871833615111 is o | 2026-11-04 | `blocks/pll/tb/README.md`; every corner's measures and vctrl trace: `blocks/pll/reports/recorded/cosim_corners.json`<br>`chip-flow eda python blocks/pll/tb/cosim_corners.py` |
+| cosim_corners_gl (top) | the same corners with the hardened gate-level digital and its SDF in place of the RTL, so the PFD's reset pulse is in the loop (issue #47) | **FAIL** | locks at 3 of 4 bounding corners on the extracted netlist (ff_m40c_vm10 4.00 us, ff_125c_vp10 4.48 us, ss_m40c_vm10 5.12 us); vctrl within 20 mV p-p at 3 of them; measure_missing: 'relock_time_us' has a bound but no recorded value; test failed: test_pll_lock_nominal | 2026-11-04 | `blocks/pll/tb/README.md`; `blocks/pll/reports/recorded/cosim_corners_gl.json`<br>`chip-flow eda python blocks/pll/tb/cosim_gl.py` (after the vde harden) |
 
 ## Analog layout
 
