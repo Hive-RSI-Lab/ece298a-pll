@@ -1,0 +1,2 @@
+ meas tran ta when v(xdut.vco_out)=1.65 rise=2 td=100n failed!
+ meas tran tb when v(xdut.vco_out)=1.65 rise=4 td=100n failed!

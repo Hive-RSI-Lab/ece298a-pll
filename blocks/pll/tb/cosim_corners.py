@@ -175,7 +175,8 @@ def run_one(corner: str, extracted: Path, work: Path, timeout_s: float) -> dict:
     failed = [n for n, r in results.items() if not r["passed"]]
     why = ([err] if err else []) + bad + [f"ngspice: {n}" for n in nonconv] + \
         [f"test failed: {n}" for n in failed] + ([] if results or err else ["no test ran"])
-    keep = ["lock_time_us", "lock_drops_after_lock", "fb_period_rel_err", "vco_period_rel_err",
+    keep = ["lock_time_us", "relock_time_us", "relock_n_sel", "lock_drops_after_lock",
+            "fb_period_rel_err", "vco_period_rel_err",
             "vctrl_pp_last_10us_mv", "vco_freq_hz", "fb_freq_hz", "vctrl_final_v",
             "vctrl_mean_window_v", "static_phase_offset_ns", "vco_min_period_ns_after_en",
             "lock_rises", "window_after_lock", "spice_time_reached_ns", "digital_toggles",

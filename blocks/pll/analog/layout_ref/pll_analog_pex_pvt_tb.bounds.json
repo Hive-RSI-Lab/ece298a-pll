@@ -4,7 +4,7 @@
   {"measure": "icp_dn_code00_ua", "min": 12.0, "max": 30.0, "severity": "error",
    "msg": "post-layout DN current, code 00, vctrl = vdd/2 (spec.yaml post_layout_bounds)"},
   {"measure": "vco_kvco_mhz_per_v", "min": 30.0, "max": 250.0, "severity": "error",
-   "msg": "post-layout mean df/dv over vctrl 0.3 .. vdd-0.3 V (floor 30 since 2026-10-30, spec.md; spec.yaml post_layout_bounds still says 40)"},
+   "msg": "post-layout mean df/dv over vctrl 0.3 .. vdd-0.3 V (floor 30 since 2026-10-30, spec.md)"},
   {"measure": "vco_fmax_tt_mhz", "min": 200.0, "severity": "error", "corners": ["tt_27c"],
    "msg": "post-layout f at vctrl = vdd-0.3 V, scored at tt_27c as in the spec (spec.yaml post_layout_bounds)"},
   {"measure": "ol_pm_pn16_nopad_pvt_deg", "min": 30.0, "severity": "error",

@@ -128,7 +128,10 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 | `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency, internal `vco_out` into the TSPC |
 | `vco_out_tf_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | fall, same |
 | `vco_out_duty_pct` | 40..60 | all | duty at mid-range `vctrl` |
-| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10 | the macro's TSPC /2 (vco_out -> vco_div2, loaded by one `inv_1` and 30 fF): f(vco_div2) / (f_vco/2) |
+| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10, tt_27c | the macro's TSPC /2 (vco_out -> vco_div2, loaded by one `inv_1` and 30 fF): f(vco_div2) / (f_vco/2) |
+| `presc_ckq_r_ns`, `presc_ckq_f_ns` | <= 0.5 | tt_27c | vdd/2 on the clocking `vco_out` rise to vdd/2 on `vco_div2`, rising and falling |
+| `presc_tr_ns`, `presc_tf_ns` | <= 0.15 | tt_27c | `vco_div2` 20-80 %, same load |
+| `presc_duty_pct` | 40..60 | tt_27c | `vco_div2` duty |
 | `standby_current_ua` | <= 1 | all | vdd current with `pll_en` = 0 |
 | `vco_out_off_toggles` | 0 | all | `vco_out` transitions with `pll_en` = 0 (held static) |
 | `startup_time_us` | <= 5 | all | `pll_en` rise to a running, full-swing `vco_out`, with 5 pF on `vctrl` and on `bias_ref` |
@@ -140,12 +143,14 @@ extracted netlist at typical hold the same bounds. Since 2026-10-30 the
 post-layout bounds also hold `ol_pm_pn16_nopad_pvt_deg` (>= 30 at every
 corner), and Kvco's post-layout floor is 30 MHz/V (revision 2026-10-30).
 Both are in the post-layout bench's `.bounds.json`, which pex_pvt scores;
-`spec.yaml`'s `post_layout_bounds` keeps Kvco at 40 and has no margin key
-until bench_strength is next re-run (changing it stales that gate's
-recorded pass, which reads no post-layout bound). No Monte Carlo gate: the brief asks for no yield number. GF180 poly models
-have no per-instance mismatch, but the MOS models do (`.lib fets_mm`, off by
-default through `sw_stat_mismatch`). This note said otherwise until
-2026-11-01. A Monte Carlo outside the gates is in `mc/README.md`.
+`spec.yaml`'s `post_layout_bounds` holds Kvco at 30 since 2026-11-01, and has
+no margin key. Monte Carlo gate since 2026-11-01 (`mc` in `spec.yaml`, H2's ruling
+on the person's "H2 decides"): 30 samples per bench at typical, device mismatch
+on. It does not see the corners where `cp_updn_mismatch_pct` goes over its bound
+(ff_pss, ff_m40c_vp10); those rates are in `mc/README.md`, which also has what
+the outside runs cover. GF180 poly models have no per-instance mismatch; the MOS
+models do (`.lib fets_mm`, off by default through `sw_stat_mismatch`). This note
+said otherwise until 2026-11-01.
 
 ### Revision 2026-10-10 (H1)
 

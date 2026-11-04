@@ -25,8 +25,10 @@ module tb ();
   wire VGND = 1'b0;
 
   tt_um_ihsan_sa_pll user_project (
+`ifdef GL_TEST
       .VGND   (VGND),
       .VDPWR  (VDPWR),
+`endif
       .ui_in  (ui_in),    // Dedicated inputs
       .uo_out (uo_out),   // Dedicated outputs
       .uio_in (uio_in),   // IOs: Input path

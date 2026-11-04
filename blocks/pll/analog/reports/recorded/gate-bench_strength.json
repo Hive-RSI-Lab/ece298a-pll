@@ -3,7 +3,7 @@
  "gate": "bench_strength",
  "phase": "P4",
  "tool": "bench_strength",
- "input_digest": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
+ "input_digest": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -12,12 +12,12 @@
   "max_count": 0
  },
  "counts": {
-  "total": 33,
+  "total": 40,
   "by_severity": {
-   "info": 33
+   "info": 40
   },
   "by_source": {
-   "mutant_rulings": 33
+   "mutant_rulings": 40
   }
  },
  "failing_count": 0,
@@ -33,11 +33,11 @@
    "refs": [
     "xMN_B2"
    ],
-   "msg": "mutant xMN_B2_size_doubled_w (xMN_B2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.01125 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_B2_size_doubled_w (xMN_B2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.0114 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_B2_size_doubled_w (xMN_B2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.01125 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_B2_size_doubled_w (xMN_B2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.0114 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -53,11 +53,31 @@
    "refs": [
     "xMN_BUFT"
    ],
-   "msg": "mutant xMN_BUFT_size_doubled_w (xMN_BUFT: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.0115 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_BUFT_size_doubled_w (xMN_BUFT: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.009445 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_BUFT_size_doubled_w (xMN_BUFT: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.0115 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_BUFT_size_doubled_w (xMN_BUFT: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.009445 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_size_doubled",
+   "refs": [
+    "xMN_DB"
+   ],
+   "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_r_ns moved +0.01001 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMN_DB_size_doubled_w (xMN_DB: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_r_ns moved +0.01001 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -73,11 +93,11 @@
    "refs": [
     "xMN_ENA"
    ],
-   "msg": "mutant xMN_ENA_size_doubled_w (xMN_ENA: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.006094 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENA_size_doubled_w (xMN_ENA: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004823 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENA_size_doubled_w (xMN_ENA: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.006094 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENA_size_doubled_w (xMN_ENA: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004823 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -93,11 +113,11 @@
    "refs": [
     "xMN_ENB"
    ],
-   "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.0008217 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006086 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.0008217 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006086 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -113,11 +133,11 @@
    "refs": [
     "xMN_ENB"
    ],
-   "msg": "mutant xMN_ENB_size_doubled_w (xMN_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005931 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENB_size_doubled_w (xMN_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): presc_tr_ns moved -0.0005358 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENB_size_doubled_w (xMN_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005931 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENB_size_doubled_w (xMN_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): presc_tr_ns moved -0.0005358 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -133,11 +153,11 @@
    "refs": [
     "xMN_ENI"
    ],
-   "msg": "mutant xMN_ENI_size_doubled_w (xMN_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005663 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENI_size_doubled_w (xMN_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007116 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENI_size_doubled_w (xMN_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005663 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENI_size_doubled_w (xMN_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007116 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -153,11 +173,11 @@
    "refs": [
     "xMN_ENN"
    ],
-   "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.0007995 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005107 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.0007995 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005107 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -173,11 +193,11 @@
    "refs": [
     "xMN_ENN"
    ],
-   "msg": "mutant xMN_ENN_size_doubled_w (xMN_ENN: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004491 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENN_size_doubled_w (xMN_ENN: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001418 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENN_size_doubled_w (xMN_ENN: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004491 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENN_size_doubled_w (xMN_ENN: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001418 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -193,11 +213,11 @@
    "refs": [
     "xMN_ENS"
    ],
-   "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.005253 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.00535 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.005253 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.00535 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -213,11 +233,11 @@
    "refs": [
     "xMN_ENS"
    ],
-   "msg": "mutant xMN_ENS_size_doubled_w (xMN_ENS: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005818 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENS_size_doubled_w (xMN_ENS: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006714 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENS_size_doubled_w (xMN_ENS: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005818 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENS_size_doubled_w (xMN_ENS: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006714 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -233,11 +253,11 @@
    "refs": [
     "xMN_ENV"
    ],
-   "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00406 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004145 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00406 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004145 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -253,11 +273,31 @@
    "refs": [
     "xMN_ENV"
    ],
-   "msg": "mutant xMN_ENV_size_doubled_w (xMN_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.003909 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ENV_size_doubled_w (xMN_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004035 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ENV_size_doubled_w (xMN_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.003909 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ENV_size_doubled_w (xMN_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004035 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_connection_removed",
+   "refs": [
+    "xMN_I4"
+   ],
+   "msg": "mutant xMN_I4_connection_removed (xMN_I4: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01251 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMN_I4_connection_removed (xMN_I4: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01251 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -273,11 +313,11 @@
    "refs": [
     "xMN_STD"
    ],
-   "msg": "mutant xMN_STD_size_doubled_w (xMN_STD: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.01441 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_STD_size_doubled_w (xMN_STD: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.01342 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_STD_size_doubled_w (xMN_STD: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.01441 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_STD_size_doubled_w (xMN_STD: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved +0.01342 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -293,11 +333,11 @@
    "refs": [
     "xMN_STE"
    ],
-   "msg": "mutant xMN_STE_size_doubled_w (xMN_STE: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00226 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_STE_size_doubled_w (xMN_STE: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): presc_tr_ns moved -0.0005358 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_STE_size_doubled_w (xMN_STE: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00226 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_STE_size_doubled_w (xMN_STE: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): presc_tr_ns moved -0.0005358 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -313,11 +353,11 @@
    "refs": [
     "xMN_ST"
    ],
-   "msg": "mutant xMN_ST_size_doubled_w (xMN_ST: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.002345 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_ST_size_doubled_w (xMN_ST: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.003977 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_ST_size_doubled_w (xMN_ST: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.002345 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_ST_size_doubled_w (xMN_ST: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.003977 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -333,11 +373,11 @@
    "refs": [
     "xMN_SW0B"
    ],
-   "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved +0.0004562 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004073 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved +0.0004562 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004073 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -353,11 +393,11 @@
    "refs": [
     "xMN_SW0B"
    ],
-   "msg": "mutant xMN_SW0B_size_doubled_w (xMN_SW0B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.0008877 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW0B_size_doubled_w (xMN_SW0B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005999 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW0B_size_doubled_w (xMN_SW0B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.0008877 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW0B_size_doubled_w (xMN_SW0B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005999 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -373,11 +413,11 @@
    "refs": [
     "xMN_SW0"
    ],
-   "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005655 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001623 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005655 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001623 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -393,11 +433,11 @@
    "refs": [
     "xMN_SW0"
    ],
-   "msg": "mutant xMN_SW0_size_doubled_w (xMN_SW0: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.0007969 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW0_size_doubled_w (xMN_SW0: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001229 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW0_size_doubled_w (xMN_SW0: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.0007969 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW0_size_doubled_w (xMN_SW0: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.001229 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -413,11 +453,11 @@
    "refs": [
     "xMN_SW1B"
    ],
-   "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.001425 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007619 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.001425 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007619 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -433,11 +473,11 @@
    "refs": [
     "xMN_SW1B"
    ],
-   "msg": "mutant xMN_SW1B_size_doubled_w (xMN_SW1B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004487 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW1B_size_doubled_w (xMN_SW1B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004493 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW1B_size_doubled_w (xMN_SW1B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004487 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW1B_size_doubled_w (xMN_SW1B: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.004493 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -453,11 +493,11 @@
    "refs": [
     "xMN_SW1"
    ],
-   "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005655 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.00444 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005655 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.00444 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -473,11 +513,91 @@
    "refs": [
     "xMN_SW1"
    ],
-   "msg": "mutant xMN_SW1_size_doubled_w (xMN_SW1: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004487 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMN_SW1_size_doubled_w (xMN_SW1: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005368 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMN_SW1_size_doubled_w (xMN_SW1: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004487 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMN_SW1_size_doubled_w (xMN_SW1: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005368 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_size_doubled",
+   "refs": [
+    "xMN_UPI"
+   ],
+   "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived and is accepted as below process spread by ruling (a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01): cp_overlap_net_charge_fc moved +0.0198 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMN_UPI_size_doubled_w (xMN_UPI: w doubled) survived and is accepted as below process spread by ruling (a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01): cp_overlap_net_charge_fc moved +0.0198 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_size_doubled",
+   "refs": [
+    "xMP_BUFT"
+   ],
+   "msg": "mutant xMP_BUFT_size_doubled_w (xMP_BUFT: w doubled) survived and is accepted as below process spread by ruling (w16f8 (warden) as an independent reviewer, on a06c8's request (board 11040659a41b, ruling 110406597501), 2026-11-04 - not a06c8's own ruling): startup_time_us moved -0.0199 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMP_BUFT_size_doubled_w (xMP_BUFT: w doubled) survived and is accepted as below process spread by ruling (w16f8 (warden) as an independent reviewer, on a06c8's request (board 11040659a41b, ruling 110406597501), 2026-11-04 - not a06c8's own ruling): startup_time_us moved -0.0199 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_connection_removed",
+   "refs": [
+    "xMP_DB"
+   ],
+   "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_out_tf_ns moved -0.009289 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMP_DB_connection_removed (xMP_DB: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_out_tf_ns moved -0.009289 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_size_doubled",
+   "refs": [
+    "xMP_DR"
+   ],
+   "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_f_ns moved +0.006022 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMP_DR_size_doubled_w (xMP_DR: w doubled) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): presc_ckq_f_ns moved +0.006022 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -493,11 +613,11 @@
    "refs": [
     "xMP_ENB"
    ],
-   "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005188 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006305 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.005188 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006305 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -513,11 +633,11 @@
    "refs": [
     "xMP_ENB"
    ],
-   "msg": "mutant xMP_ENB_size_doubled_w (xMP_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved +0.002277 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENB_size_doubled_w (xMP_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007737 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENB_size_doubled_w (xMP_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved +0.002277 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENB_size_doubled_w (xMP_ENB: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.007737 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -533,11 +653,11 @@
    "refs": [
     "xMP_ENI"
    ],
-   "msg": "mutant xMP_ENI_size_doubled_w (xMP_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.002188 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENI_size_doubled_w (xMP_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006146 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENI_size_doubled_w (xMP_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved +0.002188 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENI_size_doubled_w (xMP_ENI: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.006146 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -553,11 +673,11 @@
    "refs": [
     "xMP_ENP"
    ],
-   "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00293 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.003821 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.00293 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.003821 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -573,11 +693,11 @@
    "refs": [
     "xMP_ENP"
    ],
-   "msg": "mutant xMP_ENP_size_doubled_w (xMP_ENP: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004479 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENP_size_doubled_w (xMP_ENP: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.009187 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENP_size_doubled_w (xMP_ENP: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.004479 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENP_size_doubled_w (xMP_ENP: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.009187 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -593,11 +713,11 @@
    "refs": [
     "xMP_ENV"
    ],
-   "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.01273 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.01323 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.01273 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.01323 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -613,11 +733,11 @@
    "refs": [
     "xMP_ENV"
    ],
-   "msg": "mutant xMP_ENV_size_doubled_w (xMP_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005182 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_ENV_size_doubled_w (xMP_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.003342 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_ENV_size_doubled_w (xMP_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): cp_overlap_net_charge_fc moved -0.005182 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_ENV_size_doubled_w (xMP_ENV: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): ol_fc_pn16_nopad_khz moved -0.003342 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -633,11 +753,11 @@
    "refs": [
     "xMP_G2"
    ],
-   "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01733 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01494 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01733 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved -0.01494 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -653,11 +773,31 @@
    "refs": [
     "xMP_G2"
    ],
-   "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01551 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01664 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01551 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_G2_size_doubled_w (xMP_G2: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): vco_out_tf_ns moved +0.01664 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "bench_strength",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "below_spread_connection_removed",
+   "refs": [
+    "xMP_I3"
+   ],
+   "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01554 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "source": "mutant_rulings",
+   "items": [
+    {
+     "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived and is accepted as below process spread by ruling (a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling): vco_fmin_tt_mhz moved +0.01554 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -673,11 +813,11 @@
    "refs": [
     "xMP_STL"
    ],
-   "msg": "mutant xMP_STL_size_doubled_w (xMP_STL: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.005847 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+   "msg": "mutant xMP_STL_size_doubled_w (xMP_STL: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.006474 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
    "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant xMP_STL_size_doubled_w (xMP_STL: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.005847 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
+     "msg": "mutant xMP_STL_size_doubled_w (xMP_STL: w doubled) survived and is accepted as below process spread by ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 \u2014 not his own ruling): startup_time_us moved -0.006474 (relative) against sigma 0, inside max(3 sigma, 2%) = 0.02",
      "file": null,
      "line": null
     }
@@ -686,23 +826,25 @@
  ],
  "facts": {
   "top": "pll_analog",
-  "total_mutants": 253,
-  "killed": 220,
-  "survived": 33,
-  "devices_total": 87,
-  "devices_mutated": 87,
+  "total_mutants": 295,
+  "killed": 255,
+  "survived": 40,
+  "reused_mutants": 295,
+  "devices_total": 101,
+  "devices_mutated": 101,
   "unmutated": [],
-  "killed_by_sensitivity": 79,
+  "killed_by_sensitivity": 88,
   "killed_by_sensitivity_kind": {
-   "relative": 79,
+   "relative": 88,
    "absolute": 0
   },
   "equivalent": 0,
-  "below_spread": 33,
+  "below_spread": 40,
   "equivalent_ids": [],
   "below_spread_ids": [
    "xMN_B2_size_doubled_w",
    "xMN_BUFT_size_doubled_w",
+   "xMN_DB_size_doubled_w",
    "xMN_ENA_size_doubled_w",
    "xMN_ENB_connection_removed",
    "xMN_ENB_size_doubled_w",
@@ -713,6 +855,7 @@
    "xMN_ENS_size_doubled_w",
    "xMN_ENV_connection_removed",
    "xMN_ENV_size_doubled_w",
+   "xMN_I4_connection_removed",
    "xMN_STD_size_doubled_w",
    "xMN_STE_size_doubled_w",
    "xMN_ST_size_doubled_w",
@@ -724,6 +867,10 @@
    "xMN_SW1B_size_doubled_w",
    "xMN_SW1_connection_removed",
    "xMN_SW1_size_doubled_w",
+   "xMN_UPI_size_doubled_w",
+   "xMP_BUFT_size_doubled_w",
+   "xMP_DB_connection_removed",
+   "xMP_DR_size_doubled_w",
    "xMP_ENB_connection_removed",
    "xMP_ENB_size_doubled_w",
    "xMP_ENI_size_doubled_w",
@@ -733,13 +880,14 @@
    "xMP_ENV_size_doubled_w",
    "xMP_G2_connection_removed",
    "xMP_G2_size_doubled_w",
+   "xMP_I3_connection_removed",
    "xMP_STL_size_doubled_w"
   ],
   "bench_order": [
    "pll_analog_cp_tb.cir",
-   "pll_analog_presc_tb.cir",
    "pll_analog_pwr_tb.cir",
    "pll_analog_ol_tb.cir",
+   "pll_analog_presc_tb.cir",
    "pll_analog_overlap_tb.cir",
    "pll_analog_vco_tb.cir",
    "pll_analog_startup_tb.cir"
@@ -783,7 +931,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_startup_tb.cir",
      "measure": "startup_time_us",
-     "delta": -0.026882,
+     "delta": -0.025832,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -793,7 +941,7 @@
     "killed": false,
     "describe": "xMN_B2: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.003792,
+     "cp_overlap_net_charge_fc": 0.001777,
      "cp_updn_mismatch_pct": -6e-05,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.000198,
@@ -802,23 +950,29 @@
      "icp_up_code01_ua": 0.000199,
      "icp_up_code10_ua": 0.000194,
      "icp_up_code11_ua": 0.000197,
-     "ol_fc_pn16_nopad_khz": 0.001102,
-     "ol_pm_pn16_nopad_deg": 0.000357,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000357,
-     "ol_pm_pn16_pad5p_deg": 0.000249,
-     "ol_pm_pn40_nopad_deg": 0.000585,
-     "ol_pm_pn8_nopad_deg": 6.1e-05,
-     "standby_current_ua": 0.00018,
-     "startup_time_us": -0.011247,
-     "vco_df_dv_min_mhz_per_v": 0.000283,
-     "vco_fmax_ff_mhz": 0.001566,
-     "vco_fmax_tt_mhz": 0.001222,
-     "vco_fmin_tt_mhz": 0.001187,
-     "vco_kvco_mhz_per_v": 0.001224,
-     "vco_out_duty_pct": 3.2e-05,
-     "vco_out_swing_pct_vdd": 6e-05,
-     "vco_out_tf_ns": -0.000579,
-     "vco_out_tr_ns": -0.000387,
+     "ol_fc_pn16_nopad_khz": -0.006525,
+     "ol_pm_pn16_nopad_deg": -0.002301,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002301,
+     "ol_pm_pn16_pad5p_deg": -0.001698,
+     "ol_pm_pn40_nopad_deg": -0.003513,
+     "ol_pm_pn8_nopad_deg": -0.000533,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -4e-06,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": 0.00015,
+     "startup_time_us": -0.011404,
+     "vco_df_dv_min_mhz_per_v": -0.000215,
+     "vco_fmax_ff_mhz": 0.000112,
+     "vco_fmax_tt_mhz": 0.0001,
+     "vco_fmin_tt_mhz": 0.001276,
+     "vco_kvco_mhz_per_v": 5.5e-05,
+     "vco_out_duty_pct": 5.9e-05,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": -0.001125,
+     "vco_out_tr_ns": 0.000214,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -847,7 +1001,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.423113,
+     "delta": 0.423055,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -872,7 +1026,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.443845,
+     "delta": 0.454585,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -897,7 +1051,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.377925,
+     "delta": 0.387765,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -910,7 +1064,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 2.532585,
+     "delta": 2.558631,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -923,7 +1077,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 2.557926,
+     "delta": 2.583462,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -936,7 +1090,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": -0.059692,
+     "delta": -0.054539,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -955,7 +1109,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 1.228609,
+     "delta": 1.244177,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -965,7 +1119,7 @@
     "killed": false,
     "describe": "xMN_BUFT: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.00524,
+     "cp_overlap_net_charge_fc": -0.008058,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -974,23 +1128,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002195,
-     "ol_pm_pn16_nopad_deg": 0.000701,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000701,
-     "ol_pm_pn16_pad5p_deg": 0.000493,
-     "ol_pm_pn40_nopad_deg": 0.001151,
-     "ol_pm_pn8_nopad_deg": 0.000105,
-     "standby_current_ua": 4.7e-05,
-     "startup_time_us": 0.0115,
-     "vco_df_dv_min_mhz_per_v": 7.1e-05,
-     "vco_fmax_ff_mhz": 0.000119,
-     "vco_fmax_tt_mhz": 1.6e-05,
-     "vco_fmin_tt_mhz": 8e-06,
-     "vco_kvco_mhz_per_v": 1.6e-05,
-     "vco_out_duty_pct": 6e-06,
+     "ol_fc_pn16_nopad_khz": -0.008854,
+     "ol_pm_pn16_nopad_deg": -0.003133,
+     "ol_pm_pn16_nopad_pvt_deg": -0.003133,
+     "ol_pm_pn16_pad5p_deg": -0.002312,
+     "ol_pm_pn40_nopad_deg": -0.004776,
+     "ol_pm_pn8_nopad_deg": -0.00074,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 2e-06,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 3.9e-05,
+     "startup_time_us": 0.009445,
+     "vco_df_dv_min_mhz_per_v": -0.000297,
+     "vco_fmax_ff_mhz": 4e-06,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 1e-06,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -4.1e-05,
-     "vco_out_tr_ns": -0.000387,
+     "vco_out_tf_ns": 0.0,
+     "vco_out_tr_ns": 2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1015,11 +1175,11 @@
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMN_CL: w doubled",
-    "killed_by": "pll_analog_ol_tb.cir",
+    "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_ol_tb.cir",
-     "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.092562,
+     "bench": "pll_analog_vco_tb.cir",
+     "measure": "vco_df_dv_min_mhz_per_v",
+     "delta": 0.070991,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1028,14 +1188,7 @@
     "kind": "type_flipped",
     "killed": true,
     "describe": "xMN_CL: nfet_03v3 -> pfet_03v3",
-    "killed_by": "pll_analog_ol_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_ol_tb.cir",
-     "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.182632,
-     "sensitivity": 0.02,
-     "kind": "relative"
-    }
+    "killed_by": "pll_analog_ol_tb.cir"
    },
    "xMN_CPREF2_connection_removed": {
     "kind": "connection_removed",
@@ -1073,6 +1226,177 @@
     "describe": "xMN_CPREF: nfet_03v3 -> pfet_03v3",
     "killed_by": "pll_analog_cp_tb.cir"
    },
+   "xMN_DA_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DA: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DA_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DA: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.031745,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DA_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DA: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DB_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DB: bulk disconnected",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.022168,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DB_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": false,
+    "describe": "xMN_DB: w doubled",
+    "deltas": {
+     "cp_overlap_net_charge_fc": 2.5e-05,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.004821,
+     "ol_pm_pn16_nopad_deg": -0.001699,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001699,
+     "ol_pm_pn16_pad5p_deg": -0.001255,
+     "ol_pm_pn40_nopad_deg": -0.002598,
+     "ol_pm_pn8_nopad_deg": -0.000394,
+     "presc_ckq_f_ns": 0.000211,
+     "presc_ckq_r_ns": 0.010014,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.000721,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000938,
+     "standby_current_ua": 0.000287,
+     "startup_time_us": -5.7e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000327,
+     "vco_fmax_ff_mhz": -2.2e-05,
+     "vco_fmax_tt_mhz": -4e-06,
+     "vco_fmin_tt_mhz": 6.7e-05,
+     "vco_kvco_mhz_per_v": -7e-06,
+     "vco_out_duty_pct": 2e-06,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": 4.8e-05,
+     "vco_out_tr_ns": -0.00184,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": 4.4e-08,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
+    }
+   },
+   "xMN_DB_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DB: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMN_DC_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DC: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DC_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DC: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.057904,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DC_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DC: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DD_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DD: bulk disconnected",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.031723,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DD_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DD: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.066962,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DD_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DD: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMN_DE_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DE: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DE_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DE: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.084773,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DE_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DE: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
    "xMN_DND_connection_removed": {
     "kind": "connection_removed",
     "killed": true,
@@ -1081,7 +1405,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.648319,
+     "delta": 0.661734,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1094,7 +1418,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.866833,
+     "delta": 0.87729,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1119,7 +1443,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": -0.069101,
+     "delta": -0.067552,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1156,7 +1480,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 2.389,
+     "delta": 2.406025,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1169,7 +1493,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.477088,
+     "delta": 0.482991,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1179,6 +1503,56 @@
     "killed": true,
     "describe": "xMN_DN: nfet_03v3 -> pfet_03v3",
     "killed_by": "pll_analog_cp_tb.cir"
+   },
+   "xMN_DO1_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DO1: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DO1_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DO1: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.125516,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DO1_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DO1: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DO2_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMN_DO2: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMN_DO2_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMN_DO2: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_tf_ns",
+     "delta": -0.265632,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMN_DO2_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMN_DO2: nfet_03v3 -> pfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
    },
    "xMN_ENA_connection_removed": {
     "kind": "connection_removed",
@@ -1191,7 +1565,7 @@
     "killed": false,
     "describe": "xMN_ENA: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.006094,
+     "cp_overlap_net_charge_fc": -0.000164,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1200,23 +1574,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000727,
-     "ol_pm_pn16_nopad_deg": -0.000235,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000235,
-     "ol_pm_pn16_pad5p_deg": -0.000167,
-     "ol_pm_pn40_nopad_deg": -0.000384,
-     "ol_pm_pn8_nopad_deg": -4e-05,
+     "ol_fc_pn16_nopad_khz": -0.004823,
+     "ol_pm_pn16_nopad_deg": -0.001699,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001699,
+     "ol_pm_pn16_pad5p_deg": -0.001255,
+     "ol_pm_pn40_nopad_deg": -0.002598,
+     "ol_pm_pn8_nopad_deg": -0.000395,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": -0.001072,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.000303,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
-     "vco_fmax_ff_mhz": 1.2e-05,
-     "vco_fmax_tt_mhz": 4e-06,
+     "startup_time_us": 4.2e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000379,
+     "vco_fmax_ff_mhz": 0.0,
+     "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
-     "vco_kvco_mhz_per_v": 4e-06,
-     "vco_out_duty_pct": 2e-06,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tr_ns": 2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1236,7 +1616,7 @@
     "killed": false,
     "describe": "xMN_ENB: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -8.8e-05,
+     "cp_overlap_net_charge_fc": 2.1e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1245,23 +1625,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.000822,
-     "ol_pm_pn16_nopad_deg": 0.000267,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000267,
-     "ol_pm_pn16_pad5p_deg": 0.000185,
-     "ol_pm_pn40_nopad_deg": 0.000433,
-     "ol_pm_pn8_nopad_deg": 4.7e-05,
+     "ol_fc_pn16_nopad_khz": -0.006086,
+     "ol_pm_pn16_nopad_deg": -0.002145,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002145,
+     "ol_pm_pn16_pad5p_deg": -0.001582,
+     "ol_pm_pn40_nopad_deg": -0.003275,
+     "ol_pm_pn8_nopad_deg": -0.000498,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": -0.00067,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.000222,
-     "vco_df_dv_min_mhz_per_v": 5.7e-05,
+     "startup_time_us": 0.000271,
+     "vco_df_dv_min_mhz_per_v": -0.00026,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": -3e-06,
+     "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tf_ns": 2.4e-05,
+     "vco_out_tr_ns": 2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1275,7 +1661,7 @@
     "killed": false,
     "describe": "xMN_ENB: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005931,
+     "cp_overlap_net_charge_fc": -8e-06,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1284,23 +1670,29 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001652,
-     "ol_pm_pn16_nopad_deg": 0.000536,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000536,
-     "ol_pm_pn16_pad5p_deg": 0.000375,
-     "ol_pm_pn40_nopad_deg": 0.000872,
-     "ol_pm_pn8_nopad_deg": 9.2e-05,
+     "ol_fc_pn16_nopad_khz": 0.000244,
+     "ol_pm_pn16_nopad_deg": 8.5e-05,
+     "ol_pm_pn16_nopad_pvt_deg": 8.5e-05,
+     "ol_pm_pn16_pad5p_deg": 6.2e-05,
+     "ol_pm_pn40_nopad_deg": 0.000132,
+     "ol_pm_pn8_nopad_deg": 2e-05,
+     "presc_ckq_f_ns": 0.000158,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000536,
      "standby_current_ua": 0.0,
-     "startup_time_us": -2.8e-05,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "startup_time_us": -0.000105,
+     "vco_df_dv_min_mhz_per_v": -0.000327,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1e-06,
+     "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1326,7 +1718,7 @@
     "killed": false,
     "describe": "xMN_ENI: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005663,
+     "cp_overlap_net_charge_fc": 0.001318,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1335,15 +1727,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001414,
-     "ol_pm_pn16_nopad_deg": 0.00046,
-     "ol_pm_pn16_nopad_pvt_deg": 0.00046,
-     "ol_pm_pn16_pad5p_deg": 0.000323,
-     "ol_pm_pn40_nopad_deg": 0.000745,
-     "ol_pm_pn8_nopad_deg": 7.9e-05,
-     "standby_current_ua": 0.006192,
-     "startup_time_us": -0.000223,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.007116,
+     "ol_pm_pn16_nopad_deg": -0.00251,
+     "ol_pm_pn16_nopad_pvt_deg": -0.00251,
+     "ol_pm_pn16_pad5p_deg": -0.001851,
+     "ol_pm_pn40_nopad_deg": -0.003832,
+     "ol_pm_pn8_nopad_deg": -0.000581,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": -7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -6e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000268,
+     "standby_current_ua": 0.005152,
+     "startup_time_us": -0.000265,
+     "vco_df_dv_min_mhz_per_v": -0.000408,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -1371,7 +1769,7 @@
     "killed": false,
     "describe": "xMN_ENN: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.000799,
+     "cp_overlap_net_charge_fc": 5.5e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1380,15 +1778,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.000409,
-     "ol_pm_pn16_nopad_deg": 0.000132,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000132,
-     "ol_pm_pn16_pad5p_deg": 9.4e-05,
-     "ol_pm_pn40_nopad_deg": 0.000215,
-     "ol_pm_pn8_nopad_deg": 2.3e-05,
-     "standby_current_ua": 0.17644,
-     "startup_time_us": 7e-06,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "ol_fc_pn16_nopad_khz": -0.005107,
+     "ol_pm_pn16_nopad_deg": -0.001801,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001801,
+     "ol_pm_pn16_pad5p_deg": -0.001329,
+     "ol_pm_pn40_nopad_deg": -0.002752,
+     "ol_pm_pn8_nopad_deg": -0.000417,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": 0.146786,
+     "startup_time_us": -1.4e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000275,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -1410,7 +1814,7 @@
     "killed": false,
     "describe": "xMN_ENN: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.004491,
+     "cp_overlap_net_charge_fc": 2.5e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1419,15 +1823,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.003134,
-     "ol_pm_pn16_nopad_deg": -0.001016,
-     "ol_pm_pn16_nopad_pvt_deg": -0.001016,
-     "ol_pm_pn16_pad5p_deg": -0.000713,
-     "ol_pm_pn40_nopad_deg": -0.001653,
-     "ol_pm_pn8_nopad_deg": -0.000173,
+     "ol_fc_pn16_nopad_khz": -0.001418,
+     "ol_pm_pn16_nopad_deg": -0.0005,
+     "ol_pm_pn16_nopad_pvt_deg": -0.0005,
+     "ol_pm_pn16_pad5p_deg": -0.000369,
+     "ol_pm_pn40_nopad_deg": -0.000764,
+     "ol_pm_pn8_nopad_deg": -0.000116,
+     "presc_ckq_f_ns": -0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -6e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": 0.0,
      "standby_current_ua": 0.0,
-     "startup_time_us": 1.5e-05,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "startup_time_us": -3e-06,
+     "vco_df_dv_min_mhz_per_v": -8.2e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -1455,7 +1865,7 @@
     "killed": false,
     "describe": "xMN_ENS: bulk disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.003131,
+     "cp_overlap_net_charge_fc": -0.000686,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1464,27 +1874,33 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.002323,
-     "ol_pm_pn16_nopad_deg": -0.000753,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000753,
-     "ol_pm_pn16_pad5p_deg": -0.000531,
-     "ol_pm_pn40_nopad_deg": -0.001225,
-     "ol_pm_pn8_nopad_deg": -0.000128,
-     "standby_current_ua": -0.012165,
-     "startup_time_us": 0.005253,
-     "vco_df_dv_min_mhz_per_v": 0.001407,
-     "vco_fmax_ff_mhz": 0.000311,
-     "vco_fmax_tt_mhz": 0.000116,
-     "vco_fmin_tt_mhz": 0.001042,
-     "vco_kvco_mhz_per_v": 8.2e-05,
-     "vco_out_duty_pct": 0.000139,
-     "vco_out_swing_pct_vdd": 4e-05,
-     "vco_out_tf_ns": -0.001944,
-     "vco_out_tr_ns": 0.000387,
+     "ol_fc_pn16_nopad_khz": -0.000757,
+     "ol_pm_pn16_nopad_deg": -0.000267,
+     "ol_pm_pn16_nopad_pvt_deg": -0.000267,
+     "ol_pm_pn16_pad5p_deg": -0.000198,
+     "ol_pm_pn40_nopad_deg": -0.000409,
+     "ol_pm_pn8_nopad_deg": -6.3e-05,
+     "presc_ckq_f_ns": -0.000158,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.000106,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000268,
+     "standby_current_ua": -0.010375,
+     "startup_time_us": 0.00535,
+     "vco_df_dv_min_mhz_per_v": 0.000891,
+     "vco_fmax_ff_mhz": 0.004835,
+     "vco_fmax_tt_mhz": 0.000285,
+     "vco_fmin_tt_mhz": 0.001081,
+     "vco_kvco_mhz_per_v": 0.000255,
+     "vco_out_duty_pct": 0.000156,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": -0.001029,
+     "vco_out_tr_ns": -0.001669,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": -1.552e-06,
+     "standby_current_ua": -1.591e-06,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -1494,7 +1910,7 @@
     "killed": false,
     "describe": "xMN_ENS: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005818,
+     "cp_overlap_net_charge_fc": -0.000295,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1503,27 +1919,33 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000547,
-     "ol_pm_pn16_nopad_deg": -0.000177,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000177,
-     "ol_pm_pn16_pad5p_deg": -0.000123,
-     "ol_pm_pn40_nopad_deg": -0.000287,
-     "ol_pm_pn8_nopad_deg": -2.7e-05,
-     "standby_current_ua": 0.000635,
-     "startup_time_us": 0.00168,
-     "vco_df_dv_min_mhz_per_v": 0.000905,
-     "vco_fmax_ff_mhz": 0.000249,
-     "vco_fmax_tt_mhz": -5.4e-05,
-     "vco_fmin_tt_mhz": 0.000427,
-     "vco_kvco_mhz_per_v": -7.3e-05,
-     "vco_out_duty_pct": -0.000502,
-     "vco_out_swing_pct_vdd": 1e-05,
-     "vco_out_tf_ns": -0.002399,
-     "vco_out_tr_ns": -0.000193,
+     "ol_fc_pn16_nopad_khz": -0.006714,
+     "ol_pm_pn16_nopad_deg": -0.002366,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002366,
+     "ol_pm_pn16_pad5p_deg": -0.001745,
+     "ol_pm_pn40_nopad_deg": -0.003614,
+     "ol_pm_pn8_nopad_deg": -0.000547,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": -7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.000135,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": 0.000548,
+     "startup_time_us": 0.00166,
+     "vco_df_dv_min_mhz_per_v": 0.000587,
+     "vco_fmax_ff_mhz": 0.006386,
+     "vco_fmax_tt_mhz": 0.000209,
+     "vco_fmin_tt_mhz": 0.00054,
+     "vco_kvco_mhz_per_v": 0.000196,
+     "vco_out_duty_pct": -0.000529,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": -0.002609,
+     "vco_out_tr_ns": -0.001113,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": 8.1e-08,
+     "standby_current_ua": 8.4e-08,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -1539,7 +1961,7 @@
     "killed": false,
     "describe": "xMN_ENV: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.00406,
+     "cp_overlap_net_charge_fc": -0.000109,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1548,23 +1970,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000683,
-     "ol_pm_pn16_nopad_deg": -0.000221,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000221,
-     "ol_pm_pn16_pad5p_deg": -0.000155,
-     "ol_pm_pn40_nopad_deg": -0.000359,
-     "ol_pm_pn8_nopad_deg": -3.8e-05,
-     "standby_current_ua": 0.054406,
-     "startup_time_us": 0.000245,
-     "vco_df_dv_min_mhz_per_v": 0.000127,
-     "vco_fmax_ff_mhz": 1.9e-05,
-     "vco_fmax_tt_mhz": 1.9e-05,
-     "vco_fmin_tt_mhz": 2e-06,
-     "vco_kvco_mhz_per_v": 2.1e-05,
-     "vco_out_duty_pct": 4e-06,
+     "ol_fc_pn16_nopad_khz": -0.004145,
+     "ol_pm_pn16_nopad_deg": -0.001462,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001462,
+     "ol_pm_pn16_pad5p_deg": -0.001078,
+     "ol_pm_pn40_nopad_deg": -0.002234,
+     "ol_pm_pn8_nopad_deg": -0.000339,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.00067,
+     "standby_current_ua": 0.045262,
+     "startup_time_us": 0.000814,
+     "vco_df_dv_min_mhz_per_v": -0.00029,
+     "vco_fmax_ff_mhz": 2.5e-05,
+     "vco_fmax_tt_mhz": 2e-05,
+     "vco_fmin_tt_mhz": 1e-05,
+     "vco_kvco_mhz_per_v": 2e-05,
+     "vco_out_duty_pct": 2e-06,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 6.2e-05,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tf_ns": -0.000479,
+     "vco_out_tr_ns": -4.3e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1578,7 +2006,7 @@
     "killed": false,
     "describe": "xMN_ENV: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.003909,
+     "cp_overlap_net_charge_fc": 0.00016,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -1587,23 +2015,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.002114,
-     "ol_pm_pn16_nopad_deg": -0.000685,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000685,
-     "ol_pm_pn16_pad5p_deg": -0.000481,
-     "ol_pm_pn40_nopad_deg": -0.001115,
-     "ol_pm_pn8_nopad_deg": -0.000117,
+     "ol_fc_pn16_nopad_khz": -0.004035,
+     "ol_pm_pn16_nopad_deg": -0.001422,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001422,
+     "ol_pm_pn16_pad5p_deg": -0.001051,
+     "ol_pm_pn40_nopad_deg": -0.002175,
+     "ol_pm_pn8_nopad_deg": -0.00033,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 4e-06,
+     "presc_tf_ns": -0.000146,
+     "presc_tr_ns": -0.000804,
      "standby_current_ua": 0.0,
      "startup_time_us": -0.000494,
-     "vco_df_dv_min_mhz_per_v": 0.000226,
-     "vco_fmax_ff_mhz": -1.9e-05,
-     "vco_fmax_tt_mhz": -1.9e-05,
-     "vco_fmin_tt_mhz": -3.6e-05,
-     "vco_kvco_mhz_per_v": -1.8e-05,
-     "vco_out_duty_pct": -6e-06,
+     "vco_df_dv_min_mhz_per_v": -0.00026,
+     "vco_fmax_ff_mhz": -2.2e-05,
+     "vco_fmax_tt_mhz": -2e-05,
+     "vco_fmin_tt_mhz": -3.2e-05,
+     "vco_kvco_mhz_per_v": -1.9e-05,
+     "vco_out_duty_pct": -4e-06,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -4.1e-05,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tf_ns": 0.000431,
+     "vco_out_tr_ns": 0.00062,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -1626,7 +2060,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.020185,
+     "delta": -0.022114,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1639,7 +2073,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.172419,
+     "delta": 0.046216,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1657,8 +2091,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.280076,
+     "measure": "vco_out_tr_ns",
+     "delta": 0.050278,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1671,7 +2105,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.052701,
+     "delta": -0.048892,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1695,8 +2129,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.272819,
+     "measure": "vco_out_tr_ns",
+     "delta": -0.036072,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1711,11 +2145,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_I1: bulk disconnected",
-    "killed_by": "pll_analog_startup_tb.cir",
+    "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_startup_tb.cir",
-     "measure": "startup_time_us",
-     "delta": -0.020289,
+     "bench": "pll_analog_vco_tb.cir",
+     "measure": "vco_out_tf_ns",
+     "delta": 0.071293,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1728,7 +2162,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.051641,
+     "delta": -0.058986,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1743,11 +2177,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_I2: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.299694,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.036564,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1760,7 +2194,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.060944,
+     "delta": -0.055474,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1775,11 +2209,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_I3: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.021429,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.096685,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1792,7 +2226,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.067439,
+     "delta": -0.063197,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1805,15 +2239,47 @@
    },
    "xMN_I4_connection_removed": {
     "kind": "connection_removed",
-    "killed": true,
+    "killed": false,
     "describe": "xMN_I4: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.28347,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": 0.000463,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": 0.007279,
+     "ol_pm_pn16_nopad_deg": 0.002566,
+     "ol_pm_pn16_nopad_pvt_deg": 0.002566,
+     "ol_pm_pn16_pad5p_deg": 0.001895,
+     "ol_pm_pn40_nopad_deg": 0.003919,
+     "ol_pm_pn8_nopad_deg": 0.000489,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.000194,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": -0.034587,
+     "startup_time_us": 0.007952,
+     "vco_df_dv_min_mhz_per_v": 0.011259,
+     "vco_fmax_ff_mhz": 0.009005,
+     "vco_fmax_tt_mhz": 0.00905,
+     "vco_fmin_tt_mhz": 0.012507,
+     "vco_kvco_mhz_per_v": 0.008917,
+     "vco_out_duty_pct": 0.001478,
+     "vco_out_swing_pct_vdd": -4e-05,
+     "vco_out_tf_ns": -0.000479,
+     "vco_out_tr_ns": 0.001198,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": -5.304e-06,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMN_I4_size_doubled_w": {
@@ -1824,7 +2290,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.059513,
+     "delta": -0.05604,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1842,8 +2308,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.296505,
+     "measure": "vco_out_tf_ns",
+     "delta": -0.032678,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1856,7 +2322,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.0555,
+     "delta": -0.059092,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1871,7 +2337,7 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_O: drain (bulk tied to its own source) disconnected",
-    "killed_by": "pll_analog_ol_tb.cir"
+    "killed_by": "pll_analog_pwr_tb.cir"
    },
    "xMN_O_size_doubled_w": {
     "kind": "size_doubled",
@@ -1881,7 +2347,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_out_tf_ns",
-     "delta": 0.114475,
+     "delta": 0.179048,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1906,7 +2372,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.092657,
+     "delta": 0.091846,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1919,7 +2385,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.158645,
+     "delta": 0.158143,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1938,7 +2404,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.081882,
+     "delta": 0.080739,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1951,7 +2417,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.137927,
+     "delta": 0.137506,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1970,7 +2436,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.082919,
+     "delta": 0.081763,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -1983,7 +2449,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.134841,
+     "delta": 0.13456,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2002,7 +2468,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.079194,
+     "delta": 0.077866,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2015,7 +2481,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.131909,
+     "delta": 0.131261,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2034,7 +2500,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.110461,
+     "delta": 0.107869,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2047,7 +2513,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.191359,
+     "delta": 0.190791,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2063,7 +2529,7 @@
     "killed": false,
     "describe": "xMN_STD: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.003671,
+     "cp_overlap_net_charge_fc": 0.001655,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2072,23 +2538,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.001441,
-     "ol_pm_pn16_nopad_deg": -0.000468,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000468,
-     "ol_pm_pn16_pad5p_deg": -0.000329,
-     "ol_pm_pn40_nopad_deg": -0.000759,
-     "ol_pm_pn8_nopad_deg": -7.9e-05,
+     "ol_fc_pn16_nopad_khz": -0.006294,
+     "ol_pm_pn16_nopad_deg": -0.002218,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002218,
+     "ol_pm_pn16_pad5p_deg": -0.001639,
+     "ol_pm_pn40_nopad_deg": -0.00339,
+     "ol_pm_pn8_nopad_deg": -0.000515,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 2e-06,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.014409,
-     "vco_df_dv_min_mhz_per_v": 9.9e-05,
-     "vco_fmax_ff_mhz": 6.9e-05,
-     "vco_fmax_tt_mhz": 1.2e-05,
-     "vco_fmin_tt_mhz": 1e-06,
-     "vco_kvco_mhz_per_v": 1.2e-05,
-     "vco_out_duty_pct": 4e-06,
+     "startup_time_us": 0.01342,
+     "vco_df_dv_min_mhz_per_v": -0.000327,
+     "vco_fmax_ff_mhz": 0.0,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": -4.1e-05,
-     "vco_out_tr_ns": -0.000387,
+     "vco_out_tf_ns": 0.0,
+     "vco_out_tr_ns": 2.1e-05,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -2114,7 +2586,7 @@
     "killed": false,
     "describe": "xMN_STE: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.00226,
+     "cp_overlap_net_charge_fc": 1.7e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2123,15 +2595,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.000595,
-     "ol_pm_pn16_nopad_deg": 0.000193,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000193,
-     "ol_pm_pn16_pad5p_deg": 0.000135,
-     "ol_pm_pn40_nopad_deg": 0.000315,
-     "ol_pm_pn8_nopad_deg": 3.4e-05,
+     "ol_fc_pn16_nopad_khz": 6e-06,
+     "ol_pm_pn16_nopad_deg": 2e-06,
+     "ol_pm_pn16_nopad_pvt_deg": 2e-06,
+     "ol_pm_pn16_pad5p_deg": 3e-06,
+     "ol_pm_pn40_nopad_deg": 6e-06,
+     "ol_pm_pn8_nopad_deg": 0.0,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.000536,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.000377,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "startup_time_us": 0.000438,
+     "vco_df_dv_min_mhz_per_v": 6.7e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2165,7 +2643,7 @@
     "killed": false,
     "describe": "xMN_ST: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.001545,
+     "cp_overlap_net_charge_fc": 2.1e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2174,15 +2652,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002345,
-     "ol_pm_pn16_nopad_deg": 0.000761,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000761,
-     "ol_pm_pn16_pad5p_deg": 0.000534,
-     "ol_pm_pn40_nopad_deg": 0.001239,
-     "ol_pm_pn8_nopad_deg": 0.00013,
-     "standby_current_ua": 8e-06,
-     "startup_time_us": -0.000921,
-     "vco_df_dv_min_mhz_per_v": 6.4e-05,
+     "ol_fc_pn16_nopad_khz": -0.002081,
+     "ol_pm_pn16_nopad_deg": -0.000733,
+     "ol_pm_pn16_nopad_pvt_deg": -0.000733,
+     "ol_pm_pn16_pad5p_deg": -0.00054,
+     "ol_pm_pn40_nopad_deg": -0.001123,
+     "ol_pm_pn8_nopad_deg": -0.00017,
+     "presc_ckq_f_ns": -0.000158,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -8e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": 1.3e-05,
+     "startup_time_us": -0.003977,
+     "vco_df_dv_min_mhz_per_v": -3e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2194,7 +2678,7 @@
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": 1e-09,
+     "standby_current_ua": 2e-09,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -2210,7 +2694,7 @@
     "killed": false,
     "describe": "xMN_SW0B: bulk disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.000456,
+     "cp_overlap_net_charge_fc": -0.000109,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2219,20 +2703,26 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000363,
-     "ol_pm_pn16_nopad_deg": -0.000118,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000118,
-     "ol_pm_pn16_pad5p_deg": -8.2e-05,
-     "ol_pm_pn40_nopad_deg": -0.00019,
-     "ol_pm_pn8_nopad_deg": -2e-05,
-     "standby_current_ua": -0.004593,
-     "startup_time_us": 1e-06,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.004073,
+     "ol_pm_pn16_nopad_deg": -0.001436,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001436,
+     "ol_pm_pn16_pad5p_deg": -0.00106,
+     "ol_pm_pn40_nopad_deg": -0.002192,
+     "ol_pm_pn8_nopad_deg": -0.000334,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": -0.000804,
+     "standby_current_ua": -0.003821,
+     "startup_time_us": -8e-06,
+     "vco_df_dv_min_mhz_per_v": -0.000394,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1e-06,
+     "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
-     "vco_out_duty_pct": 6e-06,
+     "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
      "vco_out_tr_ns": 0.0,
@@ -2249,7 +2739,7 @@
     "killed": false,
     "describe": "xMN_SW0B: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 4e-06,
+     "cp_overlap_net_charge_fc": 0.0,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 5e-06,
      "icp_dn_code00_ua": 0.0,
@@ -2258,15 +2748,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 3e-06,
-     "ol_fc_pn16_nopad_khz": -0.000888,
-     "ol_pm_pn16_nopad_deg": -0.000287,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000287,
-     "ol_pm_pn16_pad5p_deg": -0.000202,
-     "ol_pm_pn40_nopad_deg": -0.000469,
-     "ol_pm_pn8_nopad_deg": -4.9e-05,
-     "standby_current_ua": 0.000165,
-     "startup_time_us": -5.2e-05,
-     "vco_df_dv_min_mhz_per_v": 2.1e-05,
+     "ol_fc_pn16_nopad_khz": -0.005999,
+     "ol_pm_pn16_nopad_deg": -0.002115,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002115,
+     "ol_pm_pn16_pad5p_deg": -0.001562,
+     "ol_pm_pn40_nopad_deg": -0.003231,
+     "ol_pm_pn8_nopad_deg": -0.000491,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": 0.000137,
+     "startup_time_us": -3.5e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000208,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2294,7 +2790,7 @@
     "killed": false,
     "describe": "xMN_SW0: bulk disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005655,
+     "cp_overlap_net_charge_fc": 6.7e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2303,15 +2799,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -4.7e-05,
-     "ol_pm_pn16_nopad_deg": -1.6e-05,
-     "ol_pm_pn16_nopad_pvt_deg": -1.6e-05,
-     "ol_pm_pn16_pad5p_deg": -1.2e-05,
-     "ol_pm_pn40_nopad_deg": -2.5e-05,
-     "ol_pm_pn8_nopad_deg": -2e-06,
-     "standby_current_ua": 0.001325,
-     "startup_time_us": -1.2e-05,
-     "vco_df_dv_min_mhz_per_v": 2.1e-05,
+     "ol_fc_pn16_nopad_khz": -0.001623,
+     "ol_pm_pn16_nopad_deg": -0.000573,
+     "ol_pm_pn16_nopad_pvt_deg": -0.000573,
+     "ol_pm_pn16_pad5p_deg": -0.000422,
+     "ol_pm_pn40_nopad_deg": -0.000873,
+     "ol_pm_pn8_nopad_deg": -0.000134,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -6e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000268,
+     "standby_current_ua": 0.001102,
+     "startup_time_us": 1.1e-05,
+     "vco_df_dv_min_mhz_per_v": -3e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2333,7 +2835,7 @@
     "killed": false,
     "describe": "xMN_SW0: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 1.7e-05,
+     "cp_overlap_net_charge_fc": 1.3e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 5e-06,
      "icp_dn_code00_ua": 0.0,
@@ -2342,15 +2844,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 3e-06,
-     "ol_fc_pn16_nopad_khz": 0.000797,
-     "ol_pm_pn16_nopad_deg": 0.000259,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000259,
-     "ol_pm_pn16_pad5p_deg": 0.000182,
-     "ol_pm_pn40_nopad_deg": 0.000422,
-     "ol_pm_pn8_nopad_deg": 4.5e-05,
-     "standby_current_ua": 0.001231,
-     "startup_time_us": -3.3e-05,
-     "vco_df_dv_min_mhz_per_v": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.001229,
+     "ol_pm_pn16_nopad_deg": -0.000433,
+     "ol_pm_pn16_nopad_pvt_deg": -0.000433,
+     "ol_pm_pn16_pad5p_deg": -0.000319,
+     "ol_pm_pn40_nopad_deg": -0.000661,
+     "ol_pm_pn8_nopad_deg": -0.000101,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 0.001024,
+     "startup_time_us": -1.4e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000193,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2378,7 +2886,7 @@
     "killed": false,
     "describe": "xMN_SW1B: bulk disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -2.1e-05,
+     "cp_overlap_net_charge_fc": -4e-06,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2387,15 +2895,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001425,
-     "ol_pm_pn16_nopad_deg": 0.000462,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000462,
-     "ol_pm_pn16_pad5p_deg": 0.000323,
-     "ol_pm_pn40_nopad_deg": 0.000751,
-     "ol_pm_pn8_nopad_deg": 7.9e-05,
-     "standby_current_ua": -2.4e-05,
-     "startup_time_us": 1e-06,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "ol_fc_pn16_nopad_khz": -0.007619,
+     "ol_pm_pn16_nopad_deg": -0.002686,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002686,
+     "ol_pm_pn16_pad5p_deg": -0.001981,
+     "ol_pm_pn40_nopad_deg": -0.004104,
+     "ol_pm_pn8_nopad_deg": -0.000623,
+     "presc_ckq_f_ns": -5.3e-05,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2e-06,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.000402,
+     "standby_current_ua": -1.3e-05,
+     "startup_time_us": -2e-06,
+     "vco_df_dv_min_mhz_per_v": -0.000356,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2407,7 +2921,7 @@
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": -3e-09,
+     "standby_current_ua": -2e-09,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -2417,7 +2931,7 @@
     "killed": false,
     "describe": "xMN_SW1B: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.004487,
+     "cp_overlap_net_charge_fc": 1.3e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 5e-06,
      "icp_dn_code00_ua": 0.0,
@@ -2426,15 +2940,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 3e-06,
-     "ol_fc_pn16_nopad_khz": 0.00046,
-     "ol_pm_pn16_nopad_deg": 0.000149,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000149,
-     "ol_pm_pn16_pad5p_deg": 0.000106,
-     "ol_pm_pn40_nopad_deg": 0.000243,
-     "ol_pm_pn8_nopad_deg": 2.7e-05,
-     "standby_current_ua": 0.000118,
-     "startup_time_us": 7e-06,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.004493,
+     "ol_pm_pn16_nopad_deg": -0.001584,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001584,
+     "ol_pm_pn16_pad5p_deg": -0.001169,
+     "ol_pm_pn40_nopad_deg": -0.002419,
+     "ol_pm_pn8_nopad_deg": -0.000368,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 9.8e-05,
+     "startup_time_us": -5e-06,
+     "vco_df_dv_min_mhz_per_v": -4.5e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2462,7 +2982,7 @@
     "killed": false,
     "describe": "xMN_SW1: bulk disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005655,
+     "cp_overlap_net_charge_fc": 3.4e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2471,15 +2991,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.00134,
-     "ol_pm_pn16_nopad_deg": 0.000434,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000434,
-     "ol_pm_pn16_pad5p_deg": 0.000305,
-     "ol_pm_pn40_nopad_deg": 0.000707,
-     "ol_pm_pn8_nopad_deg": 7.6e-05,
-     "standby_current_ua": 0.003339,
-     "startup_time_us": 1e-05,
-     "vco_df_dv_min_mhz_per_v": 2.1e-05,
+     "ol_fc_pn16_nopad_khz": -0.00444,
+     "ol_pm_pn16_nopad_deg": -0.001566,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001566,
+     "ol_pm_pn16_pad5p_deg": -0.001154,
+     "ol_pm_pn40_nopad_deg": -0.002391,
+     "ol_pm_pn8_nopad_deg": -0.000363,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000938,
+     "standby_current_ua": 0.002784,
+     "startup_time_us": 1.5e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000208,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2491,7 +3017,7 @@
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": 4.26e-07,
+     "standby_current_ua": 4.27e-07,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -2501,7 +3027,7 @@
     "killed": false,
     "describe": "xMN_SW1: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.004487,
+     "cp_overlap_net_charge_fc": 8e-06,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 5e-06,
      "icp_dn_code00_ua": 0.0,
@@ -2510,15 +3036,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 7e-06,
      "icp_up_code11_ua": 5e-06,
-     "ol_fc_pn16_nopad_khz": 0.000739,
-     "ol_pm_pn16_nopad_deg": 0.000239,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000239,
-     "ol_pm_pn16_pad5p_deg": 0.000167,
-     "ol_pm_pn40_nopad_deg": 0.000392,
-     "ol_pm_pn8_nopad_deg": 4.1e-05,
-     "standby_current_ua": 0.002594,
-     "startup_time_us": -1.9e-05,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.005368,
+     "ol_pm_pn16_nopad_deg": -0.001892,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001892,
+     "ol_pm_pn16_pad5p_deg": -0.001396,
+     "ol_pm_pn40_nopad_deg": -0.002892,
+     "ol_pm_pn8_nopad_deg": -0.000439,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 0.002165,
+     "startup_time_us": 1.5e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000193,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2530,7 +3062,7 @@
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": 3.31e-07,
+     "standby_current_ua": 3.32e-07,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -2549,15 +3081,47 @@
    },
    "xMN_UPI_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": true,
+    "killed": false,
     "describe": "xMN_UPI: w doubled",
-    "killed_by": "pll_analog_overlap_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_overlap_tb.cir",
-     "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.020342,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": 0.019805,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.006035,
+     "ol_pm_pn16_nopad_deg": -0.002129,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002129,
+     "ol_pm_pn16_pad5p_deg": -0.001571,
+     "ol_pm_pn40_nopad_deg": -0.00325,
+     "ol_pm_pn8_nopad_deg": -0.000493,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 0.005152,
+     "startup_time_us": 0.0,
+     "vco_df_dv_min_mhz_per_v": -0.00023,
+     "vco_fmax_ff_mhz": 0.0,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": 0.0,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": 0.0,
+     "vco_out_tr_ns": 0.0,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": 7.9e-07,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMN_UPI_type_flipped": {
@@ -2588,11 +3152,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMN_V2I: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_ol_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": -0.561981,
+     "bench": "pll_analog_ol_tb.cir",
+     "measure": "ol_fc_pn16_nopad_khz",
+     "delta": 0.129765,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2601,11 +3165,11 @@
     "kind": "size_doubled",
     "killed": true,
     "describe": "xMN_V2I: w doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_ol_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.695489,
+     "bench": "pll_analog_ol_tb.cir",
+     "measure": "ol_fc_pn16_nopad_khz",
+     "delta": 0.046652,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2660,7 +3224,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 2.991499,
+     "delta": 3.014601,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2673,7 +3237,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": -0.206019,
+     "delta": -0.20165,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2698,7 +3262,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.388042,
+     "delta": 0.398417,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2723,7 +3287,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.476456,
+     "delta": 0.478562,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2748,7 +3312,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.502867,
+     "delta": 0.514416,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2767,22 +3331,54 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 2.498531,
+     "delta": 2.528739,
      "sensitivity": 0.02,
      "kind": "relative"
     }
    },
    "xMP_BUFT_size_doubled_w": {
     "kind": "size_doubled",
-    "killed": true,
+    "killed": false,
     "describe": "xMP_BUFT: w doubled",
-    "killed_by": "pll_analog_startup_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_startup_tb.cir",
-     "measure": "startup_time_us",
-     "delta": -0.026607,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": -0.008968,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.005368,
+     "ol_pm_pn16_nopad_deg": -0.001922,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001922,
+     "ol_pm_pn16_pad5p_deg": -0.001417,
+     "ol_pm_pn40_nopad_deg": -0.002911,
+     "ol_pm_pn8_nopad_deg": -0.000482,
+     "presc_ckq_f_ns": 0.0,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -1e-05,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 1.3e-05,
+     "startup_time_us": -0.019899,
+     "vco_df_dv_min_mhz_per_v": -0.000379,
+     "vco_fmax_ff_mhz": 0.0,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": -4e-06,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": -2.4e-05,
+     "vco_out_tr_ns": -6.4e-05,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": 2e-09,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMP_BUFT_type_flipped": {
@@ -2809,6 +3405,145 @@
     "describe": "xMP_CPREF: pfet_03v3 -> nfet_03v3",
     "killed_by": "pll_analog_cp_tb.cir"
    },
+   "xMP_DA_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DA: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DA_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DA: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.057099,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DA_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DA: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMP_DB_connection_removed": {
+    "kind": "connection_removed",
+    "killed": false,
+    "describe": "xMP_DB: bulk disconnected",
+    "deltas": {
+     "cp_overlap_net_charge_fc": 0.0,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.005256,
+     "ol_pm_pn16_nopad_deg": -0.001853,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001853,
+     "ol_pm_pn16_pad5p_deg": -0.001367,
+     "ol_pm_pn40_nopad_deg": -0.00283,
+     "ol_pm_pn8_nopad_deg": -0.00043,
+     "presc_ckq_f_ns": 0.001479,
+     "presc_ckq_r_ns": 0.00172,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -0.0001,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.000134,
+     "standby_current_ua": -0.034059,
+     "startup_time_us": -2e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000587,
+     "vco_fmax_ff_mhz": 1.1e-05,
+     "vco_fmax_tt_mhz": 1.2e-05,
+     "vco_fmin_tt_mhz": 9.4e-05,
+     "vco_kvco_mhz_per_v": 9e-06,
+     "vco_out_duty_pct": 4e-06,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": -0.009289,
+     "vco_out_tr_ns": -0.003295,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": -5.223e-06,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
+    }
+   },
+   "xMP_DB_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DB: w doubled",
+    "killed_by": "pll_analog_vco_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_vco_tb.cir",
+     "measure": "vco_out_tf_ns",
+     "delta": 0.023772,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DB_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DB: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMP_DC_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DC: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DC_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DC: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": 0.03157,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DC_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DC: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DD_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DD: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DD_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DD: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_r_ns",
+     "delta": -0.101475,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DD_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DD: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
    "xMP_DNI_connection_removed": {
     "kind": "connection_removed",
     "killed": true,
@@ -2823,7 +3558,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 0.058332,
+     "delta": 0.055557,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -2834,12 +3569,119 @@
     "describe": "xMP_DNI: pfet_03v3 -> nfet_03v3",
     "killed_by": "pll_analog_cp_tb.cir"
    },
+   "xMP_DO1_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DO1: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DO1_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DO1: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": -0.138232,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DO1_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DO1: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMP_DO2_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DO2: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DO2_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": true,
+    "describe": "xMP_DO2: w doubled",
+    "killed_by": "pll_analog_presc_tb.cir",
+    "sensitivity_kill": {
+     "bench": "pll_analog_presc_tb.cir",
+     "measure": "presc_ckq_f_ns",
+     "delta": 0.293154,
+     "sensitivity": 0.02,
+     "kind": "relative"
+    }
+   },
+   "xMP_DO2_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DO2: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
+   "xMP_DR_connection_removed": {
+    "kind": "connection_removed",
+    "killed": true,
+    "describe": "xMP_DR: drain (bulk tied to its own source) disconnected",
+    "killed_by": "pll_analog_pwr_tb.cir"
+   },
+   "xMP_DR_size_doubled_w": {
+    "kind": "size_doubled",
+    "killed": false,
+    "describe": "xMP_DR: w doubled",
+    "deltas": {
+     "cp_overlap_net_charge_fc": 4e-06,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.004624,
+     "ol_pm_pn16_nopad_deg": -0.00163,
+     "ol_pm_pn16_nopad_pvt_deg": -0.00163,
+     "ol_pm_pn16_pad5p_deg": -0.001202,
+     "ol_pm_pn40_nopad_deg": -0.002489,
+     "ol_pm_pn8_nopad_deg": -0.000379,
+     "presc_ckq_f_ns": 0.006022,
+     "presc_ckq_r_ns": 0.004701,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -3.5e-05,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": 0.000268,
+     "standby_current_ua": 0.0,
+     "startup_time_us": -1.1e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000401,
+     "vco_fmax_ff_mhz": -4e-06,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": 1.6e-05,
+     "vco_kvco_mhz_per_v": 0.0,
+     "vco_out_duty_pct": -3.2e-05,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": 0.0,
+     "vco_out_tr_ns": -0.000257,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": 0.0,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
+    }
+   },
+   "xMP_DR_type_flipped": {
+    "kind": "type_flipped",
+    "killed": true,
+    "describe": "xMP_DR: pfet_03v3 -> nfet_03v3",
+    "killed_by": "pll_analog_presc_tb.cir"
+   },
    "xMP_ENB_connection_removed": {
     "kind": "connection_removed",
     "killed": false,
     "describe": "xMP_ENB: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.002934,
+     "cp_overlap_net_charge_fc": 0.000202,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2848,20 +3690,26 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.005188,
-     "ol_pm_pn16_nopad_deg": -0.001682,
-     "ol_pm_pn16_nopad_pvt_deg": -0.001682,
-     "ol_pm_pn16_pad5p_deg": -0.001185,
-     "ol_pm_pn40_nopad_deg": -0.002738,
-     "ol_pm_pn8_nopad_deg": -0.000287,
-     "standby_current_ua": 0.452904,
-     "startup_time_us": -0.003969,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.006305,
+     "ol_pm_pn16_nopad_deg": -0.002222,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002222,
+     "ol_pm_pn16_pad5p_deg": -0.001641,
+     "ol_pm_pn40_nopad_deg": -0.003396,
+     "ol_pm_pn8_nopad_deg": -0.000515,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -4e-06,
+     "presc_tf_ns": -0.000146,
+     "presc_tr_ns": -0.000938,
+     "standby_current_ua": 0.376787,
+     "startup_time_us": -0.003828,
+     "vco_df_dv_min_mhz_per_v": -0.000312,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 2e-06,
+     "vco_fmin_tt_mhz": -1e-06,
      "vco_kvco_mhz_per_v": 0.0,
-     "vco_out_duty_pct": 0.0,
+     "vco_out_duty_pct": -2e-06,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
      "vco_out_tr_ns": 0.0,
@@ -2878,7 +3726,7 @@
     "killed": false,
     "describe": "xMP_ENB: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.002277,
+     "cp_overlap_net_charge_fc": 4e-06,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2887,18 +3735,24 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.00219,
-     "ol_pm_pn16_nopad_deg": -0.000711,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000711,
-     "ol_pm_pn16_pad5p_deg": -0.000499,
-     "ol_pm_pn40_nopad_deg": -0.001156,
-     "ol_pm_pn8_nopad_deg": -0.000121,
+     "ol_fc_pn16_nopad_khz": -0.007737,
+     "ol_pm_pn16_nopad_deg": -0.002728,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002728,
+     "ol_pm_pn16_pad5p_deg": -0.002013,
+     "ol_pm_pn40_nopad_deg": -0.004166,
+     "ol_pm_pn8_nopad_deg": -0.000632,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -4e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000402,
      "standby_current_ua": 0.0,
-     "startup_time_us": -1.6e-05,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "startup_time_us": -6e-05,
+     "vco_df_dv_min_mhz_per_v": -4.5e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
-     "vco_fmin_tt_mhz": 1e-06,
+     "vco_fmin_tt_mhz": 0.0,
      "vco_kvco_mhz_per_v": 0.0,
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
@@ -2929,7 +3783,7 @@
     "killed": false,
     "describe": "xMP_ENI: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.000146,
+     "cp_overlap_net_charge_fc": 0.000101,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2938,15 +3792,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.002188,
-     "ol_pm_pn16_nopad_deg": 0.000709,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000709,
-     "ol_pm_pn16_pad5p_deg": 0.000499,
-     "ol_pm_pn40_nopad_deg": 0.001156,
-     "ol_pm_pn8_nopad_deg": 0.000123,
+     "ol_fc_pn16_nopad_khz": -0.006146,
+     "ol_pm_pn16_nopad_deg": -0.002167,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002167,
+     "ol_pm_pn16_pad5p_deg": -0.0016,
+     "ol_pm_pn40_nopad_deg": -0.003309,
+     "ol_pm_pn8_nopad_deg": -0.000502,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": 2e-06,
+     "presc_tf_ns": -0.000586,
+     "presc_tr_ns": -0.000938,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.000106,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "startup_time_us": 0.000144,
+     "vco_df_dv_min_mhz_per_v": 5.2e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -2974,7 +3834,7 @@
     "killed": false,
     "describe": "xMP_ENP: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.00293,
+     "cp_overlap_net_charge_fc": 8.8e-05,
      "cp_updn_mismatch_pct": 2e-06,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -2983,15 +3843,21 @@
      "icp_up_code01_ua": 4e-06,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001199,
-     "ol_pm_pn16_nopad_deg": 0.000389,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000389,
-     "ol_pm_pn16_pad5p_deg": 0.000273,
-     "ol_pm_pn40_nopad_deg": 0.000635,
-     "ol_pm_pn8_nopad_deg": 6.7e-05,
-     "standby_current_ua": 0.016123,
-     "startup_time_us": 2.2e-05,
-     "vco_df_dv_min_mhz_per_v": 3.5e-05,
+     "ol_fc_pn16_nopad_khz": -0.003821,
+     "ol_pm_pn16_nopad_deg": -0.001347,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001347,
+     "ol_pm_pn16_pad5p_deg": -0.000995,
+     "ol_pm_pn40_nopad_deg": -0.002058,
+     "ol_pm_pn8_nopad_deg": -0.000312,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.000293,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 0.013414,
+     "startup_time_us": -3.5e-05,
+     "vco_df_dv_min_mhz_per_v": 6.7e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3013,7 +3879,7 @@
     "killed": false,
     "describe": "xMP_ENP: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.004479,
+     "cp_overlap_net_charge_fc": 2.5e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3022,15 +3888,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 8.1e-05,
-     "ol_pm_pn16_nopad_deg": 2.6e-05,
-     "ol_pm_pn16_nopad_pvt_deg": 2.6e-05,
-     "ol_pm_pn16_pad5p_deg": 1.8e-05,
-     "ol_pm_pn40_nopad_deg": 4.4e-05,
-     "ol_pm_pn8_nopad_deg": 5e-06,
+     "ol_fc_pn16_nopad_khz": -0.009187,
+     "ol_pm_pn16_nopad_deg": -0.003239,
+     "ol_pm_pn16_nopad_pvt_deg": -0.003239,
+     "ol_pm_pn16_pad5p_deg": -0.002391,
+     "ol_pm_pn40_nopad_deg": -0.004947,
+     "ol_pm_pn8_nopad_deg": -0.000751,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 0.0,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": 0.0,
      "standby_current_ua": 0.0,
-     "startup_time_us": 4e-06,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "startup_time_us": 8e-06,
+     "vco_df_dv_min_mhz_per_v": -5.9e-05,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3058,7 +3930,7 @@
     "killed": false,
     "describe": "xMP_ENV: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.002792,
+     "cp_overlap_net_charge_fc": 8e-06,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3067,27 +3939,33 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000805,
-     "ol_pm_pn16_nopad_deg": -0.000261,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000261,
-     "ol_pm_pn16_pad5p_deg": -0.000185,
-     "ol_pm_pn40_nopad_deg": -0.000422,
-     "ol_pm_pn8_nopad_deg": -4.3e-05,
-     "standby_current_ua": 0.107094,
-     "startup_time_us": -0.012732,
-     "vco_df_dv_min_mhz_per_v": 0.000149,
-     "vco_fmax_ff_mhz": 0.0,
+     "ol_fc_pn16_nopad_khz": -0.013226,
+     "ol_pm_pn16_nopad_deg": -0.004663,
+     "ol_pm_pn16_nopad_pvt_deg": -0.004663,
+     "ol_pm_pn16_pad5p_deg": -0.003442,
+     "ol_pm_pn40_nopad_deg": -0.007122,
+     "ol_pm_pn8_nopad_deg": -0.001081,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": 0.0,
+     "standby_current_ua": 0.090511,
+     "startup_time_us": -0.012419,
+     "vco_df_dv_min_mhz_per_v": -0.000349,
+     "vco_fmax_ff_mhz": 4e-06,
      "vco_fmax_tt_mhz": 4e-06,
-     "vco_fmin_tt_mhz": -1.3e-05,
-     "vco_kvco_mhz_per_v": 4e-06,
+     "vco_fmin_tt_mhz": 1.5e-05,
+     "vco_kvco_mhz_per_v": 3e-06,
      "vco_out_duty_pct": 1.1e-05,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.0,
+     "vco_out_tf_ns": -0.000263,
+     "vco_out_tr_ns": -0.000214,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
-     "standby_current_ua": 1.3663e-05,
+     "standby_current_ua": 1.388e-05,
      "vco_out_off_toggles": 0.0,
      "vctrl_leak_off_na": 0.0
     }
@@ -3097,7 +3975,7 @@
     "killed": false,
     "describe": "xMP_ENV: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.005182,
+     "cp_overlap_net_charge_fc": 1.7e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3106,23 +3984,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.001228,
-     "ol_pm_pn16_nopad_deg": -0.000397,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000397,
-     "ol_pm_pn16_pad5p_deg": -0.000282,
-     "ol_pm_pn40_nopad_deg": -0.000646,
-     "ol_pm_pn8_nopad_deg": -6.7e-05,
+     "ol_fc_pn16_nopad_khz": -0.003342,
+     "ol_pm_pn16_nopad_deg": -0.001179,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001179,
+     "ol_pm_pn16_pad5p_deg": -0.000868,
+     "ol_pm_pn40_nopad_deg": -0.0018,
+     "ol_pm_pn8_nopad_deg": -0.000274,
+     "presc_ckq_f_ns": 5.3e-05,
+     "presc_ckq_r_ns": 3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": -2e-06,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000134,
      "standby_current_ua": 0.0,
-     "startup_time_us": 0.000674,
-     "vco_df_dv_min_mhz_per_v": 0.00012,
+     "startup_time_us": 0.000721,
+     "vco_df_dv_min_mhz_per_v": -0.000111,
      "vco_fmax_ff_mhz": -4e-06,
-     "vco_fmax_tt_mhz": -4e-06,
-     "vco_fmin_tt_mhz": 1.6e-05,
-     "vco_kvco_mhz_per_v": -4e-06,
+     "vco_fmax_tt_mhz": 0.0,
+     "vco_fmin_tt_mhz": -1e-05,
+     "vco_kvco_mhz_per_v": 1e-06,
      "vco_out_duty_pct": -1.3e-05,
      "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tf_ns": 0.000263,
+     "vco_out_tr_ns": 0.000364,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3151,7 +4035,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.044459,
+     "delta": -0.048224,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3167,7 +4051,7 @@
     "killed": false,
     "describe": "xMP_G2: drain (bulk tied to its own source) disconnected",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.00108,
+     "cp_overlap_net_charge_fc": 0.000577,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3176,23 +4060,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.010944,
-     "ol_pm_pn16_nopad_deg": -0.003549,
-     "ol_pm_pn16_nopad_pvt_deg": -0.003549,
-     "ol_pm_pn16_pad5p_deg": -0.002543,
-     "ol_pm_pn40_nopad_deg": -0.005774,
-     "ol_pm_pn8_nopad_deg": -0.000606,
+     "ol_fc_pn16_nopad_khz": -0.010628,
+     "ol_pm_pn16_nopad_deg": -0.003747,
+     "ol_pm_pn16_nopad_pvt_deg": -0.003747,
+     "ol_pm_pn16_pad5p_deg": -0.002766,
+     "ol_pm_pn40_nopad_deg": -0.005725,
+     "ol_pm_pn8_nopad_deg": -0.000868,
+     "presc_ckq_f_ns": -0.000211,
+     "presc_ckq_r_ns": 7.6e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 4e-06,
+     "presc_tf_ns": -0.000293,
+     "presc_tr_ns": -0.001072,
      "standby_current_ua": 0.0,
-     "startup_time_us": 3.4e-05,
-     "vco_df_dv_min_mhz_per_v": -0.000134,
-     "vco_fmax_ff_mhz": -0.000568,
-     "vco_fmax_tt_mhz": -0.000551,
-     "vco_fmin_tt_mhz": -1.5e-05,
-     "vco_kvco_mhz_per_v": -0.000571,
-     "vco_out_duty_pct": 0.000282,
-     "vco_out_swing_pct_vdd": 0.00011,
-     "vco_out_tf_ns": -0.017328,
-     "vco_out_tr_ns": -0.010449,
+     "startup_time_us": -3.2e-05,
+     "vco_df_dv_min_mhz_per_v": 3e-05,
+     "vco_fmax_ff_mhz": -0.000532,
+     "vco_fmax_tt_mhz": -0.000547,
+     "vco_fmin_tt_mhz": -8.1e-05,
+     "vco_kvco_mhz_per_v": -0.000564,
+     "vco_out_duty_pct": 0.000273,
+     "vco_out_swing_pct_vdd": 5e-05,
+     "vco_out_tf_ns": -0.014939,
+     "vco_out_tr_ns": -0.007082,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3206,7 +4096,7 @@
     "killed": false,
     "describe": "xMP_G2: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": -0.002419,
+     "cp_overlap_net_charge_fc": -8.8e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3215,23 +4105,29 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": -0.000906,
-     "ol_pm_pn16_nopad_deg": -0.000293,
-     "ol_pm_pn16_nopad_pvt_deg": -0.000293,
-     "ol_pm_pn16_pad5p_deg": -0.000205,
-     "ol_pm_pn40_nopad_deg": -0.000477,
-     "ol_pm_pn8_nopad_deg": -4.9e-05,
+     "ol_fc_pn16_nopad_khz": -0.007019,
+     "ol_pm_pn16_nopad_deg": -0.002475,
+     "ol_pm_pn16_nopad_pvt_deg": -0.002475,
+     "ol_pm_pn16_pad5p_deg": -0.001825,
+     "ol_pm_pn40_nopad_deg": -0.003779,
+     "ol_pm_pn8_nopad_deg": -0.000574,
+     "presc_ckq_f_ns": 0.000264,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": -1e-06,
+     "presc_duty_pct": -1e-05,
+     "presc_tf_ns": 0.000146,
+     "presc_tr_ns": -0.000536,
      "standby_current_ua": 0.0,
-     "startup_time_us": -2.8e-05,
-     "vco_df_dv_min_mhz_per_v": 0.00041,
-     "vco_fmax_ff_mhz": 0.000545,
-     "vco_fmax_tt_mhz": 0.000535,
-     "vco_fmin_tt_mhz": 3.5e-05,
-     "vco_kvco_mhz_per_v": 0.000555,
-     "vco_out_duty_pct": -0.000171,
-     "vco_out_swing_pct_vdd": 0.0,
-     "vco_out_tf_ns": 0.015509,
-     "vco_out_tr_ns": 0.009675,
+     "startup_time_us": -3e-05,
+     "vco_df_dv_min_mhz_per_v": -0.000245,
+     "vco_fmax_ff_mhz": 0.000568,
+     "vco_fmax_tt_mhz": 0.00047,
+     "vco_fmin_tt_mhz": 0.0,
+     "vco_kvco_mhz_per_v": 0.000489,
+     "vco_out_duty_pct": -0.000202,
+     "vco_out_swing_pct_vdd": -5e-05,
+     "vco_out_tf_ns": 0.016638,
+     "vco_out_tr_ns": 0.009628,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3250,11 +4146,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I1: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.035263,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.038818,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3267,7 +4163,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.095333,
+     "delta": -0.096014,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3282,11 +4178,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I2: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.028459,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": -0.030812,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3299,7 +4195,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.097696,
+     "delta": -0.093813,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3312,15 +4208,47 @@
    },
    "xMP_I3_connection_removed": {
     "kind": "connection_removed",
-    "killed": true,
+    "killed": false,
     "describe": "xMP_I3: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
-    "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.027356,
-     "sensitivity": 0.02,
-     "kind": "relative"
+    "deltas": {
+     "cp_overlap_net_charge_fc": -0.001238,
+     "cp_updn_mismatch_pct": 0.0,
+     "icp_code11_over_code00_ratio": 0.0,
+     "icp_dn_code00_ua": 0.0,
+     "icp_up_code00_tt_ua": 0.0,
+     "icp_up_code00_ua": 0.0,
+     "icp_up_code01_ua": 0.0,
+     "icp_up_code10_ua": 0.0,
+     "icp_up_code11_ua": 0.0,
+     "ol_fc_pn16_nopad_khz": 0.002604,
+     "ol_pm_pn16_nopad_deg": 0.000918,
+     "ol_pm_pn16_nopad_pvt_deg": 0.000918,
+     "ol_pm_pn16_pad5p_deg": 0.000679,
+     "ol_pm_pn40_nopad_deg": 0.001403,
+     "ol_pm_pn8_nopad_deg": 0.000206,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": 0.0,
+     "presc_div2_ratio": 6e-05,
+     "presc_duty_pct": 0.000445,
+     "presc_tf_ns": 0.0,
+     "presc_tr_ns": -0.000804,
+     "standby_current_ua": -0.032872,
+     "startup_time_us": 0.013931,
+     "vco_df_dv_min_mhz_per_v": 0.014475,
+     "vco_fmax_ff_mhz": 0.010426,
+     "vco_fmax_tt_mhz": 0.011043,
+     "vco_fmin_tt_mhz": 0.015543,
+     "vco_kvco_mhz_per_v": 0.010871,
+     "vco_out_duty_pct": -0.004182,
+     "vco_out_swing_pct_vdd": 0.0,
+     "vco_out_tf_ns": 0.002035,
+     "vco_out_tr_ns": 0.002396,
+     "vctrl_leak_off_na": 0.0
+    },
+    "abs_deltas": {
+     "standby_current_ua": -5.041e-06,
+     "vco_out_off_toggles": 0.0,
+     "vctrl_leak_off_na": 0.0
     }
    },
    "xMP_I3_size_doubled_w": {
@@ -3331,7 +4259,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.093749,
+     "delta": -0.092897,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3346,11 +4274,11 @@
     "kind": "connection_removed",
     "killed": true,
     "describe": "xMP_I4: bulk disconnected",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_startup_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.03759,
+     "bench": "pll_analog_startup_tb.cir",
+     "measure": "startup_time_us",
+     "delta": 0.072122,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3363,7 +4291,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.093254,
+     "delta": -0.092444,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3381,8 +4309,8 @@
     "killed_by": "pll_analog_vco_tb.cir",
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": 0.031288,
+     "measure": "vco_out_tr_ns",
+     "delta": -0.023941,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3395,7 +4323,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": -0.094404,
+     "delta": -0.089801,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3420,7 +4348,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_vco_tb.cir",
      "measure": "vco_out_tr_ns",
-     "delta": 0.114377,
+     "delta": 0.150364,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3445,7 +4373,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.040828,
+     "delta": 0.039661,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3458,7 +4386,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.150504,
+     "delta": 0.150518,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3477,7 +4405,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.040757,
+     "delta": 0.030076,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3490,7 +4418,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.118981,
+     "delta": 0.118211,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3509,7 +4437,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.040462,
+     "delta": 0.036005,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3522,7 +4450,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.118224,
+     "delta": 0.117261,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3541,7 +4469,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.034258,
+     "delta": 0.031455,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3554,7 +4482,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.115228,
+     "delta": 0.114064,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3573,7 +4501,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.059218,
+     "delta": 0.05643,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3586,7 +4514,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.164981,
+     "delta": 0.16382,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3602,7 +4530,7 @@
     "killed": false,
     "describe": "xMP_STL: w doubled",
     "deltas": {
-     "cp_overlap_net_charge_fc": 0.00054,
+     "cp_overlap_net_charge_fc": -3.4e-05,
      "cp_updn_mismatch_pct": 0.0,
      "icp_code11_over_code00_ratio": 0.0,
      "icp_dn_code00_ua": 0.0,
@@ -3611,15 +4539,21 @@
      "icp_up_code01_ua": 0.0,
      "icp_up_code10_ua": 0.0,
      "icp_up_code11_ua": 0.0,
-     "ol_fc_pn16_nopad_khz": 0.001676,
-     "ol_pm_pn16_nopad_deg": 0.000544,
-     "ol_pm_pn16_nopad_pvt_deg": 0.000544,
-     "ol_pm_pn16_pad5p_deg": 0.000381,
-     "ol_pm_pn40_nopad_deg": 0.000886,
-     "ol_pm_pn8_nopad_deg": 9.4e-05,
-     "standby_current_ua": 0.000235,
-     "startup_time_us": -0.005847,
-     "vco_df_dv_min_mhz_per_v": 5e-05,
+     "ol_fc_pn16_nopad_khz": -0.004613,
+     "ol_pm_pn16_nopad_deg": -0.001626,
+     "ol_pm_pn16_nopad_pvt_deg": -0.001626,
+     "ol_pm_pn16_pad5p_deg": -0.001199,
+     "ol_pm_pn40_nopad_deg": -0.002483,
+     "ol_pm_pn8_nopad_deg": -0.000377,
+     "presc_ckq_f_ns": 0.000106,
+     "presc_ckq_r_ns": -3.8e-05,
+     "presc_div2_ratio": 0.0,
+     "presc_duty_pct": 2e-06,
+     "presc_tf_ns": -0.000439,
+     "presc_tr_ns": -0.001072,
+     "standby_current_ua": 0.000196,
+     "startup_time_us": -0.006474,
+     "vco_df_dv_min_mhz_per_v": -0.00023,
      "vco_fmax_ff_mhz": 0.0,
      "vco_fmax_tt_mhz": 0.0,
      "vco_fmin_tt_mhz": 0.0,
@@ -3627,7 +4561,7 @@
      "vco_out_duty_pct": 0.0,
      "vco_out_swing_pct_vdd": 0.0,
      "vco_out_tf_ns": 0.0,
-     "vco_out_tr_ns": 0.000193,
+     "vco_out_tr_ns": 0.0,
      "vctrl_leak_off_na": 0.0
     },
     "abs_deltas": {
@@ -3728,7 +4662,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": 1.216818,
+     "delta": 1.229134,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3753,7 +4687,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_overlap_tb.cir",
      "measure": "cp_overlap_net_charge_fc",
-     "delta": -0.100209,
+     "delta": -0.095592,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3821,7 +4755,7 @@
     "sensitivity_kill": {
      "bench": "pll_analog_ol_tb.cir",
      "measure": "ol_fc_pn16_nopad_khz",
-     "delta": 0.408415,
+     "delta": 0.405637,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3896,11 +4830,11 @@
     "kind": "size_doubled",
     "killed": true,
     "describe": "xR_V2I: r_width doubled",
-    "killed_by": "pll_analog_vco_tb.cir",
+    "killed_by": "pll_analog_ol_tb.cir",
     "sensitivity_kill": {
-     "bench": "pll_analog_vco_tb.cir",
-     "measure": "vco_df_dv_min_mhz_per_v",
-     "delta": -0.710816,
+     "bench": "pll_analog_ol_tb.cir",
+     "measure": "ol_fc_pn16_nopad_khz",
+     "delta": 0.643911,
      "sensitivity": 0.02,
      "kind": "relative"
     }
@@ -3908,12 +4842,14 @@
   }
  },
  "inputs_at_start": {
-  "netlist": "dir_text:d98982bf48aa7544072b92af31627974722b733f725aee01aeda90fd232056e4",
-  "tb": "dir_text:84c2be00487e62fe8c100a84de7284390d197e81360328e5da28d248abae60b0",
-  "mutant_rulings": "json_canonical:22bef3f4e759f0d1a4927890d37ab31c2de238ee970fad685cae11d807ebbc77",
-  "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da",
-  "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c"
+  "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+  "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
+  "mutant_rulings": "json_canonical:9014ecb7f5d398752a74d9c395a675abf1a7d85e1522397dd9f9ada0bca151e6",
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+  "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-10-30T06:54:59",
- "attempts": 8
+ "recorded_ts": "2026-11-04T07:02:31",
+ "attempts": 13
 }

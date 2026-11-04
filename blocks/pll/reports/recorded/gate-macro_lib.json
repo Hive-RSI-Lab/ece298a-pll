@@ -1,0 +1,188 @@
+{
+ "script": "gate",
+ "gate": "macro_lib",
+ "phase": "P3",
+ "tool": "macro_lib",
+ "input_digest": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "declared": true,
+  "cell": "pll_analog",
+  "netlist_kind": "extracted",
+  "corners": {
+   "tt_025C_3v30": {
+    "lib": "pll_analog__tt_025C_3v30.lib",
+    "vdd": 3.3,
+    "input_cap_pf": {
+     "cp_trim0": {
+      "capacitance": 0.012933151515151516,
+      "rise_capacitance": 0.012267363636363635,
+      "fall_capacitance": 0.012933151515151516
+     },
+     "cp_trim1": {
+      "capacitance": 0.013874696969696971,
+      "rise_capacitance": 0.013874696969696971,
+      "fall_capacitance": 0.013794606060606061
+     },
+     "pfd_dn": {
+      "capacitance": 0.02946024242424243,
+      "rise_capacitance": 0.029439060606060607,
+      "fall_capacitance": 0.02946024242424243
+     },
+     "pfd_up": {
+      "capacitance": 0.03382484848484849,
+      "rise_capacitance": 0.033746060606060606,
+      "fall_capacitance": 0.03382484848484849
+     },
+     "pll_en": {
+      "capacitance": 0.059892727272727285,
+      "rise_capacitance": 0.05830575757575757,
+      "fall_capacitance": 0.059892727272727285
+     }
+    },
+    "running_mhz_by_load": {
+     "vco_div2": [
+      129.2,
+      129.15,
+      128.95
+     ]
+    }
+   },
+   "ss_125C_3v00": {
+    "lib": "pll_analog__ss_125C_3v00.lib",
+    "vdd": 3.0,
+    "input_cap_pf": {
+     "cp_trim0": {
+      "capacitance": 0.013081700000000002,
+      "rise_capacitance": 0.0124854,
+      "fall_capacitance": 0.013081700000000002
+     },
+     "cp_trim1": {
+      "capacitance": 0.013842533333333332,
+      "rise_capacitance": 0.013842533333333332,
+      "fall_capacitance": 0.013759833333333332
+     },
+     "pfd_dn": {
+      "capacitance": 0.029795433333333333,
+      "rise_capacitance": 0.029775066666666666,
+      "fall_capacitance": 0.029795433333333333
+     },
+     "pfd_up": {
+      "capacitance": 0.03358166666666667,
+      "rise_capacitance": 0.03351966666666667,
+      "fall_capacitance": 0.03358166666666667
+     },
+     "pll_en": {
+      "capacitance": 0.061400333333333335,
+      "rise_capacitance": 0.059957,
+      "fall_capacitance": 0.061400333333333335
+     }
+    },
+    "running_mhz_by_load": {
+     "vco_div2": [
+      99.36,
+      99.34,
+      99.22
+     ]
+    }
+   },
+   "ff_n40C_3v60": {
+    "lib": "pll_analog__ff_n40C_3v60.lib",
+    "vdd": 3.6,
+    "input_cap_pf": {
+     "cp_trim0": {
+      "capacitance": 0.012801444444444443,
+      "rise_capacitance": 0.012075361111111111,
+      "fall_capacitance": 0.012801444444444443
+     },
+     "cp_trim1": {
+      "capacitance": 0.013907055555555556,
+      "rise_capacitance": 0.013907055555555556,
+      "fall_capacitance": 0.013835749999999999
+     },
+     "pfd_dn": {
+      "capacitance": 0.02916,
+      "rise_capacitance": 0.029159444444444446,
+      "fall_capacitance": 0.02916
+     },
+     "pfd_up": {
+      "capacitance": 0.033971388888888884,
+      "rise_capacitance": 0.03396138888888889,
+      "fall_capacitance": 0.033971388888888884
+     },
+     "pll_en": {
+      "capacitance": 0.058097777777777776,
+      "rise_capacitance": 0.05668583333333334,
+      "fall_capacitance": 0.058097777777777776
+     }
+    },
+    "running_mhz_by_load": {
+     "vco_div2": [
+      156.01,
+      155.93,
+      155.52
+     ]
+    }
+   }
+  },
+  "slews_ns": [
+   0.1,
+   0.5
+  ],
+  "loads_pf": [
+   0.005,
+   0.02236,
+   0.1
+  ],
+  "clocks": {
+   "vco_div2": {
+    "margin": 0.25,
+    "processes": {
+     "tt": {
+      "recorded_mhz": 284.455,
+      "corner": "tt_pff",
+      "fmax_mhz": 142.227,
+      "period_ns": 7.031
+     },
+     "ss": {
+      "recorded_mhz": 247.091,
+      "corner": "ss_pff",
+      "fmax_mhz": 123.546,
+      "period_ns": 8.0942
+     },
+     "ff": {
+      "recorded_mhz": 298.381,
+      "corner": "ff_m40c_vm10",
+      "fmax_mhz": 149.19,
+      "period_ns": 6.7028
+     }
+    }
+   }
+  }
+ },
+ "inputs_at_start": {
+  "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+  "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+  "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+  "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+ },
+ "recorded_ts": "2026-11-04T06:37:17",
+ "attempts": 2
+}

@@ -1,5 +1,15 @@
 [
   {"measure": "presc_div2_ratio", "min": 0.99, "max": 1.01, "severity": "error",
-   "corners": ["ff_m40c_vp10"],
-   "msg": "f(vco_div2)/(f(vco_out)/2) of the macro's TSPC /2 at vctrl = vdd"}
+   "corners": ["ff_m40c_vp10", "tt_27c"],
+   "msg": "f(vco_div2)/(f(vco_out)/2) of the macro's TSPC /2 at vctrl = vdd"},
+  {"measure": "presc_ckq_r_ns", "sensitivity": 0.02, "max": 0.5, "severity": "error",
+   "corners": ["tt_27c"], "msg": "vco_out rise to vco_div2 rise"},
+  {"measure": "presc_ckq_f_ns", "sensitivity": 0.02, "max": 0.5, "severity": "error",
+   "corners": ["tt_27c"], "msg": "vco_out rise to vco_div2 fall"},
+  {"measure": "presc_tr_ns", "sensitivity": 0.02, "max": 0.15, "severity": "error",
+   "corners": ["tt_27c"], "msg": "vco_div2 rise 20-80 %"},
+  {"measure": "presc_tf_ns", "sensitivity": 0.02, "max": 0.15, "severity": "error",
+   "corners": ["tt_27c"], "msg": "vco_div2 fall 20-80 %"},
+  {"measure": "presc_duty_pct", "min": 40.0, "max": 60.0, "severity": "error",
+   "corners": ["tt_27c"], "msg": "vco_div2 duty"}
 ]

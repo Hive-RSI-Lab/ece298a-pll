@@ -3,7 +3,7 @@
  "gate": "glsim",
  "phase": "P6",
  "tool": "glsim",
- "input_digest": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+ "input_digest": "harden_signoff:2889c1d1f8c2eaa94228ac92026ed131df8b2cb79b736a47f3194d655aab0961",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -64,7 +64,7 @@
    }
   },
   "sdf": {
-   "zero_interconnects_dropped": 245,
+   "zero_interconnects_dropped": 256,
    "sdf_unannotated": [
     "_098_ (gf180mcu_fd_sc_mcu7t5v0__xor2_1)",
     "_103_ (gf180mcu_fd_sc_mcu7t5v0__xor2_1)",
@@ -73,10 +73,11 @@
    ],
    "instances_renamed": {
     "u_ihsan_sa_pll.u_obs_obuf": "u_ihsan_sa_pll__u_obs_obuf",
+    "u_ihsan_sa_pll.u_pfd_up_obuf": "u_ihsan_sa_pll__u_pfd_up_obuf",
+    "u_ihsan_sa_pll.u_pfd_dn_obuf": "u_ihsan_sa_pll__u_pfd_dn_obuf",
     "clkbuf_0_u_ihsan_sa_pll.clk_fb_int": "clkbuf_0_u_ihsan_sa_pll__clk_fb_int",
     "u_ihsan_sa_pll.u_pfd.pfd_dly0": "u_ihsan_sa_pll__u_pfd__pfd_dly0",
-    "clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0": "clkbuf_1_0__f_u_ihsan_sa_pll__u_pre__pre_q0",
-    "clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q0": "clkbuf_1_1__f_u_ihsan_sa_pll__u_pre__pre_q0",
+    "clkbuf_0_u_ihsan_sa_pll.u_pre.pre_q0": "clkbuf_0_u_ihsan_sa_pll__u_pre__pre_q0",
     "clkbuf_0_u_ihsan_sa_pll.clk_pre": "clkbuf_0_u_ihsan_sa_pll__clk_pre",
     "clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int": "clkbuf_1_0__f_u_ihsan_sa_pll__clk_fb_int",
     "clkbuf_0_u_ihsan_sa_pll.clk_fb_int_regs": "clkbuf_0_u_ihsan_sa_pll__clk_fb_int_regs",
@@ -85,21 +86,22 @@
     "clkbuf_0_u_ihsan_sa_pll.clk_pre_regs": "clkbuf_0_u_ihsan_sa_pll__clk_pre_regs",
     "clkbuf_1_0__f_u_ihsan_sa_pll.clk_pre_regs": "clkbuf_1_0__f_u_ihsan_sa_pll__clk_pre_regs",
     "clkbuf_1_1__f_u_ihsan_sa_pll.clk_pre_regs": "clkbuf_1_1__f_u_ihsan_sa_pll__clk_pre_regs",
+    "clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0": "clkbuf_1_0__f_u_ihsan_sa_pll__u_pre__pre_q0",
     "u_ihsan_sa_pll.u_clk_fb_obuf": "u_ihsan_sa_pll__u_clk_fb_obuf",
     "u_ihsan_sa_pll.u_pfd.pfd_dly1": "u_ihsan_sa_pll__u_pfd__pfd_dly1"
    }
   },
   "netlists": {
-   "nl_sha256": "85945ba2bdd3b21e6d37f099aa724092db03be74efd166fb599051edd0317581",
-   "pnl_sha256": "ae5912fcab8ebbdd008eb872fc0ba8876caa2800f3be9c2f0a6ed98665ece606"
+   "nl_sha256": "cc11b006bbb3a8229d03340b489099786ed56d9fb022464d7d3da72d0a76fe12",
+   "pnl_sha256": "6fa4214d8ebbaa78eed8ded3b39ac1dc1c812aec98e277b20c104a724d8a095e"
   }
  },
  "inputs_at_start": {
-  "harden": "harden_signoff:ee261926c981fa747b0ecbc5faba1f9e95b3653cff33906a698b88c2c1772fe4",
+  "harden": "harden_signoff:2889c1d1f8c2eaa94228ac92026ed131df8b2cb79b736a47f3194d655aab0961",
   "tb": "dir_text:f7358cd104e39915a80134297d74977c72c5c4f4811ada5e97ec38269be4d0e7",
-  "spec_yaml_sans_formal": "json_canonical_sans_formal:6aab527ef40a33c1f2366a7348d203b28088df2b208f1f15a914270421ecbfb2",
+  "spec_yaml_sans_formal": "json_canonical_sans_formal:eb5c9843c0cc6ab34ab5dcb4b60a0f10b368d6bf90b0f5b61970bd3cf8468200",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
  },
- "recorded_ts": "2026-11-01T12:36:58",
- "attempts": 12
+ "recorded_ts": "2026-11-03T07:43:28",
+ "attempts": 13
 }

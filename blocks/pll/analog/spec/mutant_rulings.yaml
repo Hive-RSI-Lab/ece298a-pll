@@ -2,231 +2,280 @@ below_spread:
   - id: xMN_B2_size_doubled_w
     netlist_line: "XMN_B2 vbp va vref vss nfet_03v3 w=w_b2 l=l_b2"
     measure: startup_time_us
-    delta: -0.011247
+    delta: -0.011404
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_B2: w doubled: largest move on a non-near-zero tt measure is -1.12% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_B2: w doubled: largest move on a non-near-zero tt measure is -1.14% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_BUFT_size_doubled_w
     netlist_line: "XMN_BUFT vnt vref vss vss nfet_03v3 w=w_b1 l=l_b1 m=m_buft"
     measure: startup_time_us
-    delta: 0.0115
+    delta: 0.009445
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_BUFT: w doubled: largest move on a non-near-zero tt measure is 1.15% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_BUFT: w doubled: largest move on a non-near-zero tt measure is 0.94% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENA_size_doubled_w
     netlist_line: "XMN_ENA va en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.006094
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.004823
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENA: w doubled: largest move on a non-near-zero tt measure is -0.61% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENA: w doubled: largest move on a non-near-zero tt measure is -0.48% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENB_connection_removed
     netlist_line: "XMN_ENB vref en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: 0.000822
+    delta: -0.006086
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENB: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is 0.08% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENB: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.61% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENB_size_doubled_w
     netlist_line: "XMN_ENB vref en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005931
+    measure: presc_tr_ns
+    delta: -0.000536
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENB: w doubled: largest move on a non-near-zero tt measure is -0.59% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENB: w doubled: largest move on a non-near-zero tt measure is -0.05% (presc_tr_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENI_size_doubled_w
     netlist_line: "XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005663
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.007116
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENI: w doubled: largest move on a non-near-zero tt measure is -0.57% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENI: w doubled: largest move on a non-near-zero tt measure is -0.71% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENN_connection_removed
     netlist_line: "XMN_ENN vcp_n en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.000799
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.005107
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENN: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.08% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENN: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.51% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENN_size_doubled_w
     netlist_line: "XMN_ENN vcp_n en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.004491
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.001418
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENN: w doubled: largest move on a non-near-zero tt measure is -0.45% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENN: w doubled: largest move on a non-near-zero tt measure is -0.14% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENS_connection_removed
     netlist_line: "XMN_ENS vbp_vco pll_en vi vss nfet_03v3 w=1e-5 l=2.8e-7"
     measure: startup_time_us
-    delta: 0.005253
+    delta: 0.00535
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENS: bulk disconnected: largest move on a non-near-zero tt measure is 0.53% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENS: bulk disconnected: largest move on a non-near-zero tt measure is 0.54% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENS_size_doubled_w
     netlist_line: "XMN_ENS vbp_vco pll_en vi vss nfet_03v3 w=1e-5 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005818
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.006714
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENS: w doubled: largest move on a non-near-zero tt measure is -0.58% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENS: w doubled: largest move on a non-near-zero tt measure is -0.67% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENV_connection_removed
     netlist_line: "XMN_ENV vbn_vco en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.00406
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.004145
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENV: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.41% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENV: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.41% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ENV_size_doubled_w
     netlist_line: "XMN_ENV vbn_vco en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.003909
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.004035
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ENV: w doubled: largest move on a non-near-zero tt measure is -0.39% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ENV: w doubled: largest move on a non-near-zero tt measure is -0.40% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_STD_size_doubled_w
     netlist_line: "XMN_STD vst vref vss vss nfet_03v3 w=1e-5 l=1e-6"
     measure: startup_time_us
-    delta: 0.014409
+    delta: 0.01342
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_STD: w doubled: largest move on a non-near-zero tt measure is 1.44% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_STD: w doubled: largest move on a non-near-zero tt measure is 1.34% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_STE_size_doubled_w
     netlist_line: "XMN_STE vst en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.00226
+    measure: presc_tr_ns
+    delta: -0.000536
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_STE: w doubled: largest move on a non-near-zero tt measure is -0.23% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_STE: w doubled: largest move on a non-near-zero tt measure is -0.05% (presc_tr_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_ST_size_doubled_w
     netlist_line: "XMN_ST vbp vst vss vss nfet_03v3 w=5e-7 l=4e-6"
-    measure: ol_fc_pn16_nopad_khz
-    delta: 0.002345
+    measure: startup_time_us
+    delta: -0.003977
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_ST: w doubled: largest move on a non-near-zero tt measure is 0.23% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_ST: w doubled: largest move on a non-near-zero tt measure is -0.40% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW0B_connection_removed
     netlist_line: "XMN_SW0B t1c cp_trim0 t1b vss nfet_03v3 w=2e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: 0.000456
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.004073
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW0B: bulk disconnected: largest move on a non-near-zero tt measure is 0.05% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW0B: bulk disconnected: largest move on a non-near-zero tt measure is -0.41% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW0B_size_doubled_w
     netlist_line: "XMN_SW0B t1c cp_trim0 t1b vss nfet_03v3 w=2e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: -0.000888
+    delta: -0.005999
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW0B: w doubled: largest move on a non-near-zero tt measure is -0.09% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW0B: w doubled: largest move on a non-near-zero tt measure is -0.60% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW0_connection_removed
     netlist_line: "XMN_SW0 vcp_n cp_trim0 t1a vss nfet_03v3 w=2e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005655
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.001623
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW0: bulk disconnected: largest move on a non-near-zero tt measure is -0.57% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW0: bulk disconnected: largest move on a non-near-zero tt measure is -0.16% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW0_size_doubled_w
     netlist_line: "XMN_SW0 vcp_n cp_trim0 t1a vss nfet_03v3 w=2e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: 0.000797
+    delta: -0.001229
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW0: w doubled: largest move on a non-near-zero tt measure is 0.08% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW0: w doubled: largest move on a non-near-zero tt measure is -0.12% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW1B_connection_removed
     netlist_line: "XMN_SW1B vcp_n cp_trim1 t1c vss nfet_03v3 w=2e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: 0.001425
+    delta: -0.007619
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW1B: bulk disconnected: largest move on a non-near-zero tt measure is 0.14% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW1B: bulk disconnected: largest move on a non-near-zero tt measure is -0.76% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW1B_size_doubled_w
     netlist_line: "XMN_SW1B vcp_n cp_trim1 t1c vss nfet_03v3 w=2e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.004487
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.004493
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW1B: w doubled: largest move on a non-near-zero tt measure is -0.45% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW1B: w doubled: largest move on a non-near-zero tt measure is -0.45% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW1_connection_removed
     netlist_line: "XMN_SW1 vcp_n cp_trim1 t2 vss nfet_03v3 w=2e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005655
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.00444
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW1: bulk disconnected: largest move on a non-near-zero tt measure is -0.57% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW1: bulk disconnected: largest move on a non-near-zero tt measure is -0.44% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMN_SW1_size_doubled_w
     netlist_line: "XMN_SW1 vcp_n cp_trim1 t2 vss nfet_03v3 w=2e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.004487
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.005368
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMN_SW1: w doubled: largest move on a non-near-zero tt measure is -0.45% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMN_SW1: w doubled: largest move on a non-near-zero tt measure is -0.54% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
+  - id: xMP_BUFT_size_doubled_w
+    netlist_line: "XMP_BUFT vbt vbp vdd vdd pfet_03v3 w=w_bp l=l_bp m=m_buft"
+    measure: startup_time_us
+    delta: -0.019899
+    sigma: 0
+    ruling: "w16f8 (warden) as an independent reviewer, on a06c8's request (board 11040659a41b, ruling 110406597501), 2026-11-04 - not a06c8's own ruling"
+    evidence: "xMP_BUFT: w doubled: largest move on a non-near-zero tt measure is -1.99% (startup_time_us), then cp_overlap_net_charge_fc -0.90% and ol_fc_pn16_nopad_khz -0.54%, under the 2% floor; connection_removed and type_flipped on the same device are killed. Measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin). At the floor: if a later change moves it past 2%, drop this ruling rather than raise the delta."
   - id: xMP_ENB_connection_removed
     netlist_line: "XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: -0.005188
+    delta: -0.006305
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENB: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.52% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENB: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.63% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENB_size_doubled_w
     netlist_line: "XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: 0.002277
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.007737
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENB: w doubled: largest move on a non-near-zero tt measure is 0.23% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENB: w doubled: largest move on a non-near-zero tt measure is -0.77% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENI_size_doubled_w
     netlist_line: "XMP_ENI en_b pll_en vdd vdd pfet_03v3 w=2e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
-    delta: 0.002188
+    delta: -0.006146
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENI: w doubled: largest move on a non-near-zero tt measure is 0.22% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENI: w doubled: largest move on a non-near-zero tt measure is -0.61% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENP_connection_removed
     netlist_line: "XMP_ENP vcp_p pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.00293
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.003821
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENP: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.29% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENP: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -0.38% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENP_size_doubled_w
     netlist_line: "XMP_ENP vcp_p pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.004479
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.009187
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENP: w doubled: largest move on a non-near-zero tt measure is -0.45% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENP: w doubled: largest move on a non-near-zero tt measure is -0.92% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENV_connection_removed
     netlist_line: "XMP_ENV vbp_vco pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
-    measure: startup_time_us
-    delta: -0.012732
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.013226
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENV: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -1.27% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENV: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -1.32% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_ENV_size_doubled_w
     netlist_line: "XMP_ENV vbp_vco pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
-    measure: cp_overlap_net_charge_fc
-    delta: -0.005182
+    measure: ol_fc_pn16_nopad_khz
+    delta: -0.003342
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_ENV: w doubled: largest move on a non-near-zero tt measure is -0.52% (cp_overlap_net_charge_fc), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_ENV: w doubled: largest move on a non-near-zero tt measure is -0.33% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_G2_connection_removed
     netlist_line: "XMP_G2 nb pll_en vdd vdd pfet_03v3 w=w_gp l=2.8e-7"
     measure: vco_out_tf_ns
-    delta: -0.017328
+    delta: -0.014939
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_G2: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -1.73% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_G2: drain (bulk tied to its own source) disconnected: largest move on a non-near-zero tt measure is -1.49% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_G2_size_doubled_w
     netlist_line: "XMP_G2 nb pll_en vdd vdd pfet_03v3 w=w_gp l=2.8e-7"
     measure: vco_out_tf_ns
-    delta: 0.015509
+    delta: 0.016638
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_G2: w doubled: largest move on a non-near-zero tt measure is 1.55% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_G2: w doubled: largest move on a non-near-zero tt measure is 1.66% (vco_out_tf_ns), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
   - id: xMP_STL_size_doubled_w
     netlist_line: "XMP_STL vst en_b vdd vdd pfet_03v3 w=5e-7 l=1e-5"
     measure: startup_time_us
-    delta: -0.005847
+    delta: -0.006474
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
-    evidence: "xMP_STL: w doubled: largest move on a non-near-zero tt measure is -0.58% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%."
+    evidence: "xMP_STL: w doubled: largest move on a non-near-zero tt measure is -0.65% (startup_time_us), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
+  - id: xMN_UPI_size_doubled_w
+    netlist_line: "XMN_UPI up_b pfd_up vss vss nfet_03v3 w=1e-6 l=2.8e-7"
+    measure: cp_overlap_net_charge_fc
+    delta: 0.019805
+    sigma: 0
+    ruling: "a06c8 for H2, on the person's 'have h2 decide' (board 1101041751e5, decision 11010515ae03), 2026-11-01"
+    evidence: "xMN_UPI: w doubled: largest move on a non-near-zero tt measure is 1.99% (cp_overlap_net_charge_fc), under the 2% floor on the re-run with the TSPC declared. Margin 0.01%: thin. Re-measured 2026-11-04 on the V2I/clamp resize: 1.98%."
+  - id: xMN_DB_size_doubled_w
+    netlist_line: "XMN_DB dy dx db vss nfet_03v3 w=2e-6 l=2.8e-7"
+    measure: presc_ckq_r_ns
+    delta: 0.010014
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMN_DB: w doubled: largest move on any non-near-zero tt measure is 1.02% (presc_ckq_r_ns, the TSPC's clock-to-q), under the 2% floor; no mc sigma, since the divider's edges are waived from mc. The divider keeps dividing (presc_div2_ratio 1.00)."
+  - id: xMP_DR_size_doubled_w
+    netlist_line: "XMP_DR dqn pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7"
+    measure: presc_ckq_f_ns
+    delta: 0.006022
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_DR: w doubled: the reset pull-up is off while running (pll_en = 1), and the largest move is 0.60% (presc_ckq_f_ns), under the 2% floor."
+  - id: xMP_DB_connection_removed
+    netlist_line: "XMP_DB dx vco_out da vdd pfet_03v3 w=2e-6 l=2.8e-7"
+    measure: vco_out_tf_ns
+    delta: -0.009289
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_DB: bulk disconnected: the stacked pfet's bulk floats near vdd. Largest move on a non-near-zero tt measure is -0.93% (vco_out_tf_ns, its load on vco_out), under the 2% floor. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
+  - id: xMN_I4_connection_removed
+    netlist_line: "XMN_I4 r4 r3 n4 vss nfet_03v3 w=w_rn l=l_r"
+    measure: vco_fmin_tt_mhz
+    delta: 0.012507
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMN_I4: bulk disconnected: largest move on a non-near-zero tt measure is 1.25% (vco_fmin_tt_mhz), under the 2% floor. Killed until 2026-11-02 by a 28% move on vco_df_dv_min_mhz_per_v, which was the 1 fC kick's start at 0.3 V, not the device: at 200 fC that measure moves 1.16%."
+  - id: xMP_I3_connection_removed
+    netlist_line: "XMP_I3 r3 r2 p3 vdd pfet_03v3 w=w_rp l=l_r"
+    measure: vco_fmin_tt_mhz
+    delta: 0.015543
+    sigma: 0
+    ruling: "a06c8, under the person's 'H2 decides' for the outside review, 2026-11-03: not the person's own ruling"
+    evidence: "xMP_I3: bulk disconnected: largest move on a non-near-zero tt measure is 1.55% (vco_fmin_tt_mhz), under the 2% floor. Killed until 2026-11-02 by 2.7% on vco_df_dv_min_mhz_per_v under the 1 fC kick; at 200 fC that measure moves 1.49%."

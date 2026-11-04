@@ -1,14 +1,13 @@
-// pll_analog - port list of the analog hard macro (blocks/pll/analog):
-// charge pump, loop filter, current-starved ring VCO, bias and the TSPC /2
-// whose output vco_div2 (the VCO divided by 2) clocks the digital half. Its layout is
-// blocks/pll/analog/layout/pll_analog.gds. A blackbox for synthesis; the
-// RTL test (test/) gives it a behavioural body, test/pll_analog_model.v.
-`default_nettype none
-`ifndef PLL_ANALOG_MODEL
+// pll_analog - port list of the analog hard macro (blocks/pll/analog). The
+// code is top_harden's blackbox (top/macros/pll_analog.v); release refuses it
+// if they differ. The RTL test leaves this file out and uses
+// test/pll_analog_model.v, a behavioural body.
 (* blackbox *)
 module pll_analog (
+`ifdef USE_POWER_PINS
     inout  wire vdd,
     inout  wire vss,
+`endif
     input  wire cp_trim0,
     input  wire cp_trim1,
     input  wire pfd_dn,
@@ -19,5 +18,3 @@ module pll_analog (
     inout  wire vctrl
 );
 endmodule
-`endif
-`default_nettype wire

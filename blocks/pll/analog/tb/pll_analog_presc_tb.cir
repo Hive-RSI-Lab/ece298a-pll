@@ -1,6 +1,6 @@
 * pll_analog_presc_tb.cir - prescaler-drive bench (spec.yaml:
-* presc_div2_ratio, scored at ff_m40c_vp10 only, so computed and printed only
-* at that corner: process ff, -40 C, vdd above nominal). Written from spec/.
+* presc_div2_ratio, scored at ff_m40c_vp10 and tt_27c, so computed and printed
+* only there: at ff_m40c_vp10 (process ff, -40 C, vdd above nominal) and at tt). Written from spec/.
 *
 * Since 2026-10-31 (issue #48) the first /2 is the macro's own TSPC divider:
 * vco_div2 = vco_out / 2 is the clock the digital half takes. This bench
@@ -17,9 +17,16 @@
 * then 130 ns at a 10 ps max step (down to ~190 MHz, under the 200 MHz
 * fmax_ff floor). Fewer vco_div2 edges than 11 (a divider that cannot follow), or
 * fewer VCO edges after both runs: the count ratio 2*nq/nv (as before).
-* At every corner other than ff_m40c_vp10 the bench runs a DC op only and
-* prints nothing: presc_div2_ratio is not scored there, and a deck with no
-* analysis at all reads to the gate as "no simulations run".
+* tt_27c (2026-11-02): bench_strength runs at tt only, so with the divider
+* unscored there none of its 14 devices could be seen (22 survivors). At tt
+* the ratio is scored too, plus what moves when a divider device moves, all on
+* vco_div2 at vctrl = vdd after 25 ns: presc_ckq_r_ns / presc_ckq_f_ns, vdd/2
+* on the clocking vco_out rise to vdd/2 on vco_div2 (the vco_out edge just
+* before it, so either start phase of the divider reads the same);
+* presc_tr_ns / presc_tf_ns, 20-80 %; presc_duty_pct. One 130 ns run at 5 ps.
+* At every other corner the bench runs a DC op only and prints nothing: these
+* are not scored there, and a deck with no analysis at all reads to the gate
+* as "no simulations run".
 *
 * Load cell netlist: the PDK's own libs.ref/.../spice/gf180mcu_fd_sc_mcu7t5v0.spice.
 * Its nfet_05v0/pfet_05v0 devices resolve through sm141064.spice's own fets_mm
@@ -72,6 +79,7 @@ cload2   q 0 30f
 .control
 set noaskquit
 set okp = "0"
+set okt = "0"
 if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
   foreach st 0 1
     if $okp eq 0
@@ -87,7 +95,7 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
       let nx = length(time)
       let nx1 = nx - 1
       let nx2 = nx - 2
-      let late = time[1,$&nx1] gt 25n
+      let late = time[0,$&nx2] gt 25n
       let hv = (v(xdut.vco_out) gt vmid)
       let hq = (v(q) gt vmid)
       let nv = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
@@ -111,12 +119,71 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
     end
   end
 else
-  op
+  if (procn eq 1) and (tempc eq 27) and (vddp gt 3.2) and (vddp lt 3.4)
+    tran 5p 130n 0 5p
+    let nx = length(time)
+    let nx1 = nx - 1
+    let nx2 = nx - 2
+    let late = time[0,$&nx2] gt 25n
+    let hv = (v(xdut.vco_out) gt vmid)
+    let hq = (v(q) gt vmid)
+    let nv = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
+    let nq = mean(((hq[1,$&nx1] - hq[0,$&nx2]) gt 0.5) and late)*length(late)
+    if (nv ge 22) and (nq ge 11)
+      meas tran va when v(xdut.vco_out)=$&vmid rise=1 td=25n
+      meas tran vb when v(xdut.vco_out)=$&vmid rise=21 td=25n
+      meas tran qa when v(q)=$&vmid rise=1 td=$&va
+      meas tran qb when v(q)=$&vmid rise=11 td=$&va
+      let tvco = (vb - va)/20
+      let tq = (qb - qa)/10
+      let x = 2*tvco/tq
+      set rat = "$&x"
+      set okp = "1"
+      meas tran qf when v(q)=$&vmid fall=1 td=$&qa
+      let tc = qa - tvco
+      meas tran cr when v(xdut.vco_out)=$&vmid rise=1 td=$&tc
+      let tc = qf - tvco
+      meas tran cf when v(xdut.vco_out)=$&vmid rise=1 td=$&tc
+      let vlo = 0.2*vddp
+      let vhi = 0.8*vddp
+      meas tran r20 when v(q)=$&vlo rise=1 td=$&qf
+      meas tran r80 when v(q)=$&vhi rise=1 td=$&qf
+      meas tran f80 when v(q)=$&vhi fall=1 td=$&qa
+      meas tran f20 when v(q)=$&vlo fall=1 td=$&qa
+      let xr = (qa - cr)*1e9
+      let xf = (qf - cf)*1e9
+      let xtr = (r80 - r20)*1e9
+      let xtf = (f20 - f80)*1e9
+      let xd = 100*(qf - qa)/tq
+      set ckr = "$&xr"
+      set ckf = "$&xf"
+      set qtr = "$&xtr"
+      set qtf = "$&xtf"
+      set qd = "$&xd"
+      set okt = "1"
+    else
+      if nv ge 1
+        let x = 2*nq/nv
+        set rat = "$&x"
+        set okp = "1"
+      end
+    end
+    destroy $curplot
+  else
+    op
+  end
 end
 echo
 echo "  Measurements for Transient Analysis (pll_analog_presc_tb, computed in .control)"
 if $okp eq 1
   echo "presc_div2_ratio = $rat"
+end
+if $okt eq 1
+  echo "presc_ckq_r_ns = $ckr"
+  echo "presc_ckq_f_ns = $ckf"
+  echo "presc_tr_ns = $qtr"
+  echo "presc_tf_ns = $qtf"
+  echo "presc_duty_pct = $qd"
 end
 echo
 .endc

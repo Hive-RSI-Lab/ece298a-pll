@@ -3,7 +3,7 @@
  "gate": "pex_sim",
  "phase": "P5",
  "tool": "pex_sim",
- "input_digest": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+ "input_digest": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -24,23 +24,220 @@
   "gds": "layout/pll_analog.gds",
   "extracted": "log/pex_sim/pll_analog.pex.ordered.spice",
   "parasitics": {
-   "r": 1304,
-   "c": 1496
+   "r": 1306,
+   "c": 1495
   },
   "measured": {
-   "icp_up_code00_ua": 18.8398,
-   "icp_dn_code00_ua": 18.4936,
-   "vco_kvco_mhz_per_v": 76.738,
-   "vco_fmax_tt_mhz": 214.629
-  }
+   "icp_up_code00_ua": 18.8431,
+   "icp_dn_code00_ua": 18.4969,
+   "vco_kvco_mhz_per_v": 74.6145,
+   "vco_fmax_tt_mhz": 208.895
+  },
+  "corners": [
+   "tt_m40c_vm10",
+   "tt_m40c",
+   "tt_m40c_vp10",
+   "tt_27c_vm10",
+   "tt_27c",
+   "tt_27c_vp10",
+   "tt_125c_vm10",
+   "tt_125c",
+   "tt_125c_vp10",
+   "ss_m40c_vm10",
+   "ss_m40c",
+   "ss_m40c_vp10",
+   "ss_27c_vm10",
+   "ss_27c",
+   "ss_27c_vp10",
+   "ss_125c_vm10",
+   "ss_125c",
+   "ss_125c_vp10",
+   "ff_m40c_vm10",
+   "ff_m40c",
+   "ff_m40c_vp10",
+   "ff_27c_vm10",
+   "ff_27c",
+   "ff_27c_vp10",
+   "ff_125c_vm10",
+   "ff_125c",
+   "ff_125c_vp10",
+   "ss_pff",
+   "ff_pss",
+   "tt_pss",
+   "tt_pff"
+  ],
+  "corner_source": "the whole sweep: no fresh sim_pvt record to pick from",
+  "measured_by_corner": {
+   "tt_m40c_vm10": {
+    "icp_up_code00_ua": 19.1504,
+    "icp_dn_code00_ua": 18.8819,
+    "vco_kvco_mhz_per_v": 85.5287
+   },
+   "tt_m40c": {
+    "icp_up_code00_ua": 19.3877,
+    "icp_dn_code00_ua": 19.0107,
+    "vco_kvco_mhz_per_v": 75.2948
+   },
+   "tt_m40c_vp10": {
+    "icp_up_code00_ua": 19.6715,
+    "icp_dn_code00_ua": 19.1331,
+    "vco_kvco_mhz_per_v": 66.6507
+   },
+   "tt_27c_vm10": {
+    "icp_up_code00_ua": 18.6287,
+    "icp_dn_code00_ua": 18.3758,
+    "vco_kvco_mhz_per_v": 84.3135
+   },
+   "tt_27c": {
+    "icp_up_code00_ua": 18.8431,
+    "icp_dn_code00_ua": 18.4969,
+    "vco_kvco_mhz_per_v": 74.6145,
+    "vco_fmax_tt_mhz": 208.895
+   },
+   "tt_27c_vp10": {
+    "icp_up_code00_ua": 19.1064,
+    "icp_dn_code00_ua": 18.6142,
+    "vco_kvco_mhz_per_v": 66.4541
+   },
+   "tt_125c_vm10": {
+    "icp_up_code00_ua": 17.5333,
+    "icp_dn_code00_ua": 17.2899,
+    "vco_kvco_mhz_per_v": 80.8786
+   },
+   "tt_125c": {
+    "icp_up_code00_ua": 17.7093,
+    "icp_dn_code00_ua": 17.383,
+    "vco_kvco_mhz_per_v": 71.9779
+   },
+   "tt_125c_vp10": {
+    "icp_up_code00_ua": 17.9424,
+    "icp_dn_code00_ua": 17.4717,
+    "vco_kvco_mhz_per_v": 64.5232
+   },
+   "ss_m40c_vm10": {
+    "icp_up_code00_ua": 17.6237,
+    "icp_dn_code00_ua": 17.4463,
+    "vco_kvco_mhz_per_v": 69.6481
+   },
+   "ss_m40c": {
+    "icp_up_code00_ua": 17.8438,
+    "icp_dn_code00_ua": 17.5724,
+    "vco_kvco_mhz_per_v": 62.5101
+   },
+   "ss_m40c_vp10": {
+    "icp_up_code00_ua": 18.0845,
+    "icp_dn_code00_ua": 17.6877,
+    "vco_kvco_mhz_per_v": 55.6313
+   },
+   "ss_27c_vm10": {
+    "icp_up_code00_ua": 17.2322,
+    "icp_dn_code00_ua": 17.0589,
+    "vco_kvco_mhz_per_v": 68.9797
+   },
+   "ss_27c": {
+    "icp_up_code00_ua": 17.4248,
+    "icp_dn_code00_ua": 17.1701,
+    "vco_kvco_mhz_per_v": 61.9019
+   },
+   "ss_27c_vp10": {
+    "icp_up_code00_ua": 17.6449,
+    "icp_dn_code00_ua": 17.278,
+    "vco_kvco_mhz_per_v": 55.3508
+   },
+   "ss_125c_vm10": {
+    "icp_up_code00_ua": 16.3779,
+    "icp_dn_code00_ua": 16.2031,
+    "vco_kvco_mhz_per_v": 66.6069
+   },
+   "ss_125c": {
+    "icp_up_code00_ua": 16.5382,
+    "icp_dn_code00_ua": 16.2936,
+    "vco_kvco_mhz_per_v": 59.8049
+   },
+   "ss_125c_vp10": {
+    "icp_up_code00_ua": 16.7287,
+    "icp_dn_code00_ua": 16.3774,
+    "vco_kvco_mhz_per_v": 53.755
+   },
+   "ff_m40c_vm10": {
+    "icp_up_code00_ua": 21.4601,
+    "icp_dn_code00_ua": 21.0774,
+    "vco_kvco_mhz_per_v": 107.015
+   },
+   "ff_m40c": {
+    "icp_up_code00_ua": 21.7334,
+    "icp_dn_code00_ua": 21.2188,
+    "vco_kvco_mhz_per_v": 93.8102
+   },
+   "ff_m40c_vp10": {
+    "icp_up_code00_ua": 22.0904,
+    "icp_dn_code00_ua": 21.3576,
+    "vco_kvco_mhz_per_v": 83.316
+   },
+   "ff_27c_vm10": {
+    "icp_up_code00_ua": 20.78,
+    "icp_dn_code00_ua": 20.4278,
+    "vco_kvco_mhz_per_v": 105.419
+   },
+   "ff_27c": {
+    "icp_up_code00_ua": 21.0347,
+    "icp_dn_code00_ua": 20.5682,
+    "vco_kvco_mhz_per_v": 93.0662
+   },
+   "ff_27c_vp10": {
+    "icp_up_code00_ua": 21.3664,
+    "icp_dn_code00_ua": 20.7059,
+    "vco_kvco_mhz_per_v": 83.0407
+   },
+   "ff_125c_vm10": {
+    "icp_up_code00_ua": 19.3498,
+    "icp_dn_code00_ua": 19.0191,
+    "vco_kvco_mhz_per_v": 100.657
+   },
+   "ff_125c": {
+    "icp_up_code00_ua": 19.5577,
+    "icp_dn_code00_ua": 19.1211,
+    "vco_kvco_mhz_per_v": 89.4205
+   },
+   "ff_125c_vp10": {
+    "icp_up_code00_ua": 19.8609,
+    "icp_dn_code00_ua": 19.2217,
+    "vco_kvco_mhz_per_v": 80.2327
+   },
+   "ss_pff": {
+    "icp_up_code00_ua": 26.7285,
+    "icp_dn_code00_ua": 26.5255,
+    "vco_kvco_mhz_per_v": 91.7747
+   },
+   "ff_pss": {
+    "icp_up_code00_ua": 14.1304,
+    "icp_dn_code00_ua": 13.5578,
+    "vco_kvco_mhz_per_v": 54.0896
+   },
+   "tt_pss": {
+    "icp_up_code00_ua": 15.3044,
+    "icp_dn_code00_ua": 14.9939,
+    "vco_kvco_mhz_per_v": 61.9924
+   },
+   "tt_pff": {
+    "icp_up_code00_ua": 24.3824,
+    "icp_dn_code00_ua": 23.9897,
+    "vco_kvco_mhz_per_v": 92.6456
+   }
+  },
+  "not_scored": []
  },
  "inputs_at_start": {
-  "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-  "tb": "dir_text:dde9893530d21d57292d81db97d7379faf6bcf27aabe344d21beb21cd92aa8fd",
-  "layout_ref": "dir_text:14d9d8e26a895652326c7b4f8504e92d58125b963f82a411239fb0e3278ee6f4",
-  "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-  "spec_yaml": "json_canonical:d716cf6b0d1929fc3a2f9bda14a0e67b244264ae581dca2e8ce465dd41dbf6da"
+  "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+  "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
+  "layout_ref": "dir_text:c1d6efbd62a7fd515cdd618af5ee42f4aa7663d4c319d6fbafcc49583d74a1e7",
+  "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+  "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+  "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
  },
- "recorded_ts": "2026-10-31T15:29:55",
- "attempts": 7
+ "recorded_ts": "2026-11-04T06:05:56",
+ "attempts": 12
 }

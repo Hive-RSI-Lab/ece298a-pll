@@ -3,7 +3,7 @@
  "gate": "top_drc",
  "phase": "P3",
  "tool": "top_drc",
- "input_digest": "dir_text:4751b38ce921d92aa3de273e3ae0b1381ce67ddd0fdcd670943e08a12e4d09f9",
+ "input_digest": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -25,8 +25,12 @@
   "klayout_count": 0
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:4751b38ce921d92aa3de273e3ae0b1381ce67ddd0fdcd670943e08a12e4d09f9"
+  "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+  "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+  "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+  "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
  },
- "recorded_ts": "2026-10-31T16:06:41",
- "attempts": 7
+ "recorded_ts": "2026-11-04T07:03:18",
+ "attempts": 12
 }

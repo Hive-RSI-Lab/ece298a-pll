@@ -1,0 +1,25 @@
+{
+ "vco_div2": {
+  "margin": 0.25,
+  "processes": {
+   "ff": {
+    "corner": "ff_m40c_vm10",
+    "fmax_mhz": 149.19,
+    "period_ns": 6.7028,
+    "recorded_mhz": 298.381
+   },
+   "ss": {
+    "corner": "ss_pff",
+    "fmax_mhz": 123.546,
+    "period_ns": 8.0942,
+    "recorded_mhz": 247.091
+   },
+   "tt": {
+    "corner": "tt_pff",
+    "fmax_mhz": 142.227,
+    "period_ns": 7.031,
+    "recorded_mhz": 284.455
+   }
+  }
+ }
+}

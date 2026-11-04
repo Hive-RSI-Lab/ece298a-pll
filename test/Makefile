@@ -12,9 +12,8 @@ ifneq ($(GATES),yes)
 
 # RTL simulation, the analog macro replaced by its behavioural model:
 SIM_BUILD				= sim_build/rtl
-VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(PROJECT_SOURCES))
+VERILOG_SOURCES += $(addprefix $(SRC_DIR)/,$(filter-out pll_analog.v,$(PROJECT_SOURCES)))
 VERILOG_SOURCES += $(PWD)/pll_analog_model.v
-COMPILE_ARGS    += -DPLL_ANALOG_MODEL
 
 else
 

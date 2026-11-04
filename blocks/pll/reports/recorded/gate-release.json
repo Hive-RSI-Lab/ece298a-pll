@@ -1,0 +1,329 @@
+{
+ "script": "gate",
+ "gate": "release",
+ "phase": "P4",
+ "tool": "release",
+ "input_digest": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+ "status": "fail",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 5,
+  "by_severity": {
+   "error": 5
+  },
+  "by_source": {
+   "attest": 5
+  }
+ },
+ "failing_count": 5,
+ "failing": [
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "cosim",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "cosim: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "cosim: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "macro_lib",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "macro_lib: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "macro_lib: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "top_harden",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "top_harden: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "top_harden: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "top_lvs",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "top_lvs: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "top_lvs: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "nested_analog",
+   "line": null,
+   "kind": "nested_not_released",
+   "refs": [],
+   "msg": "nested_analog: not released: bench_strength: stale: input changed since the last pass (netlist, sizing); drc: stale: input changed since the last pass (layout); lvs: stale: input changed since the last pass (layout, netlist, sizing); mc: stale: input changed since the last pass (netlist, sizing); netlist_lint: stale: input changed since the last pass (netlist); pex_sim: stale: input changed since the last pass (layout, netlist); sim_pvt: stale: input changed since the last pass (netlist, sizing); sim_tt: stale: input changed since the last pass (netlist, sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "nested_analog: not released: bench_strength: stale: input changed since the last pass (netlist, sizing); drc: stale: input changed since the last pass (layout); lvs: stale: input changed since the last pass (layout, netlist, sizing); mc: stale: input changed since the last pass (netlist, sizing); netlist_lint: stale: input changed since the last pass (netlist); pex_sim: stale: input changed since the last pass (layout, netlist); sim_pvt: stale: input changed since the last pass (netlist, sizing); sim_tt: stale: input changed since the last pass (netlist, sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "violations": [
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "cosim",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "cosim: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "cosim: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "macro_lib",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "macro_lib: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "macro_lib: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "top_harden",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "top_harden: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "top_harden: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "top_lvs",
+   "line": null,
+   "kind": "gate_not_ready",
+   "refs": [],
+   "msg": "top_lvs: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "top_lvs: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "release",
+   "severity": "error",
+   "file": null,
+   "module": "nested_analog",
+   "line": null,
+   "kind": "nested_not_released",
+   "refs": [],
+   "msg": "nested_analog: not released: bench_strength: stale: input changed since the last pass (netlist, sizing); drc: stale: input changed since the last pass (layout); lvs: stale: input changed since the last pass (layout, netlist, sizing); mc: stale: input changed since the last pass (netlist, sizing); netlist_lint: stale: input changed since the last pass (netlist); pex_sim: stale: input changed since the last pass (layout, netlist); sim_pvt: stale: input changed since the last pass (netlist, sizing); sim_tt: stale: input changed since the last pass (netlist, sizing)",
+   "source": "attest",
+   "items": [
+    {
+     "msg": "nested_analog: not released: bench_strength: stale: input changed since the last pass (netlist, sizing); drc: stale: input changed since the last pass (layout); lvs: stale: input changed since the last pass (layout, netlist, sizing); mc: stale: input changed since the last pass (netlist, sizing); netlist_lint: stale: input changed since the last pass (netlist); pex_sim: stale: input changed since the last pass (layout, netlist); sim_pvt: stale: input changed since the last pass (netlist, sizing); sim_tt: stale: input changed since the last pass (netlist, sizing)",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "facts": {
+  "tt_submission": {
+   "repo": "release/tt",
+   "staged": [
+    "gds/tt_um_ihsan_sa_pll.gds",
+    "gl/tt_um_ihsan_sa_pll.v",
+    "info.yaml",
+    "lef/tt_um_ihsan_sa_pll.lef",
+    "src/ihsan_sa_pll.v",
+    "src/pll_analog.v",
+    "src/pll_ctrl_regs.v",
+    "src/pll_divider.v",
+    "src/pll_lock_det.v",
+    "src/pll_pfd.v",
+    "src/pll_prescaler.v",
+    "src/project.v",
+    "test/Makefile",
+    "test/pll_analog_model.v",
+    "test/tb.v",
+    "test/test.py"
+   ],
+   "signoff": {
+    "top_module": "tt_um_ihsan_sa_pll",
+    "librelane": "3.1.0.dev3",
+    "pdk": "gf180mcuD",
+    "open_pdks": "1689ac3f2dc763876eaf967227c7dfe831b031ae",
+    "librelane_pdk": "f6eeac7dad085ffcc829ccfd721f7b4ce39edcf7",
+    "tt_support_tools": "01d5d2814fa9dd61e9d211e0b235a4a592a9316a",
+    "gds": "top/harden/runs/run/final/gds/tt_um_ihsan_sa_pll.gds",
+    "gds_sha256": "782ab211d8c873026623c9e8d7d1984136c191490a8dc6234dda0cd28aad9d65",
+    "lef": "top/harden/runs/run/final/lef/tt_um_ihsan_sa_pll.lef",
+    "lef_sha256": "5dea19e9e170875c172d585178ef449d180563f1303b03ae011bc9880e480ab8",
+    "gl": "top/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v",
+    "gl_sha256": "df2a0bfab94fa4b9e435c82279c04297ea2ad3153bbd7126afbc997274b63beb",
+    "gl_is_shipped": false,
+    "glsim_gl_sha256": null
+   },
+   "shipped": [
+    {
+     "workflow": ".github/workflows/gds.yaml",
+     "mode": "custom_gds",
+     "ref": "ttgf26c",
+     "top_module": "tt_um_ihsan_sa_pll",
+     "pdk": "gf180mcuD",
+     "gds_path": "gds/tt_um_ihsan_sa_pll.gds",
+     "gds_sha256": "782ab211d8c873026623c9e8d7d1984136c191490a8dc6234dda0cd28aad9d65",
+     "lef_path": "lef/tt_um_ihsan_sa_pll.lef",
+     "lef_sha256": "5dea19e9e170875c172d585178ef449d180563f1303b03ae011bc9880e480ab8",
+     "verilog_path": "gl/tt_um_ihsan_sa_pll.v",
+     "verilog_sha256": "df2a0bfab94fa4b9e435c82279c04297ea2ad3153bbd7126afbc997274b63beb"
+    }
+   ]
+  },
+  "manifest": "release/manifest.json",
+  "manifest_released": false,
+  "measures": [
+   {
+    "req": "REQ-LOOP-LOCK",
+    "name": "lock_time_us",
+    "source": "msde:cosim.measures.lock_time_us",
+    "max": 50,
+    "note": "partial: the top cosim's one operating point (6.25 MHz, N=2, tt_27c) with the transistor macro, not the whole lock table and not the real-number model; other corners are in blocks/pll/tb/README.md",
+    "value": 4.48,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-LOOP-FREQ",
+    "name": "fb_period_rel_err",
+    "source": "msde:cosim.measures.fb_period_rel_err",
+    "max": 0.001,
+    "note": "partial: the top cosim's one operating point, not the whole lock table",
+    "value": 2.5705645161444578e-05,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-LOOP-FREQ",
+    "name": "vco_period_rel_err",
+    "source": "msde:cosim.measures.vco_period_rel_err",
+    "max": 0.001,
+    "note": "partial: the top cosim's one operating point, not the whole lock table",
+    "value": 3.026052104200261e-05,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-LOOP-VCTRL",
+    "name": "vctrl_pp_last_10us_mv",
+    "source": "msde:cosim.measures.vctrl_pp_last_10us_mv",
+    "max": 20,
+    "note": "partial: the top cosim's one operating point at tt_27c. Other corners on the transistor macro read over 20 mV (blocks/pll/tb/README.md: ff_pss 20.9, ff_m40c_vm10 27.4), so this row passing does not show the requirement at every corner",
+    "value": 0.815184996341145,
+    "status": "pass",
+    "why": ""
+   },
+   {
+    "req": "REQ-LOOP-RELOCK",
+    "name": "relock_time_us",
+    "source": "msde:cosim.measures.relock_time_us",
+    "max": 50,
+    "note": "the top cosim gate does not record this yet, so the msde release reads it missing and refuses until it does. Evidence today, not gate-read: blocks/pll/reports/recorded/cosim_cov.json (f_ref 5 MHz, N 1->3->2, gate level + SDF, 5 corners, no vctrl pad): last lock rise after a step 3.9-5.1 us, worst 15.1 us at ff_pss. ff_pss at N=3 (120 MHz, near its 125.6 ceiling) fails that bench's own at-end check: LOCK falls twice, vctrl overshoots to 3.5 V and still moves 229 mV p-p 20 us after the step, settling within 20 mV about 25 us after it (cosim_cov_cases.json). N=4 and N=5 steps and f_ref other than 5 MHz are not run",
+    "value": 3.281,
+    "status": "pass",
+    "why": ""
+   }
+  ]
+ },
+ "inputs_at_start": {
+  "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+  "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+  "analog_layout": "dir_text:08c5be02f2620045b3efa91239e1c46e80deeccb8818d50b1b1ac6633ac18791",
+  "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+  "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+  "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
+  "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+  "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+ },
+ "recorded_ts": "2026-11-04T02:12:59",
+ "attempts": 2
+}

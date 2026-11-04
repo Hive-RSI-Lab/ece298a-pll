@@ -109,7 +109,7 @@ W_CPP, L_CPP = 50.0, 2.0
 W_SWN, W_SWP, L_SW = 2.0, 4.0, 0.5
 R1_L = 150.0
 C1_W, C1_L, C2_W, C2_L = 420.0, 12.0, 43.0, 12.0
-W_V2I, L_V2I, RV2I_L = 10.0, 1.0, 35.0
+W_V2I, L_V2I, RV2I_L = 10.0, 1.0, 43.0
 W_FLR, L_FLR = 2.0, 2.0
 W_V2IP, W_V2IN, L_V2I2 = 10.0, 4.0, 0.5
 W_SP, W_SN, L_S = 10.0, 4.0, 0.5
@@ -119,7 +119,7 @@ W_OP, W_ON = 12.0, 6.0
 M_BUFT = 4
 W_BUFP, L_BUFP, W_BUFN, L_BUFN = 20.0, 1.0, 10.0, 1.0
 W_BUFLN, W_BUFLP, L_BUFL = 4.0, 8.0, 2.0
-W_CL, L_CL = 40.0, 2.0
+W_CL, L_CL = 50.0, 1.0
 LMIN = 0.28
 
 # ---- devices: name -> (type, drain, gate, source, W total, L, units) ---

@@ -9,7 +9,8 @@ blocks/pll/top/harden/runs/run/final (out of git). Tiny Tapeout's analog flow
 (ttgf-analog-template) takes a committed GDS and LEF instead of hardening
 itself, so this copies:
 
-- the tile's GDS and LEF to gds/ and lef/ (only when a harden has run);
+- the tile's GDS and LEF to gds/ and lef/, and its powered P&R netlist to gl/,
+  which is the netlist custom_gds ships (only when a harden has run);
 - src/: project.v and pll_analog.v from blocks/pll/tt/src, and the digital
   core's RTL from blocks/pll/digital/rtl, so src/ never drifts from the
   RTL the harden used;
@@ -18,7 +19,7 @@ itself, so this copies:
 
 It also removes what only the digital template uses (src/config.json and the
 fpga workflow, which can't build a design with an analog macro).
---check compares instead of writing, and leaves gds/ and lef/ out unless
+--check compares instead of writing, and leaves gds/, lef/ and gl/ out unless
 --with-gds is given, since a check can't harden.
 """
 from __future__ import annotations
@@ -45,7 +46,8 @@ def plan(with_gds: bool) -> tuple[list[tuple[Path, Path]], list[Path]]:
                (TT / "workflows" / "gds.yaml", ROOT / ".github" / "workflows" / "gds.yaml")]
     if with_gds:
         copies += [(FINAL / "gds" / f"{TOP}.gds", ROOT / "gds" / f"{TOP}.gds"),
-                   (FINAL / "lef" / f"{TOP}.lef", ROOT / "lef" / f"{TOP}.lef")]
+                   (FINAL / "lef" / f"{TOP}.lef", ROOT / "lef" / f"{TOP}.lef"),
+                   (FINAL / "pnl" / f"{TOP}.pnl.v", ROOT / "gl" / f"{TOP}.v")]
     gone = [ROOT / "src" / "config.json", ROOT / ".github" / "workflows" / "fpga.yaml"]
     return copies, gone
 
@@ -54,7 +56,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--check", action="store_true", help="compare, don't write")
     ap.add_argument("--with-gds", action="store_true",
-                    help="with --check: also compare gds/ and lef/ with the harden's")
+                    help="with --check: also compare gds/, lef/ and gl/ with the harden's")
     args = ap.parse_args()
     with_gds = args.with_gds or (not args.check and FINAL.is_dir())
     copies, gone = plan(with_gds)
@@ -78,7 +80,7 @@ def main() -> int:
     for p in gone:
         p.unlink(missing_ok=True)
     print(f"assemble: wrote {len(copies)} files" + ("" if with_gds else
-          " (no harden yet, so no gds/ or lef/)"))
+          " (no harden yet, so no gds/, lef/ or gl/)"))
     return 0
 
 
