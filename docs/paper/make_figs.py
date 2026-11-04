@@ -35,6 +35,9 @@ CORNERS4 = ["ff_pss", "ff_m40c_vm10", "ff_125c_vp10", "ss_m40c_vm10"]
 CCOL = dict(zip(CORNERS4, S[:4]))
 CCOL["tt_27c"] = S[6]
 CCOL["ss_125c_vm10"] = S[5]
+CCOL["ss_125c_vp10"] = S[7]
+# the six bounding corners of the gate-level co-simulation (cosim_corners_gl facts.bounding)
+CORNERS6 = ["ss_125c_vm10", "ff_m40c_vm10", "ff_125c_vp10", "ss_m40c_vm10", "ss_125c_vp10", "ff_pss"]
 PROC = {"tt": S[0], "ss": S[1], "ff": S[2]}
 
 plt.rcParams.update({
@@ -271,42 +274,49 @@ def ms(kind, c):
 
 def fig_lock():
     fig, (a, b) = plt.subplots(2, 1, figsize=(W1, 3.9), sharex=True)
-    for c in CORNERS4:
+    for c in CORNERS6:
         m = ms("cosim_corners_gl", c)
         tr = np.array(m["vctrl_trace_us_v"])
         a.plot(tr[:, 0], tr[:, 1], color=CCOL[c], lw=1.1, label=c)
         e = np.array(m["edge_times_ns"])
         fb = 1e3 / np.diff(e)                       # MHz, clk_fb
-        b.plot(e[1:] / 1e3, fb * 16, color=CCOL[c], lw=1.1)
-        a.plot(m["lock_rise_ns"] / 1e3, np.interp(m["lock_rise_ns"] / 1e3, tr[:, 0], tr[:, 1]),
-               "v", color=CCOL[c], ms=5, mec="white")
+        # relock: N steps 2 -> 3 partway through; scale by the divide ratio in force
+        n_sel = m.get("relock_n_sel") or [2, 2]
+        t_step = (m.get("relock_step_ns") or (m["lock_rises_ns"][-1] - m["relock_time_us"] * 1e3)) / 1e3
+        mult = np.where(e[1:] / 1e3 < t_step, 8 * n_sel[0], 8 * n_sel[1])
+        b.plot(e[1:] / 1e3, fb * mult, color=CCOL[c], lw=1.1)
+        for t in m.get("lock_rises_ns") or [m["lock_rise_ns"]]:
+            a.plot(t / 1e3, np.interp(t / 1e3, tr[:, 0], tr[:, 1]),
+                   "v", color=CCOL[c], ms=5, mec="white")
     a.set_ylabel("vctrl (V)")
-    a.legend(loc="lower right", fontsize=6)
+    a.legend(loc="lower right", fontsize=5, ncol=2)
     a.set_title("(a) control voltage; triangles: LOCK rises", loc="left")
     b.axhline(100, color=MUTED, ls="--", lw=0.8)
-    b.set_ylabel("16 x f(clk_fb) (MHz)")
+    b.axhline(150, color=MUTED, ls="--", lw=0.8)
+    b.set_ylabel("8N x f(clk_fb) (MHz)")
     b.set_xlabel("time (us)")
-    b.set_ylim(0, 160)
+    b.set_ylim(0, 200)
     b.set_title("(b) VCO frequency seen through the feedback divider", loc="left")
     save(fig, "lock")
 
 
 def fig_settle():
     fig, ax = plt.subplots(figsize=(W1, 2.3))
-    x = np.arange(len(CORNERS4))
+    x = np.arange(len(CORNERS6))
+    w = 0.38
     for j, (kind, lab, col) in enumerate([("cosim_corners", "RTL digital (zero-delay PFD)", MUTED),
                                           ("cosim_corners_gl", "gate-level digital + SDF", S[0])]):
-        v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS4]
-        e = [ms(kind, c)["vctrl_pp_at_ref_edges_last_10us_mv"] for c in CORNERS4]
-        ax.bar(x + (j - 0.5) * 0.38, v, 0.36, color=col, label=lab)
-        ax.plot(x + (j - 0.5) * 0.38, e, "_", color=INK, ms=9, mew=1.4,
-                label="sampled at reference edges" if j else None)
+        v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS6]
+        e = [ms(kind, c).get("vctrl_pp_at_ref_edges_last_10us_mv") for c in CORNERS6]
+        ax.bar(x + (j - 0.5) * w, v, w * 0.95, color=col, label=lab)
+        if j and all(ei is not None for ei in e):
+            ax.plot(x + (j - 0.5) * w, e, "_", color=INK, ms=7, mew=1.4, label="sampled at reference edges")
         for xi, vi in zip(x, v):
-            ax.text(xi + (j - 0.5) * 0.38, vi + 0.6, f"{vi:.1f}", ha="center", fontsize=6, color=INK2)
+            ax.text(xi + (j - 0.5) * w, vi + 0.6, f"{vi:.1f}", ha="center", fontsize=5, color=INK2)
     ax.axhline(20, color=S[7], ls="--", lw=0.8)
-    ax.text(3.6, 20.6, "bound 20 mV", fontsize=6, ha="right", color=INK2)
+    ax.text(len(CORNERS6) - 0.4, 20.6, "bound 20 mV", fontsize=6, ha="right", color=INK2)
     ax.set_xticks(x)
-    ax.set_xticklabels(CORNERS4, fontsize=6)
+    ax.set_xticklabels(CORNERS6, fontsize=5, rotation=20)
     ax.set_ylabel("vctrl p-p, last 10 us (mV)")
     ax.set_ylim(0, 32)
     ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), fontsize=6, ncol=2)
@@ -346,15 +356,16 @@ def fig_pad():
     a.set_ylabel("vctrl (V)")
     a.set_xlabel("time (us)")
     a.legend(loc="lower right", fontsize=6)
-    a.set_title("(a) with 5 pF on vctrl; triangles: LOCK rises", loc="left")
+    a.set_title("(a) 5 pF on vctrl (prev. cell); triangles: LOCK", loc="left")
     x = np.arange(len(CORNERS4))
-    for j, (kind, lab, col) in enumerate([("cosim_corners_gl", "no pad", MUTED),
-                                          ("cosim_corners_gl_pad5pf", "5 pF pad", S[0])]):
+    # the pad runs are on the previous cell revision; comparing them with today's no-pad runs
+    # would mix two cells, so only the pad runs are shown
+    for j, (kind, lab, col) in enumerate([("cosim_corners_gl_pad5pf", "5 pF pad (prev. cell)", S[0])]):
         v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS4]
         lt = [ms(kind, c)["lock_time_us"] for c in CORNERS4]
-        b.bar(x + (j - 0.5) * 0.38, v, 0.36, color=col, label=lab)
+        b.bar(x, v, 0.5, color=col, label=lab)
         for xi, vi, li in zip(x, v, lt):
-            b.text(xi + (j - 0.5) * 0.38, vi + 0.6, f"{vi:.1f}\n{li:.1f}us", ha="center", fontsize=5,
+            b.text(xi, vi + 0.6, f"{vi:.1f}\n{li:.1f}us", ha="center", fontsize=5,
                    color=INK2)
     b.axhline(20, color=S[7], ls="--", lw=0.8)
     b.set_xticks(x)
@@ -368,9 +379,9 @@ def fig_pad():
 
 
 def fig_cov():
-    """Divider steps at f_ref = 5 MHz: all corners, then ff_pss's 120 MHz step given longer."""
-    fig, (ax, b) = plt.subplots(2, 1, figsize=(W1, 3.9))
-    rep = load("blocks/pll/reports/recorded/cosim_cov.json")
+    """Divider steps 100 -> 150 -> 100 MHz at f_ref = 6.25 MHz, five corners (cosim_cov_150)."""
+    fig, ax = plt.subplots(figsize=(W1, 2.6))
+    rep = load("blocks/pll/reports/recorded/cosim_cov_150.json")
     for r in rep["facts"]["results"]:
         c, m = r["corner"], r.get("measures") or {}
         tr = np.array(m["vctrl_trace_us_v"])
@@ -386,19 +397,8 @@ def fig_cov():
         ax.text(t / 1e3 + 0.4, 0.15, f"N={n}, {f:.0f} MHz", fontsize=6, color=INK2)
     ax.set_ylabel("vctrl (V)")
     ax.set_xlabel("time (us)")
-    ax.set_ylim(0, 4.8)
-    ax.legend(loc="upper center", fontsize=5, ncol=3)
-    ax.set_title("(a) N = 1, 3, 2 at five corners", loc="left")
-    cases = {r["case"]: r for r in load("blocks/pll/reports/recorded/cosim_cov_cases.json")["facts"]["results"]}
-    for name, lab, col in (("ff_pss_step_120_long", "no pad", CCOL["ff_pss"]),
-                           ("ff_pss_step_120_pad5p", "5 pF pad", S[6])):
-        tr = np.array(cases[name]["measures"]["vctrl_trace_us_v"])
-        b.plot(tr[:, 0], tr[:, 1], color=col, lw=1.0, label=lab)
-    b.axvline(20, color=MUTED, ls=":", lw=0.8)
-    b.set_ylabel("vctrl (V)")
-    b.set_xlabel("time (us)")
-    b.legend(loc="lower right", fontsize=6)
-    b.set_title("(b) ff_pss, step to 120 MHz at 20 us", loc="left")
+    ax.set_ylim(0, 4.0)
+    ax.legend(loc="upper left", fontsize=5, ncol=3)
     fig.tight_layout()
     save(fig, "cov")
 
