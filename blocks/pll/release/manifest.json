@@ -2,9 +2,15 @@
  "schema": 1,
  "block": "pll",
  "skill": "msde",
- "ts": "2026-11-04T01:31:56",
- "released": true,
- "refused": [],
+ "ts": "2026-11-04T02:12:58",
+ "released": false,
+ "refused": [
+  "cosim: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+  "macro_lib: stale: input changed since the last pass (analog_netlist, analog_sizing)",
+  "top_harden: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+  "top_lvs: stale: input changed since the last pass (analog_layout, analog_netlist, analog_sizing)",
+  "nested_analog: not released: bench_strength: stale: input changed since the last pass (netlist, sizing); drc: stale: input changed since the last pass (layout); lvs: stale: input changed since the last pass (layout, netlist, sizing); mc: stale: input changed since the last pass (netlist, sizing); netlist_lint: stale: input changed since the last pass (netlist); pex_sim: stale: input changed since the last pass (layout, netlist); sim_pvt: stale: input changed since the last pass (netlist, sizing); sim_tt: stale: input changed since the last pass (netlist, sizing)"
+ ],
  "tree": "release/tt",
  "versions": {
   "librelane": "3.1.0.dev3",
@@ -81,7 +87,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     },
@@ -90,7 +96,7 @@
      "relation": "read",
      "kind": "top_gds",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T08:00:13",
      "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
     }
@@ -106,7 +112,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     },
@@ -115,7 +121,7 @@
      "relation": "read",
      "kind": "top_pnl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T08:00:13",
      "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
     }
@@ -131,7 +137,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -148,7 +154,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -164,7 +170,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -173,7 +179,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -189,7 +195,7 @@
      "relation": "read",
      "kind": "top_macros",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T08:00:13",
      "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
     }
@@ -206,7 +212,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -215,7 +221,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -231,7 +237,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -240,7 +246,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -256,7 +262,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -265,7 +271,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -281,7 +287,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -290,7 +296,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -306,7 +312,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-04T01:28:39",
      "inputs_sha256": "c7405f2df2b7ebfc1b4c63805c8619bbc0719d1020097fe8d67210953a5d4e62"
     },
@@ -315,7 +321,7 @@
      "relation": "read",
      "kind": "digital_rtl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -331,7 +337,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -376,7 +382,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     },
@@ -385,7 +391,7 @@
      "relation": "read",
      "kind": "top_pnl",
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T08:00:13",
      "inputs_sha256": "81b0e0d1ca58e979343ecb750a75d2083c299f5ae436541929cfebb3475d6e92"
     }
@@ -401,7 +407,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -417,7 +423,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -433,7 +439,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -449,7 +455,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -465,7 +471,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -481,7 +487,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -497,7 +503,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -513,7 +519,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -529,7 +535,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -545,7 +551,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -561,7 +567,7 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
@@ -577,12 +583,12 @@
      "relation": "produced",
      "kind": null,
      "verdict": "pass",
-     "fresh": true,
+     "fresh": false,
      "ts": "2026-11-03T07:58:20",
      "inputs_sha256": "0ca0abce85d8c641f837ada4745cb20ca91d40cf4d4695fea3b9816b02acef8d"
     }
    ]
   }
  ],
- "manifest_sha256": "f09a22319afa30e13f5ca69175f23e76d5882b9d4afa9aa4d7c1f535e7251920"
+ "manifest_sha256": "24ab7e7f710b9ef737145afbc853b56e72793cdf763fb6e0fe09c1c0b5edccb9"
 }

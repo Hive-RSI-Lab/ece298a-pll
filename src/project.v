@@ -4,14 +4,16 @@
  *
  * tt_um_ihsan_sa_pll - the Tiny Tapeout top of the charge-pump PLL: the
  * digital core (ihsan_sa_pll) and the analog macro (pll_analog). The code is
- * what chip-flow's top_harden hardened (top/harden/tt_um_ihsan_sa_pll.v,
- * generated from blocks/pll/interface.yaml); release refuses it if they
- * differ. It has no power ports: the shipped powered netlist is gl/, the
- * signed-off P&R netlist.
+ * chip-flow's ttlib.generate_tt_project of top/spec/spec.yaml: top_harden's
+ * hardened wrapper (top/harden/tt_um_ihsan_sa_pll.v) plus the analog
+ * template's VGND/VDPWR ports and the macro's power ties; release refuses it
+ * if the logic differs. gds.yaml's verilog_path points here.
  */
 `default_nettype none
 
 module tt_um_ihsan_sa_pll (
+    input  wire       VGND,
+    input  wire       VDPWR,
     input  wire [7:0] ui_in,
     output wire [7:0] uo_out,
     input  wire [7:0] uio_in,
@@ -63,6 +65,10 @@ module tt_um_ihsan_sa_pll (
   );
 
   pll_analog u_analog (
+`ifdef USE_POWER_PINS
+      .vdd(VDPWR),
+      .vss(VGND),
+`endif
       .cp_trim0(w_cp_trim0),
       .cp_trim1(w_cp_trim1),
       .pfd_dn(w_pfd_dn),

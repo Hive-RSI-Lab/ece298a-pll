@@ -11,9 +11,10 @@
 * START-UP KICK: a noiseless op leaves the ring exactly on its symmetric
 * balance point (every ring node equal), which is unstable in a live ring but
 * which ngspice never leaves without a perturbation (it11: stall at vctrl =
-* 0.3 V). ikick injects 1 uA for 1 ns (1 fC, zero at the op) into ring node
-* r1 at t = 1 ns of every tran - the stand-in for the device noise that
-* starts a real ring. It does not move the bias op point, and a ring whose
+* 0.3 V). ikick injects 200 uA for 1 ns (200 fC, zero at the op; 1 fC until
+* 2026-11-02, which stalled mc seeds 2 and 14 at 0.3 V while both start from
+* pll_en alone, mc/README.md) into ring node r1 at t = 1 ns of every tran - the
+* stand-in for the device noise that starts a real ring. It does not move the bias op point, and a ring whose
 * DC point is stable (a dead VCO) still decays back and stays stalled.
 *
 * Sweep: vctrl = 0.3 V .. vdd-0.3 V in 6 equal steps (7 points; point 3 is
@@ -75,7 +76,7 @@
 C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
 .ends cap_nmos_03v3_b
 .include '/home/hive2/projects/ece298a-pll/blocks/pll/analog/netlist/pll_analog.cir'
-.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=3.5e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='4e-05' l_cl='2e-06'
+.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=4.3e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='5e-05' l_cl='1e-06'
 
 .temp 125
 .param vddp=3.63
@@ -95,7 +96,7 @@ vt1      cp_trim1 0 0
 vvc      vctrl    0 0.3
 cload2   vco_div2 0 30f
 xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
-ikick    0        xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)
+ikick    0        xdut.r1 pulse(0 200u 1n 50p 50p 1n 1)
 
 .control
 set noaskquit
@@ -152,7 +153,7 @@ while k le kend
       let nx1 = nx - 1
       let nx2 = nx - 2
       let hv = (v(xdut.vco_out) gt vmid)
-      let late = time[1,$&nx1] gt $tdx
+      let late = time[0,$&nx2] gt $tdx
       let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
       if (nrise ge 6) or ($st eq 2)
         set gotf = "1"
@@ -241,7 +242,7 @@ if fvdd gt 0
   let nx1 = nx - 1
   let nx2 = nx - 2
   let hv = (v(xdut.vco_out) gt vmid)
-  let late = time[1,$&nx1] gt 4n
+  let late = time[0,$&nx2] gt 4n
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   if nrise ge 3
     meas tran t20r when v(xdut.vco_out)=$&v20 rise=2 td=4n

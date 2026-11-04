@@ -153,7 +153,7 @@ while k le kend
       let nx1 = nx - 1
       let nx2 = nx - 2
       let hv = (v(xdut.vco_out) gt vmid)
-      let late = time[1,$&nx1] gt $tdx
+      let late = time[0,$&nx2] gt $tdx
       let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
       if (nrise ge 6) or ($st eq 2)
         set gotf = "1"
@@ -242,7 +242,7 @@ if fvdd gt 0
   let nx1 = nx - 1
   let nx2 = nx - 2
   let hv = (v(xdut.vco_out) gt vmid)
-  let late = time[1,$&nx1] gt 4n
+  let late = time[0,$&nx2] gt 4n
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   if nrise ge 3
     meas tran t20r when v(xdut.vco_out)=$&v20 rise=2 td=4n

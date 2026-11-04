@@ -95,7 +95,7 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
       let nx = length(time)
       let nx1 = nx - 1
       let nx2 = nx - 2
-      let late = time[1,$&nx1] gt 25n
+      let late = time[0,$&nx2] gt 25n
       let hv = (v(xdut.vco_out) gt vmid)
       let hq = (v(q) gt vmid)
       let nv = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
@@ -124,7 +124,7 @@ else
     let nx = length(time)
     let nx1 = nx - 1
     let nx2 = nx - 2
-    let late = time[1,$&nx1] gt 25n
+    let late = time[0,$&nx2] gt 25n
     let hv = (v(xdut.vco_out) gt vmid)
     let hq = (v(q) gt vmid)
     let nv = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)

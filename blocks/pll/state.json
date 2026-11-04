@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-11-04T01:31:57",
+ "updated": "2026-11-04T07:03:45",
  "phase": "P2",
  "toolchain": null,
  "gates": {
@@ -231,9 +231,9 @@
   "top_harden": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 14,
+   "attempts": 31,
    "last": {
-    "ts": "2026-11-03T07:58:20",
+    "ts": "2026-11-04T07:02:54",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -241,13 +241,15 @@
      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
-     "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+     "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+     "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-     "macro_lib": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
+     "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
      "top_sdc": null,
      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+     "top_override": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
+     "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
@@ -257,7 +259,7 @@
     },
     "job": null,
     "facts": {
-     "wall_s": 199.33
+     "wall_s": 54.75
     }
    },
    "history": [
@@ -557,26 +559,536 @@
      "facts": {
       "wall_s": 199.33
      }
+    },
+    {
+     "ts": "2026-11-04T06:37:47",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 26.47
+     }
+    },
+    {
+     "ts": "2026-11-04T06:43:27",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 25.34
+     }
+    },
+    {
+     "ts": "2026-11-04T06:44:50",
+     "status": "fail",
+     "failing_count": 6,
+     "total": 6,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 55.99
+     }
+    },
+    {
+     "ts": "2026-11-04T06:45:52",
+     "status": "fail",
+     "failing_count": 3,
+     "total": 3,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 51.19
+     }
+    },
+    {
+     "ts": "2026-11-04T06:46:20",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 24.92
+     }
+    },
+    {
+     "ts": "2026-11-04T06:47:37",
+     "status": "fail",
+     "failing_count": 6,
+     "total": 6,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 50.69
+     }
+    },
+    {
+     "ts": "2026-11-04T06:48:31",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 25.51
+     }
+    },
+    {
+     "ts": "2026-11-04T06:49:35",
+     "status": "fail",
+     "failing_count": 6,
+     "total": 6,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 50.56
+     }
+    },
+    {
+     "ts": "2026-11-04T06:50:40",
+     "status": "fail",
+     "failing_count": 3,
+     "total": 3,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 52.14
+     }
+    },
+    {
+     "ts": "2026-11-04T06:51:47",
+     "status": "fail",
+     "failing_count": 3,
+     "total": 3,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 50.74
+     }
+    },
+    {
+     "ts": "2026-11-04T06:53:49",
+     "status": "fail",
+     "failing_count": 6,
+     "total": 6,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 50.18
+     }
+    },
+    {
+     "ts": "2026-11-04T06:54:58",
+     "status": "fail",
+     "failing_count": 3,
+     "total": 3,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 49.38
+     }
+    },
+    {
+     "ts": "2026-11-04T06:56:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 54.25
+     }
+    },
+    {
+     "ts": "2026-11-04T06:57:07",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 54.36
+     }
+    },
+    {
+     "ts": "2026-11-04T06:58:13",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 55.06
+     }
+    },
+    {
+     "ts": "2026-11-04T07:00:13",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": null,
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 54.86
+     }
+    },
+    {
+     "ts": "2026-11-04T07:02:54",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null,
+     "facts": {
+      "wall_s": 54.75
+     }
     }
    ]
   },
   "top_lvs": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 10,
+   "attempts": 12,
    "last": {
-    "ts": "2026-11-03T08:00:13",
+    "ts": "2026-11-04T07:03:20",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:ac9cc9f663d8b2f57c4657524d1d09537743a45d36ee3b945e8b294dc959e2b5",
-     "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-     "top_spec": "json_canonical:d3efceb3e56fa1ff06f874f117b53413ef77950820ca9b578adaa2000f5521fd",
-     "top_macros": "dir_text:a84015943c1e852bb2c981e76921a72567726c3c69d5f1dda5e61dab2674dc1c",
-     "top_pnl": "dir_text:6b955fda1c0f1bf0743ae83ddd646d275e512c0f4e78b1007e2c23d87aee9ec0",
-     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+     "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+     "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+     "top_macros": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
+     "top_pnl": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
+     "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+     "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
@@ -717,21 +1229,59 @@
       "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-04T07:00:39",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:955618bcc6ea6d4e7d0ece79c51c35fbec44491dd1a27dbc782b81ee13f08bdb",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+      "top_macros": "dir_text:ed1ec98e14dc177ae1376f7a1a0947fabc4750d03ebb6bb1d4868a6fa469cf53",
+      "top_pnl": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-11-04T07:03:20",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+      "top_macros": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
+      "top_pnl": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "job": null
     }
    ]
   },
   "top_drc": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 10,
+   "attempts": 12,
    "last": {
-    "ts": "2026-11-03T08:00:09",
+    "ts": "2026-11-04T07:03:18",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:ac9cc9f663d8b2f57c4657524d1d09537743a45d36ee3b945e8b294dc959e2b5",
-     "top_spec": "json_canonical:d3efceb3e56fa1ff06f874f117b53413ef77950820ca9b578adaa2000f5521fd",
+     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+     "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
@@ -894,20 +1444,56 @@
       "magic_count": 0,
       "klayout_count": 0
      }
+    },
+    {
+     "ts": "2026-11-04T07:00:38",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:955618bcc6ea6d4e7d0ece79c51c35fbec44491dd1a27dbc782b81ee13f08bdb",
+      "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "job": null,
+     "facts": {
+      "magic_count": 0,
+      "klayout_count": 0
+     }
+    },
+    {
+     "ts": "2026-11-04T07:03:18",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+      "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "job": null,
+     "facts": {
+      "magic_count": 0,
+      "klayout_count": 0
+     }
     }
    ]
   },
   "precheck": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 9,
+   "attempts": 11,
    "last": {
-    "ts": "2026-11-03T08:01:55",
+    "ts": "2026-11-04T07:03:45",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:ac9cc9f663d8b2f57c4657524d1d09537743a45d36ee3b945e8b294dc959e2b5",
+     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
@@ -1053,22 +1639,56 @@
      "facts": {
       "checks_run": 12
      }
+    },
+    {
+     "ts": "2026-11-04T07:01:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:955618bcc6ea6d4e7d0ece79c51c35fbec44491dd1a27dbc782b81ee13f08bdb",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "job": null,
+     "facts": {
+      "checks_run": 12
+     }
+    },
+    {
+     "ts": "2026-11-04T07:03:45",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "job": null,
+     "facts": {
+      "checks_run": 12
+     }
     }
    ]
   },
   "macro_lib": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-11-03T06:15:47",
+    "ts": "2026-11-04T06:37:17",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+     "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
@@ -1082,36 +1702,36 @@
        "vdd": 3.3,
        "input_cap_pf": {
         "cp_trim0": {
-         "capacitance": 0.012682,
-         "rise_capacitance": 0.012099181818181818,
-         "fall_capacitance": 0.012682
+         "capacitance": 0.012933151515151516,
+         "rise_capacitance": 0.012267363636363635,
+         "fall_capacitance": 0.012933151515151516
         },
         "cp_trim1": {
-         "capacitance": 0.013496333333333332,
-         "rise_capacitance": 0.013496333333333332,
-         "fall_capacitance": 0.013418242424242423
+         "capacitance": 0.013874696969696971,
+         "rise_capacitance": 0.013874696969696971,
+         "fall_capacitance": 0.013794606060606061
         },
         "pfd_dn": {
-         "capacitance": 0.028648000000000003,
-         "rise_capacitance": 0.0286249696969697,
-         "fall_capacitance": 0.028648000000000003
+         "capacitance": 0.02946024242424243,
+         "rise_capacitance": 0.029439060606060607,
+         "fall_capacitance": 0.02946024242424243
         },
         "pfd_up": {
-         "capacitance": 0.03311454545454545,
-         "rise_capacitance": 0.033100000000000004,
-         "fall_capacitance": 0.03311454545454545
+         "capacitance": 0.03382484848484849,
+         "rise_capacitance": 0.033746060606060606,
+         "fall_capacitance": 0.03382484848484849
         },
         "pll_en": {
-         "capacitance": 0.059432727272727276,
-         "rise_capacitance": 0.05777787878787879,
-         "fall_capacitance": 0.059432727272727276
+         "capacitance": 0.059892727272727285,
+         "rise_capacitance": 0.05830575757575757,
+         "fall_capacitance": 0.059892727272727285
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         147.28,
-         147.21,
-         147.02
+         129.2,
+         129.15,
+         128.95
         ]
        }
       },
@@ -1120,36 +1740,36 @@
        "vdd": 3.0,
        "input_cap_pf": {
         "cp_trim0": {
-         "capacitance": 0.012831333333333333,
-         "rise_capacitance": 0.012302766666666668,
-         "fall_capacitance": 0.012831333333333333
+         "capacitance": 0.013081700000000002,
+         "rise_capacitance": 0.0124854,
+         "fall_capacitance": 0.013081700000000002
         },
         "cp_trim1": {
-         "capacitance": 0.013464466666666666,
-         "rise_capacitance": 0.013464466666666666,
-         "fall_capacitance": 0.013382066666666668
+         "capacitance": 0.013842533333333332,
+         "rise_capacitance": 0.013842533333333332,
+         "fall_capacitance": 0.013759833333333332
         },
         "pfd_dn": {
-         "capacitance": 0.028954166666666666,
-         "rise_capacitance": 0.028943233333333332,
-         "fall_capacitance": 0.028954166666666666
+         "capacitance": 0.029795433333333333,
+         "rise_capacitance": 0.029775066666666666,
+         "fall_capacitance": 0.029795433333333333
         },
         "pfd_up": {
-         "capacitance": 0.03291476666666667,
-         "rise_capacitance": 0.03287133333333333,
-         "fall_capacitance": 0.03291476666666667
+         "capacitance": 0.03358166666666667,
+         "rise_capacitance": 0.03351966666666667,
+         "fall_capacitance": 0.03358166666666667
         },
         "pll_en": {
-         "capacitance": 0.06095966666666666,
-         "rise_capacitance": 0.05945233333333333,
-         "fall_capacitance": 0.06095966666666666
+         "capacitance": 0.061400333333333335,
+         "rise_capacitance": 0.059957,
+         "fall_capacitance": 0.061400333333333335
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         109.97,
-         109.94,
-         109.78
+         99.36,
+         99.34,
+         99.22
         ]
        }
       },
@@ -1158,36 +1778,36 @@
        "vdd": 3.6,
        "input_cap_pf": {
         "cp_trim0": {
-         "capacitance": 0.012539611111111112,
-         "rise_capacitance": 0.011916222222222222,
-         "fall_capacitance": 0.012539611111111112
+         "capacitance": 0.012801444444444443,
+         "rise_capacitance": 0.012075361111111111,
+         "fall_capacitance": 0.012801444444444443
         },
         "cp_trim1": {
-         "capacitance": 0.013531833333333333,
-         "rise_capacitance": 0.013531833333333333,
-         "fall_capacitance": 0.01345825
+         "capacitance": 0.013907055555555556,
+         "rise_capacitance": 0.013907055555555556,
+         "fall_capacitance": 0.013835749999999999
         },
         "pfd_dn": {
-         "capacitance": 0.02834361111111111,
-         "rise_capacitance": 0.028343055555555555,
-         "fall_capacitance": 0.02834361111111111
+         "capacitance": 0.02916,
+         "rise_capacitance": 0.029159444444444446,
+         "fall_capacitance": 0.02916
         },
         "pfd_up": {
-         "capacitance": 0.03334111111111111,
-         "rise_capacitance": 0.03333166666666666,
-         "fall_capacitance": 0.03334111111111111
+         "capacitance": 0.033971388888888884,
+         "rise_capacitance": 0.03396138888888889,
+         "fall_capacitance": 0.033971388888888884
         },
         "pll_en": {
-         "capacitance": 0.05777222222222221,
-         "rise_capacitance": 0.05621361111111111,
-         "fall_capacitance": 0.05777222222222221
+         "capacitance": 0.058097777777777776,
+         "rise_capacitance": 0.05668583333333334,
+         "fall_capacitance": 0.058097777777777776
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         180.44,
-         180.34,
-         179.92
+         156.01,
+         155.93,
+         155.52
         ]
        }
       }
@@ -1328,25 +1948,159 @@
        }
       }
      }
+    },
+    {
+     "ts": "2026-11-04T06:37:17",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+     },
+     "job": null,
+     "facts": {
+      "corners": {
+       "tt_025C_3v30": {
+        "lib": "pll_analog__tt_025C_3v30.lib",
+        "vdd": 3.3,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012933151515151516,
+          "rise_capacitance": 0.012267363636363635,
+          "fall_capacitance": 0.012933151515151516
+         },
+         "cp_trim1": {
+          "capacitance": 0.013874696969696971,
+          "rise_capacitance": 0.013874696969696971,
+          "fall_capacitance": 0.013794606060606061
+         },
+         "pfd_dn": {
+          "capacitance": 0.02946024242424243,
+          "rise_capacitance": 0.029439060606060607,
+          "fall_capacitance": 0.02946024242424243
+         },
+         "pfd_up": {
+          "capacitance": 0.03382484848484849,
+          "rise_capacitance": 0.033746060606060606,
+          "fall_capacitance": 0.03382484848484849
+         },
+         "pll_en": {
+          "capacitance": 0.059892727272727285,
+          "rise_capacitance": 0.05830575757575757,
+          "fall_capacitance": 0.059892727272727285
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          129.2,
+          129.15,
+          128.95
+         ]
+        }
+       },
+       "ss_125C_3v00": {
+        "lib": "pll_analog__ss_125C_3v00.lib",
+        "vdd": 3.0,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.013081700000000002,
+          "rise_capacitance": 0.0124854,
+          "fall_capacitance": 0.013081700000000002
+         },
+         "cp_trim1": {
+          "capacitance": 0.013842533333333332,
+          "rise_capacitance": 0.013842533333333332,
+          "fall_capacitance": 0.013759833333333332
+         },
+         "pfd_dn": {
+          "capacitance": 0.029795433333333333,
+          "rise_capacitance": 0.029775066666666666,
+          "fall_capacitance": 0.029795433333333333
+         },
+         "pfd_up": {
+          "capacitance": 0.03358166666666667,
+          "rise_capacitance": 0.03351966666666667,
+          "fall_capacitance": 0.03358166666666667
+         },
+         "pll_en": {
+          "capacitance": 0.061400333333333335,
+          "rise_capacitance": 0.059957,
+          "fall_capacitance": 0.061400333333333335
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          99.36,
+          99.34,
+          99.22
+         ]
+        }
+       },
+       "ff_n40C_3v60": {
+        "lib": "pll_analog__ff_n40C_3v60.lib",
+        "vdd": 3.6,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012801444444444443,
+          "rise_capacitance": 0.012075361111111111,
+          "fall_capacitance": 0.012801444444444443
+         },
+         "cp_trim1": {
+          "capacitance": 0.013907055555555556,
+          "rise_capacitance": 0.013907055555555556,
+          "fall_capacitance": 0.013835749999999999
+         },
+         "pfd_dn": {
+          "capacitance": 0.02916,
+          "rise_capacitance": 0.029159444444444446,
+          "fall_capacitance": 0.02916
+         },
+         "pfd_up": {
+          "capacitance": 0.033971388888888884,
+          "rise_capacitance": 0.03396138888888889,
+          "fall_capacitance": 0.033971388888888884
+         },
+         "pll_en": {
+          "capacitance": 0.058097777777777776,
+          "rise_capacitance": 0.05668583333333334,
+          "fall_capacitance": 0.058097777777777776
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          156.01,
+          155.93,
+          155.52
+         ]
+        }
+       }
+      }
+     }
     }
    ]
   },
   "release": {
    "phase": "P4",
-   "status": "pass",
-   "attempts": 1,
+   "status": "fail",
+   "attempts": 2,
    "last": {
-    "ts": "2026-11-04T01:31:57",
-    "status": "pass",
-    "failing_count": 0,
-    "total": 0,
+    "ts": "2026-11-04T02:12:59",
+    "status": "fail",
+    "failing_count": 5,
+    "total": 5,
     "inputs": {
      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
-     "analog_layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+     "analog_layout": "dir_text:08c5be02f2620045b3efa91239e1c46e80deeccb8818d50b1b1ac6633ac18791",
      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
-     "analog_netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-     "analog_sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+     "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+     "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
      "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
@@ -1371,6 +2125,24 @@
       "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-04T02:12:59",
+     "status": "fail",
+     "failing_count": 5,
+     "total": 5,
+     "inputs": {
+      "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "analog_layout": "dir_text:08c5be02f2620045b3efa91239e1c46e80deeccb8818d50b1b1ac6633ac18791",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
+      "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2"
+     },
+     "job": null
     }
    ]
   }
@@ -1384,7 +2156,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T07:03:45"
   },
   "tb": {
    "path": "tb",
@@ -1396,139 +2168,145 @@
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T07:02:54"
   },
   "analog_netlist": {
    "path": "analog/netlist",
    "kind": "analog_netlist",
-   "sha256": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
-   "hashed": "2026-11-04T01:31:57"
+   "sha256": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+   "hashed": "2026-11-04T07:03:20"
   },
   "analog_sizing": {
    "path": "analog/sizing/sizing.yaml",
    "kind": "analog_sizing",
-   "sha256": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
-   "hashed": "2026-11-04T01:31:57"
+   "sha256": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+   "hashed": "2026-11-04T07:03:20"
   },
   "analog_layout": {
    "path": "analog/layout",
    "kind": "analog_layout",
-   "sha256": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-   "hashed": "2026-11-04T01:31:57"
+   "sha256": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+   "hashed": "2026-11-04T07:03:20"
   },
   "top_sdc": {
    "path": "top.sdc",
    "kind": "top_sdc",
    "sha256": null,
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T07:02:54"
   },
   "digital_sdc": {
    "path": "digital/harden/constraints.sdc",
    "kind": "digital_sdc",
    "sha256": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T07:02:54"
   },
   "top_gds": {
    "path": "top/harden/runs/run/final/gds",
    "kind": "top_gds",
-   "sha256": "dir_text:ac9cc9f663d8b2f57c4657524d1d09537743a45d36ee3b945e8b294dc959e2b5",
-   "hashed": "2026-11-03T08:01:55"
+   "sha256": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+   "hashed": "2026-11-04T07:03:45"
   },
   "pdk_version": {
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T07:03:45"
   },
   "pdk_models": {
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-04T01:28:39"
+   "hashed": "2026-11-04T06:37:17"
   },
   "digital_side_spec": {
    "path": "digital_spec.yaml",
    "kind": "digital_side_spec",
    "sha256": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T02:12:59"
   },
   "analog_side_spec": {
    "path": "analog_spec.yaml",
    "kind": "analog_side_spec",
    "sha256": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T02:12:59"
   },
   "digital_spec": {
    "path": "digital/spec/spec.yaml",
    "kind": "digital_spec",
    "sha256": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
-   "hashed": "2026-11-04T01:31:57"
+   "hashed": "2026-11-04T07:02:54"
   },
   "analog_spec": {
    "path": "analog/spec/spec.yaml",
    "kind": "analog_spec",
    "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T07:02:54"
   },
   "macro_lib": {
    "path": "macro_lib",
    "kind": "macro_lib",
-   "sha256": "dir_text:a1a1c8cae5674fe7db0c016e6f3b8a0f9ba2b18afcf7eabe7529edb31dd95b64",
-   "hashed": "2026-11-03T07:58:20"
+   "sha256": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+   "hashed": "2026-11-04T07:02:54"
   },
   "pdk_liberty": {
    "path": "${PDK_ROOT}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib",
    "kind": "pdk_liberty",
    "sha256": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T07:02:54"
   },
   "pdk_librelane": {
    "path": "${PDK_ROOT}/libs.tech/librelane",
    "kind": "pdk_librelane",
    "sha256": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
-   "hashed": "2026-11-03T07:58:20"
+   "hashed": "2026-11-04T07:02:54"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
    "kind": "pdk_magic",
    "sha256": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-   "hashed": "2026-11-03T08:01:55"
+   "hashed": "2026-11-04T07:03:45"
   },
   "pdk_klayout": {
    "path": "${PDK_ROOT}/libs.tech/klayout",
    "kind": "pdk_klayout",
    "sha256": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
-   "hashed": "2026-11-03T08:01:55"
+   "hashed": "2026-11-04T07:03:45"
   },
   "pdk_netgen": {
    "path": "${PDK_ROOT}/libs.tech/netgen",
    "kind": "pdk_netgen",
    "sha256": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
-   "hashed": "2026-11-03T08:00:13"
+   "hashed": "2026-11-04T07:03:20"
   },
   "top_spec": {
    "path": "top/spec/spec.yaml",
    "kind": "top_spec",
-   "sha256": "json_canonical:d3efceb3e56fa1ff06f874f117b53413ef77950820ca9b578adaa2000f5521fd",
-   "hashed": "2026-11-03T08:00:13"
+   "sha256": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+   "hashed": "2026-11-04T07:03:20"
   },
   "top_macros": {
    "path": "top/macros",
    "kind": "top_macros",
-   "sha256": "dir_text:a84015943c1e852bb2c981e76921a72567726c3c69d5f1dda5e61dab2674dc1c",
-   "hashed": "2026-11-03T08:00:13"
+   "sha256": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
+   "hashed": "2026-11-04T07:03:20"
   },
   "top_pnl": {
    "path": "top/harden/runs/run/final/pnl",
    "kind": "top_pnl",
-   "sha256": "dir_text:6b955fda1c0f1bf0743ae83ddd646d275e512c0f4e78b1007e2c23d87aee9ec0",
-   "hashed": "2026-11-03T08:00:13"
+   "sha256": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
+   "hashed": "2026-11-04T07:03:20"
   },
   "top_override": {
-   "path": "top.config.override.json",
+   "path": "top.override.json",
    "kind": "top_override",
-   "sha256": "text_eol:a5fa733c3a4070ec7383a6355b05701f529b4f4572578f689779446a5a3d685a",
-   "hashed": "2026-11-03T05:17:18"
+   "sha256": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
+   "hashed": "2026-11-04T07:02:54"
+  },
+  "digital_override": {
+   "path": "digital/harden/config.override.json",
+   "kind": "digital_override",
+   "sha256": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+   "hashed": "2026-11-04T07:02:54"
   }
  },
  "open_issues": [],
@@ -2104,6 +2882,212 @@
    "gate": "release",
    "status": "pass",
    "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T02:12:59",
+   "event": "gate",
+   "gate": "release",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 5
+  },
+  {
+   "ts": "2026-11-04T06:37:17",
+   "event": "gate",
+   "gate": "macro_lib",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T06:37:47",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 15,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-04T06:43:27",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 16,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-04T06:44:50",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 17,
+   "failing_count": 6
+  },
+  {
+   "ts": "2026-11-04T06:45:52",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 18,
+   "failing_count": 3
+  },
+  {
+   "ts": "2026-11-04T06:46:20",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 19,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-04T06:47:37",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 20,
+   "failing_count": 6
+  },
+  {
+   "ts": "2026-11-04T06:48:31",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 21,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-04T06:49:35",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 22,
+   "failing_count": 6
+  },
+  {
+   "ts": "2026-11-04T06:50:40",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 23,
+   "failing_count": 3
+  },
+  {
+   "ts": "2026-11-04T06:51:47",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 24,
+   "failing_count": 3
+  },
+  {
+   "ts": "2026-11-04T06:53:49",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 25,
+   "failing_count": 6
+  },
+  {
+   "ts": "2026-11-04T06:54:58",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 26,
+   "failing_count": 3
+  },
+  {
+   "ts": "2026-11-04T06:56:05",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 27,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T06:57:07",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 28,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T06:58:13",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 29,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:00:13",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 30,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:00:38",
+   "event": "gate",
+   "gate": "top_drc",
+   "status": "pass",
+   "attempt": 11,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:00:39",
+   "event": "gate",
+   "gate": "top_lvs",
+   "status": "pass",
+   "attempt": 11,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:01:05",
+   "event": "gate",
+   "gate": "precheck",
+   "status": "pass",
+   "attempt": 10,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:01:54",
+   "event": "artifact",
+   "name": "top_override",
+   "path": "top.override.json"
+  },
+  {
+   "ts": "2026-11-04T07:02:54",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 31,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:03:18",
+   "event": "gate",
+   "gate": "top_drc",
+   "status": "pass",
+   "attempt": 12,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:03:20",
+   "event": "gate",
+   "gate": "top_lvs",
+   "status": "pass",
+   "attempt": 12,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-04T07:03:45",
+   "event": "gate",
+   "gate": "precheck",
+   "status": "pass",
+   "attempt": 11,
    "failing_count": 0
   }
  ]

@@ -137,7 +137,7 @@ foreach pt 0 1
   let nx1 = nx - 1
   let nx2 = nx - 2
   let hv = (v(xdut.vco_out) gt $&vmid)
-  let late = time[1,$&nx1] gt $tdx
+  let late = time[0,$&nx2] gt $tdx
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   let fk = 0
   let nmax = $nmx

@@ -4,7 +4,7 @@
  "includes_sha256": {
   "moscap.spice": "c7a5205a0764cfac94e4ec59c16341f21896397c2bc59407f226b37ca9aa328f"
  },
- "extracted_sha256": "189947ea76bcfd92912e3b17a21431477a1a22b8bc2293169063c059a974a9e7",
+ "extracted_sha256": "43b2fa4a548dddf057a989dd8deae55d3e4f399bbecffd322115131a2fc8ba60",
  "netlist_kind": "extracted",
  "slews_ns": [
   0.1,
@@ -21,36 +21,36 @@
    "vdd": 3.3,
    "input_cap_pf": {
     "cp_trim0": {
-     "capacitance": 0.012682,
-     "rise_capacitance": 0.012099181818181818,
-     "fall_capacitance": 0.012682
+     "capacitance": 0.012933151515151516,
+     "rise_capacitance": 0.012267363636363635,
+     "fall_capacitance": 0.012933151515151516
     },
     "cp_trim1": {
-     "capacitance": 0.013496333333333332,
-     "rise_capacitance": 0.013496333333333332,
-     "fall_capacitance": 0.013418242424242423
+     "capacitance": 0.013874696969696971,
+     "rise_capacitance": 0.013874696969696971,
+     "fall_capacitance": 0.013794606060606061
     },
     "pfd_dn": {
-     "capacitance": 0.028648000000000003,
-     "rise_capacitance": 0.0286249696969697,
-     "fall_capacitance": 0.028648000000000003
+     "capacitance": 0.02946024242424243,
+     "rise_capacitance": 0.029439060606060607,
+     "fall_capacitance": 0.02946024242424243
     },
     "pfd_up": {
-     "capacitance": 0.03311454545454545,
-     "rise_capacitance": 0.033100000000000004,
-     "fall_capacitance": 0.03311454545454545
+     "capacitance": 0.03382484848484849,
+     "rise_capacitance": 0.033746060606060606,
+     "fall_capacitance": 0.03382484848484849
     },
     "pll_en": {
-     "capacitance": 0.059432727272727276,
-     "rise_capacitance": 0.05777787878787879,
-     "fall_capacitance": 0.059432727272727276
+     "capacitance": 0.059892727272727285,
+     "rise_capacitance": 0.05830575757575757,
+     "fall_capacitance": 0.059892727272727285
     }
    },
    "running_mhz_by_load": {
     "vco_div2": [
-     147.28,
-     147.21,
-     147.02
+     129.2,
+     129.15,
+     128.95
     ]
    }
   },
@@ -59,36 +59,36 @@
    "vdd": 3.0,
    "input_cap_pf": {
     "cp_trim0": {
-     "capacitance": 0.012831333333333333,
-     "rise_capacitance": 0.012302766666666668,
-     "fall_capacitance": 0.012831333333333333
+     "capacitance": 0.013081700000000002,
+     "rise_capacitance": 0.0124854,
+     "fall_capacitance": 0.013081700000000002
     },
     "cp_trim1": {
-     "capacitance": 0.013464466666666666,
-     "rise_capacitance": 0.013464466666666666,
-     "fall_capacitance": 0.013382066666666668
+     "capacitance": 0.013842533333333332,
+     "rise_capacitance": 0.013842533333333332,
+     "fall_capacitance": 0.013759833333333332
     },
     "pfd_dn": {
-     "capacitance": 0.028954166666666666,
-     "rise_capacitance": 0.028943233333333332,
-     "fall_capacitance": 0.028954166666666666
+     "capacitance": 0.029795433333333333,
+     "rise_capacitance": 0.029775066666666666,
+     "fall_capacitance": 0.029795433333333333
     },
     "pfd_up": {
-     "capacitance": 0.03291476666666667,
-     "rise_capacitance": 0.03287133333333333,
-     "fall_capacitance": 0.03291476666666667
+     "capacitance": 0.03358166666666667,
+     "rise_capacitance": 0.03351966666666667,
+     "fall_capacitance": 0.03358166666666667
     },
     "pll_en": {
-     "capacitance": 0.06095966666666666,
-     "rise_capacitance": 0.05945233333333333,
-     "fall_capacitance": 0.06095966666666666
+     "capacitance": 0.061400333333333335,
+     "rise_capacitance": 0.059957,
+     "fall_capacitance": 0.061400333333333335
     }
    },
    "running_mhz_by_load": {
     "vco_div2": [
-     109.97,
-     109.94,
-     109.78
+     99.36,
+     99.34,
+     99.22
     ]
    }
   },
@@ -97,36 +97,36 @@
    "vdd": 3.6,
    "input_cap_pf": {
     "cp_trim0": {
-     "capacitance": 0.012539611111111112,
-     "rise_capacitance": 0.011916222222222222,
-     "fall_capacitance": 0.012539611111111112
+     "capacitance": 0.012801444444444443,
+     "rise_capacitance": 0.012075361111111111,
+     "fall_capacitance": 0.012801444444444443
     },
     "cp_trim1": {
-     "capacitance": 0.013531833333333333,
-     "rise_capacitance": 0.013531833333333333,
-     "fall_capacitance": 0.01345825
+     "capacitance": 0.013907055555555556,
+     "rise_capacitance": 0.013907055555555556,
+     "fall_capacitance": 0.013835749999999999
     },
     "pfd_dn": {
-     "capacitance": 0.02834361111111111,
-     "rise_capacitance": 0.028343055555555555,
-     "fall_capacitance": 0.02834361111111111
+     "capacitance": 0.02916,
+     "rise_capacitance": 0.029159444444444446,
+     "fall_capacitance": 0.02916
     },
     "pfd_up": {
-     "capacitance": 0.03334111111111111,
-     "rise_capacitance": 0.03333166666666666,
-     "fall_capacitance": 0.03334111111111111
+     "capacitance": 0.033971388888888884,
+     "rise_capacitance": 0.03396138888888889,
+     "fall_capacitance": 0.033971388888888884
     },
     "pll_en": {
-     "capacitance": 0.05777222222222221,
-     "rise_capacitance": 0.05621361111111111,
-     "fall_capacitance": 0.05777222222222221
+     "capacitance": 0.058097777777777776,
+     "rise_capacitance": 0.05668583333333334,
+     "fall_capacitance": 0.058097777777777776
     }
    },
    "running_mhz_by_load": {
     "vco_div2": [
-     180.44,
-     180.34,
-     179.92
+     156.01,
+     155.93,
+     155.52
     ]
    }
   }

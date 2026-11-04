@@ -118,6 +118,13 @@ vramp    vr       0 dc 0 pulse(0 0 20n 100n 100n 1 1)
 cload2   vco_div2 0 30f
 xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
 ikick    0        xdut.r1 pulse(0 200u 1n 50p 50p 1n 1)
+* OP START: vfilt (between R1 and the MOS-cap C1, a DC open) starts its op
+* search at vctrl's DC point. On the 2026-11-04 extraction (R_V2I 43 um,
+* MN_CL 50/1 um) the search from 0 V failed every step at ff_27c (singular
+* matrix on an R1 segment) and only the transient op converged; with this
+* nodeset true gmin stepping converges and the measures match to 0.05%
+* (Kvco 93.05 vs 93.11 MHz/V, PM 43.78 vs 43.82 deg).
+.nodeset v(xdut.vfilt)={vddp/2}
 
 .control
 set noaskquit
@@ -174,7 +181,7 @@ foreach pt 0 1 2
   let nx1 = nx - 1
   let nx2 = nx - 2
   let hv = (v(xdut.vco_out) gt vmid)
-  let late = time[1,$&nx1] gt $tdx
+  let late = time[0,$&nx2] gt $tdx
   let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
   let fk = 0
   let nmax = $nmx

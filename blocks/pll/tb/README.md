@@ -102,7 +102,7 @@ reads the move from `PLL_COSIM_SETUP` and the gate never sets it. The
 corners are the ones that bound the post-layout sweep
 (`analog/reports/recorded/pex_pvt.json`; `bounding_corners()`):
 
-    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py   # ~25-30 min, 4 corners side by side
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_corners.py   # ~25-70 min, 6 corners side by side
 
 A corner takes 25-30 minutes of wall time on a loaded machine (about 50 s
 per simulated us, against 3 s for the schematic cell). The result is
@@ -111,26 +111,26 @@ input. `tests/score.py` counts it only while those hashes hold, as it does
 bench_strength's. `--from-logs` rewrites that report from the last run's
 `log/cosim_corners/<corner>/result.json` without running anything.
 
-| Corner | Why it bounds the range | Lock | f_vco (MHz) | vctrl (V) | vctrl p-p, last 10 us (5 ns samples / at ref edges, mV) |
-|---|---|---|---|---|---|
-| ff_pss | lowest ceiling 126.4 MHz, lowest Kvco 39.9 MHz/V, lowest Icp 13.6 uA | 6.72 us, held | 100.0000 | 2.206 | **20.9** / 0.0007 |
-| ff_m40c_vm10 | highest ceiling 299.5 MHz | 4.00 us, held | 100.0041 | 1.448 | **27.4** / 20.1 |
-| ff_125c_vp10 | lowest phase margin 34.5 deg | 4.48 us, held | 100.0000 | 1.776 | 16.2 / 0.0007 |
-| ss_m40c_vm10 | highest phase margin 52.9 deg | 4.96 us, held | 100.0005 | 1.805 | 17.4 / 11.4 |
+| Corner | Why it bounds the range | Lock | Relock to 150 MHz (N 2->3) | f_vco (MHz) | vctrl mean (V) | vctrl p-p, last 10 us (mV) |
+|---|---|---|---|---|---|---|
+| ff_pss | lowest Icp 13.6 uA, ceiling 168.2 MHz | 7.20 us, held | 3.44 us | 100.0004 | 2.395 | **23.1** |
+| ff_m40c_vm10 | highest ceiling 298.4 MHz | 4.00 us, held | 3.12 us | 100.0004 | 1.546 | 16.7 |
+| ff_125c_vp10 | lowest phase margin 40.5 deg | 4.48 us, held | 3.60 us | 100.0000 | 1.864 | 18.0 |
+| ss_m40c_vm10 | highest phase margin 51.5 deg | 5.12 us, held | 3.60 us | 99.9999 | 1.940 | 12.3 |
+| tt_27c | nominal | 5.12 us, held | 3.60 us | 99.9999 | 1.945 | 12.2 |
+| ss_125c_vm10 | lowest ceiling 183.1 MHz | 5.76 us, held | 3.76 us | 100.0000 | 1.953 | 9.7 |
+| ss_125c_vp10 | lowest Kvco 53.8 MHz/V | 6.40 us, held | 4.08 us | 100.0030 | 2.412 | 16.1 |
 
-The loop locks and holds at all four corners: lock rises within 7 us, never
-falls, and f_fb and f_vco are within 4.1e-5 of their targets (bound 1e-3).
-Two corners miss REQ-LOOP-VCTRL's 20 mV p-p, which this bench keeps as it
-is. That is not drift. At ff_pss vctrl sampled at each reference edge moves
-less than 1 uV over the window. At ff_m40c_vm10 its 100 ns trace sits at
-1.4439 V within about 1 mV between isolated kicks of +-15-20 mV, one every
-0.8-2.4 us. Each kick is a pump correction pulse seen through R1, and
-everything in it but the kicks is flat. These corrections come from the
-bench's zero-delay PFD (its dead zone, see the bench notes) and from edges
-quantised to the 1 ns sync grid. At ff_m40c_vm10 (Kvco about 118 MHz/V)
-a kick moves the VCO by about 2 MHz for tens of ns: a jitter question, not
-a lock one. The gate-level PFD's reset pulse removes them (next section);
-other (f_ref, N) points at these corners are still open.
+Re-run 2026-11-04 on the V2I/clamp resize (rv2i_l 43 um, clamp 50/1 um),
+which lifts the ff_pss ceiling from 125.6 to 168.2 MHz so it relocks to
+150 MHz. The loop locks and holds at all seven corners (the six bounding
+corners and tt_27c), relocks after the N 2->3 step within 4.1 us, and f_vco is within 1e-5 of its target (bound
+1e-3). ff_pss is the one corner over REQ-LOOP-VCTRL's 20 mV p-p, which this
+bench keeps as it is. That is not drift: it is isolated pump correction
+kicks seen through R1. They come from the bench's zero-delay PFD (its dead
+zone, see the bench notes) and from edges quantised to the sync grid. The
+gate-level PFD's reset pulse removes them: the same corner reads 2.6 mV
+with the gate-level digital (next section).
 
 ## With the hardened gate-level digital in the loop (issue #47, 2026-10-31)
 
@@ -142,7 +142,22 @@ analog cell, PDK corner and 0.25 ns sync. The netlist, SDC, SPEF and SDFs it
 reads are committed in `gl/`; `--snapshot` refreshes them from a new harden.
 `*.gen.sdf` are written by `gl/gen_sdf.tcl`, which LibreLane does not cover.
 
-    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_gl.py   # ~40 min idle, 4 corners side by side
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_gl.py   # ~40-50 min, 6 corners side by side
+
+Re-run 2026-11-04 on the V2I/clamp resize, SDF by process and nearest
+temperature (`../reports/recorded/cosim_corners_gl.json`, 6/6 pass, all six
+bounding corners):
+
+| Corner | Lock | Relock to 150 MHz | f_vco, GL (MHz) | vctrl p-p, RTL / GL (mV) | static phase offset, GL (ns) |
+|---|---|---|---|---|---|
+| ff_pss | 7.20 us | 4.88 us | 99.9999 | **23.1** / 2.6 | 0.60 |
+| ff_m40c_vm10 | 4.00 us | 3.12 us | 100.0021 | 16.7 / 7.2 | 0.90 |
+| ff_125c_vp10 | 4.80 us | 3.60 us | 100.0006 | 18.0 / 13.4 | 1.06 |
+| ss_m40c_vm10 | 5.12 us | 3.61 us | 100.0004 | 12.3 / 4.6 | 2.37 |
+| ss_125c_vm10 | 5.76 us | 3.93 us | 100.0005 | 9.7 / 13.9 | 3.17 |
+| ss_125c_vp10 | 6.56 us | 4.09 us | 100.0000 | 16.1 / 15.0 | 3.29 |
+
+The earlier runs, before the resize:
 
 Both runs below are on the TSPC /2 macro (#48) and its extraction, at 0.25 ns
 sync. In each pair the RTL comes first and the gate-level run second. The
@@ -196,13 +211,22 @@ Small-signal, `layout/pex_pvt.py --extracted <the pad netlist>`
 (`pex_pvt_pad5pf.json`; its "fails" are that bench's no-pad 30 deg floor, which
 it was not written for): minimum 23.9 deg at ff_125c_vp10, 9 of 31 under 30.
 
-**Divider steps** (`cosim_cov.py`, bench `cov/test_pll_cov.py`, `cosim_cov.json`):
-f_ref 5 MHz, N 1->3->2, 20 us each. 4/5 corners pass. ff_pss misses at 120 MHz,
+**Divider steps, before the V2I/clamp resize** (`cosim_cov.py`, bench
+`cov/test_pll_cov.py`, `cosim_cov.json`): f_ref 5 MHz, N 1->3->2, 20 us each.
+4/5 corners pass. ff_pss misses at 120 MHz,
 near its 125.6 MHz ceiling: vctrl winds up to 3.5 V and LOCK pulses before it
 settles. `cosim_cov_cases.py` (`cosim_cov_cases.json`) gives it longer: within
 20 mV about 25 us after the step, with or without the pad, and when
 acquiring 120 MHz directly. No 20 mV bound is applied to these segments, and
 some would miss it (24.8 mV at tt_27c).
+
+**Relock to 150 MHz after the V2I/clamp resize** (2026-11-04,
+`cosim_cov.py --plan '{"f_ref_hz": 6.25e6, "segments": [[0, 2], [20000, 3], [40000, 2]], "duration_ns": 60000}'`,
+`cosim_cov_150.json`, gate-level, 5/5 pass). The resize lifts the ff_pss
+post-layout ceiling from 125.6 to 168.2 MHz, and ff_pss now acquires
+100 MHz in 7.20 us, relocks to 150 MHz in 4.88 us and back to 100 MHz in
+4.72 us. The other corners relock in 3.1-3.8 us. The frequency error is
+under 7.4e-5 at every step. The 120 MHz miss above is from before the resize.
 N=4 (160 MHz) with the pad at ff_125c_vp10 misses in 30 us and settles with time
 (`cosim_cov_pn32_pad5p_long.json`, 80 us: within 20 mV by 27 us).
 

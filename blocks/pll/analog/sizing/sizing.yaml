@@ -122,9 +122,10 @@ l_v2i:
   value: 1e-06
   min: 2.8e-07
   max: 2e-06
-# R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd); 35u -> tt f(3.0 V) ~260 MHz (MN_CL caps ff)
+# R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd). 43u: pre-layout tt f(3.0 V) ~249 MHz,
+# ff_m40c_vm10 f(vdd) ~363 MHz (<= 370 cap; 42u -> 371). Raised from 35u with the wider clamp below
 rv2i_l:
-  value: 3.5e-05
+  value: 4.3e-05
   min: 5e-06
   max: 0.0002
 # MN_FLR W: Ifloor = Ib (W/L)flr/(W/L)b1 sets fmin
@@ -242,14 +243,15 @@ l_bufl:
   value: 2e-06
   min: 1e-06
   max: 2e-06
-# MN_CL W: V2I current ceiling Imax = Ib (W/L)cl/(W/L)b1 (~20 x Ib); caps fmax at ff/-40 C/3.63 V
-# (40u: ff 270 MHz; 32u: 211 MHz; 44u: 299 MHz). W 1..50 um template range
+# MN_CL W: V2I current ceiling Imax = Ib (W/L)cl/(W/L)b1; with Ib = Vgs/R(poly) the ceiling bites
+# hardest at ff_pss (ff, res_ss, -40 C, 3.63 V). 40u/2u left ff_pss at 159 MHz pre-layout, 126 post-layout
+# (no relock to 150 MHz). 50u/1u (with rv2i_l 43u): ff_pss 237 MHz pre-layout. W 1..50 um template range
 w_cl:
-  value: 4e-05
+  value: 5e-05
   min: 1e-05
   max: 5e-05
-# MN_CL L: = l_b1 so the ceiling tracks Ib as a mirror copy
+# MN_CL L: 1 um (shorter than l_b1) for ~2x ceiling headroom; still a copy of Ib so it tracks res corners
 l_cl:
-  value: 2e-06
+  value: 1e-06
   min: 1e-06
   max: 2e-06

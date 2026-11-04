@@ -3,7 +3,7 @@
  "gate": "lvs",
  "phase": "P5",
  "tool": "analog_lvs",
- "input_digest": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
+ "input_digest": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -47,7 +47,7 @@
    "c2_l": 1.2e-05,
    "w_v2i": 1e-05,
    "l_v2i": 1e-06,
-   "rv2i_l": 3.5e-05,
+   "rv2i_l": 4.3e-05,
    "w_flr": 2e-06,
    "l_flr": 2e-06,
    "w_v2ip": 1e-05,
@@ -71,22 +71,22 @@
    "w_bufln": 4e-06,
    "w_buflp": 8e-06,
    "l_bufl": 2e-06,
-   "w_cl": 4e-05,
-   "l_cl": 2e-06
+   "w_cl": 5e-05,
+   "l_cl": 1e-06
   },
   "std_cells_flattened": [],
   "log": "log/lvs/netgen_lvs.log"
  },
  "inputs_at_start": {
-  "layout": "dir_text:8a24557ac16738d8ff17d8a08dc211532d033e8dfec532b20126c24eac9e1d1d",
-  "netlist": "dir_text:8d468722a881119be9c54613b886ace04f61e03db6064e07f16a220d9cd3d0aa",
+  "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+  "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
   "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-  "sizing": "json_canonical:b5624664cc18ba3a5e930f42e7e8baff661da5ac69385c8406862defbbe7256c",
+  "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
   "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
   "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
  },
- "recorded_ts": "2026-11-03T02:56:48",
- "attempts": 9
+ "recorded_ts": "2026-11-04T05:46:10",
+ "attempts": 11
 }
