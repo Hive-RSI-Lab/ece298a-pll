@@ -65,9 +65,10 @@ WINDOW_NS = 10_000.0                             # final settling window
 # small-signal + slewing), the bound is 50 us; the run must leave a full
 # 10 us window after lock. Overridable for exploration only.
 DURATION_NS = float(os.environ.get("PLL_COSIM_DURATION_NS", "30000"))
-# REQ-LOOP-RELOCK: at DURATION_NS the gate's own run steps N 2 -> 3 (100 -> 150 MHz
-# at the same f_ref) and runs this much longer. Every other measure stays on the
-# run before the step. The corner runs (PLL_COSIM_SETUP) don't step.
+# REQ-LOOP-RELOCK: at DURATION_NS every run (the gate's and each PVT corner's)
+# steps N 2 -> 3 (100 -> 150 MHz at the same f_ref) and runs this much longer.
+# Every other measure stays on the run before the step. The bounds file bounds
+# relock_time_us, so a corner run that skipped the step would miss a measure.
 RELOCK_NS = 20_000.0
 RELOCK_N_SEL = 3
 # Bridge fallback sync: bounds both the D->A latency of a reference-edge
@@ -324,7 +325,7 @@ async def test_pll_lock_nominal(dut):
     cocotb.start_soon(sample_vctrl_at_ref())
     cocotb.start_soon(release())
 
-    relock_ns = 0.0 if setup else RELOCK_NS
+    relock_ns = RELOCK_NS
 
     async def step_n():
         await Timer(DURATION_NS - cocotb.utils.get_sim_time(unit="ns"), unit="ns")
