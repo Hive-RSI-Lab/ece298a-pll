@@ -24,7 +24,7 @@ Regenerate the figures after any result changes:
 | Whole loop in co-simulation (RTL + transistor-level analog) | done: locks at 100.000 MHz in 4.48 us; all three layers pass with the MOS caps | `blocks/pll/tb/README.md`, figure below |
 | Digital timing with the VCO clock at each process's post-layout ceiling plus margin | met at every corner since 2026-10-31: the digital half clocks at vco/2 from a TSPC divider in the analog macro (decision 7); ss setup slack +2.34 ns, no waiver | `blocks/pll/digital/state.json` issue 8 |
 | Analog layout | DRC clean, LVS unique match | `blocks/pll/analog/layout/` |
-| Post-layout benches on the extracted netlist | 30 of 31 corners pass; ff_pss does not (below) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
+| Post-layout benches on the extracted netlist | all 31 corners pass (decision 3 closed) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
 | Tiny Tapeout precheck | **passes**, both from chip-flow's gate and run on the committed `gds/`, `lef/`, `src/project.v` and `info.yaml` themselves | figure below |
 | Repository in Tiny Tapeout's analog-project shape | **done**: `src/` (real top + RTL), `test/` (RTL test, 4/4), 1x2 analog `info.yaml`, `custom_gds` gds workflow | `blocks/pll/tt/README.md` |
@@ -80,7 +80,8 @@ behavioural model of the analog macro and takes about a second:
 
 What fails, and why:
 
-- **ff_pss**: Kvco reads 39.2 MHz/V against a 40 MHz/V floor (decision 3).
+- **ff_pss** used to fail on Kvco (39.2 MHz/V against a 40 floor). It passes
+  now: Kvco 54.2 MHz/V, phase margin 44.9 deg (decision 3).
 - ss_m40c_vm10 used to fail too: the bias reference settled in its second DC
   operating point (pump current 168 uA, no oscillation). Task 261030-001020's
   fix (MN_ST L 2 -> 4 um) is in this layout, and the corner passes
@@ -183,18 +184,16 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    ever runs away. The approval on record is the lead's under your 10-28
    "i signoff" message, not your own ruling. Details are in issue 8 of
    `blocks/pll/digital/state.json`.
-3. **ff_pss Kvco, 39.2 vs 40 MHz/V (open).** The 40 MHz/V floor protects loop
-   gain, and through it the phase margin. The decision rests on the phase
-   margin at ff_pss, not the Kvco number. The linear loop model (layer 1,
-   `blocks/pll/tb/pll_loop_model.py`) with ff_pss's post-layout pump current
-   (13.6 uA) and Kvco scaled to 36 MHz/V gives 31 deg at P*N = 16 with
-   typical R1, and 27 to 35 deg over R1 +-15%. The spec's floor is 30 deg at
-   every corner. That is too close to call on a scaled estimate, so it is
-   settled on the extracted netlist, by one of:
-   (a) keep the bound and raise Kvco at ff_pss (a smaller R_V2I, re-layout);
-   (b) replace the bound by the post-layout phase margin at every corner,
-   if that clears 30 deg.
-   Until one of those runs, the bound stands and ff_pss counts as failing.
+3. **ff_pss Kvco (closed; the 39.2 vs 40 MHz/V miss no longer applies).**
+   The miss came from the post-layout bench reading the VCO's top frequency
+   while the bias was still settling (commit d04ad79), and from the 40 MHz/V
+   floor, which was only a proxy for phase margin. Since then the floor is
+   30 MHz/V and the bench also measures the loop's phase margin on the
+   extracted netlist (P*N = 16, no pad) with a 30 deg bound. Recorded
+   `pex_pvt.json` (cell revision 156aae7): all 31 corners pass. ff_pss
+   Kvco 54.2 MHz/V, phase margin 44.9 deg. The worst phase margin over all
+   corners is 40.5 deg (ff_125c_vp10); the lowest Kvco is 53.8 MHz/V
+   (ss_125c_vp10). No R_V2I change or re-layout is needed.
 4. **The datasheet's lock range.** `docs/info.md` will promise only what every
    post-layout corner reaches: the VCO between about 12 and 114 MHz, so
    8 x N x f_ref between those, with 100 MHz as the nominal point. Typical
@@ -234,5 +233,4 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
 
 ## What is left
 
-1. The ff_pss decision (3 above).
-2. The gds, docs and test workflows passing on main with this design.
+1. The gds, docs and test workflows passing on main with this design.
