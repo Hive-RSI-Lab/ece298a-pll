@@ -14,6 +14,10 @@ only the two output devices change, not the mirrors' or switches' own mismatch.
 --calibrate runs the DC mismatch sweep of tb/pll_analog_cp_tb.cir on each cell
 (no closed loop), so the skew actually applied is measured. Writes
 reports/recorded/cosim_pump.json.
+
+--plan JSON runs cosim_cov.py's bench instead (a schedule of N steps, same JSON
+as its --plan) with each skewed cell, into log/cosim_pump_plan/; give it its own
+--out, for example reports/recorded/cosim_pump_step.json.
 """
 from __future__ import annotations
 
@@ -91,8 +95,10 @@ def main() -> int:
     ap.add_argument("--timeout-s", type=float, default=30000.0)
     ap.add_argument("--cases", nargs="*", default=list(CASES))
     ap.add_argument("--calibrate", action="store_true", help="only the DC sweep on each cell; print and exit")
+    ap.add_argument("--plan", help="cosim_cov.py plan JSON: run its N-step bench instead of cosim_gl's")
+    ap.add_argument("--out", type=Path, default=C.WS / "reports" / "recorded" / "cosim_pump.json")
     a = ap.parse_args()
-    root = C.WS / "log" / "cosim_pump"
+    root = C.WS / "log" / ("cosim_pump_plan" if a.plan else "cosim_pump")
     root.mkdir(parents=True, exist_ok=True)
     if a.calibrate:
         for n in a.cases:
@@ -108,7 +114,8 @@ def main() -> int:
         res = work / "result.json"
         res.unlink(missing_ok=True)
         dc = calibrate(name, root)
-        cmd = [sys.executable, str(HERE / "cosim_gl.py"), "--one", corner, "--work", str(work),
+        bench = ["cosim_cov.py", "--plan", a.plan] if a.plan else ["cosim_gl.py"]
+        cmd = [sys.executable, str(HERE / bench[0]), *bench[1:], "--one", corner, "--work", str(work),
                "--extracted-cell", str(cell_for(name, root)), "--timeout-s", str(a.timeout_s), "--out", str(res)]
         with (work / "run.log").open("w") as f:
             subprocess.run(cmd, stdout=f, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL)
@@ -123,9 +130,10 @@ def main() -> int:
 
     with ThreadPoolExecutor(a.jobs) as pool:
         results = list(pool.map(one, a.cases))
-    out = C.WS / "reports" / "recorded" / "cosim_pump.json"
+    out = a.out
     out.write_text(json.dumps({"script": "cosim_pump", "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                               "facts": {"results": results}, "inputs": inputs}, indent=1, default=str) + "\n")
+                               "facts": {"plan": json.loads(a.plan) if a.plan else None, "results": results},
+                               "inputs": inputs}, indent=1, default=str) + "\n")
     print("cosim_pump: done ->", out, flush=True)
     return 0
 

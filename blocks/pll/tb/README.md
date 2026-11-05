@@ -212,7 +212,8 @@ Small-signal, `layout/pex_pvt.py --extracted <the pad netlist>`
 it was not written for): minimum 23.9 deg at ff_125c_vp10, 9 of 31 under 30.
 
 **Divider steps, before the V2I/clamp resize** (`cosim_cov.py`, bench
-`cov/test_pll_cov.py`, `cosim_cov.json`): f_ref 5 MHz, N 1->3->2, 20 us each.
+`cov/test_pll_cov.py`; this run's `cosim_cov.json` has since been replaced by
+the final-cell run below, see git history): f_ref 5 MHz, N 1->3->2, 20 us each.
 4/5 corners pass. ff_pss misses at 120 MHz,
 near its 125.6 MHz ceiling: vctrl winds up to 3.5 V and LOCK pulses before it
 settles. `cosim_cov_cases.py` (`cosim_cov_cases.json`) gives it longer: within
@@ -229,6 +230,26 @@ post-layout ceiling from 125.6 to 168.2 MHz, and ff_pss now acquires
 under 7.4e-5 at every step. The 120 MHz miss above is from before the resize.
 N=4 (160 MHz) with the pad at ff_125c_vp10 misses in 30 us and settles with time
 (`cosim_cov_pn32_pad5p_long.json`, 80 us: within 20 mV by 27 us).
+
+**Final cell at f_ref 5 MHz** (2026-11-05, analog e687a1c, gate level + SDF,
+no pad, 7 corners: the six bounding ones plus tt_27c):
+
+- N 1->3->2 (`cosim_cov.json`): 7/7 pass. Relock at 120 MHz in 4.5-6.7 us
+  (ff_pss slowest), at 80 MHz within 5.1 us; ripple at 120 MHz 8.0-23.5 mV
+  (not bounded by this bench).
+- N=4, 160 MHz from reset (`cosim_cov_n4.json`, logs in `log/cosim_cov_n4/`):
+  7/7 lock in 5.2-10.2 us (ff_pss slowest, vctrl 3.22 V), no lock falls,
+  ripple 7.2-22.5 mV.
+- N=5, 200 MHz from reset (`cosim_cov_n5.json`, logs in `log/cosim_cov_n5/`):
+  3/7. ff_m40c_vm10 5.6 us, ff_125c_vp10 5.8 us, tt_27c 7.2 us. At
+  ss_125c_vm10, ss_125c_vp10 and ff_pss vctrl ends within 25 mV of VDD and the
+  VCO stops at 182.1, 183.8 and 188.9 MHz; ss_m40c_vm10 reaches 198.7 MHz,
+  raises LOCK at 18.8 us and drops it. The 200 MHz lock-table points are at or above
+  the VCO's range at these corners.
+
+`cosim_cov.py` writes its per-corner logs to `log/cosim_cov/` whatever `--out`
+says, so each run overwrites the last; the N=4 and N=5 logs were moved by hand.
+The JSON records keep every run's full measures.
 
 ### Closed loop with a mismatched pump (`cosim_pump.py`)
 
@@ -250,6 +271,13 @@ All lock and hold, inside the 20 mV bound. UP-heavy skew lowers the ripple: the 
 at these corners reads worst on the DC sweep and does the loop no harm at this operating point. Ruling: the 10 % bound
 stays as written and the pump is not resized. Not covered: a drawn sample (this is one widened device
 pair), other divider settings, N steps, and the pad with skew.
+
+The same cells through an N-step schedule: `--plan` takes a cosim_cov.py plan and runs
+its bench per case, into `log/cosim_pump_plan/`:
+
+    $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/cosim_pump.py \
+        --plan '{"f_ref_hz": 6.25e6, "segments": [[0, 2], [20000, 3], [40000, 2]], "duration_ns": 60000}' \
+        --out blocks/pll/reports/recorded/cosim_pump_step.json
 
 ## Prescaler margin at ss_pff (digital issue 8, 2026-10-29)
 

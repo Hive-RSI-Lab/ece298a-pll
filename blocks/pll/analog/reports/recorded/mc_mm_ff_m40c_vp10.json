@@ -19,7 +19,7 @@
  "benches": [
   "cp"
  ],
- "date": "2026-11-01",
+ "date": "2026-11-05",
  "nominal": {
   "icp_up_code00_ua": 22.3811,
   "icp_dn_code00_ua": 21.6059,

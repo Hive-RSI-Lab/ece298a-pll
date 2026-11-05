@@ -3,47 +3,35 @@
  "gate": "pex_pvt",
  "bench": "pll_analog_pex_pvt_tb.cir",
  "status": "fail",
- "failing_count": 9,
+ "failing_count": 6,
  "failing": [
   {
-   "corner": "tt_125c_vp10",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ tt_125c_vp10 = 28.7791 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
-  },
-  {
-   "corner": "ff_m40c",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_m40c = 29.7403 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vct"
-  },
-  {
    "corner": "ff_m40c_vp10",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_m40c_vp10 = 27.3172 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_m40c_vp10 = 29.3046 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
   },
   {
    "corner": "ff_27c",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_27c = 28.4855 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vctr"
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_27c = 29.6664 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vctr"
   },
   {
    "corner": "ff_27c_vp10",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_27c_vp10 = 26.0037 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z"
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_27c_vp10 = 28.7834 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z"
   },
   {
    "corner": "ff_125c_vm10",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c_vm10 = 29.0039 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c_vm10 = 29.6306 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
   },
   {
    "corner": "ff_125c",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c = 26.3736 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vct"
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c = 28.6946 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vct"
   },
   {
    "corner": "ff_125c_vp10",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c_vp10 = 23.9183 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
-  },
-  {
-   "corner": "ff_pss",
-   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_pss = 29.3504 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and Z(vctr"
+   "msg": "ol_pm_pn16_nopad_pvt_deg @ ff_125c_vp10 = 27.7743 outside bound [30.0, +inf] (post-layout loop phase margin, P*N = 16, no pad, from the extracted Icp, Kvco and "
   }
  ],
  "facts": {
-  "extracted": "/home/hive2/projects/ece298a-pll/blocks/pll/log/cosim_corners_gl_pad5pf/pll_analog.pex.ordered.vctrl_pad5pf.spice",
+  "extracted": "/home/hive2/projects/ece298a-pll/blocks/pll/log/pex_pvt_pad5pf/pll_analog.pex.ordered.vctrl_pad5pf.spice",
   "corners": [
    "tt_m40c_vm10",
    "tt_m40c",
@@ -53,6 +41,7 @@
    "tt_27c_vp10",
    "tt_125c_vm10",
    "tt_125c",
+   "tt_125c_vp10",
    "ss_m40c_vm10",
    "ss_m40c",
    "ss_m40c_vp10",
@@ -63,8 +52,10 @@
    "ss_125c",
    "ss_125c_vp10",
    "ff_m40c_vm10",
+   "ff_m40c",
    "ff_27c_vm10",
    "ss_pff",
+   "ff_pss",
    "tt_pss",
    "tt_pff"
   ],
@@ -103,314 +94,314 @@
   ],
   "measured": {
    "tt_m40c_vm10": {
-    "icp_up_code00_ua": 19.005,
-    "icp_dn_code00_ua": 18.9992,
-    "vco_kvco_mhz_per_v": 96.5274,
-    "vco_fmax_tt_mhz": 238.057,
-    "vco_f_hi_mhz": 238.057,
-    "vco_f_lo_mhz": 9.28717,
-    "vco_f_vdd_mhz": 265.539,
-    "ol_pm_pn16_nopad_pvt_deg": 34.5683
+    "icp_up_code00_ua": 18.9992,
+    "icp_dn_code00_ua": 19.0276,
+    "vco_kvco_mhz_per_v": 85.529,
+    "vco_fmax_tt_mhz": 211.991,
+    "vco_f_hi_mhz": 211.991,
+    "vco_f_lo_mhz": 9.28727,
+    "vco_f_vdd_mhz": 242.313,
+    "ol_pm_pn16_nopad_pvt_deg": 33.8699
    },
    "tt_m40c": {
-    "icp_up_code00_ua": 19.1691,
-    "icp_dn_code00_ua": 18.9581,
-    "vco_kvco_mhz_per_v": 82.5398,
-    "vco_fmax_tt_mhz": 230.777,
-    "vco_f_hi_mhz": 230.777,
-    "vco_f_lo_mhz": 7.91942,
-    "vco_f_vdd_mhz": 236.446,
-    "ol_pm_pn16_nopad_pvt_deg": 33.6765
+    "icp_up_code00_ua": 19.1744,
+    "icp_dn_code00_ua": 19.0554,
+    "vco_kvco_mhz_per_v": 75.2951,
+    "vco_fmax_tt_mhz": 211.217,
+    "vco_f_hi_mhz": 211.217,
+    "vco_f_lo_mhz": 7.92028,
+    "vco_f_vdd_mhz": 239.405,
+    "ol_pm_pn16_nopad_pvt_deg": 33.0458
    },
    "tt_m40c_vp10": {
-    "icp_up_code00_ua": 19.2778,
-    "icp_dn_code00_ua": 19.1863,
-    "vco_kvco_mhz_per_v": 63.5692,
-    "vco_fmax_tt_mhz": 199.448,
-    "vco_f_hi_mhz": 199.448,
-    "vco_f_lo_mhz": 6.83338,
-    "vco_f_vdd_mhz": 200.596,
-    "ol_pm_pn16_nopad_pvt_deg": 31.7497
+    "icp_up_code00_ua": 19.4779,
+    "icp_dn_code00_ua": 19.2256,
+    "vco_kvco_mhz_per_v": 66.6495,
+    "vco_fmax_tt_mhz": 208.915,
+    "vco_f_hi_mhz": 208.915,
+    "vco_f_lo_mhz": 6.96698,
+    "vco_f_vdd_mhz": 234.652,
+    "ol_pm_pn16_nopad_pvt_deg": 32.1997
    },
    "tt_27c_vm10": {
-    "icp_up_code00_ua": 18.4479,
-    "icp_dn_code00_ua": 18.4075,
-    "vco_kvco_mhz_per_v": 92.4704,
-    "vco_fmax_tt_mhz": 227.792,
-    "vco_f_hi_mhz": 227.792,
-    "vco_f_lo_mhz": 8.63706,
-    "vco_f_vdd_mhz": 248.218,
-    "ol_pm_pn16_nopad_pvt_deg": 34.0406
+    "icp_up_code00_ua": 18.4545,
+    "icp_dn_code00_ua": 18.404,
+    "vco_kvco_mhz_per_v": 84.314,
+    "vco_fmax_tt_mhz": 208.461,
+    "vco_f_hi_mhz": 208.461,
+    "vco_f_lo_mhz": 8.63692,
+    "vco_f_vdd_mhz": 234.051,
+    "ol_pm_pn16_nopad_pvt_deg": 33.4342
    },
    "tt_27c": {
-    "icp_up_code00_ua": 18.5883,
-    "icp_dn_code00_ua": 18.5516,
-    "vco_kvco_mhz_per_v": 76.9665,
-    "vco_fmax_tt_mhz": 215.245,
-    "vco_f_hi_mhz": 215.245,
-    "vco_f_lo_mhz": 7.43532,
-    "vco_f_vdd_mhz": 217.435,
-    "ol_pm_pn16_nopad_pvt_deg": 32.8439
+    "icp_up_code00_ua": 18.5007,
+    "icp_dn_code00_ua": 18.5723,
+    "vco_kvco_mhz_per_v": 74.6148,
+    "vco_fmax_tt_mhz": 208.896,
+    "vco_f_hi_mhz": 208.896,
+    "vco_f_lo_mhz": 7.43606,
+    "vco_f_vdd_mhz": 232.865,
+    "ol_pm_pn16_nopad_pvt_deg": 32.5903
    },
    "tt_27c_vp10": {
-    "icp_up_code00_ua": 18.631,
-    "icp_dn_code00_ua": 18.8311,
-    "vco_kvco_mhz_per_v": 58.7803,
-    "vco_fmax_tt_mhz": 184.667,
-    "vco_f_hi_mhz": 184.667,
-    "vco_f_lo_mhz": 6.56279,
-    "vco_f_vdd_mhz": 185.487,
-    "ol_pm_pn16_nopad_pvt_deg": 30.6498
+    "icp_up_code00_ua": 18.689,
+    "icp_dn_code00_ua": 18.677,
+    "vco_kvco_mhz_per_v": 66.4389,
+    "vco_fmax_tt_mhz": 207.892,
+    "vco_f_hi_mhz": 207.892,
+    "vco_f_lo_mhz": 6.58207,
+    "vco_f_vdd_mhz": 230.011,
+    "ol_pm_pn16_nopad_pvt_deg": 31.7148
    },
    "tt_125c_vm10": {
-    "icp_up_code00_ua": 17.4148,
-    "icp_dn_code00_ua": 17.3981,
-    "vco_kvco_mhz_per_v": 84.6634,
-    "vco_fmax_tt_mhz": 208.279,
-    "vco_f_hi_mhz": 208.279,
-    "vco_f_lo_mhz": 7.62671,
-    "vco_f_vdd_mhz": 219.427,
-    "ol_pm_pn16_nopad_pvt_deg": 33.0058
+    "icp_up_code00_ua": 17.3171,
+    "icp_dn_code00_ua": 17.3834,
+    "vco_kvco_mhz_per_v": 80.8785,
+    "vco_fmax_tt_mhz": 199.311,
+    "vco_f_hi_mhz": 199.311,
+    "vco_f_lo_mhz": 7.62884,
+    "vco_f_vdd_mhz": 219.694,
+    "ol_pm_pn16_nopad_pvt_deg": 32.6322
    },
    "tt_125c": {
-    "icp_up_code00_ua": 17.5533,
-    "icp_dn_code00_ua": 17.3626,
-    "vco_kvco_mhz_per_v": 67.3185,
-    "vco_fmax_tt_mhz": 188.412,
-    "vco_f_hi_mhz": 188.412,
-    "vco_f_lo_mhz": 6.65215,
-    "vco_f_vdd_mhz": 189.348,
-    "ol_pm_pn16_nopad_pvt_deg": 31.1676
+    "icp_up_code00_ua": 17.521,
+    "icp_dn_code00_ua": 17.3789,
+    "vco_kvco_mhz_per_v": 71.9781,
+    "vco_fmax_tt_mhz": 200.995,
+    "vco_f_hi_mhz": 200.995,
+    "vco_f_lo_mhz": 6.65406,
+    "vco_f_vdd_mhz": 220.139,
+    "ol_pm_pn16_nopad_pvt_deg": 31.7483
    },
    "tt_125c_vp10": {
-    "icp_up_code00_ua": 17.7776,
-    "icp_dn_code00_ua": 17.5092,
-    "vco_kvco_mhz_per_v": 51.5491,
-    "vco_fmax_tt_mhz": 162.056,
-    "vco_f_hi_mhz": 162.056,
-    "vco_f_lo_mhz": 5.86222,
-    "vco_f_vdd_mhz": 162.581,
-    "ol_pm_pn16_nopad_pvt_deg": 28.7791
+    "icp_up_code00_ua": 17.7858,
+    "icp_dn_code00_ua": 17.4908,
+    "vco_kvco_mhz_per_v": 64.5456,
+    "vco_fmax_tt_mhz": 201.406,
+    "vco_f_hi_mhz": 201.406,
+    "vco_f_lo_mhz": 5.83292,
+    "vco_f_vdd_mhz": 219.191,
+    "ol_pm_pn16_nopad_pvt_deg": 30.8986
    },
    "ss_m40c_vm10": {
-    "icp_up_code00_ua": 17.4934,
-    "icp_dn_code00_ua": 17.5125,
-    "vco_kvco_mhz_per_v": 79.3195,
-    "vco_fmax_tt_mhz": 197.246,
-    "vco_f_hi_mhz": 197.246,
-    "vco_f_lo_mhz": 9.25881,
-    "vco_f_vdd_mhz": 222.782,
-    "ol_pm_pn16_nopad_pvt_deg": 36.408
+    "icp_up_code00_ua": 17.5229,
+    "icp_dn_code00_ua": 17.4678,
+    "vco_kvco_mhz_per_v": 69.648,
+    "vco_fmax_tt_mhz": 174.326,
+    "vco_f_hi_mhz": 174.326,
+    "vco_f_lo_mhz": 9.26029,
+    "vco_f_vdd_mhz": 199.929,
+    "ol_pm_pn16_nopad_pvt_deg": 35.8695
    },
    "ss_m40c": {
-    "icp_up_code00_ua": 17.6952,
-    "icp_dn_code00_ua": 17.6191,
-    "vco_kvco_mhz_per_v": 71.0883,
-    "vco_fmax_tt_mhz": 199.672,
-    "vco_f_hi_mhz": 199.672,
-    "vco_f_lo_mhz": 7.73348,
-    "vco_f_vdd_mhz": 221.451,
-    "ol_pm_pn16_nopad_pvt_deg": 36.0331
+    "icp_up_code00_ua": 17.6966,
+    "icp_dn_code00_ua": 17.6119,
+    "vco_kvco_mhz_per_v": 62.5101,
+    "vco_fmax_tt_mhz": 176.512,
+    "vco_f_hi_mhz": 176.512,
+    "vco_f_lo_mhz": 7.73475,
+    "vco_f_vdd_mhz": 201.028,
+    "ol_pm_pn16_nopad_pvt_deg": 35.3507
    },
    "ss_m40c_vp10": {
-    "icp_up_code00_ua": 17.8958,
-    "icp_dn_code00_ua": 17.6628,
-    "vco_kvco_mhz_per_v": 61.2825,
-    "vco_fmax_tt_mhz": 192.39,
-    "vco_f_hi_mhz": 192.39,
-    "vco_f_lo_mhz": 6.70388,
-    "vco_f_vdd_mhz": 196.086,
-    "ol_pm_pn16_nopad_pvt_deg": 35.2859
+    "icp_up_code00_ua": 17.9055,
+    "icp_dn_code00_ua": 17.7859,
+    "vco_kvco_mhz_per_v": 55.6317,
+    "vco_fmax_tt_mhz": 175.269,
+    "vco_f_hi_mhz": 175.269,
+    "vco_f_lo_mhz": 6.70506,
+    "vco_f_vdd_mhz": 198.108,
+    "ol_pm_pn16_nopad_pvt_deg": 34.6726
    },
    "ss_27c_vm10": {
-    "icp_up_code00_ua": 17.1062,
-    "icp_dn_code00_ua": 17.1146,
-    "vco_kvco_mhz_per_v": 76.9425,
-    "vco_fmax_tt_mhz": 190.959,
-    "vco_f_hi_mhz": 190.959,
-    "vco_f_lo_mhz": 8.60526,
-    "vco_f_vdd_mhz": 211.744,
-    "ol_pm_pn16_nopad_pvt_deg": 36.134
+    "icp_up_code00_ua": 17.1175,
+    "icp_dn_code00_ua": 17.1013,
+    "vco_kvco_mhz_per_v": 68.9794,
+    "vco_fmax_tt_mhz": 172.087,
+    "vco_f_hi_mhz": 172.087,
+    "vco_f_lo_mhz": 8.60589,
+    "vco_f_vdd_mhz": 193.997,
+    "ol_pm_pn16_nopad_pvt_deg": 35.6018
    },
    "ss_27c": {
-    "icp_up_code00_ua": 17.2602,
-    "icp_dn_code00_ua": 17.2517,
-    "vco_kvco_mhz_per_v": 68.5092,
-    "vco_fmax_tt_mhz": 192.247,
-    "vco_f_hi_mhz": 192.247,
-    "vco_f_lo_mhz": 7.27205,
-    "vco_f_vdd_mhz": 207.98,
-    "ol_pm_pn16_nopad_pvt_deg": 35.6346
+    "icp_up_code00_ua": 17.2703,
+    "icp_dn_code00_ua": 17.2101,
+    "vco_kvco_mhz_per_v": 61.902,
+    "vco_fmax_tt_mhz": 174.408,
+    "vco_f_hi_mhz": 174.408,
+    "vco_f_lo_mhz": 7.27267,
+    "vco_f_vdd_mhz": 195.57,
+    "ol_pm_pn16_nopad_pvt_deg": 35.0189
    },
    "ss_27c_vp10": {
-    "icp_up_code00_ua": 17.4188,
-    "icp_dn_code00_ua": 17.3525,
-    "vco_kvco_mhz_per_v": 57.4777,
-    "vco_fmax_tt_mhz": 180.51,
-    "vco_f_hi_mhz": 180.51,
-    "vco_f_lo_mhz": 6.35253,
-    "vco_f_vdd_mhz": 182.121,
-    "ol_pm_pn16_nopad_pvt_deg": 34.5804
+    "icp_up_code00_ua": 17.4077,
+    "icp_dn_code00_ua": 17.3578,
+    "vco_kvco_mhz_per_v": 55.3508,
+    "vco_fmax_tt_mhz": 174.066,
+    "vco_f_hi_mhz": 174.066,
+    "vco_f_lo_mhz": 6.35316,
+    "vco_f_vdd_mhz": 193.997,
+    "ol_pm_pn16_nopad_pvt_deg": 34.3037
    },
    "ss_125c_vm10": {
-    "icp_up_code00_ua": 16.1214,
-    "icp_dn_code00_ua": 16.3435,
-    "vco_kvco_mhz_per_v": 72.0462,
-    "vco_fmax_tt_mhz": 178.343,
-    "vco_f_hi_mhz": 178.343,
-    "vco_f_lo_mhz": 7.59347,
-    "vco_f_vdd_mhz": 194.102,
-    "ol_pm_pn16_nopad_pvt_deg": 35.5181
+    "icp_up_code00_ua": 16.2855,
+    "icp_dn_code00_ua": 16.2479,
+    "vco_kvco_mhz_per_v": 66.6067,
+    "vco_fmax_tt_mhz": 165.45,
+    "vco_f_hi_mhz": 165.45,
+    "vco_f_lo_mhz": 7.59214,
+    "vco_f_vdd_mhz": 183.114,
+    "ol_pm_pn16_nopad_pvt_deg": 35.0551
    },
    "ss_125c": {
-    "icp_up_code00_ua": 16.5017,
-    "icp_dn_code00_ua": 16.3156,
-    "vco_kvco_mhz_per_v": 63.2916,
-    "vco_fmax_tt_mhz": 177.403,
-    "vco_f_hi_mhz": 177.403,
-    "vco_f_lo_mhz": 6.51581,
-    "vco_f_vdd_mhz": 185.055,
-    "ol_pm_pn16_nopad_pvt_deg": 34.796
+    "icp_up_code00_ua": 16.4922,
+    "icp_dn_code00_ua": 16.3292,
+    "vco_kvco_mhz_per_v": 59.8055,
+    "vco_fmax_tt_mhz": 167.99,
+    "vco_f_hi_mhz": 167.99,
+    "vco_f_lo_mhz": 6.51522,
+    "vco_f_vdd_mhz": 185.044,
+    "ol_pm_pn16_nopad_pvt_deg": 34.3942
    },
    "ss_125c_vp10": {
-    "icp_up_code00_ua": 16.6119,
-    "icp_dn_code00_ua": 16.3885,
-    "vco_kvco_mhz_per_v": 50.9864,
-    "vco_fmax_tt_mhz": 160.243,
-    "vco_f_hi_mhz": 160.243,
-    "vco_f_lo_mhz": 5.75409,
-    "vco_f_vdd_mhz": 161.026,
-    "ol_pm_pn16_nopad_pvt_deg": 33.1763
+    "icp_up_code00_ua": 16.5391,
+    "icp_dn_code00_ua": 16.4001,
+    "vco_kvco_mhz_per_v": 53.7551,
+    "vco_fmax_tt_mhz": 168.632,
+    "vco_f_hi_mhz": 168.632,
+    "vco_f_lo_mhz": 5.75416,
+    "vco_f_vdd_mhz": 184.777,
+    "ol_pm_pn16_nopad_pvt_deg": 33.6049
    },
    "ff_m40c_vm10": {
-    "icp_up_code00_ua": 21.21,
-    "icp_dn_code00_ua": 21.0599,
-    "vco_kvco_mhz_per_v": 116.66,
-    "vco_fmax_tt_mhz": 286.205,
-    "vco_f_hi_mhz": 286.205,
-    "vco_f_lo_mhz": 9.72172,
-    "vco_f_vdd_mhz": 296.855,
-    "ol_pm_pn16_nopad_pvt_deg": 31.8394
+    "icp_up_code00_ua": 21.1863,
+    "icp_dn_code00_ua": 20.9992,
+    "vco_kvco_mhz_per_v": 107.015,
+    "vco_fmax_tt_mhz": 263.349,
+    "vco_f_hi_mhz": 263.349,
+    "vco_f_lo_mhz": 9.72299,
+    "vco_f_vdd_mhz": 298.379,
+    "ol_pm_pn16_nopad_pvt_deg": 31.1831
    },
    "ff_m40c": {
-    "icp_up_code00_ua": 21.4046,
-    "icp_dn_code00_ua": 21.2654,
-    "vco_kvco_mhz_per_v": 88.5835,
-    "vco_fmax_tt_mhz": 247.597,
-    "vco_f_hi_mhz": 247.597,
-    "vco_f_lo_mhz": 8.42161,
-    "vco_f_vdd_mhz": 248.997,
-    "ol_pm_pn16_nopad_pvt_deg": 29.7403
+    "icp_up_code00_ua": 21.4411,
+    "icp_dn_code00_ua": 21.2402,
+    "vco_kvco_mhz_per_v": 93.9841,
+    "vco_fmax_tt_mhz": 261.71,
+    "vco_f_hi_mhz": 261.71,
+    "vco_f_lo_mhz": 7.95281,
+    "vco_f_vdd_mhz": 293.543,
+    "ol_pm_pn16_nopad_pvt_deg": 30.2502
    },
    "ff_m40c_vp10": {
-    "icp_up_code00_ua": 21.7722,
-    "icp_dn_code00_ua": 21.3787,
-    "vco_kvco_mhz_per_v": 67.039,
-    "vco_fmax_tt_mhz": 210.348,
-    "vco_f_hi_mhz": 210.348,
-    "vco_f_lo_mhz": 7.21978,
-    "vco_f_vdd_mhz": 211.283,
-    "ol_pm_pn16_nopad_pvt_deg": 27.3172
+    "icp_up_code00_ua": 21.7364,
+    "icp_dn_code00_ua": 21.3642,
+    "vco_kvco_mhz_per_v": 83.2905,
+    "vco_fmax_tt_mhz": 259.55,
+    "vco_f_hi_mhz": 259.55,
+    "vco_f_lo_mhz": 7.17978,
+    "vco_f_vdd_mhz": 288.295,
+    "ol_pm_pn16_nopad_pvt_deg": 29.3046
    },
    "ff_27c_vm10": {
-    "icp_up_code00_ua": 20.5081,
-    "icp_dn_code00_ua": 20.456,
-    "vco_kvco_mhz_per_v": 108.668,
-    "vco_fmax_tt_mhz": 266.595,
-    "vco_f_hi_mhz": 266.595,
-    "vco_f_lo_mhz": 9.05118,
-    "vco_f_vdd_mhz": 270.585,
-    "ol_pm_pn16_nopad_pvt_deg": 30.9142
+    "icp_up_code00_ua": 20.4579,
+    "icp_dn_code00_ua": 20.4506,
+    "vco_kvco_mhz_per_v": 105.416,
+    "vco_fmax_tt_mhz": 258.886,
+    "vco_f_hi_mhz": 258.886,
+    "vco_f_lo_mhz": 9.05055,
+    "vco_f_vdd_mhz": 287.91,
+    "ol_pm_pn16_nopad_pvt_deg": 30.6601
    },
    "ff_27c": {
-    "icp_up_code00_ua": 20.5989,
-    "icp_dn_code00_ua": 20.5826,
-    "vco_kvco_mhz_per_v": 81.3765,
-    "vco_fmax_tt_mhz": 227.4,
-    "vco_f_hi_mhz": 227.4,
-    "vco_f_lo_mhz": 7.68342,
-    "vco_f_vdd_mhz": 228.365,
-    "ol_pm_pn16_nopad_pvt_deg": 28.4855
+    "icp_up_code00_ua": 20.5812,
+    "icp_dn_code00_ua": 20.468,
+    "vco_kvco_mhz_per_v": 93.1169,
+    "vco_fmax_tt_mhz": 259.042,
+    "vco_f_hi_mhz": 259.042,
+    "vco_f_lo_mhz": 7.62628,
+    "vco_f_vdd_mhz": 285.627,
+    "ol_pm_pn16_nopad_pvt_deg": 29.6664
    },
    "ff_27c_vp10": {
-    "icp_up_code00_ua": 20.7682,
-    "icp_dn_code00_ua": 20.7952,
-    "vco_kvco_mhz_per_v": 61.8394,
-    "vco_fmax_tt_mhz": 194.203,
-    "vco_f_hi_mhz": 194.203,
-    "vco_f_lo_mhz": 6.82965,
-    "vco_f_vdd_mhz": 194.897,
-    "ol_pm_pn16_nopad_pvt_deg": 26.0037
+    "icp_up_code00_ua": 20.8627,
+    "icp_dn_code00_ua": 20.7953,
+    "vco_kvco_mhz_per_v": 82.9749,
+    "vco_fmax_tt_mhz": 258.318,
+    "vco_f_hi_mhz": 258.318,
+    "vco_f_lo_mhz": 6.90407,
+    "vco_f_vdd_mhz": 282.528,
+    "ol_pm_pn16_nopad_pvt_deg": 28.7834
    },
    "ff_125c_vm10": {
-    "icp_up_code00_ua": 19.1132,
-    "icp_dn_code00_ua": 19.0411,
-    "vco_kvco_mhz_per_v": 93.8611,
-    "vco_fmax_tt_mhz": 230.55,
-    "vco_f_hi_mhz": 230.55,
-    "vco_f_lo_mhz": 8.09908,
-    "vco_f_vdd_mhz": 231.846,
-    "ol_pm_pn16_nopad_pvt_deg": 29.0039
+    "icp_up_code00_ua": 19.1563,
+    "icp_dn_code00_ua": 19.0239,
+    "vco_kvco_mhz_per_v": 100.649,
+    "vco_fmax_tt_mhz": 246.622,
+    "vco_f_hi_mhz": 246.622,
+    "vco_f_lo_mhz": 8.0829,
+    "vco_f_vdd_mhz": 269.665,
+    "ol_pm_pn16_nopad_pvt_deg": 29.6306
    },
    "ff_125c": {
-    "icp_up_code00_ua": 19.3184,
-    "icp_dn_code00_ua": 19.0894,
-    "vco_kvco_mhz_per_v": 70.1323,
-    "vco_fmax_tt_mhz": 196.378,
-    "vco_f_hi_mhz": 196.378,
-    "vco_f_lo_mhz": 7.02079,
-    "vco_f_vdd_mhz": 197.013,
-    "ol_pm_pn16_nopad_pvt_deg": 26.3736
+    "icp_up_code00_ua": 19.3703,
+    "icp_dn_code00_ua": 19.2041,
+    "vco_kvco_mhz_per_v": 89.4884,
+    "vco_fmax_tt_mhz": 248.528,
+    "vco_f_hi_mhz": 248.528,
+    "vco_f_lo_mhz": 6.90944,
+    "vco_f_vdd_mhz": 269.761,
+    "ol_pm_pn16_nopad_pvt_deg": 28.6946
    },
    "ff_125c_vp10": {
-    "icp_up_code00_ua": 19.6076,
-    "icp_dn_code00_ua": 19.0973,
-    "vco_kvco_mhz_per_v": 53.6926,
-    "vco_fmax_tt_mhz": 168.918,
-    "vco_f_hi_mhz": 168.918,
-    "vco_f_lo_mhz": 6.22957,
-    "vco_f_vdd_mhz": 169.41,
-    "ol_pm_pn16_nopad_pvt_deg": 23.9183
+    "icp_up_code00_ua": 19.6582,
+    "icp_dn_code00_ua": 19.1834,
+    "vco_kvco_mhz_per_v": 80.2826,
+    "vco_fmax_tt_mhz": 249.333,
+    "vco_f_hi_mhz": 249.333,
+    "vco_f_lo_mhz": 6.07666,
+    "vco_f_vdd_mhz": 268.806,
+    "ol_pm_pn16_nopad_pvt_deg": 27.7743
    },
    "ss_pff": {
-    "icp_up_code00_ua": 26.6077,
-    "icp_dn_code00_ua": 26.4985,
-    "vco_kvco_mhz_per_v": 97.9124,
-    "vco_fmax_tt_mhz": 244.906,
-    "vco_f_hi_mhz": 244.906,
-    "vco_f_lo_mhz": 12.8535,
-    "vco_f_vdd_mhz": 260.664,
-    "ol_pm_pn16_nopad_pvt_deg": 32.0038
+    "icp_up_code00_ua": 26.5532,
+    "icp_dn_code00_ua": 26.5194,
+    "vco_kvco_mhz_per_v": 91.7744,
+    "vco_fmax_tt_mhz": 230.361,
+    "vco_f_hi_mhz": 230.361,
+    "vco_f_lo_mhz": 12.8556,
+    "vco_f_vdd_mhz": 247.091,
+    "ol_pm_pn16_nopad_pvt_deg": 31.5361
    },
    "ff_pss": {
-    "icp_up_code00_ua": 13.8705,
-    "icp_dn_code00_ua": 13.6637,
-    "vco_kvco_mhz_per_v": 39.7965,
-    "vco_fmax_tt_mhz": 124.949,
-    "vco_f_hi_mhz": 124.949,
-    "vco_f_lo_mhz": 4.36554,
-    "vco_f_vdd_mhz": 125.603,
-    "ol_pm_pn16_nopad_pvt_deg": 29.3504
+    "icp_up_code00_ua": 13.9041,
+    "icp_dn_code00_ua": 13.6979,
+    "vco_kvco_mhz_per_v": 54.1534,
+    "vco_fmax_tt_mhz": 168.243,
+    "vco_f_hi_mhz": 168.243,
+    "vco_f_lo_mhz": 4.15806,
+    "vco_f_vdd_mhz": 190.041,
+    "ol_pm_pn16_nopad_pvt_deg": 32.3601
    },
    "tt_pss": {
-    "icp_up_code00_ua": 15.0078,
-    "icp_dn_code00_ua": 15.012,
-    "vco_kvco_mhz_per_v": 60.729,
-    "vco_fmax_tt_mhz": 169.957,
-    "vco_f_hi_mhz": 169.957,
-    "vco_f_lo_mhz": 5.9888,
-    "vco_f_vdd_mhz": 171.082,
-    "ol_pm_pn16_nopad_pvt_deg": 33.8743
+    "icp_up_code00_ua": 15.1246,
+    "icp_dn_code00_ua": 15.0812,
+    "vco_kvco_mhz_per_v": 61.9925,
+    "vco_fmax_tt_mhz": 173.369,
+    "vco_f_hi_mhz": 173.369,
+    "vco_f_lo_mhz": 5.98932,
+    "vco_f_vdd_mhz": 195.783,
+    "ol_pm_pn16_nopad_pvt_deg": 34.0855
    },
    "tt_pff": {
-    "icp_up_code00_ua": 24.0702,
-    "icp_dn_code00_ua": 23.9954,
-    "vco_kvco_mhz_per_v": 99.0073,
-    "vco_fmax_tt_mhz": 277.055,
-    "vco_f_hi_mhz": 277.055,
-    "vco_f_lo_mhz": 9.7354,
-    "vco_f_vdd_mhz": 288.374,
-    "ol_pm_pn16_nopad_pvt_deg": 31.4506
+    "icp_up_code00_ua": 24.0748,
+    "icp_dn_code00_ua": 23.9319,
+    "vco_kvco_mhz_per_v": 92.6451,
+    "vco_fmax_tt_mhz": 259.878,
+    "vco_f_hi_mhz": 259.878,
+    "vco_f_lo_mhz": 9.73628,
+    "vco_f_vdd_mhz": 284.451,
+    "ol_pm_pn16_nopad_pvt_deg": 30.9284
    }
   }
  }

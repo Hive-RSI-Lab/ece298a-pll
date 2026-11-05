@@ -27,7 +27,7 @@
 and an In-Macro TSPC Prescaler on One GF180 Tiny Tapeout Tile}
 \author{ECE~298A term project, University of Waterloo\\
 \small\url{https://github.com/Hive-RSI-Lab/ece298a-pll}}
-\date{October 31, 2026}
+\date{November 4, 2026}
 
 \begin{document}
 \maketitle
@@ -45,22 +45,27 @@ worst setup slack at the slow corner from about \SI{0}{ns} to
 \SI{+2.34}{ns}. The digital half (phase-frequency detector, /4 prescaler,
 programmable /$N$ divider, lock detector and runaway recovery) is formally
 checked, fully covered and mutation-tested. After layout and parasitic
-extraction the VCO spans \SIrange{4.5}{12.9}{MHz} to
-\SIrange{126}{297}{MHz} at its ends over 31 process, voltage and
-temperature (PVT) corners, the loop keeps at least \SI{34.5}{\degree} of
-phase margin, and a mixed-signal co-simulation of the extracted analog cell
-with the hardened gate-level digital netlist and its SDF locks at
-\SI{100}{MHz} ($6.25\,\text{MHz}\times16$) within \SI{6.7}{\micro s} at every
-corner that bounds the range, with the control voltage settled to
-\SI{14}{mV} peak-to-peak or better, and still locks with the \SI{5}{pF}
-control-pad load. The tile passes DRC, LVS and the Tiny Tapeout precheck.
-All of this is pre-silicon simulation: no chip has been measured. Tests
-added after an outside review found the limits reported here: with the pad,
-phase margin falls to \SI{23.9}{\degree}; near a corner's VCO ceiling a
-divider step takes about \SI{25}{\micro s} to settle; free-running period jitter
-is 10--\SI{14}{ps} rms across the corners run, not the \SI{1.2}{ps} first estimated; and under
-device mismatch the charge pump's UP/DN bound fails in a quarter of samples
-at its worst corner.
+extraction of the final cell revision the VCO spans
+\SIrange{4.2}{12.9}{MHz} to \SIrange{183}{298}{MHz} at its ends over 31
+process, voltage and temperature (PVT) corners, the loop keeps at least
+\SI{40.5}{\degree} of phase margin, and a mixed-signal co-simulation of the
+extracted analog cell with the hardened gate-level digital netlist and its
+SDF locks at \SI{100}{MHz} ($6.25\,\text{MHz}\times16$) within
+\SI{7.2}{\micro s} at all six corners that bound the range, with the control
+voltage settled to \SI{15.0}{mV} peak-to-peak or better, and relocks to
+\SI{150}{MHz} after a divider step within \SI{4.9}{\micro s}. The tile passes
+DRC, LVS and the Tiny Tapeout precheck. All of this is pre-silicon
+simulation: no chip has been measured. Tests added after an outside review
+found limits that hold on the final cell too: with the \SI{5}{pF} control
+pad, small-signal phase margin falls to \SI{27.8}{\degree} at the worst
+corner, below the \SI{30}{\degree} floor at 6 of 31 corners, though the loop
+still locks and holds at all six bounding corners; free-running period
+jitter is 6.8--\SI{7.6}{ps} rms at the three corners run; and under device
+mismatch the charge pump's UP/DN bound fails in about a quarter of samples
+at its worst corner, without the loop losing lock when one pump source is
+widened by about $3\sigma$. A \SI{200}{MHz} setting ($N=5$ at a
+\SI{5}{MHz} reference) does not lock at four of the seven corners run: it is
+above the VCO's reach there.
 \end{abstract}
 
 \section{Introduction}
@@ -230,8 +235,12 @@ $v_\text{ctrl}$ and caps $f_\text{max}$; without it the ring reached
 \includegraphics[width=\columnwidth]{vco_tuning}
 \caption{Post-layout VCO tuning curves (extracted netlist, $v_\text{ctrl}$
 forced) at the corners with the highest (\code{ff\_m40c\_vm10}) and lowest
-(\code{ff\_pss}) ceiling, at typical, and at slow-hot-low-supply. The
-flattening at the top is the bias-tracking ceiling. \code{ff\_pss} reaches \SI{100}{MHz} at $v_\text{ctrl}\approx\SI{2.2}{V}$, where the closed loop settles at that corner (\cref{tab:cosim}). Points below about
+(\code{ss\_125c\_vm10}, \SI{183}{MHz} at $v_\text{ctrl}=V_{DD}$) ceiling, at
+typical, and at \code{ff\_pss}, the corner with the least pump and V-to-I
+bias. The flattening at the top is the bias-tracking ceiling.
+\code{ff\_pss} reaches \SI{100}{MHz} at $v_\text{ctrl}\approx\SI{2.4}{V}$
+(interpolated between bench points), where the closed loop settles at that
+corner (\cref{tab:cosim}). Points below about
 \SI{5}{MHz} are under the bench's resolution and omitted.}
 \label{fig:vco}
 \end{figure}
@@ -270,8 +279,7 @@ sides, and the Metal4 power straps.}
 \end{figure*}
 
 \section{Digital design}\label{sec:digital}
-The digital half is synthesised RTL, 110 cells before placement
-(\SI{3710}{\micro m^2}).
+The digital half is synthesised RTL, 112 standard cells before placement.
 \begin{itemize}\setlength\itemsep{1pt}
 \item \textbf{PFD}: two reset flops clocked by \code{clk} and \code{clk\_fb};
 an AND of both outputs resets them through a delay, so both pump switches
@@ -289,12 +297,12 @@ ground. The window (\SI{82}{\micro s} at \SI{12.5}{MHz}) exceeds the
 \SI{50}{\micro s} lock-time bound, so it never interrupts a normal
 acquisition.
 \end{itemize}
-Verification: line and toggle coverage are \SI{100}{\%} (122/122 lines,
-188/188 toggles); six safety properties (divider ratio, prescaler ratio,
-PFD reset and no-overlap, lock behaviour, asynchronous reset) hold to depth
-20 with eight cover points reached; all 16 non-equivalent RTL mutants are
-killed by the testbench; and gate-level simulation of the hardened netlist
-passes.
+Verification: line and toggle coverage are \SI{100}{\%}; six safety
+properties (divider ratio, prescaler ratio, PFD reset and no-overlap, lock
+behaviour, asynchronous reset) are proven unbounded, with eight cover points
+reached; all 16 non-equivalent RTL mutants are killed by the testbench (3
+more are equivalent); and gate-level simulation of the hardened netlist
+passes 18 of 18 tests both without and with SDF delays.
 
 \begin{figure*}[t]
 \centering
@@ -317,21 +325,26 @@ and the second-order approximation gives
 $\omega_n = \sqrt{I_{cp}K_\text{vco}/(PN\,C_1)}$ and
 $\zeta = \tfrac{R_1}{2}\sqrt{I_{cp}K_\text{vco}C_1/(PN)}$.
 With the values calibrated from the transistor-level cell at the
-\SI{100}{MHz} point ($I_{cp}=\SI{18.8}{\micro A}$, local
+\SI{100}{MHz} point before the final V-to-I resize ($I_{cp}=\SI{18.8}{\micro A}$, local
 $K_\text{vco}=\SI{116}{MHz/V}$), the loop at $PN=16$ crosses over at
 \SI{585}{kHz}, about $f_\text{ref}/10.7$, safely below the
 sampling limit \cite{gardner}, with \SI{52.6}{\degree} of phase margin,
 $f_n=\SI{416}{kHz}$ and $\zeta=0.71$ (\cref{fig:bode}). Phase margin falls
 with $PN$ (\SI{55}{\degree} at 8, \SI{40}{\degree} at 40) because the
-crossover moves down toward the zero. A \SI{5}{pF} pad on $v_\text{ctrl}$
-adds to $C_2$ and costs \SIrange{10}{16}{\degree} on the extracted cell; since the pad is always
-connected, \cref{sec:results} tests the loop with it.
+crossover moves down toward the zero. This calibration has not been redone
+on the final cell; its extracted \code{tt\_27c} values are a mean
+$K_\text{vco}$ of \SI{74.6}{MHz/V} and \SI{47.0}{\degree} of phase margin
+at $PN=16$ (\cref{tab:summary}), which the closed-loop runs of
+\cref{sec:results} use directly. A \SI{5}{pF} pad on $v_\text{ctrl}$ adds
+to $C_2$ and costs \SIrange{12.5}{15.6}{\degree} of phase margin across the
+31 extracted corners (\SIrange{10}{16}{\degree} on the previous cell);
+\cref{sec:results} reports the loop with it.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{bode}
 \caption{Open-loop gain and phase from the linear model, calibrated at
-\code{tt\_27c} and \SI{100}{MHz}, for three $PN$. Dots: crossover.}
+\code{tt\_27c} and \SI{100}{MHz} on the cell before the final V-to-I resize, for three $PN$. Dots: crossover.}
 \label{fig:bode}
 \end{figure}
 
@@ -341,12 +354,12 @@ The analog layout is written as code (a gdsfactory/KLayout generator,
 (\cref{fig:layout}a): the ring VCO with the TSPC beside its output
 inverter, the bias, buffer and enable rows, the poly resistor serpentines,
 the pump with its PMOS mirror bank, and the MOS-capacitor rows. The macro
-is $122\times\SI{257}{\micro m}$; every routed internal net is labelled so
+is $122\times\SI{259}{\micro m}$; every routed internal net is labelled so
 Magic's extraction keeps its coupling capacitance. It is DRC-clean (Magic
 and KLayout) and LVS-matches the schematic (Netgen, unique match).
 
 The digital half is placed and routed around the macro by LibreLane into
-the $1\times2$ tile (\cref{fig:layout}b; 2350 instances including fill and
+the $1\times2$ tile (\cref{fig:layout}b; 2348 instances including fill and
 taps). The VCO-derived clock is constrained per process at twice the
 extracted VCO's ceiling period plus margin (\SI{7.5}{ns} at ss,
 \SI{5.4}{ns} at tt and ff) with \SI{0.20}{ns} of jitter-derived setup
@@ -385,27 +398,33 @@ extracted netlist; \cref{tab:summary} gives the ranges.
 \toprule
 Quantity & min & typ. & max \\
 \midrule
-$I_{cp}$, code 00 (\si{\micro A}) & 13.6 & 18.6 & 26.6 \\
-$f_\text{vco}$ at $v_\text{ctrl}=\SI{0.3}{V}$ (MHz) & 4.5 & 7.4 & 12.9 \\
-$f_\text{vco}$ at $v_\text{ctrl}=V_{DD}$ (MHz) & 126 & 217 & 297 \\
-mean $K_\text{vco}$ (MHz/V) & 39.8 & 77.0 & 116.7 \\
-phase margin, $PN=16$ (deg) & 34.5 & 47.4 & 52.8 \\
+$I_{cp}$, code 00 (\si{\micro A}) & 13.9 & 18.6 & 26.6 \\
+$f_\text{vco}$ at $v_\text{ctrl}=\SI{0.3}{V}$ (MHz) & 4.2 & 7.4 & 12.9 \\
+$f_\text{vco}$ at $v_\text{ctrl}=V_{DD}$ (MHz) & 183 & 233 & 298 \\
+mean $K_\text{vco}$ (MHz/V) & 53.8 & 74.6 & 107.0 \\
+phase margin, $PN=16$ (deg) & 40.5 & 47.0 & 51.5 \\
 UP/DN mismatch (\%), sch. & 3.6 & 5.0 & 8.7 \\
 overlap charge (fC), sch. & 2.0 & 2.4 & 3.6 \\
-standby (\si{\micro A}), sch. & \num{1e-4} & \num{1.5e-4} & 0.026 \\
-start-up (\si{\micro s}), sch. & 0.44 & 0.68 & 0.92 \\
+standby (\si{\micro A}), sch. & \num{1.2e-4} & \num{1.5e-4} & 0.026 \\
+start-up (\si{\micro s}), sch. & 0.43 & 0.66 & 0.94 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Layout lowers the VCO's ceiling by 14--21\,\% (the ring nodes pick up wiring
-capacitance) and the phase margin by \SIrange{1.4}{3.4}{\degree}. The
-binding corner is \code{ff\_pss}: fast transistors with slow resistors cut
-$I_b$ by about a third, and with it the VCO ceiling (\SI{126}{MHz}),
-$K_\text{vco}$ (\SI{39.8}{MHz/V}) and $I_{cp}$ (\SI{13.6}{\micro A}).
-Every corner still reaches the \SI{100}{MHz} point. The lowest phase
-margin, \SI{34.5}{\degree} at \code{ff\_125c\_vp10}, clears the
-\SI{30}{\degree} floor.
+Layout lowers the VCO's ceiling by 14--20\,\% (the ring nodes pick up wiring
+capacitance) and the phase margin by \SIrange{1.5}{3.1}{\degree}.
+\code{ff\_pss} (fast transistors with slow resistors) still has the least
+bias, $I_{cp}=\SI{13.9}{\micro A}$, but the final V-to-I resize
+($R_\text{V2I}$ length \SI{35}{}$\to$\SI{43}{\micro m}, a larger clamp and
+ceiling device) lifted its ceiling at $v_\text{ctrl}=V_{DD}$ from
+\SI{125.6}{MHz} on the previous revision to \SI{190.0}{MHz} (\SI{168.2}{MHz}
+at the bench's top point, $V_{DD}-\SI{0.3}{V}$), with
+$K_\text{vco}=\SI{54.2}{MHz/V}$ and
+\SI{44.9}{\degree} of margin. The lowest ceiling is now at
+\code{ss\_125c\_vm10} (\SI{183}{MHz} at $v_\text{ctrl}=V_{DD}$), the lowest
+$K_\text{vco}$ at \code{ss\_125c\_vp10} (\SI{53.8}{MHz/V}), and the lowest
+phase margin, \SI{40.5}{\degree} at \code{ff\_125c\_vp10}, clears the
+\SI{30}{\degree} floor. Every corner reaches \SI{150}{MHz}.
 
 \subsection{Closed loop on the extracted netlist}
 The decisive test runs the whole loop in a mixed-signal co-simulation:
@@ -421,135 +440,176 @@ reproduces a flow-written SDF to within \SI{1}{ps}. Two mismatches remain: the
 available, and the libraries tie voltage to process (ff \SI{3.6}{V}, ss
 \SI{3.0}{V}), so the digital delays do not follow the analog corner's
 supply. The corners are the
-four that bound the post-layout sweep: the lowest and highest VCO ceiling
-(\code{ff\_pss}, \code{ff\_m40c\_vm10}) and the lowest and highest phase
-margin (\code{ff\_125c\_vp10}, \code{ss\_m40c\_vm10}). Each corner
-simulates \SI{30}{\micro s} in about 40 minutes.
+six that bound the post-layout sweep: the lowest and highest VCO ceiling
+(\code{ss\_125c\_vm10}, \code{ff\_m40c\_vm10}), the lowest and highest phase
+margin (\code{ff\_125c\_vp10}, \code{ss\_m40c\_vm10}), the lowest
+$K_\text{vco}$ (\code{ss\_125c\_vp10}) and the lowest pump current
+(\code{ff\_pss}). Each corner locks at $N=2$ for \SI{30}{\micro s}, then
+the divider steps to $N=3$ (\SI{150}{MHz}) for \SI{20}{\micro s}; a corner
+takes 38--49 minutes.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{lock}
-\caption{Lock acquisition at the four bounding corners (extracted analog,
-gate-level digital with SDF): (a) $v_\text{ctrl}$ with the instant
-\code{LOCK} rises; (b) the VCO frequency inferred from successive
-\code{clk\_fb} periods.}
+\caption{Lock acquisition at the six bounding corners (extracted analog,
+gate-level digital with SDF), with the divider stepped from $N=2$ to $N=3$
+at \SI{30}{\micro s}: (a) $v_\text{ctrl}$ with the instants \code{LOCK}
+rises; (b) the VCO frequency inferred from successive \code{clk\_fb}
+periods times $8N$.}
 \label{fig:lock}
 \end{figure}
 
 \begin{table}[t]
 \centering
 \caption{Closed loop at \SI{100}{MHz} ($6.25\,\text{MHz}\times16$),
-extracted analog + gate-level digital. Bounds: lock $\le\SI{50}{\micro s}$,
-frequency error $\le 10^{-3}$, $v_\text{ctrl}$ p-p $\le\SI{20}{mV}$.}
+extracted analog + gate-level digital with SDF, and re-lock after the step
+to $N=3$ (\SI{150}{MHz}). Bounds: lock $\le\SI{50}{\micro s}$, frequency
+error $\le 10^{-3}$, $v_\text{ctrl}$ p-p $\le\SI{20}{mV}$. SPO: static
+phase offset.}
 \label{tab:cosim}
 \small
-\setlength\tabcolsep{4pt}
-\begin{tabular}{@{}lcccc@{}}
+\setlength\tabcolsep{2.5pt}
+\begin{tabular}{@{}lcccccc@{}}
 \toprule
-Corner & lock & $f_\text{vco}$ & $v_\text{ctrl}$ & p-p \\
- & (\si{\micro s}) & (MHz) & (V) & (mV) \\
+Corner & lock & re-lock & $f_\text{vco}$ & $v_\text{ctrl}$ & p-p & SPO \\
+ & (\si{\micro s}) & (\si{\micro s}) & (MHz) & (V) & (mV) & (ns) \\
 \midrule
-\code{ff\_pss}        & 6.72 & 99.9998 & 2.20 & 2.4 \\
-\code{ff\_m40c\_vm10} & 4.00 & 100.0009 & 1.45 & 7.2 \\
-\code{ff\_125c\_vp10} & 4.96 & 100.0010 & 1.78 & 13.5 \\
-\code{ss\_m40c\_vm10} & 5.12 & 100.0015 & 1.81 & 9.1 \\
+\code{ss\_125c\_vm10} & 5.76 & 3.93 & 100.0005 & 1.95 & 13.9 & 3.17 \\
+\code{ff\_m40c\_vm10} & 4.00 & 3.12 & 100.0021 & 1.54 & 7.2 & 0.90 \\
+\code{ff\_125c\_vp10} & 4.80 & 3.60 & 100.0006 & 1.86 & 13.4 & 1.06 \\
+\code{ss\_m40c\_vm10} & 5.12 & 3.61 & 100.0004 & 1.94 & 4.6 & 2.37 \\
+\code{ss\_125c\_vp10} & 6.56 & 4.09 & 100.0000 & 2.41 & 15.0 & 3.29 \\
+\code{ff\_pss}        & 7.20 & 4.88 & 99.9999 & 2.38 & 2.6 & 0.60 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \Cref{fig:lock} and \cref{tab:cosim} show the result. The loop locks within
-\SI{6.72}{\micro s} at every corner, \code{LOCK} never drops, and the VCO
-settles to within $2\times10^{-5}$ of \SI{100}{MHz}. The acquisition overshoots
-to about \SI{120}{MHz} at the fast corners, well inside what the TSPC and
-the /4 prescaler can follow. \code{ff\_pss}, with the lowest loop gain, is
-the slowest and least damped, as the model predicts; it settles with
-$v_\text{ctrl}$ at \SI{2.2}{V}, the highest of the four, because its VCO is
-the slowest. The static phase offset is \SIrange{0.87}{1.14}{ns} at the ff corners and
-\SI{2.3}{ns} at \code{ss\_m40c\_vm10}: the PFD's reset pulse plus pump
-mismatch. Timing the digital half by process alone, as a first run did,
-gave \code{ff\_125c\_vp10} \SI{3.5}{mV} and \code{ss\_m40c\_vm10}
-\SI{15.9}{mV} of ripple, so the ripple depends on the digital delays and
-these figures should not be read more finely than that.
+\SI{7.2}{\micro s} at every corner, \code{LOCK} never drops after it rises,
+and the VCO settles to within about $2\times10^{-5}$ of \SI{100}{MHz}. After
+the divider step to \SI{150}{MHz} every corner re-locks within
+\SI{4.9}{\micro s}. \code{ff\_pss}, with the lowest pump current, is the
+slowest, as the model predicts; it settles with $v_\text{ctrl}$ at
+\SI{2.38}{V}, with \code{ss\_125c\_vp10} (lowest $K_\text{vco}$) the
+highest of the six. The static phase offset is \SIrange{0.60}{1.06}{ns}
+at the ff corners and \SIrange{2.37}{3.29}{ns} at the ss corners: the
+PFD's reset pulse plus pump mismatch. On the previous cell revision, timing
+the digital half by process alone gave \code{ff\_125c\_vp10}
+\SI{3.5}{mV} and \code{ss\_m40c\_vm10} \SI{15.9}{mV} of ripple, so the
+ripple depends on the digital delays and these figures should not be read
+more finely than that.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{settle}
-\caption{Ripple on $v_\text{ctrl}$ over the last \SI{10}{\micro s},
-sampled every \SI{5}{ns}, with the RTL digital and with the gate-level
-digital. Ticks: the same signal sampled at reference edges only.}
+\caption{Ripple on $v_\text{ctrl}$ over the last \SI{10}{\micro s} before
+the divider step, sampled every \SI{5}{ns}, with the RTL digital and with
+the gate-level digital. Ticks: the gate-level run's signal sampled at
+reference edges only.}
 \label{fig:settle}
 \end{figure}
 
 \subsection{Why the gate-level digital matters}
 Running the same bench with the RTL in place of the gate-level netlist
-locks just as well, but leaves 27.0 and \SI{20.3}{mV} of peak-to-peak
-ripple on $v_\text{ctrl}$ at \code{ff\_pss} and \code{ff\_m40c\_vm10}
-(\cref{fig:settle}). The cause is the RTL PFD's zero-delay reset: it never
-turns both pumps on together, so whatever phase error remains, rounded to
-the synchronisation grid, is corrected by one pump firing alone, and that
-lone current through $R_1$ appears as a spike of
-$I_{cp}R_1 \approx \SI{0.5}{V}$ filtered by $C_2$. Sampled at reference
-edges, the RTL's $v_\text{ctrl}$ moves only 0.03--\SI{8}{mV}. The
-gate-level PFD has a real reset delay, so both pumps overlap briefly every
-cycle, the correction is a small difference of two currents, and the
-ripple falls to 2.4--\SI{13.5}{mV}. The lesson is that a zero-delay PFD is fine for checking
-lock but misleading for ripple and spurs, which depend on the reset
-pulse.
+locks just as well, but leaves 9.7--\SI{23.1}{mV} of peak-to-peak ripple
+on $v_\text{ctrl}$ (\cref{fig:settle}); at \code{ff\_pss} the
+\SI{23.1}{mV} misses the \SI{20}{mV} bound, so the RTL run is recorded as
+failing. The cause is the RTL PFD's zero-delay reset: it never turns both
+pumps on together, so whatever phase error remains, rounded to the
+synchronisation grid, is corrected by one pump firing alone, and that lone
+current through $R_1$ appears as a spike filtered by $C_2$. Sampled at
+reference edges, the RTL's $v_\text{ctrl}$ moves only 0.01--\SI{9.5}{mV}.
+The gate-level PFD has a real reset delay, so both pumps overlap briefly
+every cycle, the correction is a small difference of two currents, and the
+ripple falls to 2.6--\SI{15.0}{mV}. The lesson is that a zero-delay PFD is
+fine for checking lock but misleading for ripple and spurs, which depend on
+the reset pulse.
 
 \subsection{With the control-pad load}
 $v_\text{ctrl}$ reaches pad \code{ua[0]}, so the pad's capacitance is on the
 loop in any real package, probe or no probe. The runs above leave it out.
-Repeating them with \SI{5}{pF} from $v_\text{ctrl}$ to ground inside the
-extracted cell, at the four corners and \code{tt\_27c}, all five lock within
-\SI{7.5}{\micro s} (\SI{0.2}{}--\SI{1.0}{\micro s} later than without), hold,
-and meet every bound; the pad filters the pump's spikes, leaving
-0.8--\SI{4.5}{mV} of ripple (\cref{fig:pad}). The cost is margin:
-small-signal phase margin on the extracted cell with the same pad falls to
-\SI{23.9}{\degree} at \code{ff\_125c\_vp10}, and 9 of the 31 corners are
-below the \SI{30}{\degree} floor the no-pad loop is held to. The time-domain
-runs show this loop stable, not that this margin is comfortable, and
+With \SI{5}{pF} from $v_\text{ctrl}$ to ground inside the extracted final
+cell, at the six bounding corners with gate-level digital and SDF, all six
+locked within \SI{7.7}{\micro s} (0--\SI{1.1}{\micro s} later than without the
+pad), held, and met every bound; the pad filters the pump's spikes, leaving
+0.98--\SI{4.5}{mV} of ripple against 2.6--\SI{15.0}{mV} without it
+(\cref{fig:pad}). The cost is margin: small-signal phase margin on the
+extracted cell with the same pad falls to \SI{27.8}{\degree} at
+\code{ff\_125c\_vp10}, and 6 of the 31 corners (all \code{ff}, 27.8--\SI{29.7}{\degree})
+are below the \SI{30}{\degree} floor the no-pad loop is held to. On the
+previous cell revision the same check gave \SI{23.9}{\degree} and 9 corners
+below. The time-domain runs show this loop stable, not that this margin is
+comfortable, and
 \SI{5}{pF} is the specification's allowance rather than a measured pad.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{pad}
-\caption{With \SI{5}{pF} on $v_\text{ctrl}$ (extracted analog, gate-level
-digital): (a) acquisition, (b) ripple with and without the pad.}
+\caption{With \SI{5}{pF} on $v_\text{ctrl}$ (final cell, extracted analog,
+gate-level digital with SDF): (a) acquisition with the pad, (b) ripple and
+lock time with and without it.}
 \label{fig:pad}
 \end{figure}
 
 \subsection{Other divider settings and re-lock}
-A second bench changes $N$ while the loop runs, at $f_\text{ref}=\SI{5}{MHz}$:
-$N=1\to3\to2$ (\SI{40}{}, \SI{120}{}, \SI{80}{MHz}), \SI{20}{\micro s} each,
-at the four corners and \code{tt\_27c} (\cref{fig:cov}a). Four corners lock
-at every setting to within \num{1e-4}, re-locking within
-\SI{5.2}{\micro s}. \code{ff\_pss} does not: \SI{120}{MHz} is close to its
-\SI{125.6}{MHz} ceiling, where $K_\text{vco}$ collapses, so the step drives
-$v_\text{ctrl}$ to \SI{3.5}{V}, above the \SI{3.3}{V} supply, before it comes
-back. \code{LOCK} pulses for \SI{1.6}{\micro s} on the way down, then rises
-for good \SI{15}{\micro s} after the step, and the last \SI{4}{\micro s} of
-the segment still moves \SI{229}{mV}. Given longer it settles: to
-\SI{20}{mV} about \SI{25}{\micro s} after the step (\cref{fig:cov}b), and the
-same holds with the pad and when acquiring \SI{120}{MHz} directly from enable.
-So \code{LOCK} near a corner's ceiling does not by itself mean the frequency
-has settled.
+A second bench changes $N$ while the loop runs, at
+$f_\text{ref}=\SI{6.25}{MHz}$: $N=2\to3\to2$ (\SI{100}{}, \SI{150}{},
+\SI{100}{MHz}), \SI{20}{\micro s} each, extracted analog with gate-level
+digital and SDF and no pad, at \code{ff\_pss}, \code{tt\_27c},
+\code{ff\_125c\_vp10}, \code{ff\_m40c\_vm10} and \code{ss\_m40c\_vm10}
+(\cref{fig:cov}). All five pass: every segment locks or re-locks within
+\SI{7.2}{\micro s} (\SIrange{3.1}{4.9}{\micro s} for the steps), and the
+frequency ends within about $10^{-4}$ of target (worst
+\SI{149.9887}{MHz} at \code{ff\_m40c\_vm10}). \code{ff\_pss} reaches
+\SI{150}{MHz} with $v_\text{ctrl}$ at \SI{3.09}{V}, well below its
+\SI{168}{MHz} ceiling. Segment ripple is 2.5--\SI{20.2}{mV}; these segments
+are not held to the \SI{100}{MHz} point's \SI{20}{mV} bound, and at
+\SI{150}{MHz} one slightly exceeds it (\SI{20.2}{mV} at
+\code{ff\_m40c\_vm10}); \code{tt\_27c} reads \SI{20.0}{mV} at
+\SI{150}{MHz} and \SI{20.1}{mV} on the return to \SI{100}{MHz}.
 
-These segments are not held to the \SI{100}{MHz} point's \SI{20}{mV} ripple
-bound, and some would miss it: up to \SI{24.8}{mV} at \code{tt\_27c} in the
-\SI{4}{\micro s} window. With the pad at \code{ff\_125c\_vp10} the same
-steps pass, and the top of the reference range ($\SI{12.5}{MHz}\times8$,
-\code{tt\_27c}) locks in \SI{3.8}{\micro s}. The largest $PN$ in reach at the lowest-margin corner, $N=4$ (\SI{160}{MHz},
-\SI{169}{MHz} ceiling) with the pad, overshoots to \SI{3.3}{V} and rings: not
-settled in \SI{30}{\micro s} by the \num{1e-3} frequency bound, but within
-\SI{20}{mV} by \SI{27}{\micro s} and \SI{3}{mV} p-p, $10^{-5}$ off, by the end of an
-\SI{80}{\micro s} run.
+On the previous cell revision, whose \code{ff\_pss} ceiling was only
+\SI{125.6}{MHz}, a step to \SI{120}{MHz} at $f_\text{ref}=\SI{5}{MHz}$
+took about \SI{25}{\micro s} to settle at that corner, and $N=4$
+(\SI{160}{MHz}) at the lowest-margin corner with the pad rang for tens of
+microseconds before settling. The resize was made to remove that limit,
+and on the final cell it has. At $f_\text{ref}=\SI{5}{MHz}$, $N=1\to3$ at
+\code{ff\_pss} relocks \SI{6.7}{\micro s} after the step and holds to
+\SI{70}{\micro s} with $v_\text{ctrl}$ at \SI{2.68}{V}; acquired directly at
+\SI{120}{MHz} it locks in \SI{8.6}{\micro s}. Both read about
+\SI{21}{mV} of ripple at \SI{120}{MHz}, a segment not held to the
+\SI{20}{mV} bound. The same $N=1\to3\to2$ bench (40, 120, \SI{80}{MHz}) passes at all seven of
+its corners, relocking at \SI{120}{MHz} within \SIrange{4.5}{6.7}{\micro s}
+and at \SI{80}{MHz} within \SI{5.1}{\micro s}; its ripple, which this bench
+does not bound, reaches 8.0--\SI{23.5}{mV} at \SI{120}{MHz} (above
+\SI{20}{mV} at \code{ff\_125c\_vp10} and \code{tt\_27c}). With the pad at \code{ff\_125c\_vp10},
+$N=1\to3\to2$ relocks within \SI{5.3}{\micro s} and $N=4$ (\SI{160}{MHz})
+locks in \SI{7.2}{\micro s} with \SI{4.1}{mV} of ripple and no ringing.
+With the pad at \code{ff\_pss}, the \SI{120}{MHz} step relocks in
+\SI{7.9}{\micro s} with \SI{4.9}{mV} of ripple. Without the pad, $N=4$ (\SI{160}{MHz}, acquired from reset at a
+\SI{5}{MHz} reference) locks at all seven corners in
+\SIrange{5.2}{10.2}{\micro s} and never drops lock; the slowest is
+\code{ff\_pss}, with $v_\text{ctrl}$ at \SI{3.22}{V}. Its ripple over the
+last \SI{4}{\micro s} is 7.2--\SI{22.5}{mV}, above \SI{20}{mV} only at
+\code{ff\_125c\_vp10}. $N=5$ at the same reference asks for \SI{200}{MHz}, above the guaranteed
+range, and locks at three of the seven corners: \code{ff\_m40c\_vm10}
+(\SI{5.6}{\micro s}), \code{ff\_125c\_vp10} (\SI{5.8}{\micro s}) and
+\code{tt\_27c} (\SI{7.2}{\micro s}), with 3.0--\SI{20.9}{mV} of ripple. At
+the other four $v_\text{ctrl}$ ends within \SI{25}{mV} of $V_{DD}$. The VCO
+stops at \SI{182.1}{MHz} at \code{ss\_125c\_vm10}, \SI{183.8}{MHz} at
+\code{ss\_125c\_vp10} and \SI{188.9}{MHz} at \code{ff\_pss}.
+\code{ss\_m40c\_vm10} reaches \SI{198.7}{MHz}, raises \code{LOCK} at
+\SI{18.8}{\micro s} and drops it again. The specification's lock table has three
+\SI{200}{MHz} points ($N=5$ at \SI{5}{MHz}, $N=4$ at \SI{6.25}{MHz}, $N=2$ at
+\SI{12.5}{MHz}) are therefore at or beyond reach at the slow corners and
+\code{ff\_pss}; only the first was simulated.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{cov}
-\caption{Divider steps at $f_\text{ref}=\SI{5}{MHz}$: (a) $v_\text{ctrl}$
-at five corners (triangles: \code{LOCK} rises); (b) the \SI{120}{MHz} step at
-\code{ff\_pss} given \SI{50}{\micro s}, with and without the pad.}
+\caption{Divider steps $N=2\to3\to2$ (\SI{100}{}$\to$\SI{150}{}$\to$\SI{100}{MHz})
+at $f_\text{ref}=\SI{6.25}{MHz}$: $v_\text{ctrl}$ at five corners
+(triangles: \code{LOCK} rises).}
 \label{fig:cov}
 \end{figure}
 
@@ -559,46 +619,59 @@ at five corners (triangles: \code{LOCK} rises); (b) the \SI{120}{MHz} step at
 simulation''. It does not support ``silicon-proven'' or ``low-jitter''.
 
 \textbf{Lock range.} After layout the VCO covers about
-\SIrange{13}{125}{MHz} at every corner (\SIrange{7}{217}{MHz} at typical),
-so the datasheet promises only the guaranteed range; the slow-resistor
-corner sets the top.
+\SIrange{13}{165}{MHz} at every corner, between the highest bottom
+(\SI{12.9}{MHz}) and the lowest ceiling (\SI{165.5}{MHz} at the bench's top
+point, \code{ss\_125c\_vm10}); at typical it is about \SI{7}{MHz} to
+\SI{233}{MHz} at $v_\text{ctrl}=V_{DD}$. The datasheet promises only the
+guaranteed range; the slow, hot, low-supply corner now sets the top.
 
 \textbf{Jitter} is estimated, not measured. ngspice has no device transient
 noise, so noise sources sized from each device's model at its bias
-(white and $1/f$) are injected into the extracted cell, except the output
-buffer and divider. At the \SI{100}{MHz} point, over two or three seeds of 520
-periods, free-running period jitter is \SI{9.7}{ps} rms at \code{tt\_27c},
-\SI{10.2}{ps} at \code{ss\_125c\_vm10} and \SI{13.5}{ps} at
-\code{ff\_125c\_vm10}, the highest of the nine corners run (six of them
-in shorter screening runs; the other 22 were not run). A deterministic
-alternation of up to $\pm\SI{6.8}{ps}$ on the output is separate from these
-figures. They replace a first estimate of
-1.2--\SI{2.5}{ps}, which came from 30--36 periods at the top of the VCO's range
+(white and $1/f$) are injected into the extracted final cell, except the output
+buffer and divider. At the \SI{100}{MHz} point, over three seeds of 520
+periods, free-running period jitter is \SI{6.8}{ps} rms at \code{tt\_27c},
+\SI{7.3}{ps} at \code{ss\_125c\_vm10} and \SI{7.6}{ps} at
+\code{ff\_125c\_vm10} (statistical error about \SI{2}{\%}); the other 28
+corners were not run. A deterministic
+alternation of up to $\pm\SI{6.7}{ps}$ on the output is separate from these
+figures. On the previous cell revision (before the V-to-I resize) the same
+bench gave 9.7--\SI{13.5}{ps}, and a first estimate gave
+1.2--\SI{2.5}{ps} from 30--36 periods at the top of the VCO's range
 with less of the noise included. For the locked output we have only a linear
 model, not a simulation: from the simulated VCO phase noise and $R_1$'s thermal
-noise it gives 44--\SI{61}{ps} rms from \SI{10}{kHz} to \SI{50}{MHz} at those
-three corners, or 35--\SI{43}{ps} without the VCO's $1/f$ term, whose level is
+noise it gives 43--\SI{49}{ps} rms from \SI{10}{kHz} to \SI{50}{MHz} at those
+three corners, or 29--\SI{37}{ps} without the VCO's $1/f$ term, whose level is
 uncertain by a factor of 2--4 in power. It leaves out reference, PFD,
 charge-pump and supply noise, so it does not bound the jitter of a real chip.
 The STA's \SI{0.20}{ns} setup uncertainty was derived from the first estimate;
-it still covers $7\sigma$ of the worst figure across the two VCO periods of
-\code{vco\_div2} (about \SI{155}{ps}), but with far less room, and jitter at the
+it covers $7\sigma$ of the worst jitter across the two VCO periods of
+\code{vco\_div2} (\SI{12.4}{ps}, so about \SI{87}{ps}), but jitter at the
 faster clock the STA is constrained to was not simulated. Nothing here
 measures reference spurs or supply noise.
 
 \textbf{Device mismatch.} The specification had excluded Monte Carlo on the
 belief that the PDK models carry no per-instance mismatch. They do, for MOS
-devices. On the schematic, 200 samples per corner put the worst-case UP/DN
+devices. On the final cell,
+the analog Monte-Carlo gate (30 seeds on each of seven benches: pump,
+open-loop, overlap, prescaler, power, start-up and VCO; 210 runs) passes
+with every run inside its bounds. On the schematic, 200 samples per corner put the worst-case UP/DN
 pump mismatch over its \SI{10}{\%} bound in 26\,\% of samples at \code{ff\_pss}
-(95\,\% interval 20--33\,\%; worst \SI{14.6}{\%}) and 6\,\% at
-\code{ff\_m40c\_vp10}, and in none at \code{ss\_pff} or \code{tt\_27c}. The
+(95\,\% interval 20--33\,\%; mean \SI{8.7}{\%}, worst \SI{14.6}{\%}; the same count as on the previous cell) and 6\,\% at
+\code{ff\_m40c\_vp10}, and in none at \code{ss\_pff} or at \code{tt\_27c} (worst \SI{9.3}{\%}). The
 peak is at the edge of the $v_\text{ctrl}$ range. So the row in
 \cref{tab:summary} is the spread with statistics off. At \code{tt\_27c} the
 overlap charge (worst \SI{3.4}{fC}, bound \SI{10}{fC}) and bias start-up hold;
-the VCO frequency at mid-range is \SI{101.7}{MHz} with $\sigma=\SI{2.5}{MHz}$.
+the VCO frequency at mid-range is \SI{90.5}{MHz} with $\sigma=\SI{2.3}{MHz}$ (\SI{101.7}{MHz} on the previous cell, before the resize).
+At the cold slow corner \code{ss\_m40c\_vm10}, all 100 samples start up within
+\SI{0.95}{\micro s} (bound \SI{5}{\micro s}).
+With global process variation sampled as well (100 samples at
+\code{tt\_27c}), every bounded quantity stays inside its bound (pump
+mismatch worst \SI{9.1}{\%}, overlap charge \SI{3.2}{fC}, start-up
+\SI{0.80}{\micro s}), and the mid-range VCO frequency spreads to
+$\sigma=\SI{5.4}{MHz}$ (78.6--\SI{106.9}{MHz}).
 These are rates given a corner, not a product yield, and they leave out layout
 gradients, resistor mismatch (the models have none) and capacitor variation;
-Kvco and phase margin were not run. Closed-loop runs with one pump source widened by about $3\sigma$ (extracted cell
+Kvco and phase margin were not run. On the previous cell, closed-loop runs with one pump source widened by about $3\sigma$ (extracted cell
 and gate-level digital at \SI{100}{MHz}; UP \SI{+6}{\%} reads \SI{14.2}{\%} on the
 same DC sweep at \code{ff\_pss}, UP \SI{+5}{\%} reads \SI{12.1}{\%} at
 \code{ff\_m40c\_vp10}) all lock and hold. $v_\text{ctrl}$ ripple is \SIrange{1.0}{2.5}{mV}
@@ -606,19 +679,31 @@ at \code{ff\_pss} against \SI{2.4}{mV} unskewed, and \SIrange{3.3}{6.3}{mV} at
 \code{ff\_m40c\_vp10} against \SI{5.4}{mV}, inside the \SI{20}{mV} bound; the static phase
 offset stays between 0.44 and \SI{0.98}{ns}. So we keep the \SI{10}{\%} bound as written and do not
 resize the pump, since at this operating point a pump over that bound does not hurt the loop.
-This is a widened device, not a drawn sample, at one divider setting; a pump skew during
-an N step and at the pad-loaded corners was not run.
+On the final cell we repeated the skews through the $N=2\to3\to2$ step
+(100, 150, \SI{100}{MHz} at a \SI{6.25}{MHz} reference): all five cases (UP
+and DN at both corners, and \code{ff\_m40c\_vp10} unskewed) lock within
+\SI{7.2}{\micro s}, relock within \SI{4.9}{\micro s} of each step and hold to
+the end. At \SI{150}{MHz} the UP skew raises ripple from \SI{10.9}{mV}
+(unskewed, \code{cosim\_cov\_150}) to \SI{24.4}{mV} at \code{ff\_pss}, and from
+29.6 to \SI{33.0}{mV} at \code{ff\_m40c\_vp10}, where the unskewed loop is
+already over \SI{20}{mV} at that setting; the DN skews read 4.2 and
+\SI{10.4}{mV}, and at \SI{100}{MHz} every case stays within
+\SI{5.7}{mV}. These are widened devices, not drawn samples; a pump skew at
+the pad-loaded corners was not run.
 
-\textbf{Coverage of the closed-loop tests.} The extracted loop has been run
-at five corners, not 31, and at the settings above. The 31-corner sweep
-characterises analog behaviour; it does not demonstrate acquisition at every
-corner and setting. $N=5$ has not been run on the extracted netlist, and $N=4$ only at one corner.
+\textbf{Coverage of the closed-loop tests.} On the final cell the extracted
+loop has been run at the six bounding corners ($N=2$, then a step to
+$N=3$; and again with the \SI{5}{pF} pad), at five corners in the
+$N=2\to3\to2$ bench at \SI{6.25}{MHz}, and at those six plus \code{tt\_27c}
+for $N=1\to3\to2$, $N=4$ and $N=5$ at \SI{5}{MHz}, not at all 31. The
+31-corner sweep characterises analog behaviour; it does not demonstrate
+acquisition at every corner and setting.
 
 \textbf{Bench strength.} A mutation check of the analog benches (each
 device's width and length doubled or halved) flags mutants that move no
-measure beyond the run-to-run spread. After the TSPC change it found one
-new mutant just under the \SI{2}{\%} floor, and the TSPC's own 14 devices
-are not yet in the mutated set; both await the owner's ruling.
+measure beyond the run-to-run spread. It now passes: 255 of 295 mutants are
+killed and the other 40 are ruled to move their measures less than the
+spread. The TSPC's devices are declared and in the mutated set.
 
 \section{Conclusion}
 A complete charge-pump PLL---bias, pump, MOS-capacitor filter, ring VCO,
@@ -627,10 +712,13 @@ Tapeout tile and is DRC, LVS and precheck clean. Moving the first divide
 stage into the analog macro as a TSPC flop turned a timing closure measured
 in picoseconds into \SI{2.3}{ns} of margin. With parasitics extracted and
 the real gate-level digital in the loop, the PLL locks to \SI{100}{MHz} in
-under \SI{7}{\micro s} with at most \SI{14}{mV} of control ripple at every
-corner that bounds its range, and it stays stable with the control pad's
-load. It has not been fabricated; the phase margin with the pad, settling near
-the VCO's ceiling, jitter and pump mismatch are the risks to check first.
+at most \SI{7.2}{\micro s} with at most \SI{15}{mV} of control ripple at
+all six corners that bound its range, and re-locks to \SI{150}{MHz} after a
+divider step within \SI{4.9}{\micro s}. With the control pad's
+\SI{5}{pF} it still locks and holds at those corners, but its small-signal
+phase margin drops to \SI{27.8}{\degree}. It has not been fabricated; that
+margin, the pump mismatch at the fast corners and the jitter, which we have
+only simulated free-running, are the risks to check first.
 
 \section*{Reproducing this paper}
 \small All results are recorded in the repository with hashes of their
