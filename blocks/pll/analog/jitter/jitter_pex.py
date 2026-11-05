@@ -58,7 +58,8 @@ T_SETTLE = 300e-9
 
 # loop values: the paper's at the 100 MHz tt point; corner_loop replaces Icp, R1,
 # C1, C2 per corner and analyse takes Kvco from the search points.
-R1_SEGMENTS = ("X127", "X21", "X137", "X170")  # R1 in the extraction: vctrl .. vfilt
+R1_ENDS = ("vctrl", "vfilt")  # R1 in the extraction: the poly chain vctrl .. vfilt (r1_segments)
+R1_SEGMENTS_PRE_1105 = ("X127", "X21", "X137", "X170")  # R1 in records made before r1_segments was stored
 LOOP = {"icp_a": 18.8e-6, "r1_ohm": 27e3, "c1_f": 20.1e-12, "c2_f": 2.1e-12, "pn": 16,
         "f_ref_hz": 6.25e6}
 
@@ -94,6 +95,31 @@ def parse_devices(netlist: Path) -> tuple[list[dict], list[dict]]:
         out = [t for t in (m["d"], m["s"]) if base(t) in RING]
         m["ring_out"] = base(out[0]) if base(m["g"]) in RING and out else None
     return mos, res
+
+
+def r1_segments(res: list[dict]) -> list[str]:
+    """The poly-resistor instances on the one path vctrl .. vfilt (R1), traced
+    in the extraction so a re-layout that renames them can't go stale."""
+    adj = {}
+    for r in res:
+        a, b = base(r["a"]), base(r["b"])
+        adj.setdefault(a, []).append((r["name"], b))
+        adj.setdefault(b, []).append((r["name"], a))
+    start, end = R1_ENDS
+    prev, todo = {start: None}, [start]
+    while todo:
+        n = todo.pop(0)
+        for name, m in adj.get(n, []):
+            if m not in prev:
+                prev[m] = (name, n)
+                todo.append(m)
+    if end not in prev:
+        raise SystemExit(f"no poly-resistor path {start} .. {end} in the extraction")
+    seg, n = [], end
+    while prev[n]:
+        name, n = prev[n]
+        seg.append(name)
+    return seg[::-1]
 
 
 def header(subs: dict, netlist: Path) -> str:
@@ -326,11 +352,20 @@ def noisy(hdr, vc, vdd, nl, work, tag, tend, seed, timeout) -> dict:
     deck = (f"* noisy\n{hdr}{BENCH.replace('VCTRL', repr(vc))}{nl}.save v(xdut.vco_out) v(xdut.r5)\n"
             f".control\nset noaskquit\nset rndseed={seed}\nsetseed {seed}\n"
             f"tran {TSTEP} {tend} 0 {TSTEP}\nwrdata {wr} v(xdut.vco_out) v(xdut.r5)\n.endc\n.end\n")
+    # the crossings, keyed on the deck, so a later failure (analysis, save) doesn't cost the sim
+    cache = work / f"{tag}.crossings.json"
+    key = hashlib.sha256(f"{deck}{T_SETTLE}".encode()).hexdigest()
+    if cache.is_file():
+        c = json.loads(cache.read_text())
+        if c.get("deck_sha256") == key:
+            return {"vco_out": c["vco_out"], "r5": c["r5"]}
     ngspice(deck, work, tag, timeout)
     d = np.loadtxt(wr)
     wr.unlink(missing_ok=True)
-    return {"vco_out": crossings(d[:, 0], d[:, 1], vdd / 2, T_SETTLE),
-            "r5": crossings(d[:, 0], d[:, 3], vdd / 2, T_SETTLE)}
+    out = {"vco_out": crossings(d[:, 0], d[:, 1], vdd / 2, T_SETTLE),
+           "r5": crossings(d[:, 0], d[:, 3], vdd / 2, T_SETTLE)}
+    cache.write_text(json.dumps(dict(out, deck_sha256=key)))
+    return out
 
 
 def residual_periods(tr: list[float]):
@@ -439,10 +474,11 @@ def closed_loop(a2: float, b3: float, f0: float, kvco: float, temp_k: float, loo
 
 def corner_loop(cn: str, d: dict) -> dict:
     """The loop at this corner: Icp from reports/recorded/pex_pvt.json (mean of
-    up and down, extracted, code 00), R1 = the 4 extracted segments, C1, C2
+    up and down, extracted, code 00), R1 = the extracted segments vctrl .. vfilt, C1, C2
     at the corner's MOS-cap factor (1, 1.1 ss, 0.9 ff)."""
     m = json.loads((WS / "reports" / "recorded" / "pex_pvt.json").read_text())["facts"]["measured"][cn]
-    r1 = sum(d["noise_sources"]["resistors_ohm"][x] for x in R1_SEGMENTS)
+    seg = d["noise_sources"].get("r1_segments", R1_SEGMENTS_PRE_1105)
+    r1 = sum(d["noise_sources"]["resistors_ohm"][x] for x in seg)
     k = {"ss": 1.1, "ff": 0.9}.get(cn[:2], 1.0)
     return dict(LOOP, icp_a=(m["icp_up_code00_ua"] + m["icp_dn_code00_ua"]) / 2 * 1e-6, r1_ohm=r1,
                 c1_f=LOOP["c1_f"] * k, c2_f=LOOP["c2_f"] * k)
@@ -615,7 +651,8 @@ def main(argv=None) -> int:
             "noise_sources": {"mos": len(mos), "resistors": len(res), "nt_s": NT, "tstep_s": TSTEP,
                               "mos_noise": "BSIM4 drain-current noise of each instance at its bias "
                                            "(.noise of a copy): white + 1/f",
-                              "by_group": grp, "resistors_ohm": rval},
+                              "by_group": grp, "resistors_ohm": rval,
+                              "r1_segments": r1_segments(res)},
             "flicker_only": fl_doc,
             "floor_noiseless": floor, "floor_noiseless_vco_out": floor_out,
             "full": full, "full_vco_out": full_out, "white_only": white,

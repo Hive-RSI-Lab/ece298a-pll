@@ -340,13 +340,10 @@ def fig_sta():
 
 
 # ---------------------------------------------------------------- review follow-ups
-CORNERS5 = CORNERS4 + ["tt_27c"]
-
-
 def fig_pad():
     """The 5 pF ua[0] pad on vctrl: traces with the pad, and p-p/lock with and without."""
     fig, (a, b) = plt.subplots(2, 1, figsize=(W1, 3.9))
-    for c in CORNERS5:
+    for c in CORNERS6:
         m = ms("cosim_corners_gl_pad5pf", c)
         tr = np.array(m["vctrl_trace_us_v"])
         a.plot(tr[:, 0], tr[:, 1], color=CCOL[c], lw=1.0, label=c)
@@ -355,25 +352,25 @@ def fig_pad():
                    "v", color=CCOL[c], ms=5, mec="white")
     a.set_ylabel("vctrl (V)")
     a.set_xlabel("time (us)")
-    a.legend(loc="lower right", fontsize=6)
-    a.set_title("(a) 5 pF on vctrl (prev. cell); triangles: LOCK", loc="left")
-    x = np.arange(len(CORNERS4))
-    # the pad runs are on the previous cell revision; comparing them with today's no-pad runs
-    # would mix two cells, so only the pad runs are shown
-    for j, (kind, lab, col) in enumerate([("cosim_corners_gl_pad5pf", "5 pF pad (prev. cell)", S[0])]):
-        v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS4]
-        lt = [ms(kind, c)["lock_time_us"] for c in CORNERS4]
-        b.bar(x, v, 0.5, color=col, label=lab)
-        for xi, vi, li in zip(x, v, lt):
-            b.text(xi, vi + 0.6, f"{vi:.1f}\n{li:.1f}us", ha="center", fontsize=5,
+    a.legend(loc="lower right", fontsize=5, ncol=2)
+    a.set_title("(a) 5 pF on vctrl; triangles: LOCK", loc="left")
+    x = np.arange(len(CORNERS6))
+    for j, (kind, lab, col) in enumerate([("cosim_corners_gl", "no pad", S[1]),
+                                          ("cosim_corners_gl_pad5pf", "5 pF pad", S[0])]):
+        v = [ms(kind, c)["vctrl_pp_last_10us_mv"] for c in CORNERS6]
+        lt = [ms(kind, c)["lock_time_us"] for c in CORNERS6]
+        xs = x + (j - 0.5) * 0.38
+        b.bar(xs, v, 0.36, color=col, label=lab)
+        for xi, vi, li in zip(xs, v, lt):
+            b.text(xi, vi + 0.6, f"{vi:.1f}\n{li:.1f}", ha="center", fontsize=4.5,
                    color=INK2)
     b.axhline(20, color=S[7], ls="--", lw=0.8)
     b.set_xticks(x)
-    b.set_xticklabels(CORNERS4, fontsize=6)
+    b.set_xticklabels([c.replace("_", "\n") for c in CORNERS6], fontsize=5.5)
     b.set_ylabel("vctrl p-p, last 10 us (mV)")
     b.set_ylim(0, 30)
     b.legend(loc="upper right", fontsize=6, ncol=2)
-    b.set_title("(b) ripple (label: p-p and lock time)", loc="left")
+    b.set_title("(b) ripple (label: p-p mV, lock us)", loc="left")
     fig.tight_layout()
     save(fig, "pad")
 
