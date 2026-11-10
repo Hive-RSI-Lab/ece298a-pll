@@ -89,7 +89,7 @@ local slope).
   `calibrate_analog.py --corner`), but only the nominal point is gated.
   The corners are run on the extracted netlist by `cosim_corners.py` (below).
 - Debug knobs, which are not used by the gate: `PLL_COSIM_DURATION_NS`,
-  `PLL_COSIM_ANALOG_VCD=<file>` with `PLL_COSIM_DEBUG_NODES=x1.xpll.vref,...`.
+  `PLL_COSIM_ANALOG_VCD=<file>` with `PLL_COSIM_DEBUG_NODES=x1.xpll.xcell.vref,...`.
 
 ## The loop on the extracted netlist at the corners that bound its range (2026-10-30)
 

@@ -3,7 +3,7 @@
  "gate": "macro_lib",
  "phase": "P3",
  "tool": "macro_lib",
- "input_digest": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+ "input_digest": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -30,35 +30,35 @@
     "input_cap_pf": {
      "cp_trim0": {
       "capacitance": 0.012933151515151516,
-      "rise_capacitance": 0.012267363636363635,
+      "rise_capacitance": 0.01226739393939394,
       "fall_capacitance": 0.012933151515151516
      },
      "cp_trim1": {
       "capacitance": 0.013874696969696971,
       "rise_capacitance": 0.013874696969696971,
-      "fall_capacitance": 0.013794606060606061
+      "fall_capacitance": 0.013794545454545455
      },
      "pfd_dn": {
-      "capacitance": 0.02946024242424243,
-      "rise_capacitance": 0.029439060606060607,
-      "fall_capacitance": 0.02946024242424243
+      "capacitance": 0.029460272727272727,
+      "rise_capacitance": 0.029438727272727273,
+      "fall_capacitance": 0.029460272727272727
      },
      "pfd_up": {
-      "capacitance": 0.03382484848484849,
+      "capacitance": 0.03381515151515151,
       "rise_capacitance": 0.033746060606060606,
-      "fall_capacitance": 0.03382484848484849
+      "fall_capacitance": 0.03381515151515151
      },
      "pll_en": {
-      "capacitance": 0.059892727272727285,
-      "rise_capacitance": 0.05830575757575757,
-      "fall_capacitance": 0.059892727272727285
+      "capacitance": 0.05992060606060606,
+      "rise_capacitance": 0.0583460606060606,
+      "fall_capacitance": 0.05992060606060606
      }
     },
     "running_mhz_by_load": {
      "vco_div2": [
-      129.2,
-      129.15,
-      128.95
+      129.23,
+      129.18,
+      128.98
      ]
     }
    },
@@ -67,36 +67,36 @@
     "vdd": 3.0,
     "input_cap_pf": {
      "cp_trim0": {
-      "capacitance": 0.013081700000000002,
-      "rise_capacitance": 0.0124854,
-      "fall_capacitance": 0.013081700000000002
+      "capacitance": 0.013082,
+      "rise_capacitance": 0.012483433333333334,
+      "fall_capacitance": 0.013082
      },
      "cp_trim1": {
-      "capacitance": 0.013842533333333332,
-      "rise_capacitance": 0.013842533333333332,
-      "fall_capacitance": 0.013759833333333332
+      "capacitance": 0.013840266666666665,
+      "rise_capacitance": 0.013840266666666665,
+      "fall_capacitance": 0.013759033333333334
      },
      "pfd_dn": {
-      "capacitance": 0.029795433333333333,
-      "rise_capacitance": 0.029775066666666666,
-      "fall_capacitance": 0.029795433333333333
+      "capacitance": 0.02978503333333333,
+      "rise_capacitance": 0.029773233333333333,
+      "fall_capacitance": 0.02978503333333333
      },
      "pfd_up": {
-      "capacitance": 0.03358166666666667,
-      "rise_capacitance": 0.03351966666666667,
-      "fall_capacitance": 0.03358166666666667
+      "capacitance": 0.033569666666666664,
+      "rise_capacitance": 0.033524,
+      "fall_capacitance": 0.033569666666666664
      },
      "pll_en": {
-      "capacitance": 0.061400333333333335,
-      "rise_capacitance": 0.059957,
-      "fall_capacitance": 0.061400333333333335
+      "capacitance": 0.061448,
+      "rise_capacitance": 0.060005666666666665,
+      "fall_capacitance": 0.061448
      }
     },
     "running_mhz_by_load": {
      "vco_div2": [
-      99.36,
-      99.34,
-      99.22
+      99.31,
+      99.29,
+      99.15
      ]
     }
    },
@@ -105,14 +105,14 @@
     "vdd": 3.6,
     "input_cap_pf": {
      "cp_trim0": {
-      "capacitance": 0.012801444444444443,
-      "rise_capacitance": 0.012075361111111111,
-      "fall_capacitance": 0.012801444444444443
+      "capacitance": 0.012801472222222223,
+      "rise_capacitance": 0.012075388888888887,
+      "fall_capacitance": 0.012801472222222223
      },
      "cp_trim1": {
-      "capacitance": 0.013907055555555556,
-      "rise_capacitance": 0.013907055555555556,
-      "fall_capacitance": 0.013835749999999999
+      "capacitance": 0.013907083333333332,
+      "rise_capacitance": 0.013907083333333332,
+      "fall_capacitance": 0.013835583333333333
      },
      "pfd_dn": {
       "capacitance": 0.02916,
@@ -125,16 +125,16 @@
       "fall_capacitance": 0.033971388888888884
      },
      "pll_en": {
-      "capacitance": 0.058097777777777776,
-      "rise_capacitance": 0.05668583333333334,
-      "fall_capacitance": 0.058097777777777776
+      "capacitance": 0.058020555555555554,
+      "rise_capacitance": 0.0566575,
+      "fall_capacitance": 0.058020555555555554
      }
     },
     "running_mhz_by_load": {
      "vco_div2": [
-      156.01,
-      155.93,
-      155.52
+      156.05,
+      155.98,
+      155.57
      ]
     }
    }
@@ -175,7 +175,7 @@
   }
  },
  "inputs_at_start": {
-  "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+  "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
   "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
   "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
   "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
@@ -183,6 +183,7 @@
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
   "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
  },
- "recorded_ts": "2026-11-04T06:37:17",
- "attempts": 2
+ "strength_at_start": 1,
+ "recorded_ts": "2026-11-10T05:40:44",
+ "attempts": 3
 }

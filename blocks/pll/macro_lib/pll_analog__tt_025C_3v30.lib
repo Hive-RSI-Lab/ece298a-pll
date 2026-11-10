@@ -77,16 +77,16 @@ library(pll_analog__tt_025C_3v30) {
     }
     pin ("pfd_up") {
       direction : input;
-      capacitance : 0.033825;
+      capacitance : 0.033815;
       rise_capacitance : 0.033746;
-      fall_capacitance : 0.033825;
+      fall_capacitance : 0.033815;
       max_transition : 0.5;
     }
     pin ("pll_en") {
       direction : input;
-      capacitance : 0.059893;
-      rise_capacitance : 0.058306;
-      fall_capacitance : 0.059893;
+      capacitance : 0.059921;
+      rise_capacitance : 0.058346;
+      fall_capacitance : 0.059921;
       max_transition : 3;
     }
     pin ("vco_div2") {
@@ -98,7 +98,7 @@ library(pll_analog__tt_025C_3v30) {
         timing_type : combinational;
         rise_transition (macro_load) {
           index_1 ("0.005, 0.02236, 0.1");
-          values ("0.052, 0.09, 0.256");
+          values ("0.05, 0.088, 0.256");
         }
         fall_transition (macro_load) {
           index_1 ("0.005, 0.02236, 0.1");

@@ -27,7 +27,7 @@ Regenerate the figures after any result changes:
 | Post-layout benches on the extracted netlist | all 31 corners pass (decision 3 closed) | `blocks/pll/analog/reports/recorded/pex_pvt.json` |
 | Full tile (digital hardened around the analog macro) | **done**: top_harden, top_drc (magic 0, klayout 0), top_lvs (unique match) | `gds/tt_um_ihsan_sa_pll.gds`, `blocks/pll/reports/recorded/` |
 | Tiny Tapeout precheck | **passes**, both from chip-flow's gate and run on the committed `gds/`, `lef/`, `src/project.v` and `info.yaml` themselves | figure below |
-| Repository in Tiny Tapeout's analog-project shape | **done**: `src/` (real top + RTL), `test/` (RTL test, 4/4), 1x2 analog `info.yaml`, `custom_gds` gds workflow | `blocks/pll/tt/README.md` |
+| Repository in Tiny Tapeout's analog-project shape | **done**: `src/` (real top + RTL), `test/` (RTL test, 5/5), 1x2 analog `info.yaml`, `custom_gds` gds workflow | `blocks/pll/tt/README.md` |
 
 Nothing is ever submitted to Tiny Tapeout or the course for you. "Ready for
 submission" stops at: precheck passes on the committed GDS, and the repository
@@ -87,10 +87,11 @@ What fails, and why:
   fix (MN_ST L 2 -> 4 um) is in this layout, and the corner passes
   (Icp 17.5 uA, Kvco 80.1 MHz/V).
 
-One thing the figure shows that no bound catches: at ff_pss the VCO's ceiling
-is about 115 MHz after layout (158 MHz before). Every corner still reaches the
-100 MHz nominal point, but the lock range promised in `docs/info.md` (up to
-about 200 MHz) only holds at typical. Decision 4 covers it.
+One thing the figure shows that no bound catches: the VCO's range moves a lot
+with the corner. After layout, the lowest ceiling is 165 MHz (ss_125c_vm10)
+and the highest floor is 13 MHz (ss_pff), against 7 to 209 MHz at tt_27c.
+Every corner reaches the 100 MHz nominal point and the 150 MHz relock step,
+but the wider range only holds at typical. Decision 4 covers it.
 
 ## Decisions taken without you, waiting for your review
 
@@ -194,17 +195,26 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
    Kvco 54.2 MHz/V, phase margin 44.9 deg. The worst phase margin over all
    corners is 40.5 deg (ff_125c_vp10); the lowest Kvco is 53.8 MHz/V
    (ss_125c_vp10). No R_V2I change or re-layout is needed.
-4. **The datasheet's lock range.** `docs/info.md` will promise only what every
-   post-layout corner reaches: the VCO between about 12 and 114 MHz, so
+4. **The datasheet's lock range.** `docs/info.md` promises only what every
+   post-layout corner reaches: the VCO between about 13 and 165 MHz, so
    8 x N x f_ref between those, with 100 MHz as the nominal point. Typical
-   silicon goes further (7 to 205 MHz).
+   silicon goes further (7 to 209 MHz). Evidence: `vco_f_lo_mhz` and
+   `vco_f_hi_mhz` per corner in
+   `blocks/pll/analog/reports/recorded/pex_pvt.json`. Before decision 8 the
+   every-corner ceiling was 114 MHz (ff_pss).
 5. **The tile is 1x2, not 1x1.** Tiny Tapeout's GF180 analog tiles start at
    1x2.
-6. **PFD_UP and PFD_DN leave the debug pins in the full tile.** In the
-   standalone digital harden, `uo[3]` and `uo[4]` show the PFD's UP and DN
-   pulses. In the tile, chip-flow wires each crossing signal to the analog
-   macro only, so `uo[3:7]` read 0. Keeping UP/DN visible needs a chip-flow
-   change (a crossing signal that also goes to a pad). Say if you want it.
+6. **PFD_UP and PFD_DN on `uo[3]` and `uo[4]` in the full tile (done,
+   2026-11-10).** The standalone digital harden always had them there, but
+   chip-flow used to wire each crossing signal to the analog macro only, so
+   in the tile `uo[3:7]` read 0. chip-flow now lets a digital output that
+   crosses to the macro keep its pad too (`pad: true` in
+   `blocks/pll/interface.yaml`), and the tile is re-hardened with UP on
+   `uo[3]` and DN on `uo[4]`; `uo[7:5]` still read 0. The lead decided this
+   for the shuttle revision because bring-up needs to see the PFD. Evidence:
+   `src/project.v` (the `uo_out` assign), the RTL test `test_pfd_pins` in
+   `test/test.py`, and the top gates in `blocks/pll/reports/recorded/`.
+   Undoing it is one line in `interface.yaml` and a re-harden.
 
 7. **A TSPC divide-by-2 inside the analog macro (a change to the netlist you
    signed off at H1; 2026-10-31, issue #48).** Digital issue 8 (decision 2)
@@ -230,6 +240,28 @@ about 200 MHz) only holds at typical. Decision 4 covers it.
      ss. The ss waiver is gone.
    - Cost of undoing it: revert block 8, the layout columns and the
      digital prescaler, and go back to decision 2's waiver.
+
+8. **A larger V2I resistor and a wider, shorter clamp (a change to the
+   netlist you signed off at H1; 2026-11-04, commit e687a1c).** At ff_pss
+   the post-layout VCO topped out at 125.6 MHz, below the 150 MHz the loop
+   is stepped to (N 2 to 3 at a 6.25 MHz reference). R_V2I grew from 35 to
+   43 um long (`rv2i_l`) and the clamp from 40/2 um to 50/1 um (`w_cl`,
+   `l_cl`), which lifts the ff_pss ceiling to 168.2 MHz.
+   - Evidence: `blocks/pll/analog/netlist/pll_analog.cir` and
+     `gen_pll_analog.py` (the sizes); sim_tt, sim_pvt, drc, lvs,
+     bench_strength and release pass; `pex_pvt.json` passes all 31 corners;
+     the cosim relocks to 150 MHz at all six bounding corners
+     (`blocks/pll/tb/README.md`).
+   - Cost of undoing it: revert the three sizes and the layout, and the
+     150 MHz relock step fails at ff_pss again.
+
+9. **The PFD drivers and the top's buffer choice (2026-11-03 and 11-04,
+   commits 71e2e1a and e687a1c).** `pfd_up` and `pfd_dn` are driven by
+   kept `clkbuf_8` cells, and `blocks/pll/top.override.json` keeps the
+   harden from using weak buffer and delay cells, so the resizer, which
+   sizes at typical only, can't put an undersized repeater on the line to
+   the macro. Evidence: the top gates in `blocks/pll/reports/recorded/`.
+   Undoing it is a revert and a re-harden.
 
 ## What is left
 

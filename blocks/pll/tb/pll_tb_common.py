@@ -11,7 +11,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent          # blocks/pll/tb
 WS = HERE.parent                                # blocks/pll
-ANALOG = WS / "analog"
+# The cosim gate's pad condition runs a copy of tb/ at <ws>/log/cosim_pad/tb
+# (its reports land beside that copy); the block's own inputs stay in <ws>.
+SRC_WS = WS.parent.parent if WS.parent.name == "log" and not (WS / "analog").is_dir() \
+    else WS
+ANALOG = SRC_WS / "analog"
 NETLIST = ANALOG / "netlist" / "pll_analog.cir"
 SIZING = ANALOG / "sizing" / "sizing.yaml"
 CAL_JSON = HERE / "pll_analog_cal.json"
@@ -104,3 +108,15 @@ def load_cal() -> dict:
 
 def bench_meta() -> dict:
     return json.loads(BENCH_JSON.read_text(encoding="utf-8"))
+
+
+def cosim_sources(build_dir: Path) -> list[Path]:
+    """The cosim gate's own sources: tb/'s Verilog plus the tile's frame
+    (ttlib.write_sim_frame on check_cosim.frame_spec, written under
+    build_dir/frame), which pll_cosim_top.v instantiates as
+    tt_frame_ihsan_sa_pll. Needs chip-flow's engine on sys.path."""
+    import check_cosim  # noqa: E402
+    import ttlib  # noqa: E402
+    sources = check_cosim.collect_sources(HERE)
+    framed = ttlib.write_sim_frame(check_cosim.frame_spec(SRC_WS), Path(build_dir) / "frame")
+    return sources + (framed[0] if framed else [])

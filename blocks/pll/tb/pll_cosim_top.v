@@ -1,7 +1,11 @@
 `timescale 1ns/1ps
 // pll_cosim_top - top of the msde cosim bench for the charge-pump PLL.
 // The digital side is the released RTL itself (tb/*.v symlinks into
-// ../digital/rtl, compiled by Icarus as-is, SIM path: zero-delay PFD reset).
+// ../digital/rtl, compiled by Icarus as-is, SIM path: zero-delay PFD reset),
+// run through the tile's frame as it ships: tt_frame_ihsan_sa_pll, the
+// generated TT wrapper with its pad reset synchroniser in front of rst_n
+// (ttlib.write_sim_frame, built by the cosim gate; same ports as
+// ihsan_sa_pll).
 // The analog side is a SPICE subcircuit run by ngspice through
 // cocotbext-ams's MixedSignalBridge (test_pll_cosim.py). The crossing nets
 // carry their interface.yaml names at this top level, so the bridge binds
@@ -27,7 +31,7 @@ module pll_cosim_top (
     output wire       lock,
     output wire       obs_out
 );
-  ihsan_sa_pll u_dig (
+  tt_frame_ihsan_sa_pll u_dig (
       .clk(clk), .rst_n(rst_n), .n_sel(n_sel), .vco_div2(vco_div2),
       .pll_en_in(pll_en_in), .obs_sel(obs_sel), .cp_trim_in(cp_trim_in),
       .obs_out(obs_out), .clk_fb(clk_fb), .lock(lock),
