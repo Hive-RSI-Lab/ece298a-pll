@@ -17,8 +17,9 @@ matches the sources. This check catches that without any EDA tool:
    text_eol for a file); the PDK and generated inputs only with CHIP_FLOW_HOME;
 3. top_drc, top_lvs and precheck ran after that top_harden, so they judged what
    it built, and their own other inputs hash as they did;
-4. gds/<top>.gds hashes as the GDS those three judged (top_gds), so the GDS
-   Tiny Tapeout takes is the checked one.
+4. gds/<top>.gds hashes as the GDS those three judged (top_gds), and
+   lef/<top>.lef as the LEF precheck judged (top_lef), so the GDS and LEF
+   Tiny Tapeout takes are the checked ones.
 
 It needs only python3 and PyYAML, as the rest of tests/check.sh does, so CI runs it.
 When CHIP_FLOW_HOME points at chip-flow, it also compares its hashes with
@@ -104,6 +105,8 @@ def main() -> int:
     harden_ts = ""
     gds_hash = dir_text([(f"{TOP}.gds", ROOT / "gds" / f"{TOP}.gds")]) \
         if (ROOT / "gds" / f"{TOP}.gds").is_file() else None
+    lef_hash = dir_text([(f"{TOP}.lef", ROOT / "lef" / f"{TOP}.lef")]) \
+        if (ROOT / "lef" / f"{TOP}.lef").is_file() else None
     for g in GATES:
         last = (gates.get(g) or {}).get("last") or {}
         try:
@@ -123,6 +126,11 @@ def main() -> int:
             if kind == "top_gds":
                 if want != gds_hash:
                     bad.append(f"{g}: gds/{TOP}.gds is not the GDS it checked "
+                               "(run blocks/pll/tt/assemble.py after the harden)")
+                continue
+            if kind == "top_lef":
+                if want != lef_hash:
+                    bad.append(f"{g}: lef/{TOP}.lef is not the LEF it checked "
                                "(run blocks/pll/tt/assemble.py after the harden)")
                 continue
             if kind in TOOL_ONLY:

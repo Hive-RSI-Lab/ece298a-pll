@@ -1,8 +1,8 @@
-set circuit1 [readnet spice /home/hive2/projects/ece298a-pll/blocks/pll/log/top_lvs/tt_um_ihsan_sa_pll.extracted.spice]
+set circuit1 [readnet spice /home/hive2/.cache/h2-tmp/wtpll/blocks/pll/log/top_lvs/tt_um_ihsan_sa_pll.extracted.spice]
 set circuit2 [readnet verilog /dev/null]
 readnet spice /home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice $circuit2
 readnet spice /home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_fd_io.spice $circuit2
 readnet spice /home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_io/spice/gf180mcu_ef_io.spice $circuit2
-readnet spice /home/hive2/projects/ece298a-pll/blocks/pll/top/macros/pll_analog.spice $circuit2
-readnet verilog /home/hive2/projects/ece298a-pll/blocks/pll/top/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v $circuit2
-lvs "$circuit1 tt_um_ihsan_sa_pll" "$circuit2 tt_um_ihsan_sa_pll" /home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl /home/hive2/projects/ece298a-pll/blocks/pll/log/top_lvs/top_lvs.rpt -json
+readnet spice /home/hive2/.cache/h2-tmp/wtpll/blocks/pll/top/macros/pll_analog.spice $circuit2
+readnet verilog /home/hive2/.cache/h2-tmp/wtpll/blocks/pll/top/harden/runs/run/final/pnl/tt_um_ihsan_sa_pll.pnl.v $circuit2
+lvs "$circuit1 tt_um_ihsan_sa_pll" "$circuit2 tt_um_ihsan_sa_pll" /home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl /home/hive2/.cache/h2-tmp/wtpll/blocks/pll/log/top_lvs/top_lvs.rpt -json

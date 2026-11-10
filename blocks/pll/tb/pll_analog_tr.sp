@@ -17,8 +17,17 @@
 * benches never see this because each solves its DC point with pll_en
 * already high. A pad node is never zero capacitance; the bare-node case is
 * reported to the analog side as a finding, not hidden here.
+* pll_analog_ua is the cell with its two ua pins, vctrl (ua[0]) and bias_ref
+* (ua[1]), as ports: cosim's pad run (interface.yaml ua_pins) wraps it in
+* TT's ua pad model (engine/lib/padlib.py), which needs the pins on a port,
+* and the cocotbext-ams wrapper below can carry only the bridged digital
+* pins and the supplies. In the pad run the 5 pF on bias_ref sits outside
+* the pad model, on the pin.
+.subckt pll_analog_ua vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
+xcell vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.ends pll_analog_ua
 .subckt pll_analog_cosim pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vco_div2 vdd vss
-xpll vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+xpll vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog_ua
 * the digital half's first flop CLK + route (the analog benches' 30 fF)
 cload vco_div2 vss 30f
 * ua[1] pad capacitance on bias_ref
