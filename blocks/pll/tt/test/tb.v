@@ -44,5 +44,7 @@ module tb ();
   wire obs_out = uo_out[0];
   wire clk_fb  = uo_out[1];
   wire lock    = uo_out[2];
+  wire pfd_up  = uo_out[3];
+  wire pfd_dn  = uo_out[4];
 
 endmodule

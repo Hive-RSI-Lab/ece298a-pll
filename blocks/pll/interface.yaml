@@ -18,12 +18,14 @@ signals:
     load: "prescaler first toggle flop clock (one async-reset flop CLK); VCO/2 from the macro's TSPC divider, full swing, ~50% duty, held at a fixed level while pll_en=0, up to 185 MHz (half the VCO's 370 MHz ceiling)"
   - name: pfd_up
     direction: d2a
+    pad: true
     level: cmos_3v3
     domain: clk_ref
     width: 1
     load: "charge pump UP switch input, active high sources Icp into the loop filter"
   - name: pfd_dn
     direction: d2a
+    pad: true
     level: cmos_3v3
     domain: clk_fb
     width: 1
