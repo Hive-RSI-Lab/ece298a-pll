@@ -155,6 +155,10 @@ DEV = {
     "MP_HP3": ("p", "p3", "pll_en", "vdd", 1.0, 0.28, 1),
     "MP_HP4": ("p", "p4", "pll_en", "vdd", 1.0, 0.28, 1),
     "MP_HP5": ("p", "p5", "pll_en", "vdd", 1.0, 0.28, 1),
+    # power-down ring park (r1..r5 = 1 0 1 0 1): r1 held high, n2/n4 low
+    "MP_HR1": ("p", "r1", "pll_en", "vdd", 0.5, 0.28, 1),
+    "MN_HN2": ("n", "n2", "en_b", "vss", 0.5, 0.28, 1),
+    "MN_HN4": ("n", "n4", "en_b", "vss", 0.5, 0.28, 1),
     "MN_CPREF": ("n", "vcp_n", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MN_CPREF2": ("n", "vcp_p", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MP_CPREF": ("p", "vcp_p", "vcp_p", "vdd", W_CPP, L_CPP, 2),
@@ -1235,7 +1239,19 @@ def ring_block(top, draw_fet, y0, x0, ntracks, used):
             # the stage's power-down hold on p_k sits beside it, on the
             # same p_k strap, gate on pll_en in the shared channel
             pcols.append((x, None, [f"MP_HP{k}"]))
-            x += dev_width(draw_fet, f"MP_HP{k}") + NEXT_X
+            # stages 2 and 4 also hold n_k at vss when off, in the empty
+            # n-row slot under the p hold, on the same n_k strap
+            if k in (2, 4):
+                ncols.append((x, None, [f"MN_HN{k}"]))
+                w_h = max(dev_width(draw_fet, f"MP_HP{k}"),
+                          dev_width(draw_fet, f"MN_HN{k}"))
+            else:
+                w_h = dev_width(draw_fet, f"MP_HP{k}")
+            x += w_h + NEXT_X
+            # stage 1's output r1 is the one held node of the ring
+            if k == 1:
+                pcols.append((x, None, ["MP_HR1"]))
+                x += dev_width(draw_fet, "MP_HR1") + NEXT_X
             prev_stage = True
         else:
             _t, ng, pg = col
@@ -1396,8 +1412,12 @@ def vcg_tracks(terms, iv):
     side = {n: 0.0 for n in iv}
     for n, _x, _y, sd in terms:
         side[n] += 1 if sd == "above" else -1
-    order, ready = [], sorted((n for n in iv if indeg[n] == 0),
-                              key=lambda n: (side[n], n))
+
+    # the enable nets are gate-only and span the channel: they go last,
+    # on the outer tracks, clear of the ring hops and the EM via arrays
+    def rank(n):
+        return (n in ("pll_en", "en_b"), side[n], n)
+    order, ready = [], sorted((n for n in iv if indeg[n] == 0), key=rank)
     while ready:
         n = ready.pop(0)
         order.append(n)
@@ -1405,7 +1425,7 @@ def vcg_tracks(terms, iv):
             indeg[b] -= 1
             if indeg[b] == 0:
                 ready.append(b)
-        ready.sort(key=lambda n: (side[n], n))
+        ready.sort(key=rank)
     if len(order) != len(iv):
         raise layoutlib.LayoutError(
             f"shared channel has a stub conflict cycle among "

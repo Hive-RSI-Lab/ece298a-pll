@@ -162,6 +162,15 @@ XMP_HP2 p2 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMP_HP3 p3 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMP_HP4 p4 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMP_HP5 p5 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+* power-down: park the ring at r1..r5 = 1 0 1 0 1 so every stage output has
+* a DC path to a rail. r1 is held high; n2 and n4 are held at vss, so stages
+* 2 and 4 pull r2 and r4 low, and stages 3 and 5 pull r3 and r5 high
+* through the p holds above. Stage 1 meets r1 only through floating n1, so
+* nothing fights. Holding only one break keeps the odd ring from running
+* unstarved while disabled. Smallest drawn size; they are off when enabled.
+XMP_HR1 r1 pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7
+XMN_HN2 n2 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
+XMN_HN4 n4 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
 
 * (6) 5-stage current-starved ring r1 -> r2 -> r3 -> r4 -> r5 -> r1
 XMP_S1 p1 vbp_vco vdd vdd pfet_03v3 w=w_sp l=l_s

@@ -15,11 +15,11 @@ C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs
 .include '{extracted}'
 .temp {temp_c}
 .option method=gear reltol=1e-3 itl4=40
-vdd_src vdd 0 pwl(0u 0 1u {vdd} 3.14u {vdd})
+vdd_src vdd 0 pwl(0u 0 1u {vdd} 3.3u {vdd})
 vss_src vss 0 0
 ben pll_en 0 v=v(vdd)
-vup pfd_up 0 pwl(0u 0 2u 0 2.0005u {vdd} 2.003u {vdd} 2.0035u 0 2.08u 0 2.0805u {vdd} 2.083u {vdd} 2.0835u 0 2.16u 0 2.1605u {vdd} 2.163u {vdd} 2.1635u 0 2.24u 0 2.2405u {vdd} 2.243u {vdd} 2.2435u 0 2.32u 0 2.3205u {vdd} 2.323u {vdd} 2.3235u 0 2.4u 0 2.4005u {vdd} 2.403u {vdd} 2.4035u 0 2.48u 0 2.4805u {vdd} 2.483u {vdd} 2.4835u 0 2.56u 0 2.5605u {vdd} 2.563u {vdd} 2.5635u 0 2.64u 0 2.6405u {vdd} 2.643u {vdd} 2.6435u 0 2.72u 0 2.7205u {vdd} 2.723u {vdd} 2.7235u 0 2.8u 0 2.8005u {vdd} 2.803u {vdd} 2.8035u 0 2.88u 0 2.8805u {vdd} 2.883u {vdd} 2.8835u 0 2.96u 0 2.9605u {vdd} 2.963u {vdd} 2.9635u 0 3.04u 0 3.0405u {vdd} 3.043u {vdd} 3.0435u 0)
-vdn pfd_dn 0 pwl(0u 0 2u 0 2.0005u {vdd} 2.003u {vdd} 2.0035u 0 2.08u 0 2.0805u {vdd} 2.083u {vdd} 2.0835u 0 2.16u 0 2.1605u {vdd} 2.163u {vdd} 2.1635u 0 2.24u 0 2.2405u {vdd} 2.243u {vdd} 2.2435u 0 2.32u 0 2.3205u {vdd} 2.323u {vdd} 2.3235u 0 2.4u 0 2.4005u {vdd} 2.403u {vdd} 2.4035u 0 2.48u 0 2.4805u {vdd} 2.483u {vdd} 2.4835u 0 2.56u 0 2.5605u {vdd} 2.563u {vdd} 2.5635u 0 2.64u 0 2.6405u {vdd} 2.643u {vdd} 2.6435u 0 2.72u 0 2.7205u {vdd} 2.723u {vdd} 2.7235u 0 2.8u 0 2.8005u {vdd} 2.803u {vdd} 2.8035u 0 2.88u 0 2.8805u {vdd} 2.883u {vdd} 2.8835u 0 2.96u 0 2.9605u {vdd} 2.963u {vdd} 2.9635u 0 3.04u 0 3.0405u {vdd} 3.043u {vdd} 3.0435u 0)
+vup pfd_up 0 pwl(0u 0 2u 0 2.0005u {vdd} 2.003u {vdd} 2.0035u 0 2.08u 0 2.0805u {vdd} 2.083u {vdd} 2.0835u 0 2.16u 0 2.1605u {vdd} 2.163u {vdd} 2.1635u 0 2.24u 0 2.2405u {vdd} 2.243u {vdd} 2.2435u 0 2.32u 0 2.3205u {vdd} 2.323u {vdd} 2.3235u 0 2.4u 0 2.4005u {vdd} 2.403u {vdd} 2.4035u 0 2.48u 0 2.4805u {vdd} 2.483u {vdd} 2.4835u 0 2.56u 0 2.5605u {vdd} 2.563u {vdd} 2.5635u 0 2.64u 0 2.6405u {vdd} 2.643u {vdd} 2.6435u 0 2.72u 0 2.7205u {vdd} 2.723u {vdd} 2.7235u 0 2.8u 0 2.8005u {vdd} 2.803u {vdd} 2.8035u 0 2.88u 0 2.8805u {vdd} 2.883u {vdd} 2.8835u 0 2.96u 0 2.9605u {vdd} 2.963u {vdd} 2.9635u 0 3.04u 0 3.0405u {vdd} 3.043u {vdd} 3.0435u 0 3.12u 0 3.1205u {vdd} 3.123u {vdd} 3.1235u 0 3.2u 0 3.2005u {vdd} 3.203u {vdd} 3.2035u 0)
+vdn pfd_dn 0 pwl(0u 0 2u 0 2.0005u {vdd} 2.003u {vdd} 2.0035u 0 2.08u 0 2.0805u {vdd} 2.083u {vdd} 2.0835u 0 2.16u 0 2.1605u {vdd} 2.163u {vdd} 2.1635u 0 2.24u 0 2.2405u {vdd} 2.243u {vdd} 2.2435u 0 2.32u 0 2.3205u {vdd} 2.323u {vdd} 2.3235u 0 2.4u 0 2.4005u {vdd} 2.403u {vdd} 2.4035u 0 2.48u 0 2.4805u {vdd} 2.483u {vdd} 2.4835u 0 2.56u 0 2.5605u {vdd} 2.563u {vdd} 2.5635u 0 2.64u 0 2.6405u {vdd} 2.643u {vdd} 2.6435u 0 2.72u 0 2.7205u {vdd} 2.723u {vdd} 2.7235u 0 2.8u 0 2.8005u {vdd} 2.803u {vdd} 2.8035u 0 2.88u 0 2.8805u {vdd} 2.883u {vdd} 2.8835u 0 2.96u 0 2.9605u {vdd} 2.963u {vdd} 2.9635u 0 3.04u 0 3.0405u {vdd} 3.043u {vdd} 3.0435u 0 3.12u 0 3.1205u {vdd} 3.123u {vdd} 3.1235u 0 3.2u 0 3.2005u {vdd} 3.203u {vdd} 3.2035u 0)
 vt0 cp_trim0 0 0
 vt1 cp_trim1 0 0
 cpadv vctrl 0 5p
@@ -27,5 +27,5 @@ cpadb bias_ref 0 5p
 cload2 vco_div2 0 30f
 bvc vctrl 0 v=v(vdd)
 xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
-.tran 100p 3.14u 0 100p
+.tran 100p 3.3u 0 100p
 .end
