@@ -335,16 +335,43 @@ SUP_NETS = ("vdd", "vss")
 # rms on vdd and vss) with 1.5x margin on the 125 C limits (0.67 mA/um
 # wire, 0.18 mA per via cut). The whole supply current runs only between
 # the pin and the trunk's lowest channel rail: that stretch is widened to
-# SUP_FOOT_W = 1.06*1.5/0.67 = 2.4 um, into free room beside it, so no
+# SUP_FOOT_W = 1.06*1.5/0.67 = 2.4 um (2.8 for the op, below), into free room beside it, so no
 # signal column moves. Above it the trunk carries at most 0.45 mA (2.0 um
 # keeps 3x). The busiest rail carries 0.63 mA: 1.6 um and 6 via3 cuts per
 # crossing. The pin foot carries all of it: 9 cuts, a 2.0 um tall pad.
+# The DC operating point is heavier than the running ring (every ring stage
+# sits at its trip point there, so the inverters pass crowbar current):
+# 1.72 mA up the foot and 1.29 mA along a channel's supply track at the
+# worst corner. The foot is 2.8 um (0.61 mA/um) and the track 2.0 um
+# (0.65 mA/um), both under 0.67 mA/um at that op.
 SUP_M4_W = 2.0    # supply metal4 trunk width
-SUP_FOOT_W = 2.4  # its pin-to-first-rail stretch (the whole supply current)
-SUP_M3_W = 1.6    # supply metal3 channel track width, grown DOWN from the
+SUP_FOOT_W = 2.8  # its pin-to-first-rail stretch (the whole supply current)
+SUP_M3_W = 2.0    # supply metal3 channel track width, grown DOWN from the
                   # track's usual top edge (rows carry no metal3 below it)
 SUP_FOOT_H = 2.0  # supply pin-foot pad height (via2/via3 arrays)
 CUT, CUT_SP, CUT_EN = 0.26, 0.26, 0.12   # via2/via3 cut, space, enclosure
+RAIL_STRAP_E = 1.6   # a ring rail's metal2 strap, grown past the rail
+RAIL_M1_E = 0.8      # its metal1, grown the same way: where the strap is
+                     # notched round another net's foot the metal1 alone
+                     # carries the ring current (0.78 mA at the operating
+                     # point, 1.5 x 0.47 mA rms: 1.4 um at 0.67 mA/um)
+# Ring signal nets whose wiring carries the ring's switching current
+# (worst corner ff_m40c_vp10, from the em_ir segment currents):
+#   nb      NAND output, 0.235 mA rms, 0.49 mA at the operating point
+#   vco_out output inverter, 0.315 mA rms
+#   ng      NAND series node, 0.241 mA rms, 0.49 mA at the operating point
+#   vco_div2 divider output, 0.163 mA rms
+# 1.5x the rms over 0.18 mA a cut is 2 to 3 cuts, so every pad via1 and
+# channel via2 of these nets grows to SIG_CUTS cuts where the metal has
+# room (sig_em_arrays); 1.5x the rms (and the operating point) over
+# 0.67 mA/um is 0.71-0.73 um, so their stubs are SIG_W wide.
+SIG_EM = ("nb", "vco_out", "ng", "vco_div2")
+SIG_WIDE = ("nb", "vco_out")
+SIG_CUTS = 3
+SIG_W = 0.76
+NG_STRAP_W = 0.8     # the ng strap (and its drops): 0.49 mA / 0.67 mA/um
+SIG_SPOTS = []       # (x, y, cut, lower, upper): filled while drawing
+SIG_STUBS = []       # (x, y0, y1) metal2 stubs to widen
 
 
 # ======================================================================
@@ -423,24 +450,365 @@ def widen_supply_feet(top, feet):
         via_array(top, xa, y0, xb, f1, "via2", M2, M3)
 
 
+def widen_supply_taps(top, taps):
+    """Give each supply stub onto its wide metal3 track a via2 array inside
+    the track: 2 x 3 cuts on a metal2 pad 1.02 um wide, centred on the stub
+    or slid towards either side, wherever it clears other nets' metal2
+    and metal3 by 0.3 um; else 3 cuts in a column on the stub itself.
+
+    em_ir charges an array with the whole current of every extraction node
+    within 1 um of it (magic does not say which cut a wire crosses), so a
+    tap on a rail carries the rail's current: up to 0.63 mA at the worst
+    corner, 3.5 cuts at 0.18 mA a cut, 5.3 with 1.5x margin."""
+    import klayout.db as kdb
+
+    dbu = top.kcl.dbu
+    regs = {m: kdb.Region(top.kdb_cell.begin_shapes_rec(top.kcl.layer(*m)))
+            .merged() for m in (M2, M3)}
+
+    def box(x0, y0, x1, y1):
+        return kdb.Box(*(int(round(v / dbu)) for v in (x0, y0, x1, y1)))
+
+    sp = int(round(0.3 / dbu))    # metal2/3 space is 0.28
+    pw = 2 * CUT_EN + 2 * CUT + CUT_SP          # 2 cuts across
+    for net, x, b0, b1 in taps:
+        y0, y1 = r5(b0 + 0.03), r5(b1 - 0.03)
+        own = {m: regs[m].interacting(kdb.Region(box(x - 0.01, y0, x + 0.01,
+                                                     y1))) for m in (M2, M3)}
+        # centred first, then sliding out to either side in 20 nm steps
+        # until the pad is flush with a side of the stub
+        steps = int(round((pw - TRK_W) / 2 / 0.02))
+        for xa in [r5(x - pw / 2 + s * k * 0.02) for k in range(steps + 1)
+                   for s in ((1, -1) if k else (1,))]:
+            pad = box(xa, y0, xa + pw, y1)
+            if all(not ((regs[m] - own[m]) & kdb.Region(pad.enlarged(sp)))
+                   .count() for m in (M2, M3)):
+                via_array(top, r5(xa), y0, r5(xa + pw), y1, "via2", M2, M3)
+                break
+        else:
+            pit = CUT + CUT_SP
+            yc = (y0 + y1) / 2
+            for k in (-1, 0, 1):
+                via(top, x, r5(yc + k * pit), "via2", M2, M3)
+
+
+def widen_supply_stacks(top, stacks):
+    """Draw each supply via stack (the ring's rail risers) as 12-cut
+    arrays (3 x 4, 4 x 3 or 2 x 6) on pads of every metal it joins, placed over the
+    0.4 um wire end at (x, y) wherever the pads clear other nets' metal by
+    0.3 um: the riser pair sits 0.8 um apart, so a pad grows to the free
+    side. A stack with no room raises: a single cut there would carry the
+    whole ring current (1.24 mA rms at the worst corner: 1.5x that over
+    0.18 mA a cut is 10.3 cuts)."""
+    import klayout.db as kdb
+
+    dbu = top.kcl.dbu
+    mets = (M1, M2, M3, M4)
+    regs = {m: kdb.Region(top.kdb_cell.begin_shapes_rec(top.kcl.layer(*m)))
+            .merged() for m in mets}
+
+    def box(x0, y0, x1, y1):
+        return kdb.Box(*(int(round(v / dbu)) for v in (x0, y0, x1, y1)))
+
+    sp = int(round(0.3 / dbu))
+    st = 0.02
+    for x, y, cuts in stacks:
+      for ncx, ncy in ((3, 4), (4, 3), (2, 6)):
+        pw = 2 * CUT_EN + ncx * CUT + (ncx - 1) * CUT_SP
+        ph = 2 * CUT_EN + ncy * CUT + (ncy - 1) * CUT_SP
+        xs = [r5(x0) for x0 in
+              (k * st for k in range(int(round((pw - TRK_W) / st)) + 1))]
+        ys = [r5(y0) for y0 in
+              (k * st for k in range(int(round((ph - TRK_W) / st)) + 1))]
+        ms = sorted({m for _c, lo, hi in cuts for m in (lo, hi)})
+        dot = kdb.Region(box(x - 0.01, y - 0.01, x + 0.01, y + 0.01))
+        own = {m: regs[m].interacting(dot) for m in ms}
+        # pad corner (xa, ya) with the wire end inside; try nearest-centred
+        cand = sorted(((x + TRK_W / 2 - pw + dx, y + TRK_W / 2 - ph + dy)
+                       for dx in xs for dy in ys),
+                      key=lambda c: (abs(c[0] + pw / 2 - x)
+                                     + abs(c[1] + ph / 2 - y)))
+        done = False
+        for xa, ya in cand:
+            pad = box(xa, ya, xa + pw, ya + ph)
+            if all(not ((regs[m] - own[m]) & kdb.Region(pad.enlarged(sp)))
+                   .count() for m in ms):
+                for cut, lo, hi in cuts:
+                    via_array(top, r5(xa), r5(ya), r5(xa + pw), r5(ya + ph),
+                              cut, lo, hi)
+                done = True
+                break
+        if done:
+            break
+      else:
+        raise layoutlib.LayoutError(
+            f"no room for a 12-cut supply array at ({x}, {y})")
+
+
+def strap_ring_rails(top, rails, feet):
+    """Lay a metal2 strap over each ring supply rail (metal1, 0.6 um), from
+    its riser end to the ring's far end, grown RAIL_STRAP_E away from the
+    ring and notched 0.3 um clear of other nets' metal2, with a row of via1
+    cuts along the rail. It joins the rail's own trunk foot where it
+    passes over it, feeding the rail from both ends. The rail carries the
+    whole ring current from its riser: 1.24 mA rms at the worst corner,
+    1.5x that at 0.67 mA/um is 2.8 um of metal: 0.6 of metal1 plus 0.6 +
+    1.6 of metal2."""
+    import klayout.db as kdb
+
+    dbu = top.kcl.dbu
+
+    def box(x0, y0, x1, y1):
+        return kdb.Box(*(int(round(v / dbu)) for v in (x0, y0, x1, y1)))
+
+    def reg(m):
+        return kdb.Region(top.kdb_cell.begin_shapes_rec(
+            top.kcl.layer(*m))).merged()
+
+    m1, m2 = reg(M1), reg(M2)
+    sp = int(round(0.3 / dbu))
+    for net, px, ry, out, x_end in rails:
+        line = kdb.Region(box(px - 0.01, ry - 0.01, px + 0.01, ry + 0.01))
+        piece = (m1 & kdb.Region(box(-1e3, ry - 0.3, 1e3, ry + 0.3))
+                 ).merged().interacting(line)
+        b = piece.bbox()
+        # the rail runs on into the block's other metal1 past the ring
+        xa, xb = r5(b.left * dbu), r5(min(b.right * dbu, x_end + 1.0))
+        y0, y1 = r5(ry - 0.3), r5(ry + 0.3)
+        own = m2.interacting(kdb.Region(box(xa, y0, xb, y1)))
+        for fn_, fx, _hw, fy0, _fy1, _f1 in feet:
+            if fn_ == net:
+                own += m2.interacting(kdb.Region(
+                    box(fx - 0.01, fy0 + 0.01, fx + 0.01, fy0 + 0.03)))
+        strap = kdb.Region(box(xa, y0 - RAIL_STRAP_E * (out < 0), xb,
+                               y1 + RAIL_STRAP_E * (out > 0)))
+        strap -= (m2 - own).sized(sp)
+        # keep what joins the rail, cleared of slivers under metal2 width
+        strap = strap.interacting(kdb.Region(box(xa, y0, xb, y1)))
+        strap = strap.sized(-int(round(0.15 / dbu))).sized(
+            int(round(0.15 / dbu)))
+        if strap.is_empty():
+            raise layoutlib.LayoutError(f"no room for the {net} rail strap")
+        li = top.kcl.layer(*M2)
+        for poly in strap.each():
+            top.kdb_cell.shapes(li).insert(poly)
+        rect(top, xa, y0, xb, y1, M2)
+        m1 = reg(M1)
+        own1 = m1.interacting(kdb.Region(box(xa, y0, xb, y1)))
+        grow = kdb.Region(box(xa, y0 - RAIL_M1_E * (out < 0), xb,
+                              y1 + RAIL_M1_E * (out > 0)))
+        grow -= (m1 - own1).sized(sp)
+        grow = grow.interacting(kdb.Region(box(xa, y0, xb, y1)))
+        grow = grow.sized(-int(round(0.12 / dbu))).sized(
+            int(round(0.12 / dbu)))
+        l1 = top.kcl.layer(*M1)
+        for poly in grow.each():
+            top.kdb_cell.shapes(l1).insert(poly)
+        v1 = reg(LY["via1"])
+        pit = CUT + CUT_SP
+        h = CUT / 2
+        x = xa + CUT_EN + h
+        while x + h + CUT_EN <= xb:
+            c = box(x - h, ry - h, x + h, ry + h)
+            if not (v1 & kdb.Region(c.enlarged(int(round(CUT_SP / dbu))))
+                    ).count():
+                rect(top, x - h, ry - h, x + h, ry + h, LY["via1"])
+            x = r5(x + pit)
+
+def sig_em_arrays(top, stubs, spots):
+    """Widen the SIG_WIDE metal2 stubs to SIG_W, toward whichever side
+    clears other nets' metal2 by 0.3 um, then grow each single via in
+    `spots` to SIG_CUTS cuts (or as many as fit, at least 2): a column
+    along its stub or a row along its track, on 0.4 um landings in both
+    metals, wherever the landings clear other nets' metal by 0.3 um.
+    Of the arrays that fit, the one adding least new metal wins (least
+    added capacitance on the VCO nodes)."""
+    import klayout.db as kdb
+
+    dbu = top.kcl.dbu
+    sp = int(round(0.3 / dbu))
+
+    def box(x0, y0, x1, y1):
+        return kdb.Box(*(int(round(v / dbu)) for v in (x0, y0, x1, y1)))
+
+    def reg(m):
+        return kdb.Region(top.kdb_cell.begin_shapes_rec(
+            top.kcl.layer(*m))).merged()
+
+    def dot(x, y):
+        return kdb.Region(box(x - 0.01, y - 0.01, x + 0.01, y + 0.01))
+
+    short = []
+    m2 = reg(M2)
+    for x, y0, y1 in stubs:
+        own = m2.interacting(dot(x, (y0 + y1) / 2))
+        n = int(round((SIG_W - TRK_W) / 0.02))
+        for k in sorted(range(n + 1), key=lambda k: abs(k - n / 2)):
+            xa = r5(x + TRK_W / 2 - SIG_W + k * 0.02)
+            b = box(xa, y0, xa + SIG_W, y1)
+            if not ((m2 - own) & kdb.Region(b.enlarged(sp))).count():
+                rect(top, xa, y0, xa + SIG_W, y1, M2)
+                m2 = reg(M2)
+                break
+        else:
+            short.append(("stub", x, y0, y1))
+    pit = CUT + CUT_SP
+    h, e = CUT / 2, TRK_W / 2
+    seen = set()
+    thin = []
+    for x, y, cut, lo, hi in spots:
+        if (round(x, 3), round(y, 3), cut) in seen:
+            continue
+        seen.add((round(x, 3), round(y, 3), cut))
+        rl, rh, rc = reg(lo), reg(hi), reg(LY[cut])
+        if not rc.interacting(dot(x, y)).count():
+            short.append(("no cut here", cut, x, y))
+            continue
+        own = {lo: rl.interacting(dot(x, y)), hi: rh.interacting(dot(x, y))}
+        best = None
+        for k in range(SIG_CUTS, 1, -1):
+            for dx, dy in ((0, -pit), (0, pit), (pit, 0), (-pit, 0)):
+                for s in range(k):
+                    pts = [(r5(x + (i - s) * dx), r5(y + (i - s) * dy))
+                           for i in range(k)]
+                    # one solid landing strip: 0.4 um squares on the
+                    # 0.52 um cut pitch would leave 0.12 um notches
+                    xs_, ys_ = [q[0] for q in pts], [q[1] for q in pts]
+                    land = kdb.Region(box(min(xs_) - e, min(ys_) - e,
+                                          max(xs_) + e, max(ys_) + e))
+                    ok = all(not ((r - own[m]) & land.sized(sp)).count()
+                             for m, r in ((lo, rl), (hi, rh)))
+                    for i, (px, py) in enumerate(pts):
+                        if i != s and (rc & kdb.Region(box(
+                                px - h, py - h, px + h, py + h).enlarged(
+                                int(round(CUT_SP / dbu)) - 1))).count():
+                            ok = False
+                    if not ok:
+                        continue
+                    new = sum((land - own[m]).area() for m in (lo, hi))
+                    if best is None or new < best[0]:
+                        best = (new, pts, s)
+            if best:
+                break
+        if best is None:
+            short.append((cut, x, y))
+            continue
+        for i, (px, py) in enumerate(best[1]):
+            if i != best[2]:
+                via(top, px, py, cut, lo, hi)
+        xs_, ys_ = [q[0] for q in best[1]], [q[1] for q in best[1]]
+        for m in (lo, hi):
+            rect(top, min(xs_) - e, min(ys_) - e, max(xs_) + e,
+                 max(ys_) + e, m)
+        # The landing strip carries the current between the cuts of the
+        # array (up to (k-1)/k of it): grow its cross width to SIG_W,
+        # sliding toward whichever side clears other nets by 0.3 um.
+        col = max(xs_) == min(xs_)
+        n = int(round((SIG_W - TRK_W) / 0.02))
+        for m in (lo, hi):
+            rm = reg(m)
+            own_m = rm.interacting(dot(x, y))
+            for k in sorted(range(n + 1), key=lambda k: abs(k - n / 2)):
+                if col:
+                    a = r5(x + e - SIG_W + k * 0.02)
+                    bx = (a, min(ys_) - e, a + SIG_W, max(ys_) + e)
+                else:
+                    a = r5(y + e - SIG_W + k * 0.02)
+                    bx = (min(xs_) - e, a, max(xs_) + e, a + SIG_W)
+                if not ((rm - own_m) & kdb.Region(
+                        box(*bx).enlarged(sp))).count():
+                    rect(top, *bx, m)
+                    break
+            else:
+                short.append(("landing width", m, x, y))
+                if m == M2 and col:
+                    thin.append((x, min(ys_) - e, max(ys_) + e))
+        if len(best[1]) < SIG_CUTS:
+            short.append((cut, x, y, len(best[1])))
+    # A metal2 column that other nets' metal2 keeps at 0.4 um gets a
+    # parallel metal3 strap instead: SIG_W wide over the column, run on
+    # to the net's own metal3 landing just above or below it and tied
+    # down with via2 cuts on the cut pitch, so the column's current
+    # shares two layers rather than crowding one 0.4 um wire.
+    for x, ya, yb in thin:
+        m2, m3, c2 = reg(M2), reg(M3), reg(LY["via2"])
+        stub = m2.interacting(dot(x, (ya + yb) / 2))
+        own3 = m3.interacting(c2 & stub)
+        near = [p.bbox() for p in own3.each()
+                if p.bbox().left * dbu < x < p.bbox().right * dbu]
+        up = [b.bottom * dbu for b in near if b.bottom * dbu >= yb - 0.01]
+        dn = [b.top * dbu for b in near if b.top * dbu <= ya + 0.01]
+        y0, y1 = ya, yb
+        if up and min(up) - yb < 1.5:
+            y1 = min(up) + TRK_W
+        elif dn and ya - max(dn) < 1.5:
+            y0 = max(dn) - TRK_W
+        else:
+            short.append(("m3 strap: no own metal3 near", x, ya, yb))
+            continue
+        n = int(round((SIG_W - TRK_W) / 0.02))
+        for k in sorted(range(n + 1), key=lambda k: abs(k - n / 2)):
+            a = r5(x + e - SIG_W + k * 0.02)
+            if not ((m3 - own3) & kdb.Region(
+                    box(a, y0, a + SIG_W, y1).enlarged(sp))).count():
+                rect(top, a, y0, a + SIG_W, y1, M3)
+                break
+        else:
+            short.append(("m3 strap: no room", x, ya, yb))
+            continue
+        placed = 0
+        yy = ya + e
+        while yy <= yb - e + 1e-6:
+            cb = box(x - h, yy - h, x + h, yy + h)
+            inside = (kdb.Region(cb.enlarged(int(round(0.07 / dbu))))
+                      - stub).is_empty()
+            clear = not (c2 & kdb.Region(cb.enlarged(
+                int(round(CUT_SP / dbu)) - 1))).count()
+            if inside and clear:
+                via(top, r5(x), r5(yy), "via2", M2, M3)
+                c2 = reg(LY["via2"])
+                placed += 1
+            yy = r5(yy + pit)
+        print("sig_em_arrays: metal3 strap at", round(x, 2), round(y0, 2),
+              round(y1, 2), "via2 cuts", placed)
+    for s_ in short:
+        print("sig_em_arrays: short of room:", s_)
+
+
 def fill_m3_notches(top):
     """Two via landings on one thinner (ring channel) metal3 track closer
     than M3.2a (0.28) leave a notch between them, inside one shape: fill
     it. The landings can sit in different cells (a ring half's via2 and a
     trunk's via3), so this reads the merged metal3 of the whole top cell.
-    A gap between two separate shapes is left alone (a different net)."""
+    A gap between two separate shapes is left alone (a different net).
+    The same goes for metal1 (0.23) and metal2 (0.28), where the supply
+    landings and rail straps meet. The fill covers only the span where
+    the two edges face each other."""
     import klayout.db as kdb
 
-    li = top.kcl.layer(*M3)
-    m3 = kdb.Region(top.kdb_cell.begin_shapes_rec(li)).merged()
     dbu = top.kcl.dbu
-    for ep in m3.space_check(int(round(0.28 / dbu))).each():
-        box = ep.bbox()
-        if box.width() == 0 or box.height() == 0:
-            continue
-        if m3.interacting(kdb.Region(box.enlarged(0, 1))).count() != 1:
-            continue
-        top.kdb_cell.shapes(li).insert(box)
+    for m, space in ((M3, 0.28), (M2, 0.28), (M1, 0.23)):
+        li = top.kcl.layer(*m)
+        reg = kdb.Region(top.kdb_cell.begin_shapes_rec(li)).merged()
+        for ep in reg.space_check(int(round(space / dbu))).each():
+            a, b = ep.first, ep.second
+            if a.dx() == 0 and b.dx() == 0:
+                lo = max(min(a.p1.y, a.p2.y), min(b.p1.y, b.p2.y))
+                hi = min(max(a.p1.y, a.p2.y), max(b.p1.y, b.p2.y))
+                box = kdb.Box(min(a.p1.x, b.p1.x), lo,
+                              max(a.p1.x, b.p1.x), hi)
+            elif a.dy() == 0 and b.dy() == 0:
+                lo = max(min(a.p1.x, a.p2.x), min(b.p1.x, b.p2.x))
+                hi = min(max(a.p1.x, a.p2.x), max(b.p1.x, b.p2.x))
+                box = kdb.Box(lo, min(a.p1.y, b.p1.y), hi,
+                              max(a.p1.y, b.p1.y))
+            else:
+                continue
+            if box.width() <= 0 or box.height() <= 0:
+                continue
+            if reg.interacting(kdb.Region(box.enlarged(1, 1))).count() != 1:
+                continue
+            top.kdb_cell.shapes(li).insert(box)
 
 
 def tbox(b, dx, dy):
@@ -542,6 +910,19 @@ def build_row(top, draw_fet, name, kind, items, y0, used):
         for net, pad in ((s, lp), (d, rp)):
             via(top, cx(pad), pad[3] - 0.2, "via1", M1, M2)
             terms.append((net, cx(pad), pad[3] - 0.2))
+            if net in SUP_NETS:
+                # a supply pad's device current (up to 0.2 mA at the
+                # worst corner, 0.3 with 1.5x margin) needs two cuts at
+                # 0.18 mA a cut: more down the pad where it is tall enough
+                yc = pad[3] - 0.2
+                for k in (1, 2):
+                    yk = r5(yc - k * (CUT + CUT_SP))
+                    if yk - 0.13 < pad[1] + 0.06:
+                        break
+                    via(top, cx(pad), yk, "via1", M1, M2)
+                    for lay in (M1, M2):
+                        rect(top, cx(pad) - TRK_W / 2, yk,
+                             cx(pad) + TRK_W / 2, yc, lay)
         xg = cx(rp) + GOFF
         rect(top, gp[0], gp[1], xg + TRK_W / 2, gp[3], M1)
         if g == d:
@@ -740,6 +1121,7 @@ def ring_half(top, draw_fet, kind, cols, used):
     # and no stub crossing it is longer for its sake
     h_inv = max(fin_w(d) for c in cols if c[1] for d in c[2])
     straps = {}                    # internal net -> pad xs on its strap
+    sig_local = []                 # SIG_EM source/drain via1s (x, y)
 
     def tie(net, pad):
         if net == rail_net:
@@ -757,12 +1139,20 @@ def ring_half(top, draw_fet, kind, cols, used):
                     continue
                 if net in INTERNAL:
                     via(top, cx(pad), pad[1] + 0.2, "via1", M1, M2)
-                    rect(top, cx(pad) - TRK_W / 2, STRAP_Y - TRK_W / 2,
-                         cx(pad) + TRK_W / 2, pad[1] + 0.2, M2)
+                    hw, yb = TRK_W / 2, STRAP_Y - TRK_W / 2
+                    if net == "ng":
+                        hw, yb = SIG_W / 2, STRAP_Y + TRK_W / 2 - 0.2 \
+                            - NG_STRAP_W
+                    rect(top, cx(pad) - hw, yb, cx(pad) + hw,
+                         pad[1] + 0.2, M2)
                     straps.setdefault(net, []).append(cx(pad))
+                    if net in SIG_EM:
+                        sig_local.append((cx(pad), pad[1] + 0.2))
                 else:
                     via(top, cx(pad), pad[3] - 0.2, "via1", M1, M2)
                     terms.append((net, cx(pad), pad[3] - 0.2))
+                    if net in SIG_EM:
+                        sig_local.append((cx(pad), pad[3] - 0.2))
             terms.append((g, xg, yg))
             if sdv is not None:
                 # the starve device's n_k/p_k pad(s) join this strap
@@ -793,7 +1183,13 @@ def ring_half(top, draw_fet, kind, cols, used):
             if 0 < b[0] - a[2] < 0.4 and y1 > y0:
                 rect(top, a[2], y0, b[0], y1,
                      LY["nplus" if kind == "n" else "pplus"])
-    for xs in straps.values():
+    for net, xs in straps.items():
+        if net == "ng":
+            # moved 0.2 down, clear of the nb pad cuts above it
+            yt = STRAP_Y + TRK_W / 2 - 0.2
+            rect(top, min(xs) - SIG_W / 2, yt - NG_STRAP_W,
+                 max(xs) + SIG_W / 2, yt, M2)
+            continue
         rect(top, min(xs) - TRK_W / 2, STRAP_Y - TRK_W / 2,
              max(xs) + TRK_W / 2, STRAP_Y + TRK_W / 2, M2)
     x0 = min(c[0] for c in cols) - 3.0
@@ -811,6 +1207,7 @@ def ring_half(top, draw_fet, kind, cols, used):
         rect(top, x0 - 0.8, bottom, xmax + 1.8, max(b[3] for b in nwb),
              LY["nwell"])
     # inverter-row gate pads are the tallest shapes facing the channel
+    top.info["sig_local"] = sig_local
     return (terms, max(tops), xmax, (x0, (rail_y[0] + rail_y[1]) / 2),
             (min(mini_xs), MINI_Y), bottom)
 
@@ -865,6 +1262,10 @@ def ring_block(top, draw_fet, y0, x0, ntracks, used):
     ref = top.add_ref(ph)
     ref.dmirror_y(0)
     ref.dmove((0, yp))
+    SIG_SPOTS.extend((xx, r5(y0 + yy), "via1", M1, M2)
+                     for xx, yy in nh.info["sig_local"])
+    SIG_SPOTS.extend((xx, r5(yp - yy), "via1", M1, M2)
+                     for xx, yy in ph.info["sig_local"])
     terms = [(n, xx, y0 + yy, "below") for n, xx, yy in nterms]
     terms += [(n, xx, yp - yy, "above") for n, xx, yy in pterms]
     risers = [("vss", nrail[0], y0 + nrail[1], "m1"),
@@ -1127,11 +1528,17 @@ def generate():
                   sorted((t, n, round(b - a, 1)) for n, (t, a, b)
                          in tr.items()), file=sys.stderr)
     # ---- pass 2: draw ----
+    # the sizing passes above drew rings into scratch cells: their spots
+    # are not on this layout
+    SIG_SPOTS.clear()
+    SIG_STUBS.clear()
     top = gf.Component()
     used = {}
     y0 = 0.0
     row_y0, chan_y, chan_top, bottoms, chan_p = [], [], [], [], []
     sup_band = {}                  # (net, channel) -> (y0, y1) of a wide track
+    taps = []                      # supply stubs onto a wide track
+    stacks = []                    # supply via stacks: (x, y, cuts)
     for ri in range(nch):
         row_y0.append(y0)
         name, kind, items = ROWS[ri]
@@ -1139,6 +1546,7 @@ def generate():
         if kind == "ring":
             terms, base, blk_top, by, xe, rails2 = ring_block(
                 top, draw_fet, y0, ring_x0, ntracks[ri], used)
+            ring_xe = xe
         else:
             if kind == "r":
                 terms, ty, by, xe = build_res_row(top, draw_res, y0)
@@ -1159,12 +1567,22 @@ def generate():
             ya, yb = sorted((y, yt))
             rect(top, x - lw / 2, ya - TRK_W / 2 * (y > yt),
                  x + lw / 2, yb + TRK_W / 2 * (yt > y), M2)
+            if kind == "ring" and net in SIG_WIDE:
+                SIG_STUBS.append((x, ya, yb))
             # an n stub and a p stub of one net meeting a few 10 nm apart
             # share the first one's via2 (two would merge into a bad cut)
             if any(abs(x - x2) < 0.7 for x2 in done.get(net, [])):
                 continue
             done.setdefault(net, []).append(x)
+            if net in SUP_NETS and kind != "ring":
+                # a supply tap: its via2 array goes in once every stub is
+                # drawn (widen_supply_taps)
+                taps.append((net, x, r5(yt + TRK_W / 2 - SUP_M3_W),
+                             r5(yt + TRK_W / 2)))
+                continue
             via(top, x, yt, "via2", M2, M3)
+            if kind == "ring" and net in SIG_EM:
+                SIG_SPOTS.append((x, yt, "via2", M2, M3))
         for net, (t, a, b) in tracks[ri].items():
             yt = base + t * pch
             if net in SUP_NETS and kind != "ring":
@@ -1200,6 +1618,10 @@ def generate():
             if (net, ci) in sup_band:
                 b0, b1 = sup_band[(net, ci)]
                 via_array(top, x - hw, b0, x + hw, b1, "via3", M3, M4)
+            elif net in SUP_NETS:
+                # a narrow supply track (the ring channel's) meets the
+                # trunk: an array too, sized in widen_supply_stacks
+                stacks.append((x, y, (("via3", M3, M4),)))
             else:
                 via(top, x, y, "via3", M3, M4)
         ya = y_bot if lo < 0 else min(ys)
@@ -1218,6 +1640,7 @@ def generate():
                 via(top, x, y_bot, "via3", M3, M4)
                 via(top, x, y_bot, "via2", M2, M3)
             labels.append((net, x, y_bot, LY["metal2_label"]))
+    rail_straps = []
     for net, rx, ry, lay in rails2:
         key = f"ring.{net}"
         if os.environ.get("PLL_LAYOUT_DEBUG"):
@@ -1225,11 +1648,20 @@ def generate():
         ci = [c for k, _n, c, *_r in ports if k == key][0]
         px = port_x[key]
         if lay == "m1":
-            # a supply rail: metal1 out to the riser, via1/2/3 stack
+            # a supply rail: metal1 out to the riser, via1/2/3 stack; it
+            # carries the whole ring's current, so each end is a cut array
+            # (widen_supply_stacks)
             if px < rx:
                 rect(top, px - TRK_W / 2, ry - 0.3, rx + 0.5, ry + 0.3, M1)
-            via(top, px, ry, "via1", M1, M2)
-            via(top, px, ry, "via2", M2, M3)
+            yt = track_y(net, ci)
+            rect(top, px - TRK_W / 2, ry - TRK_W / 2, px + TRK_W / 2,
+                 yt + TRK_W / 2, M4)
+            stacks.append((px, ry, (("via1", M1, M2), ("via2", M2, M3),
+                                    ("via3", M3, M4))))
+            rail_straps.append((net, px, ry, -1 if net == "vss" else 1,
+                                ring_xe))
+            stacks.append((px, yt, (("via3", M3, M4),)))
+            continue
         else:
             # a starve-gate track: metal3 out to the riser
             rect(top, min(px, rx) - TRK_W / 2, ry - RING_LW / 2,
@@ -1262,6 +1694,10 @@ def generate():
             named.add(net)
             labels.append((net, r5((a + b) / 2), track_y(net, ci), M3))
     widen_supply_feet(top, feet)
+    widen_supply_taps(top, taps)
+    widen_supply_stacks(top, stacks)
+    strap_ring_rails(top, rail_straps, feet)
+    sig_em_arrays(top, SIG_STUBS, SIG_SPOTS)
     fill_m3_notches(top)
     return layoutlib.finalize(top, CELL, labels)
 
