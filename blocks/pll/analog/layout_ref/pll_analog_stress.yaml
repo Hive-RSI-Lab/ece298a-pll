@@ -35,6 +35,15 @@ decks:
     bench: pll_analog_stress_supply.cir
     timeout_s: 5400
     corners: [ff_pss, ff_125c_vp10]
+  # Disable tail on the four cycle decks (ae868, 2026-11-15). The benches pin
+  # vctrl at vdd, so the ring free-runs; with the run ending at 3.3 us the last
+  # sample caught a ring edge mid-transition (c21 dn/ff_pss: r1 at -10.8 mV and
+  # still falling), and the old deck counted every such edge as a fail without
+  # judging it. Now the stimulus is unchanged to 3.3 us, the PFD pattern has
+  # stopped, pll_en ramps to 0 over 1 ns at 3.3 us and the run goes on to 3.6 us,
+  # so each of those edges closes and is judged against the one-off bound. The
+  # disable edge and the tail are judged too, and an edge still open at 3.6 us
+  # still fails. The cycle window and every bound are unchanged.
   - name: lock
     bench: pll_analog_stress_lock.cir
     corners: [ff_pss, ff_125c_vp10, tt_27c]

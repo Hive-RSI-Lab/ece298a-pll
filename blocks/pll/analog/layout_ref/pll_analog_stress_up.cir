@@ -15,9 +15,11 @@ C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs
 .include '{extracted}'
 .temp {temp_c}
 .option method=gear reltol=1e-3 itl4=40
-vdd_src vdd 0 pwl(0u 0 1u {vdd} 3.3u {vdd})
+vdd_src vdd 0 pwl(0u 0 1u {vdd} 3.6u {vdd})
 vss_src vss 0 0
-ben pll_en 0 v=v(vdd)
+* Disable tail: pll_en follows vdd to 3.3 us, then ramps to 0 over 1 ns so the
+* ring stops and the run ends on a quiet bench (ae868, 2026-11-15).
+ben pll_en 0 v=v(vdd)*min(max((3.301e-6-time)/1e-9,0),1)
 vup pfd_up 0 pwl(0u 0 2u 0 2.0005u {vdd} 2.04u {vdd} 2.0405u 0 2.08u 0 2.0805u {vdd} 2.12u {vdd} 2.1205u 0 2.16u 0 2.1605u {vdd} 2.2u {vdd} 2.2005u 0 2.24u 0 2.2405u {vdd} 2.28u {vdd} 2.2805u 0 2.32u 0 2.3205u {vdd} 2.36u {vdd} 2.3605u 0 2.4u 0 2.4005u {vdd} 2.44u {vdd} 2.4405u 0 2.48u 0 2.4805u {vdd} 2.52u {vdd} 2.5205u 0 2.56u 0 2.5605u {vdd} 2.6u {vdd} 2.6005u 0 2.64u 0 2.6405u {vdd} 2.68u {vdd} 2.6805u 0 2.72u 0 2.7205u {vdd} 2.76u {vdd} 2.7605u 0 2.8u 0 2.8005u {vdd} 2.84u {vdd} 2.8405u 0 2.88u 0 2.8805u {vdd} 2.92u {vdd} 2.9205u 0 2.96u 0 2.9605u {vdd} 3u {vdd} 3.0005u 0 3.04u 0 3.0405u {vdd} 3.08u {vdd} 3.0805u 0 3.12u 0 3.1205u {vdd} 3.16u {vdd} 3.1605u 0 3.2u 0 3.2005u {vdd} 3.24u {vdd} 3.2405u 0)
 vdn pfd_dn 0 pwl(0u 0 2.037u 0 2.0375u {vdd} 2.04u {vdd} 2.0405u 0 2.117u 0 2.1175u {vdd} 2.12u {vdd} 2.1205u 0 2.197u 0 2.1975u {vdd} 2.2u {vdd} 2.2005u 0 2.277u 0 2.2775u {vdd} 2.28u {vdd} 2.2805u 0 2.357u 0 2.3575u {vdd} 2.36u {vdd} 2.3605u 0 2.437u 0 2.4375u {vdd} 2.44u {vdd} 2.4405u 0 2.517u 0 2.5175u {vdd} 2.52u {vdd} 2.5205u 0 2.597u 0 2.5975u {vdd} 2.6u {vdd} 2.6005u 0 2.677u 0 2.6775u {vdd} 2.68u {vdd} 2.6805u 0 2.757u 0 2.7575u {vdd} 2.76u {vdd} 2.7605u 0 2.837u 0 2.8375u {vdd} 2.84u {vdd} 2.8405u 0 2.917u 0 2.9175u {vdd} 2.92u {vdd} 2.9205u 0 2.997u 0 2.9975u {vdd} 3u {vdd} 3.0005u 0 3.077u 0 3.0775u {vdd} 3.08u {vdd} 3.0805u 0 3.157u 0 3.1575u {vdd} 3.16u {vdd} 3.1605u 0 3.237u 0 3.2375u {vdd} 3.24u {vdd} 3.2405u 0)
 vt0 cp_trim0 0 0
@@ -27,5 +29,5 @@ cpadb bias_ref 0 5p
 cload2 vco_div2 0 30f
 bvc vctrl 0 v=v(vdd)
 xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
-.tran 100p 3.3u 0 100p
+.tran 100p 3.6u 0 100p
 .end
