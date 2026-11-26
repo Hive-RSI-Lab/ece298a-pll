@@ -336,3 +336,18 @@ Results:
   `../reports/recorded/false_lock_pex.json`.
 
       $CHIP_FLOW_HOME/bin/eda python blocks/pll/analog/layout/false_lock_pex.py [--bench rail|div|burst]
+- **Closed loop from the rail, extracted cell (2026-11-26).**
+  `false_lock_cosim.py` runs `cosim_corners.py`'s bench (released RTL,
+  extracted pll_analog, PDK corner) with vctrl and the loop filter held at
+  vdd by a switch for 10 us while pll_en is low, released 20 ns before
+  pll_en rises, N fixed from reset and no N step. A `.ic` does not do it:
+  the filter's charge-form MOS caps drop to 0 V at t=0 under `uic`. At
+  ss_pff and ff_m40c_vm10, N=3 and N=2, vctrl starts at 2.97 V and every
+  point locks in 4.0-4.16 us with no lock drop, f_vco within 3.1e-5 of
+  150 / 100 MHz (not the rail), vctrl settling at 1.98 / 1.92 V (N=3)
+  and 1.58 / 1.55 V (N=2), and no short VCO pulses. Three of the four
+  runs hit the 2 h run limit at 34.6-37.5 us of the 40 us; their measures
+  cover 24-27 us of closed loop, and `--collect` built the report from
+  them. Output: `../reports/recorded/false_lock_cosim.json`.
+
+      $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/false_lock_cosim.py [--points CORNER:N ...] [--collect]
