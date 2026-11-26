@@ -1,0 +1,204 @@
+* pll_analog_pex_div_tb.cir - the extracted cell's TSPC /2 (vco_out ->
+* vco_div2) alone, clocked above anything the VCO reaches, to give its real
+* top frequency. Run by
+*     eda python layout/false_lock_pex.py --bench div
+* which writes {{NETLIST}} as a copy of the extracted pll_analog, renamed
+* pll_analog_div, with two pins added at the end: vco_out (to probe it) and
+* nb_drv, wired to the gates of the six output-inverter fingers in place of
+* their nb (the ring's NAND2 output). So vco_out is still driven by the
+* cell's own 12u/6u inverter through its own extracted wiring into the
+* TSPC's own extracted gates; only the inverter's input is a clean pulse
+* (100 ps edges, 50 % duty) instead of the ring. vctrl = 0 holds the
+* current-starved ring (no coupling noise), pll_en = vdd keeps the TSPC's
+* standby pull-up MP_DR off. vco_div2 is loaded as in
+* pll_analog_pex_rail_tb.cir (inv_1 + 30 fF).
+*
+* Steps the clock through 300 .. 3000 MHz, 120 input cycles each, and
+* prints div_ratio_<k> = (vco_out rises) / (vco_div2 rises) over the last
+* 100 input cycles (2 when it divides) and writes div_<k>.txt
+* (time v(vco_out) time v(vco_div2)) for the driver's cycle-by-cycle check.
+* The frequencies are div_f<k>_mhz, printed with them.
+* sim_timeout_s: 3600
+
+.include '{{PDK}}/libs.tech/ngspice/design.spice'
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+* the loop filter's MOS caps in charge form: see pll_analog_pex_start_tb.cir
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{{NETLIST}}'
+.include '{{PDK}}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
+{{SIZING}}
+
+.temp {{TEMP_C}}
+.param vddp={{VDD}}
+.csparam vddp={vddp}
+.csparam vmid={vddp/2}
+
+vdd_src  vdd      0 dc {vddp}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc {vddp}
+vup      pfd_up   0 dc 0
+vdn      pfd_dn   0 dc 0
+vt0      cp_trim0 0 dc 0
+vt1      cp_trim1 0 dc 0
+vvc      vctrl    0 dc 0
+vck      nb_drv   0 dc 0 pulse(0 {vddp} 1n 100p 100p 1.567n 3.333n)
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss vco_out nb_drv pll_analog_div
+xbuf  vco_div2 nbuf vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
+cload2   vco_div2 0 30f
+
+.control
+set noaskquit
+compose fl values 300e6 400e6 500e6 600e6 700e6 800e6 1000e6 1200e6 1500e6 2000e6 2500e6 3000e6
+let nf = length(fl)
+setplot new
+set rp = $curplot
+let k = 0
+while k lt nf
+  let f = fl[k]
+  let per = 1/f
+  let pw = per/2 - 100p
+  let tstop = 1n + 120*per
+  let tskip = 1n + 20*per
+  let tmax = per/40
+  alter @vck[pulse] = [ 0 $&vddp 1n 100p 100p $&pw $&per ]
+  set ks = "$&k"
+  set fv = "$&f"
+  set ts = "$&tskip"
+  tran $&tmax $&tstop 0 $&tmax
+  set tp = $curplot
+  if $ks eq 0
+    wrdata div_0.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 1
+    wrdata div_1.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 2
+    wrdata div_2.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 3
+    wrdata div_3.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 4
+    wrdata div_4.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 5
+    wrdata div_5.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 6
+    wrdata div_6.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 7
+    wrdata div_7.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 8
+    wrdata div_8.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 9
+    wrdata div_9.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 10
+    wrdata div_10.txt v(vco_out) v(vco_div2)
+  end
+  if $ks eq 11
+    wrdata div_11.txt v(vco_out) v(vco_div2)
+  end
+  let nx = length(time)
+  let nx1 = nx - 1
+  let nx2 = nx - 2
+  let late = time[0,$&nx2] gt $ts
+  let ho = (v(vco_out) gt vmid)
+  let hd = (v(vco_div2) gt vmid)
+  let no = mean(((ho[1,$&nx1] - ho[0,$&nx2]) gt 0.5) and late)*length(late)
+  let nd = mean(((hd[1,$&nx1] - hd[0,$&nx2]) gt 0.5) and late)*length(late)
+  let rt = 0
+  if nd gt 0
+    let rt = no/nd
+  end
+  let fm = $fv/1e6
+  if $ks eq 0
+    set fs0 = "$&fm"
+    set rs0 = "$&rt"
+  end
+  if $ks eq 1
+    set fs1 = "$&fm"
+    set rs1 = "$&rt"
+  end
+  if $ks eq 2
+    set fs2 = "$&fm"
+    set rs2 = "$&rt"
+  end
+  if $ks eq 3
+    set fs3 = "$&fm"
+    set rs3 = "$&rt"
+  end
+  if $ks eq 4
+    set fs4 = "$&fm"
+    set rs4 = "$&rt"
+  end
+  if $ks eq 5
+    set fs5 = "$&fm"
+    set rs5 = "$&rt"
+  end
+  if $ks eq 6
+    set fs6 = "$&fm"
+    set rs6 = "$&rt"
+  end
+  if $ks eq 7
+    set fs7 = "$&fm"
+    set rs7 = "$&rt"
+  end
+  if $ks eq 8
+    set fs8 = "$&fm"
+    set rs8 = "$&rt"
+  end
+  if $ks eq 9
+    set fs9 = "$&fm"
+    set rs9 = "$&rt"
+  end
+  if $ks eq 10
+    set fs10 = "$&fm"
+    set rs10 = "$&rt"
+  end
+  if $ks eq 11
+    set fs11 = "$&fm"
+    set rs11 = "$&rt"
+  end
+  setplot $rp
+  destroy $tp
+  let k = k + 1
+end
+echo
+echo "  Measurements for Transient Analysis (pll_analog_pex_div_tb, computed in .control)"
+echo "div_f0_mhz = $fs0"
+echo "div_ratio_0 = $rs0"
+echo "div_f1_mhz = $fs1"
+echo "div_ratio_1 = $rs1"
+echo "div_f2_mhz = $fs2"
+echo "div_ratio_2 = $rs2"
+echo "div_f3_mhz = $fs3"
+echo "div_ratio_3 = $rs3"
+echo "div_f4_mhz = $fs4"
+echo "div_ratio_4 = $rs4"
+echo "div_f5_mhz = $fs5"
+echo "div_ratio_5 = $rs5"
+echo "div_f6_mhz = $fs6"
+echo "div_ratio_6 = $rs6"
+echo "div_f7_mhz = $fs7"
+echo "div_ratio_7 = $rs7"
+echo "div_f8_mhz = $fs8"
+echo "div_ratio_8 = $rs8"
+echo "div_f9_mhz = $fs9"
+echo "div_ratio_9 = $rs9"
+echo "div_f10_mhz = $fs10"
+echo "div_ratio_10 = $rs10"
+echo "div_f11_mhz = $fs11"
+echo "div_ratio_11 = $rs11"
+echo
+.endc
+.end

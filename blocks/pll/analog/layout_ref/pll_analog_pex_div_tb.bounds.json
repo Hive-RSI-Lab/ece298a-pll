@@ -1,0 +1,8 @@
+[
+  {"measure": "div_ratio_0", "min": 1.98, "max": 2.02, "severity": "error",
+   "msg": "the extracted TSPC /2 divides a 300 MHz clock exactly (the model's false-lock VCO frequency)"},
+  {"measure": "div_ratio_1", "min": 1.98, "max": 2.02, "severity": "warning",
+   "msg": "the extracted TSPC /2 divides a 400 MHz clock exactly"},
+  {"measure": "div_ratio_2", "min": 1.98, "max": 2.02, "severity": "warning",
+   "msg": "the extracted TSPC /2 divides a 500 MHz clock exactly"}
+]

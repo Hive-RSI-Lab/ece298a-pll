@@ -1,0 +1,124 @@
+* pll_analog_pex_rail_tb.cir - does the extracted cell's own TSPC /2 keep up
+* with its VCO when vctrl sits at the rail? Run by
+*     eda python layout/false_lock_pex.py
+* (which also reads the wrdata traces below edge by edge). The question
+* behind it: the behavioural model of tb/prescaler_margin.py at ss_pff
+* puts the VCO at ~310 MHz with vctrl at vdd, over its first stage's limit
+* (t_lim 3.65 ns = 274 MHz, a hardened dffrnq_2 + inv_1 stage). A stage that
+* drops every other edge makes the loop false-lock at 300 MHz at
+* 6.25 MHz x 3 (verify.html claim 1.7). Since issue #48 the first /2 is the
+* macro's TSPC divider (vco_out -> vco_div2); this bench measures that
+* divider and the VCO on the extracted netlist at the rail.
+*
+* Start: the cell's pll_en = 0 operating point, pll_en rising at 5 ns, no
+* kick (as on silicon; pll_analog_pex_start_tb.cir: the ring starts from
+* enable at vctrl = vdd-0.3 V at all 31 corners). vctrl forced, pump inputs
+* low, bias_ref on the pad's 5 pF, vco_div2 loaded as in tb/pll_analog_presc_tb.cir
+* (one inv_1, the digital side's first gate, plus 30 fF of route). Two runs,
+* vctrl = vdd and vctrl = vdd-0.1 V, 500 ns each at a 20 ps max step.
+* Measured over 200..500 ns (start-up is under 100 ns at every corner):
+*  - rail_f_vdd_mhz / rail_f_vdd01_mhz: vco_out frequency, (n-1)/(t_n - t_1)
+*    over rising vdd/2 crossings;
+*  - rail_div_ratio_vdd / rail_div_ratio_vdd01 = f(vco_out) / f(vco_div2),
+*    each from its own rising crossings in the window: exactly 2 when the
+*    divider toggles on every VCO edge, above 2 when it drops edges.
+* A stalled ring (< 2 rises) prints f = 0 and ratio 0, which fails its bound.
+* The traces go to rail_0.txt (vdd) and rail_1.txt (vdd-0.1) in the run
+* directory, columns time v(vco_out) time v(vco_div2), for the
+* cycle-by-cycle check (every vco_div2 rise exactly two vco_out rises after
+* the last one).
+* sim_timeout_s: 3600
+
+.include '{{PDK}}/libs.tech/ngspice/design.spice'
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+* the loop filter's MOS caps in charge form: see pll_analog_pex_start_tb.cir
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{{NETLIST}}'
+.include '{{PDK}}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
+{{SIZING}}
+
+.temp {{TEMP_C}}
+.param vddp={{VDD}}
+.csparam vddp={vddp}
+.csparam vmid={vddp/2}
+
+vdd_src  vdd      0 dc {vddp}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc 0 pulse(0 {vddp} 5n 1n 1n 1 1)
+vup      pfd_up   0 dc 0
+vdn      pfd_dn   0 dc 0
+vt0      cp_trim0 0 dc 0
+vt1      cp_trim1 0 dc 0
+vvc      vctrl    0 dc {vddp}
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+xbuf  vco_div2 nbuf vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
+cload2   vco_div2 0 30f
+* bias_ref is pad ua[1], left open: the pad's 5 pF, as spec.yaml's macro_timing
+* and the cosim and start-up benches (bare, it never settles and the ring bursts)
+cbias    bias_ref 0 5p
+
+.control
+set noaskquit
+setplot new
+set rp = $curplot
+foreach pt 0 1
+  let vv = vddp
+  if $pt eq 1
+    let vv = vddp - 0.1
+  end
+  alter vvc dc = $&vv
+  tran 20p 500n 0 20p
+  set tp = $curplot
+  if $pt eq 0
+    wrdata rail_0.txt v(xdut.vco_out) v(vco_div2)
+  else
+    wrdata rail_1.txt v(xdut.vco_out) v(vco_div2)
+  end
+  let nx = length(time)
+  let nx1 = nx - 1
+  let nx2 = nx - 2
+  let late = time[0,$&nx2] gt 200n
+  let ho = (v(xdut.vco_out) gt vmid)
+  let hd = (v(vco_div2) gt vmid)
+  let no = mean(((ho[1,$&nx1] - ho[0,$&nx2]) gt 0.5) and late)*length(late)
+  let nd = mean(((hd[1,$&nx1] - hd[0,$&nx2]) gt 0.5) and late)*length(late)
+  let fo = 0
+  let fd = 0
+  if (no ge 2) and (nd ge 2)
+    meas tran toa when v(xdut.vco_out)=$&vmid rise=1 td=200n
+    meas tran tob when v(xdut.vco_out)=$&vmid rise=$&no td=200n
+    meas tran tda when v(vco_div2)=$&vmid rise=1 td=200n
+    meas tran tdb when v(vco_div2)=$&vmid rise=$&nd td=200n
+    let fo = (no - 1)/(tob - toa)
+    let fd = (nd - 1)/(tdb - tda)
+  end
+  let fm = fo/1e6
+  let rt = 0
+  if fd gt 0
+    let rt = fo/fd
+  end
+  if $pt eq 0
+    set fs0 = "$&fm"
+    set rs0 = "$&rt"
+  else
+    set fs1 = "$&fm"
+    set rs1 = "$&rt"
+  end
+  setplot $rp
+  destroy $tp
+end
+echo
+echo "  Measurements for Transient Analysis (pll_analog_pex_rail_tb, computed in .control)"
+echo "rail_f_vdd_mhz = $fs0"
+echo "rail_div_ratio_vdd = $rs0"
+echo "rail_f_vdd01_mhz = $fs1"
+echo "rail_div_ratio_vdd01 = $rs1"
+echo
+.endc
+.end

@@ -1,0 +1,804 @@
+{
+ "what": "Can the 300 MHz false lock from vctrl at the rail (verify.html claim 1.7, seen only in tb/prescaler_margin.py) happen on the extracted cell?",
+ "script": "blocks/pll/analog/layout/false_lock_pex.py",
+ "extracted": "blocks/pll/analog/log/pex_pvt/pll_analog.pex.ordered.spice",
+ "benches": {
+  "rail": "blocks/pll/analog/layout_ref/pll_analog_pex_rail_tb.cir",
+  "div": "blocks/pll/analog/layout_ref/pll_analog_pex_div_tb.cir",
+  "burst": "blocks/pll/analog/layout_ref/pll_analog_pex_burst_tb.cir"
+ },
+ "verdict": "model artefact: on the extracted cell the first /2 (the macro's TSPC) never drops an edge at any of 31 corners with vctrl at vdd or vdd-0.1 V, and divides a clean clock exactly up to at least 2000 MHz at every corner, 6.3x the fastest VCO cycle seen (316.3 MHz). No false lock from the rail, so step 2 (closed-loop start from the rail) is not needed.",
+ "why_the_model_fails": [
+  "t_lim 3.65 ns (274 MHz) is the old hardened dffrnq_2 + inv_1 first stage; since issue #48 the first /2 is the macro's TSPC, measured here at t_lim <= 0.50 ns at every corner (exact up to 2000 MHz).",
+  "the model's VCO curve is the pre-layout calibration tb/pll_analog_cal_ss_pff.json (310.4 MHz at the rail); the extracted cell at ss_pff runs 254.1 MHz at vctrl = vdd."
+ ],
+ "model_fix": "set prescaler_margin.py's t_lim from the extracted TSPC (0.5 ns, the slowest corners' 2000 MHz) instead of 3.65 ns, and take its VCO curve from an extracted calibration; with t_lim 0.5 ns and the unchanged pre-layout curve it already locks from the rail at every point (model_rerun_t_lim_0p5ns).",
+ "summary": {
+  "corners": 31,
+  "rail_top_f_mhz": 306.3,
+  "rail_top_corner": "ff_m40c_vm10",
+  "fastest_cycle_mhz": 316.3,
+  "fastest_cycle_corner": "ff_m40c_vm10",
+  "ss_pff_f_vdd_mhz": 254.1,
+  "bad_div_cycles_total": 0,
+  "div_cycles_checked_total": 2176,
+  "div_limit_min_mhz": 2000,
+  "div_limit_min_corners": [
+   "ss_125c",
+   "ss_125c_vm10",
+   "ss_125c_vp10",
+   "ss_27c_vm10",
+   "ss_pff"
+  ],
+  "div_limit_counts": {
+   "2000": 5,
+   "2500": 8,
+   "3000": 18
+  }
+ },
+ "rail": {
+  "tt_m40c_vm10": {
+   "f_vdd_mhz": 252.0,
+   "f_vdd01_mhz": 245.0,
+   "fastest_cycle_mhz": 260.8,
+   "div_cycles_checked": 72,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_m40c": {
+   "f_vdd_mhz": 248.3,
+   "f_vdd01_mhz": 241.2,
+   "fastest_cycle_mhz": 256.2,
+   "div_cycles_checked": 71,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_m40c_vp10": {
+   "f_vdd_mhz": 242.9,
+   "f_vdd01_mhz": 236.1,
+   "fastest_cycle_mhz": 250.3,
+   "div_cycles_checked": 70,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_27c_vm10": {
+   "f_vdd_mhz": 244.2,
+   "f_vdd01_mhz": 238.3,
+   "fastest_cycle_mhz": 253.8,
+   "div_cycles_checked": 71,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "tt_27c": {
+   "f_vdd_mhz": 242.2,
+   "f_vdd01_mhz": 236.2,
+   "fastest_cycle_mhz": 251.0,
+   "div_cycles_checked": 70,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_27c_vp10": {
+   "f_vdd_mhz": 238.5,
+   "f_vdd01_mhz": 232.9,
+   "fastest_cycle_mhz": 246.4,
+   "div_cycles_checked": 69,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_125c_vm10": {
+   "f_vdd_mhz": 230.4,
+   "f_vdd01_mhz": 225.6,
+   "fastest_cycle_mhz": 241.2,
+   "div_cycles_checked": 66,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "tt_125c": {
+   "f_vdd_mhz": 229.8,
+   "f_vdd01_mhz": 225.0,
+   "fastest_cycle_mhz": 239.8,
+   "div_cycles_checked": 67,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "tt_125c_vp10": {
+   "f_vdd_mhz": 228.1,
+   "f_vdd01_mhz": 223.6,
+   "fastest_cycle_mhz": 237.2,
+   "div_cycles_checked": 66,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "ss_m40c_vm10": {
+   "f_vdd_mhz": 210.7,
+   "f_vdd01_mhz": 204.5,
+   "fastest_cycle_mhz": 216.9,
+   "div_cycles_checked": 60,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "ss_m40c": {
+   "f_vdd_mhz": 211.0,
+   "f_vdd01_mhz": 204.7,
+   "fastest_cycle_mhz": 217.8,
+   "div_cycles_checked": 60,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "ss_m40c_vp10": {
+   "f_vdd_mhz": 207.3,
+   "f_vdd01_mhz": 201.1,
+   "fastest_cycle_mhz": 213.5,
+   "div_cycles_checked": 59,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ss_27c_vm10": {
+   "f_vdd_mhz": 205.2,
+   "f_vdd01_mhz": 200.3,
+   "fastest_cycle_mhz": 211.4,
+   "div_cycles_checked": 59,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2000
+  },
+  "ss_27c": {
+   "f_vdd_mhz": 205.9,
+   "f_vdd01_mhz": 200.8,
+   "fastest_cycle_mhz": 213.4,
+   "div_cycles_checked": 59,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "ss_27c_vp10": {
+   "f_vdd_mhz": 203.5,
+   "f_vdd01_mhz": 198.5,
+   "fastest_cycle_mhz": 210.4,
+   "div_cycles_checked": 59,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2500
+  },
+  "ss_125c_vm10": {
+   "f_vdd_mhz": 195.0,
+   "f_vdd01_mhz": 191.0,
+   "fastest_cycle_mhz": 200.3,
+   "div_cycles_checked": 55,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2000
+  },
+  "ss_125c": {
+   "f_vdd_mhz": 196.1,
+   "f_vdd01_mhz": 191.9,
+   "fastest_cycle_mhz": 204.3,
+   "div_cycles_checked": 56,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2000
+  },
+  "ss_125c_vp10": {
+   "f_vdd_mhz": 195.0,
+   "f_vdd01_mhz": 190.9,
+   "fastest_cycle_mhz": 202.6,
+   "div_cycles_checked": 56,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2000
+  },
+  "ff_m40c_vm10": {
+   "f_vdd_mhz": 306.3,
+   "f_vdd01_mhz": 298.2,
+   "fastest_cycle_mhz": 316.3,
+   "div_cycles_checked": 88,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_m40c": {
+   "f_vdd_mhz": 300.8,
+   "f_vdd01_mhz": 293.0,
+   "fastest_cycle_mhz": 309.6,
+   "div_cycles_checked": 87,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_m40c_vp10": {
+   "f_vdd_mhz": 295.0,
+   "f_vdd01_mhz": 287.9,
+   "fastest_cycle_mhz": 303.2,
+   "div_cycles_checked": 85,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_27c_vm10": {
+   "f_vdd_mhz": 295.8,
+   "f_vdd01_mhz": 289.0,
+   "fastest_cycle_mhz": 307.0,
+   "div_cycles_checked": 85,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_27c": {
+   "f_vdd_mhz": 293.0,
+   "f_vdd01_mhz": 286.5,
+   "fastest_cycle_mhz": 303.2,
+   "div_cycles_checked": 85,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_27c_vp10": {
+   "f_vdd_mhz": 289.5,
+   "f_vdd01_mhz": 283.4,
+   "fastest_cycle_mhz": 299.0,
+   "div_cycles_checked": 84,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_125c_vm10": {
+   "f_vdd_mhz": 277.6,
+   "f_vdd01_mhz": 271.9,
+   "fastest_cycle_mhz": 291.0,
+   "div_cycles_checked": 81,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_125c": {
+   "f_vdd_mhz": 276.8,
+   "f_vdd01_mhz": 271.5,
+   "fastest_cycle_mhz": 288.8,
+   "div_cycles_checked": 81,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ff_125c_vp10": {
+   "f_vdd_mhz": 275.6,
+   "f_vdd01_mhz": 270.5,
+   "fastest_cycle_mhz": 287.2,
+   "div_cycles_checked": 80,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "ss_pff": {
+   "f_vdd_mhz": 254.1,
+   "f_vdd01_mhz": 250.1,
+   "fastest_cycle_mhz": 256.2,
+   "div_cycles_checked": 75,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 2000
+  },
+  "ff_pss": {
+   "f_vdd_mhz": 197.7,
+   "f_vdd01_mhz": 191.2,
+   "fastest_cycle_mhz": 202.6,
+   "div_cycles_checked": 56,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_pss": {
+   "f_vdd_mhz": 205.4,
+   "f_vdd01_mhz": 199.7,
+   "fastest_cycle_mhz": 212.0,
+   "div_cycles_checked": 59,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  },
+  "tt_pff": {
+   "f_vdd_mhz": 292.4,
+   "f_vdd01_mhz": 286.5,
+   "fastest_cycle_mhz": 303.5,
+   "div_cycles_checked": 85,
+   "bad_div_cycles": 0,
+   "edges_per_div_cycle": [
+    2
+   ],
+   "stalls": 0,
+   "div_exact_up_to_mhz": 3000
+  }
+ },
+ "burst_check": {
+  "note": "vctrl at vdd-0.2 .. vdd-0.9 V and a ramp vdd-0.3 -> vdd, bias_ref on the pad's 5 pF: no stalls, no dropped edges, no bursts",
+  "corners": {
+   "tt_m40c": {
+    "vdd-0.2": {
+     "f_mhz": 226.2,
+     "fastest_cycle_mhz": 228.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 215.1,
+     "fastest_cycle_mhz": 217.8,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 192.7,
+     "fastest_cycle_mhz": 195.2,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 170.5,
+     "fastest_cycle_mhz": 172.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 149.0,
+     "fastest_cycle_mhz": 151.2,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 243.2,
+     "fastest_cycle_mhz": 245.8,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   },
+   "tt_27c": {
+    "vdd-0.2": {
+     "f_mhz": 222.7,
+     "fastest_cycle_mhz": 225.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 212.7,
+     "fastest_cycle_mhz": 215.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 191.2,
+     "fastest_cycle_mhz": 193.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 169.7,
+     "fastest_cycle_mhz": 172.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 148.7,
+     "fastest_cycle_mhz": 150.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 236.5,
+     "fastest_cycle_mhz": 239.0,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   },
+   "ss_27c_vp10": {
+    "vdd-0.2": {
+     "f_mhz": 186.9,
+     "fastest_cycle_mhz": 189.2,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 179.0,
+     "fastest_cycle_mhz": 181.6,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 162.6,
+     "fastest_cycle_mhz": 165.2,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 146.3,
+     "fastest_cycle_mhz": 148.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 130.3,
+     "fastest_cycle_mhz": 132.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 198.8,
+     "fastest_cycle_mhz": 201.1,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   },
+   "ff_m40c_vp10": {
+    "vdd-0.2": {
+     "f_mhz": 273.3,
+     "fastest_cycle_mhz": 275.7,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 261.6,
+     "fastest_cycle_mhz": 263.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 237.5,
+     "fastest_cycle_mhz": 239.5,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 213.7,
+     "fastest_cycle_mhz": 215.7,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 190.8,
+     "fastest_cycle_mhz": 192.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 290.4,
+     "fastest_cycle_mhz": 292.7,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   },
+   "ss_pff": {
+    "vdd-0.2": {
+     "f_mhz": 241.9,
+     "fastest_cycle_mhz": 245.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 235.1,
+     "fastest_cycle_mhz": 239.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 215.1,
+     "fastest_cycle_mhz": 219.7,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 191.1,
+     "fastest_cycle_mhz": 195.5,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 166.4,
+     "fastest_cycle_mhz": 170.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 251.3,
+     "fastest_cycle_mhz": 255.1,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   },
+   "tt_pss": {
+    "vdd-0.2": {
+     "f_mhz": 187.1,
+     "fastest_cycle_mhz": 189.5,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.3": {
+     "f_mhz": 178.3,
+     "fastest_cycle_mhz": 180.9,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.5": {
+     "f_mhz": 160.0,
+     "fastest_cycle_mhz": 162.5,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.7": {
+     "f_mhz": 142.1,
+     "fastest_cycle_mhz": 144.4,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "vdd-0.9": {
+     "f_mhz": 124.7,
+     "fastest_cycle_mhz": 126.7,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    },
+    "ramp vdd-0.3 -> vdd": {
+     "f_mhz": 200.6,
+     "fastest_cycle_mhz": 203.1,
+     "bad_div_cycles": 0,
+     "stalls": 0
+    }
+   }
+  }
+ },
+ "bias_ref_bare_note": {
+  "note": "a first run with bias_ref left bare (no pad cap) showed burst-mode oscillation (fastest cycle over 1.1x the mean; up to 374.8 MHz at ff_m40c_vp10) at 12 corners, as spec.yaml records for a bare bias_ref. With the pad's 5 pF it is gone at every corner. Even bare, no /2 cycle saw more than 2 VCO edges.",
+  "corners": {
+   "tt_m40c": {
+    "vdd": {
+     "mean_f_mhz": 163.3,
+     "fastest_cycle_mhz": 302.0
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 161.4,
+     "fastest_cycle_mhz": 296.8
+    }
+   },
+   "tt_m40c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 188.6,
+     "fastest_cycle_mhz": 322.7
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 184.6,
+     "fastest_cycle_mhz": 317.8
+    }
+   },
+   "tt_27c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 150.3,
+     "fastest_cycle_mhz": 291.5
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 144.9,
+     "fastest_cycle_mhz": 284.8
+    }
+   },
+   "tt_125c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 202.7,
+     "fastest_cycle_mhz": 229.0
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 199.3,
+     "fastest_cycle_mhz": 224.1
+    }
+   },
+   "ss_m40c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 146.4,
+     "fastest_cycle_mhz": 262.8
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 143.1,
+     "fastest_cycle_mhz": 257.9
+    }
+   },
+   "ss_27c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 131.8,
+     "fastest_cycle_mhz": 245.7
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 129.1,
+     "fastest_cycle_mhz": 241.6
+    }
+   },
+   "ss_125c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 164.2,
+     "fastest_cycle_mhz": 210.5
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 161.3,
+     "fastest_cycle_mhz": 204.0
+    }
+   },
+   "ff_m40c": {
+    "vdd": {
+     "mean_f_mhz": 275.0,
+     "fastest_cycle_mhz": 317.1
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 270.1,
+     "fastest_cycle_mhz": 300.8
+    }
+   },
+   "ff_m40c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 217.5,
+     "fastest_cycle_mhz": 374.8
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 211.9,
+     "fastest_cycle_mhz": 368.7
+    }
+   },
+   "ff_27c_vp10": {
+    "vdd": {
+     "mean_f_mhz": 280.0,
+     "fastest_cycle_mhz": 312.8
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 273.9,
+     "fastest_cycle_mhz": 304.6
+    }
+   },
+   "ff_pss": {
+    "vdd": {
+     "mean_f_mhz": 166.4,
+     "fastest_cycle_mhz": 304.8
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 162.9,
+     "fastest_cycle_mhz": 299.3
+    }
+   },
+   "tt_pss": {
+    "vdd": {
+     "mean_f_mhz": 134.4,
+     "fastest_cycle_mhz": 253.1
+    },
+    "vdd-0.1": {
+     "mean_f_mhz": 130.4,
+     "fastest_cycle_mhz": 247.4
+    }
+   }
+  }
+ },
+ "model_rerun_t_lim_0p5ns": {
+  "cmd": "eda python blocks/pll/tb/prescaler_margin.py --t-lim-ns 0.5",
+  "points": [
+   {
+    "f_ref_mhz": 6.25,
+    "n": 4,
+    "f_vco_mhz": 200.0,
+    "from_rail_f_end_mhz": 199.9,
+    "from_0v_f_end_mhz": 200.0
+   },
+   {
+    "f_ref_mhz": 5.0,
+    "n": 5,
+    "f_vco_mhz": 200.0,
+    "from_rail_f_end_mhz": 200.0,
+    "from_0v_f_end_mhz": 200.0
+   },
+   {
+    "f_ref_mhz": 12.5,
+    "n": 2,
+    "f_vco_mhz": 200.0,
+    "from_rail_f_end_mhz": 200.0,
+    "from_0v_f_end_mhz": 200.0
+   },
+   {
+    "f_ref_mhz": 6.25,
+    "n": 3,
+    "f_vco_mhz": 150.0,
+    "from_rail_f_end_mhz": 150.0,
+    "from_0v_f_end_mhz": 150.0
+   }
+  ]
+ }
+}

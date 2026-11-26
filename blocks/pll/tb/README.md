@@ -323,3 +323,16 @@ Results:
   rail, and 266 MHz at its fastest corner. Both are below the stage's
   274 MHz, and if they hold, none of the cases above can happen on silicon.
   Rerun this script with a post-layout calibration once that lands.
+- **On the extracted cell (2026-11-25).** Since issue #48 the first /2 is
+  the macro's TSPC, not the dffrnq_2 + inv_1 stage the 3.65 ns models.
+  `../analog/layout/false_lock_pex.py` measures it on the extracted
+  pll_analog at all 31 corners: with vctrl forced to vdd and vdd-0.1 V
+  (bias_ref on the pad's 5 pF) the VCO tops out at 306 MHz (fastest cycle
+  316 MHz, ff_m40c_vm10; ss_pff 254 MHz) and vco_div2 is exactly two VCO
+  edges per cycle in every one of 2176 cycles; driven alone, the TSPC
+  divides exactly up to at least 2000 MHz at every corner (t_lim <= 0.5 ns).
+  So the false lock from the rail is a model artefact. With
+  `--t-lim-ns 0.5` this script locks from the rail at every point. Output:
+  `../reports/recorded/false_lock_pex.json`.
+
+      $CHIP_FLOW_HOME/bin/eda python blocks/pll/analog/layout/false_lock_pex.py [--bench rail|div|burst]
