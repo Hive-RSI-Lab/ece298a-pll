@@ -1,6 +1,6 @@
 {
  "what": "Can the 300 MHz false lock from vctrl at the rail (verify.html claim 1.7, seen only in tb/prescaler_margin.py) happen on the extracted cell?",
- "script": "blocks/pll/analog/layout/false_lock_pex.py",
+ "script": "blocks/pll/analog/falselock/false_lock_pex.py",
  "extracted": "blocks/pll/analog/log/pex_pvt/pll_analog.pex.ordered.spice",
  "benches": {
   "rail": "blocks/pll/analog/layout_ref/pll_analog_pex_rail_tb.cir",

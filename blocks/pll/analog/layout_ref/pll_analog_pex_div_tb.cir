@@ -1,7 +1,7 @@
 * pll_analog_pex_div_tb.cir - the extracted cell's TSPC /2 (vco_out ->
 * vco_div2) alone, clocked above anything the VCO reaches, to give its real
 * top frequency. Run by
-*     eda python layout/false_lock_pex.py --bench div
+*     eda python falselock/false_lock_pex.py --bench div
 * which writes {{NETLIST}} as a copy of the extracted pll_analog, renamed
 * pll_analog_div, with two pins added at the end: vco_out (to probe it) and
 * nb_drv, wired to the gates of the six output-inverter fingers in place of

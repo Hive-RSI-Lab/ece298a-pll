@@ -2,7 +2,7 @@
 """false_lock_pex.py - can the extracted cell's TSPC /2 drop VCO edges with
 vctrl at the rail (the false lock of verify.html claim 1.7)?
 
-    eda python layout/false_lock_pex.py [--extracted FILE] [--corners NAME ...]
+    eda python falselock/false_lock_pex.py [--extracted FILE] [--corners NAME ...]
                                         [--bench rail|div|burst] [--jobs N] [--out FILE]
 
 --bench rail (layout_ref/pll_analog_pex_rail_tb.cir): the extracted
@@ -43,7 +43,9 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+# pex_pvt lives in layout/; this script does not, because top_harden hashes
+# all of layout/ and a new file there marks the recorded harden stale
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "layout"))
 import pex_pvt  # noqa: E402  (sets up chip-flow's engine path)
 from pex_pvt import sim_run, simlib, speclib, check_pex_sim  # noqa: E402
 

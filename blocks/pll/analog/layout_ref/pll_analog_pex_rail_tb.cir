@@ -1,6 +1,6 @@
 * pll_analog_pex_rail_tb.cir - does the extracted cell's own TSPC /2 keep up
 * with its VCO when vctrl sits at the rail? Run by
-*     eda python layout/false_lock_pex.py
+*     eda python falselock/false_lock_pex.py
 * (which also reads the wrdata traces below edge by edge). The question
 * behind it: the behavioural model of tb/prescaler_margin.py at ss_pff
 * puts the VCO at ~310 MHz with vctrl at vdd, over its first stage's limit

@@ -1,6 +1,6 @@
 * pll_analog_pex_burst_tb.cir - does the extracted ring burst (fast
 * cycles, then 20-30 ns stalls) anywhere below the rail? Run by
-*     eda python layout/false_lock_pex.py --bench burst
+*     eda python falselock/false_lock_pex.py --bench burst
 * A first run of pll_analog_pex_rail_tb.cir with bias_ref left bare showed
 * that burst mode at 12 of the 31 corners (tt_m40c, tt_m40c_vp10,
 * tt_27c_vp10, tt_125c_vp10, ss_m40c_vp10, ss_27c_vp10, ss_125c_vp10,
