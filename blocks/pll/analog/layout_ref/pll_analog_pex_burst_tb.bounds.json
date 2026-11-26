@@ -1,0 +1,14 @@
+[
+  {"measure": "burst_f0_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (vdd-0.2), 400..600 ns after pll_en rises"},
+  {"measure": "burst_f1_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (vdd-0.3), 400..600 ns after pll_en rises"},
+  {"measure": "burst_f2_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (vdd-0.5), 400..600 ns after pll_en rises"},
+  {"measure": "burst_f3_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (vdd-0.7), 400..600 ns after pll_en rises"},
+  {"measure": "burst_f4_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (vdd-0.9), 400..600 ns after pll_en rises"},
+  {"measure": "burst_f5_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs (ramp vdd-0.3 -> vdd), 400..600 ns after pll_en rises"}
+]

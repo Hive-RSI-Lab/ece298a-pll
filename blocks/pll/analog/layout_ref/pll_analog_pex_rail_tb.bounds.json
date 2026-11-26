@@ -1,0 +1,10 @@
+[
+  {"measure": "rail_f_vdd_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs at vctrl = vdd, 200..500 ns after pll_en rises"},
+  {"measure": "rail_div_ratio_vdd", "min": 1.99, "max": 2.01, "severity": "error",
+   "msg": "f(vco_out) / f(vco_div2) = 2 at vctrl = vdd: the TSPC /2 keeps up with the VCO at the rail"},
+  {"measure": "rail_f_vdd01_mhz", "min": 1.0, "severity": "error",
+   "msg": "the ring runs at vctrl = vdd-0.1 V, 200..500 ns after pll_en rises"},
+  {"measure": "rail_div_ratio_vdd01", "min": 1.99, "max": 2.01, "severity": "error",
+   "msg": "f(vco_out) / f(vco_div2) = 2 at vctrl = vdd-0.1 V"}
+]

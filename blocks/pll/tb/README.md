@@ -323,3 +323,31 @@ Results:
   rail, and 266 MHz at its fastest corner. Both are below the stage's
   274 MHz, and if they hold, none of the cases above can happen on silicon.
   Rerun this script with a post-layout calibration once that lands.
+- **On the extracted cell (2026-11-25).** Since issue #48 the first /2 is
+  the macro's TSPC, not the dffrnq_2 + inv_1 stage the 3.65 ns models.
+  `../analog/falselock/false_lock_pex.py` measures it on the extracted
+  pll_analog at all 31 corners: with vctrl forced to vdd and vdd-0.1 V
+  (bias_ref on the pad's 5 pF) the VCO tops out at 306 MHz (fastest cycle
+  316 MHz, ff_m40c_vm10; ss_pff 254 MHz) and vco_div2 is exactly two VCO
+  edges per cycle in every one of 2176 cycles; driven alone, the TSPC
+  divides exactly up to at least 2000 MHz at every corner (t_lim <= 0.5 ns).
+  So the false lock from the rail is a model artefact. With
+  `--t-lim-ns 0.5` this script locks from the rail at every point. Output:
+  `../reports/recorded/false_lock_pex.json`.
+
+      $CHIP_FLOW_HOME/bin/eda python blocks/pll/analog/falselock/false_lock_pex.py [--bench rail|div|burst]
+- **Closed loop from the rail, extracted cell (2026-11-26).**
+  `false_lock_cosim.py` runs `cosim_corners.py`'s bench (released RTL,
+  extracted pll_analog, PDK corner) with vctrl and the loop filter held at
+  vdd by a switch for 10 us while pll_en is low, released 20 ns before
+  pll_en rises, N fixed from reset and no N step. A `.ic` does not do it:
+  the filter's charge-form MOS caps drop to 0 V at t=0 under `uic`. At
+  ss_pff and ff_m40c_vm10, N=3 and N=2, vctrl starts at 2.97 V and every
+  point locks in 4.0-4.16 us with no lock drop, f_vco within 3.1e-5 of
+  150 / 100 MHz (not the rail), vctrl settling at 1.98 / 1.92 V (N=3)
+  and 1.58 / 1.55 V (N=2), and no short VCO pulses. Three of the four
+  runs hit the 2 h run limit at 34.6-37.5 us of the 40 us; their measures
+  cover 24-27 us of closed loop, and `--collect` built the report from
+  them. Output: `../reports/recorded/false_lock_cosim.json`.
+
+      $CHIP_FLOW_HOME/bin/eda python blocks/pll/tb/false_lock_cosim.py [--points CORNER:N ...] [--collect]
