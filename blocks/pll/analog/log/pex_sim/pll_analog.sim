@@ -1,365 +1,423 @@
 | units: 0.5 tech: gf180mcuD format: MIT
-x vbp vdd va vdd s=104000,1860 d=104000,1860 l=400 w=800 x=11790 y=25122 pfet_03v3
-x a_7800_11156 a_7800_17156 a_7200_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=7800 y=11156 ppolyf_u
-x r3 r4 a_16296_1350 vdd s=31200,704 d=78000,1460 l=56 w=600 x=16586 y=1350 pfet_03v3
-x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=9922 y=4490 nfet_03v3
-x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=12674 y=20268 nfet_03v3
-x vbp vdd t2 vdd s=104000,1860 d=104000,1860 l=400 w=800 x=14030 y=25122 pfet_03v3
-x nb vco_out vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=19830 y=1350 pfet_03v3
-x vctrl vss s=756800,17376 l=2400 w=8600 x=14968 y=40718 cap_nmos_03v3_b
-x r3 a_16296_1350 r4 vdd s=78000,1460 d=31200,704 l=56 w=600 x=16426 y=1350 pfet_03v3
-x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=15166 y=20268 nfet_03v3
-x nb vco_out vss vss s=31200,704 d=73200,1444 l=56 w=600 x=19826 y=-299 nfet_03v3
-x vbh vdd vbh vdd s=104000,1860 d=104000,1860 l=400 w=800 x=10190 y=7684 pfet_03v3
-x vst vss vbp vss s=12200,444 d=12200,444 l=800 w=100 x=16390 y=4490 nfet_03v3
-x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=5510 y=25122 pfet_03v3
-x pfd_dn vss dn_b vss s=24400,644 d=24400,644 l=56 w=200 x=11054 y=20268 nfet_03v3
-x a_13800_11156 a_13200_18476 a_13800_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=13800 y=11156 ppolyf_u
-x va vref vbp vss s=97600,1844 d=97600,1844 l=200 w=800 x=13898 y=4490 nfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=14968 y=32435 cap_nmos_03v3_b
-x a_4800_11156 vcl a_4200_11024 vss s=26400,664 d=26400,664 l=4300 w=200 x=4800 y=11156 ppolyf_u
-x en_b vss vref vss s=24400,644 d=24400,644 l=56 w=200 x=18754 y=4490 nfet_03v3
-x vbn_vco a_17668_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=17994 y=-1039 nfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=3064 y=40718 cap_nmos_03v3_b
-x vcp_n vss vcp_n vss s=244000,4244 d=244000,4244 l=400 w=2000 x=562 y=20268 nfet_03v3
-x cp_trim0 t1a vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=7914 y=20268 nfet_03v3
-x dqn vss dx vss s=24400,644 d=24400,644 l=56 w=200 x=20858 y=100 nfet_03v3
-x a_2800_11156 vfilt a_2000_11024 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=2800 y=11156 ppolyf_u
-x vbp_vco a_16980_1350 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=17314 y=2590 pfet_03v3
-x a_10800_11156 a_10800_18476 a_10200_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=10800 y=11156 ppolyf_u
-x vfilt vss s=616000,14176 l=2400 w=7000 x=3064 y=32435 cap_nmos_03v3_b
-x cp_trim0 t1b t1c vss s=48800,1044 d=48800,1044 l=56 w=400 x=8994 y=20268 nfet_03v3
-x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=570 y=7684 pfet_03v3
-x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=5910 y=7684 pfet_03v3
-x pll_en vdd dqn vdd s=13000,460 d=13000,460 l=56 w=100 x=22170 y=1350 pfet_03v3
-x vctrl vnt vbh vss s=122000,2244 d=122000,2244 l=200 w=1000 x=2614 y=4490 nfet_03v3
-x vbp_vco vdd a_16296_1350 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=16426 y=2590 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=11992 y=40718 cap_nmos_03v3_b
-x r5 nb a_18352_n100 vss s=20800,504 d=48800,1044 l=56 w=400 x=18634 y=-99 nfet_03v3
-x r4 a_17668_0 r5 vss s=36600,844 d=15600,404 l=56 w=300 x=17790 y=0 nfet_03v3
-x vbl vss vdump vss s=48800,1044 d=48800,1044 l=400 w=400 x=4622 y=4490 nfet_03v3
-x pll_en vi vbp_vco vss s=122000,2244 d=122000,2244 l=56 w=1000 x=22226 y=4490 nfet_03v3
-x vbl vss vbl vss s=48800,1044 d=48800,1044 l=400 w=400 x=3738 y=4490 nfet_03v3
-x a_6600_11156 a_6600_17156 a_6000_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=6600 y=11156 ppolyf_u
-x a_15600_11156 vss a_15000_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=15600 y=11156 ppolyf_u
-x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=4510 y=7684 pfet_03v3
-x pfd_up vdd up_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=11090 y=7684 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=11992 y=32435 cap_nmos_03v3_b
-x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=14930 y=25122 pfet_03v3
-x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=13798 y=20268 nfet_03v3
-x vbp_vco vdd vbn_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=19650 y=7684 pfet_03v3
+x a_400_12162 vctrl a_400_12030 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=400 y=12162 ppolyf_u
+x dqn vdd sf vdd s=26000,660 d=26000,660 l=56 w=200 x=20254 y=2036 pfet_03v3
+x vbp_vco vdd a_4150_2036 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=4280 y=3276 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=9016 y=40261 cap_nmos_03v3_b
+x cp_trim1 t2 vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=11294 y=21274 nfet_03v3
+x pll_en vdd en_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=14954 y=8690 pfet_03v3
 x dqb vss vco_div2 vss s=36600,844 d=15600,404 l=56 w=300 x=23474 y=0 nfet_03v3
-x vbp_vco a_17664_1350 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=17998 y=2590 pfet_03v3
-x a_12600_11156 a_12000_18476 a_12600_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=12600 y=11156 ppolyf_u
-x dqb vdd vco_div2 vdd s=78000,1460 d=31200,704 l=56 w=600 x=23478 y=1350 pfet_03v3
+x clkb vdd vdd vdd d=26000,660 l=90 w=200 x=12016 y=2036 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=11992 y=48544 cap_nmos_03v3_b
+x a_4200_12162 vs a_4200_12030 vss s=26400,664 d=26400,664 l=4300 w=200 x=4200 y=12162 ppolyf_u
+x a_13200_12162 a_13200_19482 a_12600_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=13200 y=12162 ppolyf_u
+x vbh vdd vdump vdd s=104000,1860 d=104000,1860 l=400 w=800 x=8850 y=8690 pfet_03v3
+x vbn_vco a_6394_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=6720 y=-1039 nfet_03v3
+x ck mf m1 vss s=12200,444 d=12200,444 l=56 w=100 x=16930 y=200 nfet_03v3
+x sf vss vss vss d=97600,1844 l=200 w=800 x=21250 y=-499 nfet_03v3
+x dqn vdd dqb vdd s=52000,1060 d=52000,1060 l=56 w=400 x=23042 y=2036 pfet_03v3
+x pll_en vi vbp_vco vss s=122000,2244 d=122000,2244 l=56 w=1000 x=23206 y=5176 nfet_03v3
+x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=6650 y=27788 pfet_03v3
+x vbh vdd vbh vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7050 y=8690 pfet_03v3
+x vbl vss vbl vss s=48800,1044 d=48800,1044 l=400 w=400 x=6830 y=5176 nfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=17944 y=40261 cap_nmos_03v3_b
+x vbp vdd t2 vdd s=104000,1860 d=104000,1860 l=400 w=800 x=16070 y=27788 pfet_03v3
+x a_10200_12162 bias_ref a_10200_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=10200 y=12162 ppolyf_u
+x vcp_p vdd up_s vdd s=1300000,20260 d=1300000,20260 l=800 w=10000 x=3610 y=27788 pfet_03v3
+x a_1200_12162 a_1200_19662 a_400_12030 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=1200 y=12162 ppolyf_u
+x a_9000_12162 bias_ref a_8400_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=9000 y=12162 ppolyf_u
+x vref vss vst vss s=122000,2244 d=122000,2244 l=200 w=1000 x=15266 y=5176 nfet_03v3
 x dqn vss dqb vss s=24400,644 d=24400,644 l=56 w=200 x=23038 y=100 nfet_03v3
-x nb vdd vco_out vdd s=78000,1460 d=31200,704 l=56 w=600 x=19670 y=1350 pfet_03v3
-x pfd_dn dn_s vctrl vss s=48800,1044 d=48800,1044 l=100 w=400 x=6306 y=20268 nfet_03v3
-x nb vss vco_out vss s=73200,1444 d=31200,704 l=56 w=600 x=19666 y=-299 nfet_03v3
-x a_8400_11156 a_7800_17156 a_8400_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=8400 y=11156 ppolyf_u
-x vco_out a_20918_1350 dx vdd s=52000,1060 d=52000,1060 l=56 w=400 x=21298 y=1350 pfet_03v3
-x r4 r5 a_17664_1350 vdd s=31200,704 d=78000,1460 l=56 w=600 x=17954 y=1350 pfet_03v3
-x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=2670 y=7684 pfet_03v3
-x r2 a_14932_0 r3 vss s=36600,844 d=15600,404 l=56 w=300 x=15054 y=0 nfet_03v3
-x dn_b dn_s vdump vss s=48800,1044 d=48800,1044 l=100 w=400 x=7330 y=20268 nfet_03v3
-x up_b up_s vctrl vdd s=104000,1860 d=104000,1860 l=100 w=800 x=17250 y=7684 pfet_03v3
-x vcp_n vss vcp_p vss s=244000,4244 d=244000,4244 l=400 w=2000 x=1446 y=20268 nfet_03v3
-x r2 r3 a_14928_1350 vdd s=31200,704 d=78000,1460 l=56 w=600 x=15218 y=1350 pfet_03v3
-x a_14400_11156 a_14400_18476 a_13800_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=14400 y=11156 ppolyf_u
-x vbn_vco vss a_16984_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=17106 y=-1039 nfet_03v3
-x r1 r2 a_15616_0 vss s=15600,404 d=36600,844 l=56 w=300 x=15898 y=0 nfet_03v3
-x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=1270 y=7684 pfet_03v3
-x dqn vdd a_20918_1350 vdd s=52000,1060 d=52000,1060 l=56 w=400 x=20862 y=1350 pfet_03v3
-x pll_en a_18352_n100 vss vss s=20800,504 d=48800,1044 l=56 w=400 x=19230 y=-99 nfet_03v3
-x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=13014 y=4490 nfet_03v3
-x vbp_vco a_15612_1350 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=15946 y=2590 pfet_03v3
-x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=8598 y=4490 nfet_03v3
-x pll_en vss en_b vss s=24400,644 d=24400,644 l=56 w=200 x=12134 y=20268 nfet_03v3
-x r1 a_15616_0 r2 vss s=36600,844 d=15600,404 l=56 w=300 x=15738 y=0 nfet_03v3
-x vco_out vss a_21350_n100 vss s=48800,1044 d=48800,1044 l=56 w=400 x=21294 y=-99 nfet_03v3
-x vref vss vi vss s=48800,1044 d=48800,1044 l=400 w=400 x=7714 y=4490 nfet_03v3
-x pll_en nb vdd vdd s=20800,504 d=52000,1060 l=56 w=400 x=19234 y=1350 pfet_03v3
-x vbn_vco vss a_17668_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=17790 y=-1039 nfet_03v3
-x r5 r1 a_16980_1350 vdd s=31200,704 d=78000,1460 l=56 w=600 x=17270 y=1350 pfet_03v3
-x vcp_n vss dn_s vss s=244000,4244 d=244000,4244 l=400 w=2000 x=2330 y=20268 nfet_03v3
-x a_11400_11156 a_10800_18476 a_11400_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=11400 y=11156 ppolyf_u
-x en_b vss va vss s=24400,644 d=24400,644 l=56 w=200 x=18214 y=4490 nfet_03v3
-x vbn_vco a_16300_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=16626 y=-1039 nfet_03v3
-x pll_en vdd en_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=13754 y=7684 pfet_03v3
-x dy vdd dqn vdd s=52000,1060 d=52000,1060 l=56 w=400 x=22606 y=1350 pfet_03v3
-x vcp_n vss dn_s vss s=244000,4244 d=244000,4244 l=400 w=2000 x=3654 y=20268 nfet_03v3
-x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=14482 y=20268 nfet_03v3
-x r3 r4 a_16300_0 vss s=15600,404 d=36600,844 l=56 w=300 x=16582 y=0 nfet_03v3
-x r5 a_16980_1350 r1 vdd s=78000,1460 d=31200,704 l=56 w=600 x=17110 y=1350 pfet_03v3
-x vctrl vs vi vss s=122000,2244 d=122000,2244 l=200 w=1000 x=20858 y=4490 nfet_03v3
-x r1 r2 a_15612_1350 vdd s=31200,704 d=78000,1460 l=56 w=600 x=15902 y=1350 pfet_03v3
-x vref vss vst vss s=122000,2244 d=122000,2244 l=200 w=1000 x=14582 y=4490 nfet_03v3
-x r3 a_16300_0 r4 vss s=36600,844 d=15600,404 l=56 w=300 x=16422 y=0 nfet_03v3
-x vref vss va vss s=48800,1044 d=48800,1044 l=400 w=400 x=10806 y=4490 nfet_03v3
-x a_7200_11156 a_6600_17156 a_7200_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=7200 y=11156 ppolyf_u
-x vbn_vco a_14932_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=15258 y=-1039 nfet_03v3
-x r5 r1 a_16984_0 vss s=15600,404 d=36600,844 l=56 w=300 x=17266 y=0 nfet_03v3
-x pll_en vdd vbp vdd s=26000,660 d=26000,660 l=56 w=200 x=12758 y=7684 pfet_03v3
-x nb vco_out vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=20426 y=1350 pfet_03v3
-x r5 nb vdd vdd s=20800,504 d=52000,1060 l=56 w=400 x=18638 y=1350 pfet_03v3
-x vbp_vco a_14928_1350 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=15262 y=2590 pfet_03v3
-x cp_trim1 t2 vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=8454 y=20268 nfet_03v3
-x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=3810 y=7684 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=9016 y=40718 cap_nmos_03v3_b
-x vbn_vco vss a_15616_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=15738 y=-1039 nfet_03v3
-x r5 a_16984_0 r1 vss s=36600,844 d=15600,404 l=56 w=300 x=17106 y=0 nfet_03v3
-x vbn_vco vss vbn_vco vss s=97600,1844 d=97600,1844 l=100 w=800 x=19734 y=4490 nfet_03v3
-x en_b vdd vst vdd s=13000,460 d=13000,460 l=2000 w=100 x=14310 y=7684 pfet_03v3
-x pfd_up vss up_b vss s=24400,644 d=24400,644 l=56 w=200 x=10514 y=20268 nfet_03v3
-x a_400_11156 vctrl a_400_11024 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=400 y=11156 ppolyf_u
-x a_13200_11156 a_13200_18476 a_12600_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=13200 y=11156 ppolyf_u
-x a_4200_11156 vs a_4200_11024 vss s=26400,664 d=26400,664 l=4300 w=200 x=4200 y=11156 ppolyf_u
-x vfilt vss s=616000,14176 l=2400 w=7000 x=9016 y=32435 cap_nmos_03v3_b
-x vbp_vco vdd a_16980_1350 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=17110 y=2590 pfet_03v3
-x en_b vss vcp_n vss s=24400,644 d=24400,644 l=56 w=200 x=11594 y=20268 nfet_03v3
-x vco_out a_22044_n100 dqn vss s=48800,1044 d=48800,1044 l=56 w=400 x=22166 y=-99 nfet_03v3
-x r4 a_17664_1350 r5 vdd s=78000,1460 d=31200,704 l=56 w=600 x=17794 y=1350 pfet_03v3
-x vbp vdd t1a vdd s=104000,1860 d=104000,1860 l=400 w=800 x=9990 y=25122 pfet_03v3
-x vbp_vco vdd vbn_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=19050 y=7684 pfet_03v3
-x a_1200_11156 a_1200_18656 a_400_11024 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=1200 y=11156 ppolyf_u
-x a_10200_11156 bias_ref a_10200_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=10200 y=11156 ppolyf_u
-x r4 r5 a_17668_0 vss s=15600,404 d=36600,844 l=56 w=300 x=17950 y=0 nfet_03v3
-x dqn vdd dqb vdd s=52000,1060 d=52000,1060 l=56 w=400 x=23042 y=1350 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=17944 y=32435 cap_nmos_03v3_b
-x a_9000_11156 bias_ref a_8400_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=9000 y=11156 ppolyf_u
-x r2 a_14928_1350 r3 vdd s=78000,1460 d=31200,704 l=56 w=600 x=15058 y=1350 pfet_03v3
-x pll_en vdd vbp_vco vdd s=26000,660 d=26000,660 l=56 w=200 x=21290 y=7684 pfet_03v3
-x pll_en vi vbp_vco vss s=122000,2244 d=122000,2244 l=56 w=1000 x=23206 y=4490 nfet_03v3
-x pfd_dn vdd dn_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=11646 y=7684 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=6040 y=40718 cap_nmos_03v3_b
-x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=1970 y=7684 pfet_03v3
+x r3 r4 a_5274_0 vss s=15600,404 d=36600,844 l=56 w=300 x=5556 y=0 nfet_03v3
+x r4 r5 a_7950_0 vss s=15600,404 d=36600,844 l=56 w=300 x=8232 y=0 nfet_03v3
+x vcp_n vss vcp_p vss s=488000,8244 d=488000,8244 l=800 w=4000 x=1846 y=21274 nfet_03v3
+x vbn_vco vss a_3034_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=3156 y=-1039 nfet_03v3
+x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=11690 y=5176 nfet_03v3
+x pll_en nb vdd vdd s=20800,504 d=52000,1060 l=56 w=400 x=9952 y=2036 pfet_03v3
+x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7550 y=27788 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=6040 y=40261 cap_nmos_03v3_b
+x vdump vnt vdump vss s=122000,2244 d=122000,2244 l=200 w=1000 x=1246 y=5176 nfet_03v3
+x en_b vss vst vss s=24400,644 d=24400,644 l=56 w=200 x=17674 y=5176 nfet_03v3
+x a_15000_12162 a_14400_19482 a_15000_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=15000 y=12162 ppolyf_u
+x vbh vdd vbh vdd s=104000,1860 d=104000,1860 l=400 w=800 x=10190 y=8690 pfet_03v3
+x a_6000_12162 vref a_6000_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=6000 y=12162 ppolyf_u
+x pll_en vdd vcp_p vdd s=26000,660 d=26000,660 l=56 w=200 x=13842 y=8690 pfet_03v3
+x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=18066 y=21274 nfet_03v3
+x pll_en vdd a_5270_2036 vdd s=26000,660 d=26000,660 l=56 w=200 x=6084 y=2036 pfet_03v3
+x m1 vdd m2 vdd s=52000,1060 d=52000,1060 l=56 w=400 x=16062 y=2036 pfet_03v3
+x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=8450 y=27788 pfet_03v3
+x vbp vdd t2 vdd s=104000,1860 d=104000,1860 l=400 w=800 x=10690 y=27788 pfet_03v3
+x vcp_n vss vcp_n vss s=488000,8244 d=488000,8244 l=800 w=4000 x=562 y=21274 nfet_03v3
+x en_b vss a_4154_0 vss s=12200,444 d=12200,444 l=56 w=100 x=4960 y=200 nfet_03v3
+x en_b vss vcp_n vss s=24400,644 d=24400,644 l=56 w=200 x=14434 y=21274 nfet_03v3
+x a_12000_12162 a_12000_19482 a_11400_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=12000 y=12162 ppolyf_u
+x r5 nb a_9070_n100 vss s=20800,504 d=48800,1044 l=56 w=400 x=9352 y=-99 nfet_03v3
+x pfd_dn vdd dn_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=12846 y=8690 pfet_03v3
+x ck sf s1 vdd s=26000,660 d=26000,660 l=56 w=200 x=22424 y=2036 pfet_03v3
+x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=570 y=8690 pfet_03v3
+x r1 r2 a_4154_0 vss s=15600,404 d=36600,844 l=56 w=300 x=4436 y=0 nfet_03v3
+x a_2000_12162 a_1200_19662 a_2000_12030 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=2000 y=12162 ppolyf_u
+x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=5910 y=8690 pfet_03v3
+x vbp vdd t1a vdd s=104000,1860 d=104000,1860 l=400 w=800 x=11590 y=27788 pfet_03v3
+x pll_en vdd vbp vdd s=26000,660 d=26000,660 l=56 w=200 x=14398 y=8690 pfet_03v3
+x vbl vss vdump vss s=48800,1044 d=48800,1044 l=400 w=400 x=5506 y=5176 nfet_03v3
+x en_b vss vbn_vco vss s=24400,644 d=24400,644 l=56 w=200 x=20318 y=5176 nfet_03v3
+x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=16970 y=27788 pfet_03v3
+x vdump vnt vdump vss s=122000,2244 d=122000,2244 l=200 w=1000 x=1930 y=5176 nfet_03v3
+x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=19210 y=27788 pfet_03v3
+x pfd_up vdd up_b vdd s=52000,1060 d=52000,1060 l=56 w=400 x=11090 y=8690 pfet_03v3
+x vctrl vnt vbh vss s=122000,2244 d=122000,2244 l=200 w=1000 x=562 y=5176 nfet_03v3
+x nb vco_out vss vss s=31200,704 d=73200,1444 l=56 w=600 x=10544 y=-299 nfet_03v3
+x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=4510 y=8690 pfet_03v3
+x vbp_vco a_5270_2036 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=5604 y=3276 pfet_03v3
+x vctrl vs vi vss s=122000,2244 d=122000,2244 l=200 w=1000 x=21542 y=5176 nfet_03v3
+x pll_en vss a_19434_n100 vss s=48800,1044 d=48800,1044 l=56 w=400 x=19378 y=-99 nfet_03v3
+x ck s1 m1 vdd s=52000,1060 d=52000,1060 l=56 w=400 x=14880 y=2036 pfet_03v3
+x vbp vdd vbp vdd s=104000,1860 d=104000,1860 l=400 w=800 x=12930 y=27788 pfet_03v3
+x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=17870 y=27788 pfet_03v3
+x pll_en vss a_9070_n100 vss s=48800,1044 d=20800,504 l=56 w=400 x=9788 y=-99 nfet_03v3
+x dqb vco_div2 vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=23638 y=2036 pfet_03v3
+x vco_out vdd clkb vdd s=26000,660 d=26000,660 l=56 w=200 x=11580 y=2036 pfet_03v3
+x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=16698 y=21274 nfet_03v3
+x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=9922 y=5176 nfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=88 y=40261 cap_nmos_03v3_b
+x vbp_vco vdd vbn_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=20090 y=8690 pfet_03v3
+x vbp_vco a_6390_2036 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=6724 y=3276 pfet_03v3
+x cp_trim1 t1c vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=12374 y=21274 nfet_03v3
+x r2 r3 a_3034_0 vss s=15600,404 d=36600,844 l=56 w=300 x=3316 y=0 nfet_03v3
+x vbp vdd va vdd s=104000,1860 d=104000,1860 l=400 w=800 x=13830 y=27788 pfet_03v3
+x cp_trim0 vdd t1a vdd s=26000,660 d=26000,660 l=56 w=200 x=21566 y=27788 pfet_03v3
+x vcp_n vss dn_s vss s=488000,8244 d=488000,8244 l=800 w=4000 x=4854 y=21274 nfet_03v3
+x vst vss vbp vss s=12200,444 d=12200,444 l=800 w=100 x=16390 y=5176 nfet_03v3
+x vcp_n vss dn_s vss s=488000,8244 d=488000,8244 l=800 w=4000 x=3570 y=21274 nfet_03v3
+x va vref vbp vss s=97600,1844 d=97600,1844 l=200 w=800 x=13898 y=5176 nfet_03v3
+x pll_en vdd nb vdd s=52000,1060 d=20800,504 l=56 w=400 x=9792 y=2036 pfet_03v3
+x a_7800_12162 a_7800_18162 a_7200_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=7800 y=12162 ppolyf_u
+x en_b vss vref vss s=24400,644 d=24400,644 l=56 w=200 x=18754 y=5176 nfet_03v3
+x pfd_dn vss dn_b vss s=24400,644 d=24400,644 l=56 w=200 x=13894 y=21274 nfet_03v3
+x vbn_vco a_7950_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=8276 y=-1039 nfet_03v3
+x nb vdd vco_out vdd s=78000,1460 d=31200,704 l=56 w=600 x=10984 y=2036 pfet_03v3
+x vbp_vco a_3030_2036 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=3364 y=3276 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=9016 y=48544 cap_nmos_03v3_b
+x ck m2 s1 vss s=24400,644 d=24400,644 l=56 w=200 x=18154 y=100 nfet_03v3
+x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=2670 y=8690 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=14968 y=40261 cap_nmos_03v3_b
+x vbp vdd t1b vdd s=104000,1860 d=104000,1860 l=400 w=800 x=14730 y=27788 pfet_03v3
+x a_4800_12162 vcl a_4200_12030 vss s=26400,664 d=26400,664 l=4300 w=200 x=4800 y=12162 ppolyf_u
+x a_13800_12162 a_13200_19482 a_13800_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=13800 y=12162 ppolyf_u
+x nb vco_out vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=11144 y=2036 pfet_03v3
+x vbn_vco a_3034_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=3360 y=-1039 nfet_03v3
+x vco_out vss clkb vss s=12200,444 d=12200,444 l=56 w=100 x=11576 y=200 nfet_03v3
+x r4 r5 a_7946_2036 vdd s=31200,704 d=78000,1460 l=56 w=600 x=8236 y=2036 pfet_03v3
+x vcp_p vdd up_s vdd s=1300000,20260 d=1300000,20260 l=800 w=10000 x=1870 y=27788 pfet_03v3
+x vctrl vnt vbh vss s=122000,2244 d=122000,2244 l=200 w=1000 x=2614 y=5176 nfet_03v3
+x vbp_vco a_4150_2036 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=4484 y=3276 pfet_03v3
+x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=1270 y=8690 pfet_03v3
+x vbn_vco vss a_4154_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=4276 y=-1039 nfet_03v3
 x dqb vco_div2 vss vss s=15600,404 d=36600,844 l=56 w=300 x=23634 y=0 nfet_03v3
-x vbl vss vbl vss s=48800,1044 d=48800,1044 l=400 w=400 x=6830 y=4490 nfet_03v3
-x vref vss vst vss s=122000,2244 d=122000,2244 l=200 w=1000 x=15266 y=4490 nfet_03v3
-x a_6000_11156 vref a_6000_11024 vss s=26400,664 d=26400,664 l=6000 w=200 x=6000 y=11156 ppolyf_u
-x a_15000_11156 a_14400_18476 a_15000_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=15000 y=11156 ppolyf_u
-x pll_en vdd nb vdd s=52000,1060 d=20800,504 l=56 w=400 x=19074 y=1350 pfet_03v3
-x vbp_vco vdd a_17664_1350 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=17794 y=2590 pfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=6040 y=32435 cap_nmos_03v3_b
-x r5 a_18352_n100 nb vss s=48800,1044 d=20800,504 l=56 w=400 x=18474 y=-99 nfet_03v3
-x vbh vdd vdump vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7950 y=7684 pfet_03v3
-x vbn_vco a_16984_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=17310 y=-1039 nfet_03v3
-x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=11690 y=4490 nfet_03v3
-x dx a_21350_n100 dy vss s=48800,1044 d=48800,1044 l=56 w=400 x=21730 y=-99 nfet_03v3
-x vcp_p vdd up_s vdd s=650000,10260 d=650000,10260 l=400 w=5000 x=1470 y=25122 pfet_03v3
-x vbp_vco vdd vbp_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=18450 y=7684 pfet_03v3
-x vcp_p vdd vcp_p vdd s=650000,10260 d=650000,10260 l=400 w=5000 x=570 y=25122 pfet_03v3
-x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=6850 y=25122 pfet_03v3
-x pll_en vdd vcp_p vdd s=26000,660 d=26000,660 l=56 w=200 x=12202 y=7684 pfet_03v3
-x vbp_vco vdd a_14928_1350 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=15058 y=2590 pfet_03v3
-x en_b vss vst vss s=24400,644 d=24400,644 l=56 w=200 x=17674 y=4490 nfet_03v3
-x vdump vnt vdump vss s=122000,2244 d=122000,2244 l=200 w=1000 x=1246 y=4490 nfet_03v3
-x a_12000_11156 a_12000_18476 a_11400_11024 vss s=26400,664 d=26400,664 l=7320 w=200 x=12000 y=11156 ppolyf_u
-x vbp_vco vdd vbp_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=20690 y=7684 pfet_03v3
-x r1 a_15612_1350 r2 vdd s=78000,1460 d=31200,704 l=56 w=600 x=15742 y=1350 pfet_03v3
-x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=16270 y=25122 pfet_03v3
-x a_2000_11156 a_1200_18656 a_2000_11024 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=2000 y=11156 ppolyf_u
-x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=5210 y=7684 pfet_03v3
-x nb vdd vco_out vdd s=78000,1460 d=31200,704 l=56 w=600 x=20266 y=1350 pfet_03v3
-x r5 vdd nb vdd s=52000,1060 d=20800,504 l=56 w=400 x=18478 y=1350 pfet_03v3
-x vcp_p vdd up_s vdd s=650000,10260 d=650000,10260 l=400 w=5000 x=2370 y=25122 pfet_03v3
-x r2 r3 a_14932_0 vss s=15600,404 d=36600,844 l=56 w=300 x=15214 y=0 nfet_03v3
-x vcp_n vss vcp_p vss s=244000,4244 d=244000,4244 l=400 w=2000 x=4538 y=20268 nfet_03v3
-x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7750 y=25122 pfet_03v3
-x vbn_vco vss a_16300_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=16422 y=-1039 nfet_03v3
-x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=17170 y=25122 pfet_03v3
-x pfd_up up_s vdump vdd s=104000,1860 d=104000,1860 l=100 w=800 x=17850 y=7684 pfet_03v3
-x vbp_vco a_16296_1350 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=16630 y=2590 pfet_03v3
-x vbl vss vdump vss s=48800,1044 d=48800,1044 l=400 w=400 x=5506 y=4490 nfet_03v3
-x vbh vdd vdump vdd s=104000,1860 d=104000,1860 l=400 w=800 x=8850 y=7684 pfet_03v3
-x en_b vss vbn_vco vss s=24400,644 d=24400,644 l=56 w=200 x=20318 y=4490 nfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=88 y=40718 cap_nmos_03v3_b
-x vbn_vco vss a_14932_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=15054 y=-1039 nfet_03v3
-x vcp_p vdd vcp_p vdd s=650000,10260 d=650000,10260 l=400 w=5000 x=3710 y=25122 pfet_03v3
-x vbp vdd t2 vdd s=104000,1860 d=104000,1860 l=400 w=800 x=8650 y=25122 pfet_03v3
-x vbp vdd vbp vdd s=104000,1860 d=104000,1860 l=400 w=800 x=10890 y=25122 pfet_03v3
-x vbp_vco vdd a_15612_1350 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=15742 y=2590 pfet_03v3
-x vdump vnt vdump vss s=122000,2244 d=122000,2244 l=200 w=1000 x=1930 y=4490 nfet_03v3
-x cp_trim1 t1c vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=9534 y=20268 nfet_03v3
-x vbn_vco a_15616_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=15942 y=-1039 nfet_03v3
-x vbh vdd vbh vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7050 y=7684 pfet_03v3
-x vco_out vdd dy vdd s=52000,1060 d=52000,1060 l=56 w=400 x=21734 y=1350 pfet_03v3
-x vbp vdd t1b vdd s=104000,1860 d=104000,1860 l=400 w=800 x=13130 y=25122 pfet_03v3
-x vctrl vnt vbh vss s=122000,2244 d=122000,2244 l=200 w=1000 x=562 y=4490 nfet_03v3
-x dy vss a_22044_n100 vss s=48800,1044 d=48800,1044 l=56 w=400 x=22602 y=-99 nfet_03v3
-x vfilt vss s=616000,14176 l=2400 w=7000 x=88 y=32435 cap_nmos_03v3_b
-x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=18070 y=25122 pfet_03v3
-x vcp_n vss vcp_n vss s=244000,4244 d=244000,4244 l=400 w=2000 x=5422 y=20268 nfet_03v3
-x vctrl vs vi vss s=122000,2244 d=122000,2244 l=200 w=1000 x=21542 y=4490 nfet_03v3
-x dqb vco_div2 vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=23638 y=1350 pfet_03v3
-x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=4610 y=25122 pfet_03v3
-x pll_en vss a_18352_n100 vss s=48800,1044 d=20800,504 l=56 w=400 x=19070 y=-99 nfet_03v3
-C vfilt vctrl 6.0
-C pfd_dn pfd_up 5.6
-C pll_en vdd 5.8
+x a_2800_12162 vfilt a_2000_12030 vss s=52800,1064 d=52800,1064 l=7500 w=400 x=2800 y=12162 ppolyf_u
+x vfilt vss s=616000,14176 l=2400 w=7000 x=3064 y=40261 cap_nmos_03v3_b
+x vbl vss vdump vss s=48800,1044 d=48800,1044 l=400 w=400 x=4622 y=5176 nfet_03v3
+x r2 r3 a_3030_2036 vdd s=31200,704 d=78000,1460 l=56 w=600 x=3320 y=2036 pfet_03v3
+x a_10800_12162 a_10800_19482 a_10200_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=10800 y=12162 ppolyf_u
+x vbl vss vbl vss s=48800,1044 d=48800,1044 l=400 w=400 x=3738 y=5176 nfet_03v3
+x pll_en vi vbp_vco vss s=122000,2244 d=122000,2244 l=56 w=1000 x=22226 y=5176 nfet_03v3
+x cp_trim0 t1a vcp_n vss s=48800,1044 d=48800,1044 l=56 w=400 x=10754 y=21274 nfet_03v3
+x vss vco_out ck vdd s=26000,660 d=26000,660 l=56 w=200 x=13092 y=2036 pfet_03v3
+x r5 nb vdd vdd s=20800,504 d=52000,1060 l=56 w=400 x=9356 y=2036 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=6040 y=48544 cap_nmos_03v3_b
+x cp_trim0 vdd t1b vdd s=26000,660 d=26000,660 l=56 w=200 x=22562 y=27788 pfet_03v3
+x pfd_dn dn_s vctrl vss s=48800,1044 d=48800,1044 l=100 w=400 x=9146 y=21274 nfet_03v3
+x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=18750 y=21274 nfet_03v3
+x vdd vco_out ck vss s=12200,444 d=12200,444 l=56 w=100 x=12482 y=200 nfet_03v3
+x nb vco_out vdd vdd s=31200,704 d=78000,1460 l=56 w=600 x=10548 y=2036 pfet_03v3
+x pll_en vdd dqn vdd s=26000,660 d=26000,660 l=56 w=200 x=19382 y=2036 pfet_03v3
+x nb vss vco_out vss s=73200,1444 d=31200,704 l=56 w=600 x=10384 y=-299 nfet_03v3
+x r3 a_5274_0 r4 vss s=36600,844 d=15600,404 l=56 w=300 x=5396 y=0 nfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=11992 y=40261 cap_nmos_03v3_b
+x r4 a_7950_0 r5 vss s=36600,844 d=15600,404 l=56 w=300 x=8072 y=0 nfet_03v3
+x r1 r2 a_4150_2036 vdd s=31200,704 d=78000,1460 l=56 w=600 x=4440 y=2036 pfet_03v3
+x a_15600_12162 vss a_15000_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=15600 y=12162 ppolyf_u
+x vbp_vco vdd vbn_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=19490 y=8690 pfet_03v3
+x a_6600_12162 a_6600_18162 a_6000_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=6600 y=12162 ppolyf_u
+x m1 vss vss vss d=97600,1844 l=200 w=800 x=13706 y=-499 nfet_03v3
+x vbn_vco a_5274_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=5600 y=-1039 nfet_03v3
+x dqb vdd vco_div2 vdd s=78000,1460 d=31200,704 l=56 w=600 x=23478 y=2036 pfet_03v3
+x vref vss vcl vss s=305000,5244 d=305000,5244 l=200 w=2500 x=17382 y=21274 nfet_03v3
+x vbp_vco a_7946_2036 vdd vdd s=52000,1104 d=130000,2260 l=100 w=1000 x=8280 y=3276 pfet_03v3
+x vbn_vco vss a_6394_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=6516 y=-1039 nfet_03v3
+x s1 a_19434_n100 dqn vss s=48800,1044 d=48800,1044 l=56 w=400 x=19814 y=-99 nfet_03v3
+x r3 r4 a_5270_2036 vdd s=31200,704 d=78000,1460 l=56 w=600 x=5560 y=2036 pfet_03v3
+x vctrl vbt vbl vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=3810 y=8690 pfet_03v3
+x clkb sf s1 vss s=12200,444 d=12200,444 l=56 w=100 x=21814 y=200 nfet_03v3
+x a_12600_12162 a_12000_19482 a_12600_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=12600 y=12162 ppolyf_u
+x vcp_n vss vcp_n vss s=488000,8244 d=488000,8244 l=800 w=4000 x=7862 y=21274 nfet_03v3
+x pfd_up up_s vdump vdd s=104000,1860 d=104000,1860 l=100 w=800 x=12246 y=8690 pfet_03v3
+x m2 vss mf vss s=12200,444 d=12200,444 l=56 w=100 x=16494 y=200 nfet_03v3
+x pll_en vdd a_3030_2036 vdd s=26000,660 d=26000,660 l=56 w=200 x=3844 y=2036 pfet_03v3
+x r3 a_5270_2036 r4 vdd s=78000,1460 d=31200,704 l=56 w=600 x=5400 y=2036 pfet_03v3
+x s1 vss vss vss d=97600,1844 l=200 w=800 x=20686 y=-499 nfet_03v3
+x r5 r1 a_6390_2036 vdd s=31200,704 d=78000,1460 l=56 w=600 x=6680 y=2036 pfet_03v3
+x r1 a_4154_0 r2 vss s=36600,844 d=15600,404 l=56 w=300 x=4276 y=0 nfet_03v3
+x a_8400_12162 a_7800_18162 a_8400_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=8400 y=12162 ppolyf_u
+x pll_en a_9070_n100 vss vss s=20800,504 d=48800,1044 l=56 w=400 x=9948 y=-99 nfet_03v3
+x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=13014 y=5176 nfet_03v3
+x pll_en vdd a_4150_2036 vdd s=26000,660 d=26000,660 l=56 w=200 x=4964 y=2036 pfet_03v3
+x m2 vdd mf vdd s=26000,660 d=26000,660 l=56 w=200 x=16498 y=2036 pfet_03v3
+x r4 a_7946_2036 r5 vdd s=78000,1460 d=31200,704 l=56 w=600 x=8076 y=2036 pfet_03v3
+x r5 a_6390_2036 r1 vdd s=78000,1460 d=31200,704 l=56 w=600 x=6520 y=2036 pfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=88 y=48544 cap_nmos_03v3_b
+x vref vss vnt vss s=48800,1044 d=48800,1044 l=400 w=400 x=8598 y=5176 nfet_03v3
+x clkb m2 s1 vdd s=52000,1060 d=52000,1060 l=56 w=400 x=18764 y=2036 pfet_03v3
+x vbp vdd vbt vdd s=104000,1860 d=104000,1860 l=400 w=800 x=20110 y=27788 pfet_03v3
+x pll_en vss en_b vss s=24400,644 d=24400,644 l=800 w=200 x=14974 y=21274 nfet_03v3
+x pll_en vdd vbp_vco vdd s=26000,660 d=26000,660 l=56 w=200 x=21290 y=8690 pfet_03v3
+x vref vss vi vss s=48800,1044 d=48800,1044 l=400 w=400 x=7714 y=5176 nfet_03v3
+x vcp_p vdd vcp_p vdd s=1300000,20260 d=1300000,20260 l=800 w=10000 x=4910 y=27788 pfet_03v3
+x vbn_vco vss a_7950_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=8072 y=-1039 nfet_03v3
+x r5 a_9070_n100 nb vss s=48800,1044 d=20800,504 l=56 w=400 x=9192 y=-99 nfet_03v3
+x dn_b dn_s vdump vss s=48800,1044 d=48800,1044 l=100 w=400 x=10170 y=21274 nfet_03v3
+x a_14400_12162 a_14400_19482 a_13800_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=14400 y=12162 ppolyf_u
+x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=1970 y=8690 pfet_03v3
+x up_b up_s vctrl vdd s=104000,1860 d=104000,1860 l=100 w=800 x=11646 y=8690 pfet_03v3
+x r2 a_3030_2036 r3 vdd s=78000,1460 d=31200,704 l=56 w=600 x=3160 y=2036 pfet_03v3
+x en_b vss va vss s=24400,644 d=24400,644 l=56 w=200 x=18214 y=5176 nfet_03v3
+x vbp_vco vdd a_5270_2036 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=5400 y=3276 pfet_03v3
+x pll_en vdd r1 vdd s=13000,460 d=13000,460 l=56 w=100 x=7640 y=2036 pfet_03v3
+x r5 vdd nb vdd s=52000,1060 d=20800,504 l=56 w=400 x=9196 y=2036 pfet_03v3
+x pfd_up vss up_b vss s=24400,644 d=24400,644 l=56 w=200 x=13354 y=21274 nfet_03v3
+x vctrl vs vi vss s=122000,2244 d=122000,2244 l=200 w=1000 x=20858 y=5176 nfet_03v3
+x cp_trim1 vdd t2 vdd s=26000,660 d=26000,660 l=56 w=200 x=21010 y=27788 pfet_03v3
+x vbh vdd vdump vdd s=104000,1860 d=104000,1860 l=400 w=800 x=7950 y=8690 pfet_03v3
+x clkb vss vss vss d=24400,644 l=90 w=200 x=12012 y=100 nfet_03v3
+x nb vdd vco_out vdd s=78000,1460 d=31200,704 l=56 w=600 x=10388 y=2036 pfet_03v3
+x vcp_p vdd vcp_p vdd s=1300000,20260 d=1300000,20260 l=800 w=10000 x=570 y=27788 pfet_03v3
+x vref vss vst vss s=122000,2244 d=122000,2244 l=200 w=1000 x=14582 y=5176 nfet_03v3
+x a_11400_12162 a_10800_19482 a_11400_12030 vss s=26400,664 d=26400,664 l=7320 w=200 x=11400 y=12162 ppolyf_u
+x vref vss va vss s=48800,1044 d=48800,1044 l=400 w=400 x=10806 y=5176 nfet_03v3
+x vbn_vco a_4154_0 vss vss s=20800,504 d=48800,1044 l=100 w=400 x=4480 y=-1039 nfet_03v3
+x vctrl vss s=756800,17376 l=2400 w=8600 x=14968 y=48544 cap_nmos_03v3_b
+x vbp_vco vdd vbp_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=18450 y=8690 pfet_03v3
+x clkb s1 m1 vss s=24400,644 d=24400,644 l=56 w=200 x=14270 y=100 nfet_03v3
+x r2 a_3034_0 r3 vss s=36600,844 d=15600,404 l=56 w=300 x=3156 y=0 nfet_03v3
+x r1 a_4150_2036 r2 vdd s=78000,1460 d=31200,704 l=56 w=600 x=4280 y=2036 pfet_03v3
+x vbp_vco vdd a_7946_2036 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=8076 y=3276 pfet_03v3
+x vbp_vco vdd a_6390_2036 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=6520 y=3276 pfet_03v3
+x en_b vss a_5274_0 vss s=12200,444 d=12200,444 l=56 w=100 x=6080 y=200 nfet_03v3
+x pll_en vdd a_7946_2036 vdd s=26000,660 d=26000,660 l=56 w=200 x=8760 y=2036 pfet_03v3
+x vbp_vco vdd vbp_vco vdd s=130000,2260 d=130000,2260 l=100 w=1000 x=20690 y=8690 pfet_03v3
+x vbn_vco vss a_5274_0 vss s=48800,1044 d=20800,504 l=100 w=400 x=5396 y=-1039 nfet_03v3
+x vbn_vco vss vbn_vco vss s=97600,1844 d=97600,1844 l=100 w=800 x=19734 y=5176 nfet_03v3
+x s1 vdd dqn vdd s=52000,1060 d=52000,1060 l=56 w=400 x=19818 y=2036 pfet_03v3
+x vbp vdd vcp_n vdd s=104000,1860 d=104000,1860 l=400 w=800 x=9790 y=27788 pfet_03v3
+x cp_trim0 t1b t1c vss s=48800,1044 d=48800,1044 l=56 w=400 x=11834 y=21274 nfet_03v3
+x m1 vss m2 vss s=24400,644 d=24400,644 l=56 w=200 x=16058 y=100 nfet_03v3
+x vbp_vco vdd a_3030_2036 vdd s=130000,2260 d=52000,1104 l=100 w=1000 x=3160 y=3276 pfet_03v3
+x vcp_n vss vcp_p vss s=488000,8244 d=488000,8244 l=800 w=4000 x=6578 y=21274 nfet_03v3
+x vdump vbt vdump vdd s=130000,2260 d=130000,2260 l=200 w=1000 x=5210 y=8690 pfet_03v3
+x r5 r1 a_6394_0 vss s=15600,404 d=36600,844 l=56 w=300 x=6676 y=0 nfet_03v3
+x vfilt vss s=616000,14176 l=2400 w=7000 x=3064 y=48544 cap_nmos_03v3_b
+x en_b vdd vst vdd s=13000,460 d=13000,460 l=2000 w=100 x=15950 y=8690 pfet_03v3
+x a_7200_12162 a_6600_18162 a_7200_12030 vss s=26400,664 d=26400,664 l=6000 w=200 x=7200 y=12162 ppolyf_u
+x dqn vss sf vss s=12200,444 d=12200,444 l=56 w=100 x=20250 y=200 nfet_03v3
+x mf vss vss vss d=97600,1844 l=200 w=800 x=15494 y=-499 nfet_03v3
+x r5 a_6394_0 r1 vss s=36600,844 d=15600,404 l=56 w=300 x=6516 y=0 nfet_03v3
+x clkb mf m1 vdd s=26000,660 d=26000,660 l=56 w=200 x=17540 y=2036 pfet_03v3
+x pll_en vdd a_6390_2036 vdd s=26000,660 d=26000,660 l=56 w=200 x=7204 y=2036 pfet_03v3
+C vdd vcp_p 20.6
+C en_b va 4.4
+C en_b vst 2.1
+C vdd vbp 46.1
+C vs vcl 2.8
+C vbl vctrl 2.8
+C pll_en va 4.9
+C pll_en vref 2.3
 C vbh vctrl 2.7
-C vdump vdd 3.1
-C va vdd 2.3
-C vcl vs 2.0
-C vbp vdd 26.9
+C vdd dn_b 3.9
+C vbn_vco vbp_vco 5.3
+C en_b vdd 5.8
+C cp_trim0 t1a 2.5
+C vi vbn_vco 2.5
+C vbh vdd 5.8
+C pll_en vdd 8.8
+C vdd vbt 11.4
+C en_b vbp 4.8
+C vdump vctrl 5.3
+C vbt vcp_p 2.6
+C vdd vbn_vco 2.1
+C vfilt vctrl 6.3
+C s1 ck 2.1
+C vbp vbt 8.5
+C vdd t1b 5.5
+C cp_trim0 vdd 6.6
+C cp_trim1 vdd 5.0
+C vdd vdump 4.2
+C vdd up_s 6.6
+C t2 vdd 7.4
+C up_s vcp_p 4.6
+C en_b pll_en 4.3
+C vdd vcp_n 8.9
+C vbp t1b 3.4
 C vbl vbt 2.1
-C vbl vctrl 2.9
-C vbn_vco vbp_vco 3.1
-C en_b pll_en 3.1
-C vbh vdd 4.9
-C t2 vdd 2.6
-C up_b pfd_up 3.7
-C vbp up_s 3.1
-C vcp_p vdd 10.5
-C vbt vdd 9.7
-C vref vcl 4.4
-C vctrl vdd 3.3
-C vref vi 3.0
-C vcp_n vbp 7.5
-C vcp_p up_s 2.5
-C vbt up_s 2.5
-C vcp_n t2 2.0
-C vref vbp 2.2
-C vcp_n vcp_p 2.1
-C up_b vdd 3.6
+C vcp_n vcp_p 3.2
+C t2 vbp 4.7
+C vbp vcp_n 9.1
+C vbp_vco vref 2.5
+C vdump vbt 5.0
+C vbt vcp_n 2.9
 C vi vctrl 3.7
-C vbp_vco vdd 7.2
-C t2 vbp 2.7
-C vdump vbt 2.9
-C up_s vdd 4.1
-C vbt vbp 5.3
-C en_b vdd 3.5
-C vdump vctrl 5.7
-C vdump vbl 2.1
-C dn_b pfd_dn 3.8
-C vcp_n vdd 4.4
+C t1a vdd 4.7
+C vdd vbp_vco 8.7
+C cp_trim0 t1b 2.3
+C cp_trim1 t1b 2.3
+C va vdd 3.6
+C vdd vref 3.7
+C vdd pfd_up 2.2
+C vdd vctrl 5.5
+C cp_trim1 t2 4.2
+C vcl vref 5.1
+C t1a vbp 4.3
+C dn_s vcp_n 2.6
+C va vbp 4.0
+C t2 vcp_n 2.7
 R vco_div2 63
-C bias_ref0 7.1
-R bias_ref 75
-C pll_en0 10.5
-R pll_en 1205
-C pfd_up0 4.7
-R pfd_up 258
-C cp_trim10 3.9
-R cp_trim1 200
-C cp_trim00 2.9
-R cp_trim0 199
-C pfd_dn0 4.3
-R pfd_dn 241
-C vctrl0 27.2
-R vctrl 352
-C vdd0 503.5
-R vdd 25664
-R vss 152929
-R a_22044_n100 59
-R a_21350_n100 59
-R a_18352_n100 98
-R a_17668_0 90
-R a_16984_0 90
-R a_16300_0 90
-R a_15616_0 90
-R a_14932_0 90
-R dx 116
-R a_20918_1350 63
-R dy 222
-R dqn 391
-R vco_out 509
-R dqb 426
-R nb 814
-R r4 454
-R r5 834
-R r3 454
-R r1 455
-R r2 454
-R a_17664_1350 167
-R a_16980_1350 167
-R a_16296_1350 167
-R a_15612_1350 167
-R a_14928_1350 167
-C vi0 2.3
+C bias_ref0 6.0
+R bias_ref 76
+C pll_en0 11.2
+R pll_en 1351
+C pfd_up0 5.4
+R pfd_up 260
+C pfd_dn0 9.3
+R pfd_dn 244
+C cp_trim00 5.1
+R cp_trim0 377
+C cp_trim10 4.8
+R cp_trim1 306
+C vctrl0 28.8
+R vctrl 359
+C vdd0 1044.3
+R vdd 24504
+R vss 188552
+R a_19434_n100 59
+R a_9070_n100 98
+R a_7950_0 90
+R a_6394_0 90
+R a_5274_0 114
+R a_4154_0 114
+R a_3034_0 90
+R sf 129
+R mf 129
+R m2 225
+R dqn 363
+C s10 2.4
+R s1 344
+C clkb0 3.3
+R clkb 406
+C m10 2.3
+R m1 247
+C ck0 2.3
+R ck 318
+C vco_out0 3.2
+R vco_out 307
+R dqb 428
+R nb 812
+R r4 458
+R r5 839
+R r3 458
+R r1 488
+R r2 456
+R a_7946_2036 197
+R a_6390_2036 197
+R a_5270_2036 197
+R a_4150_2036 197
+R a_3030_2036 197
+C vi0 2.7
 R vi 312
-C vnt0 5.6
+C vnt0 6.7
 R vnt 418
-C vbn_vco0 6.5
-R vbn_vco 895
-C vst0 4.6
-R vst 193
-C vbh0 2.7
+C vbn_vco0 8.4
+R vbn_vco 912
+C vst0 4.8
+R vst 197
+C vbh0 2.8
 R vbh 378
-C vbl0 6.6
-R vbl 460
-C vbp_vco0 4.3
-R vbp_vco 1738
-R a_15600_11156 12810
-R a_15000_11024 46
-R a_15000_11156 12810
-R a_14400_11156 12810
-R a_14400_18476 46
-R a_13800_11024 46
-R a_13800_11156 12810
-R a_13200_11156 12810
-R a_13200_18476 46
-R a_12600_11024 46
-R a_12600_11156 12810
-R a_12000_11156 12810
-R a_12000_18476 46
-R a_11400_11024 46
-R a_11400_11156 12810
-R a_10800_11156 12810
-R a_10800_18476 46
-R a_10200_11024 46
-R a_10200_11156 12810
-R a_9000_11156 10500
-R a_8400_11024 46
-R a_8400_11156 10500
-R a_7800_11156 10500
-R a_7800_17156 46
-R a_7200_11024 46
-R a_7200_11156 10500
-R a_6600_11156 10500
-R a_6600_17156 46
-R a_6000_11024 46
-R a_6000_11156 10500
-R a_4800_11156 7525
-R a_4200_11024 46
-R a_4200_11156 7525
-C vs0 8.2
-R vs 172
-R a_2800_11156 6563
-R a_2000_11024 64
-R a_2000_11156 6563
-R a_1200_11156 6563
-R a_1200_18656 64
-R a_400_11024 64
-R a_400_11156 6563
-C vcl0 5.7
-R vcl 607
-R up_b 137
-C en_b0 7.8
-R en_b 300
-R t1c 68
-C vdump0 7.1
-R vdump 1083
+C vbl0 7.2
+R vbl 462
+C vbp_vco0 5.1
+R vbp_vco 1755
+R a_15600_12162 12810
+R a_15000_12030 46
+R a_15000_12162 12810
+R a_14400_12162 12810
+R a_14400_19482 46
+R a_13800_12030 46
+R a_13800_12162 12810
+R a_13200_12162 12810
+R a_13200_19482 46
+R a_12600_12030 46
+R a_12600_12162 12810
+R a_12000_12162 12810
+R a_12000_19482 46
+R a_11400_12030 46
+R a_11400_12162 12810
+R a_10800_12162 12810
+R a_10800_19482 46
+R a_10200_12030 46
+R a_10200_12162 12810
+R a_9000_12162 10500
+R a_8400_12030 46
+R a_8400_12162 10500
+R a_7800_12162 10500
+R a_7800_18162 46
+R a_7200_12030 46
+R a_7200_12162 10500
+R a_6600_12162 10500
+R a_6600_18162 46
+R a_6000_12030 46
+R a_6000_12162 10500
+R a_4800_12162 7525
+R a_4200_12030 46
+R a_4200_12162 7525
+C vs0 8.0
+R vs 173
+R a_2800_12162 6563
+R a_2000_12030 64
+R a_2000_12162 6563
+R a_1200_12162 6563
+R a_1200_19662 64
+R a_400_12030 64
+R a_400_12162 6563
+C vcl0 9.4
+R vcl 617
+C up_b0 6.4
+R up_b 141
+C en_b0 11.0
+R en_b 395
+R t1c 72
+C vdump0 8.3
+R vdump 1084
 C dn_b0 3.8
-R dn_b 107
-C dn_s0 3.4
-R dn_s 310
-C vref0 18.9
-R vref 899
-R t1b 91
-C va0 5.9
-R va 180
-R t1a 88
-R t2 158
-C vcp_n0 15.3
-R vcp_n 984
-C vbt0 4.9
-R vbt 859
-C vbp0 7.3
-R vbp 772
-C up_s0 5.7
-R up_s 730
-C vcp_p0 9.9
-R vcp_p 1295
-C vfilt0 112.3
-R vfilt 555
+R dn_b 114
+C vref0 21.8
+R vref 912
+C dn_s0 4.7
+R dn_s 524
+C t1b0 3.6
+R t1b 152
+C va0 3.5
+R va 192
+C t1a0 4.6
+R t1a 149
+C t20 3.4
+R t2 227
+C vcp_n0 25.6
+R vcp_n 1220
+C vbt0 3.8
+R vbt 893
+C vbp0 6.2
+R vbp 851
+C up_s0 8.6
+R up_s 1279
+C vcp_p0 10.8
+R vcp_p 2060
+C vfilt0 117.5
+R vfilt 563
