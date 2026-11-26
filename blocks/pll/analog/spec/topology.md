@@ -303,6 +303,9 @@ to its own inverted output.
   inverter's delay. A pass gate whose two clock edges arrive apart lifts its
   held node above vdd by clock feedthrough; arriving together, the two
   feedthroughs cancel.
+- `MN_CKC`/`MP_CKC` (2026-11-14, layout c21): an n/p gate-capacitor pair on
+  `clkb`, 1 x 0.45 um each (about 2 fF across the swing), so `clkb`'s own
+  inverter kicks the divider pass gates less (PEX device stress).
 - Master: pass gate `MN_DT1`/`MP_DT1` (`s1` -> `m1`, open while `vco_out` is
   low), inverter `MP_DF1`/`MN_DF1` (`m1` -> `m2`), keeper `MP_DK1`/`MN_DK1`
   (`m2` -> `mf`) closed onto `m1` by `MN_DT2`/`MP_DT2` while `vco_out` is high.

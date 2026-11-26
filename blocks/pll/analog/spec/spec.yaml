@@ -110,6 +110,8 @@ devices:
   # static master-slave /2 (vco_out -> vco_div2, topology.md section 8)
   - xMP_DCI
   - xMN_DCI
+  - xMP_CKC
+  - xMN_CKC
   - xMP_DCT
   - xMN_DCT
   - xMN_DXA

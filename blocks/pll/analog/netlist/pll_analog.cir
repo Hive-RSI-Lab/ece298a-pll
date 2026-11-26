@@ -212,6 +212,10 @@ XMN_O vco_out nb vss vss nfet_03v3 w=w_on l=2.8e-7
 * nodes, so feedthrough charge moves them less (device overshoot, DRM 14.1.4.2).
 XMP_DCI clkb vco_out vdd vdd pfet_03v3 w=1.0e-06 l=2.8e-7
 XMN_DCI clkb vco_out vss vss nfet_03v3 w=5.0e-07 l=2.8e-7
+* MN_CKC/MP_CKC: clkb's load cap, an n/p gate-cap pair (about 2 fF across the
+* swing), so clkb's own inverter kicks the divider pass gates less (pex stress).
+XMN_CKC vss clkb vss vss nfet_03v3 w=1.0e-06 l=4.5e-7
+XMP_CKC vdd clkb vdd vdd pfet_03v3 w=1.0e-06 l=4.5e-7
 XMN_DCT ck vdd vco_out vss nfet_03v3 w=5.0e-07 l=2.8e-7
 XMP_DCT ck vss vco_out vdd pfet_03v3 w=1.0e-06 l=2.8e-7
 XMN_DXA vss m1 vss vss nfet_03v3 w=4.0e-06 l=1.0e-06

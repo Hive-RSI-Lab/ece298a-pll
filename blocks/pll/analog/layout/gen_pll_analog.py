@@ -92,12 +92,39 @@ LY.update({"via2": (38, 0), "metal3": (42, 0), "via3": (40, 0),
            "metal3_label": (42, 10), "metal4_label": (46, 10)})
 M1, M2, M3, M4 = (LY[k] for k in ("metal1", "metal2", "metal3", "metal4"))
 
+NG = []
 CELL = "pll_analog"
 PINS = ["vco_div2", "pfd_up", "pfd_dn", "pll_en", "cp_trim0", "cp_trim1",
         "vctrl", "bias_ref", "vdd", "vss"]
 RIGHT_PINS = ["vco_div2", "pfd_up", "pfd_dn", "pll_en", "cp_trim0",
               "cp_trim1"]
 BOTTOM_PINS = ["vctrl", "bias_ref", "vdd", "vss"]
+# the right-edge pins are frozen for the top assembly: each keeps its
+# track in the lowest channel that carries it, and every channel keeps at
+# least its track count, so a change inside the block moves no pin y.
+# (channel, track) per pin; minimum tracks per channel, bottom to top
+PIN_HOLD = {"vco_div2": (0, 0), "pll_en": (0, 7), "pfd_up": (2, 2),
+            "pfd_dn": (2, 7), "cp_trim0": (4, 5), "cp_trim1": (4, 7)}
+# metal4 trunk columns wanted off the net's median stub: en_b's trunk at
+# x 72.4 keeps it off m2's track and the ring stubs in channel 0 (pex
+# stress: the PFD and ring wires kicked the enable pair)
+TRUNK_X = {"en_b": 72.4, "pfd_dn": 79.6, "up_b": 49.2}
+# lowest track in a shared channel: en_b stays on track 6, under pll_en's
+# held track 7
+VCG_MIN_T = {"en_b": 6}
+# channel 2: vdd shield tracks between en_b (track 4) and pfd_up (2) /
+# pfd_dn (7), clear of vbp and vst on track 3 by 0.4
+SHIELD_TRK = {2: (("vdd", 3, 73.8, 86.2), ("vdd", 5, 72.0, 91.52))}
+# tie: vdd's tap stub at x 77.4 runs up to pfd_dn's track 7, so pfd_up and
+# pfd_dn each get one crossing
+SHIELD_TIE = {2: (("vdd", 77.4, (3, 5, 7)),)}
+CH_MIN_TRACKS = [8, 11, 9, 6, 11, 9, 2, 3]
+# victim/aggressor pairs that never take adjacent tracks over a shared x
+# span, in a one-sided or a shared channel (pex stress: the aggressor's edge pushed the
+# victim past its rail through the wire coupling)
+KEEP_APART = {frozenset(p) for p in (("t1a", "dn_b"), ("up_b", "pfd_up"),
+                                     ("dn_b", "pfd_dn"), ("en_b", "pfd_up"),
+                                     ("en_b", "pfd_dn"))}
 
 # ---- sizing (um), sizing/sizing.yaml values ----------------------------
 W_BP, L_BP = 4.0, 2.0
@@ -202,6 +229,9 @@ DEV = {
     # (8) static master-slave /2, vco_out -> vco_div2 (netlist block 8)
     "MP_DCI": ("p", "clkb", "vco_out", "vdd", 1.0, LMIN, 1),
     "MN_DCI": ("n", "clkb", "vco_out", "vss", 0.5, LMIN, 1),
+    # clkb's load cap (~2 fF): an n/p gate-cap pair, own-driver kick
+    "MN_CKC": ("n", "vss", "clkb", "vss", 1.0, 0.45, 1),
+    "MP_CKC": ("p", "vdd", "clkb", "vdd", 1.0, 0.45, 1),
     "MN_DCT": ("n", "ck", "vdd", "vco_out", 0.5, LMIN, 1),
     "MP_DCT": ("p", "ck", "vss", "vco_out", 1.0, LMIN, 1),
     "MN_DXA": ("n", "vss", "m1", "vss", 4.0, 1.0, 1),
@@ -263,7 +293,7 @@ RING_ORDER = [3, 2, 4, 1, 5]   # every hop spans 1-2 stages; 5 next to NAND
 # they would set clkb under vco_out at one gate and over it at the next
 # (a track cycle in the shared channel).
 DIV_COLS = [
-    ("MN_DCI", "MP_DCI"), ("MN_DCT", None), (None, "MP_DCT"),
+    ("MN_DCI", "MP_DCI"), ("MN_CKC", "MP_CKC"), ("MN_DCT", None), (None, "MP_DCT"),
     ("MN_DXA", None), ("MN_DT1", None), (None, "MP_DT1"), ("MN_DXC", None),
     ("MN_DF1", "MP_DF1"), ("MN_DK1", "MP_DK1"), ("MN_DT2", None),
     (None, "MP_DT2"), ("MN_DT3", None), (None, "MP_DT3"),
@@ -297,8 +327,8 @@ ROWS = [
     ("buf_p", "p", ["MP_BUF1", "MP_BUF2", "MP_BUF2", "MP_BUF1",
                     "MP_BUF1", "MP_BUF2", "MP_BUF2", "MP_BUF1",
                     "MP_BUFL1", "MP_BUFL2", "MP_BUFL2", "MP_BUFL1",
-                    "MP_UPI", "MP_DNI", "MP_ENP", "MP_ENB", "MP_ENI",
-                    "MP_STL", "MP_UP", "MP_UPD",
+                    "MP_UPI", "MP_UP", "MP_UPD", "MP_DNI", "MP_ENP",
+                    "MP_ENB", "MP_ENI", "MP_STL",
                     "MP_V2I", "MP_V2IB", "MP_V2IB", "MP_V2I", "MP_ENV"]),
     ("res", "r", None),
     ("cp_n", "n", ["MN_CPREF", "MN_CPREF2", "MN_DNS", "MN_DNS",
@@ -1347,7 +1377,8 @@ def plan(chan_terms, x_rows, keepouts, ports):
         hi = chans[-1]
         xs = sorted(x for c in chans for x in where[net][c])
         hw = SUP_M4_W / 2 if net in SUP_NETS else TRK_W / 2
-        trunks[net] = (column(xs[len(xs) // 2], lo, hi, net, hw), lo, hi)
+        want = TRUNK_X.get(net, xs[len(xs) // 2])
+        trunks[net] = (column(want, lo, hi, net, hw), lo, hi)
     x_right = r5(max([x_rows] + [x for x, _l, _h in trunks.values()]
                      + list(port_x.values())) + 1.5)
     tracks, ntracks = [], []
@@ -1372,28 +1403,55 @@ def plan(chan_terms, x_rows, keepouts, ports):
             # a shared channel (stubs from below AND above): one track per
             # net, ordered so a stub from below never crosses a stub from
             # above of another net at the same x
-            assign = vcg_tracks(sides, iv)
+            assign = vcg_tracks(sides, iv, SHIELD_TRK.get(ci, ()))
+            for net, (c, t) in PIN_HOLD.items():
+                if c == ci and assign[net][0] != t:
+                    raise layoutlib.LayoutError(
+                        f"pin {net} left its held track {t} in channel {ci}")
             tracks.append(assign)
-            ntracks.append(max(t for t, _a, _b in assign.values()) + 1)
+            ntracks.append(max([t for t, _a, _b in assign.values()]
+                               + [CH_MIN_TRACKS[ci] - 1]) + 1)
             continue
-        last = []
+        # left-edge, the held pins' tracks placed first
+        used = []                  # per track: [(x0, x1)]
         assign = {}
-        for net in sorted(iv, key=lambda n: (iv[n][0], n)):
+
+        def put(net, t):
+            while t >= len(used):
+                used.append([])
+            used[t].append((iv[net][0], iv[net][1], net))
+            assign[net] = (t, r5(iv[net][0]), r5(iv[net][1]))
+
+        def fits(net, t):
             a, b = iv[net]
-            for t, end in enumerate(last):
-                if a >= end + 0.4:
-                    last[t] = b
-                    break
-            else:
-                t = len(last)
-                last.append(b)
-            assign[net] = (t, r5(a), r5(b))
+            if t < len(used) and not all(b + 0.4 <= u0 or a >= u1 + 0.4
+                                         for u0, u1, _n in used[t]):
+                return False
+            return not any(frozenset((net, n)) in KEEP_APART
+                           and b > u0 and a < u1
+                           for tt in (t - 1, t + 1) if 0 <= tt < len(used)
+                           for u0, u1, n in used[tt])
+        # the fixed shield tracks hold their spans (see vcg_tracks)
+        for sn, ft, fa, fb in SHIELD_TRK.get(ci, ()):
+            while ft >= len(used):
+                used.append([])
+            used[ft].append((fa + 1e-6, fb - 1e-6, sn))
+        for net, (c, t) in PIN_HOLD.items():
+            if c == ci:
+                put(net, t)
+        for net in sorted(iv, key=lambda n: (iv[n][0], n)):
+            if net in assign:
+                continue
+            t = 0
+            while not fits(net, t):
+                t += 1
+            put(net, t)
         tracks.append(assign)
-        ntracks.append(len(last))
+        ntracks.append(max(len(used), CH_MIN_TRACKS[ci]))
     return trunks, port_x, tracks, ntracks, x_right
 
 
-def vcg_tracks(terms, iv):
+def vcg_tracks(terms, iv, fixed=()):
     """Track per net for a two-sided channel: net a's track below net b's
     wherever a stub of a from below and a stub of b from above come
     within metal2 spacing in x. Raises on a cycle."""
@@ -1435,17 +1493,29 @@ def vcg_tracks(terms, iv):
     # channel - and every ring stub crossing it - stays short
     pred = {n: [a for a in succ if n in succ[a]] for n in iv}
     used = []                      # per track: [(x0, x1)]
+    # the channel's fixed shield tracks (SHIELD_TRK) hold their spans, so
+    # no net is packed onto them when the order moves (a shield drawn over
+    # a net's track shorts the two)
+    for _sn, ft, fa, fb in fixed:
+        while ft >= len(used):
+            used.append([])
+        used[ft].append((fa + 1e-6, fb - 1e-6, _sn))
     got = {}
     for n in order:
-        t = max([got[a] + 1 for a in pred[n]] + [0])
+        t = max([got[a] + 1 for a in pred[n]] + [VCG_MIN_T.get(n, 0)])
         a, b = iv[n]
         while True:
             while t >= len(used):
                 used.append([])
-            if all(b + 0.4 <= u0 or a >= u1 + 0.4 for u0, u1 in used[t]):
+            if (all(b + 0.4 <= u0 or a >= u1 + 0.4 for u0, u1, _m in used[t])
+                    and not any(frozenset((n, m)) in KEEP_APART
+                                and b > u0 and a < u1
+                                for tt in (t - 1, t + 1)
+                                if 0 <= tt < len(used)
+                                for u0, u1, m in used[tt])):
                 break
             t += 1
-        used[t].append((a, b))
+        used[t].append((a, b, n))
         got[n] = t
     return {n: (got[n], r5(iv[n][0]), r5(iv[n][1])) for n in iv}
 
@@ -1545,7 +1615,7 @@ def generate():
     if os.environ.get("PLL_LAYOUT_DEBUG"):
         for ci, tr in enumerate(tracks):
             print("channel", ci, ROWS[ci][0], ntracks[ci],
-                  sorted((t, n, round(b - a, 1)) for n, (t, a, b)
+                  sorted((t, n, round(a, 1), round(b, 1)) for n, (t, a, b)
                          in tr.items()), file=sys.stderr)
     # ---- pass 2: draw ----
     # the sizing passes above drew rings into scratch cells: their spots
@@ -1587,6 +1657,7 @@ def generate():
             ya, yb = sorted((y, yt))
             rect(top, x - lw / 2, ya - TRK_W / 2 * (y > yt),
                  x + lw / 2, yb + TRK_W / 2 * (yt > y), M2)
+            NG.append((net, 'M2', ri, x - lw / 2, ya, x + lw / 2, yb))
             if kind == "ring" and net in SIG_WIDE:
                 SIG_STUBS.append((x, ya, yb))
             # an n stub and a p stub of one net meeting a few 10 nm apart
@@ -1615,6 +1686,23 @@ def generate():
                 rect(top, a, band[0], b, band[1], M3)
                 continue
             rect(top, a, yt - lw / 2, b, yt + lw / 2, M3)
+            NG.append((net, 'M3', ri, a, yt - lw / 2, b, yt + lw / 2))
+        for net, t, a, b in SHIELD_TRK.get(ri, ()):
+            # a supply shield track beside en_b (no stubs of its own)
+            yt = base + t * pch
+            rect(top, a, yt - TRK_W / 2, b, yt + TRK_W / 2, M3)
+            NG.append((net, 'M3', ri, a, yt - TRK_W / 2, b, yt + TRK_W / 2))
+        for net, x, ts in SHIELD_TIE.get(ri, ()):
+            # the shields' tie: the supply's stub at x runs up across the
+            # channel, a via2 onto each shield track
+            y_hi = base + max(ts) * pch
+            rect(top, x - TRK_W / 2, base, x + TRK_W / 2, y_hi + TRK_W / 2,
+                 M2)
+            NG.append((net, 'M2', ri, x - TRK_W / 2, base, x + TRK_W / 2,
+                       y_hi))
+            for t in ts:
+                if any(t == st for _n, st, _a, _b in SHIELD_TRK[ri]):
+                    via(top, x, base + t * pch, "via2", M2, M3)
         ch_top = base + max(ntracks[ri] - 1, 0) * pch + TRK_W / 2
         chan_top.append(ch_top)
         if blk_top is not None:
@@ -1647,6 +1735,7 @@ def generate():
         ya = y_bot if lo < 0 else min(ys)
         rect(top, x - hw, ya - TRK_W / 2, x + hw,
              max(ys) + TRK_W / 2, M4)
+        NG.append((net, 'M4', -1, x - hw, ya - TRK_W / 2, x + hw, max(ys) + TRK_W / 2))
         if lo < 0:
             # pin: the trunk's foot, stacked down to a metal2 pad (the
             # abstract reads metal1/metal2 pin labels)
@@ -1661,6 +1750,9 @@ def generate():
                 via(top, x, y_bot, "via2", M2, M3)
             labels.append((net, x, y_bot, LY["metal2_label"]))
     rail_straps = []
+    if os.environ.get('NGOUT'):
+        import json as _j
+        _j.dump(NG, open(os.environ['NGOUT'], 'w'))
     for net, rx, ry, lay in rails2:
         key = f"ring.{net}"
         if os.environ.get("PLL_LAYOUT_DEBUG"):
