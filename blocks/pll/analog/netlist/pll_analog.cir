@@ -133,6 +133,14 @@ XMN_BUF1 vbh vctrl vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMN_BUF2 vdump vdump vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMP_BUFL1 vbh vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
 XMP_BUFL2 vdump vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
+* power-down: hold vdump at the supply. With pll_en low both tails are off
+* and vdump has only junction leakage; the falling edge coupled it above
+* the rail and it stayed there (pex stress: MP_UPD Vgs/Vgd, MN_BUF2 Vgb
+* 1 mV over 3.63 V at the end of the run, ff_pss and ff_125c_vp10).
+* A standby hold, not a trim hold: a trim pass must not size it. vbt gets
+* no hold: at vdd it turns MP_BUF1 on into the MN_BUFL1 diode whenever
+* vctrl sits low in standby (538 uA at ff_m40c_vp10 against 1 uA).
+XMP_HDM vdump pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 
 * (4) loop filter: R1-C1 series, C2 shunt
 XR1 vctrl vfilt vss ppolyf_u r_width=2e-6 r_length=r1_l
@@ -171,6 +179,10 @@ XMP_HP5 p5 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMP_HR1 r1 pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7
 XMN_HN2 n2 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
 XMN_HN4 n4 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
+* n5 held at vss too: r5 = 1 while parked, so XMN_I5 (gate r4 = 0) is off and
+* nothing fights; without it n5 floats and the disable edge couples r5's
+* nfet Vgb to 4.04 V at 1 of 9 ring phases (pex stress, ff corners)
+XMN_HN5 n5 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
 
 * (6) 5-stage current-starved ring r1 -> r2 -> r3 -> r4 -> r5 -> r1
 XMP_S1 p1 vbp_vco vdd vdd pfet_03v3 w=w_sp l=l_s

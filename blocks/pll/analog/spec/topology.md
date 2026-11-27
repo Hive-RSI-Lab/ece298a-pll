@@ -120,6 +120,8 @@ NMOS half (tail off `vref`, PMOS mirror load):
   `vnt`, drain `vdump` (the output).
 - `MP_BUFL1`: mirror-load master, PMOS diode on `vbh`, source vdd.
 - `MP_BUFL2`: mirror-load slave, gate `vbh`, drain `vdump`, source vdd.
+- `MP_HDM`: standby hold, pfet 1/0.28, gate `pll_en`, source and body vdd,
+  drain `vdump`; off while enabled (see Standby holds below).
 Net current into vdump = (Ip2 - Ip1) + (In1 - In2) (Ip = PMOS pair sides
 1/2, In = NMOS pair sides 1/2): vctrl up raises Ip2 and In1 and lowers
 Ip1 and In2, so vdump follows vctrl; vdump up does the reverse
@@ -165,7 +167,7 @@ starve, gate `vbn_vco`, source vss). 20 devices: `MP_S1..MP_S5`,
 - `MP_O` / `MN_O`: inverter `nb` -> `vco_out`, sized for 15 fF, tr/tf <=
   0.15 ns. With pll_en = 0 vco_out is held at 0 (vco_out_off_toggles).
 
-Device count (2026-11-10, with the standby holds and the static /2): 128 in the subcircuit.
+Device count (2026-11-26, with the standby holds, the ring park, the static /2, MP_HDM and MN_HN5): 132 in the subcircuit.
 
 ## Design equations (sized against at P4 / optimise)
 
@@ -276,7 +278,7 @@ VCO:
 
 Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, vref, bias_ref, vcp_n,
 vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
-vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
+vbh float, vdump held at vdd by MP_HDM, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).
 
 Standby holds (2026-11-10): `MP_HT1C`, `MP_HT1D` (gate `cp_trim0`) and
@@ -291,6 +293,30 @@ trim1 = 0, is run by the `enable_t01` stress deck. Without them a node whose swi
 junction leakage, so the rising vbp or vbp_vco coupled it above the rail and
 it stayed there: 3.76 to 4.01 V for up to 100 us at +10 % supply, past the 3.63 V gate-oxide DC limit
 (DRM 14.1.4.2). They are off while `pll_en` is high.
+
+Standby hold on vdump (2026-11-26, pump-mirror branch): `MP_HDM` (pfet
+1/0.28, gate `pll_en`) holds `vdump` at vdd. This is a standby hold, not a
+trim hold, so a trim pass must not size it. Without it, after pll_en fell
+`vdump` floated 1.1 to 1.2 mV above 3.63 V until the end of the run (pex
+stress at ff_pss and ff_125c_vp10: MP_UPD Vgs/Vgd, MN_BUF2 Vgb). `vbt` gets
+no hold: held at vdd it turns MP_BUF1 fully on into the MN_BUFL1 diode
+whenever vctrl sits low in standby (538 uA at ff/-40 C/3.63 V against the
+1 uA bound). With only `vdump` held, nothing conducts: MP_BUF2's gate and
+drain are both at vdd, and MN_BUFL2's gate `vbl` sits on the MN_BUFL1 diode.
+Known item, not a fail: `vbt` floats to about 3.89 V when disabled (pex
+stress, ff_pss), scored clean, and 260 mV above vdd is too little to
+forward-bias the tail PMOS drain junction. A hold to vdd turns MP_BUF1 on
+(538 uA), so any future fix for `vbt` must keep MP_BUF1 off.
+
+Standby hold on n5 (2026-11-26, pump-mirror branch): `MN_HN5` (nfet
+0.5/0.28, gate `en_b`) holds the ring's stage-5 starve node `n5` at vss, as
+`MN_HN2` / `MN_HN4` hold `n2` / `n4`. This is a standby hold, not a trim
+hold, so a trim pass must not size it. Parked, r4 = 0 and r5 = 1, so
+`MN_I5` is off and nothing fights. Without it `n5` floats, and the disable
+edge couples `MN_I5`'s Vgb to 4.04 V when pll_en falls at 1 of 9 sampled ring
+phases (pex, ff_pss); the stress decks disable at one phase only, so they
+missed it. With it the worst of 110 swept disable times (9 phases plus
+0.1 ns steps round the worst, up and dn, ff_pss and ff_125c_vp10) is 3.83 V.
 
 ### 8. Static master-slave /2: vco_out -> vco_div2 (2026-11-10, was TSPC since 2026-10-31, issue #48)
 The digital half clocks at vco/2, so no library flop has to toggle at the

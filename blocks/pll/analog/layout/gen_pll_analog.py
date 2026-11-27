@@ -108,7 +108,10 @@ PIN_HOLD = {"vco_div2": (0, 0), "pll_en": (0, 7), "pfd_up": (2, 2),
 # metal4 trunk columns wanted off the net's median stub: en_b's trunk at
 # x 72.4 keeps it off m2's track and the ring stubs in channel 0 (pex
 # stress: the PFD and ring wires kicked the enable pair)
-TRUNK_X = {"en_b": 72.4, "pfd_dn": 79.6, "up_b": 49.2}
+# pll_en's trunk held at x 70.8, 1.6 left of en_b's: MP_HDM's gate stub
+# moved its median to 73.2, beside en_b's, and the doubled en_b-pll_en
+# coupling pulled en_b under vss at the disable edge (pex stress, MP_STL)
+TRUNK_X = {"en_b": 72.4, "pll_en": 70.8, "pfd_dn": 79.6, "up_b": 49.2}
 # lowest track in a shared channel: en_b stays on track 6, under pll_en's
 # held track 7
 VCG_MIN_T = {"en_b": 6}
@@ -186,6 +189,7 @@ DEV = {
     "MP_HR1": ("p", "r1", "pll_en", "vdd", 0.5, 0.28, 1),
     "MN_HN2": ("n", "n2", "en_b", "vss", 0.5, 0.28, 1),
     "MN_HN4": ("n", "n4", "en_b", "vss", 0.5, 0.28, 1),
+    "MN_HN5": ("n", "n5", "en_b", "vss", 0.5, 0.28, 1),
     "MN_CPREF": ("n", "vcp_n", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MN_CPREF2": ("n", "vcp_p", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MP_CPREF": ("p", "vcp_p", "vcp_p", "vdd", W_CPP, L_CPP, 2),
@@ -211,6 +215,8 @@ DEV = {
     "MN_BUF2": ("n", "vdump", "vdump", "vnt", W_BUFN, L_BUFN, 2),
     "MP_BUFL1": ("p", "vbh", "vbh", "vdd", W_BUFLP, L_BUFL, 2),
     "MP_BUFL2": ("p", "vdump", "vbh", "vdd", W_BUFLP, L_BUFL, 2),
+    # standby hold on vdump (topology.md 3b): not a trim device
+    "MP_HDM": ("p", "vdump", "pll_en", "vdd", 1.0, LMIN, 1),
     "MN_V2I": ("n", "vi", "vctrl", "vs", W_V2I, L_V2I, 2),
     "MN_CL": ("n", "vcl", "vref", "vss", W_CL, L_CL, 4),
     "MN_FLR": ("n", "vi", "vref", "vss", W_FLR, L_FLR, 1),
@@ -327,7 +333,7 @@ ROWS = [
     ("buf_p", "p", ["MP_BUF1", "MP_BUF2", "MP_BUF2", "MP_BUF1",
                     "MP_BUF1", "MP_BUF2", "MP_BUF2", "MP_BUF1",
                     "MP_BUFL1", "MP_BUFL2", "MP_BUFL2", "MP_BUFL1",
-                    "MP_UPI", "MP_UP", "MP_UPD", "MP_DNI", "MP_ENP",
+                    "MP_UPI", "MP_UP", "MP_UPD", "MP_HDM", "MP_DNI", "MP_ENP",
                     "MP_ENB", "MP_ENI", "MP_STL",
                     "MP_V2I", "MP_V2IB", "MP_V2IB", "MP_V2I", "MP_ENV"]),
     ("res", "r", None),
@@ -1269,9 +1275,10 @@ def ring_block(top, draw_fet, y0, x0, ntracks, used):
             # the stage's power-down hold on p_k sits beside it, on the
             # same p_k strap, gate on pll_en in the shared channel
             pcols.append((x, None, [f"MP_HP{k}"]))
-            # stages 2 and 4 also hold n_k at vss when off, in the empty
-            # n-row slot under the p hold, on the same n_k strap
-            if k in (2, 4):
+            # stages 2, 4 and 5 also hold n_k at vss when off, in the empty
+            # n-row slot under the p hold, on the same n_k strap; n5's hold
+            # pins r5's nfet source so the disable edge can't kick its Vgb
+            if k in (2, 4, 5):
                 ncols.append((x, None, [f"MN_HN{k}"]))
                 w_h = max(dev_width(draw_fet, f"MP_HP{k}"),
                           dev_width(draw_fet, f"MN_HN{k}"))

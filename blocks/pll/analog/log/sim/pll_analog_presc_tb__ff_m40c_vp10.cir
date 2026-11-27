@@ -2,7 +2,8 @@
 * presc_div2_ratio, scored at ff_m40c_vp10 and tt_27c, so computed and printed
 * only there: at ff_m40c_vp10 (process ff, -40 C, vdd above nominal) and at tt). Written from spec/.
 *
-* Since 2026-10-31 (issue #48) the first /2 is the macro's own TSPC divider:
+* Since 2026-10-31 (issue #48) the first /2 is the macro's own /2 (TSPC until 2026-11-10,
+* now a static master-slave flop):
 * vco_div2 = vco_out / 2 is the clock the digital half takes. This bench
 * checks that divider keeps up at the VCO's fastest corner: vctrl = vdd, the
 * maximum VCO frequency, vco_div2 loaded by one inv_1 (the digital side's
@@ -18,7 +19,7 @@
 * fmax_ff floor). Fewer vco_div2 edges than 11 (a divider that cannot follow), or
 * fewer VCO edges after both runs: the count ratio 2*nq/nv (as before).
 * tt_27c (2026-11-02): bench_strength runs at tt only, so with the divider
-* unscored there none of its 14 devices could be seen (22 survivors). At tt
+* unscored there none of its devices could be seen (22 survivors). At tt
 * the ratio is scored too, plus what moves when a divider device moves, all on
 * vco_div2 at vctrl = vdd after 25 ns: presc_ckq_r_ns / presc_ckq_f_ns, vdd/2
 * on the clocking vco_out rise to vdd/2 on vco_div2 (the vco_out edge just
@@ -48,11 +49,14 @@
 .param cap_nmos_03v3_b_corner=mim_corner_2p0ff
 .subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
 .param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
-C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*ln(cosh(cvar3*v(1,2)+cvar4)))'
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function, as in
+* spec/moscap.spice and layout_ref/: cosh overflowed on a wild Newton iterate
+* ('Error: 1710.01 out of range for cosh', startup_tb tt_125c_vp10 with MP_HDM).
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
 .ends cap_nmos_03v3_b
-.include '/home/hive2/projects/ece298a-pll/blocks/pll/analog/netlist/pll_analog.cir'
+.include '/home/hive2/wt/pll-pump/blocks/pll/analog/netlist/pll_analog.cir'
 .include '/home/hive2/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
-.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=4.3e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='5e-05' l_cl='1e-06'
+.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.000366 rbt_l=0.00018 w_cpn='4e-05' l_cpn='4e-06' w_cpp='1e-04' l_cpp='4e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.00015 c1_w=3.5e-05 c1_l=1.2e-05 c2_w=4.3e-05 c2_l=1.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l=4.3e-05 w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='6e-06' w_rn='3e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06' m_buft=4 w_bufp='2e-05' l_bufp='1e-06' w_bufn='1e-05' l_bufn='1e-06' w_bufln='4e-06' w_buflp='8e-06' l_bufl='2e-06' w_cl='5e-05' l_cl='1e-06'
 
 
 .temp -40

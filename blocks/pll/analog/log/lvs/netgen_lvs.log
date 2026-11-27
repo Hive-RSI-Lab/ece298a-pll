@@ -62,10 +62,10 @@ Subcircuit summary:
 Circuit 1: pll_analog                      |Circuit 2: pll_analog                      
 -------------------------------------------|-------------------------------------------
 ppolyf_u (22->4)                           |ppolyf_u (4)                               
-pfet_03v3 (95->60)                         |pfet_03v3 (67->60)                         
+pfet_03v3 (96->61)                         |pfet_03v3 (68->61)                         
 cap_nmos_03v3_b (13->2)                    |cap_nmos_03v3_b (13->2)                    
-nfet_03v3 (94->64)                         |nfet_03v3 (67->64)                         
-Number of devices: 130                     |Number of devices: 130                     
+nfet_03v3 (95->65)                         |nfet_03v3 (68->65)                         
+Number of devices: 132                     |Number of devices: 132                     
 Number of nets: 64                         |Number of nets: 64                         
 ---------------------------------------------------------------------------------------
 Netlists match uniquely.
