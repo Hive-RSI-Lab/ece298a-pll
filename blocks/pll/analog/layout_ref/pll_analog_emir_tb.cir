@@ -1,0 +1,55 @@
+* pll_analog_emir_tb.cir - the operating point the em_ir gate
+* (check_analog_em_ir.py) reads DC EM and IR drop from, on the extracted
+* netlist at every corner of the spec's sweep. The gate fills in the pdk
+* path, the extracted netlist and the corner's process, resistor and MIM
+* sections, temperature and supply; any other curly brace is doubled
+* (.format()). No .control block: the gate adds `op` and `print all`.
+*
+* The heaviest DC state (spec.md):
+*  - pll_en = 1: pump, bias and VCO on (pll_en = 0 draws under 1 uA);
+*  - cp_trim = 11: the pump's largest mirror ratio, 40 uA nominal;
+*  - pfd_up = pfd_dn = 1: both pump sources on at once, so Icp flows from
+*    vdd through the UP source and the DN sink to vss (only during the PFD
+*    reset overlap in use, held here as the most pump current);
+*  - vctrl forced at vdd - 0.3 V: the VCO's starving current at its
+*    highest, and the ring's operating point puts every stage at its
+*    switching point, conducting through both devices (the corpus
+*    sensor_counted ring's reasoning). The pulsed current of the running
+*    ring, buffer and /2 is pll_analog_emir_tran_tb.cir's;
+*  - bias_ref floating (the internal default bias), vco_div2 into the
+*    pex bench's 30 fF, DC-open and left out.
+* Instance in the pex bench's pin order.
+.include '{pdk}/libs.tech/ngspice/design.spice'
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {res_corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {mim_corner}
+* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
+* moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
+* + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
+* too small" on its current probe) at most corners on the extracted netlist;
+* Q(v), its integral, is the same device and holds (pex tt_27c: Icp 18.52 vs
+* 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
+* PDK form under Gear). Its corner factor follows the MIM corner's
+* (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
+* overflowed on a wild Newton iterate in the op search ('Error: -10030.2 out
+* of range for cosh', which the engine reads as an ngspice error; ff_27c_vm10).
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{extracted}'
+
+.temp {temp_c}
+.param vddp={vdd}
+vdd_src  vdd      0 dc {{vddp}}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc {{vddp}}
+vup      pfd_up   0 dc {{vddp}}
+vdn      pfd_dn   0 dc {{vddp}}
+vt0      cp_trim0 0 dc {{vddp}}
+vt1      cp_trim1 0 dc {{vddp}}
+vvc      vctrl    0 dc {{vddp-0.3}}
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.end

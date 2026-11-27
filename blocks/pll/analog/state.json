@@ -4,22 +4,23 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-11-04T07:02:31",
+ "updated": "2026-11-11T12:19:33",
  "phase": "P5",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 25,
+   "attempts": 29,
    "last": {
-    "ts": "2026-11-04T02:14:42",
+    "ts": "2026-11-11T08:20:05",
     "status": "pass",
     "failing_count": 0,
-    "total": 0,
+    "total": 1,
     "inputs": {
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -272,22 +273,67 @@
       "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T12:12:53",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T12:39:27",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T13:39:47",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-11T08:20:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 18,
+   "attempts": 22,
    "last": {
-    "ts": "2026-11-04T02:14:42",
+    "ts": "2026-11-11T08:22:19",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -488,26 +534,75 @@
       "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T12:14:38",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:b148aa218f76abf25f4341411841b26c27bdf3c98f3c00daf038ed4d77e72d6a",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T12:42:21",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:4f971791dad1c0a4e8ef57aa615e20be9308ecb5061794a2e1d2db0de804be29",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T13:42:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:46a62291baf5ff953a83b90237f62c7fa867eb962ca5cb7dbeffde0435f5b5b7",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-11T08:22:19",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 23,
+   "attempts": 25,
    "last": {
-    "ts": "2026-11-04T06:26:06",
+    "ts": "2026-11-11T08:25:01",
     "status": "pass",
     "failing_count": 0,
-    "total": 0,
+    "total": 1,
     "inputs": {
-     "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-     "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-     "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+     "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+     "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+     "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
     },
+    "strength": 0,
     "job": null,
     "facts": {
      "corners": [
@@ -933,6 +1028,48 @@
       "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
       "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
      },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-10T12:44:42",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:4f971791dad1c0a4e8ef57aa615e20be9308ecb5061794a2e1d2db0de804be29",
+      "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-11T08:25:01",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+      "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "strength": 0,
      "job": null,
      "facts": {
       "corners": [
@@ -2174,19 +2311,20 @@
   "drc": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 13,
+   "attempts": 18,
    "last": {
-    "ts": "2026-11-04T05:46:07",
+    "ts": "2026-11-11T08:22:29",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+     "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -2359,28 +2497,113 @@
       "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T12:15:16",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:440466c7afe042d2cacbf44e60b5b19f73ce01092f1738da8e6f40a8312adce2",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "inputs_changed_during_run": [
+      "layout"
+     ]
+    },
+    {
+     "ts": "2026-11-10T12:36:25",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:42b0debbe5f1c265bf9782e2e35aad4a7054a970865e111ed96a6fa08fcbbb8b",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "inputs_changed_during_run": [
+      "layout"
+     ]
+    },
+    {
+     "ts": "2026-11-10T12:39:10",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:d458a1d602b91a73bd604aa3e53e4079fcb83109e3dd0fab0000bff5caf25192",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T13:42:13",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:8795463bc1e0d8465134a55aa18c00792a792ef6503bf262901733cd0cb75fce",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "inputs_changed_during_run": [
+      "layout"
+     ]
+    },
+    {
+     "ts": "2026-11-11T08:22:29",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "lvs": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 11,
+   "attempts": 15,
    "last": {
-    "ts": "2026-11-04T05:46:10",
+    "ts": "2026-11-11T08:22:59",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-     "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-     "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+     "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+     "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+     "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -2545,29 +2768,102 @@
       "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T12:18:29",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "layout": "dir_text:52eb598bd293c6c28e279483cca286b43568cd20bc85ba581500e9b57ab8b6ad",
+      "netlist": "dir_text:b148aa218f76abf25f4341411841b26c27bdf3c98f3c00daf038ed4d77e72d6a",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T12:37:31",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:d458a1d602b91a73bd604aa3e53e4079fcb83109e3dd0fab0000bff5caf25192",
+      "netlist": "dir_text:4f971791dad1c0a4e8ef57aa615e20be9308ecb5061794a2e1d2db0de804be29",
+      "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T13:42:46",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:4909cac5b4639d16c22d4a504d2915439a06f5c0b52b26fdba55ddbcc136b44b",
+      "netlist": "dir_text:46a62291baf5ff953a83b90237f62c7fa867eb962ca5cb7dbeffde0435f5b5b7",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-11T08:22:59",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+      "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "pex_sim": {
    "phase": "P5",
    "status": "pass",
-   "attempts": 12,
+   "attempts": 16,
    "last": {
-    "ts": "2026-11-04T06:05:56",
+    "ts": "2026-11-11T12:19:33",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-     "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
-     "layout_ref": "dir_text:c1d6efbd62a7fd515cdd618af5ee42f4aa7663d4c319d6fbafcc49583d74a1e7",
-     "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-     "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+     "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+     "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+     "layout_ref": "dir_text:349a2723c3221ee91ee8ff0951478ca1bf07d34a7df4ed15e25a0a94a1cd0c08",
+     "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+     "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
     },
+    "strength": 0,
     "job": null,
     "facts": {
      "corners": [
@@ -2857,6 +3153,222 @@
        "tt_pff"
       ]
      }
+    },
+    {
+     "ts": "2026-11-10T22:27:32",
+     "status": "fail",
+     "failing_count": 2,
+     "total": 2,
+     "inputs": {
+      "layout": "dir_text:4909cac5b4639d16c22d4a504d2915439a06f5c0b52b26fdba55ddbcc136b44b",
+      "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+      "layout_ref": "dir_text:85f2fa94cb0a1af50a96e2bbc610f2aa07589ea009fc31c237980e2fe59c14f7",
+      "netlist": "dir_text:be6646363cb04bf70a9596f186bd775ea27b6cdd1def5e92c35d41c34471fe6a",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-11T01:48:04",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:4909cac5b4639d16c22d4a504d2915439a06f5c0b52b26fdba55ddbcc136b44b",
+      "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+      "layout_ref": "dir_text:85f2fa94cb0a1af50a96e2bbc610f2aa07589ea009fc31c237980e2fe59c14f7",
+      "netlist": "dir_text:be6646363cb04bf70a9596f186bd775ea27b6cdd1def5e92c35d41c34471fe6a",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-11T10:08:23",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+      "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+      "layout_ref": "dir_text:c5bec4c1035be17e07ba12fd778ff7d7f288ea58e38c9c366bd098182129d5da",
+      "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
+    },
+    {
+     "ts": "2026-11-11T12:19:33",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+      "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+      "layout_ref": "dir_text:349a2723c3221ee91ee8ff0951478ca1bf07d34a7df4ed15e25a0a94a1cd0c08",
+      "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+      "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "ss_pff",
+       "ff_pss",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
     }
    ]
   },
@@ -3079,26 +3591,26 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-04T07:02:31"
+   "sha256": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+   "hashed": "2026-11-11T12:19:33"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-   "hashed": "2026-11-04T07:02:31"
+   "sha256": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+   "hashed": "2026-11-11T12:19:33"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
-   "hashed": "2026-11-04T07:02:31"
+   "sha256": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+   "hashed": "2026-11-11T12:19:33"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
-   "sha256": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
-   "hashed": "2026-11-04T07:02:31"
+   "sha256": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
+   "hashed": "2026-11-11T08:25:01"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -3109,44 +3621,44 @@
   "layout": {
    "path": "layout",
    "kind": "layout",
-   "sha256": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-   "hashed": "2026-11-04T07:02:31"
+   "sha256": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+   "hashed": "2026-11-11T12:19:33"
   },
   "layout_ref": {
    "path": "layout_ref",
    "kind": "layout_ref",
-   "sha256": "dir_text:c1d6efbd62a7fd515cdd618af5ee42f4aa7663d4c319d6fbafcc49583d74a1e7",
-   "hashed": "2026-11-04T06:05:56"
+   "sha256": "dir_text:349a2723c3221ee91ee8ff0951478ca1bf07d34a7df4ed15e25a0a94a1cd0c08",
+   "hashed": "2026-11-11T12:19:33"
   },
   "pdk_version": {
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-04T07:02:31"
+   "hashed": "2026-11-11T12:19:33"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
    "kind": "pdk_magic",
    "sha256": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-   "hashed": "2026-11-04T06:05:56"
+   "hashed": "2026-11-11T12:19:33"
   },
   "pdk_klayout": {
    "path": "${PDK_ROOT}/libs.tech/klayout",
    "kind": "pdk_klayout",
    "sha256": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
-   "hashed": "2026-11-04T06:05:56"
+   "hashed": "2026-11-11T12:19:33"
   },
   "pdk_netgen": {
    "path": "${PDK_ROOT}/libs.tech/netgen",
    "kind": "pdk_netgen",
    "sha256": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
-   "hashed": "2026-11-04T05:46:10"
+   "hashed": "2026-11-11T08:22:59"
   },
   "pdk_models": {
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-04T07:02:31"
+   "hashed": "2026-11-11T12:19:33"
   }
  },
  "open_issues": [
@@ -5835,6 +6347,205 @@
    "gate": "release",
    "status": "pass",
    "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:12:53",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 26,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:14:38",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 19,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:15:16",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 14,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-11-10T12:18:29",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "fail",
+   "attempt": 12,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-10T12:36:25",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 15,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-11-10T12:37:31",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "pass",
+   "attempt": 13,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:39:10",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 16,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:39:27",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 27,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:42:21",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 20,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:44:42",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 24,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T12:46:26",
+   "event": "gate_error",
+   "gate": "pex_sim",
+   "error": "CheckError: at corner tt_m40c_vp10: pex_sim's ngspice run hit its 120 s limit. If the bench is just slow, raise it in spec/spec.yaml with 'sim_timeout_s: {pex_sim: <seconds>}' (at most 3600), or pass "
+  },
+  {
+   "ts": "2026-11-10T13:39:47",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 28,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T13:42:05",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 21,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T13:42:13",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 17,
+   "failing_count": 0,
+   "inputs_changed_during_run": [
+    "layout"
+   ]
+  },
+  {
+   "ts": "2026-11-10T13:42:46",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "pass",
+   "attempt": 14,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T22:27:32",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "fail",
+   "attempt": 13,
+   "failing_count": 2
+  },
+  {
+   "ts": "2026-11-11T01:48:04",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 14,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T08:20:05",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 29,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T08:22:19",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 22,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T08:22:29",
+   "event": "gate",
+   "gate": "drc",
+   "status": "pass",
+   "attempt": 18,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T08:22:59",
+   "event": "gate",
+   "gate": "lvs",
+   "status": "pass",
+   "attempt": 15,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T08:25:01",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 25,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T10:08:23",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 15,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-11T12:19:33",
+   "event": "gate",
+   "gate": "pex_sim",
+   "status": "pass",
+   "attempt": 16,
    "failing_count": 0
   }
  ]

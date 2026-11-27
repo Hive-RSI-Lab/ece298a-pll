@@ -302,7 +302,9 @@ def group(m: dict) -> str:
         return "ring_starve"
     if nets & V2I_NETS:
         return "v2i_and_mirror"
-    if nets & {"nb", "vco_out", "vco_div2", "dqb", "dqn", "dx", "dy", "da", "db", "dc"} or \
+    # the static /2 (m1 m2 mf s1 sf ck clkb) switches rail to rail like the old one
+    if nets & {"nb", "vco_out", "vco_div2", "dqb", "dqn", "dx", "dy", "da", "db", "dc",
+               "m1", "m2", "mf", "s1", "sf", "ck", "clkb"} or \
             any(base(n).startswith(("a_18352", "a_21", "a_22")) for n in nets):
         return "buffer_divider"
     return "bias_cp_other"
@@ -578,7 +580,11 @@ def main(argv=None) -> int:
                                   spec["supply"]["vdd"], sim_run.load_sizing(WS))
         vdd, temp_k = float(subs["VDD"]), float(subs["TEMP_C"]) + 273.15
         hdr = header(subs, a.netlist)
-        work = WORK / cn
+        # the op and device caches belong to one netlist and its sizing: key the
+        # directory on both, so a new extraction never reads an old one's R or bias
+        nkey = hashlib.sha256(a.netlist.read_bytes() + hdr.encode()).hexdigest()[:16]
+        work = WORK / cn / nkey
+        work.mkdir(parents=True, exist_ok=True)
         opf = work / "op.json"  # the vctrl search is the same every run: cached
         op = json.loads(opf.read_text()) if opf.is_file() else find_vctrl(hdr, vdd, work, guess.get(cn, 1.8))
         opf.write_text(json.dumps(op))

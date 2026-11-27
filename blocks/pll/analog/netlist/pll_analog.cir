@@ -18,15 +18,15 @@
 * C2 loop filter, (3b) vdump = vctrl rail-to-rail buffer, (5) degenerated V-to-I with floor current and
 * current ceiling, (6) 5-stage
 * current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer,
-* (8) TSPC /2 on vco_out -> vco_div2, the digital half's clock (2026-10-31,
-* issue #48: the digital half clocks at vco/2, so no library flop has to
-* toggle at the VCO's ceiling).
+* (8) static master-slave /2 on vco_out -> vco_div2, the digital half's clock
+* (issue #48: the digital half clocks at vco/2, so no library flop has to
+* toggle at the VCO's ceiling; TSPC until 2026-11-10).
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
 .param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
-.param w_b2=4e-06 l_b2=1e-06 rb_l=0.000366 rbt_l=0.00018 w_cpn=2e-05
-.param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
-.param w_swp=4e-06 l_sw=5e-07 r1_l=0.00015 c1_w=0.00042 c1_l=1.2e-05
+.param w_b2=4e-06 l_b2=1e-06 rb_l=0.000366 rbt_l=0.00018 w_cpn=4e-05
+.param l_cpn=4e-06 w_cpp=1e-04 l_cpp=4e-06 w_swn=2e-06
+.param w_swp=4e-06 l_sw=5e-07 r1_l=0.00015 c1_w=3.5e-05 c1_l=1.2e-05
 .param c2_w=4.3e-05 c2_l=1.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=4.3e-05
 .param w_flr=2e-06 l_flr=2e-06 w_v2ip=1e-05 w_v2in=4e-06
 .param l_v2i2=5e-07 w_sp=1e-05 w_sn=4e-06 l_s=5e-07
@@ -39,8 +39,11 @@
 .subckt pll_analog vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
 * (1) enable inverter: pll_en -> en_b
+* MN_ENI is long (l = 4u) on purpose: a slow en_b fall (about 2 ns, was
+* 0.5 ns) keeps the en_b edge from coupling vst below vss at enable, which
+* put MN_ST's gate-drain at 3.93 V at ff/-40 C. See spec/topology.md.
 XMP_ENI en_b pll_en vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=2.8e-7
+XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=4e-6
 
 * (2) bias: Ib = Vgs(MN_B1) / (RBIAS_TOP + RBIAS_INT || R_ext)
 * The loop node is vref (= Vgs of MN_B1); the pad bias_ref is a tap on the
@@ -88,6 +91,16 @@ XMN_SW1 vcp_n cp_trim1 t2 vss nfet_03v3 w=2e-6 l=2.8e-7
 XMP_T1B t1b vbp vdd vdd pfet_03v3 w=w_bp l=l_bp m=1
 XMN_SW0B t1c cp_trim0 t1b vss nfet_03v3 w=2e-6 l=2.8e-7
 XMN_SW1B vcp_n cp_trim1 t1c vss nfet_03v3 w=2e-6 l=2.8e-7
+* hold each trim leg's drain at the supply while its switch is open, so the
+* leg cannot be coupled above the rail when vbp rises with pll_en. The holds
+* are gated by the trim bit only: a hold gated by pll_en would be on in
+* standby while a trim bit closes the leg onto vcp_n, which XMN_ENN holds at
+* vss (a vdd-vss path, 70-210 uA at trims 01..11). With trim0 = 1 and
+* trim1 = 0, t1b/t1c is an island behind MP_T1B; the enable stress deck runs
+* that case (enable_t01).
+XMP_HT1C t1a cp_trim0 vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HT1D t1b cp_trim0 vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HT2B t2 cp_trim1 vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMN_CPREF vcp_n vcp_n vss vss nfet_03v3 w=w_cpn l=l_cpn
 XMN_CPREF2 vcp_p vcp_n vss vss nfet_03v3 w=w_cpn l=l_cpn
 XMP_CPREF vcp_p vcp_p vdd vdd pfet_03v3 w=w_cpp l=l_cpp
@@ -120,10 +133,18 @@ XMN_BUF1 vbh vctrl vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMN_BUF2 vdump vdump vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMP_BUFL1 vbh vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
 XMP_BUFL2 vdump vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
+* power-down: hold vdump at the supply. With pll_en low both tails are off
+* and vdump has only junction leakage; the falling edge coupled it above
+* the rail and it stayed there (pex stress: MP_UPD Vgs/Vgd, MN_BUF2 Vgb
+* 1 mV over 3.63 V at the end of the run, ff_pss and ff_125c_vp10).
+* A standby hold, not a trim hold: a trim pass must not size it. vbt gets
+* no hold: at vdd it turns MP_BUF1 on into the MN_BUFL1 diode whenever
+* vctrl sits low in standby (538 uA at ff_m40c_vp10 against 1 uA).
+XMP_HDM vdump pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 
 * (4) loop filter: R1-C1 series, C2 shunt
 XR1 vctrl vfilt vss ppolyf_u r_width=2e-6 r_length=r1_l
-XC1 vfilt vss cap_nmos_03v3_b c_width=c1_w c_length=c1_l
+XC1 vfilt vss cap_nmos_03v3_b c_width=c1_w c_length=c1_l m=12
 XC2 vctrl vss cap_nmos_03v3_b c_width=c2_w c_length=c2_l
 
 * (5) VCO control: degenerated V2I + floor current -> vbp_vco / vbn_vco
@@ -140,6 +161,28 @@ XMP_V2IB vbn_vco vbp_vco vdd vdd pfet_03v3 w=w_v2ip l=l_v2i2
 XMN_V2IM vbn_vco vbn_vco vss vss nfet_03v3 w=w_v2in l=l_v2i2
 XMP_ENV vbp_vco pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMN_ENV vbn_vco en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
+
+* power-down: hold each starve-PMOS drain at the supply. With the stage off,
+* p1..p5 and the ring nodes behind them have no path but junction leakage,
+* and the rising vbp_vco couples them above the rail.
+XMP_HP1 p1 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HP2 p2 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HP3 p3 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HP4 p4 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+XMP_HP5 p5 pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
+* power-down: park the ring at r1..r5 = 1 0 1 0 1 so every stage output has
+* a DC path to a rail. r1 is held high; n2 and n4 are held at vss, so stages
+* 2 and 4 pull r2 and r4 low, and stages 3 and 5 pull r3 and r5 high
+* through the p holds above. Stage 1 meets r1 only through floating n1, so
+* nothing fights. Holding only one break keeps the odd ring from running
+* unstarved while disabled. Smallest drawn size; they are off when enabled.
+XMP_HR1 r1 pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7
+XMN_HN2 n2 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
+XMN_HN4 n4 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
+* n5 held at vss too: r5 = 1 while parked, so XMN_I5 (gate r4 = 0) is off and
+* nothing fights; without it n5 floats and the disable edge couples r5's
+* nfet Vgb to 4.04 V at 1 of 9 ring phases (pex stress, ff corners)
+XMN_HN5 n5 en_b vss vss nfet_03v3 w=5e-7 l=2.8e-7
 
 * (6) 5-stage current-starved ring r1 -> r2 -> r3 -> r4 -> r5 -> r1
 XMP_S1 p1 vbp_vco vdd vdd pfet_03v3 w=w_sp l=l_s
@@ -171,25 +214,44 @@ XMN_G2 ng pll_en vss vss nfet_03v3 w=w_gn l=2.8e-7
 XMP_O vco_out nb vdd vdd pfet_03v3 w=w_op l=2.8e-7
 XMN_O vco_out nb vss vss nfet_03v3 w=w_on l=2.8e-7
 
-* (8) TSPC /2: vco_div2 = vco_out / 2, the clock the digital half takes.
-* True single-phase clocked flop (Yuan-Svensson): stage 1 (MP_DA, MP_DB,
-* MN_DA) is transparent while vco_out is low, dx = NOT dqn; stage 2 (MP_DC,
-* MN_DB, MN_DC) precharges dy high while vco_out is low and evaluates
-* dy = NOT dx on the rising edge; stage 3 (MP_DD, MN_DD, MN_DE) then sets
-* dqn = NOT dy and holds while vco_out is low. D = dqn, so dqn toggles once
-* per rising edge of vco_out. MP_DR holds dqn high in standby (pll_en low:
-* vco_out sits low, so every node is then static and no buffer crowbars).
-* MP_DO1/MN_DO1 and MP_DO2/MN_DO2 buffer dqn onto the pin.
-XMP_DA da dqn vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMP_DB dx vco_out da vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMN_DA dx dqn vss vss nfet_03v3 w=1e-6 l=2.8e-7
-XMP_DC dy vco_out vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMN_DB dy dx db vss nfet_03v3 w=2e-6 l=2.8e-7
-XMN_DC db vco_out vss vss nfet_03v3 w=2e-6 l=2.8e-7
-XMP_DD dqn dy vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMN_DD dqn vco_out dc vss nfet_03v3 w=2e-6 l=2.8e-7
-XMN_DE dc dy vss vss nfet_03v3 w=2e-6 l=2.8e-7
-XMP_DR dqn pll_en vdd vdd pfet_03v3 w=5e-7 l=2.8e-7
+* (8) static master-slave /2: vco_out -> vco_div2 (replaces TSPC; every node driven).
+* Slave output stage is NAND(s1, pll_en): power-down forces dqn high, vco_div2 high,
+* with no driver fighting another whatever state the stopped clock leaves.
+* Clock phases: clkb = inv(vco_out), ck = vco_out through an always-on pass gate
+* of the same delay, so the two edges reach each pass gate together (a skewed
+* pair lifts the held node above vdd by clock feedthrough).
+* MN_DXA..D: NMOS gate caps, 4x1 um (about 20 fF when high) on the four pass-gate
+* nodes, so feedthrough charge moves them less (device overshoot, DRM 14.1.4.2).
+XMP_DCI clkb vco_out vdd vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMN_DCI clkb vco_out vss vss nfet_03v3 w=5.0e-07 l=2.8e-7
+* MN_CKC/MP_CKC: clkb's load cap, an n/p gate-cap pair (about 2 fF across the
+* swing), so clkb's own inverter kicks the divider pass gates less (pex stress).
+XMN_CKC vss clkb vss vss nfet_03v3 w=1.0e-06 l=4.5e-7
+XMP_CKC vdd clkb vdd vdd pfet_03v3 w=1.0e-06 l=4.5e-7
+XMN_DCT ck vdd vco_out vss nfet_03v3 w=5.0e-07 l=2.8e-7
+XMP_DCT ck vss vco_out vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMN_DXA vss m1 vss vss nfet_03v3 w=4.0e-06 l=1.0e-06
+XMN_DXB vss s1 vss vss nfet_03v3 w=4.0e-06 l=1.0e-06
+XMN_DXC vss mf vss vss nfet_03v3 w=4.0e-06 l=1.0e-06
+XMN_DXD vss sf vss vss nfet_03v3 w=4.0e-06 l=1.0e-06
+XMN_DT1 m1 clkb s1 vss nfet_03v3 w=1.0e-06 l=2.8e-7
+XMP_DT1 m1 ck s1 vdd pfet_03v3 w=2.0e-06 l=2.8e-7
+XMP_DF1 m2 m1 vdd vdd pfet_03v3 w=2.0e-06 l=2.8e-7
+XMN_DF1 m2 m1 vss vss nfet_03v3 w=1.0e-06 l=2.8e-7
+XMP_DK1 mf m2 vdd vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMN_DK1 mf m2 vss vss nfet_03v3 w=5.0e-07 l=2.8e-7
+XMN_DT2 m1 ck mf vss nfet_03v3 w=5.0e-07 l=2.8e-7
+XMP_DT2 m1 clkb mf vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMN_DT3 s1 ck m2 vss nfet_03v3 w=1.0e-06 l=2.8e-7
+XMP_DT3 s1 clkb m2 vdd pfet_03v3 w=2.0e-06 l=2.8e-7
+XMP_DF2 dqn s1 vdd vdd pfet_03v3 w=2.0e-06 l=2.8e-7
+XMN_DF2 dqn s1 dr vss nfet_03v3 w=2.0e-06 l=2.8e-7
+XMN_DF2R dr pll_en vss vss nfet_03v3 w=2.0e-06 l=2.8e-7
+XMP_DF2R dqn pll_en vdd vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMP_DK2 sf dqn vdd vdd pfet_03v3 w=1.0e-06 l=2.8e-7
+XMN_DK2 sf dqn vss vss nfet_03v3 w=5.0e-07 l=2.8e-7
+XMN_DT4 s1 clkb sf vss nfet_03v3 w=5.0e-07 l=2.8e-7
+XMP_DT4 s1 ck sf vdd pfet_03v3 w=1.0e-06 l=2.8e-7
 XMP_DO1 dqb dqn vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
 XMN_DO1 dqb dqn vss vss nfet_03v3 w=1e-6 l=2.8e-7
 XMP_DO2 vco_div2 dqb vdd vdd pfet_03v3 w=6e-6 l=2.8e-7

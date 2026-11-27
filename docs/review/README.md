@@ -263,6 +263,25 @@ but the wider range only holds at typical. Decision 4 covers it.
    the macro. Evidence: the top gates in `blocks/pll/reports/recorded/`.
    Undoing it is a revert and a re-harden.
 
+10. **The four PFD-cycle stress decks end on a disable tail.** The lock, up,
+    dn and swap decks in `blocks/pll/analog/layout_ref/pll_analog_stress.yaml`
+    pin vctrl at vdd, so the ring free-runs, and they used to stop at 3.3 us.
+    Every fail the old decks reported on the trim layouts was a ring edge
+    caught by the last sample: on c21 dn at ff_pss, r1 was at -10.8 mV and
+    still falling at 3.3 us. The old deck counted each of those as a fail
+    without judging it, and the count moved with wherever the ring happened to
+    be when the run stopped.
+    - Up to 3.3 us the benches are unchanged. At 3.3 us the PFD pattern has
+      stopped, `pll_en` ramps to 0 V over 1 ns, and the run goes on to 3.6 us
+      with vctrl and vdd unchanged.
+    - Each edge open at 3.3 us now closes inside the run and is judged against
+      the 300 mV one-off bound. The disable edge and everything after it are
+      judged too, and an edge still open at 3.6 us still fails.
+    - The cycle window (2.24 to 3.12 us), the share and peak bounds and the
+      100 mV per-cycle bound are unchanged.
+    - Cost of undoing it: restore the 3.3 us `.tran`, the 3.3 us vdd hold and
+      `ben pll_en 0 v=v(vdd)` in the four benches.
+
 ## What is left
 
 1. The gds, docs and test workflows passing on main with this design.

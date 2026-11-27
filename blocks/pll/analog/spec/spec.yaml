@@ -4,9 +4,12 @@
 # bias_ref, one vdd, one vss - ten pins, nothing else.
 top: pll_analog
 supply: {vdd: 3.3}
+# Time limits for one ngspice run on the extracted netlist. The extraction is
+# large and the 120 s default is too short on a shared machine.
+sim_timeout_s: {pex_sim: 1800, em_ir: 1800}
 
 # Refdes list from spec/topology.md (P2): current_mirror template anchor,
-# 86 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
+# 128 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
 # pfet_03v3, ppolyf_u, cap_mim_2f0ff.
 devices:
   # enable inverter
@@ -104,17 +107,35 @@ devices:
   - xMN_G2
   - xMP_O
   - xMN_O
-  # TSPC /2 (vco_out -> vco_div2, topology.md section 8)
-  - xMP_DA
-  - xMP_DB
-  - xMN_DA
-  - xMP_DC
-  - xMN_DB
-  - xMN_DC
-  - xMP_DD
-  - xMN_DD
-  - xMN_DE
-  - xMP_DR
+  # static master-slave /2 (vco_out -> vco_div2, topology.md section 8)
+  - xMP_DCI
+  - xMN_DCI
+  - xMP_CKC
+  - xMN_CKC
+  - xMP_DCT
+  - xMN_DCT
+  - xMN_DXA
+  - xMN_DXB
+  - xMN_DXC
+  - xMN_DXD
+  - xMP_DT1
+  - xMN_DT1
+  - xMP_DF1
+  - xMN_DF1
+  - xMP_DK1
+  - xMN_DK1
+  - xMP_DT2
+  - xMN_DT2
+  - xMP_DT3
+  - xMN_DT3
+  - xMP_DF2
+  - xMN_DF2
+  - xMP_DF2R
+  - xMN_DF2R
+  - xMP_DK2
+  - xMN_DK2
+  - xMP_DT4
+  - xMN_DT4
   - xMP_DO1
   - xMN_DO1
   - xMP_DO2
@@ -123,7 +144,7 @@ devices:
 # Device mismatch at typical (the gate's corner): 30 samples per bench, at most
 # one miss. The corner failure rates this gate does not see are in mc/README.md
 # (cp_updn_mismatch_pct at ff_pss, ff_m40c_vp10).
-mc: {enabled: true, runs: 30, yield_min: 0.95}
+mc: {enabled: true, runs: 1000, yield_min: 0.95}
 
 # The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
 # 125 C": a full grid, replacing the default five. 27 corners; the
@@ -231,7 +252,7 @@ measures:
   - name: vco_out_duty_pct
     bounds: {min: 40.0, max: 60.0}
     corners: all
-  # --- prescaler drive (the macro's TSPC /2 on vco_out -> vco_div2) -------
+  # --- prescaler drive (the macro's static /2 on vco_out -> vco_div2) -----
   - name: presc_div2_ratio
     bounds: {min: 0.99, max: 1.01}
     corners: [ff_m40c_vp10, tt_27c]

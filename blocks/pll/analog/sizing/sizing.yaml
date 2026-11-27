@@ -53,24 +53,25 @@ rbt_l:
   max: 0.0002
 # pump NMOS W (MN_CPREF, MN_CPREF2, MN_DNS): Vov ~0.15 V at 20 uA for vctrl down to 0.3 V
 w_cpn:
-  value: 2e-05
+  value: 4e-05
   min: 5e-06
-  max: 5e-05
-# pump NMOS L: >= 1 um for UP/DN matching (topology.md)
+  max: 1e-04
+# pump NMOS L: >= 1 um for UP/DN matching (topology.md); 4 um since 2026-11-12
+# (W and L doubled: mc missed cp_updn_mismatch_pct at ff_pss, 5/30 over 10 %)
 l_cpn:
-  value: 2e-06
+  value: 4e-06
   min: 1e-06
-  max: 2e-06
+  max: 4e-06
 # pump PMOS W (MP_CPREF, MP_UPS)
 w_cpp:
-  value: 5e-05
+  value: 1e-04
   min: 1e-05
-  max: 5e-05
+  max: 1e-04
 # pump PMOS L: >= 1 um for UP/DN matching
 l_cpp:
-  value: 2e-06
+  value: 4e-06
   min: 1e-06
-  max: 2e-06
+  max: 4e-06
 # DN / steering NMOS switch W: min area for charge sharing
 w_swn:
   value: 2e-06
@@ -93,12 +94,13 @@ r1_l:
   value: 0.00015
   min: 6e-05
   max: 0.00025
-# C1 (cap_nmos_03v3_b): total W at L = c1_l, about 3.98 fF/um2 at 1.6 V ->
-# 20.1 pF at 420 um x 12 um (12 units of 35 um); was a 100 um MIM (20 pF)
+# C1 (cap_nmos_03v3_b): W of one of its 12 parallel units (m=12) at L = c1_l,
+# as drawn, so LVS compares like for like; about 3.98 fF/um2 at 1.6 V ->
+# 20.1 pF at 12 x 35 um x 12 um; was a 100 um MIM (20 pF)
 c1_w:
-  value: 0.00042
-  min: 0.0003
-  max: 0.0005
+  value: 3.5e-05
+  min: 2.5e-05
+  max: 4.1e-05
 c1_l:
   value: 1.2e-05
   min: 1.0e-05

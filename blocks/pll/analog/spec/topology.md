@@ -25,13 +25,22 @@ NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 `vfilt` (R1-C1 junction),
 `vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `vcl` (ceiling drain), `r1..r5` (ring),
 `nb` (NAND output), `vco_out` (the buffered VCO clock: internal since
-2026-10-31, the benches read it as `xdut.vco_out`), and the TSPC divider's
-`dx`, `dy`, `dqn`, `dqb`, `da`, `db`, `dc`.
+2026-10-31, the benches read it as `xdut.vco_out`), and the /2's
+`clkb`, `ck`, `m1`, `m2`, `mf`, `s1`, `sf`, `dr`, `dqn`, `dqb`.
 
 ## Blocks and refdes
 
 ### 1. Enable inverter
 - `MP_ENI`, `MN_ENI`: `pll_en` -> `en_b`. Both polarities are used below.
+- `MN_ENI` is drawn long (W/L = 1/4 um) so en_b falls in about 2 ns at tt
+  (1.7 ns ff, 4.5 ns ss) instead of 0.5 ns. With the fast edge, en_b's fall
+  coupled `vst` to about -0.24 V through MP_STL, MN_STE's charge and the
+  en_b-vst wire cap, while `pll_en` kicked `vbp` 66 mV above vdd: MN_ST's
+  gate-drain reached 3.929 V at ff/-40 C/3.63 V, on the 3.93 V one-off
+  stress bound. Long, it peaks at 3.740 V (ff), 3.421 V (tt), 3.089 V (ss);
+  start-up and bias are unchanged. Cost: en_b dips to about -0.1 V for about
+  1 ns as vst rises, so MP_STL sees about 3.73 V once per enable. Nothing
+  waits on en_b's fall; its rise (MP_ENI) is unchanged.
 
 ### 2. Bias: Vgs/R (Vt-referenced) self-biased reference, Ib = 5 uA nominal
 Gray-Meyer Vt-referenced core: the reference current flows through
@@ -111,6 +120,8 @@ NMOS half (tail off `vref`, PMOS mirror load):
   `vnt`, drain `vdump` (the output).
 - `MP_BUFL1`: mirror-load master, PMOS diode on `vbh`, source vdd.
 - `MP_BUFL2`: mirror-load slave, gate `vbh`, drain `vdump`, source vdd.
+- `MP_HDM`: standby hold, pfet 1/0.28, gate `pll_en`, source and body vdd,
+  drain `vdump`; off while enabled (see Standby holds below).
 Net current into vdump = (Ip2 - Ip1) + (In1 - In2) (Ip = PMOS pair sides
 1/2, In = NMOS pair sides 1/2): vctrl up raises Ip2 and In1 and lowers
 Ip1 and In2, so vdump follows vctrl; vdump up does the reverse
@@ -156,7 +167,7 @@ starve, gate `vbn_vco`, source vss). 20 devices: `MP_S1..MP_S5`,
 - `MP_O` / `MN_O`: inverter `nb` -> `vco_out`, sized for 15 fF, tr/tf <=
   0.15 ns. With pll_en = 0 vco_out is held at 0 (vco_out_off_toggles).
 
-Device count: 2 + 12 + 23 + 10 + 3 + 10 + 20 + 6 = 86.
+Device count (2026-11-26, with the standby holds, the ring park, the static /2, MP_HDM and MN_HN5): 132 in the subcircuit.
 
 ## Design equations (sized against at P4 / optimise)
 
@@ -167,6 +178,14 @@ Mirror (template header, square law, starting point only):
   Trim legs use units of one W (4 = m=4 or 4 W), ratio <= 8 : 1 to the
   master. Long L (>= 1 um) on MP_UPS/MN_DNS and their references for
   UP/DN matching over vctrl 0.3..vdd-0.3 V (cp_updn_mismatch_pct <= 10).
+  The pump mirror (MN_CPREF/MN_CPREF2/MN_DNS, MP_CPREF/MP_UPS) is outside
+  the template's W and L range: W and L were doubled on 2026-11-12 (40/4 um
+  NMOS, 100/4 um PMOS) after mc missed cp_updn_mismatch_pct at ff_pss in
+  5 of 30 samples (nominal 8.7 %). The longer L cuts the systematic share
+  (nominal ff_pss 8.7 -> 5.7 %), the 4x area the random share.
+  Icp code 00 sits about 0.8 uA (2.9 sigma at tt) above its 18 uA floor;
+  the bigger mirror moved it 1.2 % lower. If a later change lowers Icp
+  again, recentre it then instead of adding more mc runs.
 
 Bias:
 - Ib = Vgs(MN_B1) / R_BIAS, R_BIAS = RBIAS_TOP + (RBIAS_INT || R_ext).
@@ -259,25 +278,79 @@ VCO:
 
 Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, vref, bias_ref, vcp_n,
 vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
-vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
+vbh float, vdump held at vdd by MP_HDM, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).
 
-### 8. TSPC /2: vco_out -> vco_div2 (2026-10-31, issue #48)
+Standby holds (2026-11-10): `MP_HT1C`, `MP_HT1D` (gate `cp_trim0`) and
+`MP_HT2B` (gate `cp_trim1`) hold the trim-leg drains `t1a`, `t1b`, `t2` at vdd
+while that leg's switch is open; `MP_HP1`..`MP_HP5` (gate `pll_en`) hold the
+ring's starve drains `p1`..`p5` while `pll_en` is low. The trim holds must not
+be gated by `pll_en` (2026-11-11, review): with a trim bit high in standby the
+switch puts the leg on `vcp_n`, which `MN_ENN` holds at vss, and a `pll_en`
+hold on the same leg drew 70 to 210 uA from vdd. With a switch closed the leg
+sits on the clamped `vcp_n`; the one island left, `t1b`/`t1c` at trim0 = 1 and
+trim1 = 0, is run by the `enable_t01` stress deck. Without them a node whose switch or stage is off had only
+junction leakage, so the rising vbp or vbp_vco coupled it above the rail and
+it stayed there: 3.76 to 4.01 V for up to 100 us at +10 % supply, past the 3.63 V gate-oxide DC limit
+(DRM 14.1.4.2). They are off while `pll_en` is high.
+
+Standby hold on vdump (2026-11-26, pump-mirror branch): `MP_HDM` (pfet
+1/0.28, gate `pll_en`) holds `vdump` at vdd. This is a standby hold, not a
+trim hold, so a trim pass must not size it. Without it, after pll_en fell
+`vdump` floated 1.1 to 1.2 mV above 3.63 V until the end of the run (pex
+stress at ff_pss and ff_125c_vp10: MP_UPD Vgs/Vgd, MN_BUF2 Vgb). `vbt` gets
+no hold: held at vdd it turns MP_BUF1 fully on into the MN_BUFL1 diode
+whenever vctrl sits low in standby (538 uA at ff/-40 C/3.63 V against the
+1 uA bound). With only `vdump` held, nothing conducts: MP_BUF2's gate and
+drain are both at vdd, and MN_BUFL2's gate `vbl` sits on the MN_BUFL1 diode.
+Known item, not a fail: `vbt` floats to about 3.89 V when disabled (pex
+stress, ff_pss), scored clean, and 260 mV above vdd is too little to
+forward-bias the tail PMOS drain junction. A hold to vdd turns MP_BUF1 on
+(538 uA), so any future fix for `vbt` must keep MP_BUF1 off.
+
+Standby hold on n5 (2026-11-26, pump-mirror branch): `MN_HN5` (nfet
+0.5/0.28, gate `en_b`) holds the ring's stage-5 starve node `n5` at vss, as
+`MN_HN2` / `MN_HN4` hold `n2` / `n4`. This is a standby hold, not a trim
+hold, so a trim pass must not size it. Parked, r4 = 0 and r5 = 1, so
+`MN_I5` is off and nothing fights. Without it `n5` floats, and the disable
+edge couples `MN_I5`'s Vgb to 4.04 V when pll_en falls at 1 of 9 sampled ring
+phases (pex, ff_pss); the stress decks disable at one phase only, so they
+missed it. With it the worst of 110 swept disable times (9 phases plus
+0.1 ns steps round the worst, up and dn, ff_pss and ff_125c_vp10) is 3.83 V.
+
+### 8. Static master-slave /2: vco_out -> vco_div2 (2026-11-10, was TSPC since 2026-10-31, issue #48)
 The digital half clocks at vco/2, so no library flop has to toggle at the
-VCO's ceiling (digital issue 8). A true single-phase clocked flop
-(Yuan-Svensson) with D tied to its own inverted output:
-- Stage 1 (`MP_DA` gate `dqn` vdd -> `da`, `MP_DB` gate `vco_out` `da` ->
-  `dx`, `MN_DA` gate `dqn` `dx` -> vss): `dx` = NOT `dqn` while `vco_out`
-  is low.
-- Stage 2 (`MP_DC` gate `vco_out` vdd -> `dy`, `MN_DB` gate `dx` `dy` ->
-  `db`, `MN_DC` gate `vco_out` `db` -> vss): `dy` precharges high while
-  `vco_out` is low and becomes NOT `dx` on its rising edge.
-- Stage 3 (`MP_DD` gate `dy` vdd -> `dqn`, `MN_DD` gate `vco_out` `dqn` ->
-  `dc`, `MN_DE` gate `dy` `dc` -> vss): `dqn` = NOT `dy`, held while
-  `vco_out` is low. So `dqn` toggles on every rising edge of `vco_out`.
-- `MP_DR` (gate `pll_en`, vdd -> `dqn`): in standby `vco_out` sits low and
-  `dqn` would float; this holds it high so every node is static.
+VCO's ceiling (digital issue 8). The TSPC flop it replaces left nodes
+floating between edges; held by leakage, they coupled above vdd. Here every
+node is driven: a static master-slave flop of pass gates and keepers, D tied
+to its own inverted output.
+- Clock phases: `MP_DCI`/`MN_DCI` give `clkb` = NOT `vco_out`; `MN_DCT`/`MP_DCT`
+  (gates tied to vdd and vss, always on) pass `vco_out` to `ck` with about the
+  inverter's delay. A pass gate whose two clock edges arrive apart lifts its
+  held node above vdd by clock feedthrough; arriving together, the two
+  feedthroughs cancel.
+- `MN_CKC`/`MP_CKC` (2026-11-14, layout c21): an n/p gate-capacitor pair on
+  `clkb`, 1 x 0.45 um each (about 2 fF across the swing), so `clkb`'s own
+  inverter kicks the divider pass gates less (PEX device stress).
+- Master: pass gate `MN_DT1`/`MP_DT1` (`s1` -> `m1`, open while `vco_out` is
+  low), inverter `MP_DF1`/`MN_DF1` (`m1` -> `m2`), keeper `MP_DK1`/`MN_DK1`
+  (`m2` -> `mf`) closed onto `m1` by `MN_DT2`/`MP_DT2` while `vco_out` is high.
+- Slave: pass gate `MN_DT3`/`MP_DT3` (`m2` -> `s1`, open while `vco_out` is
+  high), NAND-like stage `MP_DF2`/`MN_DF2` with `MN_DF2R`/`MP_DF2R` on
+  `pll_en` (`s1` -> `dqn`; in standby `dqn` is held high), keeper
+  `MP_DK2`/`MN_DK2` (`dqn` -> `sf`) closed onto `s1` by `MN_DT4`/`MP_DT4`
+  while `vco_out` is low. So `dqn` toggles on every rising edge of `vco_out`.
+- `MN_DXA`..`MN_DXD`: NMOS gate capacitors, 4 x 1 um (about 20 fF when high),
+  on `m1`, `s1`, `mf`, `sf`, so the feedthrough charge that is left moves
+  those nodes less. Matched phases plus these keep the repeating peak under
+  75 mV over 3.63 V at every corner (DRM 14.1.4.2; without them, +289 mV).
+  They are there for that stress margin only, not for timing. With all four
+  removed, the /2 still divides correctly at ff_m40c_vp10 (vctrl = vdd, VCO
+  358 MHz: presc_div2_ratio 0.999996 against 0.999997 with them) and at ss at
+  125 C and 2.97 V (214 MHz: 1.0 both). That is why their bench_strength mutants
+  survive and are ruled below spread (2026-11-13); the device-stress check is
+  what sees them.
 - `MP_DO1`/`MN_DO1` (`dqn` -> `dqb`) and `MP_DO2`/`MN_DO2` (`dqb` ->
   `vco_div2`): the pin's buffer.
-All L = 0.28 um. The macro's pins are the interface's, so `vco_out` is no
-longer a pin; the tile's digital half takes `vco_div2`.
+L = 0.28 um except the capacitors. The macro's pins are the interface's, so
+`vco_out` is no longer a pin; the tile's digital half takes `vco_div2`.

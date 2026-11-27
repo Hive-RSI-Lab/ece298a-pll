@@ -1,0 +1,66 @@
+# Per-device voltage stress decks for pex_sim (engine/lib/stresslib.py).
+# The +10 % fast corners set the overshoot. tt_27c is there because the disable
+# hold figure at nominal supply is part of the ruling on the trim nodes.
+# The ring free-runs in the enable and supply decks, so they carry no repeating
+# window: the four cycle decks, at the same pinned vctrl, judge that case.
+decks:
+  - name: enable
+    bench: pll_analog_stress_enable.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
+    # The slow en_b fall (MN_ENI at l = 4u, spec/topology.md) left MN_ST 190 mV
+    # under the 3.93 V one-off bound at ff/-40 C in schematic; the cost is
+    # MP_STL's gate-source while en_b dips below vss as vst rises. Each is held
+    # to half its schematic margin, so layout can't take the fix back unnoticed.
+    watch:
+      - {label: MN_ST, pair: Vgd, max_v: 3.835, corners: [ff_pss, ff_125c_vp10],
+         why: "schematic 3.740 V, extracted 3.717 V at ff_pss; half the 190 mV margin to 3.93 V"}
+      - {label: MP_STL, pair: Vgs, max_v: 3.83, corners: [ff_pss, ff_125c_vp10],
+         why: "max of both edges: extracted 3.731 V at ff_125c_vp10 from the en_b dip at enable (3.04 us); at ff_pss the peak, 3.720 V, is at the disable edge (7.00 us); half the margin to 3.93 V"}
+  # The trim bits are user pins and stay set through standby, so the enable
+  # cycle also runs with them high: 11 (every leg on vcp_n) and 01 (the
+  # t1b/t1c island behind MP_T1B). See spec/topology.md, standby holds.
+  - name: enable_t11
+    bench: pll_analog_stress_enable_t11.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
+  - name: enable_t01
+    bench: pll_analog_stress_enable_t01.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
+  - name: supply
+    bench: pll_analog_stress_supply.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10]
+  # Disable tail on the four cycle decks (ae868, 2026-11-15). The benches pin
+  # vctrl at vdd, so the ring free-runs; with the run ending at 3.3 us the last
+  # sample caught a ring edge mid-transition (c21 dn/ff_pss: r1 at -10.8 mV and
+  # still falling), and the old deck counted every such edge as a fail without
+  # judging it. Now the stimulus is unchanged to 3.3 us, the PFD pattern has
+  # stopped, pll_en ramps to 0 over 1 ns at 3.3 us and the run goes on to 3.6 us,
+  # so each of those edges closes and is judged against the one-off bound. The
+  # disable edge and the tail are judged too, and an edge still open at 3.6 us
+  # still fails. The cycle window and every bound are unchanged.
+  - name: lock
+    bench: pll_analog_stress_lock.cir
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: up
+    bench: pll_analog_stress_up.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: dn
+    bench: pll_analog_stress_dn.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: swap
+    bench: pll_analog_stress_swap.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}

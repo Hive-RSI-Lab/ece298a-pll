@@ -82,6 +82,22 @@ Continuous-time model with the free-running L(f) above and R1's thermal noise, i
 - Period jitter is not reduced by the loop: 10 ns is far shorter than the loop's response, so the simulated sigma_T stands for the locked PLL too.
 - The fit leaves out the non-accumulating part above about 10 MHz. Its size from the lag data is roughly 5 ps, small in quadrature but not counted.
 
+## Trim-branch rerun (2026-11-11)
+
+`reports/recorded/jitter_pex.json` now holds the run on this branch's extraction: the slower enable fall (MN_ENI l = 4u), the static /2 and the standby holds, 187 MOS against 160. 3 full seeds and 3 flicker-only seeds per corner (ff: 3 full, 1 white). The table compares it with the run this file was written from (11-05).
+
+| corner | sigma_T full | white only | 1/f only, mean of seeds | crossover | Kvco | closed loop, with 1/f | no VCO 1/f |
+|---|---|---|---|---|---|---|---|
+| tt_27c | 6.77 / 6.77 ps | 6.51 / 6.89 | 1.83 / 1.92 | 464 / 476 kHz | 87.4 / 90.5 MHz/V | 55.9 / 42.6 ps | 32.3 / 29.2 ps |
+| ss_125c_vm10 | 7.70 / 7.28 | 7.48 / 7.77 | 1.93 / 2.38 | 450 / 459 | 86.5 / 88.6 | 62.7 / 46.1 | 35.8 / 36.7 |
+| ff_125c_vm10 | 8.52 / 7.65 | 7.37 / 7.91 | 1.78 / 1.71 | 546 / 557 | 118 / 122 | 55.9 / 48.8 | 41.1 / 33.8 |
+
+- The loop is the same: Icp, R1, C1 and C2 are identical, and Kvco and the crossover are 2-3 % lower.
+- The simulated noise is about the same. White-only and 1/f-only period jitter are equal or lower at every corner. The full runs are equal at tt and 6 % (ss) and 11 % (ff) higher, against a 2 % statistical error, so ff's rise is more than the white error alone. Don't read the ff +11 % as a real rise: the branch full run (8.52 ps) sits above the quadrature sum of its own parts, sqrt(7.37^2 + 1.78^2) = 7.58 ps, while on 11-05 it sat below (7.65 against 8.09). That points to 3-seed scatter well above 2 %, not a real ff change.
+- The closed-loop figures rose 15 to 36 % with 1/f. That comes from the b3 (1/f^3) fit, which this file already says scatters 2-4x per corner. b3 roughly doubled at tt and ss while the simulated 1/f-only jitter stayed flat or fell. Without VCO 1/f the change is -2 to +22 %.
+- `group()` now puts the static /2 nets (m1 m2 mf s1 sf ck clkb) in `buffer_divider`, so they are not injected, as for the old divider. Without that, an earlier run counted the latch's short-channel 1/f as VCO noise (bias_cp_other kf 60x the old value).
+- The standby-hold devices (t1a t1b t2, pll_en and cp_trim) sit in `bias_cp_other` and are injected. Their kf adds little (bias_cp_other kf 7.4e-18 against 4.8e-18 at tt).
+
 ## Left out
 
 - Reference, PFD and charge-pump noise. The model has no in-band noise source except R1, so the low-offset closed-loop values are optimistic.

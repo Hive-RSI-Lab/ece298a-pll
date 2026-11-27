@@ -1,0 +1,33 @@
+* Enable cycle: pll_en rises at 3 us and falls at 7 us with the supply up, so a node held over after disable shows for 2 us.
+* The stress stage of pex_sim runs this on the extracted netlist and scores every
+* terminal pair of every MOS device. Tokens are filled by str.format().
+* vctrl is pinned at the supply, the fastest the ring can run and the worst case
+* for the divider. cp_trim = 11 (trim1 trim0), each high bit following the supply,
+* bias_ref on its 5 pF pad load.
+* Both trim switches closed: every leg sits on vcp_n, and the trim holds are off.
+.include '{pdk}/libs.tech/ngspice/design.spice'
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {res_corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {mim_corner}
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{extracted}'
+.temp {temp_c}
+.option method=gear reltol=1e-3 itl4=40
+vdd_src vdd 0 pwl(0u 0 1u {vdd} 9u {vdd} 10u 0)
+vss_src vss 0 0
+ven pll_en 0 pwl(0u 0 3u 0 3.001u {vdd} 7u {vdd} 7.001u 0)
+vup pfd_up 0 pwl(0u 0 6u 0 6.001u {vdd} 7u {vdd} 7.001u 0)
+vdn pfd_dn 0 pwl(0u 0 5u 0 5.001u {vdd} 6u {vdd} 6.001u 0)
+bt0 cp_trim0 0 v=v(vdd)
+bt1 cp_trim1 0 v=v(vdd)
+cpadv vctrl 0 5p
+cpadb bias_ref 0 5p
+cload2 vco_div2 0 30f
+bvc vctrl 0 v=v(vdd)
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.tran 100p 10u 0 100p
+.end

@@ -3,7 +3,7 @@
  "gate": "lvs",
  "phase": "P5",
  "tool": "analog_lvs",
- "input_digest": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+ "input_digest": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -41,7 +41,7 @@
    "w_swp": 4e-06,
    "l_sw": 5e-07,
    "r1_l": 0.00015,
-   "c1_w": 0.00042,
+   "c1_w": 3.5e-05,
    "c1_l": 1.2e-05,
    "c2_w": 4.3e-05,
    "c2_l": 1.2e-05,
@@ -75,18 +75,25 @@
    "l_cl": 1e-06
   },
   "std_cells_flattened": [],
-  "log": "log/lvs/netgen_lvs.log"
+  "log": "log/lvs/netgen_lvs.log",
+  "extractors": {
+   "netgen": "match",
+   "klayout": "match"
+  },
+  "klayout_reference": "log/lvs/pll_analog.klayout.cir",
+  "lvsdb": "log/lvs/klayout/pll_analog.lvsdb"
  },
  "inputs_at_start": {
-  "layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-  "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-  "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "layout": "dir_text:ff8814aff70703fc9147859c94a63064f2930435f0e2263bc927fb71a346dea4",
+  "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+  "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+  "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
   "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
   "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
  },
- "recorded_ts": "2026-11-04T05:46:10",
- "attempts": 11
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-11T08:22:59",
+ "attempts": 15
 }

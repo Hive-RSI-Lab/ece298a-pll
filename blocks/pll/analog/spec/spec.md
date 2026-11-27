@@ -44,7 +44,7 @@ control decoding are digital and outside this cell.
    the 2.7 ns the digital side is timed at), Kvco about 100 MHz/V (estimate). Output
    buffered to a full-swing 3.3 V CMOS clock `vco_out` with rise/fall
    <= 0.15 ns at 333 MHz. Since 2026-10-31 (issue #48) `vco_out` is
-   internal: it clocks the macro's TSPC /2, whose output `vco_div2` is the
+   internal: it clocks the macro's static /2, whose output `vco_div2` is the
    pin the digital half takes, so the digital side is timed at half the
    VCO's ceiling (section 8 of topology.md).
 4. **Bias.** One reference current for pump mirror and VCO. `bias_ref` goes
@@ -64,7 +64,7 @@ adding one goes back through the msde `split` step.
 
 | Pin | Dir | Level | Domain | Meaning |
 |---|---|---|---|---|
-| `vco_div2` | a2d out | cmos_3v3 | clk_free | the VCO clock divided by 2 (TSPC /2 on the internal `vco_out`, 2026-10-31, issue #48), to the digital /4 prescaler, up to 185 MHz |
+| `vco_div2` | a2d out | cmos_3v3 | clk_free | the VCO clock divided by 2 (static master-slave /2 on the internal `vco_out`, issue #48), to the digital /4 prescaler, up to 185 MHz |
 | `pfd_up` | d2a in | cmos_3v3 | clk_ref | UP pulse, active high, source Icp into `vctrl` |
 | `pfd_dn` | d2a in | cmos_3v3 | clk_fb | DN pulse, active high, sink Icp from `vctrl` |
 | `pll_en` | d2a in | cmos_3v3 | clk_ref | 1 = run, 0 = pump, bias, VCO off |
@@ -125,10 +125,10 @@ the rail. Rise/fall are 20 %-80 %. "all" = all 31 corners.
 | `vco_fmax_tt_mhz` | >= 200 | tt_27c | frequency at the high end of the range |
 | `vco_fmax_ff_mhz` | 150..370 | all | frequency at `vctrl` = vdd: the VCO's ceiling, held under the 370 MHz (2.7 ns) the digital timing is closed at, and over the 150 MHz lock point every corner keeps |
 | `vco_out_swing_pct_vdd` | >= 90 | all | (Vhigh - Vlow)/vdd on the internal `vco_out` |
-| `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency, internal `vco_out` into the TSPC |
+| `vco_out_tr_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | rise 20-80 % at maximum frequency, internal `vco_out` into the /2 |
 | `vco_out_tf_ns` | <= 0.15 | ff_m40c_vp10, tt_27c | fall, same |
 | `vco_out_duty_pct` | 40..60 | all | duty at mid-range `vctrl` |
-| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10, tt_27c | the macro's TSPC /2 (vco_out -> vco_div2, loaded by one `inv_1` and 30 fF): f(vco_div2) / (f_vco/2) |
+| `presc_div2_ratio` | 0.99..1.01 | ff_m40c_vp10, tt_27c | the macro's /2 (vco_out -> vco_div2, loaded by one `inv_1` and 30 fF): f(vco_div2) / (f_vco/2) |
 | `presc_ckq_r_ns`, `presc_ckq_f_ns` | <= 0.5 | tt_27c | vdd/2 on the clocking `vco_out` rise to vdd/2 on `vco_div2`, rising and falling |
 | `presc_tr_ns`, `presc_tf_ns` | <= 0.15 | tt_27c | `vco_div2` 20-80 %, same load |
 | `presc_duty_pct` | 40..60 | tt_27c | `vco_div2` duty |

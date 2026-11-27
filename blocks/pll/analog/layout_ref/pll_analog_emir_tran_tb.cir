@@ -1,0 +1,61 @@
+* pll_analog_emir_tran_tb.cir - the transient the em_ir gate
+* (check_analog_em_ir.py) reads pulsed EM from: I_avg, I_rms and I_peak per
+* wire, cut and resistor over the window the .tran line sets, at every
+* corner of the spec's sweep. Same tokens as pll_analog_emir_tb.cir; any
+* other curly brace is doubled. No .control block: the gate adds the save,
+* the run and the raw write.
+*
+* The heaviest pulsed state: the DC bench's (pll_en = 1, cp_trim = 11, both
+* pump inputs high) with the ring running at its fastest, vctrl forced at
+* vdd - 0.3 V, so the ring, the vco_out buffer and the static /2 switch
+* the most charge per second; vco_div2 drives the pex bench's 30 fF.
+*
+* Start: ikick, 200 uA for 1 ns into ring node r1 at t = 1 ns (pex_tb's
+* large-signal start; zero in the window). At vctrl = vdd - 0.3 V the ring
+* reaches full swing within ~10 ns and the bias settles by 100 ns
+* (pex_tb's fast-end settle), so tstart is 100 ns.
+*
+* Window: 100 to 160 ns, 60 ns. The period moves with the corner (about
+* 2.7 ns at ff cold low supply to about 6 ns at ss hot), so no fixed window
+* is whole periods everywhere; 60 ns is at least 10 periods at every
+* corner, so a partial period moves the mean by under 10 % of one period's
+* share. I_rms and I_peak do not depend on it.
+* Max step 6 ps: the fastest edge, vco_out's 0.15 ns rise/fall bound, over 25.
+.include '{pdk}/libs.tech/ngspice/design.spice'
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {res_corner}
+.lib '{pdk}/libs.tech/ngspice/sm141064.spice' {mim_corner}
+* the loop filter's MOS caps: the PDK's cap_nmos_03v3_b (sm141064.spice, .lib
+* moscap), written in charge form. The PDK's C(v) = A*(cvar1 + cvar2*tanh(cvar3*v
+* + cvar4)) as a voltage-dependent C makes the transient step collapse ("timestep
+* too small" on its current probe) at most corners on the extracted netlist;
+* Q(v), its integral, is the same device and holds (pex tt_27c: Icp 18.52 vs
+* 18.52 uA, Kvco 72.67 vs 72.66 MHz/V, fmax 203.31 vs 203.29 MHz against the
+* PDK form under Gear). Its corner factor follows the MIM corner's
+* (mim_corner_2p0ff: 1 / 1.1 ss / 0.9 ff, as moscap_<corner> sets it).
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+* ln(cosh(x)) written |x| + ln(1+exp(-2|x|)) - ln 2, the same function: cosh
+* overflowed on a wild Newton iterate in the op search ('Error: -10030.2 out
+* of range for cosh', which the engine reads as an ngspice error; ff_27c_vm10).
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{extracted}'
+
+.temp {temp_c}
+.param vddp={vdd}
+vdd_src  vdd      0 dc {{vddp}}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc {{vddp}}
+vup      pfd_up   0 dc {{vddp}}
+vdn      pfd_dn   0 dc {{vddp}}
+vt0      cp_trim0 0 dc {{vddp}}
+vt1      cp_trim1 0 dc {{vddp}}
+vvc      vctrl    0 dc {{vddp-0.3}}
+cload2   vco_div2 0 30f
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+ikick    0        xdut.r1 pulse(0 200u 1n 50p 50p 1n 1)
+
+.tran 6p 160n 100n 6p
+.end

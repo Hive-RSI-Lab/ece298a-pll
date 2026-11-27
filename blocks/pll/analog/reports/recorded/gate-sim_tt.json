@@ -3,7 +3,7 @@
  "gate": "sim_tt",
  "phase": "P4",
  "tool": "sim_tt",
- "input_digest": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+ "input_digest": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -12,13 +12,39 @@
   "max_count": 0
  },
  "counts": {
-  "total": 0,
-  "by_severity": {},
-  "by_source": {}
+  "total": 1,
+  "by_severity": {
+   "warning": 1
+  },
+  "by_source": {
+   "sim_run": 1
+  }
  },
  "failing_count": 0,
  "failing": [],
- "violations": [],
+ "violations": [
+  {
+   "check": "sim_tt",
+   "severity": "warning",
+   "file": "tb/pll_analog_overlap_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "tran_step_coarse",
+   "refs": [
+    "1e-10",
+    "1e-11"
+   ],
+   "msg": "pll_analog_overlap_tb.cir: the transient's max step (1e-11 s, its tmax or ngspice's default min(tstep, span/50)) is coarser than its fastest source edge (1e-10 s) / 25. A measure taken during an edge (a peak current, a crossing) then carries step error: the comparator's tail-current peak read 10% high at the default step. Give the tran line a tmax of at most 4e-12 (`.tran tstep tstop 0 tmax`), or check with xsim (docs/xsim.md) that the measure does not move with it",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_overlap_tb.cir: the transient's max step (1e-11 s, its tmax or ngspice's default min(tstep, span/50)) is coarser than its fastest source edge (1e-10 s) / 25. A measure taken during an edge (a peak current, a crossing) then carries step error: the comparator's tail-current peak read 10% high at the default step. Give the tran line a tmax of at most 4e-12 (`.tran tstep tstop 0 tmax`), or check with xsim (docs/xsim.md) that the measure does not move with it",
+     "file": "tb/pll_analog_overlap_tb.cir",
+     "line": null
+    }
+   ]
+  }
+ ],
  "facts": {
   "top": "pll_analog",
   "corners": [
@@ -41,7 +67,7 @@
      "icp_up_code00_ua": 19.0145,
      "icp_dn_code00_ua": 18.6602,
      "icp_up_code00_tt_ua": 19.0145,
-     "icp_up_code01_ua": 23.6748,
+     "icp_up_code01_ua": 23.6749,
      "icp_up_code10_ua": 28.3222,
      "icp_up_code11_ua": 37.5873,
      "icp_code11_over_code00_ratio": 1.97677,
@@ -65,12 +91,12 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_pvt_deg": 49.3721,
-     "ol_pm_pn16_nopad_deg": 49.3721,
-     "ol_pm_pn16_pad5p_deg": 33.8718,
-     "ol_fc_pn16_nopad_khz": 471.877,
-     "ol_pm_pn8_nopad_deg": 55.3873,
-     "ol_pm_pn40_nopad_deg": 35.721
+     "ol_pm_pn16_nopad_pvt_deg": 49.3242,
+     "ol_pm_pn16_nopad_deg": 49.3242,
+     "ol_pm_pn16_pad5p_deg": 33.8476,
+     "ol_fc_pn16_nopad_khz": 470.578,
+     "ol_pm_pn8_nopad_deg": 55.3748,
+     "ol_pm_pn40_nopad_deg": 35.6681
     },
     "engine_errors": [],
     "violations": [],
@@ -89,7 +115,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 2.3752
+     "cp_overlap_net_charge_fc": 2.37736
     },
     "engine_errors": [],
     "violations": [],
@@ -109,11 +135,11 @@
     "returncode": 0,
     "measures": {
      "presc_div2_ratio": 1.0,
-     "presc_ckq_r_ns": 0.26164,
-     "presc_ckq_f_ns": 0.18932,
-     "presc_tr_ns": 0.07466,
-     "presc_tf_ns": 0.06829,
-     "presc_duty_pct": 48.9621
+     "presc_ckq_r_ns": 0.42098,
+     "presc_ckq_f_ns": 0.37089,
+     "presc_tr_ns": 0.07461,
+     "presc_tf_ns": 0.06854,
+     "presc_duty_pct": 49.2912
     },
     "engine_errors": [],
     "violations": [],
@@ -132,7 +158,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000153352,
+     "standby_current_ua": 0.000219389,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -152,7 +178,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.664611
+     "startup_time_us": 0.658716
     },
     "engine_errors": [],
     "violations": [],
@@ -171,15 +197,15 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 88.7583,
-     "vco_df_dv_min_mhz_per_v": 13.465,
-     "vco_fmin_tt_mhz": 9.18853,
-     "vco_fmax_tt_mhz": 248.836,
-     "vco_out_swing_pct_vdd": 100.415,
-     "vco_out_duty_pct": 53.923,
-     "vco_fmax_ff_mhz": 277.963,
-     "vco_out_tr_ns": 0.04674,
-     "vco_out_tf_ns": 0.041771
+     "vco_kvco_mhz_per_v": 89.1893,
+     "vco_df_dv_min_mhz_per_v": 13.4904,
+     "vco_fmin_tt_mhz": 9.20202,
+     "vco_fmax_tt_mhz": 250.013,
+     "vco_out_swing_pct_vdd": 100.413,
+     "vco_out_duty_pct": 54.0341,
+     "vco_fmax_ff_mhz": 279.301,
+     "vco_out_tr_ns": 0.04542,
+     "vco_out_tf_ns": 0.040715
     },
     "engine_errors": [],
     "violations": [],
@@ -190,13 +216,14 @@
   "out_of_scope": []
  },
  "inputs_at_start": {
-  "netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-  "tb": "dir_text:cdeee747225cc226546dc77b89ea937466d355911506086e719eaf827a8201b3",
-  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-  "sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "netlist": "dir_text:e74852a745c67a7fe58434cc0f83a8be6c8c4a8d8f67b679036da7d6554cc024",
+  "tb": "dir_text:50882e7e334092844b17744894e943ec3ea452dc9d9d2ad2334cee57d92f2f22",
+  "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
+  "sizing": "json_canonical:4451b61a2392e7edded543b6db9c666d4fa4eeb50684322ace91fe931ac525d9",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
  },
- "recorded_ts": "2026-11-04T06:26:06",
- "attempts": 23
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-11T08:25:01",
+ "attempts": 25
 }

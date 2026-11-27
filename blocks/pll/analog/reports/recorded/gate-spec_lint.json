@@ -3,7 +3,7 @@
  "gate": "spec_lint",
  "phase": "P1",
  "tool": "spec_lint_ade",
- "input_digest": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+ "input_digest": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -12,13 +12,38 @@
   "max_count": 0
  },
  "counts": {
-  "total": 0,
-  "by_severity": {},
-  "by_source": {}
+  "total": 1,
+  "by_severity": {
+   "warning": 1
+  },
+  "by_source": {
+   "speclib": 1
+  }
  },
  "failing_count": 0,
  "failing": [],
- "violations": [],
+ "violations": [
+  {
+   "check": "spec_lint",
+   "severity": "warning",
+   "file": "spec/spec.yaml",
+   "module": null,
+   "line": null,
+   "kind": "feedback_undeclared",
+   "refs": [
+    "pll_analog"
+   ],
+   "msg": "top 'pll_analog' reads as a block that closes a loop, but spec.yaml has no 'feedback' key: say 'feedback: true' (and bound pm_deg) or 'feedback: false'",
+   "source": "speclib",
+   "items": [
+    {
+     "msg": "top 'pll_analog' reads as a block that closes a loop, but spec.yaml has no 'feedback' key: say 'feedback: true' (and bound pm_deg) or 'feedback: false'",
+     "file": "spec/spec.yaml",
+     "line": null
+    }
+   ]
+  }
+ ],
  "facts": {
   "mc_waived": [
    {
@@ -28,8 +53,9 @@
   ]
  },
  "inputs_at_start": {
-  "spec_yaml": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f"
+  "spec_yaml": "json_canonical:6a0f6bc7c77a3bfd0f9599da2a4daf2acfdc0bc65b7d32ab652fe498e7b2ebdb"
  },
- "recorded_ts": "2026-11-04T02:14:42",
- "attempts": 25
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-11T08:20:05",
+ "attempts": 29
 }
