@@ -4,24 +4,27 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-11-05T15:23:05",
+ "updated": "2026-11-10T05:44:31",
  "phase": "P2",
  "toolchain": null,
  "gates": {
   "split": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 8,
+   "attempts": 9,
    "last": {
-    "ts": "2026-11-03T07:54:48",
+    "ts": "2026-11-10T04:49:33",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
      "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
-     "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2"
+     "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+     "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+     "digital_cdc": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -110,27 +113,45 @@
       "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T04:49:33",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
+      "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "digital_cdc": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "cosim": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 9,
+   "attempts": 12,
    "last": {
-    "ts": "2026-11-05T09:15:29",
+    "ts": "2026-11-10T05:22:06",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-     "tb": "dir_text:a1ca94b6634a013cbff8780c23741d9be78b779e05060a2d374a2a0b1e9514a8",
+     "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+     "tb": "dir_text:b09a1dc3c43c2a9d568b5612792999816a6d6751fe0ada6c026e13752514da8a",
      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+     "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+     "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -269,27 +290,84 @@
       "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T04:50:47",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "tb": "dir_text:f64d9b56af423a59069259848ffeb1f77de247cc98dc9c6f23d93260f406f51d",
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T05:11:30",
+     "status": "fail",
+     "failing_count": 2,
+     "total": 2,
+     "inputs": {
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "tb": "dir_text:49195d9c00387715673c0da96fdeaf5ddd550ae5bec154eaec443c05f8e38072",
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "strength": 0,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T05:22:06",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "tb": "dir_text:b09a1dc3c43c2a9d568b5612792999816a6d6751fe0ada6c026e13752514da8a",
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "top_harden": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 31,
+   "attempts": 33,
    "last": {
-    "ts": "2026-11-04T07:02:54",
+    "ts": "2026-11-10T05:42:07",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
-     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-     "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+     "macro_lib": "dir_text:b129fb043075d31f30cca49bb40c933ca21c17187e1430afe03ad583b2d7a34f",
      "top_sdc": null,
      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
      "top_override": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
@@ -301,9 +379,10 @@
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
     },
+    "strength": 2,
     "job": null,
     "facts": {
-     "wall_s": 54.75
+     "wall_s": 54.73
     }
    },
    "history": [
@@ -1113,30 +1192,87 @@
      "facts": {
       "wall_s": 54.75
      }
+    },
+    {
+     "ts": "2026-11-10T05:22:41",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "strength": 2,
+     "job": null
+    },
+    {
+     "ts": "2026-11-10T05:42:07",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "digital_rtl": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+      "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "macro_lib": "dir_text:b129fb043075d31f30cca49bb40c933ca21c17187e1430afe03ad583b2d7a34f",
+      "top_sdc": null,
+      "digital_sdc": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
+      "top_override": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
+      "digital_override": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
+      "pdk_librelane": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "strength": 2,
+     "job": null,
+     "facts": {
+      "wall_s": 54.73
+     }
     }
    ]
   },
   "top_lvs": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 12,
+   "attempts": 13,
    "last": {
-    "ts": "2026-11-04T07:03:20",
+    "ts": "2026-11-10T05:43:35",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-     "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-     "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
-     "top_macros": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
-     "top_pnl": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
-     "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-     "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+     "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+     "top_spec": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
+     "top_macros": "dir_text:50f423f8e7a3eef8237eb7a5719731b72450412ba7b892289093bffefb089ce0",
+     "top_pnl": "dir_text:d56383669a326d4c474398f73fc2af5955abc735106c806b95ae382efeafa8b1",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
     },
+    "strength": 0,
     "job": null
    },
    "history": [
@@ -1311,25 +1447,43 @@
       "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
      },
      "job": null
+    },
+    {
+     "ts": "2026-11-10T05:43:35",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+      "top_spec": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
+      "top_macros": "dir_text:50f423f8e7a3eef8237eb7a5719731b72450412ba7b892289093bffefb089ce0",
+      "top_pnl": "dir_text:d56383669a326d4c474398f73fc2af5955abc735106c806b95ae382efeafa8b1",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
+     },
+     "strength": 0,
+     "job": null
     }
    ]
   },
   "top_drc": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 12,
+   "attempts": 13,
    "last": {
-    "ts": "2026-11-04T07:03:18",
+    "ts": "2026-11-10T05:43:33",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-     "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
+     "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+     "top_spec": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
     },
+    "strength": 0,
     "job": null,
     "facts": {
      "magic_count": 0,
@@ -1524,25 +1678,46 @@
       "magic_count": 0,
       "klayout_count": 0
      }
+    },
+    {
+     "ts": "2026-11-10T05:43:33",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+      "top_spec": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "magic_count": 0,
+      "klayout_count": 0
+     }
     }
    ]
   },
   "precheck": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 11,
+   "attempts": 12,
    "last": {
-    "ts": "2026-11-04T07:03:45",
+    "ts": "2026-11-10T05:44:31",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+     "top_lef": "dir_text:7c30ce3d75f9941ba858c0b7eee87c7fa53f44d6c9c95f321e4d19cd8b26c539",
+     "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
     },
+    "strength": 0,
     "job": null,
     "facts": {
      "checks_run": 12
@@ -1717,20 +1892,39 @@
      "facts": {
       "checks_run": 12
      }
+    },
+    {
+     "ts": "2026-11-10T05:44:31",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+      "top_lef": "dir_text:7c30ce3d75f9941ba858c0b7eee87c7fa53f44d6c9c95f321e4d19cd8b26c539",
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
+      "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
+     },
+     "strength": 0,
+     "job": null,
+     "facts": {
+      "checks_run": 12
+     }
     }
    ]
   },
   "macro_lib": {
    "phase": "P3",
    "status": "pass",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-11-04T06:37:17",
+    "ts": "2026-11-10T05:40:44",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+     "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
@@ -1738,6 +1932,7 @@
      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
     },
+    "strength": 1,
     "job": null,
     "facts": {
      "corners": {
@@ -1747,35 +1942,35 @@
        "input_cap_pf": {
         "cp_trim0": {
          "capacitance": 0.012933151515151516,
-         "rise_capacitance": 0.012267363636363635,
+         "rise_capacitance": 0.01226739393939394,
          "fall_capacitance": 0.012933151515151516
         },
         "cp_trim1": {
          "capacitance": 0.013874696969696971,
          "rise_capacitance": 0.013874696969696971,
-         "fall_capacitance": 0.013794606060606061
+         "fall_capacitance": 0.013794545454545455
         },
         "pfd_dn": {
-         "capacitance": 0.02946024242424243,
-         "rise_capacitance": 0.029439060606060607,
-         "fall_capacitance": 0.02946024242424243
+         "capacitance": 0.029460272727272727,
+         "rise_capacitance": 0.029438727272727273,
+         "fall_capacitance": 0.029460272727272727
         },
         "pfd_up": {
-         "capacitance": 0.03382484848484849,
+         "capacitance": 0.03381515151515151,
          "rise_capacitance": 0.033746060606060606,
-         "fall_capacitance": 0.03382484848484849
+         "fall_capacitance": 0.03381515151515151
         },
         "pll_en": {
-         "capacitance": 0.059892727272727285,
-         "rise_capacitance": 0.05830575757575757,
-         "fall_capacitance": 0.059892727272727285
+         "capacitance": 0.05992060606060606,
+         "rise_capacitance": 0.0583460606060606,
+         "fall_capacitance": 0.05992060606060606
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         129.2,
-         129.15,
-         128.95
+         129.23,
+         129.18,
+         128.98
         ]
        }
       },
@@ -1784,36 +1979,36 @@
        "vdd": 3.0,
        "input_cap_pf": {
         "cp_trim0": {
-         "capacitance": 0.013081700000000002,
-         "rise_capacitance": 0.0124854,
-         "fall_capacitance": 0.013081700000000002
+         "capacitance": 0.013082,
+         "rise_capacitance": 0.012483433333333334,
+         "fall_capacitance": 0.013082
         },
         "cp_trim1": {
-         "capacitance": 0.013842533333333332,
-         "rise_capacitance": 0.013842533333333332,
-         "fall_capacitance": 0.013759833333333332
+         "capacitance": 0.013840266666666665,
+         "rise_capacitance": 0.013840266666666665,
+         "fall_capacitance": 0.013759033333333334
         },
         "pfd_dn": {
-         "capacitance": 0.029795433333333333,
-         "rise_capacitance": 0.029775066666666666,
-         "fall_capacitance": 0.029795433333333333
+         "capacitance": 0.02978503333333333,
+         "rise_capacitance": 0.029773233333333333,
+         "fall_capacitance": 0.02978503333333333
         },
         "pfd_up": {
-         "capacitance": 0.03358166666666667,
-         "rise_capacitance": 0.03351966666666667,
-         "fall_capacitance": 0.03358166666666667
+         "capacitance": 0.033569666666666664,
+         "rise_capacitance": 0.033524,
+         "fall_capacitance": 0.033569666666666664
         },
         "pll_en": {
-         "capacitance": 0.061400333333333335,
-         "rise_capacitance": 0.059957,
-         "fall_capacitance": 0.061400333333333335
+         "capacitance": 0.061448,
+         "rise_capacitance": 0.060005666666666665,
+         "fall_capacitance": 0.061448
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         99.36,
-         99.34,
-         99.22
+         99.31,
+         99.29,
+         99.15
         ]
        }
       },
@@ -1822,14 +2017,14 @@
        "vdd": 3.6,
        "input_cap_pf": {
         "cp_trim0": {
-         "capacitance": 0.012801444444444443,
-         "rise_capacitance": 0.012075361111111111,
-         "fall_capacitance": 0.012801444444444443
+         "capacitance": 0.012801472222222223,
+         "rise_capacitance": 0.012075388888888887,
+         "fall_capacitance": 0.012801472222222223
         },
         "cp_trim1": {
-         "capacitance": 0.013907055555555556,
-         "rise_capacitance": 0.013907055555555556,
-         "fall_capacitance": 0.013835749999999999
+         "capacitance": 0.013907083333333332,
+         "rise_capacitance": 0.013907083333333332,
+         "fall_capacitance": 0.013835583333333333
         },
         "pfd_dn": {
          "capacitance": 0.02916,
@@ -1842,16 +2037,16 @@
          "fall_capacitance": 0.033971388888888884
         },
         "pll_en": {
-         "capacitance": 0.058097777777777776,
-         "rise_capacitance": 0.05668583333333334,
-         "fall_capacitance": 0.058097777777777776
+         "capacitance": 0.058020555555555554,
+         "rise_capacitance": 0.0566575,
+         "fall_capacitance": 0.058020555555555554
         }
        },
        "running_mhz_by_load": {
         "vco_div2": [
-         156.01,
-         155.93,
-         155.52
+         156.05,
+         155.98,
+         155.57
         ]
        }
       }
@@ -2126,6 +2321,141 @@
        }
       }
      }
+    },
+    {
+     "ts": "2026-11-10T05:40:44",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+      "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
+      "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+      "analog_spec": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
+      "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
+      "pdk_models": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
+      "pdk_liberty": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32"
+     },
+     "strength": 1,
+     "job": null,
+     "facts": {
+      "corners": {
+       "tt_025C_3v30": {
+        "lib": "pll_analog__tt_025C_3v30.lib",
+        "vdd": 3.3,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012933151515151516,
+          "rise_capacitance": 0.01226739393939394,
+          "fall_capacitance": 0.012933151515151516
+         },
+         "cp_trim1": {
+          "capacitance": 0.013874696969696971,
+          "rise_capacitance": 0.013874696969696971,
+          "fall_capacitance": 0.013794545454545455
+         },
+         "pfd_dn": {
+          "capacitance": 0.029460272727272727,
+          "rise_capacitance": 0.029438727272727273,
+          "fall_capacitance": 0.029460272727272727
+         },
+         "pfd_up": {
+          "capacitance": 0.03381515151515151,
+          "rise_capacitance": 0.033746060606060606,
+          "fall_capacitance": 0.03381515151515151
+         },
+         "pll_en": {
+          "capacitance": 0.05992060606060606,
+          "rise_capacitance": 0.0583460606060606,
+          "fall_capacitance": 0.05992060606060606
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          129.23,
+          129.18,
+          128.98
+         ]
+        }
+       },
+       "ss_125C_3v00": {
+        "lib": "pll_analog__ss_125C_3v00.lib",
+        "vdd": 3.0,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.013082,
+          "rise_capacitance": 0.012483433333333334,
+          "fall_capacitance": 0.013082
+         },
+         "cp_trim1": {
+          "capacitance": 0.013840266666666665,
+          "rise_capacitance": 0.013840266666666665,
+          "fall_capacitance": 0.013759033333333334
+         },
+         "pfd_dn": {
+          "capacitance": 0.02978503333333333,
+          "rise_capacitance": 0.029773233333333333,
+          "fall_capacitance": 0.02978503333333333
+         },
+         "pfd_up": {
+          "capacitance": 0.033569666666666664,
+          "rise_capacitance": 0.033524,
+          "fall_capacitance": 0.033569666666666664
+         },
+         "pll_en": {
+          "capacitance": 0.061448,
+          "rise_capacitance": 0.060005666666666665,
+          "fall_capacitance": 0.061448
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          99.31,
+          99.29,
+          99.15
+         ]
+        }
+       },
+       "ff_n40C_3v60": {
+        "lib": "pll_analog__ff_n40C_3v60.lib",
+        "vdd": 3.6,
+        "input_cap_pf": {
+         "cp_trim0": {
+          "capacitance": 0.012801472222222223,
+          "rise_capacitance": 0.012075388888888887,
+          "fall_capacitance": 0.012801472222222223
+         },
+         "cp_trim1": {
+          "capacitance": 0.013907083333333332,
+          "rise_capacitance": 0.013907083333333332,
+          "fall_capacitance": 0.013835583333333333
+         },
+         "pfd_dn": {
+          "capacitance": 0.02916,
+          "rise_capacitance": 0.029159444444444446,
+          "fall_capacitance": 0.02916
+         },
+         "pfd_up": {
+          "capacitance": 0.033971388888888884,
+          "rise_capacitance": 0.03396138888888889,
+          "fall_capacitance": 0.033971388888888884
+         },
+         "pll_en": {
+          "capacitance": 0.058020555555555554,
+          "rise_capacitance": 0.0566575,
+          "fall_capacitance": 0.058020555555555554
+         }
+        },
+        "running_mhz_by_load": {
+         "vco_div2": [
+          156.05,
+          155.98,
+          155.57
+         ]
+        }
+       }
+      }
+     }
     }
    ]
   },
@@ -2293,7 +2623,30 @@
    ]
   }
  },
- "jobs": {},
+ "jobs": {
+  "1": {
+   "gate": "top_harden",
+   "pid": 1042181,
+   "started": "2026-11-10T05:22:37",
+   "finished": "2026-11-10T05:22:45",
+   "status": "done",
+   "log": "log/jobs/job-1.log",
+   "result": {
+    "exit_code": 1
+   }
+  },
+  "2": {
+   "gate": "top_harden",
+   "pid": 1707890,
+   "started": "2026-11-10T05:41:04",
+   "finished": "2026-11-10T05:42:07",
+   "status": "done",
+   "log": "log/jobs/job-2.log",
+   "result": {
+    "exit_code": 0
+   }
+  }
+ },
  "holdout": null,
  "optimise": null,
  "human": {},
@@ -2301,163 +2654,175 @@
   "interface": {
    "path": "interface.yaml",
    "kind": "interface",
-   "sha256": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
-   "hashed": "2026-11-05T15:23:05"
+   "sha256": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
+   "hashed": "2026-11-10T05:44:31"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:a1ca94b6634a013cbff8780c23741d9be78b779e05060a2d374a2a0b1e9514a8",
-   "hashed": "2026-11-05T09:15:29"
+   "sha256": "dir_text:b09a1dc3c43c2a9d568b5612792999816a6d6751fe0ada6c026e13752514da8a",
+   "hashed": "2026-11-10T05:22:06"
   },
   "digital_rtl": {
    "path": "digital/rtl",
    "kind": "digital_rtl",
    "sha256": "dir_text:ce8b987d727336e7b1b2b1567985a24a8a6cfbbabe67a0d4a0de2e80476907db",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:42:07"
   },
   "analog_netlist": {
    "path": "analog/netlist",
    "kind": "analog_netlist",
    "sha256": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:42:07"
   },
   "analog_sizing": {
    "path": "analog/sizing/sizing.yaml",
    "kind": "analog_sizing",
    "sha256": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:42:07"
   },
   "analog_layout": {
    "path": "analog/layout",
    "kind": "analog_layout",
    "sha256": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:42:07"
   },
   "top_sdc": {
    "path": "top.sdc",
    "kind": "top_sdc",
    "sha256": null,
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "digital_sdc": {
    "path": "digital/harden/constraints.sdc",
    "kind": "digital_sdc",
    "sha256": "text_eol:ff632aa8510144e28c641f9894cb92bc00df14548edd43d30b98311a7c04baee",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "top_gds": {
    "path": "top/harden/runs/run/final/gds",
    "kind": "top_gds",
-   "sha256": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-   "hashed": "2026-11-04T07:03:45"
+   "sha256": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+   "hashed": "2026-11-10T05:44:31"
   },
   "pdk_version": {
    "path": "${PDK_ROOT}/SOURCES",
    "kind": "pdk_version",
    "sha256": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:44:31"
   },
   "pdk_models": {
    "path": "${PDK_ROOT}/libs.tech/ngspice",
    "kind": "pdk_models",
    "sha256": "dir_text:84e0f27991c27acae27ec5243fd0d1587f7bfb2655e802ed0eb92a811cf5f7f8",
-   "hashed": "2026-11-05T09:15:29"
+   "hashed": "2026-11-10T05:40:44"
   },
   "digital_side_spec": {
    "path": "digital_spec.yaml",
    "kind": "digital_side_spec",
    "sha256": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T04:49:33"
   },
   "analog_side_spec": {
    "path": "analog_spec.yaml",
    "kind": "analog_side_spec",
    "sha256": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T04:49:33"
   },
   "digital_spec": {
    "path": "digital/spec/spec.yaml",
    "kind": "digital_spec",
    "sha256": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
-   "hashed": "2026-11-05T15:23:05"
+   "hashed": "2026-11-10T05:42:07"
   },
   "analog_spec": {
    "path": "analog/spec/spec.yaml",
    "kind": "analog_spec",
    "sha256": "json_canonical:e83ce1631a319ff62b62a11b82ac06db943156d3cd5f10ddac3860926b9e644f",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "macro_lib": {
    "path": "macro_lib",
    "kind": "macro_lib",
-   "sha256": "dir_text:933a9c8ddd60fb0f7038f8d15cb8aac9a9cc03be074d2dd91765e6aca304c393",
-   "hashed": "2026-11-04T07:02:54"
+   "sha256": "dir_text:b129fb043075d31f30cca49bb40c933ca21c17187e1430afe03ad583b2d7a34f",
+   "hashed": "2026-11-10T05:42:07"
   },
   "pdk_liberty": {
    "path": "${PDK_ROOT}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib",
    "kind": "pdk_liberty",
    "sha256": "dir_bytes:f09377f057ab484ec9e5a45b205c99a5de399e2bdca886531bf9eefa57783f32",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "pdk_librelane": {
    "path": "${PDK_ROOT}/libs.tech/librelane",
    "kind": "pdk_librelane",
    "sha256": "dir_text:34d9ac7321e45f53bb312360322931fa53cbee081929f4bd7047d6e84b5fdb37",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "pdk_magic": {
    "path": "${PDK_ROOT}/libs.tech/magic",
    "kind": "pdk_magic",
    "sha256": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
-   "hashed": "2026-11-04T07:03:45"
+   "hashed": "2026-11-10T05:44:31"
   },
   "pdk_klayout": {
    "path": "${PDK_ROOT}/libs.tech/klayout",
    "kind": "pdk_klayout",
    "sha256": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d",
-   "hashed": "2026-11-04T07:03:45"
+   "hashed": "2026-11-10T05:44:31"
   },
   "pdk_netgen": {
    "path": "${PDK_ROOT}/libs.tech/netgen",
    "kind": "pdk_netgen",
    "sha256": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04",
-   "hashed": "2026-11-04T07:03:20"
+   "hashed": "2026-11-10T05:43:35"
   },
   "top_spec": {
    "path": "top/spec/spec.yaml",
    "kind": "top_spec",
-   "sha256": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
-   "hashed": "2026-11-04T07:03:20"
+   "sha256": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
+   "hashed": "2026-11-10T05:43:35"
   },
   "top_macros": {
    "path": "top/macros",
    "kind": "top_macros",
-   "sha256": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
-   "hashed": "2026-11-04T07:03:20"
+   "sha256": "dir_text:50f423f8e7a3eef8237eb7a5719731b72450412ba7b892289093bffefb089ce0",
+   "hashed": "2026-11-10T05:43:35"
   },
   "top_pnl": {
    "path": "top/harden/runs/run/final/pnl",
    "kind": "top_pnl",
-   "sha256": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
-   "hashed": "2026-11-04T07:03:20"
+   "sha256": "dir_text:d56383669a326d4c474398f73fc2af5955abc735106c806b95ae382efeafa8b1",
+   "hashed": "2026-11-10T05:43:35"
   },
   "top_override": {
    "path": "top.override.json",
    "kind": "top_override",
    "sha256": "json_canonical:6697759a6f0b930a4f5c4e27662b2ca6fb0920ec7ba7e6f9eba502cea04411bb",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
   },
   "digital_override": {
    "path": "digital/harden/config.override.json",
    "kind": "digital_override",
    "sha256": "json_canonical:63af259ef061e65a95c14cfc962522bbc4dde79425aa893e1ee9aae447b2b3bf",
-   "hashed": "2026-11-04T07:02:54"
+   "hashed": "2026-11-10T05:42:07"
+  },
+  "digital_cdc": {
+   "path": "digital/spec/cdc.yaml",
+   "kind": "digital_cdc",
+   "sha256": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174",
+   "hashed": "2026-11-10T04:49:33"
+  },
+  "top_lef": {
+   "path": "top/harden/runs/run/final/lef",
+   "kind": "top_lef",
+   "sha256": "dir_text:7c30ce3d75f9941ba858c0b7eee87c7fa53f44d6c9c95f321e4d19cd8b26c539",
+   "hashed": "2026-11-10T05:44:31"
   }
  },
  "open_issues": [],
  "next_issue_id": 1,
- "next_job_id": 1,
+ "next_job_id": 3,
  "budgets": {
   "fix_loops": {}
  },
@@ -2948,7 +3313,7 @@
    "ts": "2026-11-03T05:14:53",
    "event": "gate_error",
    "gate": "top_harden",
-   "error": "CheckError: /home/hive2/projects/ece298a-pll/blocks/pll/top/harden/config.override.json sets ['DEFAULT_CORNER'], which the engine or the TT template owns (tile/PDK keys, the design's own file list, th"
+   "error": "CheckError: ~/projects/ece298a-pll/blocks/pll/top/harden/config.override.json sets ['DEFAULT_CORNER'], which the engine or the TT template owns (tile/PDK keys, the design's own file list, th"
   },
   {
    "ts": "2026-11-03T05:17:18",
@@ -3306,6 +3671,118 @@
    "gate": "release",
    "status": "pass",
    "attempt": 8,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T04:49:33",
+   "event": "gate",
+   "gate": "split",
+   "status": "pass",
+   "attempt": 9,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T04:50:47",
+   "event": "gate",
+   "gate": "cosim",
+   "status": "fail",
+   "attempt": 10,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-10T05:01:18",
+   "event": "gate_error",
+   "gate": "cosim",
+   "error": "CheckError: cosim_top_unframed: u_dig (ihsan_sa_pll) sits in pll_cosim_top, not in tt_um_ihsan_sa_pll. The tile ships ihsan_sa_pll behind its pad reset synchroniser, so the bench must instantiate tt_f"
+  },
+  {
+   "ts": "2026-11-10T05:11:30",
+   "event": "gate",
+   "gate": "cosim",
+   "status": "fail",
+   "attempt": 11,
+   "failing_count": 2
+  },
+  {
+   "ts": "2026-11-10T05:22:06",
+   "event": "gate",
+   "gate": "cosim",
+   "status": "pass",
+   "attempt": 12,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T05:22:37",
+   "event": "job_start",
+   "job": "1",
+   "gate": "top_harden",
+   "pid": 1042181
+  },
+  {
+   "ts": "2026-11-10T05:22:41",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "fail",
+   "attempt": 32,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-11-10T05:22:45",
+   "event": "job_update",
+   "job": "1",
+   "status": "done"
+  },
+  {
+   "ts": "2026-11-10T05:40:44",
+   "event": "gate",
+   "gate": "macro_lib",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T05:41:04",
+   "event": "job_start",
+   "job": "2",
+   "gate": "top_harden",
+   "pid": 1707890
+  },
+  {
+   "ts": "2026-11-10T05:42:07",
+   "event": "gate",
+   "gate": "top_harden",
+   "status": "pass",
+   "attempt": 33,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T05:42:07",
+   "event": "job_update",
+   "job": "2",
+   "status": "done"
+  },
+  {
+   "ts": "2026-11-10T05:43:33",
+   "event": "gate",
+   "gate": "top_drc",
+   "status": "pass",
+   "attempt": 13,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T05:43:35",
+   "event": "gate",
+   "gate": "top_lvs",
+   "status": "pass",
+   "attempt": 13,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-11-10T05:44:31",
+   "event": "gate",
+   "gate": "precheck",
+   "status": "pass",
+   "attempt": 12,
    "failing_count": 0
   }
  ]

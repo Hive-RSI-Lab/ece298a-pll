@@ -13,8 +13,8 @@ timing cell models and the harden's own SDF back-annotated, the corner's
 process picked from the SDF corners LibreLane writes (nom_ff_n40C_3v60 for
 ff, nom_ss_125C_3v00 for ss, nom_tt_025C_3v30 for tt). The netlist is wrapped
 by chip-flow's glsim harness (ttlib.generate_glsim_harness: a module named
-ihsan_sa_pll with the RTL's own ports around the tt_um_ wrapper), so
-pll_cosim_top.v instantiates it unchanged. So the PFD's reset pulse, the
+tt_frame_ihsan_sa_pll, the RTL frame's name, with the RTL's own ports around
+the tt_um_ wrapper), so pll_cosim_top.v instantiates it unchanged. So the PFD's reset pulse, the
 dividers' clock-to-q and the prescaler's toggle all carry their routed
 delays, which the RTL's zero-delay SIM path leaves out.
 
@@ -146,17 +146,17 @@ def gl_sources(corner: str, work: Path) -> tuple[list[Path], list[str]]:
     check_glsim.netlist_for_icarus(nl, inl, renames)
     spec = speclib.load_spec(C.WS / "digital" / "spec" / "spec.yaml")
     harness = gl / "ihsan_sa_pll_gl.v"
-    harness.write_text(ttlib.generate_glsim_harness(spec, sdf_path=isdf))
+    harness.write_text(ttlib.generate_glsim_harness(
+        spec, sdf_path=isdf, module_name=ttlib.SIM_FRAME_PREFIX + spec["top"]))
     cells = check_glsim._cell_sources(check_glsim._pdk_root())
     return [HERE / "pll_cosim_top.v", harness, inl, *cells], ["-gspecify", "-ginterconnect"]
 
 
 def run_one_gl(corner: str, extracted: Path, work: Path, timeout_s: float) -> dict:
     """cosim_corners.run_one with the sources and Icarus flags swapped."""
-    import check_cosim  # noqa: E402
     import cocotb_tools.runner as R  # noqa: E402
     sources, build_args = gl_sources(corner, work)
-    check_cosim.collect_sources = lambda _d: sources
+    C.cosim_sources = lambda _w: sources
     real = R.get_runner
 
     def get_runner(name):

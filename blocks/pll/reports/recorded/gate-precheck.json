@@ -3,7 +3,7 @@
  "gate": "precheck",
  "phase": "P3",
  "tool": "precheck",
- "input_digest": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+ "input_digest": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -21,15 +21,22 @@
  "violations": [],
  "facts": {
   "top": "tt_um_ihsan_sa_pll",
-  "checks_run": 12
+  "checks_run": 12,
+  "pad_reset": {
+   "latency": 2,
+   "sync": true,
+   "opt_out_reason": null
+  }
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-  "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+  "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+  "top_lef": "dir_text:7c30ce3d75f9941ba858c0b7eee87c7fa53f44d6c9c95f321e4d19cd8b26c539",
+  "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
   "pdk_klayout": "dir_text:876da90e8aab65b830b36eca12bd720adfe8240a0952872419d9f2b4abda605d"
  },
- "recorded_ts": "2026-11-04T07:03:45",
- "attempts": 11
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-10T05:44:31",
+ "attempts": 12
 }

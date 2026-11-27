@@ -3,7 +3,7 @@
  "gate": "split",
  "phase": "P1",
  "tool": "split",
- "input_digest": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+ "input_digest": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -27,13 +27,21 @@
    "pfd_up",
    "pll_en",
    "vco_div2"
-  ]
+  ],
+  "cdc": {
+   "checked": true,
+   "file": "digital/spec/cdc.yaml",
+   "async_ports": []
+  }
  },
  "inputs_at_start": {
-  "interface": "json_canonical:30046614966aa2dee60c415e751aaac80bfd4e168c3e0882f0236b147c8b0993",
+  "interface": "json_canonical:30657567db7c0bbe310bf2af0509b5ba7e53f0b8c203641b2504a4ca1c77fc3f",
   "digital_side_spec": "json_canonical:cb93edda54baaee26760eb26db6706825e81b2115551096896f59387aec11b05",
-  "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2"
+  "analog_side_spec": "json_canonical:56f046c622cc32aaca92fcd151b4fd6a7305948a73d9d0e5d1e3b71fbcdc04b2",
+  "digital_spec": "json_canonical:78b4a0f063fd37769f3297d0430caafbbb18aa3a196a0e96455aef00c64a68d4",
+  "digital_cdc": "json_canonical:a26141c3ea0d69696371e89ac12226220b991a27c42c1f26e4c939539bfb1174"
  },
- "recorded_ts": "2026-11-03T07:54:48",
- "attempts": 8
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-10T04:49:33",
+ "attempts": 9
 }

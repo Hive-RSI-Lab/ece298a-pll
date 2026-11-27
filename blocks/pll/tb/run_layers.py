@@ -52,7 +52,7 @@ def layer2() -> bool:
     out.unlink(missing_ok=True)
     build = C.WS / "log" / "cosim_ideal_build"
     shutil.rmtree(build, ignore_errors=True)
-    xml = cocotblib.run_cocotb(build, HERE, check_cosim.collect_sources(HERE),
+    xml = cocotblib.run_cocotb(build, HERE, C.cosim_sources(build.parent / "cosim_ideal_frame"),
                                meta["top"], cocotblib.test_modules(HERE),
                                C.WS / "log" / "cosim_ideal_results.xml",
                                timeout_s=check_cosim.COCOTB_TIMEOUT_S)

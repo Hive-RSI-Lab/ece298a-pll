@@ -4,7 +4,8 @@
 behavioural model of the analog macro (pll_analog_model.v, calibrated from
 the transistor-level netlist at tt_27c). It shows the loop working from the
 pins a user has: lock rises, and the divided VCO clock on uo[0] and the
-feedback clock on uo[1] run at the frequencies 8 x N x f_ref predicts.
+feedback clock on uo[1] run at the frequencies 8 x N x f_ref predicts,
+and the PFD's UP and DN pulses reach uo[3] and uo[4] for a scope.
 The transistor-level loop is blocks/pll/tb's co-simulation."""
 
 import cocotb
@@ -71,6 +72,38 @@ async def test_lock_100mhz_n1_trim11(dut):
     """12.5 MHz x 8 (N = 1) with the pump at its highest trim."""
     await start(dut, 12.5, 1, trim=0b11)
     await check_locked(dut, 12.5, 1)
+
+
+async def count_rises(signal, window_ns: float) -> int:
+    """Rising edges of a pin within a time window."""
+    rises = 0
+
+    async def count():
+        nonlocal rises
+        while True:
+            await RisingEdge(signal)
+            rises += 1
+
+    counter = cocotb.start_soon(count())
+    await Timer(window_ns, "ns")
+    counter.cancel()
+    return rises
+
+
+@cocotb.test()
+async def test_pfd_pins(dut):
+    """Locked at 100 MHz, UP (uo[3]) and DN (uo[4]) each pulse once a reference
+    period: the PFD's two flops set on their own edges and reset together."""
+    await start(dut, 6.25, 2)
+    await ClockCycles(dut.clk, 64)
+    periods = 32
+    window = periods * 160.0  # 6.25 MHz reference
+    up = cocotb.start_soon(count_rises(dut.pfd_up, window))
+    n_dn = await count_rises(dut.pfd_dn, window)
+    n_up = await up
+    assert abs(n_up - periods) <= 1 and abs(n_dn - periods) <= 1, \
+        f"{n_up} UP and {n_dn} DN pulses in {periods} reference periods"
+    assert dut.lock.value == 1, "lock dropped while the PFD pins were watched"
 
 
 @cocotb.test()

@@ -1,0 +1,135 @@
+* pll_analog_pex_burst_tb.cir - does the extracted ring burst (fast
+* cycles, then 20-30 ns stalls) anywhere below the rail? Run by
+*     eda python falselock/false_lock_pex.py --bench burst
+* A first run of pll_analog_pex_rail_tb.cir with bias_ref left bare showed
+* that burst mode at 12 of the 31 corners (tt_m40c, tt_m40c_vp10,
+* tt_27c_vp10, tt_125c_vp10, ss_m40c_vp10, ss_27c_vp10, ss_125c_vp10,
+* ff_m40c, ff_m40c_vp10, ff_27c_vp10, ff_pss, tt_pss), as spec.yaml records
+* for a bare bias_ref. With the pad's 5 pF on bias_ref (as here) it is gone
+* at every corner run (reports/recorded/false_lock_pex.json).
+* Same start as the rail bench (pll_en rising at 5 ns, no kick, bias_ref on
+* the pad's 5 pF, vco_div2
+* loaded with inv_1 + 30 fF), 600 ns per run at a 20 ps max step:
+*  - runs 0..4 (burst_0..4.txt): vctrl = vdd - 0.2, 0.3, 0.5, 0.7, 0.9 V
+*    from enable;
+*  - run 5 (burst_5.txt): vctrl = vdd-0.3 V from enable, ramped linearly
+*    to vdd over 200..300 ns and held.
+* The driver reads each trace over 400..600 ns cycle by cycle (periods,
+* stalls = periods over twice the median, /2 edges). Printed here:
+* burst_f<k>_mhz, the mean vco_out frequency over 400..600 ns.
+* sim_timeout_s: 3600
+
+.include '{{PDK}}/libs.tech/ngspice/design.spice'
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
+* the loop filter's MOS caps in charge form: see pll_analog_pex_start_tb.cir
+.param cap_nmos_03v3_b_corner=mim_corner_2p0ff
+.subckt cap_nmos_03v3_b 1 2 c_length=1e-6 c_width=1e-6 dtemp=0
+.param cvar1=0.002458 cvar2=0.001533 cvar3=1.515152 cvar4=0.560606
+C1 1 2 q='cap_nmos_03v3_b_corner*c_length*c_width*(cvar1*v(1,2)+cvar2/cvar3*(abs(cvar3*v(1,2)+cvar4)+ln(1+exp(-2*abs(cvar3*v(1,2)+cvar4)))-ln(2)))'
+.ends cap_nmos_03v3_b
+.include '{{NETLIST}}'
+.include '{{PDK}}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
+{{SIZING}}
+
+.temp {{TEMP_C}}
+.param vddp={{VDD}}
+.csparam vddp={vddp}
+.csparam vmid={vddp/2}
+
+vdd_src  vdd      0 dc {vddp}
+vss_src  vss      0 dc 0
+ven      pll_en   0 dc 0 pulse(0 {vddp} 5n 1n 1n 1 1)
+vup      pfd_up   0 dc 0
+vdn      pfd_dn   0 dc 0
+vt0      cp_trim0 0 dc 0
+vt1      cp_trim1 0 dc 0
+vvc      vctrl    0 pwl(0 {vddp-0.3} 1 {vddp-0.3})
+xdut vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+xbuf  vco_div2 nbuf vdd vdd vss vss gf180mcu_fd_sc_mcu7t5v0__inv_1
+cload2   vco_div2 0 30f
+* bias_ref is pad ua[1], left open: the pad's 5 pF, as spec.yaml's macro_timing
+* and the cosim and start-up benches (bare, it never settles and the ring bursts)
+cbias    bias_ref 0 5p
+
+.control
+set noaskquit
+compose offs values 0.2 0.3 0.5 0.7 0.9 0.3
+setplot new
+set rp = $curplot
+let k = 0
+while k lt 6
+  let v0 = vddp - offs[k]
+  let v1 = v0
+  if k eq 5
+    let v1 = vddp
+  end
+  alter @vvc[pwl] = [ 0 $&v0 200n $&v0 300n $&v1 1 $&v1 ]
+  set ks = "$&k"
+  tran 20p 600n 0 20p
+  set tp = $curplot
+  if $ks eq 0
+    wrdata burst_0.txt v(xdut.vco_out) v(vco_div2)
+  end
+  if $ks eq 1
+    wrdata burst_1.txt v(xdut.vco_out) v(vco_div2)
+  end
+  if $ks eq 2
+    wrdata burst_2.txt v(xdut.vco_out) v(vco_div2)
+  end
+  if $ks eq 3
+    wrdata burst_3.txt v(xdut.vco_out) v(vco_div2)
+  end
+  if $ks eq 4
+    wrdata burst_4.txt v(xdut.vco_out) v(vco_div2)
+  end
+  if $ks eq 5
+    wrdata burst_5.txt v(xdut.vco_out) v(vco_div2)
+  end
+  let nx = length(time)
+  let nx1 = nx - 1
+  let nx2 = nx - 2
+  let late = time[0,$&nx2] gt 400n
+  let ho = (v(xdut.vco_out) gt vmid)
+  let no = mean(((ho[1,$&nx1] - ho[0,$&nx2]) gt 0.5) and late)*length(late)
+  let fo = 0
+  if no ge 2
+    meas tran toa when v(xdut.vco_out)=$&vmid rise=1 td=400n
+    meas tran tob when v(xdut.vco_out)=$&vmid rise=$&no td=400n
+    let fo = (no - 1)/(tob - toa)
+  end
+  let fm = fo/1e6
+  if $ks eq 0
+    set fs0 = "$&fm"
+  end
+  if $ks eq 1
+    set fs1 = "$&fm"
+  end
+  if $ks eq 2
+    set fs2 = "$&fm"
+  end
+  if $ks eq 3
+    set fs3 = "$&fm"
+  end
+  if $ks eq 4
+    set fs4 = "$&fm"
+  end
+  if $ks eq 5
+    set fs5 = "$&fm"
+  end
+  setplot $rp
+  destroy $tp
+  let k = k + 1
+end
+echo
+echo "  Measurements for Transient Analysis (pll_analog_pex_burst_tb, computed in .control)"
+echo "burst_f0_mhz = $fs0"
+echo "burst_f1_mhz = $fs1"
+echo "burst_f2_mhz = $fs2"
+echo "burst_f3_mhz = $fs3"
+echo "burst_f4_mhz = $fs4"
+echo "burst_f5_mhz = $fs5"
+echo
+.endc
+.end

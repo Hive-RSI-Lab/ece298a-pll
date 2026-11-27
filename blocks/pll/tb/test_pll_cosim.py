@@ -237,6 +237,15 @@ async def test_pll_lock_nominal(dut):
         assert real_cell, "PLL_COSIM_SETUP moves the transistor cell only"
         extra = list(setup["lines"])
         corner, vdd, cell = setup["corner"], float(setup["vdd"]), setup["netlist"]
+    # a start other than the gate's (false_lock_cosim.py only): N from reset,
+    # the N 2->3 step off (relock_ns 0), a later release, and a wrapper
+    # subckt of its own (in its spice_file) that holds vctrl at a preset
+    n_sel0 = int((setup or {}).get("n_sel0", C.N_SEL))
+    release_ns = float((setup or {}).get("release_ns", RELEASE_NS))
+    subckt = (setup or {}).get("subckt", subckt)
+    spice_file = (setup or {}).get("spice_file") or str(HERE / netlist)
+    pn = C.P * n_sel0
+    t_vco_ns = T_REF_NS / pn
     extra += [".save v(x1.vctrl)", ".options reltol=1e-3"]
     if os.environ.get("PLL_COSIM_ANALOG_VCD"):            # debug only
         extra += [".save " + " ".join(f"v({n})" for n in DEBUG_NODES)]
@@ -244,7 +253,7 @@ async def test_pll_lock_nominal(dut):
     pin = dict(vdd=vdd, vss=0.0)
     block = AnalogBlock(
         name="pll_analog",
-        spice_file=str(HERE / netlist),
+        spice_file=spice_file,
         subcircuit=subckt,
         digital_pins={
             # interface.yaml names; d2a = bridge "input", a2d = "output"
@@ -261,7 +270,7 @@ async def test_pll_lock_nominal(dut):
     # tile inputs: reset held, PLL disabled, nominal point
     dut.rst_n.value = 0
     dut.pll_en_in.value = 0
-    dut.n_sel.value = C.N_SEL
+    dut.n_sel.value = n_sel0
     dut.obs_sel.value = 0
     dut.cp_trim_in.value = 0
     dut.clk.value = 0
@@ -305,7 +314,7 @@ async def test_pll_lock_nominal(dut):
                     vctrl_ref.append((cocotb.utils.get_sim_time(unit="ns"), v))
 
     async def release():
-        await Timer(RELEASE_NS - 1, unit="ns")
+        await Timer(release_ns - 1, unit="ns")
         dut.rst_n.value = 1
         dut.pll_en_in.value = 1
 
@@ -325,7 +334,7 @@ async def test_pll_lock_nominal(dut):
     cocotb.start_soon(sample_vctrl_at_ref())
     cocotb.start_soon(release())
 
-    relock_ns = RELOCK_NS
+    relock_ns = float((setup or {}).get("relock_ns", RELOCK_NS))
 
     async def step_n():
         await Timer(DURATION_NS - cocotb.utils.get_sim_time(unit="ns"), unit="ns")
@@ -383,17 +392,17 @@ async def test_pll_lock_nominal(dut):
             "analog_kind": kind,
             "analog_netlist": netlist,
             "cell_netlist": cell if real_cell else None,
-            "operating_point": {"f_ref_hz": C.F_REF_HZ, "n_sel": C.N_SEL,
-                                "p_times_n": PN, "f_vco_target_hz": C.F_REF_HZ * PN,
+            "operating_point": {"f_ref_hz": C.F_REF_HZ, "n_sel": n_sel0,
+                                "p_times_n": pn, "f_vco_target_hz": C.F_REF_HZ * pn,
                                 "cp_trim": "00", "corner": corner, "vdd": vdd},
             "lock_time_us": lock_time_us,
             "lock_drops_after_lock": drops,
             "relock_time_us": relock_time_us,
-            "relock_n_sel": [C.N_SEL, RELOCK_N_SEL] if relock_ns else None,
+            "relock_n_sel": [n_sel0, RELOCK_N_SEL] if relock_ns else None,
             "lock_rises_ns": list(lock.rises),
             "lock_falls_ns": list(lock.falls),
             "fb_period_rel_err": rel_err(fb_t, T_REF_NS),
-            "vco_period_rel_err": rel_err(vco_t, T_VCO_NS),
+            "vco_period_rel_err": rel_err(vco_t, t_vco_ns),
             "vctrl_pp_last_10us_mv": ((max(vc_w) - min(vc_w)) * 1000.0
                                       if len(vc_w) >= 2 and locked_window else None),
             "vctrl_pp_at_ref_edges_last_10us_mv": ((max(vr_w) - min(vr_w)) * 1000.0
@@ -405,7 +414,7 @@ async def test_pll_lock_nominal(dut):
             "vco_odd_periods_window": [
                 [round(a, 3), round((b - a) / 2, 3)]
                 for a, b in zip(vco.rises, vco.rises[1:])
-                if w0 <= a <= t_end and not 9.0 <= (b - a) / 2 <= 11.0][:50],
+                if w0 <= a <= t_end and not 0.9 * t_vco_ns <= (b - a) / 2 <= 1.1 * t_vco_ns][:50],
             "fb_freq_hz": 1e9 / fb_t if fb_t else None,
             "vco_freq_hz": 1e9 / vco_t if vco_t else None,
             "vctrl_final_v": vctrl[-1][1] if vctrl else None,

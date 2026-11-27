@@ -161,7 +161,7 @@ def run_one(corner: str, extracted: Path, work: Path, timeout_s: float) -> dict:
     err = None
     results = {}
     try:
-        xml = cocotblib.run_cocotb(build, HERE, check_cosim.collect_sources(HERE), meta["top"],
+        xml = cocotblib.run_cocotb(build, HERE, C.cosim_sources(work), meta["top"],
                                    cocotblib.test_modules(HERE), work / "results.xml",
                                    timeout_s=timeout_s)
         results = cocotblib.parse_results_xml(xml)

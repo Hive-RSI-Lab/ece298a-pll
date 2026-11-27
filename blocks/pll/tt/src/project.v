@@ -5,7 +5,8 @@
  * tt_um_ihsan_sa_pll - the Tiny Tapeout top of the charge-pump PLL: the
  * digital core (ihsan_sa_pll) and the analog macro (pll_analog). The code is
  * chip-flow's ttlib.generate_tt_project of top/spec/spec.yaml: top_harden's
- * hardened wrapper (top/harden/tt_um_ihsan_sa_pll.v) plus the analog
+ * hardened wrapper (top/harden/tt_um_ihsan_sa_pll.v, with its pad reset
+ * synchroniser) plus the analog
  * template's VGND/VDPWR ports and the macro's power ties; release refuses it
  * if the logic differs. gds.yaml's verilog_path points here.
  */
@@ -24,6 +25,19 @@ module tt_um_ihsan_sa_pll (
     input  wire       clk,
     input  wire       rst_n
 );
+  // pad reset synchroniser: 2 flops on clk (ttlib.PAD_RESET_LATENCY),
+  // cleared at once by rst_n low, released through the chain
+  reg rst_n_sync_q1;
+  reg rst_n_sync_q2;
+  always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      rst_n_sync_q1 <= 1'b0;
+      rst_n_sync_q2 <= 1'b0;
+    end else begin
+      rst_n_sync_q1 <= 1'b1;
+      rst_n_sync_q2 <= rst_n_sync_q1;
+    end
+  end
   wire w_clk;
   assign w_clk = clk;
   wire w_clk_fb;
@@ -43,7 +57,7 @@ module tt_um_ihsan_sa_pll (
   wire w_pll_en_in;
   assign w_pll_en_in = ui_in[6];
   wire w_rst_n;
-  assign w_rst_n = rst_n;
+  assign w_rst_n = rst_n_sync_q2;
   wire w_vco_div2;
 
   ihsan_sa_pll u_ihsan_sa_pll (
@@ -79,7 +93,7 @@ module tt_um_ihsan_sa_pll (
       .vctrl(ua[0])
   );
 
-  assign uo_out = {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, w_lock, w_clk_fb, w_obs_out};
+  assign uo_out = {1'b0, 1'b0, 1'b0, w_pfd_dn, w_pfd_up, w_lock, w_clk_fb, w_obs_out};
   assign uio_out = {1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0};
   assign uio_oe = 8'b00000000;
   wire _unused = &{ena, ui_in[3], ui_in[4], ui_in[5], uio_in[2], uio_in[3], uio_in[4], uio_in[5], uio_in[6], uio_in[7], 1'b0};

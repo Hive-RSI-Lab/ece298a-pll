@@ -3,7 +3,7 @@
  "gate": "top_lvs",
  "phase": "P3",
  "tool": "top_lvs",
- "input_digest": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
+ "input_digest": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -36,17 +36,15 @@
   "report": "log/top_lvs/top_lvs.rpt"
  },
  "inputs_at_start": {
-  "top_gds": "dir_text:055130e2f29a2c4e35d08a453f44fc006b077d8b6040c6c9b7cc40b9dce6b334",
-  "analog_layout": "dir_text:694748310b756094dbb36e66d23d1777dd45ce98ec61883ee98ec538c342f7c2",
-  "top_spec": "json_canonical:d78dabbac9023fd2f18c8eae16c20e7c0b9f5cff0ea49bd92df20f961ac503db",
-  "top_macros": "dir_text:39ecdc5c84db80e42507e086729a76ec28e381f46a9ee04e3ad115dda0fb8afb",
-  "top_pnl": "dir_text:4ae12bae35ed69302edac7e9bf571d6b391df42167700ec8f79b0fbc2b1ad2a0",
-  "analog_netlist": "dir_text:72e7200a3c9e02cd78bdc112073ef262fb3544a58a254495026d2470c42bd773",
-  "analog_sizing": "json_canonical:08a286fe28cea1d5117d2aa1388d5be8b26279f33d4eb29b189e9030a66e8b0e",
+  "top_gds": "dir_text:71e9491c9789ad2efea53dcfb53cdf1629997a228c3cffbccb2cc7cb662e5903",
+  "top_spec": "json_canonical:63a18759ee083459ec5890f9d3f26bfdd649586173c55fc2318ad0fc9f52244c",
+  "top_macros": "dir_text:50f423f8e7a3eef8237eb7a5719731b72450412ba7b892289093bffefb089ce0",
+  "top_pnl": "dir_text:d56383669a326d4c474398f73fc2af5955abc735106c806b95ae382efeafa8b1",
   "pdk_version": "text_eol:ee54c0e187106d2fbaa73699eb7e3089aadba8c9b9d587458e8feac0942b2dd2",
   "pdk_magic": "dir_text:bb3dc892a68f0253f6cd043a405d7983abc93e0f57633146709166d8ea0c3604",
   "pdk_netgen": "dir_text:8164f65bb7d1bef6e27af4c13b1c6ede50973cec7aec482556abb23881aceb04"
  },
- "recorded_ts": "2026-11-04T07:03:20",
- "attempts": 12
+ "strength_at_start": 0,
+ "recorded_ts": "2026-11-10T05:43:35",
+ "attempts": 13
 }

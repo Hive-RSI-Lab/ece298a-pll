@@ -57,36 +57,36 @@ library(pll_analog__ss_125C_3v00) {
     pin ("cp_trim0") {
       direction : input;
       capacitance : 0.013082;
-      rise_capacitance : 0.012485;
+      rise_capacitance : 0.012483;
       fall_capacitance : 0.013082;
       max_transition : 3;
     }
     pin ("cp_trim1") {
       direction : input;
-      capacitance : 0.013843;
-      rise_capacitance : 0.013843;
-      fall_capacitance : 0.01376;
+      capacitance : 0.01384;
+      rise_capacitance : 0.01384;
+      fall_capacitance : 0.013759;
       max_transition : 3;
     }
     pin ("pfd_dn") {
       direction : input;
-      capacitance : 0.029795;
-      rise_capacitance : 0.029775;
-      fall_capacitance : 0.029795;
+      capacitance : 0.029785;
+      rise_capacitance : 0.029773;
+      fall_capacitance : 0.029785;
       max_transition : 0.5;
     }
     pin ("pfd_up") {
       direction : input;
-      capacitance : 0.033582;
-      rise_capacitance : 0.03352;
-      fall_capacitance : 0.033582;
+      capacitance : 0.03357;
+      rise_capacitance : 0.033524;
+      fall_capacitance : 0.03357;
       max_transition : 0.5;
     }
     pin ("pll_en") {
       direction : input;
-      capacitance : 0.0614;
-      rise_capacitance : 0.059957;
-      fall_capacitance : 0.0614;
+      capacitance : 0.061448;
+      rise_capacitance : 0.060006;
+      fall_capacitance : 0.061448;
       max_transition : 3;
     }
     pin ("vco_div2") {
@@ -98,11 +98,11 @@ library(pll_analog__ss_125C_3v00) {
         timing_type : combinational;
         rise_transition (macro_load) {
           index_1 ("0.005, 0.02236, 0.1");
-          values ("0.078, 0.132, 0.374");
+          values ("0.078, 0.132, 0.372");
         }
         fall_transition (macro_load) {
           index_1 ("0.005, 0.02236, 0.1");
-          values ("0.078, 0.128, 0.336");
+          values ("0.078, 0.126, 0.334");
         }
       }
     }
