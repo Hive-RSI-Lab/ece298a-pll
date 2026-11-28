@@ -9,8 +9,11 @@ supply: {vdd: 3.3}
 sim_timeout_s: {pex_sim: 1800, em_ir: 1800}
 
 # Refdes list from spec/topology.md (P2): current_mirror template anchor,
-# 128 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
-# pfet_03v3, ppolyf_u, cap_mim_2f0ff.
+# 132 flat devices in the netlist (no sub-blocks), no standard cells. Models
+# nfet_03v3, pfet_03v3, ppolyf_u, cap_mim_2f0ff. The list below declares 119:
+# the 13 standby holds (xMP_HT1C/HT1D/HT2B, xMP_HDM, xMP_HP1-5, xMP_HR1,
+# xMN_HN2/HN4/HN5) are not declared yet (issue #66), so bench_strength does
+# not mutate them.
 devices:
   # enable inverter
   - xMP_ENI
